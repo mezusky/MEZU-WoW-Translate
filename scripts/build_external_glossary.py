@@ -20,9 +20,16 @@ def fetch(name):
         return r.read().decode("utf-8", "replace")
 
 def clean(v):
-    return (v.replace(r'\"','"').replace(r"\'", "'")
-             .replace(r"\n"," ").replace(r"\t"," ")
-             .replace(r"\\","\")).strip()
+    replacements = {
+        r'\\\"': '"',
+        r"\\'": "'",
+        r"\\n": " ",
+        r"\\t": " ",
+        r"\\\\": "\\",
+    }
+    for src, dst in replacements.items():
+        v = v.replace(src, dst)
+    return v.strip()
 
 terms, exact, conflicts = {}, {}, {}
 for filename in FILES:
