@@ -3,7 +3,7 @@ name: Update WoW translation data
 on:
   workflow_dispatch:
   schedule:
-    - cron: "17 */6 * * *"
+    - cron: "*/15 * * * *"
   push:
     paths:
       - "scripts/**"
