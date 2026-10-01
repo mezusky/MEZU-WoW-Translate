@@ -13,8 +13,14 @@
     "single target": "monocible",
     "single-target": "monocible",
     "priority damage": "dégâts prio",
+    "priority burst damage": "burst prio",
+    "burst damage": "burst",
     "priority target": "prio target",
-    "crafting order": "commande de craft"
+    "crafting order": "commande de craft",
+    "Strong opening burst, allowing for snap aggro.": "Gros burst à l'open, pratique pour prendre l'aggro instantanément.",
+    "Consistent damage.": "Dégâts constants.",
+    "Excellent solo capabilities.": "Très bon en solo.",
+    "Healing does not work on environmental damage.": "Les soins ne fonctionnent pas sur les dégâts environnementaux."
   },
   "jargon": {
     "BiS": "BiS",
@@ -26,7 +32,15 @@
     "kick": "kick",
     "funnel": "funnel",
     "uptime": "uptime",
-    "Mythic+": "Mythic+"
+    "Mythic+": "Mythic+",
+    "prio target": "prio target",
+    "priority target": "prio target",
+    "priority damage": "dégâts prio",
+    "priority burst damage": "burst prio",
+    "burst": "burst",
+    "snap aggro": "aggro instantanée",
+    "cooldown": "CD",
+    "cooldowns": "CD"
   },
   "protected_names": [
     "World of Warcraft",
