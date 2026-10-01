@@ -29,9 +29,10 @@ with urllib.request.urlopen(req, timeout=30) as response:
     token = json.load(response)["access_token"]
 
 def get(path, locale):
+    sep = "&" if "?" in path else "?"
     url = (
         f"https://{region}.api.blizzard.com{path}"
-        f"?namespace=static-{region}&locale={locale}"
+        f"{sep}namespace=static-{region}&locale={locale}"
     )
     req = urllib.request.Request(url, headers={"Authorization": "Bearer " + token})
     with urllib.request.urlopen(req, timeout=30) as response:
@@ -73,12 +74,41 @@ endpoints = {
     "title": "/data/wow/title/index",
     "toy": "/data/wow/toy/index",
     "journal_expansion": "/data/wow/journal-expansion/index",
+    "power_type": "/data/wow/power-type/index",
+    "pet_ability": "/data/wow/pet-ability/index",
+    "heirloom": "/data/wow/heirloom/index",
+    "pvp_tier": "/data/wow/pvp-tier/index",
+    "achievement_category": "/data/wow/achievement-category/index",
+    "item_class": "/data/wow/item-class/index",
+    "creature_type": "/data/wow/creature-type/index",
+    "creature_family": "/data/wow/creature-family/index",
+    "quest_category": "/data/wow/quest/category/index",
+    "quest_area": "/data/wow/quest/area/index",
+    "quest_type": "/data/wow/quest/type/index",
+    "covenant": "/data/wow/covenant/index",
+    "soulbind": "/data/wow/covenant/soulbind/index",
+    "conduit": "/data/wow/covenant/conduit/index",
+}
+
+search_endpoints = {
+    "spell": "/data/wow/search/spell?orderby=id&_pageSize=1000&_page=1",
+    "item": "/data/wow/search/item?orderby=id&_pageSize=1000&_page=1",
+    "creature": "/data/wow/search/creature?orderby=id&_pageSize=1000&_page=1",
+    "journal_encounter_search": "/data/wow/search/journal-encounter?orderby=id&_pageSize=1000&_page=1",
 }
 
 entities = {}
 for kind, path in endpoints.items():
     print("Sync", kind)
     entities[kind] = collect_pairs(get(path, "en_US"), get(path, "fr_FR"))
+
+for kind, path in search_endpoints.items():
+    print("Search", kind)
+    try:
+        entities[kind] = collect_pairs(get(path, "en_US"), get(path, "fr_FR"))
+    except Exception as exc:
+        print("WARN search", kind, exc)
+        entities[kind] = {}
 
 manual_path = DATA / "manual_overrides.json"
 manual = json.loads(manual_path.read_text(encoding="utf-8"))
