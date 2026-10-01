@@ -3,6 +3,7 @@ import os
 import urllib.parse
 import urllib.request
 import base64
+import hashlib
 from pathlib import Path
 from datetime import datetime, timezone
 
@@ -94,23 +95,42 @@ exact = {
 }
 exact.update(manual.get("exact", {}))
 
-pack = {
+stable = {
     "schema": 1,
-    "generated_at": datetime.now(timezone.utc).isoformat(),
     "entities": entities,
     "exact": exact,
     "jargon": manual.get("jargon", {}),
     "protected_names": manual.get("protected_names", []),
 }
+stable_json = json.dumps(stable, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
+version = hashlib.sha256(stable_json.encode("utf-8")).hexdigest()[:20]
+
+manifest_path = DATA / "manifest.json"
+previous = {}
+if manifest_path.exists():
+    try:
+        previous = json.loads(manifest_path.read_text(encoding="utf-8"))
+    except Exception:
+        previous = {}
+
+if previous.get("version") == version:
+    print("No WoW data changes. Version:", version)
+    raise SystemExit(0)
+
+generated_at = datetime.now(timezone.utc).isoformat()
+pack = dict(stable)
+pack["version"] = version
+pack["generated_at"] = generated_at
 
 (DATA / "datapack.json").write_text(
     json.dumps(pack, ensure_ascii=False, separators=(",", ":")) + "\n",
     encoding="utf-8",
 )
-(DATA / "manifest.json").write_text(
+manifest_path.write_text(
     json.dumps({
         "schema": 1,
-        "generated_at": pack["generated_at"],
+        "version": version,
+        "generated_at": generated_at,
         "entity_count": sum(len(x) for x in entities.values()),
         "exact_count": len(exact),
         "datapack_url": "https://raw.githubusercontent.com/mezusky/MEZU-WoW-Translate/main/data/datapack.json"
