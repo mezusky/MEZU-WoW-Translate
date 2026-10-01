@@ -36,6 +36,9 @@ jobs:
           BLIZZARD_REGION: eu
         run: python scripts/build_datapack.py
 
+      - name: Validate WoW data pack
+        run: python scripts/validate_datapack.py
+
       - name: Commit changes
         run: |
           if [ -z "$(git status --porcelain -- data/)" ]; then
