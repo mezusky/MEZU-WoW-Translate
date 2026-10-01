@@ -113,6 +113,15 @@ for kind, path in search_endpoints.items():
 manual_path = DATA / "manual_overrides.json"
 manual = json.loads(manual_path.read_text(encoding="utf-8"))
 
+community_path = DATA / "community_glossary.json"
+community = {}
+if community_path.exists():
+    try:
+        community = json.loads(community_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print("WARN community glossary", exc)
+        community = {}
+
 exact_candidates = {}
 for bucket in entities.values():
     for row in bucket.values():
@@ -123,6 +132,15 @@ exact = {
     for en, values in exact_candidates.items()
     if len(values) == 1
 }
+
+# Community EN->frFR mappings are exact-match only. They never replace substrings
+# inside prose, so they can improve standalone guide terminology without corrupting
+# official spell/item/entity names.
+for en, fr in (community.get("exact", {}) or {}).items():
+    if isinstance(en, str) and isinstance(fr, str) and en.strip() and fr.strip():
+        exact.setdefault(en.strip(), fr.strip())
+
+# Manual MEZU player-language rules always win over both official/community sources.
 exact.update(manual.get("exact", {}))
 
 stable = {
@@ -131,6 +149,12 @@ stable = {
     "exact": exact,
     "jargon": manual.get("jargon", {}),
     "protected_names": manual.get("protected_names", []),
+    "community_meta": {
+        "source": community.get("source"),
+        "license": community.get("license"),
+        "term_count": len(community.get("terms", {}) or {}),
+        "exact_count": len(community.get("exact", {}) or {})
+    },
 }
 stable_json = json.dumps(stable, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
 version = hashlib.sha256(stable_json.encode("utf-8")).hexdigest()[:20]
@@ -163,6 +187,8 @@ manifest_path.write_text(
         "generated_at": generated_at,
         "entity_count": sum(len(x) for x in entities.values()),
         "exact_count": len(exact),
+        "community_exact_count": len(community.get("exact", {}) or {}),
+        "community_term_count": len(community.get("terms", {}) or {}),
         "datapack_url": "https://raw.githubusercontent.com/mezusky/MEZU-WoW-Translate/main/data/datapack.json"
     }, ensure_ascii=False, indent=2) + "\n",
     encoding="utf-8",
