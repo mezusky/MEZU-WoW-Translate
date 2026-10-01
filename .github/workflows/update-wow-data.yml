@@ -27,7 +27,7 @@ jobs:
 
       - name: Commit changes
         run: |
-          if git diff --quiet -- data/; then
+          if [ -z "$(git status --porcelain -- data/)" ]; then
             echo "No data changes."
             exit 0
           fi
