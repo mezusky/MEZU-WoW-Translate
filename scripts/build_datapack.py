@@ -97,10 +97,23 @@ search_endpoints = {
     "journal_encounter_search": "/data/wow/search/journal-encounter?orderby=id&_pageSize=1000&_page=1",
 }
 
+previous_entities = {}
+previous_pack_path = DATA / "datapack.json"
+if previous_pack_path.exists():
+    try:
+        previous_entities = json.loads(previous_pack_path.read_text(encoding="utf-8")).get("entities", {}) or {}
+    except Exception as exc:
+        print("WARN previous datapack", exc)
+        previous_entities = {}
+
 entities = {}
 for kind, path in endpoints.items():
     print("Sync", kind)
-    entities[kind] = collect_pairs(get(path, "en_US"), get(path, "fr_FR"))
+    try:
+        entities[kind] = collect_pairs(get(path, "en_US"), get(path, "fr_FR"))
+    except Exception as exc:
+        print("WARN sync", kind, exc)
+        entities[kind] = previous_entities.get(kind, {})
 
 for kind, path in search_endpoints.items():
     print("Search", kind)
@@ -108,7 +121,7 @@ for kind, path in search_endpoints.items():
         entities[kind] = collect_pairs(get(path, "en_US"), get(path, "fr_FR"))
     except Exception as exc:
         print("WARN search", kind, exc)
-        entities[kind] = {}
+        entities[kind] = previous_entities.get(kind, {})
 
 manual_path = DATA / "manual_overrides.json"
 manual = json.loads(manual_path.read_text(encoding="utf-8"))
