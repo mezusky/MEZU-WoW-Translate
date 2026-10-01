@@ -122,6 +122,15 @@ if community_path.exists():
         print("WARN community glossary", exc)
         community = {}
 
+blizzard_memory_path = DATA / "blizzard_translation_memory.json"
+blizzard_memory = {}
+if blizzard_memory_path.exists():
+    try:
+        blizzard_memory = json.loads(blizzard_memory_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print("WARN Blizzard translation memory", exc)
+        blizzard_memory = {}
+
 exact_candidates = {}
 for bucket in entities.values():
     for row in bucket.values():
@@ -133,14 +142,18 @@ exact = {
     if len(values) == 1
 }
 
-# Community EN->frFR mappings are exact-match only. They never replace substrings
-# inside prose, so they can improve standalone guide terminology without corrupting
-# official spell/item/entity names.
+# Official Blizzard translation-memory phrases are whole-string matches only.
+# This lets us reuse real Blizzard EN->FR wording without injecting fragments into prose.
+for en, fr in (blizzard_memory.get("exact", {}) or {}).items():
+    if isinstance(en, str) and isinstance(fr, str) and en.strip() and fr.strip():
+        exact.setdefault(en.strip(), fr.strip())
+
+# Community EN->frFR mappings are also exact-match only.
 for en, fr in (community.get("exact", {}) or {}).items():
     if isinstance(en, str) and isinstance(fr, str) and en.strip() and fr.strip():
         exact.setdefault(en.strip(), fr.strip())
 
-# Manual MEZU player-language rules always win over both official/community sources.
+# Manual MEZU player-language rules always win over every automatic source.
 exact.update(manual.get("exact", {}))
 
 stable = {
@@ -154,6 +167,11 @@ stable = {
         "license": community.get("license"),
         "term_count": len(community.get("terms", {}) or {}),
         "exact_count": len(community.get("exact", {}) or {})
+    },
+    "blizzard_memory_meta": {
+        "source": blizzard_memory.get("source"),
+        "article_count": blizzard_memory.get("article_count", 0),
+        "pair_count": blizzard_memory.get("pair_count", 0)
     },
 }
 stable_json = json.dumps(stable, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
@@ -189,6 +207,8 @@ manifest_path.write_text(
         "exact_count": len(exact),
         "community_exact_count": len(community.get("exact", {}) or {}),
         "community_term_count": len(community.get("terms", {}) or {}),
+        "blizzard_memory_pair_count": len(blizzard_memory.get("exact", {}) or {}),
+        "blizzard_memory_article_count": blizzard_memory.get("article_count", 0),
         "datapack_url": "https://raw.githubusercontent.com/mezusky/MEZU-WoW-Translate/main/data/datapack.json"
     }, ensure_ascii=False, indent=2) + "\n",
     encoding="utf-8",
