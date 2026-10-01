@@ -1,0 +1,12 @@
+# Local secrets
+.env
+config.local.json
+secrets.json
+
+# Python
+__pycache__/
+*.pyc
+
+# Local caches
+cache/
+logs/
