@@ -1,7 +1,10 @@
 {
   "schema": 1,
-  "generated_at": "2026-10-01T20:34:42.132698+00:00",
-  "entity_count": 15223,
-  "exact_count": 10885,
+  "version": "f5f302fa2dc2cf9a1098",
+  "generated_at": "2026-10-01T21:23:50.351515+00:00",
+  "entity_count": 17415,
+  "exact_count": 12850,
+  "community_exact_count": 352,
+  "community_term_count": 385,
   "datapack_url": "https://raw.githubusercontent.com/mezusky/MEZU-WoW-Translate/main/data/datapack.json"
 }

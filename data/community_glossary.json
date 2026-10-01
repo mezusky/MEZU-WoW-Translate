@@ -1,0 +1,2297 @@
+{
+  "conflicts": {
+    "Bloodlust/Heroism": [
+      "Furie sanguinaire",
+      "Héroïsme"
+    ],
+    "Good luck, have fun": [
+      "Bonne chance, amuse-toi",
+      "Bonne chance, amusez-vous"
+    ]
+  },
+  "exact": {
+    "10-man": "10 joueurs",
+    "10-man Heroic": "10 Héroïque",
+    "10-man Normal": "10 Normal",
+    "25-man": "25 joueurs",
+    "25-man Heroic": "25 Héroïque",
+    "25-man Normal": "25 Normal",
+    "2v2": "2c2",
+    "3v3": "3c3",
+    "5v5": "5c5",
+    "Achievement": "Haut fait",
+    "Affliction": "Affliction",
+    "Agility": "Agilité",
+    "Alchemy": "Alchimie",
+    "Alterac Valley": "Vallée d'Alterac",
+    "Amazing": "Génial",
+    "Arathi Basin": "Bassin d'Arathi",
+    "Arcane": "Arcanes",
+    "Archaeology": "Archéologie",
+    "Area Effect": "Effet de zone",
+    "Area of Effect": "Dégâts de zone",
+    "Arena": "Arène",
+    "Armor": "Armure",
+    "Armor Class": "Classe d'armure",
+    "Arms": "Armes",
+    "As soon as possible": "Dès que possible",
+    "Assassination": "Assassinat",
+    "At the moment": "En ce moment",
+    "Attack Power": "Puissance d\\'attaque",
+    "Avoidance": "Évitement",
+    "Away from Keyboard": "Absent",
+    "Back": "De retour",
+    "Balance": "Équilibre",
+    "Battle resurrection": "Résurrection en combat",
+    "Battleground": "Champ de bataille",
+    "Be right back": "Reviens de suite",
+    "Beast Mastery": "Maîtrise des bêtes",
+    "Best in Slot": "Le meilleur par emplacement",
+    "Bind on Equip": "Lié quand équipé",
+    "Bind on Pickup": "Lié quand ramassé",
+    "Bio break (short AFK)": "Pause rapide",
+    "Blacksmithing": "Forge",
+    "Blood": "Sang",
+    "Bloodlust": "Furie sanguinaire",
+    "Boss": "Boss",
+    "Bountiful Delve (rewards chest, needs key)": "Gouffre fructueux",
+    "Brann Bronzebeard (Delve companion)": "Brann (compagnon de gouffre)",
+    "Brewmaster": "Maître brasseur",
+    "Broken": "Cassé",
+    "Bronze": "Bronze",
+    "Buff": "Amélioration",
+    "Burst damage": "Burst",
+    "By the way": "Au fait",
+    "Bye bye": "Salut",
+    "Cap": "Cap",
+    "Carry (help weaker players)": "Porter/carry",
+    "Cash on delivery": "Contre remboursement",
+    "Catalyst (convert gear to tier set)": "Catalyseur",
+    "Celestial": "Cele",
+    "Celestials": "Celes",
+    "Champion (gear track, below Hero)": "Champion (palier d'équipement)",
+    "Chest (end-of-run reward)": "Coffre (récompense M+)",
+    "Chill": "Détendu",
+    "Combat": "Combat",
+    "Combat Res": "Résu combat",
+    "Congratulations": "Félicitations",
+    "Conquest (PvP currency)": "Conquête (monnaie PvP)",
+    "Cooking": "Cuisine",
+    "Cooldown": "Temps de recharge",
+    "Cope": "Résignation",
+    "Coping with bad outcome": "Se voiler la face",
+    "Crafting order": "Commande de fabrication",
+    "Crest": "Blason",
+    "Critical Strike": "Critique",
+    "Crowd Control": "Contrôle de foule",
+    "DPS": "DPS",
+    "Damage over Time": "Dégâts sur la durée",
+    "Dead": "Mort",
+    "Death Knight": "Chevalier de la mort",
+    "Debuff": "Affaiblissement",
+    "Delve (solo/small-group instance)": "Gouffre",
+    "Delves": "Gouffres",
+    "Demon Hunter": "Chasseur de démons",
+    "Demonology": "Démonologie",
+    "Depleted (keystone missed the timer)": "Épuisée (hors des temps)",
+    "Destruction": "Destruction",
+    "Difference": "Différence",
+    "Direct Damage": "Dégâts directs",
+    "Discipline": "Discipline",
+    "Disconnected": "Déconnecté",
+    "Discord": "Discord",
+    "Dispel": "Dissiper",
+    "Dodge": "Esquive",
+    "Doing huge damage": "Énorme DPS",
+    "Don't worry": "T'inquiète",
+    "Druid": "Druide",
+    "Durability": "Durabilité",
+    "Easy": "Facile",
+    "Elemental": "Élémentaire",
+    "Enchanting": "Enchantement",
+    "Energy": "Énergie",
+    "Enhancement": "Amélioration",
+    "Enrage": "Enrager",
+    "Everyone died, restart": "Tout le monde mort, on recommence",
+    "Experience": "Expérience",
+    "Expertise": "Expertise",
+    "Extra mob": "Ennemi supplémentaire",
+    "Extra mobs": "Ennemis supplémentaires",
+    "Faction vs Faction": "Faction contre Faction",
+    "Farming": "Farmer",
+    "Feral": "Farouche",
+    "Fire": "Feu",
+    "Fishing": "Pêche",
+    "Focus target": "Focus",
+    "For fuck's sake": "Merde alors",
+    "For real": "Pour de vrai",
+    "For the loss": "La défaite",
+    "For the win": "Pour la victoire",
+    "Fortified (affix: tougher trash)": "Fortifié",
+    "Frost": "Givre",
+    "Full Health": "Vie pleine",
+    "Full Mana": "Mana plein",
+    "Fury": "Fureur",
+    "GDKP Auction": "Enchères GDKP",
+    "Galleon": "Galleon",
+    "Gear/Equipment": "Équipement",
+    "Ghost": "Fantôme",
+    "Gilded Crest (top upgrade currency)": "Écusson doré",
+    "Gladiator (top PvP title)": "Gladiateur (titre PvP top)",
+    "Global Cooldown": "Temps de recharge global",
+    "Go outside, take a break": "Va prendre l'air",
+    "Good game": "Bien joué",
+    "Good game, well played": "Bon jeu, bien joué",
+    "Good job": "Beau travail",
+    "Good luck": "Bonne chance",
+    "Got destroyed/wrecked": "Détruit/éclaté",
+    "Got to go": "Je dois y aller",
+    "Gratz": "Félicitations",
+    "Great Vault (weekly chest)": "Grande Chambre (coffre hebdo)",
+    "Grinding": "Grind",
+    "Group": "Groupe",
+    "Guardian": "Gardien",
+    "Guild": "Guilde",
+    "Guild Bank": "Banque de guilde",
+    "Guild Master": "Maître de guilde",
+    "Guild invite request (please invite me to the guild)": "Invitation de guilde demandée",
+    "Haste": "Hâte",
+    "Have fun": "Amuse-toi bien",
+    "Havoc": "Dévastation",
+    "Heal over Time": "Soin sur la durée",
+    "Healer": "Soigneur",
+    "Herbalism": "Herboristerie",
+    "Heroic": "Héroïque",
+    "Heroic (difficulty)": "Héroïque (difficulté)",
+    "Heroism (Bloodlust)": "Héroïsme",
+    "Hit Points": "Points de vie",
+    "Hit Rating": "Toucher",
+    "Holy": "Sacré",
+    "Honor (PvP currency)": "Honneur (monnaie PvP)",
+    "Hunter": "Chasseur",
+    "I don't care": "Je m'en fiche",
+    "I don't know": "Je ne sais pas",
+    "I don't mind": "Ça ne me dérange pas",
+    "In combat": "En combat",
+    "Indeed": "En effet",
+    "Inscription": "Calligraphie",
+    "Intellect": "Intelligence",
+    "Interrupt": "Interrompre",
+    "Invite me to the group": "Invite-moi",
+    "It's all my fault": "C'est entièrement ma faute",
+    "Item Level": "Niveau d'objet",
+    "Jewelcrafting": "Joaillerie",
+    "Key ruined/depleted": "Clé ratée",
+    "Keystone Master (all M+ at +10 in time)": "Maître des pierres angulaires",
+    "Kill Steal": "Kill Steal",
+    "Kill unsuspecting player": "Tuer par surprise",
+    "Kiting": "Kiter",
+    "LFR/Raid Finder": "Raid Finder",
+    "LOL": "Rire",
+    "Last spot": "Dernière place",
+    "Laughing out loud": "Rire",
+    "Leatherworking": "Travail du cuir",
+    "Leech": "Ponction",
+    "Let's go": "On y va",
+    "Level": "Niveau",
+    "Line of Sight": "Ligne de vue",
+    "Link item/achievement": "Lien",
+    "Lol (Horde version)": "Mdr (version Horde)",
+    "Looking for": "Cherche pour",
+    "Looking for 1 more": "Cherche 1 de plus pour",
+    "Looking for 2 more": "Cherche 2 de plus pour",
+    "Looking for 3 more": "Cherche 3 de plus pour",
+    "Looking for group": "Cherche groupe pour",
+    "Looking for more": "Cherche plus pour",
+    "Low health": "Vie basse",
+    "Low mana": "Peu de mana",
+    "Low on Mana": "Peu de mana",
+    "M+ Affix (weekly modifier)": "Affixe (modificateur hebdo)",
+    "Mage": "Mage",
+    "Main Spec": "Spé principale",
+    "Mana": "Mana",
+    "Manaforge Omega (current raid)": "Forge de mana Oméga",
+    "Marksmanship": "Précision",
+    "Master Looter": "Responsable du butin",
+    "Mastery": "Maîtrise",
+    "Matchmaking rating": "Score de matchmaking",
+    "Materials": "Composants",
+    "Meeting stone": "Pierre de rendez-vous",
+    "Melee": "Corps à corps",
+    "Melee DPS": "DPS corps à corps",
+    "Mining": "Minage",
+    "Mistweaver": "Tisse-brume",
+    "Monk": "Moine",
+    "Most Effective Tactic": "Méta",
+    "Mount": "Monture",
+    "Move on, next attempt": "On passe au suivant",
+    "My bad": "Désolé",
+    "Myth (top gear track)": "Mythe (palier d'équipement)",
+    "Mythic (difficulty)": "Mythique (difficulté)",
+    "Mythic+ (timed keystone dungeon)": "Mythique+",
+    "Mythic+ Keystone": "Pierre angulaire",
+    "Mythic+ keystone": "Clé mythique+",
+    "Need": "Besoin",
+    "Nerf": "Nerf",
+    "Never mind": "Laisse tomber",
+    "New run": "Neuf",
+    "Newbie": "Débutant",
+    "Nice try": "Bien tenté",
+    "Ninja Looter": "Ninja looteur",
+    "No problem": "Pas de souci",
+    "No worries": "Pas de souci",
+    "Non-Player Character": "Personnage non-joueur",
+    "Normal": "Normal",
+    "Normal (difficulty)": "Normal (difficulté)",
+    "Not gonna lie": "Je vais pas mentir",
+    "Of course": "Bien sûr",
+    "Off Spec": "Spé secondaire",
+    "Officer": "Officier",
+    "Oh my God": "Oh mon Dieu",
+    "Ok": "Ok",
+    "Okay": "Ok",
+    "On my way": "En route",
+    "One second": "Une seconde",
+    "Out of Mana": "Plus de mana",
+    "Out of combat": "Hors combat",
+    "Paladin": "Paladin",
+    "Parry": "Parade",
+    "Parse (Warcraft Logs percentile)": "Parse (centile Warcraft Logs)",
+    "Party (5-player group)": "Groupe (5 joueurs)",
+    "Pet (companion/battle pet)": "Familier",
+    "Phase (boss stage)": "Phase (du boss)",
+    "Pick-Up Group (random)": "Groupe aléatoire",
+    "Player Character": "Personnage joueur",
+    "Player vs Environment": "Joueur contre Environnement",
+    "Player vs Player": "Joueur contre Joueur",
+    "Plays like a robot/badly": "Bot (joue comme un robot)",
+    "Please": "S'il te plaît",
+    "Please send tell": "Murmurez svp",
+    "Portal": "Portail",
+    "Potion (combat)": "Potion",
+    "Priest": "Prêtre",
+    "Progression (learning boss)": "Progression (apprentissage)",
+    "Protection": "Protection",
+    "Pull (start the fight)": "Pull (lancer le combat)",
+    "Purge (remove buffs)": "Purger (dissiper les buffs)",
+    "Rage": "Rage",
+    "Raid": "Raid",
+    "Raider.IO score": "Score Raider.IO",
+    "Raider.IO score (M+ rating)": "Score Raider.IO",
+    "Random number generator": "Générateur aléatoire",
+    "Ranged": "À distance",
+    "Ranged DPS": "DPS à distance",
+    "Rated (ranked PvP)": "Cotée",
+    "Rated BG": "CdB coté",
+    "Ready": "Prêt",
+    "Recraft": "Refaçonnage",
+    "Recruiting": "Recrutement",
+    "Release spirit": "Libérer l'esprit",
+    "Renown (faction reputation track)": "Renommée",
+    "Repair": "Réparer",
+    "Requirement": "Condition",
+    "Resilience": "Résilience",
+    "Restoration": "Restauration",
+    "Resurrect": "Résurrection",
+    "Resurrection": "Résurrection",
+    "Retribution": "Vindicte",
+    "Rogue": "Voleur",
+    "Run away while keeping aggro": "Kiter (fuir en gardant l'aggro)",
+    "Runed Crest (upgrade currency)": "Écusson runique",
+    "Salute": "Salut militaire",
+    "See you": "À plus",
+    "Shadow": "Ombre",
+    "Shaking my head": "Je secoue la tête",
+    "Shaman": "Chaman",
+    "SimulationCraft (DPS simulator)": "SimulationCraft (simulateur de DPS)",
+    "Skill difference/gap": "Différence de niveau",
+    "Skinning": "Dépeçage",
+    "Skip trash packs": "Passer les packs",
+    "Soak": "Encaisser",
+    "Sold": "Vendu",
+    "Sorry": "Désolé",
+    "Soulstone (warlock battle res)": "Pierre d'âme",
+    "Spark (crafting reagent, weekly)": "Étincelle",
+    "Speed": "Vitesse",
+    "Spirit": "Esprit",
+    "Spread": "S'écarter",
+    "Stack": "S'empiler",
+    "Stamina": "Endurance",
+    "Stand in to absorb mechanic": "Absorber la mécanique",
+    "Strength": "Force",
+    "Stun": "Étourdissement",
+    "Subtlety": "Finesse",
+    "Summon": "Invoquer",
+    "Survival": "Survie",
+    "Suspicious": "Suspect",
+    "Tailoring": "Couture",
+    "Talk to you later": "À plus tard",
+    "Tank": "Tank",
+    "Thank you": "Merci",
+    "Thanks": "Merci",
+    "Threat/Aggro": "Menace",
+    "Throwing": "Lancer",
+    "Timed (keystone beat the timer)": "Dans les temps",
+    "Toxic": "Toxique",
+    "Toy": "Jouet",
+    "Transmog": "Transmogrification",
+    "Trap": "Piège",
+    "Trash mobs": "Monstres",
+    "Tryhard/overly competitive": "Tryhard/trop compétitif",
+    "Tyrannical (affix: tougher bosses)": "Tyrannique",
+    "Undermine (goblin city zone, 11.1)": "Undermine",
+    "Unholy": "Impie",
+    "Upgrade (raise item level)": "Amélioration (niveau d'objet)",
+    "Use potion before pull": "Potion avant le pull",
+    "Vengeance": "Vengeance",
+    "Versatility": "Versatilité",
+    "Wait": "Attends",
+    "Wall-to-wall pull (everything)": "Pull massif (tout)",
+    "Want to buy": "Achète",
+    "Want to sell": "Vends",
+    "Want to trade": "Échange",
+    "Warband (account-wide roster/bank)": "Bataillon",
+    "Warcraft Logs (combat logs)": "Logs (Warcraft Logs)",
+    "Warlock": "Démoniste",
+    "Warrior": "Guerrier",
+    "Warsong Gulch": "Goulet des Chanteguerre",
+    "Welcome back": "Bon retour",
+    "Well played": "Bien joué",
+    "Windwalker": "Marche-vent",
+    "Wipe": "Wipe",
+    "Wiped": "Wipe subi",
+    "You too": "Toi aussi",
+    "You're welcome": "De rien"
+  },
+  "license": "MIT",
+  "schema": 1,
+  "source": "Yumash/BabelChat",
+  "source_url": "https://github.com/Yumash/BabelChat",
+  "terms": {
+    "10hc": {
+      "en": "10-man Heroic",
+      "fr": "10 Héroïque",
+      "source_file": "Grupos.lua"
+    },
+    "10m": {
+      "en": "10-man",
+      "fr": "10 joueurs",
+      "source_file": "Grupos.lua"
+    },
+    "10nm": {
+      "en": "10-man Normal",
+      "fr": "10 Normal",
+      "source_file": "Grupos.lua"
+    },
+    "123": {
+      "en": "Summon",
+      "fr": "Invoquer",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "25hc": {
+      "en": "25-man Heroic",
+      "fr": "25 Héroïque",
+      "source_file": "Grupos.lua"
+    },
+    "25m": {
+      "en": "25-man",
+      "fr": "25 joueurs",
+      "source_file": "Grupos.lua"
+    },
+    "25nm": {
+      "en": "25-man Normal",
+      "fr": "25 Normal",
+      "source_file": "Grupos.lua"
+    },
+    "2s": {
+      "en": "2v2",
+      "fr": "2c2",
+      "source_file": "Combate.lua"
+    },
+    "3s": {
+      "en": "3v3",
+      "fr": "3c3",
+      "source_file": "Combate.lua"
+    },
+    "5s": {
+      "en": "5v5",
+      "fr": "5c5",
+      "source_file": "Combate.lua"
+    },
+    "ab": {
+      "en": "Arathi Basin",
+      "fr": "Bassin d'Arathi",
+      "source_file": "Combate.lua"
+    },
+    "ac": {
+      "en": "Armor Class",
+      "fr": "Classe d'armure",
+      "source_file": "Social.lua"
+    },
+    "achiev": {
+      "en": "Achievement",
+      "fr": "Haut fait",
+      "source_file": "Grupos.lua"
+    },
+    "achieve": {
+      "en": "Achievement",
+      "fr": "Haut fait",
+      "source_file": "Grupos.lua"
+    },
+    "achv": {
+      "en": "Achievement",
+      "fr": "Haut fait",
+      "source_file": "Grupos.lua"
+    },
+    "add": {
+      "en": "Extra mob",
+      "fr": "Ennemi supplémentaire",
+      "source_file": "Combate.lua"
+    },
+    "adds": {
+      "en": "Extra mobs",
+      "fr": "Ennemis supplémentaires",
+      "source_file": "Combate.lua"
+    },
+    "ae": {
+      "en": "Area Effect",
+      "fr": "Effet de zone",
+      "source_file": "Social.lua"
+    },
+    "affix": {
+      "en": "M+ Affix (weekly modifier)",
+      "fr": "Affixe (modificateur hebdo)",
+      "source_file": "Endgame.lua"
+    },
+    "affli": {
+      "en": "Affliction",
+      "fr": "Affliction",
+      "source_file": "Clases.lua"
+    },
+    "afk": {
+      "en": "Away from Keyboard",
+      "fr": "Absent",
+      "source_file": "Social.lua"
+    },
+    "aggro": {
+      "en": "Threat/Aggro",
+      "fr": "Menace",
+      "source_file": "Combate.lua"
+    },
+    "agi": {
+      "en": "Agility",
+      "fr": "Agilité",
+      "source_file": "Estadisticas.lua"
+    },
+    "alch": {
+      "en": "Alchemy",
+      "fr": "Alchimie",
+      "source_file": "Profesiones.lua"
+    },
+    "aoe": {
+      "en": "Area of Effect",
+      "fr": "Dégâts de zone",
+      "source_file": "Combate.lua"
+    },
+    "ap": {
+      "en": "Attack Power",
+      "fr": "Puissance d\\'attaque",
+      "source_file": "Estadisticas.lua"
+    },
+    "arcane": {
+      "en": "Arcane",
+      "fr": "Arcanes",
+      "source_file": "Clases.lua"
+    },
+    "arch": {
+      "en": "Archaeology",
+      "fr": "Archéologie",
+      "source_file": "Profesiones.lua"
+    },
+    "arena": {
+      "en": "Arena",
+      "fr": "Arène",
+      "source_file": "Combate.lua"
+    },
+    "armor": {
+      "en": "Armor",
+      "fr": "Armure",
+      "source_file": "Estadisticas.lua"
+    },
+    "arms": {
+      "en": "Arms",
+      "fr": "Armes",
+      "source_file": "Clases.lua"
+    },
+    "asap": {
+      "en": "As soon as possible",
+      "fr": "Dès que possible",
+      "source_file": "Social.lua"
+    },
+    "assa": {
+      "en": "Assassination",
+      "fr": "Assassinat",
+      "source_file": "Clases.lua"
+    },
+    "assass": {
+      "en": "Assassination",
+      "fr": "Assassinat",
+      "source_file": "Clases.lua"
+    },
+    "atm": {
+      "en": "At the moment",
+      "fr": "En ce moment",
+      "source_file": "Social.lua"
+    },
+    "av": {
+      "en": "Alterac Valley",
+      "fr": "Vallée d'Alterac",
+      "source_file": "Combate.lua"
+    },
+    "avoidance": {
+      "en": "Avoidance",
+      "fr": "Évitement",
+      "source_file": "Estadisticas.lua"
+    },
+    "balance": {
+      "en": "Balance",
+      "fr": "Équilibre",
+      "source_file": "Clases.lua"
+    },
+    "bb": {
+      "en": "Bye bye",
+      "fr": "Salut",
+      "source_file": "Social.lua"
+    },
+    "bg": {
+      "en": "Battleground",
+      "fr": "Champ de bataille",
+      "source_file": "Combate.lua"
+    },
+    "bio": {
+      "en": "Bio break (short AFK)",
+      "fr": "Pause rapide",
+      "source_file": "Estado.lua"
+    },
+    "bis": {
+      "en": "Best in Slot",
+      "fr": "Le meilleur par emplacement",
+      "source_file": "Comercio.lua"
+    },
+    "bk": {
+      "en": "Back",
+      "fr": "De retour",
+      "source_file": "Social.lua"
+    },
+    "bl": {
+      "en": "Bloodlust",
+      "fr": "Furie sanguinaire",
+      "source_file": "Slang.lua"
+    },
+    "blood": {
+      "en": "Blood",
+      "fr": "Sang",
+      "source_file": "Clases.lua"
+    },
+    "bm hunt": {
+      "en": "Beast Mastery",
+      "fr": "Maîtrise des bêtes",
+      "source_file": "Clases.lua"
+    },
+    "bm monk": {
+      "en": "Brewmaster",
+      "fr": "Maître brasseur",
+      "source_file": "Clases.lua"
+    },
+    "boe": {
+      "en": "Bind on Equip",
+      "fr": "Lié quand équipé",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "bop": {
+      "en": "Bind on Pickup",
+      "fr": "Lié quand ramassé",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "boss": {
+      "en": "Boss",
+      "fr": "Boss",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "bot": {
+      "en": "Plays like a robot/badly",
+      "fr": "Bot (joue comme un robot)",
+      "source_file": "Slang.lua"
+    },
+    "bountiful": {
+      "en": "Bountiful Delve (rewards chest, needs key)",
+      "fr": "Gouffre fructueux",
+      "source_file": "Endgame.lua"
+    },
+    "brann": {
+      "en": "Brann Bronzebeard (Delve companion)",
+      "fr": "Brann (compagnon de gouffre)",
+      "source_file": "Endgame.lua"
+    },
+    "brb": {
+      "en": "Be right back",
+      "fr": "Reviens de suite",
+      "source_file": "Social.lua"
+    },
+    "brez": {
+      "en": "Battle resurrection",
+      "fr": "Résurrection en combat",
+      "source_file": "Slang.lua"
+    },
+    "bricked": {
+      "en": "Key ruined/depleted",
+      "fr": "Clé ratée",
+      "source_file": "Slang.lua"
+    },
+    "broken": {
+      "en": "Broken",
+      "fr": "Cassé",
+      "source_file": "Estado.lua"
+    },
+    "bronze": {
+      "en": "Bronze",
+      "fr": "Bronze",
+      "source_file": "Comercio.lua"
+    },
+    "bs": {
+      "en": "Blacksmithing",
+      "fr": "Forge",
+      "source_file": "Profesiones.lua"
+    },
+    "btw": {
+      "en": "By the way",
+      "fr": "Au fait",
+      "source_file": "Social.lua"
+    },
+    "buff": {
+      "en": "Buff",
+      "fr": "Amélioration",
+      "source_file": "Combate.lua"
+    },
+    "burst": {
+      "en": "Burst damage",
+      "fr": "Burst",
+      "source_file": "Combate.lua"
+    },
+    "cap": {
+      "en": "Cap",
+      "fr": "Cap",
+      "source_file": "Combate.lua"
+    },
+    "carry": {
+      "en": "Carry (help weaker players)",
+      "fr": "Porter/carry",
+      "source_file": "Slang.lua"
+    },
+    "catalyst": {
+      "en": "Catalyst (convert gear to tier set)",
+      "fr": "Catalyseur",
+      "source_file": "Endgame.lua"
+    },
+    "cc": {
+      "en": "Crowd Control",
+      "fr": "Contrôle de foule",
+      "source_file": "Combate.lua"
+    },
+    "cd": {
+      "en": "Cooldown",
+      "fr": "Temps de recharge",
+      "source_file": "Combate.lua"
+    },
+    "cele": {
+      "en": "Celestial",
+      "fr": "Cele",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "celes": {
+      "en": "Celestials",
+      "fr": "Celes",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "champion": {
+      "en": "Champion (gear track, below Hero)",
+      "fr": "Champion (palier d'équipement)",
+      "source_file": "Endgame.lua"
+    },
+    "chest": {
+      "en": "Chest (end-of-run reward)",
+      "fr": "Coffre (récompense M+)",
+      "source_file": "Endgame.lua"
+    },
+    "chill": {
+      "en": "Chill",
+      "fr": "Détendu",
+      "source_file": "Social.lua"
+    },
+    "clapped": {
+      "en": "Got destroyed/wrecked",
+      "fr": "Détruit/éclaté",
+      "source_file": "Slang.lua"
+    },
+    "cod": {
+      "en": "Cash on delivery",
+      "fr": "Contre remboursement",
+      "source_file": "Comercio.lua"
+    },
+    "combat": {
+      "en": "In combat",
+      "fr": "En combat",
+      "source_file": "Estado.lua"
+    },
+    "conquest": {
+      "en": "Conquest (PvP currency)",
+      "fr": "Conquête (monnaie PvP)",
+      "source_file": "Combate.lua"
+    },
+    "cooking": {
+      "en": "Cooking",
+      "fr": "Cuisine",
+      "source_file": "Profesiones.lua"
+    },
+    "cope": {
+      "en": "Cope",
+      "fr": "Résignation",
+      "source_file": "Social.lua"
+    },
+    "copium": {
+      "en": "Coping with bad outcome",
+      "fr": "Se voiler la face",
+      "source_file": "Slang.lua"
+    },
+    "cr": {
+      "en": "Combat Res",
+      "fr": "Résu combat",
+      "source_file": "Combate.lua"
+    },
+    "crest": {
+      "en": "Crest",
+      "fr": "Blason",
+      "source_file": "Comercio.lua"
+    },
+    "crit": {
+      "en": "Critical Strike",
+      "fr": "Critique",
+      "source_file": "Estadisticas.lua"
+    },
+    "cya": {
+      "en": "See you",
+      "fr": "À plus",
+      "source_file": "Social.lua"
+    },
+    "dc": {
+      "en": "Discord",
+      "fr": "Discord",
+      "source_file": "Social.lua"
+    },
+    "dd": {
+      "en": "Direct Damage",
+      "fr": "Dégâts directs",
+      "source_file": "Social.lua"
+    },
+    "dead": {
+      "en": "Dead",
+      "fr": "Mort",
+      "source_file": "Estado.lua"
+    },
+    "deathknight": {
+      "en": "Death Knight",
+      "fr": "Chevalier de la mort",
+      "source_file": "Clases.lua"
+    },
+    "debuff": {
+      "en": "Debuff",
+      "fr": "Affaiblissement",
+      "source_file": "Combate.lua"
+    },
+    "delve": {
+      "en": "Delve (solo/small-group instance)",
+      "fr": "Gouffre",
+      "source_file": "Endgame.lua"
+    },
+    "delves": {
+      "en": "Delves",
+      "fr": "Gouffres",
+      "source_file": "Endgame.lua"
+    },
+    "demo": {
+      "en": "Demonology",
+      "fr": "Démonologie",
+      "source_file": "Clases.lua"
+    },
+    "demonhunter": {
+      "en": "Demon Hunter",
+      "fr": "Chasseur de démons",
+      "source_file": "Clases.lua"
+    },
+    "depleted": {
+      "en": "Depleted (keystone missed the timer)",
+      "fr": "Épuisée (hors des temps)",
+      "source_file": "Endgame.lua"
+    },
+    "destro": {
+      "en": "Destruction",
+      "fr": "Destruction",
+      "source_file": "Clases.lua"
+    },
+    "dh": {
+      "en": "Demon Hunter",
+      "fr": "Chasseur de démons",
+      "source_file": "Clases.lua"
+    },
+    "diff": {
+      "en": "Skill difference/gap",
+      "fr": "Différence de niveau",
+      "source_file": "Slang.lua"
+    },
+    "disc": {
+      "en": "Discipline",
+      "fr": "Discipline",
+      "source_file": "Clases.lua"
+    },
+    "dispel": {
+      "en": "Dispel",
+      "fr": "Dissiper",
+      "source_file": "Combate.lua"
+    },
+    "dk": {
+      "en": "Death Knight",
+      "fr": "Chevalier de la mort",
+      "source_file": "Clases.lua"
+    },
+    "dodge": {
+      "en": "Dodge",
+      "fr": "Esquive",
+      "source_file": "Estadisticas.lua"
+    },
+    "dot": {
+      "en": "Damage over Time",
+      "fr": "Dégâts sur la durée",
+      "source_file": "Combate.lua"
+    },
+    "dps": {
+      "en": "DPS",
+      "fr": "DPS",
+      "source_file": "Roles.lua"
+    },
+    "druid": {
+      "en": "Druid",
+      "fr": "Druide",
+      "source_file": "Clases.lua"
+    },
+    "dudu": {
+      "en": "Druid",
+      "fr": "Druide",
+      "source_file": "Clases.lua"
+    },
+    "dur": {
+      "en": "Durability",
+      "fr": "Durabilité",
+      "source_file": "Estado.lua"
+    },
+    "dw": {
+      "en": "Don't worry",
+      "fr": "T'inquiète",
+      "source_file": "Slang.lua"
+    },
+    "ec": {
+      "en": "Enchanting",
+      "fr": "Enchantement",
+      "source_file": "Profesiones.lua"
+    },
+    "ele": {
+      "en": "Elemental",
+      "fr": "Élémentaire",
+      "source_file": "Clases.lua"
+    },
+    "enchant": {
+      "en": "Enchanting",
+      "fr": "Enchantement",
+      "source_file": "Profesiones.lua"
+    },
+    "energy": {
+      "en": "Energy",
+      "fr": "Énergie",
+      "source_file": "Estadisticas.lua"
+    },
+    "enh": {
+      "en": "Enhancement",
+      "fr": "Amélioration",
+      "source_file": "Clases.lua"
+    },
+    "enrage": {
+      "en": "Enrage",
+      "fr": "Enrager",
+      "source_file": "Combate.lua"
+    },
+    "exp": {
+      "en": "Experience",
+      "fr": "Expérience",
+      "source_file": "Grupos.lua"
+    },
+    "expertise": {
+      "en": "Expertise",
+      "fr": "Expertise",
+      "source_file": "Estadisticas.lua"
+    },
+    "ez": {
+      "en": "Easy",
+      "fr": "Facile",
+      "source_file": "Slang.lua"
+    },
+    "farm": {
+      "en": "Farming",
+      "fr": "Farmer",
+      "source_file": "Social.lua"
+    },
+    "feral": {
+      "en": "Feral",
+      "fr": "Farouche",
+      "source_file": "Clases.lua"
+    },
+    "ffs": {
+      "en": "For fuck's sake",
+      "fr": "Merde alors",
+      "source_file": "Social.lua"
+    },
+    "fh": {
+      "en": "Full Health",
+      "fr": "Vie pleine",
+      "source_file": "Social.lua"
+    },
+    "fire": {
+      "en": "Fire",
+      "fr": "Feu",
+      "source_file": "Clases.lua"
+    },
+    "fishing": {
+      "en": "Fishing",
+      "fr": "Pêche",
+      "source_file": "Profesiones.lua"
+    },
+    "fm": {
+      "en": "Full Mana",
+      "fr": "Mana plein",
+      "source_file": "Social.lua"
+    },
+    "focus": {
+      "en": "Focus target",
+      "fr": "Focus",
+      "source_file": "Combate.lua"
+    },
+    "fortified": {
+      "en": "Fortified (affix: tougher trash)",
+      "fr": "Fortifié",
+      "source_file": "Endgame.lua"
+    },
+    "fr": {
+      "en": "For real",
+      "fr": "Pour de vrai",
+      "source_file": "Slang.lua"
+    },
+    "fresh": {
+      "en": "New run",
+      "fr": "Neuf",
+      "source_file": "Grupos.lua"
+    },
+    "frost": {
+      "en": "Frost",
+      "fr": "Givre",
+      "source_file": "Clases.lua"
+    },
+    "ftl": {
+      "en": "For the loss",
+      "fr": "La défaite",
+      "source_file": "Social.lua"
+    },
+    "ftw": {
+      "en": "For the win",
+      "fr": "Pour la victoire",
+      "source_file": "Social.lua"
+    },
+    "fury": {
+      "en": "Fury",
+      "fr": "Fureur",
+      "source_file": "Clases.lua"
+    },
+    "fvf": {
+      "en": "Faction vs Faction",
+      "fr": "Faction contre Faction",
+      "source_file": "Social.lua"
+    },
+    "g2g": {
+      "en": "Got to go",
+      "fr": "Je dois y aller",
+      "source_file": "Social.lua"
+    },
+    "gank": {
+      "en": "Kill unsuspecting player",
+      "fr": "Tuer par surprise",
+      "source_file": "Slang.lua"
+    },
+    "gbank": {
+      "en": "Guild Bank",
+      "fr": "Banque de guilde",
+      "source_file": "Hermandad.lua"
+    },
+    "gcd": {
+      "en": "Global Cooldown",
+      "fr": "Temps de recharge global",
+      "source_file": "Combate.lua"
+    },
+    "gdkp": {
+      "en": "GDKP Auction",
+      "fr": "Enchères GDKP",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "gear": {
+      "en": "Gear/Equipment",
+      "fr": "Équipement",
+      "source_file": "Grupos.lua"
+    },
+    "gg": {
+      "en": "Good game",
+      "fr": "Bien joué",
+      "source_file": "Social.lua"
+    },
+    "ggwp": {
+      "en": "Good game, well played",
+      "fr": "Bon jeu, bien joué",
+      "source_file": "Social.lua"
+    },
+    "ghost": {
+      "en": "Ghost",
+      "fr": "Fantôme",
+      "source_file": "Estado.lua"
+    },
+    "gilded": {
+      "en": "Gilded Crest (top upgrade currency)",
+      "fr": "Écusson doré",
+      "source_file": "Endgame.lua"
+    },
+    "ginv": {
+      "en": "Guild invite request (please invite me to the guild)",
+      "fr": "Invitation de guilde demandée",
+      "source_file": "Endgame.lua"
+    },
+    "gj": {
+      "en": "Good job",
+      "fr": "Beau travail",
+      "source_file": "Social.lua"
+    },
+    "gl": {
+      "en": "Good luck",
+      "fr": "Bonne chance",
+      "source_file": "Social.lua"
+    },
+    "glad": {
+      "en": "Gladiator (top PvP title)",
+      "fr": "Gladiateur (titre PvP top)",
+      "source_file": "Slang.lua"
+    },
+    "glhf": {
+      "en": "Good luck, have fun",
+      "fr": "Bonne chance, amuse-toi",
+      "source_file": "Social.lua"
+    },
+    "gm": {
+      "en": "Guild Master",
+      "fr": "Maître de guilde",
+      "source_file": "Hermandad.lua"
+    },
+    "go next": {
+      "en": "Move on, next attempt",
+      "fr": "On passe au suivant",
+      "source_file": "Slang.lua"
+    },
+    "gogo": {
+      "en": "Let's go",
+      "fr": "On y va",
+      "source_file": "Slang.lua"
+    },
+    "gratz": {
+      "en": "Gratz",
+      "fr": "Félicitations",
+      "source_file": "Social.lua"
+    },
+    "grind": {
+      "en": "Grinding",
+      "fr": "Grind",
+      "source_file": "Social.lua"
+    },
+    "group": {
+      "en": "Group",
+      "fr": "Groupe",
+      "source_file": "Grupos.lua"
+    },
+    "gtg": {
+      "en": "Got to go",
+      "fr": "Je dois y aller",
+      "source_file": "Social.lua"
+    },
+    "guardian": {
+      "en": "Guardian",
+      "fr": "Gardien",
+      "source_file": "Clases.lua"
+    },
+    "guild": {
+      "en": "Guild",
+      "fr": "Guilde",
+      "source_file": "Hermandad.lua"
+    },
+    "gz": {
+      "en": "Congratulations",
+      "fr": "Félicitations",
+      "source_file": "Social.lua"
+    },
+    "haste": {
+      "en": "Haste",
+      "fr": "Hâte",
+      "source_file": "Estadisticas.lua"
+    },
+    "havoc": {
+      "en": "Havoc",
+      "fr": "Dévastation",
+      "source_file": "Clases.lua"
+    },
+    "hc": {
+      "en": "Heroic",
+      "fr": "Héroïque",
+      "source_file": "Grupos.lua"
+    },
+    "heal": {
+      "en": "Healer",
+      "fr": "Soigneur",
+      "source_file": "Roles.lua"
+    },
+    "healer": {
+      "en": "Healer",
+      "fr": "Soigneur",
+      "source_file": "Roles.lua"
+    },
+    "healers": {
+      "en": "Healer",
+      "fr": "Soigneur",
+      "source_file": "Roles.lua"
+    },
+    "heals": {
+      "en": "Healer",
+      "fr": "Soigneur",
+      "source_file": "Roles.lua"
+    },
+    "herb": {
+      "en": "Herbalism",
+      "fr": "Herboristerie",
+      "source_file": "Profesiones.lua"
+    },
+    "hero": {
+      "en": "Heroism (Bloodlust)",
+      "fr": "Héroïsme",
+      "source_file": "Slang.lua"
+    },
+    "heroic": {
+      "en": "Heroic (difficulty)",
+      "fr": "Héroïque (difficulté)",
+      "source_file": "Grupos.lua"
+    },
+    "hf": {
+      "en": "Have fun",
+      "fr": "Amuse-toi bien",
+      "source_file": "Social.lua"
+    },
+    "hit": {
+      "en": "Hit Rating",
+      "fr": "Toucher",
+      "source_file": "Estadisticas.lua"
+    },
+    "holy": {
+      "en": "Holy",
+      "fr": "Sacré",
+      "source_file": "Clases.lua"
+    },
+    "honor": {
+      "en": "Honor (PvP currency)",
+      "fr": "Honneur (monnaie PvP)",
+      "source_file": "Combate.lua"
+    },
+    "hot": {
+      "en": "Heal over Time",
+      "fr": "Soin sur la durée",
+      "source_file": "Combate.lua"
+    },
+    "hp": {
+      "en": "Hit Points",
+      "fr": "Points de vie",
+      "source_file": "Social.lua"
+    },
+    "hpala": {
+      "en": "Holy",
+      "fr": "Sacré",
+      "source_file": "Clases.lua"
+    },
+    "hunt": {
+      "en": "Hunter",
+      "fr": "Chasseur",
+      "source_file": "Clases.lua"
+    },
+    "hunt bm": {
+      "en": "Beast Mastery",
+      "fr": "Maîtrise des bêtes",
+      "source_file": "Clases.lua"
+    },
+    "hunter": {
+      "en": "Hunter",
+      "fr": "Chasseur",
+      "source_file": "Clases.lua"
+    },
+    "iamf": {
+      "en": "It's all my fault",
+      "fr": "C'est entièrement ma faute",
+      "source_file": "Social.lua"
+    },
+    "idc": {
+      "en": "I don't care",
+      "fr": "Je m'en fiche",
+      "source_file": "Social.lua"
+    },
+    "idd": {
+      "en": "Indeed",
+      "fr": "En effet",
+      "source_file": "Social.lua"
+    },
+    "idk": {
+      "en": "I don't know",
+      "fr": "Je ne sais pas",
+      "source_file": "Social.lua"
+    },
+    "idm": {
+      "en": "I don't mind",
+      "fr": "Ça ne me dérange pas",
+      "source_file": "Social.lua"
+    },
+    "ilvl": {
+      "en": "Item Level",
+      "fr": "Niveau d'objet",
+      "source_file": "Grupos.lua"
+    },
+    "inc": {
+      "en": "On my way",
+      "fr": "En route",
+      "source_file": "Social.lua"
+    },
+    "insc": {
+      "en": "Inscription",
+      "fr": "Calligraphie",
+      "source_file": "Profesiones.lua"
+    },
+    "int": {
+      "en": "Intellect",
+      "fr": "Intelligence",
+      "source_file": "Estadisticas.lua"
+    },
+    "inv": {
+      "en": "Invite me to the group",
+      "fr": "Invite-moi",
+      "source_file": "Grupos.lua"
+    },
+    "io": {
+      "en": "Raider.IO score",
+      "fr": "Score Raider.IO",
+      "source_file": "Slang.lua"
+    },
+    "jc": {
+      "en": "Jewelcrafting",
+      "fr": "Joaillerie",
+      "source_file": "Profesiones.lua"
+    },
+    "jw": {
+      "en": "Jewelcrafting",
+      "fr": "Joaillerie",
+      "source_file": "Profesiones.lua"
+    },
+    "kek": {
+      "en": "LOL",
+      "fr": "Rire",
+      "source_file": "Social.lua"
+    },
+    "key": {
+      "en": "Mythic+ keystone",
+      "fr": "Clé mythique+",
+      "source_file": "Slang.lua"
+    },
+    "keystone": {
+      "en": "Mythic+ Keystone",
+      "fr": "Pierre angulaire",
+      "source_file": "Endgame.lua"
+    },
+    "kick": {
+      "en": "Interrupt",
+      "fr": "Interrompre",
+      "source_file": "Combate.lua"
+    },
+    "kite": {
+      "en": "Run away while keeping aggro",
+      "fr": "Kiter (fuir en gardant l'aggro)",
+      "source_file": "Slang.lua"
+    },
+    "kk": {
+      "en": "Ok",
+      "fr": "Ok",
+      "source_file": "Social.lua"
+    },
+    "ks": {
+      "en": "Kill Steal",
+      "fr": "Kill Steal",
+      "source_file": "Social.lua"
+    },
+    "ksm": {
+      "en": "Keystone Master (all M+ at +10 in time)",
+      "fr": "Maître des pierres angulaires",
+      "source_file": "Endgame.lua"
+    },
+    "last spot": {
+      "en": "Last spot",
+      "fr": "Dernière place",
+      "source_file": "Grupos.lua"
+    },
+    "leech": {
+      "en": "Leech",
+      "fr": "Ponction",
+      "source_file": "Estadisticas.lua"
+    },
+    "lf": {
+      "en": "Looking for",
+      "fr": "Cherche pour",
+      "source_file": "Grupos.lua"
+    },
+    "lf1m": {
+      "en": "Looking for 1 more",
+      "fr": "Cherche 1 de plus pour",
+      "source_file": "Grupos.lua"
+    },
+    "lf2m": {
+      "en": "Looking for 2 more",
+      "fr": "Cherche 2 de plus pour",
+      "source_file": "Grupos.lua"
+    },
+    "lf3m": {
+      "en": "Looking for 3 more",
+      "fr": "Cherche 3 de plus pour",
+      "source_file": "Grupos.lua"
+    },
+    "lfg": {
+      "en": "Looking for group",
+      "fr": "Cherche groupe pour",
+      "source_file": "Grupos.lua"
+    },
+    "lfm": {
+      "en": "Looking for more",
+      "fr": "Cherche plus pour",
+      "source_file": "Grupos.lua"
+    },
+    "lfr": {
+      "en": "LFR/Raid Finder",
+      "fr": "Raid Finder",
+      "source_file": "Grupos.lua"
+    },
+    "link": {
+      "en": "Link item/achievement",
+      "fr": "Lien",
+      "source_file": "Grupos.lua"
+    },
+    "lock": {
+      "en": "Warlock",
+      "fr": "Démoniste",
+      "source_file": "Clases.lua"
+    },
+    "logs": {
+      "en": "Warcraft Logs (combat logs)",
+      "fr": "Logs (Warcraft Logs)",
+      "source_file": "Estadisticas.lua"
+    },
+    "lol": {
+      "en": "Laughing out loud",
+      "fr": "Rire",
+      "source_file": "Social.lua"
+    },
+    "lom": {
+      "en": "Low on Mana",
+      "fr": "Peu de mana",
+      "source_file": "Social.lua"
+    },
+    "los": {
+      "en": "Line of Sight",
+      "fr": "Ligne de vue",
+      "source_file": "Combate.lua"
+    },
+    "low hp": {
+      "en": "Low health",
+      "fr": "Vie basse",
+      "source_file": "Estado.lua"
+    },
+    "low mp": {
+      "en": "Low mana",
+      "fr": "Peu de mana",
+      "source_file": "Estado.lua"
+    },
+    "lust": {
+      "en": "Bloodlust/Heroism",
+      "fr": "Furie sanguinaire",
+      "source_file": "Slang.lua"
+    },
+    "lvl": {
+      "en": "Level",
+      "fr": "Niveau",
+      "source_file": "Grupos.lua"
+    },
+    "lw": {
+      "en": "Leatherworking",
+      "fr": "Travail du cuir",
+      "source_file": "Profesiones.lua"
+    },
+    "m+": {
+      "en": "Mythic+ (timed keystone dungeon)",
+      "fr": "Mythique+",
+      "source_file": "Endgame.lua"
+    },
+    "mage": {
+      "en": "Mage",
+      "fr": "Mage",
+      "source_file": "Clases.lua"
+    },
+    "mana": {
+      "en": "Mana",
+      "fr": "Mana",
+      "source_file": "Estadisticas.lua"
+    },
+    "manaforge": {
+      "en": "Manaforge Omega (current raid)",
+      "fr": "Forge de mana Oméga",
+      "source_file": "Endgame.lua"
+    },
+    "mastery": {
+      "en": "Mastery",
+      "fr": "Maîtrise",
+      "source_file": "Estadisticas.lua"
+    },
+    "mats": {
+      "en": "Materials",
+      "fr": "Composants",
+      "source_file": "Comercio.lua"
+    },
+    "mb": {
+      "en": "My bad",
+      "fr": "Désolé",
+      "source_file": "Social.lua"
+    },
+    "mdps": {
+      "en": "Melee DPS",
+      "fr": "DPS corps à corps",
+      "source_file": "Roles.lua"
+    },
+    "meeting stone": {
+      "en": "Meeting stone",
+      "fr": "Pierre de rendez-vous",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "melee": {
+      "en": "Melee",
+      "fr": "Corps à corps",
+      "source_file": "Roles.lua"
+    },
+    "meta": {
+      "en": "Most Effective Tactic",
+      "fr": "Méta",
+      "source_file": "Social.lua"
+    },
+    "mining": {
+      "en": "Mining",
+      "fr": "Minage",
+      "source_file": "Profesiones.lua"
+    },
+    "ml": {
+      "en": "Master Looter",
+      "fr": "Responsable du butin",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "mm": {
+      "en": "Marksmanship",
+      "fr": "Précision",
+      "source_file": "Clases.lua"
+    },
+    "mmr": {
+      "en": "Matchmaking rating",
+      "fr": "Score de matchmaking",
+      "source_file": "Slang.lua"
+    },
+    "mog": {
+      "en": "Transmog",
+      "fr": "Transmogrification",
+      "source_file": "Social.lua"
+    },
+    "monk": {
+      "en": "Monk",
+      "fr": "Moine",
+      "source_file": "Clases.lua"
+    },
+    "monk bm": {
+      "en": "Brewmaster",
+      "fr": "Maître brasseur",
+      "source_file": "Clases.lua"
+    },
+    "mount": {
+      "en": "Mount",
+      "fr": "Monture",
+      "source_file": "Social.lua"
+    },
+    "ms": {
+      "en": "Main Spec",
+      "fr": "Spé principale",
+      "source_file": "Clases.lua"
+    },
+    "mw": {
+      "en": "Mistweaver",
+      "fr": "Tisse-brume",
+      "source_file": "Clases.lua"
+    },
+    "myth": {
+      "en": "Myth (top gear track)",
+      "fr": "Mythe (palier d'équipement)",
+      "source_file": "Endgame.lua"
+    },
+    "mythic": {
+      "en": "Mythic (difficulty)",
+      "fr": "Mythique (difficulté)",
+      "source_file": "Grupos.lua"
+    },
+    "need": {
+      "en": "Need",
+      "fr": "Besoin",
+      "source_file": "Grupos.lua"
+    },
+    "nerf": {
+      "en": "Nerf",
+      "fr": "Nerf",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "newbie": {
+      "en": "Newbie",
+      "fr": "Débutant",
+      "source_file": "Social.lua"
+    },
+    "ngl": {
+      "en": "Not gonna lie",
+      "fr": "Je vais pas mentir",
+      "source_file": "Slang.lua"
+    },
+    "ninja": {
+      "en": "Ninja Looter",
+      "fr": "Ninja looteur",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "nm": {
+      "en": "Normal",
+      "fr": "Normal",
+      "source_file": "Grupos.lua"
+    },
+    "noob": {
+      "en": "Newbie",
+      "fr": "Débutant",
+      "source_file": "Social.lua"
+    },
+    "normal": {
+      "en": "Normal (difficulty)",
+      "fr": "Normal (difficulté)",
+      "source_file": "Grupos.lua"
+    },
+    "np": {
+      "en": "No problem",
+      "fr": "Pas de souci",
+      "source_file": "Social.lua"
+    },
+    "npc": {
+      "en": "Non-Player Character",
+      "fr": "Personnage non-joueur",
+      "source_file": "Social.lua"
+    },
+    "nt": {
+      "en": "Nice try",
+      "fr": "Bien tenté",
+      "source_file": "Social.lua"
+    },
+    "nvm": {
+      "en": "Never mind",
+      "fr": "Laisse tomber",
+      "source_file": "Social.lua"
+    },
+    "nw": {
+      "en": "No worries",
+      "fr": "Pas de souci",
+      "source_file": "Social.lua"
+    },
+    "o7": {
+      "en": "Salute",
+      "fr": "Salut militaire",
+      "source_file": "Slang.lua"
+    },
+    "ofc": {
+      "en": "Of course",
+      "fr": "Bien sûr",
+      "source_file": "Social.lua"
+    },
+    "officer": {
+      "en": "Officer",
+      "fr": "Officier",
+      "source_file": "Hermandad.lua"
+    },
+    "omg": {
+      "en": "Oh my God",
+      "fr": "Oh mon Dieu",
+      "source_file": "Social.lua"
+    },
+    "omw": {
+      "en": "On my way",
+      "fr": "En route",
+      "source_file": "Social.lua"
+    },
+    "ooc": {
+      "en": "Out of combat",
+      "fr": "Hors combat",
+      "source_file": "Estado.lua"
+    },
+    "oom": {
+      "en": "Out of Mana",
+      "fr": "Plus de mana",
+      "source_file": "Social.lua"
+    },
+    "order": {
+      "en": "Crafting order",
+      "fr": "Commande de fabrication",
+      "source_file": "Profesiones.lua"
+    },
+    "os": {
+      "en": "Off Spec",
+      "fr": "Spé secondaire",
+      "source_file": "Clases.lua"
+    },
+    "outlaw": {
+      "en": "Combat",
+      "fr": "Combat",
+      "source_file": "Clases.lua"
+    },
+    "pala": {
+      "en": "Paladin",
+      "fr": "Paladin",
+      "source_file": "Clases.lua"
+    },
+    "paladin": {
+      "en": "Paladin",
+      "fr": "Paladin",
+      "source_file": "Clases.lua"
+    },
+    "parry": {
+      "en": "Parry",
+      "fr": "Parade",
+      "source_file": "Estadisticas.lua"
+    },
+    "parse": {
+      "en": "Parse (Warcraft Logs percentile)",
+      "fr": "Parse (centile Warcraft Logs)",
+      "source_file": "Estadisticas.lua"
+    },
+    "party": {
+      "en": "Party (5-player group)",
+      "fr": "Groupe (5 joueurs)",
+      "source_file": "Grupos.lua"
+    },
+    "pc": {
+      "en": "Player Character",
+      "fr": "Personnage joueur",
+      "source_file": "Social.lua"
+    },
+    "pet": {
+      "en": "Pet (companion/battle pet)",
+      "fr": "Familier",
+      "source_file": "Social.lua"
+    },
+    "phase": {
+      "en": "Phase (boss stage)",
+      "fr": "Phase (du boss)",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "pls": {
+      "en": "Please",
+      "fr": "S'il te plaît",
+      "source_file": "Social.lua"
+    },
+    "plz": {
+      "en": "Please",
+      "fr": "S'il te plaît",
+      "source_file": "Social.lua"
+    },
+    "pog": {
+      "en": "Amazing",
+      "fr": "Génial",
+      "source_file": "Social.lua"
+    },
+    "port": {
+      "en": "Portal",
+      "fr": "Portail",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "portal": {
+      "en": "Portal",
+      "fr": "Portail",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "pot": {
+      "en": "Potion (combat)",
+      "fr": "Potion",
+      "source_file": "Slang.lua"
+    },
+    "ppala": {
+      "en": "Protection",
+      "fr": "Protection",
+      "source_file": "Clases.lua"
+    },
+    "prepot": {
+      "en": "Use potion before pull",
+      "fr": "Potion avant le pull",
+      "source_file": "Slang.lua"
+    },
+    "priest": {
+      "en": "Priest",
+      "fr": "Prêtre",
+      "source_file": "Clases.lua"
+    },
+    "prog": {
+      "en": "Progression (learning boss)",
+      "fr": "Progression (apprentissage)",
+      "source_file": "Slang.lua"
+    },
+    "prot": {
+      "en": "Protection",
+      "fr": "Protection",
+      "source_file": "Clases.lua"
+    },
+    "pst": {
+      "en": "Please send tell",
+      "fr": "Murmurez svp",
+      "source_file": "Social.lua"
+    },
+    "pug": {
+      "en": "Pick-Up Group (random)",
+      "fr": "Groupe aléatoire",
+      "source_file": "Slang.lua"
+    },
+    "pull": {
+      "en": "Pull (start the fight)",
+      "fr": "Pull (lancer le combat)",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "pumping": {
+      "en": "Doing huge damage",
+      "fr": "Énorme DPS",
+      "source_file": "Slang.lua"
+    },
+    "purge": {
+      "en": "Purge (remove buffs)",
+      "fr": "Purger (dissiper les buffs)",
+      "source_file": "Combate.lua"
+    },
+    "pve": {
+      "en": "Player vs Environment",
+      "fr": "Joueur contre Environnement",
+      "source_file": "Social.lua"
+    },
+    "pvp": {
+      "en": "Player vs Player",
+      "fr": "Joueur contre Joueur",
+      "source_file": "Social.lua"
+    },
+    "rage": {
+      "en": "Rage",
+      "fr": "Rage",
+      "source_file": "Estadisticas.lua"
+    },
+    "raid": {
+      "en": "Raid",
+      "fr": "Raid",
+      "source_file": "Grupos.lua"
+    },
+    "ranged": {
+      "en": "Ranged",
+      "fr": "À distance",
+      "source_file": "Roles.lua"
+    },
+    "rated": {
+      "en": "Rated (ranked PvP)",
+      "fr": "Cotée",
+      "source_file": "Combate.lua"
+    },
+    "rbg": {
+      "en": "Rated BG",
+      "fr": "CdB coté",
+      "source_file": "Combate.lua"
+    },
+    "rdps": {
+      "en": "Ranged DPS",
+      "fr": "DPS à distance",
+      "source_file": "Roles.lua"
+    },
+    "rdy": {
+      "en": "Ready",
+      "fr": "Prêt",
+      "source_file": "Slang.lua"
+    },
+    "recraft": {
+      "en": "Recraft",
+      "fr": "Refaçonnage",
+      "source_file": "Profesiones.lua"
+    },
+    "recruit": {
+      "en": "Recruiting",
+      "fr": "Recrutement",
+      "source_file": "Hermandad.lua"
+    },
+    "renown": {
+      "en": "Renown (faction reputation track)",
+      "fr": "Renommée",
+      "source_file": "Endgame.lua"
+    },
+    "repop": {
+      "en": "Release spirit",
+      "fr": "Libérer l'esprit",
+      "source_file": "Estado.lua"
+    },
+    "repp": {
+      "en": "Repair",
+      "fr": "Réparer",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "req": {
+      "en": "Requirement",
+      "fr": "Condition",
+      "source_file": "Grupos.lua"
+    },
+    "res": {
+      "en": "Resurrection",
+      "fr": "Résurrection",
+      "source_file": "Estado.lua"
+    },
+    "resilience": {
+      "en": "Resilience",
+      "fr": "Résilience",
+      "source_file": "Estadisticas.lua"
+    },
+    "ress": {
+      "en": "Resurrection",
+      "fr": "Résurrection",
+      "source_file": "Estado.lua"
+    },
+    "resto": {
+      "en": "Restoration",
+      "fr": "Restauration",
+      "source_file": "Clases.lua"
+    },
+    "ret": {
+      "en": "Retribution",
+      "fr": "Vindicte",
+      "source_file": "Clases.lua"
+    },
+    "retry": {
+      "en": "Retribution",
+      "fr": "Vindicte",
+      "source_file": "Clases.lua"
+    },
+    "rez": {
+      "en": "Resurrect",
+      "fr": "Résurrection",
+      "source_file": "Slang.lua"
+    },
+    "rezz": {
+      "en": "Resurrection",
+      "fr": "Résurrection",
+      "source_file": "Estado.lua"
+    },
+    "rf": {
+      "en": "LFR/Raid Finder",
+      "fr": "Raid Finder",
+      "source_file": "Grupos.lua"
+    },
+    "rfc": {
+      "en": "Galleon",
+      "fr": "Galleon",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "rio": {
+      "en": "Raider.IO score (M+ rating)",
+      "fr": "Score Raider.IO",
+      "source_file": "Endgame.lua"
+    },
+    "rng": {
+      "en": "Random number generator",
+      "fr": "Générateur aléatoire",
+      "source_file": "Social.lua"
+    },
+    "rogue": {
+      "en": "Rogue",
+      "fr": "Voleur",
+      "source_file": "Clases.lua"
+    },
+    "runed": {
+      "en": "Runed Crest (upgrade currency)",
+      "fr": "Écusson runique",
+      "source_file": "Endgame.lua"
+    },
+    "sec": {
+      "en": "One second",
+      "fr": "Une seconde",
+      "source_file": "Slang.lua"
+    },
+    "shadow": {
+      "en": "Shadow",
+      "fr": "Ombre",
+      "source_file": "Clases.lua"
+    },
+    "shaman": {
+      "en": "Shaman",
+      "fr": "Chaman",
+      "source_file": "Clases.lua"
+    },
+    "simc": {
+      "en": "SimulationCraft (DPS simulator)",
+      "fr": "SimulationCraft (simulateur de DPS)",
+      "source_file": "Estadisticas.lua"
+    },
+    "skinning": {
+      "en": "Skinning",
+      "fr": "Dépeçage",
+      "source_file": "Profesiones.lua"
+    },
+    "skip": {
+      "en": "Skip trash packs",
+      "fr": "Passer les packs",
+      "source_file": "Slang.lua"
+    },
+    "smh": {
+      "en": "Shaking my head",
+      "fr": "Je secoue la tête",
+      "source_file": "Slang.lua"
+    },
+    "soak": {
+      "en": "Stand in to absorb mechanic",
+      "fr": "Absorber la mécanique",
+      "source_file": "Slang.lua"
+    },
+    "sold": {
+      "en": "Sold",
+      "fr": "Vendu",
+      "source_file": "Comercio.lua"
+    },
+    "sorry": {
+      "en": "Sorry",
+      "fr": "Désolé",
+      "source_file": "Social.lua"
+    },
+    "soulstone": {
+      "en": "Soulstone (warlock battle res)",
+      "fr": "Pierre d'âme",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "soz": {
+      "en": "Sorry",
+      "fr": "Désolé",
+      "source_file": "Slang.lua"
+    },
+    "spark": {
+      "en": "Spark (crafting reagent, weekly)",
+      "fr": "Étincelle",
+      "source_file": "Endgame.lua"
+    },
+    "speed": {
+      "en": "Speed",
+      "fr": "Vitesse",
+      "source_file": "Estadisticas.lua"
+    },
+    "spirit": {
+      "en": "Spirit",
+      "fr": "Esprit",
+      "source_file": "Estadisticas.lua"
+    },
+    "spread": {
+      "en": "Spread",
+      "fr": "S'écarter",
+      "source_file": "Combate.lua"
+    },
+    "sry": {
+      "en": "Sorry",
+      "fr": "Désolé",
+      "source_file": "Slang.lua"
+    },
+    "ss": {
+      "en": "Soulstone (warlock battle res)",
+      "fr": "Pierre d'âme",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "stack": {
+      "en": "Stack",
+      "fr": "S'empiler",
+      "source_file": "Combate.lua"
+    },
+    "stam": {
+      "en": "Stamina",
+      "fr": "Endurance",
+      "source_file": "Estadisticas.lua"
+    },
+    "str": {
+      "en": "Strength",
+      "fr": "Force",
+      "source_file": "Estadisticas.lua"
+    },
+    "stun": {
+      "en": "Stun",
+      "fr": "Étourdissement",
+      "source_file": "Combate.lua"
+    },
+    "sub": {
+      "en": "Subtlety",
+      "fr": "Finesse",
+      "source_file": "Clases.lua"
+    },
+    "summ": {
+      "en": "Summon",
+      "fr": "Invoquer",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "summon": {
+      "en": "Summon",
+      "fr": "Invoquer",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "sus": {
+      "en": "Suspicious",
+      "fr": "Suspect",
+      "source_file": "Social.lua"
+    },
+    "sv": {
+      "en": "Survival",
+      "fr": "Survie",
+      "source_file": "Clases.lua"
+    },
+    "sweaty": {
+      "en": "Tryhard/overly competitive",
+      "fr": "Tryhard/trop compétitif",
+      "source_file": "Slang.lua"
+    },
+    "tailor": {
+      "en": "Tailoring",
+      "fr": "Couture",
+      "source_file": "Profesiones.lua"
+    },
+    "tank": {
+      "en": "Tank",
+      "fr": "Tank",
+      "source_file": "Roles.lua"
+    },
+    "tanks": {
+      "en": "Tank",
+      "fr": "Tank",
+      "source_file": "Roles.lua"
+    },
+    "throw": {
+      "en": "Throwing",
+      "fr": "Lancer",
+      "source_file": "Combate.lua"
+    },
+    "thx": {
+      "en": "Thanks",
+      "fr": "Merci",
+      "source_file": "Social.lua"
+    },
+    "timed": {
+      "en": "Timed (keystone beat the timer)",
+      "fr": "Dans les temps",
+      "source_file": "Endgame.lua"
+    },
+    "touch grass": {
+      "en": "Go outside, take a break",
+      "fr": "Va prendre l'air",
+      "source_file": "Slang.lua"
+    },
+    "toxic": {
+      "en": "Toxic",
+      "fr": "Toxique",
+      "source_file": "Social.lua"
+    },
+    "toy": {
+      "en": "Toy",
+      "fr": "Jouet",
+      "source_file": "Social.lua"
+    },
+    "transmog": {
+      "en": "Transmog",
+      "fr": "Transmogrification",
+      "source_file": "Social.lua"
+    },
+    "trap": {
+      "en": "Trap",
+      "fr": "Piège",
+      "source_file": "Social.lua"
+    },
+    "trash": {
+      "en": "Trash mobs",
+      "fr": "Monstres",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "ttyl": {
+      "en": "Talk to you later",
+      "fr": "À plus tard",
+      "source_file": "Social.lua"
+    },
+    "ty": {
+      "en": "Thank you",
+      "fr": "Merci",
+      "source_file": "Social.lua"
+    },
+    "tyrannical": {
+      "en": "Tyrannical (affix: tougher bosses)",
+      "fr": "Tyrannique",
+      "source_file": "Endgame.lua"
+    },
+    "u2": {
+      "en": "You too",
+      "fr": "Toi aussi",
+      "source_file": "Social.lua"
+    },
+    "undermine": {
+      "en": "Undermine (goblin city zone, 11.1)",
+      "fr": "Undermine",
+      "source_file": "Endgame.lua"
+    },
+    "unholy": {
+      "en": "Unholy",
+      "fr": "Impie",
+      "source_file": "Clases.lua"
+    },
+    "upgrade": {
+      "en": "Upgrade (raise item level)",
+      "fr": "Amélioration (niveau d'objet)",
+      "source_file": "Endgame.lua"
+    },
+    "uw": {
+      "en": "You're welcome",
+      "fr": "De rien",
+      "source_file": "Social.lua"
+    },
+    "vault": {
+      "en": "Great Vault (weekly chest)",
+      "fr": "Grande Chambre (coffre hebdo)",
+      "source_file": "Slang.lua"
+    },
+    "vengeance": {
+      "en": "Vengeance",
+      "fr": "Vengeance",
+      "source_file": "Clases.lua"
+    },
+    "vers": {
+      "en": "Versatility",
+      "fr": "Versatilité",
+      "source_file": "Estadisticas.lua"
+    },
+    "w2w": {
+      "en": "Wall-to-wall pull (everything)",
+      "fr": "Pull massif (tout)",
+      "source_file": "Slang.lua"
+    },
+    "w8": {
+      "en": "Wait",
+      "fr": "Attends",
+      "source_file": "Social.lua"
+    },
+    "warband": {
+      "en": "Warband (account-wide roster/bank)",
+      "fr": "Bataillon",
+      "source_file": "Endgame.lua"
+    },
+    "warlock": {
+      "en": "Warlock",
+      "fr": "Démoniste",
+      "source_file": "Clases.lua"
+    },
+    "warr": {
+      "en": "Warrior",
+      "fr": "Guerrier",
+      "source_file": "Clases.lua"
+    },
+    "warrior": {
+      "en": "Warrior",
+      "fr": "Guerrier",
+      "source_file": "Clases.lua"
+    },
+    "wb": {
+      "en": "Welcome back",
+      "fr": "Bon retour",
+      "source_file": "Social.lua"
+    },
+    "wipe": {
+      "en": "Everyone died, restart",
+      "fr": "Tout le monde mort, on recommence",
+      "source_file": "Slang.lua"
+    },
+    "wiped": {
+      "en": "Wiped",
+      "fr": "Wipe subi",
+      "source_file": "Mazz_Raid.lua"
+    },
+    "wp": {
+      "en": "Well played",
+      "fr": "Bien joué",
+      "source_file": "Social.lua"
+    },
+    "wsg": {
+      "en": "Warsong Gulch",
+      "fr": "Goulet des Chanteguerre",
+      "source_file": "Combate.lua"
+    },
+    "wtb": {
+      "en": "Want to buy",
+      "fr": "Achète",
+      "source_file": "Comercio.lua"
+    },
+    "wts": {
+      "en": "Want to sell",
+      "fr": "Vends",
+      "source_file": "Comercio.lua"
+    },
+    "wtt": {
+      "en": "Want to trade",
+      "fr": "Échange",
+      "source_file": "Comercio.lua"
+    },
+    "ww": {
+      "en": "Windwalker",
+      "fr": "Marche-vent",
+      "source_file": "Clases.lua"
+    },
+    "xmog": {
+      "en": "Transmog",
+      "fr": "Transmogrification",
+      "source_file": "Social.lua"
+    },
+    "xp": {
+      "en": "Experience",
+      "fr": "Expérience",
+      "source_file": "Grupos.lua"
+    },
+    "yw": {
+      "en": "You're welcome",
+      "fr": "De rien",
+      "source_file": "Slang.lua"
+    }
+  }
+}
