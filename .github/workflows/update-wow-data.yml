@@ -26,6 +26,9 @@ jobs:
       - name: Build community WoW glossary
         run: python scripts/build_external_glossary.py
 
+      - name: Build Blizzard translation memory
+        run: python scripts/build_blizzard_memory.py
+
       - name: Build WoW data pack
         env:
           BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
