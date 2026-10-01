@@ -1,5 +1,43 @@
 {
-  "exact": {},
-  "jargon": {},
-  "protected_names": []
+  "exact": {
+    "Rogue": "Voleur",
+    "Rogues": "Voleurs",
+    "Demon Hunter": "Chasseur de démons",
+    "Demon Hunters": "Chasseurs de démons",
+    "Death Knight": "Chevalier de la mort",
+    "Death Knights": "Chevaliers de la mort",
+    "Hunter": "Chasseur",
+    "Hunters": "Chasseurs",
+    "Druid": "Druide",
+    "Druids": "Druides",
+    "single target": "monocible",
+    "single-target": "monocible",
+    "priority damage": "dégâts prio",
+    "priority target": "prio target",
+    "crafting order": "commande de craft"
+  },
+  "jargon": {
+    "BiS": "BiS",
+    "AoE": "AoE",
+    "DoT": "DoT",
+    "HoT": "HoT",
+    "proc": "proc",
+    "pull": "pull",
+    "kick": "kick",
+    "funnel": "funnel",
+    "uptime": "uptime",
+    "Mythic+": "Mythic+"
+  },
+  "protected_names": [
+    "World of Warcraft",
+    "WoW",
+    "Wowhead",
+    "Blizzard Entertainment",
+    "Battle.net",
+    "Tips Out",
+    "Warcraft Logs",
+    "Raider.IO",
+    "SimulationCraft",
+    "Raidbots"
+  ]
 }
