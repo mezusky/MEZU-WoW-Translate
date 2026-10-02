@@ -169,12 +169,28 @@ for en, fr in (community.get("exact", {}) or {}).items():
 # Manual MEZU player-language rules always win over every automatic source.
 exact.update(manual.get("exact", {}))
 
+# Keep the official Blizzard prose memory as a distinct layer too.  The browser
+# extension uses this for sentence-level exact matching and conservative
+# source-aware patterns; entity names are intentionally excluded from it.
+phrase_memory = {}
+for en, fr in (blizzard_memory.get("exact", {}) or {}).items():
+    if not isinstance(en, str) or not isinstance(fr, str):
+        continue
+    en = " ".join(en.split()).strip()
+    fr = " ".join(fr.split()).strip()
+    if not en or not fr or en.casefold() == fr.casefold():
+        continue
+    if len(en) < 12 or len(en) > 320 or len(fr) < 10 or len(fr) > 420:
+        continue
+    phrase_memory[en] = fr
+
 stable = {
     "schema": 1,
     "entities": entities,
     "exact": exact,
     "jargon": manual.get("jargon", {}),
     "protected_names": manual.get("protected_names", []),
+    "phrase_memory": phrase_memory,
     "community_meta": {
         "source": community.get("source"),
         "license": community.get("license"),
@@ -221,6 +237,7 @@ manifest_path.write_text(
         "community_exact_count": len(community.get("exact", {}) or {}),
         "community_term_count": len(community.get("terms", {}) or {}),
         "blizzard_memory_pair_count": len(blizzard_memory.get("exact", {}) or {}),
+        "blizzard_phrase_count": len(phrase_memory),
         "blizzard_memory_article_count": blizzard_memory.get("article_count", 0),
         "datapack_url": "https://raw.githubusercontent.com/mezusky/MEZU-WoW-Translate/main/data/datapack.json"
     }, ensure_ascii=False, indent=2) + "\n",
