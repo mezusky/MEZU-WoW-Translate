@@ -29,6 +29,9 @@ jobs:
       - name: Build Blizzard translation memory
         run: python scripts/build_blizzard_memory.py
 
+      - name: Analyze live Wowhead regression pages
+        run: python scripts/analyze_wowhead_guides.py
+
       - name: Build WoW data pack
         env:
           BLIZZARD_CLIENT_ID: ${{ secrets.BLIZZARD_CLIENT_ID }}
