@@ -34,6 +34,8 @@ required = {
     "priority damage": "dégâts prio",
     "priority burst damage": "burst prio",
     "single target": "monocible",
+    "Debuff-based defensives (Fiery Brand and Frailty) still require targets to be cast.": "Les défensifs basés sur des debuffs (Marque enflammée et Fragilité) nécessitent toujours une cible.",
+    "Vengeance Demon Hunter gearing is much simpler than one might expect.": "L’équipement du Chasseur de démons Vengeance est beaucoup plus simple qu’on pourrait le penser.",
 }
 for en, expected in required.items():
     actual = exact.get(en)
