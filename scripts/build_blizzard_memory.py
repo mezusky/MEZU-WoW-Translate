@@ -215,7 +215,12 @@ def discover_ids():
             except Exception as exc:
                 print("WARN news index", url, exc)
         time.sleep(0.1)
-    return list(ids)[:MAX_ARTICLES]
+    # Deterministic selection: always keep high-value seeds, then newest-looking
+    # numeric article IDs. Set iteration order previously made the 60-article corpus
+    # change randomly on every run, which caused the Data Pack to churn.
+    seeds = sorted(SEED_IDS, key=lambda x: int(x), reverse=True)
+    discovered = sorted((x for x in ids if x not in SEED_IDS), key=lambda x: int(x), reverse=True)
+    return seeds + discovered[:max(0, MAX_ARTICLES - len(seeds))]
 
 
 def main():
