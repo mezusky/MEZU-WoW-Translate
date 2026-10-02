@@ -20,7 +20,11 @@
     "Strong opening burst, allowing for snap aggro.": "Gros burst à l'open, pratique pour prendre l'aggro instantanément.",
     "Consistent damage.": "Dégâts constants.",
     "Excellent solo capabilities.": "Très bon en solo.",
-    "Healing does not work on environmental damage.": "Les soins ne fonctionnent pas sur les dégâts environnementaux."
+    "Healing does not work on environmental damage.": "Les soins ne fonctionnent pas sur les dégâts environnementaux.",
+    "prio damage": "dégâts prio",
+    "prio burst damage": "burst prio",
+    "snap aggro": "aggro instantanée",
+    "opening burst": "burst à l'open"
   },
   "jargon": {
     "BiS": "BiS",
@@ -40,7 +44,15 @@
     "burst": "burst",
     "snap aggro": "aggro instantanée",
     "cooldown": "CD",
-    "cooldowns": "CD"
+    "cooldowns": "CD",
+    "aggro": "aggro",
+    "opener": "opener",
+    "tankbuster": "tankbuster",
+    "tank buster": "tankbuster",
+    "burst window": "fenêtre de burst",
+    "defensive cooldown": "CD défensif",
+    "offensive cooldown": "CD offensif",
+    "cooldown reduction": "réduction de CD"
   },
   "protected_names": [
     "World of Warcraft",
