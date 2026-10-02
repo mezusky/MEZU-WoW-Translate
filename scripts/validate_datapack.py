@@ -18,6 +18,7 @@ warnings = []
 
 exact = pack.get("exact", {}) or {}
 entities = pack.get("entities", {}) or {}
+phrase_memory = pack.get("phrase_memory", {}) or {}
 
 bad_tokens = ("ZXQMEZU", "MEZUXQ", "QXZ", "QZ")
 for en, fr in exact.items():
@@ -46,6 +47,17 @@ if entity_count < 10000:
 exact_count = len(exact)
 if exact_count < 8000:
     errors.append(f"exact dictionary unexpectedly low: {exact_count}")
+
+phrase_count = len(phrase_memory)
+if phrase_count < 3000:
+    errors.append(f"official Blizzard phrase memory unexpectedly low: {phrase_count}")
+for en, fr in phrase_memory.items():
+    if not isinstance(en, str) or not isinstance(fr, str) or not en.strip() or not fr.strip():
+        errors.append("invalid phrase-memory row")
+        break
+    if any(tok in f"{en} {fr}" for tok in bad_tokens):
+        errors.append(f"placeholder leak in phrase memory: {en!r} -> {fr!r}")
+        break
 
 # Catch obvious literal mistranslations observed during development.
 for en, fr in exact.items():
@@ -78,4 +90,4 @@ if errors:
         print("ERROR:", e)
     sys.exit(1)
 
-print(f"OK: {entity_count} entities, {exact_count} exact EN->frFR mappings")
+print(f"OK: {entity_count} entities, {exact_count} exact EN->frFR mappings, {phrase_count} official phrases")
