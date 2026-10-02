@@ -19,6 +19,22 @@
     {
       "id": "restoration-druid-overview",
       "url": "https://www.wowhead.com/guide/classes/druid/restoration/overview-pve-healer"
+    },
+    {
+      "id": "protection-warrior-rotation",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"
+    },
+    {
+      "id": "restoration-shaman-rotation",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/rotation-cooldowns-pve-healer"
+    },
+    {
+      "id": "assassination-rogue-talents",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/abilities-talents-pve-dps"
+    },
+    {
+      "id": "beast-mastery-hunter-stats",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/stat-priority-pve-dps"
     }
   ]
 }
