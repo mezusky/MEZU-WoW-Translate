@@ -16,6 +16,30 @@
       "blocks": [],
       "stats": {},
       "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "frost-mage-overview",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/overview-pve-dps",
+      "ok": false,
+      "blocks": [],
+      "stats": {},
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "holy-priest-overview",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/overview-pve-healer",
+      "ok": false,
+      "blocks": [],
+      "stats": {},
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "restoration-druid-overview",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/overview-pve-healer",
+      "ok": false,
+      "blocks": [],
+      "stats": {},
+      "error": "HTTP Error 403: Forbidden"
     }
   ]
 }
