@@ -40,6 +40,38 @@
       "blocks": [],
       "stats": {},
       "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "protection-warrior-rotation",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "ok": false,
+      "blocks": [],
+      "stats": {},
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "restoration-shaman-rotation",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/rotation-cooldowns-pve-healer",
+      "ok": false,
+      "blocks": [],
+      "stats": {},
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "assassination-rogue-talents",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/abilities-talents-pve-dps",
+      "ok": false,
+      "blocks": [],
+      "stats": {},
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "beast-mastery-hunter-stats",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/stat-priority-pve-dps",
+      "ok": false,
+      "blocks": [],
+      "stats": {},
+      "error": "HTTP Error 403: Forbidden"
     }
   ]
 }
