@@ -1,0 +1,21 @@
+{
+  "schema": 1,
+  "pages": [
+    {
+      "id": "vengeance-dh-overview",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/overview-pve-tank",
+      "ok": false,
+      "blocks": [],
+      "stats": {},
+      "error": "HTTP Error 403: Forbidden"
+    },
+    {
+      "id": "protection-paladin-overview",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/overview-pve-tank",
+      "ok": false,
+      "blocks": [],
+      "stats": {},
+      "error": "HTTP Error 403: Forbidden"
+    }
+  ]
+}
