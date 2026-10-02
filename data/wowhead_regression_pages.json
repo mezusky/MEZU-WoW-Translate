@@ -7,6 +7,18 @@
     {
       "id": "protection-paladin-overview",
       "url": "https://www.wowhead.com/guide/classes/paladin/protection/overview-pve-tank"
+    },
+    {
+      "id": "frost-mage-overview",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/overview-pve-dps"
+    },
+    {
+      "id": "holy-priest-overview",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/overview-pve-healer"
+    },
+    {
+      "id": "restoration-druid-overview",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/overview-pve-healer"
     }
   ]
 }
