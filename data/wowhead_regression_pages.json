@@ -1,52 +1,19 @@
 {
   "pages": [
-    {
-      "id": "vengeance-dh-overview",
-      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/overview-pve-tank"
-    },
-    {
-      "id": "protection-paladin-overview",
-      "url": "https://www.wowhead.com/guide/classes/paladin/protection/overview-pve-tank"
-    },
-    {
-      "id": "frost-mage-overview",
-      "url": "https://www.wowhead.com/guide/classes/mage/frost/overview-pve-dps"
-    },
-    {
-      "id": "holy-priest-overview",
-      "url": "https://www.wowhead.com/guide/classes/priest/holy/overview-pve-healer"
-    },
-    {
-      "id": "restoration-druid-overview",
-      "url": "https://www.wowhead.com/guide/classes/druid/restoration/overview-pve-healer"
-    },
-    {
-      "id": "protection-warrior-rotation",
-      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"
-    },
-    {
-      "id": "restoration-shaman-rotation",
-      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/rotation-cooldowns-pve-healer"
-    },
-    {
-      "id": "assassination-rogue-talents",
-      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/abilities-talents-pve-dps"
-    },
-    {
-      "id": "beast-mastery-hunter-stats",
-      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/stat-priority-pve-dps"
-    },
-    {
-      "id": "destruction-warlock-rotation",
-      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/rotation-cooldowns-pve-dps"
-    },
-    {
-      "id": "windwalker-monk-gear",
-      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/bis-gear-pve-dps"
-    },
-    {
-      "id": "blood-death-knight-mythic-plus",
-      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/mythic-plus-tips-pve-tank"
-    }
+    {"id":"vengeance-dh-overview","url":"https://www.wowhead.com/guide/classes/demon-hunter/vengeance/overview-pve-tank"},
+    {"id":"protection-paladin-overview","url":"https://www.wowhead.com/guide/classes/paladin/protection/overview-pve-tank"},
+    {"id":"frost-mage-overview","url":"https://www.wowhead.com/guide/classes/mage/frost/overview-pve-dps"},
+    {"id":"holy-priest-overview","url":"https://www.wowhead.com/guide/classes/priest/holy/overview-pve-healer"},
+    {"id":"restoration-druid-overview","url":"https://www.wowhead.com/guide/classes/druid/restoration/overview-pve-healer"},
+    {"id":"protection-warrior-rotation","url":"https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"},
+    {"id":"restoration-shaman-rotation","url":"https://www.wowhead.com/guide/classes/shaman/restoration/rotation-cooldowns-pve-healer"},
+    {"id":"assassination-rogue-talents","url":"https://www.wowhead.com/guide/classes/rogue/assassination/abilities-talents-pve-dps"},
+    {"id":"beast-mastery-hunter-stats","url":"https://www.wowhead.com/guide/classes/hunter/beast-mastery/stat-priority-pve-dps"},
+    {"id":"destruction-warlock-rotation","url":"https://www.wowhead.com/guide/classes/warlock/destruction/rotation-cooldowns-pve-dps"},
+    {"id":"windwalker-monk-gear","url":"https://www.wowhead.com/guide/classes/monk/windwalker/bis-gear-pve-dps"},
+    {"id":"blood-death-knight-mythic-plus","url":"https://www.wowhead.com/guide/classes/death-knight/blood/mythic-plus-tips-pve-tank"},
+    {"id":"feral-druid-rotation","url":"https://www.wowhead.com/guide/classes/druid/feral/rotation-cooldowns-pve-dps"},
+    {"id":"holy-paladin-gear","url":"https://www.wowhead.com/guide/classes/paladin/holy/bis-gear-pve-healer"},
+    {"id":"preservation-evoker-consumables","url":"https://www.wowhead.com/guide/classes/evoker/preservation/enchants-gems-pve-healer"}
   ]
 }
