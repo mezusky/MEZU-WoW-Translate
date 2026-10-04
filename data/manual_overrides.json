@@ -181,7 +181,21 @@
     "mana management": "gestion du mana",
     "movement cooldown": "CD de mobilité",
     "short cooldown": "CD court",
-    "short cooldowns": "CD courts"
+    "short cooldowns": "CD courts",
+    "over-capping": "overcap",
+    "damage over time": "dégâts sur la durée",
+    "damage-over-time": "dégâts sur la durée",
+    "snapshotting": "snapshotting",
+    "snapshot strength": "puissance du snapshot",
+    "Energy pooling": "pooling d’Énergie",
+    "energy pooling": "pooling d’Énergie",
+    "target count": "nombre de cibles",
+    "funneling damage": "dégâts en funnel",
+    "Pandemic": "Pandemic",
+    "pandemic": "Pandemic",
+    "short duration": "courte durée",
+    "short-duration": "courte durée",
+    "resource dumping": "dump de ressources"
   },
   "protected_names": [
     "World of Warcraft",
