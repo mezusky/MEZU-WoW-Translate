@@ -231,7 +231,22 @@
     "breakpoints": "seuils",
     "simming": "sim",
     "Crowd Control": "contrôle de foule",
-    "crowd control": "contrôle de foule"
+    "crowd control": "contrôle de foule",
+    "filler casts": "casts filler",
+    "health percentage": "pourcentage de PV",
+    "incoming damage": "dégâts entrants",
+    "spot healing": "soin ciblé",
+    "cast time": "temps de cast",
+    "mana cost": "coût en mana",
+    "choice node": "nœud de choix",
+    "choice nodes": "nœuds de choix",
+    "capstone talent": "talent final",
+    "capstone area": "fin de l’arbre",
+    "back to back": "à la suite",
+    "healing cooldown": "CD de soin",
+    "healing cooldowns": "CD de soin",
+    "damage window": "fenêtre de dégâts",
+    "damage windows": "fenêtres de dégâts"
   },
   "protected_names": [
     "World of Warcraft",
