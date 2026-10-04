@@ -267,7 +267,15 @@
     "movement segment": "phase de déplacement",
     "movement segments": "phases de déplacement",
     "frontal cleave": "cleave frontal",
-    "channelled AoE": "AoE canalisée"
+    "channelled AoE": "AoE canalisée",
+    "downtime": "temps mort",
+    "cooldown window": "fenêtre de CD",
+    "cooldown windows": "fenêtres de CD",
+    "resource-starved": "à court de ressources",
+    "group cooldown": "CD de groupe",
+    "pre-combat": "pré-combat",
+    "Pre-Combat": "Pré-combat",
+    "seamless casting": "enchaînement fluide des casts"
   },
   "protected_names": [
     "World of Warcraft",
