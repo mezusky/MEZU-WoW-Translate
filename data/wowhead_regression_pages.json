@@ -71,6 +71,10 @@
     {
       "id": "discipline-priest-rotation",
       "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer"
+    },
+    {
+      "id": "fire-mage-rotation",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/rotation-cooldowns-pve-dps"
     }
   ]
 }
