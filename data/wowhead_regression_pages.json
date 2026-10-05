@@ -79,6 +79,14 @@
     {
       "id": "fury-warrior-rotation",
       "url": "https://www.wowhead.com/guide/classes/warrior/fury/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "mistweaver-monk-rotation",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/rotation-cooldowns-pve-healer"
+    },
+    {
+      "id": "unholy-death-knight-rotation",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/rotation-cooldowns-pve-dps"
     }
   ]
 }
