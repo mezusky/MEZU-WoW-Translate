@@ -95,6 +95,18 @@
     {
       "id": "restoration-shaman-overview",
       "url": "https://www.wowhead.com/guide/classes/shaman/restoration/overview-pve-healer"
+    },
+    {
+      "id": "marksmanship-hunter-rotation",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "retribution-paladin-rotation",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "affliction-warlock-rotation",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/rotation-cooldowns-pve-dps"
     }
   ]
 }
