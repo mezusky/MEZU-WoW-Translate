@@ -139,6 +139,14 @@
     {
       "id": "enhancement-shaman-raid",
       "url": "https://www.wowhead.com/ptr-2/guide/classes/shaman/enhancement/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "mistweaver-monk-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "demonology-warlock-gear",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/bis-gear-pve-dps"
     }
   ]
 }
