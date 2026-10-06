@@ -131,6 +131,14 @@
     {
       "id": "frost-death-knight-stats",
       "url": "https://www.wowhead.com/guide/classes/death-knight/frost/stat-priority-pve-dps"
+    },
+    {
+      "id": "subtlety-rogue-overview",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/overview-pve-dps"
+    },
+    {
+      "id": "enhancement-shaman-raid",
+      "url": "https://www.wowhead.com/ptr-2/guide/classes/shaman/enhancement/midnight-season-2-raid-tips"
     }
   ]
 }
