@@ -127,6 +127,10 @@
     {
       "id": "balance-druid-mythic-plus",
       "url": "https://www.wowhead.com/guide/classes/druid/balance/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "frost-death-knight-stats",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/stat-priority-pve-dps"
     }
   ]
 }
