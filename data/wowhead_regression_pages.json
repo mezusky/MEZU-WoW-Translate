@@ -111,6 +111,18 @@
     {
       "id": "brewmaster-monk-talents",
       "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/abilities-talents-pve-tank"
+    },
+    {
+      "id": "augmentation-evoker-rotation",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "arms-warrior-talents",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/abilities-talents-pve-dps"
+    },
+    {
+      "id": "shadow-priest-consumables",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/enchants-gems-pve-dps"
     }
   ]
 }
