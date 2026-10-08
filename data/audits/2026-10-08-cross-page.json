@@ -1,0 +1,20 @@
+{
+  "date": "2026-10-08",
+  "kind": "wowhead-cross-page-audit",
+  "pages": [
+    "discipline-priest-rotation",
+    "assassination-rogue-talents",
+    "preservation-evoker-consumables",
+    "restoration-shaman-rotation",
+    "protection-warrior-rotation"
+  ],
+  "findings": [
+    "Player glossary is already merged in build_datapack.py; manual override priority is reversed.",
+    "Do not treat missing expansion labels or option-switch placeholders in static page extraction as confirmed browser DOM defects.",
+    "Verify item and spell names by ID; do not add sentence-specific overrides."
+  ],
+  "browser_only": [
+    "Translator API output",
+    "interactive talent-switch rendering"
+  ]
+}
