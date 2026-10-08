@@ -135,6 +135,15 @@ if community_path.exists():
         print("WARN community glossary", exc)
         community = {}
 
+player_glossary_path = DATA / "mezu_player_glossary.json"
+player_glossary = {}
+if player_glossary_path.exists():
+    try:
+        player_glossary = json.loads(player_glossary_path.read_text(encoding="utf-8"))
+    except Exception as exc:
+        print("WARN MEZU player glossary", exc)
+        player_glossary = {}
+
 blizzard_memory_path = DATA / "blizzard_translation_memory.json"
 blizzard_memory = {}
 if blizzard_memory_path.exists():
@@ -184,11 +193,14 @@ for en, fr in (blizzard_memory.get("exact", {}) or {}).items():
         continue
     phrase_memory[en] = fr
 
+jargon = dict(manual.get("jargon", {}) or {})
+jargon.update(player_glossary.get("jargon", {}) or {})
+
 stable = {
     "schema": 1,
     "entities": entities,
     "exact": exact,
-    "jargon": manual.get("jargon", {}),
+    "jargon": jargon,
     "protected_names": manual.get("protected_names", []),
     "phrase_memory": phrase_memory,
     "community_meta": {
