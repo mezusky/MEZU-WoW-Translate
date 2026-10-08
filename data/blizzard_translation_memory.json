@@ -317,10 +317,10 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24304161"
     },
     "24304162": {
-      "accepted_pairs": 126,
-      "en_blocks": 119,
+      "accepted_pairs": 128,
+      "en_blocks": 121,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24304162",
-      "fr_blocks": 118,
+      "fr_blocks": 120,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24304162"
     },
     "24307305": {
@@ -1143,6 +1143,7 @@
     "Consecration damage increased by 30%.": "Les dégâts de Consécration ont été augmentés de 30 %.",
     "Consecration is also baseline at level 20, serving as both a tanking and damage tool with high damage and threat on the first four targets it hits and lower damage and threat beyond that.": "Consécration devient également disponible au niveau 20 et sert à la fois d’un outil d’absorption des dégâts et d’attaque. La technique inflige des dégâts accrus et génère une menace élevée pour les quatre premières cibles touchées, puis des dégâts et un niveau de menace moins importants au-delà.",
     "Consortium Consternation": "Consternation du Consortium ;",
+    "Consume Flame healing increased by 20%.": "Les soins prodigués par Consumation de flamme sont augmentés de 20 %.",
     "Consume Flame healing reduced by 30% in PvP combat.": "Les soins de Consumation de la flamme ont été réduits de 30 % en combat JcJ.",
     "Consume Flame no longer double dips from healing increases on the target.": "Consumation de flamme ne s’applique plus deux fois lorsque la cible bénéficie de soins accrus.",
     "Consume/Devour damage increased by 8%. Does not affect PvP combat.": "Les dégâts d’Ingestion et de Dévoration ont été augmentés de 8 %. Ceci ne s’applique pas au combat JcJ.",
@@ -1428,6 +1429,7 @@
     "Developers’ notes: We feel Shadow is lacking in single target damage, so these changes are intended to improve Shadow’s damage against singular targets while remaining neutral in multi-target situations.": "Commentaires de l’équipe de développement : nous estimons que la spécialisation Ombre manque de dégâts en monocible. Ces changements visent donc à améliorer ses dégâts contre cible unique, tout en restant neutres dans les situations multicibles.",
     "Developers’ notes: We feel the defensive kits of Devourer and Havoc are too powerful, so we are reducing some of their passive and active defenses to make them more viable targets for opponents.": "Commentaires de l’équipe de développement : Nous estimons que les capacités défensives des spécialisations Dévoration et Dévastation sont trop puissantes. Nous réduisons donc certaines de leurs défenses passives et actives afin d’en faire des cibles plus viables pour leurs adversaires.",
     "Developers’ notes: We feel too much of Demonology’s damage is focused on Wicked Reaping and Power Siphon, so we’re reducing the power of these effects and increasing overall damage through our game-wide Demonology changes above.": "Commentaires de l’équipe de développement : Nous estimons qu’une part trop importante des dégâts de la spécialisation Démonologie repose sur Récolte pernicieuse et Siphon de puissance. Nous réduisons donc l’efficacité de ces effets tout en augmentant ses dégâts globaux grâce aux ajustements généraux apportés à la spécialisation ci-dessus.",
+    "Developers’ notes: We recently fixed Consume Flame to not double dip with healing increases, which resulted in a fairly significant decrease to Flameshaper's throughput. We're offsetting the bug fix by increasing Consume Flame's healing.": "Commentaires de l’équipe de développement : nous avons récemment mis à jour Consumation de flamme afin que la technique ne s’applique plus deux fois en cas de soins accrus. Ce changement a fortement réduit l’efficacité des sculpte-flammes. Afin d’y remédier, nous avons augmenté les soins prodigués par Consumation de flamme.",
     "Developers’ notes: We recently removed the PvP nerf for Frenzied Regeneration primarily to help Feral Druids, but Balance Druids got a windfall and became a little too powerful with this change.": "Commentaire de l’équipe de développement : nous avons récemment supprimé l’affaiblissement JcJ de Régénération frénétique, principalement pour aider les druides/druidesses Farouche, mais les druides/druidesses Équilibre sont devenus un peu trop puissants avec ce changement.",
     "Developers’ notes: We recently removed the PvP nerf for Frenzied Regeneration primarily to help Feral Druids, but Balance Druids got a windfall and became a little too powerful with this change. We’re pulling back on this buff specifically for Balance Druid only, so that their survivability is more in line with everyone else.": "Commentaire de l’équipe de développement : nous avons récemment supprimé l’affaiblissement JcJ de Régénération frénétique, principalement pour aider les druides/druidesses Farouche, mais les druides/druidesses Équilibre sont devenus un peu trop puissants avec ce changement. Nous avons donc décidé de réduire cette amélioration uniquement pour les druides/druidesses Équilibre, afin que leur capacité de survie soit plus proche de celle des autres.",
     "Developers’ notes: We would like to push for the San’layn hero talent tree to be a more viable option for Unholy Death Knights in PvP.": "Commentaires de l’équipe de développement : Nous souhaitons faire de l’arbre de talents héroïques de San’layn une option plus viable pour les chevaliers de la mort Impie en JcJ.",
@@ -5047,7 +5049,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4658,
+  "pair_count": 4660,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sources": {
@@ -5806,6 +5808,7 @@
     "Consecration damage increased by 30%.": "24296142",
     "Consecration is also baseline at level 20, serving as both a tanking and damage tool with high damage and threat on the first four targets it hits and lower damage and threat beyond that.": "24303313",
     "Consortium Consternation": "24245217",
+    "Consume Flame healing increased by 20%.": "24304162",
     "Consume Flame healing reduced by 30% in PvP combat.": "24296142",
     "Consume Flame no longer double dips from healing increases on the target.": "24304162",
     "Consume/Devour damage increased by 8%. Does not affect PvP combat.": "24296142",
@@ -6091,6 +6094,7 @@
     "Developers’ notes: We feel Shadow is lacking in single target damage, so these changes are intended to improve Shadow’s damage against singular targets while remaining neutral in multi-target situations.": "24296142",
     "Developers’ notes: We feel the defensive kits of Devourer and Havoc are too powerful, so we are reducing some of their passive and active defenses to make them more viable targets for opponents.": "24296142",
     "Developers’ notes: We feel too much of Demonology’s damage is focused on Wicked Reaping and Power Siphon, so we’re reducing the power of these effects and increasing overall damage through our game-wide Demonology changes above.": "24296142",
+    "Developers’ notes: We recently fixed Consume Flame to not double dip with healing increases, which resulted in a fairly significant decrease to Flameshaper's throughput. We're offsetting the bug fix by increasing Consume Flame's healing.": "24304162",
     "Developers’ notes: We recently removed the PvP nerf for Frenzied Regeneration primarily to help Feral Druids, but Balance Druids got a windfall and became a little too powerful with this change.": "24066687",
     "Developers’ notes: We recently removed the PvP nerf for Frenzied Regeneration primarily to help Feral Druids, but Balance Druids got a windfall and became a little too powerful with this change. We’re pulling back on this buff specifically for Balance Druid only, so that their survivability is more in line with everyone else.": "24066687",
     "Developers’ notes: We would like to push for the San’layn hero talent tree to be a more viable option for Unholy Death Knights in PvP.": "24296142",
