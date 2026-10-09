@@ -147,6 +147,14 @@
     {
       "id": "demonology-warlock-gear",
       "url": "https://www.wowhead.com/guide/classes/warlock/demonology/bis-gear-pve-dps"
+    },
+    {
+      "id": "holy-paladin-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "arcane-mage-stats",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/stat-priority-pve-dps"
     }
   ]
 }
