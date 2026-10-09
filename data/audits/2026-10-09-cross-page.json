@@ -1,0 +1,22 @@
+{
+  "date": "2026-10-09",
+  "source_locale": "en_US",
+  "target_locale": "fr_FR",
+  "pages_checked": [
+    "discipline-priest-rotation",
+    "mistweaver-monk-mythic-plus",
+    "protection-warrior-rotation",
+    "holy-paladin-mythic-plus",
+    "restoration-shaman-mythic-plus"
+  ],
+  "confirmed_reusable_patterns": [
+    "talent build(s)",
+    "spot healing",
+    "ramp"
+  ],
+  "open_items": [
+    "jargon manual override precedence",
+    "browser-only rich DOM verification"
+  ],
+  "notes": "Live source audit only; browser Translator API output not reproduced."
+}
