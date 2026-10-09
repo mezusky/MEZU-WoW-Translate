@@ -12,6 +12,10 @@
     "ramps": "ramps",
     "ramping": "ramp",
     "mini-ramp": "mini-ramp",
-    "mini-ramps": "mini-ramps"
+    "mini-ramps": "mini-ramps",
+    "trinket": "bijou",
+    "trinkets": "bijoux",
+    "Trinket": "Bijou",
+    "Trinkets": "Bijoux"
   }
 }
