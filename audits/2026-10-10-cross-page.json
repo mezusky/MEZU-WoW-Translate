@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-10",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "guides": [
+    {
+      "id": "discipline-priest-rotation",
+      "finding": "talent builds and ramping covered by current glossary"
+    },
+    {
+      "id": "protection-warrior-rotation",
+      "finding": "talent builds covered; checked] present in text extraction, browser verification needed"
+    },
+    {
+      "id": "restoration-shaman-rotation",
+      "finding": "spot healing covered; checked] present in text extraction, browser verification needed"
+    },
+    {
+      "id": "mistweaver-monk-mythic-plus",
+      "finding": "talent loadouts covered; heading=false] present in text extraction, browser verification needed"
+    }
+  ],
+  "generatorFinding": "manual jargon is overwritten by player jargon; reverse merge precedence",
+  "browserOnlyVerification": "DOM and Translator API output not validated",
+  "newNovelGlossaryRules": 0
+}
