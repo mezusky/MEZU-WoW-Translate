@@ -8,6 +8,7 @@ on:
     paths:
       - "scripts/**"
       - "data/manual_overrides.json"
+      - "data/mezu_player_glossary.json"
       - ".github/workflows/update-wow-data.yml"
 
 permissions:
