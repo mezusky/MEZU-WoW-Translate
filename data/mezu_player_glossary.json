@@ -20,6 +20,7 @@
     "talent loadout": "build de talents",
     "talent loadouts": "builds de talents",
     "talent build": "build de talents",
-    "talent builds": "builds de talents"
+    "talent builds": "builds de talents",
+    "spot-healing": "soin ciblé"
   }
 }
