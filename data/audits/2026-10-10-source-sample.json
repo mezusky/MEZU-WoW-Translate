@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-10",
+  "kind": "source-only",
+  "candidate_pages": [
+    {
+      "id": "outlaw-rogue-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/mythic-plus-dungeon-tips",
+      "check": "talent loadouts; item names; talent preview markup"
+    },
+    {
+      "id": "frost-death-knight-consumables",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/enchants-gems-pve-dps",
+      "check": "item and enchant ID-based locale mappings"
+    },
+    {
+      "id": "survival-hunter-talents",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/abilities-talents-pve-dps",
+      "check": "spell and talent names across prose and lists"
+    }
+  ],
+  "findings": [
+    "Source extraction omits dynamic expansion names on multiple guides; do not attribute to MEZU without browser verification.",
+    "Manual jargon precedence in build_datapack.py remains uncorrected."
+  ],
+  "browser_validation": "pending",
+  "output_audit": "not_reproduced"
+}
