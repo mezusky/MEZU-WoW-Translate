@@ -8,6 +8,7 @@ or uncovered WoW phrases before relying on screenshots from the user.
 import json, re, urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
+from html_block_extractor import extract_blocks
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -69,12 +70,11 @@ for page in cfg.get("pages", []):
     row = {"id": page["id"], "url": url, "ok": False, "blocks": [], "stats": {}}
     try:
         raw = fetch(url)
-        parser = Parser()
-        parser.feed(raw)
+        parsed_blocks = extract_blocks(raw)
         seen = set()
         blocks = []
-        for b in parser.blocks:
-            text = WS.sub(" ", b["text"]).strip()
+        for tag, value in parsed_blocks:
+            text = WS.sub(" ", value).strip()
             if len(text) < 8 or len(text) > 1200 or text in seen:
                 continue
             seen.add(text)
@@ -83,7 +83,7 @@ for page in cfg.get("pages", []):
             covered = text in exact
             jargon_hits = [k for k in jargon.keys() if isinstance(k, str) and len(k) >= 3 and k.casefold() in text.casefold()]
             blocks.append({
-                "tag": b["tag"],
+                "tag": tag,
                 "text": text,
                 "exact_override": covered,
                 "wow_signal": bool(WOW_SIGNAL.search(text)),
