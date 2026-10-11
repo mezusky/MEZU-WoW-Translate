@@ -45,7 +45,16 @@ class Extractor(HTMLParser):
         if tag in ("main", "article") and self.scope:
             self.scope -= 1
 
+    def close(self):
+        super().close()
+        while self.stack:
+            kind, parts = self.stack.pop()
+            value = re.sub(r"\s+", " ", "".join(parts)).strip()
+            if value:
+                self.blocks.append((kind, value))
+
 def extract_blocks(html, tags=("h1","h2","h3","h4","p","li","td","th"), scoped=False):
     parser = Extractor(tags, scoped)
     parser.feed(html)
+    parser.close()
     return parser.blocks
