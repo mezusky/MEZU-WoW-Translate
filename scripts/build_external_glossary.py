@@ -22,7 +22,7 @@ def fetch(name):
 def clean(v):
     replacements = {
         r'\\\"': '"',
-        r"\\'": "'",
+        r"\'": "'",
         r"\\n": " ",
         r"\\t": " ",
         r"\\\\": "\\",
