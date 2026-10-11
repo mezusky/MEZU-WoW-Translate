@@ -22,6 +22,8 @@
     "talent build": "build de talents",
     "talent builds": "builds de talents",
     "spot-healing": "soin ciblé",
-    "spot healing": "soin ciblé"
+    "spot healing": "soin ciblé",
+    "spread cleave": "cleave sur des cibles dispersées",
+    "spot-heal": "faire du soin ciblé"
   }
 }
