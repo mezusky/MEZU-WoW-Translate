@@ -37,7 +37,7 @@
     "As soon as possible": "Dès que possible",
     "Assassination": "Assassinat",
     "At the moment": "En ce moment",
-    "Attack Power": "Puissance d\\'attaque",
+    "Attack Power": "Puissance d'attaque",
     "Avoidance": "Évitement",
     "Away from Keyboard": "Absent",
     "Back": "De retour",
@@ -495,7 +495,7 @@
     },
     "ap": {
       "en": "Attack Power",
-      "fr": "Puissance d\\'attaque",
+      "fr": "Puissance d'attaque",
       "source_file": "Estadisticas.lua"
     },
     "arcane": {
