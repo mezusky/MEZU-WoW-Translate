@@ -155,6 +155,18 @@
     {
       "id": "arcane-mage-stats",
       "url": "https://www.wowhead.com/guide/classes/mage/arcane/stat-priority-pve-dps"
+    },
+    {
+      "id": "survival-hunter-talents",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/abilities-talents-pve-dps"
+    },
+    {
+      "id": "outlaw-rogue-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "frost-death-knight-consumables",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/enchants-gems-pve-dps"
     }
   ]
 }
