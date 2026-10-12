@@ -92,7 +92,7 @@ for page in cfg.get("pages", []):
                 "wow_signal": bool(WOW_SIGNAL.search(text)),
                 "jargon_hits": jargon_hits[:12]
             })
-        row["blocks"] = blocks
+        row["blocks"] = [{k: v for k, v in b.items() if k != "text"} for b in blocks]
         row["stats"] = {
             "block_count": len(blocks),
             "exact_covered": sum(1 for b in blocks if b["exact_override"]),
