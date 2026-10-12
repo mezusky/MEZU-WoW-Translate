@@ -75,6 +75,9 @@ for page in cfg.get("pages", []):
         blocks = []
         for tag, value in parsed_blocks:
             text = WS.sub(" ", value).strip()
+            # Reader comments and contribution forms are not guide prose.
+            if tag == "h2" and text.casefold() in {"comments", "contribute"}:
+                break
             if len(text) < 8 or len(text) > 1200 or text in seen:
                 continue
             seen.add(text)
