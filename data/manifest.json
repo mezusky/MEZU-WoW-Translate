@@ -1,13 +1,13 @@
 {
   "schema": 1,
-  "version": "b7c17cd5715be1fc9a6f",
-  "generated_at": "2026-10-12T02:41:46.000580+00:00",
+  "version": "6a71893065b7d8e9203f",
+  "generated_at": "2026-10-12T16:42:47.495267+00:00",
   "entity_count": 17415,
-  "exact_count": 17911,
+  "exact_count": 17917,
   "community_exact_count": 352,
   "community_term_count": 385,
-  "blizzard_memory_pair_count": 5022,
-  "blizzard_phrase_count": 4718,
+  "blizzard_memory_pair_count": 5028,
+  "blizzard_phrase_count": 4724,
   "blizzard_memory_article_count": 56,
   "datapack_url": "https://raw.githubusercontent.com/mezusky/MEZU-WoW-Translate/main/data/datapack.json"
 }
