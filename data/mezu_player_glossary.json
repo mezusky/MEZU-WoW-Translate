@@ -25,6 +25,8 @@
     "spot healing": "soin ciblé",
     "target swap": "switch de cible",
     "spread cleave": "cleave sur des cibles dispersées",
-    "spot-heal": "faire du soin ciblé"
+    "spot-heal": "faire du soin ciblé",
+    "Global Cooldown": "GCD",
+    "global cooldown": "GCD"
   }
 }
