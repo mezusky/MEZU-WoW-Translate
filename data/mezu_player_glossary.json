@@ -27,6 +27,9 @@
     "spread cleave": "cleave sur des cibles dispersées",
     "spot-heal": "faire du soin ciblé",
     "Global Cooldown": "GCD",
-    "global cooldown": "GCD"
+    "global cooldown": "GCD",
+    "taunt swap": "switch de tank",
+    "tank swap": "switch de tank",
+    "tank swaps": "switchs de tank"
   }
 }
