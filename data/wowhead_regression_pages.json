@@ -171,6 +171,14 @@
     {
       "id": "frost-death-knight-consumables",
       "url": "https://www.wowhead.com/guide/classes/death-knight/frost/enchants-gems-pve-dps"
+    },
+    {
+      "id": "restoration-druid-stats",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/stat-priority-pve-healer"
+    },
+    {
+      "id": "affliction-warlock-raid",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/midnight-season-2-raid-tips"
     }
   ]
 }
