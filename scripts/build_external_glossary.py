@@ -32,11 +32,13 @@ def clean(v):
     return v.strip()
 
 terms, exact, conflicts = {}, {}, {}
+failed_sources = []
 for filename in FILES:
     try:
         text = fetch(filename)
     except Exception as exc:
         print("WARN", filename, exc)
+        failed_sources.append(filename)
         continue
     for key, body in entry_rx.findall(text):
         fields = {k: clean(v) for k, v in field_rx.findall(body)}
@@ -50,6 +52,10 @@ for filename in FILES:
             exact[en] = fr
         elif exact[en] != fr:
             conflicts[en] = sorted({exact.pop(en), fr})
+
+# Never publish a partial glossary after upstream failures.
+if failed_sources or not terms:
+    raise SystemExit("Community glossary incomplete; keeping last valid version")
 
 payload = {
     "schema": 1,
