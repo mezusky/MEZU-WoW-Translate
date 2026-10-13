@@ -310,10 +310,10 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24304161"
     },
     "24304162": {
-      "accepted_pairs": 128,
-      "en_blocks": 121,
+      "accepted_pairs": 130,
+      "en_blocks": 124,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24304162",
-      "fr_blocks": 120,
+      "fr_blocks": 124,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24304162"
     },
     "24307305": {
@@ -3699,6 +3699,7 @@
     "Reduced the absorb value of Veil of Twilight by 15% on Normal and Heroic difficulties.": "La valeur d’absorption de Voile du crépuscule a été réduite de 15 % en modes normal et héroïque.",
     "Reduced the amount of Broodlings of Ithraz spawned by Rouse the Brood to 10.": "Le nombre de rejetons d’Ithraz invoqués par Éveil de la couvée a été réduit à 10.",
     "Reduced the blood required to open doors throughout the Venomous Abyss.": "La quantité de sang nécessaire pour ouvrir les portes a été réduite dans l’ensemble de l’abîme Venimeux.",
+    "Reduced the cost of all crafted decor from pre-Midnight professions.": "Réduction du coût de tous les éléments de décoration fabriqués grâce aux métiers antérieurs à Midnight.",
     "Reduced the damage of Siphon Blood by 33% on Raid Finder difficulty.": "Réduction de 33 % des dégâts de Siphon sanguin en mode outil Raids.",
     "Reduced the damage of Siphoning Infection by 33% on Raid Finder difficulty.": "Réduction de 33 % des dégâts d’Infection siphonnante en mode outil Raids.",
     "Reduced the damage of Venom Withdrawal by 30%.": "Les dégâts d’En manque de venin ont été réduits de 30 %.",
@@ -5410,6 +5411,7 @@
     "[With realm restarts] Jewelcrafting and Tailoring Profession Knowledge books from the forces of Zul'jarra should now correctly award profession Knowledge. Players who got the books prior to this fix should be given the Knowledge retroactively.": "[Avec le redémarrage des royaumes] Les livres de connaissance de métier de joaillerie et de couture obtenus auprès des forces de Zul’jarra devraient désormais correctement octroyer de la connaissance de métier. La connaissance de métier devrait être accordée rétroactivement aux personnages-joueurs ayant obtenu ces livres avant le correctif.",
     "[With weekly restarts] Boiling Venom on Mythic difficulty is now an Important Aura.": "[Après le redémarrage hebdomadaire] Venin bouillant est désormais considéré comme une aura importante en mode mythique.",
     "[With weekly restarts] Ula'tek's Stone Venom damage reduced by 40% on all difficulties.": "[Après le redémarrage hebdomadaire] Les dégâts de Venin de pierre d’Ula’tek ont été réduits de 40 % dans tous les modes.",
+    "​Developers’ notes: We’re increasing Subtlety’s ability damage to compensate for the changes to Subtlety's Shadow damage modifiers and any occurrences where those modifiers were previously applying their effects more than once.": "Commentaires de l’équipe de développement : nous augmentons les dégâts des techniques de Finesse afin de compenser les changements apportés à ses modificateurs de dégâts d’ombre, ainsi que les cas où leurs effets s’appliquaient auparavant plusieurs fois.",
     "“An Earnest Proposition” - Bracer": "« Une proposition sérieuse » – Brassards ;",
     "“Anthion's Parting Words” - Boots, Legs, Shoulders": "« Les adieux d’Anthion » – Bottes, jambes, épaulières ;",
     "“Awe of She” is no longer stalled by weather effects on the player.": "« Terreur et admiration » n’est désormais plus bloquée par les effets météorologiques affectant les joueuses et joueurs.",
@@ -5424,7 +5426,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 5028,
+  "pair_count": 5030,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sources": {
@@ -8732,6 +8734,7 @@
     "Reduced the absorb value of Veil of Twilight by 15% on Normal and Heroic difficulties.": "24296142",
     "Reduced the amount of Broodlings of Ithraz spawned by Rouse the Brood to 10.": "24296142",
     "Reduced the blood required to open doors throughout the Venomous Abyss.": "24296142",
+    "Reduced the cost of all crafted decor from pre-Midnight professions.": "24304162",
     "Reduced the damage of Siphon Blood by 33% on Raid Finder difficulty.": "24296142",
     "Reduced the damage of Siphoning Infection by 33% on Raid Finder difficulty.": "24296142",
     "Reduced the damage of Venom Withdrawal by 30%.": "24296142",
@@ -10443,6 +10446,7 @@
     "[With realm restarts] Jewelcrafting and Tailoring Profession Knowledge books from the forces of Zul'jarra should now correctly award profession Knowledge. Players who got the books prior to this fix should be given the Knowledge retroactively.": "24296142",
     "[With weekly restarts] Boiling Venom on Mythic difficulty is now an Important Aura.": "24296142",
     "[With weekly restarts] Ula'tek's Stone Venom damage reduced by 40% on all difficulties.": "24296142",
+    "​Developers’ notes: We’re increasing Subtlety’s ability damage to compensate for the changes to Subtlety's Shadow damage modifiers and any occurrences where those modifiers were previously applying their effects more than once.": "24304162",
     "“An Earnest Proposition” - Bracer": "24066687",
     "“Anthion's Parting Words” - Boots, Legs, Shoulders": "24066687",
     "“Awe of She” is no longer stalled by weather effects on the player.": "24296142",
