@@ -15,6 +15,7 @@ def project_locale_pairs(entities, source_language, target_language):
     if source_language == target_language:
         return {}
     candidates = {}
+    incomplete = set()
     for bucket in entities.values():
         for row in bucket.values():
             source = row.get(source_language)
@@ -22,6 +23,7 @@ def project_locale_pairs(entities, source_language, target_language):
             if not isinstance(source, str) or not source.strip():
                 continue
             if not isinstance(target, str) or not target.strip():
+                incomplete.add(source)
                 continue
             candidates.setdefault(source, set()).add(target)
-    return {source: next(iter(targets)) for source, targets in candidates.items() if len(targets) == 1}
+    return {source: next(iter(targets)) for source, targets in candidates.items() if len(targets) == 1 and source not in incomplete}
