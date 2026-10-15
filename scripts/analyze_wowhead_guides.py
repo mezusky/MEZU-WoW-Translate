@@ -59,9 +59,10 @@ def load_json(path):
     return json.loads(path.read_text(encoding="utf-8"))
 
 cfg = load_json(CFG)
-manual = load_json(DATA / "manual_overrides.json")
-exact = manual.get("exact", {}) or {}
-jargon = manual.get("jargon", {}) or {}
+pack = load_json(DATA / "datapack.json")
+exact = pack.get("exact", {}) or {}
+phrase_memory = pack.get("phrase_memory", {}) or {}
+jargon = pack.get("jargon", {}) or {}
 
 report = {"schema": 1, "pages": []}
 
@@ -83,8 +84,8 @@ for page in cfg.get("pages", []):
             seen.add(text)
             if not EN_SIGNAL.search(text) and not WOW_SIGNAL.search(text):
                 continue
-            covered = text in exact
-            jargon_hits = [k for k in jargon.keys() if isinstance(k, str) and len(k) >= 3 and k.casefold() in text.casefold()]
+            covered = text in exact or text in phrase_memory
+            jargon_hits = [k for k in jargon.keys() if isinstance(k, str) and len(k) >= 3 and re.search(r"(?<!\\w)" + re.escape(k) + r"(?!\\w)", text, re.I)]
             blocks.append({
                 "tag": tag,
                 "text": text,
