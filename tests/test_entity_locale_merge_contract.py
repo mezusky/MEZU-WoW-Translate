@@ -19,3 +19,10 @@ def test_ambiguous_incomplete_ids_do_not_leak_into_exact_pairs():
         "3": {"en": "Unique", "fr": "Unique FR"},
     }}
     assert project_locale_pairs(entities, "en", "fr") == {"Unique": "Unique FR"}
+
+def test_collision_guard_applies_across_entity_types_and_locales():
+    entities = {
+        "spell": {"1": {"de": "Echo", "fr": "Écho"}},
+        "item": {"2": {"de": "Echo"}, "3": {"de": "Schild", "fr": "Bouclier"}},
+    }
+    assert project_locale_pairs(entities, "de", "fr") == {"Schild": "Bouclier"}
