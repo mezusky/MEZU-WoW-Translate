@@ -85,7 +85,7 @@ for page in cfg.get("pages", []):
             if not EN_SIGNAL.search(text) and not WOW_SIGNAL.search(text):
                 continue
             covered = text in exact or text in phrase_memory
-            jargon_hits = [k for k in jargon.keys() if isinstance(k, str) and len(k) >= 3 and re.search(r"(?<!\\w)" + re.escape(k) + r"(?!\\w)", text, re.I)]
+            jargon_hits = [k for k in jargon.keys() if isinstance(k, str) and len(k) >= 3 and re.search(r"(?<!\w)" + re.escape(k) + r"(?!\w)", text, re.I)]
             blocks.append({
                 "tag": tag,
                 "text": text,
