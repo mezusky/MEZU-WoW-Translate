@@ -10,3 +10,12 @@ def test_incomplete_locales_keep_canonical_ids():
 def test_same_locale_skips_translation():
     entities = {"spell": {"42": {"en": "Arcane", "fr": "Arcanes"}}}
     assert project_locale_pairs(entities, "en", "en") == {}
+
+
+def test_ambiguous_incomplete_ids_do_not_leak_into_exact_pairs():
+    entities = {"spell": {
+        "1": {"en": "Shared", "fr": "Partagé"},
+        "2": {"en": "Shared"},
+        "3": {"en": "Unique", "fr": "Unique FR"},
+    }}
+    assert project_locale_pairs(entities, "en", "fr") == {"Unique": "Unique FR"}
