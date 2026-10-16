@@ -185,9 +185,27 @@ def sentences(text):
 
 
 def numeric_facts(text):
-    """Extract numeric facts without depending on the source or target locale."""
-    tokens = re.findall(r"(?<!\w)\d+(?:[.,]\d+)*(?:\s*%)?(?!\w)", text)
-    return sorted(re.sub(r"\s+", "", token).replace(",", ".") for token in tokens)
+    """Compare numbers and normalized units across source and target languages."""
+    pattern = (
+        r"(?<!\w)(\d+(?:[.,]\d+)*)"
+        r"(?:\s*(%|milliseconds?|millisecondes?|ms|seconds?|secondes?|"
+        r"secs?\.?|s|minutes?|mins?\.?|min\.?|hours?|heures?|hrs?\.?|hr\.?|h)"
+        r"(?![^\W\d_]))?"
+    )
+    aliases = {
+        "second": "s", "seconds": "s", "seconde": "s", "secondes": "s",
+        "sec": "s", "secs": "s",
+        "millisecond": "ms", "milliseconds": "ms",
+        "milliseconde": "ms", "millisecondes": "ms",
+        "minute": "min", "minutes": "min", "mins": "min",
+        "hour": "h", "hours": "h", "heure": "h", "heures": "h",
+        "hr": "h", "hrs": "h",
+    }
+    facts = []
+    for value, unit in re.findall(pattern, text, flags=re.IGNORECASE):
+        unit = unit.casefold().rstrip(".")
+        facts.append((value.replace(",", "."), aliases.get(unit, unit)))
+    return sorted(facts)
 
 
 def good_pair(en, fr, score):
