@@ -184,6 +184,12 @@ def sentences(text):
     return parts if parts else [text]
 
 
+def numeric_facts(text):
+    """Extract numeric facts without depending on the source or target locale."""
+    tokens = re.findall(r"(?<!\\w)\\d+(?:[.,]\\d+)*(?:\\s*%)?(?!\\w)", text)
+    return sorted(re.sub(r"\\s+", "", token).replace(",", ".") for token in tokens)
+
+
 def good_pair(en, fr, score):
     if score < 4.0:
         return False
@@ -195,6 +201,9 @@ def good_pair(en, fr, score):
         return False
     ratio = min(len(en),len(fr))/max(len(en),len(fr))
     if ratio < 0.34:
+        return False
+    # Exact translation memory must not silently change numeric facts.
+    if numeric_facts(en) != numeric_facts(fr):
         return False
     # Avoid obvious nav/metadata.
     bad = ("cookie","privacy","facebook","twitter","instagram","youtube","copyright")
