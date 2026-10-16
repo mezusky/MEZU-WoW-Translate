@@ -226,6 +226,7 @@ def discover_ids():
 def main():
     memory = {}
     sources = {}
+    ambiguous = set()
     article_stats = {}
     ids = discover_ids()
     print("Discovered", len(ids), "candidate Blizzard article IDs")
@@ -247,20 +248,24 @@ def main():
                     continue
 
                 # Whole-block memory.
-                prev = memory.get(en)
-                if prev is None:
-                    memory[en] = fr
-                    sources[en] = article_id
-                    accepted += 1
-                elif prev != fr:
-                    memory.pop(en, None)
-                    sources.pop(en, None)
+                if en not in ambiguous:
+                    prev = memory.get(en)
+                    if prev is None:
+                        memory[en] = fr
+                        sources[en] = article_id
+                        accepted += 1
+                    elif prev != fr:
+                        memory.pop(en, None)
+                        sources.pop(en, None)
+                        ambiguous.add(en)
 
                 # Sentence memory when structure is one-to-one.
                 es, fs = sentences(en), sentences(fr)
                 if len(es) == len(fs) and 1 <= len(es) <= 8:
                     for e,f in zip(es,fs):
                         if good_pair(e,f,score):
+                            if e in ambiguous:
+                                continue
                             prev = memory.get(e)
                             if prev is None:
                                 memory[e] = f
@@ -269,6 +274,7 @@ def main():
                             elif prev != f:
                                 memory.pop(e, None)
                                 sources.pop(e, None)
+                                ambiguous.add(e)
 
             if accepted:
                 article_stats[article_id] = {
