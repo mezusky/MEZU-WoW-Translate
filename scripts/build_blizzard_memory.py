@@ -186,8 +186,8 @@ def sentences(text):
 
 def numeric_facts(text):
     """Extract numeric facts without depending on the source or target locale."""
-    tokens = re.findall(r"(?<!\\w)\\d+(?:[.,]\\d+)*(?:\\s*%)?(?!\\w)", text)
-    return sorted(re.sub(r"\\s+", "", token).replace(",", ".") for token in tokens)
+    tokens = re.findall(r"(?<!\w)\d+(?:[.,]\d+)*(?:\s*%)?(?!\w)", text)
+    return sorted(re.sub(r"\s+", "", token).replace(",", ".") for token in tokens)
 
 
 def good_pair(en, fr, score):
