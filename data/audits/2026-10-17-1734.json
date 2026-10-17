@@ -1,0 +1,23 @@
+{
+  "date": "2026-10-17",
+  "source": "Wowhead English indexed guide text; direct HTML blocked by JS challenge",
+  "sample": [
+    "destruction-warlock-rotation",
+    "discipline-priest-rotation",
+    "brewmaster-monk-rotation",
+    "frost-mage-consumables"
+  ],
+  "cross_page_patterns": [
+    "numeric thresholds 3+/5+ and ranges 1-29%/30-59%",
+    "time units 8/15/20 seconds",
+    "official spell and enchant IDs must remain localized",
+    "dynamic opener selectors and rich tables need browser-only DOM verification"
+  ],
+  "new_pages_proposed": [
+    "brewmaster-monk-rotation",
+    "frost-mage-consumables"
+  ],
+  "full_translation_audit": false,
+  "chrome_verified": false,
+  "unresolved": "cumulative Blizzard memory merge not integrated"
+}
