@@ -183,6 +183,14 @@
     {
       "id": "discipline-priest-raid",
       "url": "https://www.wowhead.com/guide/classes/priest/discipline/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "brewmaster-monk-rotation",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/rotation-cooldowns-pve-tank"
+    },
+    {
+      "id": "frost-mage-consumables",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/enchants-gems-pve-dps"
     }
   ]
 }
