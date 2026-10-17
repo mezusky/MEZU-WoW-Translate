@@ -1,0 +1,16 @@
+{
+  "date": "2026-10-17",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "pages": [
+    {
+      "id": "guardian-druid-rotation",
+      "finding": "Interactive priority duplicates in indexed text; browser DOM not verified"
+    },
+    {
+      "id": "holy-priest-consumables",
+      "finding": "Official item names localize but surrounding prose remains English on Wowhead /fr/"
+    }
+  ],
+  "status": "source-only; Chrome verification pending"
+}
