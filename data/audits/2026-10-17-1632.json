@@ -1,0 +1,14 @@
+{
+  "date": "2026-10-17",
+  "pages": [
+    "destruction-warlock-rotation",
+    "discipline-priest-rotation",
+    "brewmaster-monk-talents"
+  ],
+  "observations": [
+    "Soul Shards and fragments must remain distinct",
+    "Plus-sign thresholds such as 3+ must be preserved",
+    "Interactive talent selectors require browser DOM verification"
+  ],
+  "html": "blocked; indexed source only"
+}
