@@ -1,4 +1,31 @@
 {
+  "ambiguous": [
+    "Across all classes, movement and defense are central, and every class can double jump, dodge, and guard, making positioning a key part of combat.",
+    "Charge into Aqir Invasions—new zone-wide public events taking place in Eversong or Zul’Aman. For ten minutes each hour, champions will tackle a series of public events across the zone, one after another, before confronting an intense boss fight.",
+    "Curious about Classes in WoW Forever?",
+    "Every class in World of Warcraft: Forever is being revisited with an approach rooted in the original World of Warcraft, keeping the foundation players remember while making thoughtful updates that open up more choice, identity, and room to experiment.",
+    "Every journey through Azeroth begins with a choice about the kind of world you want to step into.",
+    "For ten minutes each hour, champions will tackle a series of public events across the zone, one after another, before confronting an intense boss fight.",
+    "Fresh-picked fashion is ready to take root across Azeroth.",
+    "Gather your allies for a single-boss raid against Kith’ix, with flexible Mythic difficulty. Venture into the Labyrinth of Kindo’jan, a massive, Delve-like gauntlet with nine chambers, a Tier 11 solo challenge, Mythic gear, cosmetics, titles, and more. Push your power to new heights in Season 2 with the mid-season refresh and Keystone Mythic. Begin a new story campaign that returns you to the heart of Quel’Thalas and Zul’Aman for the continuation of the Midnight saga.",
+    "Have a question about what you learned at BlizzCon 2026 after the show reveals?",
+    "Have a question about what you learned at BlizzCon 2026 after the show reveals? Head over to the World of Warcraft forums to share it with us.",
+    "Head over to the World of Warcraft forums to share it with us.",
+    "Host Countdown To Classic sits down with Senior Game Designers Josh “Aggrend” Greenfield and Aidan Moon, Principal Game Designer Kris Zierhut, and special guest and content creator Sodapoppin to explore the strategies, challenges, and choices around Class design philosophy in WoW: Forever.",
+    "New Single-Boss Raid: The Unbinding of Kith’ix",
+    "New Story Campaign: “The Promise of Tomorrow”",
+    "New Story Campaign: “The Return to Dornogal”",
+    "On Mythic difficulty, face Kith’ix with a flexible group of 15–25 players.",
+    "Please note that class abilities and talents may continue to evolve throughout the beta test and are subject to additional changes.",
+    "Pre-Purchase World of Warcraft: Forever Upgrades and Begin Your Next Journey in Azeroth",
+    "Shop the Collection",
+    "The Windshapers are the descendants of the first shen’dorei high elves to receive the wind spirits’ gift of elemental skysight. A new generation of Windshapers is called to Azeroth from their home within Skywall to solve the mystery of what became of their missing elemental mentors and will stop at nothing to see the wind spirits restored and their way of life preserved.",
+    "Watch now for more insight into the BlizzCon 2026 reveals and a look at what’s ahead for modern WoW and WoW Forever.",
+    "When you purchase a 6-Month or 12-Month Special Subscription Offer, you'll receive special bonuses, including several for use in World of Warcraft: Forever, once it launches in November!",
+    "World of Warcraft: Forever Class Deep Dives",
+    "World of Warcraft: Forever Deep Dive Panel Recap",
+    "World of Warcraft: Forever- The Future of Skyborne Visual Updates"
+  ],
   "article_count": 56,
   "articles": {
     "24066687": {
@@ -3974,6 +4001,7 @@
   "pair_count": 3575,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
+  "sourceLanguage": "en-US",
   "sources": {
     "(Alliance) High Order Skyborne": "24302071",
     "(Horde) Windshaper Skyborne": "24302071",
@@ -7550,5 +7578,6 @@
     "“Saving the Best for Last” - Helm, Chest": "24066687",
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "24066687",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "24066687"
-  }
+  },
+  "targetLanguage": "fr-FR"
 }
