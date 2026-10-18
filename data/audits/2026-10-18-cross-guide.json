@@ -1,0 +1,26 @@
+{
+  "date": "2026-10-18",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "checks": [
+    {
+      "id": "warlock-destruction-resource",
+      "pages": [
+        "destruction-warlock-rotation",
+        "destruction-warlock-talents"
+      ],
+      "finding": "Official Soul Shards translation conflicts with four manual jargon entries; distinguish shards from fragments.",
+      "status": "needs-fix"
+    },
+    {
+      "id": "priest-discipline-unresolved-id",
+      "pages": [
+        "discipline-priest-rotation",
+        "discipline-priest-talents"
+      ],
+      "finding": "Spell #1252215 unresolved in source; preserve ID until authoritative mapping.",
+      "status": "source-issue"
+    }
+  ],
+  "domVerified": false
+}
