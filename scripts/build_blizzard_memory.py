@@ -318,6 +318,11 @@ def main():
 
     payload = {
         "schema": 1,
+        # This collector currently pairs the two explicit Blizzard locales.
+        # The merger uses these fields to prevent cross-locale contamination.
+        "sourceLanguage": "en-US",
+        "targetLanguage": "fr-FR",
+        "ambiguous": sorted(ambiguous),
         "source": "Official Blizzard World of Warcraft news",
         "pair_count": len(memory),
         "article_count": len(article_stats),
