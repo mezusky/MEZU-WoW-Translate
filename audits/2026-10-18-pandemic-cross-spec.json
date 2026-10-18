@@ -1,0 +1,16 @@
+{
+  "schema": 1,
+  "date": "2026-10-18",
+  "kind": "cross_spec_jargon_candidate",
+  "term": "Pandemic",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "pages": [
+    "https://www.wowhead.com/guide/classes/druid/feral/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/warlock/affliction/rotation-cooldowns-pve-dps"
+  ],
+  "finding": "Pandemic denotes the DoT refresh window in both specs; avoid translating it as an epidemic. Preserve numeric refresh thresholds and spell IDs.",
+  "recommendation": "One locale-scoped WoW jargon rule after checking official terminology; do not add per-guide sentence overrides.",
+  "evidence": "Indexed English guide text only; browser DOM and Translator API output not verified.",
+  "status": "candidate_not_integrated"
+}
