@@ -9,6 +9,8 @@ new = json.loads(new_path.read_text(encoding="utf-8"))
 for key in ("sourceLanguage", "targetLanguage"):
     if old.get(key) and new.get(key) and old[key] != new[key]:
         raise SystemExit("Language mismatch: " + key)
+    if old.get(key) and not new.get(key):
+        new[key] = old[key]
 blocked = set(old.get("ambiguous", [])) | set(new.get("ambiguous", []))
 merged = dict(old.get("exact", {}))
 for source, target in new.get("exact", {}).items():
