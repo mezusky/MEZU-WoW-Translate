@@ -191,6 +191,18 @@
     {
       "id": "frost-mage-consumables",
       "url": "https://www.wowhead.com/guide/classes/mage/frost/enchants-gems-pve-dps"
+    },
+    {
+      "id": "demonology-warlock-rotation",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "elemental-shaman-stats",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/stat-priority-pve-dps"
+    },
+    {
+      "id": "brewmaster-monk-stats",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/stat-priority-pve-tank"
     }
   ]
 }
