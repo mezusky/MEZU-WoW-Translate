@@ -377,7 +377,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24310655"
     },
     "24310656": {
-      "accepted_pairs": 105,
+      "accepted_pairs": 104,
       "en_blocks": 76,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24310656",
       "fr_blocks": 76,
@@ -3532,7 +3532,6 @@
     "Thrill of Adventure causes you to regain a small amount of health and mana after every non-trivial kill.": "Frisson de l’aventure vous permet de régénérer une faible quantité de points de vie et de mana chaque fois que vous portez le coup fatal à un personnage adverse non négligeable.",
     "Through their unique insight into the mind, they are able to shape an individual’s beliefs, whether to inspire or terrify, soothe or dominate, heal or harm.": "Grâce à leur capacité unique à lire les âmes, ils sont en mesure de façonner les croyances individuelles, qu’il s’agisse d’inspirer ou de terrifier, d’apaiser ou de dominer, de guérir ou de blesser.",
     "Throughout Eclipse, champions will explore hidden Titan vaults, confront the Devouring Host, and gather new allies in the final battle against Xal'atath.": "Tout au long d’Éclipse, les braves exploreront les caveaux secrets des Titans, affronteront l’Ost dévorant et formeront de nouvelles alliances pour la bataille finale contre Xal’atath.",
-    "Throughout Hallow’s End, characters level 10-80 can queue up for this ghoulish encounter in the Dungeon Finder, and one of these random petrifying pieces is guaranteed to drop each day—no duplicates:": "Pendant la Sanssaint, les personnages-joueurs de niveau 10 à 80 pourront prendre part à cet affrontement macabre grâce à l’outil Donjons et obtenir quotidiennement à coup sûr l’une de ces effroyables pièces, sans doublons :",
     "Throughout the rest of the dungeon, we’re looking to refresh the non-boss enemies and update their placement, with particular attention to giving you new routes through the final section.": "Dans le reste du donjon, nous souhaitons renouveler les adversaires hors boss et revoir leur placement, en veillant tout particulièrement à vous offrir de nouveaux itinéraires dans la dernière partie.",
     "Throughout the rest of the dungeon, we’re looking to refresh the non-boss enemies and update their placement, with particular attention to giving you new routes through the final section. As part of the overall review, we’ll also be looking at caster density in Cragmaw’s arena.": "Dans le reste du donjon, nous souhaitons renouveler les adversaires hors boss et revoir leur placement, en veillant tout particulièrement à vous offrir de nouveaux itinéraires dans la dernière partie. Dans le cadre de cette refonte globale, nous nous pencherons également sur la forte concentration de créatures lanceuses de sorts dans l’arène de Gueule-de-pierre.",
     "Throwing Knives: Moves the player quickly and strikes nearby enemies.": "Couteaux de lancer : le personnage-joueur se déplace rapidement et frappe les adversaires proches.",
@@ -4091,7 +4090,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 3670,
+  "pair_count": 3669,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -7208,7 +7207,6 @@
     "Thrill of Adventure causes you to regain a small amount of health and mana after every non-trivial kill.": "24307383",
     "Through their unique insight into the mind, they are able to shape an individual’s beliefs, whether to inspire or terrify, soothe or dominate, heal or harm.": "24304075",
     "Throughout Eclipse, champions will explore hidden Titan vaults, confront the Devouring Host, and gather new allies in the final battle against Xal'atath.": "24298591",
-    "Throughout Hallow’s End, characters level 10-80 can queue up for this ghoulish encounter in the Dungeon Finder, and one of these random petrifying pieces is guaranteed to drop each day—no duplicates:": "24310656",
     "Throughout the rest of the dungeon, we’re looking to refresh the non-boss enemies and update their placement, with particular attention to giving you new routes through the final section.": "24307305",
     "Throughout the rest of the dungeon, we’re looking to refresh the non-boss enemies and update their placement, with particular attention to giving you new routes through the final section. As part of the overall review, we’ll also be looking at caster density in Cragmaw’s arena.": "24307305",
     "Throwing Knives: Moves the player quickly and strikes nearby enemies.": "24302576",
