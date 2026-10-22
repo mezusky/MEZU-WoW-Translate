@@ -111,8 +111,8 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24301516"
     },
     "24302070": {
-      "accepted_pairs": 35,
-      "en_blocks": 20,
+      "accepted_pairs": 34,
+      "en_blocks": 22,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24302070",
       "fr_blocks": 20,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302070"
@@ -936,7 +936,6 @@
     "Choose Horde or Alliance at Character Creation": "Intégrez la Horde ou l’Alliance dès la création de votre personnage",
     "Choose Your Edition": "Choisissez votre édition",
     "Choose Your Path on the Battle.net Shop": "Choisissez votre voie sur la boutique Battle.net",
-    "Choose Your Ruleset in World of Warcraft: Forever": "Choisissez votre ensemble de règles dans World of Warcraft: Forever",
     "Choose from three editions- Base, Heroic, or Epic Edition- that unlock benefits to aid you in your coming journeys.": "Choisissez l’une des trois éditions disponibles (Base, Heroic ou Epic) pour bénéficier de précieux avantages dans vos aventures à venir.",
     "Choose from three editions- Base, Heroic, or Epic Edition- that unlock benefits to aid you in your coming journeys. All editions include an Enhanced Level 80 Character Boost and Housing access.": "Choisissez l’une des trois éditions disponibles (Base, Heroic ou Epic) pour bénéficier de précieux avantages dans vos aventures à venir. Toutes les éditions comprennent un Sésame amélioré pour le niveau 80 et l’accès au système de logis.",
     "Choose the Ruleset That Fits Your Journey": "Choisissez l’ensemble de règles qui vous correspond",
@@ -4261,7 +4260,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 3840,
+  "pair_count": 3839,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -4782,7 +4781,6 @@
     "Choose Horde or Alliance at Character Creation": "24302071",
     "Choose Your Edition": "24245217",
     "Choose Your Path on the Battle.net Shop": "24301511",
-    "Choose Your Ruleset in World of Warcraft: Forever": "24302070",
     "Choose from three editions- Base, Heroic, or Epic Edition- that unlock benefits to aid you in your coming journeys.": "24313103",
     "Choose from three editions- Base, Heroic, or Epic Edition- that unlock benefits to aid you in your coming journeys. All editions include an Enhanced Level 80 Character Boost and Housing access.": "24313103",
     "Choose the Ruleset That Fits Your Journey": "24302070",
