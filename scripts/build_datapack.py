@@ -229,8 +229,19 @@ if manifest_path.exists():
     except Exception:
         previous = {}
 
+# Compact coverage telemetry, including categories that returned zero search hits.
+# Keep this in the small manifest so audits never need to download the full pack.
+entity_counts_by_kind = {kind: len(rows) for kind, rows in sorted(entities.items())}
 if previous.get("version") == version:
-    print("No WoW data changes. Version:", version)
+    if previous.get("entity_counts_by_kind") != entity_counts_by_kind:
+        previous["entity_counts_by_kind"] = entity_counts_by_kind
+        manifest_path.write_text(
+            json.dumps(previous, ensure_ascii=False, indent=2) + "\n",
+            encoding="utf-8",
+        )
+        print("Updated manifest category coverage without rewriting datapack")
+    else:
+        print("No WoW data changes. Version:", version)
     raise SystemExit(0)
 
 generated_at = datetime.now(timezone.utc).isoformat()
@@ -248,6 +259,7 @@ manifest_path.write_text(
         "version": version,
         "generated_at": generated_at,
         "entity_count": sum(len(x) for x in entities.values()),
+        "entity_counts_by_kind": entity_counts_by_kind,
         "exact_count": len(exact),
         "community_exact_count": len(community.get("exact", {}) or {}),
         "community_term_count": len(community.get("terms", {}) or {}),
