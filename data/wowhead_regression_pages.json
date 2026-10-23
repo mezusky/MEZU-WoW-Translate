@@ -279,6 +279,18 @@
     {
       "id": "augmentation-evoker-talent-builds",
       "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/talent-builds-pve-dps"
+    },
+    {
+      "id": "frost-mage-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/talent-builds-pve-dps"
+    },
+    {
+      "id": "fury-warrior-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/talent-builds-pve-dps"
+    },
+    {
+      "id": "blood-death-knight-tier-set",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/tier-set-bonuses"
     }
   ]
 }
