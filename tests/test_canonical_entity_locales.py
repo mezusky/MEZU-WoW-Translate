@@ -46,6 +46,7 @@ class LocaleEntityTests(unittest.TestCase):
     def test_skip_identical_languages(self):
         entities = {"spell": {"1": {"en": "Charge", "fr": "Charge"}}}
         self.assertEqual(project_locale_pairs(entities, "fr", "fr"), {})
+        self.assertEqual(project_locale_pairs(entities, "en-US", "en-GB"), {})
 
 
 if __name__ == "__main__":
