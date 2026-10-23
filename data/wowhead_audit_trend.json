@@ -35,6 +35,27 @@
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "crossPageFixStatus": "added independent talent-import corpus coverage and CI checks; no browser DOM/Translator API verification"
+    },
+    {
+      "date": "2026-10-23",
+      "sourceAccess": "live Wowhead direct fetch blocked by JavaScript challenge; English guide content available via indexed search",
+      "sampledPageIds": [
+        "frost-mage-talent-builds",
+        "fury-warrior-talent-builds",
+        "blood-death-knight-tier-set"
+      ],
+      "sampledPageCount": 3,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "previouslyObservedRiskFamilies": [
+        "talent import/copy controls and linked talent names",
+        "2/4-piece tier labels and numeric conditions"
+      ],
+      "sourceAccessClassificationImproved": true,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "source-only audit classification and independent corpus coverage committed; browser output and novel issue rate remain unverified"
     }
   ]
 }
