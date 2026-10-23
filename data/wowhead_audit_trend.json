@@ -173,6 +173,27 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "regional canonical projection unit-tested with generic, regional, collision and no-cross-region cases; live browser/Translator API quality unverified"
+    },
+    {
+      "date": "2026-10-23",
+      "sourceAccess": "direct Wowhead JavaScript challenge; indexed English source text inspected",
+      "sampledPageIds": [
+        "discipline-priest-overview",
+        "survival-hunter-rotation",
+        "arcane-mage-mythic-plus"
+      ],
+      "sampledPageCount": 3,
+      "newReusableTermFamiliesObserved": 0,
+      "previouslyObservedRiskFamilies": [
+        "linked official spell names and numeric talent conditions",
+        "interactive hero talent priorities and copy controls",
+        "mixed English prose on localized Wowhead pages"
+      ],
+      "sharedArchitectureIssueFixed": "generic EN->FR phrase layer previously rejected regional EN-US->FR-FR request while regional layers were incorrectly accepted by generic requests",
+      "crossPageFixStatus": "directional locale matching corrected and unit tests committed; new corpus spans healer overview, DPS rotation and Mythic+; no browser translation claim",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null
     }
   ]
 }
