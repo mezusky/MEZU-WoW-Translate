@@ -41,7 +41,7 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
             urlparse(page["url"]).path.split("/guide/classes/", 1)[1].split("/")[0]
             for page in PAGES if "/tier-set-bonuses" in page["url"]
         }
-        self.assertGreaterEqual(len(tier_classes), 2)
+        self.assertGreaterEqual(len(tier_classes), 4)
 
 
 if __name__ == "__main__":
