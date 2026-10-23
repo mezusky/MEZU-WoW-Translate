@@ -6,6 +6,7 @@ import base64
 import hashlib
 from pathlib import Path
 from blizzard_search_pairs import collect_search_pairs
+from index_retention import retain_on_partial_index
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -114,7 +115,8 @@ entities = {}
 for kind, path in endpoints.items():
     print("Sync", kind)
     try:
-        entities[kind] = collect_pairs(get(path, "en_US"), get(path, "fr_FR"))
+        fresh = collect_pairs(get(path, "en_US"), get(path, "fr_FR"))
+        entities[kind] = retain_on_partial_index(kind, fresh, previous_entities.get(kind, {}))
     except Exception as exc:
         print("WARN sync", kind, exc)
         entities[kind] = previous_entities.get(kind, {})
