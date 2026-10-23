@@ -307,6 +307,18 @@
     {
       "id": "preservation-evoker-tier-set",
       "url": "https://www.wowhead.com/guide/classes/evoker/preservation/tier-set-bonuses"
+    },
+    {
+      "id": "blood-death-knight-stats",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/stat-priority-pve-tank"
+    },
+    {
+      "id": "holy-paladin-consumables",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/enchants-gems-pve-healer"
+    },
+    {
+      "id": "discipline-priest-gear",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/bis-gear"
     }
   ]
 }
