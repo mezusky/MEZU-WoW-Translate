@@ -22,6 +22,22 @@ class BlizzardSearchPairsTests(unittest.TestCase):
         self.assertEqual(collect_search_pairs(en, de, "en_US", "de_DE", "en-US", "de-DE"),
                          {"5": {"en-US": "Renewing Mist", "de-DE": "Erneuernder Nebel"}})
 
+    def test_descending_search_pairs_by_id_not_result_position(self):
+        # English/French search pages can differ in hit order or omit an ID.
+        en = {"results": [
+            {"data": {"id": 500, "name": {"en_US": "Newest Spell"}}},
+            {"data": {"id": 400, "name": {"en_US": "Older Spell"}}},
+        ]}
+        fr = {"results": [
+            {"data": {"id": 400, "name": {"fr_FR": "Sort ancien"}}},
+            {"data": {"id": 500, "name": {"fr_FR": "Sort récent"}}},
+        ]}
+        self.assertEqual(
+            collect_search_pairs(en, fr, "en_US", "fr_FR"),
+            {"500": {"en": "Newest Spell", "fr": "Sort récent"},
+             "400": {"en": "Older Spell", "fr": "Sort ancien"}},
+        )
+
     def test_missing_names_are_not_guessed(self):
         en = {"results": [{"data": {"id": 2, "name": {"en_US": "Garrote"}}}]}
         fr = {"results": [{"data": {"id": 2, "name": {"de_DE": "Erdrosseln"}}}]}
