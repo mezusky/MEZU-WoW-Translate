@@ -246,7 +246,14 @@
       "priorCiConclusion": "success",
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
-      "novelTranslationIssueRate": null
+      "novelTranslationIssueRate": null,
+      "crossPageSourceValidationIds": [
+        "subtlety-rogue-gear",
+        "discipline-priest-gear",
+        "fire-mage-gear",
+        "demonology-warlock-gear"
+      ],
+      "crossPageSourceValidation": "same Recommended Crafting Order section observed in Rogue, Priest, Mage and Warlock gearing guides; separate official Blizzard Crafting Orders UI meaning confirmed"
     }
   ]
 }
