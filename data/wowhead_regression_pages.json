@@ -291,6 +291,22 @@
     {
       "id": "blood-death-knight-tier-set",
       "url": "https://www.wowhead.com/guide/classes/death-knight/blood/tier-set-bonuses"
+    },
+    {
+      "id": "restoration-shaman-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/talent-builds-pve-healer"
+    },
+    {
+      "id": "outlaw-rogue-consumables",
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/enchants-gems-pve-dps"
+    },
+    {
+      "id": "affliction-warlock-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "preservation-evoker-tier-set",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/tier-set-bonuses"
     }
   ]
 }
