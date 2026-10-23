@@ -45,7 +45,11 @@
     "tier set": "set de classe",
     "tier sets": "sets de classe",
     "set bonus": "bonus de set",
-    "set bonuses": "bonus de set"
+    "set bonuses": "bonus de set",
+    "2-Set Bonus": "Bonus 2 pièces",
+    "4-Set Bonus": "Bonus 4 pièces",
+    "2-set bonus": "bonus 2 pièces",
+    "4-set bonus": "bonus 4 pièces"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
