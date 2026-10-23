@@ -50,10 +50,10 @@ def select_jargon(glossary, source_language, target_language):
 def select_locale_data(payload, source_language, target_language, legacy_pair=None):
     """Select a data-only layer without leaking a different translation direction.
 
-    Locale-tagged layers may specify a regional locale (en-US -> fr-FR) when
-    the pack requests generic languages (en -> fr). An untagged legacy layer
-    is usable only for its explicitly declared legacy pair; all other
-    directions fail closed. Regional layers never serve a different region.
+    Generic locale-tagged layers (en -> fr) may serve regional requests
+    (en-US -> fr-FR), but a region-specific layer must never serve a generic
+    request or a different region. Untagged legacy data is accepted only for
+    its explicitly declared pair; other directions fail closed.
     """
     if not isinstance(payload, dict):
         raise ValueError("Translation data layer must be a JSON object")
@@ -71,8 +71,8 @@ def select_locale_data(payload, source_language, target_language, legacy_pair=No
         return payload
     if layer_source is None or layer_target is None:
         raise ValueError("Translation data layer has incomplete locale metadata")
-    if not locale_matches(source, layer_source):
+    if not locale_matches(layer_source, source):
         return {}
-    if not locale_matches(target, layer_target):
+    if not locale_matches(layer_target, target):
         return {}
     return payload
