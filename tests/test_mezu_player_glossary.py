@@ -58,10 +58,17 @@ class PlayerGlossaryTests(unittest.TestCase):
 
 
     def test_crafting_terms_shared_across_unrelated_specs(self):
-        # Discipline Priest, Preservation Evoker, Fire Mage and Demonology
-        # Warlock gear guides use these common crafting/equipment terms.
+        # Rogue gearing guides use sequence wording; Blizzard's profession
+        # Crafting Orders system has a distinct official French name.
         jargon = GLOSSARY["jargon"]
-        self.assertEqual(jargon["crafting order"], "ordre de craft")
+        # "Crafting Orders" is a profession UI system ("commandes d'artisanat"),
+        # while "recommended crafting order" means a sequence of gear crafts.
+        # A bare phrase rule would silently conflate these unrelated concepts.
+        self.assertNotIn("crafting order", jargon)
+        self.assertEqual(jargon["recommended crafting order"],
+                         "ordre de fabrication recommandé")
+        self.assertEqual(jargon["Recommended Crafting Order"],
+                         "Ordre de fabrication recommandé")
         for spelling in ("off-hand", "offhand"):
             with self.subTest(spelling=spelling):
                 self.assertEqual(jargon[spelling], "main gauche")
