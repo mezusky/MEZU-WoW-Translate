@@ -219,6 +219,14 @@
     {
       "id": "retribution-paladin-raid",
       "url": "https://www.wowhead.com/guide/classes/paladin/retribution/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "beast-mastery-hunter-consumables",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/enchants-gems-pve-dps"
+    },
+    {
+      "id": "retribution-paladin-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/mythic-plus-dungeon-tips"
     }
   ]
 }
