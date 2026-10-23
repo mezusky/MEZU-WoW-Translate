@@ -44,6 +44,18 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         self.assertGreaterEqual(len(tier_classes), 6)
 
 
+    def test_crafting_gear_guides_cover_independent_classes(self):
+        # Reusable off-hand / embellishment / crafting-order wording is
+        # sampled on four unrelated classes rather than one author's guide.
+        required = {
+            "discipline-priest-gear",
+            "preservation-evoker-gear",
+            "fire-mage-gear",
+            "demonology-warlock-gear",
+        }
+        self.assertTrue(required.issubset({p["id"] for p in PAGES}))
+
+
     def test_talent_import_guides_cover_independent_classes(self):
         # Talent import widgets are structurally different from ability listings.
         classes = {
