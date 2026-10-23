@@ -8,7 +8,7 @@ from pathlib import Path
 from blizzard_search_pairs import collect_search_pairs
 from index_retention import retain_on_partial_index
 from merge_entity_locales import project_locale_pairs
-from locale_glossary import select_jargon
+from locale_glossary import select_jargon, select_locale_data
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -166,6 +166,18 @@ if blizzard_memory_path.exists():
     except Exception as exc:
         print("WARN Blizzard translation memory", exc)
         blizzard_memory = {}
+
+# Never mix translation directions: official phrase memory and player rules
+# must match this pack. Older untagged manual/community sources are EN->FR only.
+# The selectors return empty layers for other directions, not French fallbacks.
+manual = select_locale_data(manual, PACK_SOURCE_LANGUAGE, PACK_TARGET_LANGUAGE,
+                            legacy_pair=("en", "fr"))
+community = select_locale_data(community, PACK_SOURCE_LANGUAGE, PACK_TARGET_LANGUAGE,
+                               legacy_pair=("en", "fr"))
+blizzard_memory = select_locale_data(blizzard_memory, PACK_SOURCE_LANGUAGE,
+                                     PACK_TARGET_LANGUAGE)
+player_glossary = select_locale_data(player_glossary, PACK_SOURCE_LANGUAGE,
+                                    PACK_TARGET_LANGUAGE)
 
 # Project current EN->FR pack from canonical ID records, never by assuming
 # identical source names identify the same spell/item across entity types.
