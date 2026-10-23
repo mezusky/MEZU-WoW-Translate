@@ -8,11 +8,16 @@ from pathlib import Path
 from blizzard_search_pairs import collect_search_pairs
 from index_retention import retain_on_partial_index
 from merge_entity_locales import project_locale_pairs
+from locale_glossary import select_jargon
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
 DATA.mkdir(exist_ok=True)
+
+# Current release pair; locale-aware helpers accept future language directions.
+PACK_SOURCE_LANGUAGE = "en"
+PACK_TARGET_LANGUAGE = "fr"
 
 region = os.environ.get("BLIZZARD_REGION", "eu")
 client_id = os.environ["BLIZZARD_CLIENT_ID"]
@@ -166,7 +171,7 @@ if blizzard_memory_path.exists():
 # identical source names identify the same spell/item across entity types.
 # The helper accepts arbitrary source/target language keys for future packs.
 # Ambiguous or incomplete IDs fall back to prose translation, not a guessed name.
-exact = project_locale_pairs(entities, "en", "fr")
+exact = project_locale_pairs(entities, PACK_SOURCE_LANGUAGE, PACK_TARGET_LANGUAGE)
 
 # Official Blizzard translation-memory phrases are whole-string matches only.
 # This lets us reuse real Blizzard EN->FR wording without injecting fragments into prose.
@@ -198,10 +203,13 @@ for en, fr in (blizzard_memory.get("exact", {}) or {}).items():
     phrase_memory[en] = fr
 
 jargon = dict(manual.get("jargon", {}) or {})
-jargon.update(player_glossary.get("jargon", {}) or {})
+if player_glossary:
+    jargon.update(select_jargon(player_glossary, PACK_SOURCE_LANGUAGE, PACK_TARGET_LANGUAGE))
 
 stable = {
     "schema": 1,
+    "sourceLanguage": PACK_SOURCE_LANGUAGE,
+    "targetLanguage": PACK_TARGET_LANGUAGE,
     "entities": entities,
     "exact": exact,
     "jargon": jargon,
@@ -257,6 +265,8 @@ pack["generated_at"] = generated_at
 manifest_path.write_text(
     json.dumps({
         "schema": 1,
+        "sourceLanguage": PACK_SOURCE_LANGUAGE,
+        "targetLanguage": PACK_TARGET_LANGUAGE,
         "version": version,
         "generated_at": generated_at,
         "entity_count": sum(len(x) for x in entities.values()),
