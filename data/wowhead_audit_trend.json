@@ -122,6 +122,34 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "locale-direction guards and shared stat glossary committed; CI and browser translation verification pending"
+    },
+    {
+      "date": "2026-10-23",
+      "sourceAccess": "indexed English Wowhead guide text via assistant web search; direct browser DOM unavailable",
+      "sampledPageIds": [
+        "discipline-priest-gear",
+        "preservation-evoker-gear",
+        "fire-mage-gear",
+        "demonology-warlock-gear",
+        "outlaw-rogue-consumables"
+      ],
+      "sampledPageCount": 5,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "off-hand/offhand equipment slots, embellishments, and crafting-order wording across independent class gearing guides"
+      ],
+      "previouslyObservedRiskFamilies": [
+        "official item names embedded in English prose",
+        "source author typos and empty placeholders",
+        "conditional crafting/gear choices"
+      ],
+      "newSourceQualityRisks": [
+        "localized Wowhead /fr pages may contain English prose with localized item names; page locale alone does not prove prose language"
+      ],
+      "crossPageFixStatus": "moved crafting order from inaccurate manual exact override to locale-scoped jargon; shared terms and four-class regression tests committed; rebuild/browser translation pending",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null
     }
   ]
 }
