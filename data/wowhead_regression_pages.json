@@ -255,6 +255,14 @@
     {
       "id": "holy-priest-tier-set",
       "url": "https://www.wowhead.com/guide/classes/priest/holy/tier-set-bonuses"
+    },
+    {
+      "id": "restoration-shaman-tier-set",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/tier-set-bonuses"
+    },
+    {
+      "id": "demonology-warlock-tier-set",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/tier-set-bonuses"
     }
   ]
 }
