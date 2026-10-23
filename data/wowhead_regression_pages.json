@@ -271,6 +271,14 @@
     {
       "id": "holy-paladin-tier-set",
       "url": "https://www.wowhead.com/guide/classes/paladin/holy/tier-set-bonuses"
+    },
+    {
+      "id": "enhancement-shaman-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/talent-builds-pve-dps"
+    },
+    {
+      "id": "augmentation-evoker-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/talent-builds-pve-dps"
     }
   ]
 }
