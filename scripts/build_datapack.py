@@ -91,11 +91,14 @@ endpoints = {
     "conduit": "/data/wow/covenant/conduit/index",
 }
 
+# Prefer the newest canonical IDs in the same fixed API request budget.
+# Historical ascending-page IDs remain available through previous_entities.
+# Blizzard search supports orderby=id:desc; never scrape Wowhead in CI.
 search_endpoints = {
-    "spell": "/data/wow/search/spell?orderby=id&_pageSize=1000&_page=1",
-    "item": "/data/wow/search/item?orderby=id&_pageSize=1000&_page=1",
-    "creature": "/data/wow/search/creature?orderby=id&_pageSize=1000&_page=1",
-    "journal_encounter_search": "/data/wow/search/journal-encounter?orderby=id&_pageSize=1000&_page=1",
+    "spell": "/data/wow/search/spell?orderby=id:desc&_pageSize=1000&_page=1",
+    "item": "/data/wow/search/item?orderby=id:desc&_pageSize=1000&_page=1",
+    "creature": "/data/wow/search/creature?orderby=id:desc&_pageSize=1000&_page=1",
+    "journal_encounter_search": "/data/wow/search/journal-encounter?orderby=id:desc&_pageSize=1000&_page=1",
 }
 
 previous_entities = {}
