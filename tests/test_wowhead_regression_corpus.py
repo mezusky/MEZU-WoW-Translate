@@ -27,11 +27,21 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
                  for p in PAGES]
         classes = {parts[0] for parts in paths}
         sections = [parts[2] for parts in paths if len(parts) >= 3]
-        self.assertGreaterEqual(len(classes), 10)
+        self.assertGreaterEqual(len(classes), 13)
         for pattern in ("overview", "rotation", "abilities-talents", "stat-priority",
-                        "bis-gear", "enchants-gems", "mythic-plus", "raid-tips"):
+                        "bis-gear", "enchants-gems", "mythic-plus", "raid-tips",
+                        "tier-set-bonuses"):
             with self.subTest(section=pattern):
                 self.assertTrue(any(pattern in section for section in sections))
+
+
+    def test_tier_set_guides_cover_independent_classes(self):
+        # A shared terminology rule must not be validated on one spec alone.
+        tier_classes = {
+            urlparse(page["url"]).path.split("/guide/classes/", 1)[1].split("/")[0]
+            for page in PAGES if "/tier-set-bonuses" in page["url"]
+        }
+        self.assertGreaterEqual(len(tier_classes), 2)
 
 
 if __name__ == "__main__":
