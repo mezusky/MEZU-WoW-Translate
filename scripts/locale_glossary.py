@@ -47,13 +47,15 @@ def select_jargon(glossary, source_language, target_language):
     return dict(terms)
 
 
-def select_locale_data(payload, source_language, target_language, legacy_pair=None):
+def select_locale_data(payload, source_language, target_language, legacy_pair=None, canonical_pair=None):
     """Select a data-only layer without leaking a different translation direction.
 
     Generic locale-tagged layers (en -> fr) may serve regional requests
     (en-US -> fr-FR), but a region-specific layer must never serve a generic
-    request or a different region. Untagged legacy data is accepted only for
-    its explicitly declared pair; other directions fail closed.
+    request or a different region. An explicitly declared canonical regional
+    pair may serve a generic pack (e.g. official en-US/fr-FR Blizzard memory
+    in an en/fr pack), but only by opt-in and never across regional requests.
+    Untagged legacy data is accepted only for its explicitly declared pair.
     """
     if not isinstance(payload, dict):
         raise ValueError("Translation data layer must be a JSON object")
@@ -71,8 +73,22 @@ def select_locale_data(payload, source_language, target_language, legacy_pair=No
         return payload
     if layer_source is None or layer_target is None:
         raise ValueError("Translation data layer has incomplete locale metadata")
-    if not locale_matches(layer_source, source):
+    def matches(configured, requested, canonical):
+        if locale_matches(configured, requested):
+            return True
+        # A generic pack may explicitly opt into its canonical official
+        # regional source; a fr-CA layer must not silently enter a fr-FR pack.
+        return (canonical is not None
+                and "-" not in requested
+                and normalize_locale(configured) == normalize_locale(canonical)
+                and normalize_locale(canonical).split("-")[0] == requested)
+
+    if canonical_pair is not None:
+        if not isinstance(canonical_pair, (tuple, list)) or len(canonical_pair) != 2:
+            raise ValueError("Canonical locale pair must contain source and target")
+    canonical_source, canonical_target = canonical_pair if canonical_pair else (None, None)
+    if not matches(layer_source, source, canonical_source):
         return {}
-    if not locale_matches(layer_target, target):
+    if not matches(layer_target, target, canonical_target):
         return {}
     return payload
