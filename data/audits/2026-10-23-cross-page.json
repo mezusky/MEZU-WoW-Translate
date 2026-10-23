@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "date": "2026-10-23",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourceAccess": "search-indexed excerpts; direct Wowhead HTML requires JavaScript verification",
+  "sampledGuideIds": [
+    "brewmaster-monk-rotation",
+    "feral-druid-talents",
+    "shadow-priest-mythic-plus",
+    "brewmaster-monk-tier-set",
+    "holy-priest-tier-set"
+  ],
+  "findings": [
+    {
+      "pattern": "tier-set bonuses",
+      "guideIds": [
+        "brewmaster-monk-rotation",
+        "brewmaster-monk-tier-set",
+        "holy-priest-tier-set"
+      ],
+      "resolution": "locale-specific reusable jargon mappings",
+      "verification": "source excerpts only; browser pending"
+    },
+    {
+      "pattern": "talent-tree wording",
+      "guideIds": [
+        "feral-druid-talents"
+      ],
+      "resolution": "locale-specific reusable jargon mapping",
+      "verification": "needs unrelated guide browser validation"
+    },
+    {
+      "pattern": "interactive markup and incomplete placeholders",
+      "guideIds": [
+        "brewmaster-monk-rotation",
+        "feral-druid-talents",
+        "shadow-priest-mythic-plus"
+      ],
+      "resolution": "source/DOM ambiguity; no speculative fix",
+      "verification": "browser pending"
+    }
+  ],
+  "changes": {
+    "newReusableJargonEntries": 5,
+    "newSentenceOverrides": 0,
+    "newCorpusPages": 2,
+    "totalCorpusPages": 64
+  },
+  "quality": {
+    "browserVerified": false,
+    "crossPagePass": false,
+    "novelIssueRate": null,
+    "reason": "No browser-local Translator API output; indexed source alone cannot establish translation quality."
+  }
+}
