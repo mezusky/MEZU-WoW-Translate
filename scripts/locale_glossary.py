@@ -29,7 +29,7 @@ def select_jargon(glossary, source_language, target_language):
     """
     source = normalize_locale(source_language)
     target = normalize_locale(target_language)
-    if source == target:
+    if source.split("-")[0] == target.split("-")[0]:
         return {}
     if not isinstance(glossary, dict):
         raise ValueError("Glossary must be a JSON object")
