@@ -5,6 +5,7 @@ import urllib.request
 import base64
 import hashlib
 from pathlib import Path
+from blizzard_search_pairs import collect_search_pairs
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -118,7 +119,9 @@ for kind, path in endpoints.items():
 for kind, path in search_endpoints.items():
     print("Search", kind)
     try:
-        entities[kind] = collect_pairs(get(path, "en_US"), get(path, "fr_FR"))
+        fresh = collect_search_pairs(get(path, "en_US"), get(path, "fr_FR"), "en_US", "fr_FR")
+        # Preserve verified IDs across partial pages; new official names win.
+        entities[kind] = {**previous_entities.get(kind, {}), **fresh}
     except Exception as exc:
         print("WARN search", kind, exc)
         entities[kind] = previous_entities.get(kind, {})
