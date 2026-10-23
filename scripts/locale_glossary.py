@@ -45,3 +45,34 @@ def select_jargon(glossary, source_language, target_language):
            for k, v in terms.items()):
         raise ValueError("Player glossary contains an invalid term")
     return dict(terms)
+
+
+def select_locale_data(payload, source_language, target_language, legacy_pair=None):
+    """Select a data-only layer without leaking a different translation direction.
+
+    Locale-tagged layers may specify a regional locale (en-US -> fr-FR) when
+    the pack requests generic languages (en -> fr). An untagged legacy layer
+    is usable only for its explicitly declared legacy pair; all other
+    directions fail closed. Regional layers never serve a different region.
+    """
+    if not isinstance(payload, dict):
+        raise ValueError("Translation data layer must be a JSON object")
+    source = normalize_locale(source_language)
+    target = normalize_locale(target_language)
+    if source.split("-")[0] == target.split("-")[0]:
+        return {}
+    layer_source = payload.get("sourceLanguage")
+    layer_target = payload.get("targetLanguage")
+    if layer_source is None and layer_target is None:
+        if legacy_pair is None or len(legacy_pair) != 2:
+            return {}
+        if (source, target) != tuple(normalize_locale(x) for x in legacy_pair):
+            return {}
+        return payload
+    if layer_source is None or layer_target is None:
+        raise ValueError("Translation data layer has incomplete locale metadata")
+    if not locale_matches(source, layer_source):
+        return {}
+    if not locale_matches(target, layer_target):
+        return {}
+    return payload
