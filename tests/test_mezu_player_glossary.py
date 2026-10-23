@@ -48,5 +48,14 @@ class PlayerGlossaryTests(unittest.TestCase):
                 self.assertEqual(jargon[source], "pièces hors set")
 
 
+    def test_stat_threshold_terms_generalize_across_specs(self):
+        # Blood DK, Arcane Mage and Brewmaster guides use the same stat section.
+        jargon = GLOSSARY["jargon"]
+        self.assertEqual(jargon["diminishing returns"], "rendements décroissants")
+        self.assertEqual(jargon["diminishing return"], "rendement décroissant")
+        self.assertEqual(jargon["breakpoint"], "palier")
+        self.assertEqual(jargon["breakpoints"], "paliers")
+
+
 if __name__ == "__main__":
     unittest.main()
