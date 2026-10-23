@@ -1,0 +1,22 @@
+{
+  "schema": 1,
+  "purpose": "Compact cross-page source-audit trend; never a claim of browser-rendered translation quality.",
+  "cycles": [
+    {
+      "date": "2026-10-23",
+      "sourceAccess": "indexed-search-content; direct Wowhead requests returned JavaScript challenge",
+      "sampledPageIds": [
+        "enhancement-shaman-midnight-season-2-overview",
+        "holy-paladin-tier-set"
+      ],
+      "sampledPageCount": 2,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "tier-set and 2/4-piece label variants"
+      ],
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "crossPageFixStatus": "glossary rules committed; live Chrome/Translator API verification pending"
+    }
+  ]
+}
