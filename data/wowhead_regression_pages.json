@@ -363,6 +363,22 @@
     {
       "id": "survival-hunter-overview",
       "url": "https://www.wowhead.com/guide/classes/hunter/survival/overview-pve-dps"
+    },
+    {
+      "id": "guardian-druid-tier-set",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/tier-set-bonuses"
+    },
+    {
+      "id": "subtlety-rogue-gear",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/bis-gear"
+    },
+    {
+      "id": "frost-death-knight-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/talent-builds-pve-dps"
+    },
+    {
+      "id": "holy-priest-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/mythic-plus-dungeon-tips"
     }
   ]
 }
