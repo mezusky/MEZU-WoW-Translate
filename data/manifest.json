@@ -2,8 +2,8 @@
   "schema": 1,
   "sourceLanguage": "en",
   "targetLanguage": "fr",
-  "version": "af2b1a057360c8e41ce1",
-  "generated_at": "2026-10-23T18:42:48.904327+00:00",
+  "version": "189e0e7a04c18b7d633b",
+  "generated_at": "2026-10-23T19:43:00.076533+00:00",
   "entity_count": 24393,
   "entity_counts_by_kind": {
     "achievement_category": 202,
@@ -37,7 +37,7 @@
     "title": 696,
     "toy": 1146
   },
-  "exact_count": 21812,
+  "exact_count": 21811,
   "community_exact_count": 352,
   "community_term_count": 385,
   "blizzard_memory_pair_count": 3736,
