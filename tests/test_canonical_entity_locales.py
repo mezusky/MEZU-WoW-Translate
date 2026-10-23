@@ -28,6 +28,21 @@ class LocaleEntityTests(unittest.TestCase):
         self.assertEqual(project_locale_pairs(entities, "en", "fr"),
                          {"Unique": "Unique FR"})
 
+    def test_non_english_source_projects_through_canonical_id(self):
+        # Locale direction is independent of the English/French launch pair.
+        entities = {"spell": {
+            "100": {"en": "Holy Shock", "de": "Heiliger Schock", "fr": "Horion sacré"},
+            "101": {"en": "Rejuvenation", "de": "Verjüngung", "fr": "Récupération"},
+        }}
+        self.assertEqual(project_locale_pairs(entities, "de", "fr"), {
+            "Heiliger Schock": "Horion sacré",
+            "Verjüngung": "Récupération",
+        })
+        self.assertEqual(project_locale_pairs(entities, "fr", "de"), {
+            "Horion sacré": "Heiliger Schock",
+            "Récupération": "Verjüngung",
+        })
+
     def test_skip_identical_languages(self):
         entities = {"spell": {"1": {"en": "Charge", "fr": "Charge"}}}
         self.assertEqual(project_locale_pairs(entities, "fr", "fr"), {})
