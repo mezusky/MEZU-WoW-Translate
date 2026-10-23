@@ -44,5 +44,14 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         self.assertGreaterEqual(len(tier_classes), 4)
 
 
+    def test_talent_import_guides_cover_independent_classes(self):
+        # Talent import widgets are structurally different from ability listings.
+        classes = {
+            urlparse(page["url"]).path.split("/guide/classes/", 1)[1].split("/")[0]
+            for page in PAGES if "/talent-builds-pve-" in page["url"]
+        }
+        self.assertGreaterEqual(len(classes), 2)
+
+
 if __name__ == "__main__":
     unittest.main()
