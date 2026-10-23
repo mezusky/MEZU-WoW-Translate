@@ -28,7 +28,11 @@ jobs:
         run: python scripts/build_external_glossary.py
 
       - name: Build Blizzard translation memory
-        run: python scripts/build_blizzard_memory.py
+        run: |
+          cp data/blizzard_translation_memory.json "$RUNNER_TEMP/blizzard_memory_previous.json"
+          python scripts/build_blizzard_memory.py
+          python scripts/preserve_blizzard_memory.py "$RUNNER_TEMP/blizzard_memory_previous.json" data/blizzard_translation_memory.json
+          python -m unittest discover -s tests -p "test_blizzard_memory_retention.py"
 
       - name: Build WoW data pack
         env:
