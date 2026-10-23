@@ -1,6 +1,7 @@
 #!/usr/bin/env python3
 import json, sys
 from pathlib import Path
+from locale_glossary import normalize_locale, select_jargon
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -15,6 +16,34 @@ manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
 
 errors = []
 warnings = []
+
+# Locale metadata is part of the Data Pack contract. Do not silently publish
+# French player jargon in a future German/Spanish or reverse-direction pack.
+source_language = pack.get("sourceLanguage")
+target_language = pack.get("targetLanguage")
+try:
+    source_language = normalize_locale(source_language)
+    target_language = normalize_locale(target_language)
+    if source_language == target_language:
+        errors.append("pack source and target languages must differ")
+except ValueError as exc:
+    errors.append(f"invalid pack locale metadata: {exc}")
+
+if manifest.get("sourceLanguage") != pack.get("sourceLanguage") or (
+    manifest.get("targetLanguage") != pack.get("targetLanguage")
+):
+    errors.append("manifest locale pair does not match datapack")
+
+glossary_path = DATA / "mezu_player_glossary.json"
+if glossary_path.exists() and isinstance(source_language, str) and isinstance(target_language, str):
+    try:
+        glossary = json.loads(glossary_path.read_text(encoding="utf-8"))
+        selected = select_jargon(glossary, source_language, target_language)
+        for term, translation in selected.items():
+            if (pack.get("jargon", {}) or {}).get(term) != translation:
+                errors.append(f"locale-specific player term missing from pack: {term!r}")
+    except (ValueError, TypeError) as exc:
+        errors.append(f"invalid locale-scoped player glossary: {exc}")
 
 exact = pack.get("exact", {}) or {}
 entities = pack.get("entities", {}) or {}
