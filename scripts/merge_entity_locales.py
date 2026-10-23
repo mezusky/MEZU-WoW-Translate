@@ -12,7 +12,8 @@ def project_locale_pairs(entities, source_language, target_language):
 
     Canonical ID/locale records remain intact even when either locale is absent.
     """
-    if source_language == target_language:
+    # Regional variants of one language do not need a translated name.
+    if source_language.replace("_", "-").casefold().split("-")[0] == target_language.replace("_", "-").casefold().split("-")[0]:
         return {}
     candidates = {}
     incomplete = set()
