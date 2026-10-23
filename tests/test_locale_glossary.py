@@ -31,6 +31,7 @@ class LocaleGlossaryTests(unittest.TestCase):
     def test_identical_source_target_skips_translation(self):
         self.assertEqual(select_jargon(self.fr, "fr", "fr"), {})
         self.assertEqual(select_jargon(self.fr, "fr-FR", "fr_FR"), {})
+        self.assertEqual(select_jargon(self.fr, "en-US", "en-GB"), {})
 
     def test_invalid_entries_fail_instead_of_shipping(self):
         with self.assertRaises(ValueError):
