@@ -194,6 +194,30 @@
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "direct English Wowhead guide URLs returned JavaScript verification; current indexed English guide text inspected",
+      "sampledPageIds": [
+        "frost-mage-mythic-plus",
+        "survival-hunter-overview",
+        "arcane-mage-mythic-plus",
+        "survival-hunter-rotation"
+      ],
+      "sampledPageCount": 4,
+      "newReusableTermFamiliesObserved": 0,
+      "previouslyObservedRiskFamilies": [
+        "dungeon-specific interactive utility tables, copy/import controls, official spell links",
+        "dynamic priority lists and source-side shortcode artifacts"
+      ],
+      "newSourceQualityRisks": [
+        "localized Wowhead /pt and /it guides retain English prose with translated linked spell names; source language cannot be inferred solely from page locale"
+      ],
+      "localeLayerFix": "opt-in canonical en-US/fr-FR official memory for generic en/fr pack, without allowing fr-CA or en-GB regional leakage",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "canonical-pair code and independent source corpus committed; CI rebuild and browser Translator API verification pending"
     }
   ]
 }
