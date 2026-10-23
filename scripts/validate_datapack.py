@@ -80,6 +80,17 @@ if memory.get("pair_count", 0) > 0:
         if too_long:
             warnings.append(f"{len(too_long)} Blizzard memory entries exceed 320 chars")
 
+# The manifest is the lightweight, remotely readable source of coverage
+# metrics. Detect stale or misleading per-category counts before publication.
+counts_by_kind = {kind: len(rows) for kind, rows in sorted(entities.items()) if isinstance(rows, dict)}
+published_counts = manifest.get("entity_counts_by_kind")
+if published_counts is not None and published_counts != counts_by_kind:
+    errors.append("manifest entity_counts_by_kind does not match datapack")
+for kind in ("spell", "item", "creature", "journal_encounter_search"):
+    if counts_by_kind.get(kind, 0) == 0:
+        warnings.append(f"Blizzard search category has no entities: {kind}")
+print("Entity category coverage:", json.dumps(counts_by_kind, sort_keys=True))
+
 if manifest.get("entity_count") != entity_count:
     errors.append("manifest entity_count does not match datapack")
 if manifest.get("exact_count") != exact_count:
