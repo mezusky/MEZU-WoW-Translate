@@ -41,7 +41,7 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
             urlparse(page["url"]).path.split("/guide/classes/", 1)[1].split("/")[0]
             for page in PAGES if "/tier-set-bonuses" in page["url"]
         }
-        self.assertGreaterEqual(len(tier_classes), 4)
+        self.assertGreaterEqual(len(tier_classes), 6)
 
 
     def test_talent_import_guides_cover_independent_classes(self):
@@ -50,7 +50,7 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
             urlparse(page["url"]).path.split("/guide/classes/", 1)[1].split("/")[0]
             for page in PAGES if "/talent-builds-pve-" in page["url"]
         }
-        self.assertGreaterEqual(len(classes), 2)
+        self.assertGreaterEqual(len(classes), 4)
 
 
 if __name__ == "__main__":
