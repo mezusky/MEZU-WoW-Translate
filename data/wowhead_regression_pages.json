@@ -235,6 +235,18 @@
     {
       "id": "augmentation-evoker-consumables",
       "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/enchants-gems-pve-dps"
+    },
+    {
+      "id": "feral-druid-talents",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/abilities-talents-pve-dps"
+    },
+    {
+      "id": "havoc-demon-hunter-consumables",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/enchants-gems-pve-dps"
+    },
+    {
+      "id": "brewmaster-monk-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/mythic-plus-dungeon-tips"
     }
   ]
 }
