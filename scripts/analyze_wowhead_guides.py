@@ -9,6 +9,7 @@ import json, re, urllib.request
 from html.parser import HTMLParser
 from pathlib import Path
 from html_block_extractor import extract_blocks
+from wowhead_source_status import classify_html_source, classify_fetch_error
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -64,19 +65,17 @@ exact = pack.get("exact", {}) or {}
 phrase_memory = pack.get("phrase_memory", {}) or {}
 jargon = pack.get("jargon", {}) or {}
 
-report = {"schema": 1, "pages": []}
+report = {"schema": 2, "auditMethod": "source-only; browser translation not verified", "pages": []}
 
 for page in cfg.get("pages", []):
     url = page["url"]
-    row = {"id": page["id"], "url": url, "ok": False, "blocks": [], "stats": {}}
+    row = {"id": page["id"], "url": url, "ok": False, "sourceStatus": "pending", "blocks": [], "stats": {}}
     try:
         raw = fetch(url)
-        # A JS challenge can return HTTP 200; never score it as guide content.
-        lower = raw.casefold()
-        if "verify that you're not a robot" in lower or (
-            "javascript is disabled" in lower and "enable javascript" in lower
-        ):
-            row["error"] = "Wowhead JavaScript challenge: source unavailable (not a translation failure)"
+        # A 200 response may be a JS challenge, not guide prose.
+        row["sourceStatus"], reason = classify_html_source(raw)
+        if row["sourceStatus"] != "accessible":
+            row["accessNote"] = reason
             report["pages"].append(row)
             continue
         parsed_blocks = extract_blocks(raw)
@@ -108,11 +107,12 @@ for page in cfg.get("pages", []):
             "wow_blocks": sum(1 for b in blocks if b["wow_signal"]),
             "wow_exact_covered": sum(1 for b in blocks if b["wow_signal"] and b["exact_override"])
         }
-        row["ok"] = True
+        row["sourceStatus"] = "accessible" if blocks else "unscorable"
+        row["ok"] = bool(blocks)
     except Exception as exc:
-        row["error"] = str(exc)
+        row["sourceStatus"], row["accessNote"] = classify_fetch_error(exc)
     report["pages"].append(row)
 
 OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 for p in report["pages"]:
-    print(p["id"], p.get("stats", {}), p.get("error", ""))
+    print(p["id"], p["sourceStatus"], p.get("stats", {}), p.get("accessNote", ""))
