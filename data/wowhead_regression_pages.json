@@ -355,6 +355,14 @@
     {
       "id": "arcane-mage-mythic-plus",
       "url": "https://www.wowhead.com/guide/classes/mage/arcane/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "frost-mage-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "survival-hunter-overview",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/overview-pve-dps"
     }
   ]
 }
