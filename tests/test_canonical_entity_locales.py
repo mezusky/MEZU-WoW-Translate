@@ -29,7 +29,6 @@ class LocaleEntityTests(unittest.TestCase):
                          {"Unique": "Unique FR"})
 
     def test_non_english_source_projects_through_canonical_id(self):
-        # Locale direction is independent of the English/French launch pair.
         entities = {"spell": {
             "100": {"en": "Holy Shock", "de": "Heiliger Schock", "fr": "Horion sacré"},
             "101": {"en": "Rejuvenation", "de": "Verjüngung", "fr": "Récupération"},
@@ -42,6 +41,33 @@ class LocaleEntityTests(unittest.TestCase):
             "Horion sacré": "Heiliger Schock",
             "Récupération": "Verjüngung",
         })
+
+    def test_regional_request_uses_generic_canonical_names(self):
+        entities = {"spell": {"100": {"en": "Holy Shock", "fr": "Horion sacré"}}}
+        self.assertEqual(project_locale_pairs(entities, "en-US", "fr-FR"),
+                         {"Holy Shock": "Horion sacré"})
+        self.assertEqual(project_locale_pairs(entities, "en_US", "fr_FR"),
+                         {"Holy Shock": "Horion sacré"})
+
+    def test_regional_exact_names_win_without_cross_region_leak(self):
+        entities = {"spell": {
+            "1": {"en": "Color", "fr": "Couleur", "fr-CA": "Couleur canadienne"},
+            "2": {"en": "Regional", "fr-CA": "Régional canadien"},
+        }}
+        self.assertEqual(project_locale_pairs(entities, "en-US", "fr-CA"),
+                         {"Color": "Couleur canadienne", "Regional": "Régional canadien"})
+        self.assertEqual(project_locale_pairs(entities, "en-US", "fr-FR"),
+                         {"Color": "Couleur"})
+        # A specific regional name cannot be used for a generic target.
+        self.assertEqual(project_locale_pairs(
+            {"spell": {"2": entities["spell"]["2"]}}, "en", "fr"), {})
+
+    def test_regional_requests_preserve_ambiguity_guard(self):
+        entities = {"spell": {
+            "1": {"en": "Charge", "fr": "Charge"},
+            "2": {"en": "Charge", "fr": "Charger"},
+        }}
+        self.assertNotIn("Charge", project_locale_pairs(entities, "en-US", "fr-FR"))
 
     def test_skip_identical_languages(self):
         entities = {"spell": {"1": {"en": "Charge", "fr": "Charge"}}}
