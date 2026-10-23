@@ -11,6 +11,11 @@ on:
       - "data/mezu_player_glossary.json"
       - ".github/workflows/update-wow-data.yml"
 
+# Avoid overlapping hourly/manual builds racing to push generated data.
+concurrency:
+  group: mezu-wow-data-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: write
 
@@ -35,6 +40,7 @@ jobs:
           python -m unittest discover -s tests -p "test_blizzard_memory_retention.py"
           python -m unittest discover -s tests -p "test_blizzard_search_pairs.py"
           python -m unittest discover -s tests -p "test_index_retention.py"
+          python -m unittest discover -s tests -p "test_wowhead_regression_corpus.py"
 
       - name: Build WoW data pack
         env:
