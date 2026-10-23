@@ -18,6 +18,16 @@ class LocaleEntityTests(unittest.TestCase):
         }}
         self.assertNotIn("Charge", project_locale_pairs(entities, "en", "fr"))
 
+    def test_missing_target_on_colliding_id_blocks_exact_mapping(self):
+        # A matching English name with an untranslated canonical ID must
+        # not borrow another ID's French name, even across entity types.
+        entities = {
+            "spell": {"1": {"en": "Shared", "fr": "Nom A"}},
+            "item": {"2": {"en": "Shared"}, "3": {"en": "Unique", "fr": "Unique FR"}},
+        }
+        self.assertEqual(project_locale_pairs(entities, "en", "fr"),
+                         {"Unique": "Unique FR"})
+
     def test_skip_identical_languages(self):
         entities = {"spell": {"1": {"en": "Charge", "fr": "Charge"}}}
         self.assertEqual(project_locale_pairs(entities, "fr", "fr"), {})
