@@ -46,7 +46,7 @@
     },
     {
       "id": "blood-death-knight-mythic-plus",
-      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/mythic-plus-tips-pve-tank"
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/mythic-plus-dungeon-tips"
     },
     {
       "id": "feral-druid-rotation",
@@ -227,6 +227,14 @@
     {
       "id": "retribution-paladin-mythic-plus",
       "url": "https://www.wowhead.com/guide/classes/paladin/retribution/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "shadow-priest-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "augmentation-evoker-consumables",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/enchants-gems-pve-dps"
     }
   ]
 }
