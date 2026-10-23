@@ -7,16 +7,36 @@ class LocaleDataLayerTests(unittest.TestCase):
     def test_blizzard_regional_memory_accepted_by_generic_pack(self):
         memory = {"sourceLanguage": "en-US", "targetLanguage": "fr-FR",
                   "exact": {"Use your cooldown": "Utilisez votre CD"}}
-        self.assertIs(select_locale_data(memory, "en", "fr"), memory)
-        self.assertEqual(select_locale_data(memory, "de", "fr"), {})
-        self.assertEqual(select_locale_data(memory, "en", "de"), {})
-        self.assertEqual(select_locale_data(memory, "fr", "en"), {})
+        self.assertEqual(select_locale_data(memory, "en", "fr"), {})
+        self.assertIs(select_locale_data(memory, "en", "fr",
+                                        canonical_pair=("en-US", "fr-FR")), memory)
+        self.assertEqual(select_locale_data(memory, "de", "fr",
+                                            canonical_pair=("en-US", "fr-FR")), {})
+        self.assertEqual(select_locale_data(memory, "en", "de",
+                                            canonical_pair=("en-US", "fr-FR")), {})
+        self.assertEqual(select_locale_data(memory, "fr", "en",
+                                            canonical_pair=("en-US", "fr-FR")), {})
 
     def test_region_specific_data_cannot_leak_across_regions(self):
         memory = {"sourceLanguage": "en-US", "targetLanguage": "fr-CA",
                   "exact": {"Shield": "Bouclier"}}
         self.assertEqual(select_locale_data(memory, "en", "fr-FR"), {})
-        self.assertIs(select_locale_data(memory, "en", "fr"), memory)
+        self.assertEqual(select_locale_data(memory, "en", "fr"), {})
+        self.assertEqual(select_locale_data(memory, "en", "fr",
+                                            canonical_pair=("en-US", "fr-FR")), {})
+
+    def test_canonical_pair_does_not_cross_regional_requests(self):
+        memory = {"sourceLanguage": "en-US", "targetLanguage": "fr-FR",
+                  "exact": {"Haste": "Hâte"}}
+        pair = ("en-US", "fr-FR")
+        self.assertEqual(select_locale_data(memory, "en-GB", "fr",
+                                            canonical_pair=pair), {})
+        self.assertEqual(select_locale_data(memory, "en", "fr-CA",
+                                            canonical_pair=pair), {})
+        self.assertIs(select_locale_data(memory, "en-US", "fr-FR",
+                                         canonical_pair=pair), memory)
+        with self.assertRaises(ValueError):
+            select_locale_data(memory, "en", "fr", canonical_pair=("en-US",))
 
     def test_legacy_untagged_layers_are_only_current_en_fr(self):
         legacy = {"exact": {"Haste": "Hâte"}}
