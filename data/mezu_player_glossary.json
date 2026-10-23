@@ -41,7 +41,11 @@
     "off-piece": "pièce hors set",
     "off-pieces": "pièces hors set",
     "socket": "châsse",
-    "sockets": "châsses"
+    "sockets": "châsses",
+    "tier set": "set de classe",
+    "tier sets": "sets de classe",
+    "set bonus": "bonus de set",
+    "set bonuses": "bonus de set"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
