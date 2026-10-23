@@ -86,6 +86,42 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "locale-scoped jargon selection and offpiece variants rebuilt and validated; live Chrome/Translator API and novel translation error rate remain unverified"
+    },
+    {
+      "date": "2026-10-23",
+      "sourceAccess": "Live direct Wowhead URL requests returned JavaScript verification; English source text independently indexed",
+      "sampledPageIds": [
+        "blood-death-knight-stats",
+        "holy-paladin-consumables",
+        "discipline-priest-gear",
+        "outlaw-rogue-consumables",
+        "preservation-evoker-tier-set",
+        "arcane-mage-stats",
+        "brewmaster-monk-stats"
+      ],
+      "sampledPageCount": 7,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "stat diminishing returns and breakpoint(s) across tank and DPS specs"
+      ],
+      "previouslyObservedRiskFamilies": [
+        "conditional gem/enchant choices and official item names",
+        "tier-set 2/4-piece and offpiece references",
+        "talent import widgets"
+      ],
+      "newSourceQualityRisks": [
+        "source guide text contains empty season placeholders and occasional author typos; do not classify as MEZU translation regressions"
+      ],
+      "localeIsolationContractAdded": true,
+      "localeLayerCoverage": [
+        "official Blizzard phrase memory",
+        "MEZU player glossary",
+        "legacy manual/community EN->FR-only layers"
+      ],
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "locale-direction guards and shared stat glossary committed; CI and browser translation verification pending"
     }
   ]
 }
