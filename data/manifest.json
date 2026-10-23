@@ -1,9 +1,9 @@
 {
   "schema": 1,
-  "version": "54b718df0ceaf42a9e8f",
-  "generated_at": "2026-10-22T22:53:44.901318+00:00",
-  "entity_count": 17467,
-  "exact_count": 16643,
+  "version": "e404eaebc00ee983c7b2",
+  "generated_at": "2026-10-23T07:42:45.211188+00:00",
+  "entity_count": 21448,
+  "exact_count": 20018,
   "community_exact_count": 352,
   "community_term_count": 385,
   "blizzard_memory_pair_count": 3716,
