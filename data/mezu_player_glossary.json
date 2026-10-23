@@ -53,7 +53,11 @@
     "offpiece": "pièce hors set",
     "offpieces": "pièces hors set",
     "off piece": "pièce hors set",
-    "off pieces": "pièces hors set"
+    "off pieces": "pièces hors set",
+    "diminishing returns": "rendements décroissants",
+    "diminishing return": "rendement décroissant",
+    "breakpoint": "palier",
+    "breakpoints": "paliers"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
