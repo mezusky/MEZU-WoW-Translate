@@ -150,6 +150,29 @@
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null
+    },
+    {
+      "date": "2026-10-23",
+      "sourceAccess": "Live EN Wowhead URLs returned JavaScript verification; independent English source text available through indexed Wowhead results",
+      "sampledPageIds": [
+        "vengeance-demon-hunter-tier-set",
+        "balance-druid-gear",
+        "discipline-priest-talent-builds",
+        "survival-hunter-mythic-plus"
+      ],
+      "sampledPageCount": 4,
+      "newReusableTermFamiliesObserved": 0,
+      "previouslyObservedRiskFamilies": [
+        "2/4-piece tier bonuses and conditional item slots",
+        "off-piece and crafting terminology",
+        "talent import controls",
+        "dungeon-specific utility and spell links"
+      ],
+      "architectureIssueFixed": "canonical ID projection previously returned no mappings for en-US->fr-FR when entity records contained generic en/fr keys; exact regional then generic-language fallback added with cross-region isolation",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "regional canonical projection unit-tested with generic, regional, collision and no-cross-region cases; live browser/Translator API quality unverified"
     }
   ]
 }
