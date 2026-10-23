@@ -17,6 +17,24 @@
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "crossPageFixStatus": "glossary rules committed; live Chrome/Translator API verification pending"
+    },
+    {
+      "date": "2026-10-23",
+      "sourceAccess": "indexed English Wowhead guide text; direct page access returned JavaScript challenge",
+      "sampledPageIds": [
+        "enhancement-shaman-talent-builds",
+        "augmentation-evoker-talent-builds"
+      ],
+      "sampledPageCount": 2,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "talent import codes, copy controls and linked spell names"
+      ],
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "crossPageFixStatus": "added independent talent-import corpus coverage and CI checks; no browser DOM/Translator API verification"
     }
   ]
 }
