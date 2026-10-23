@@ -247,6 +247,14 @@
     {
       "id": "brewmaster-monk-mythic-plus",
       "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "brewmaster-monk-tier-set",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/tier-set-bonuses"
+    },
+    {
+      "id": "holy-priest-tier-set",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/tier-set-bonuses"
     }
   ]
 }
