@@ -57,7 +57,14 @@
     "diminishing returns": "rendements décroissants",
     "diminishing return": "rendement décroissant",
     "breakpoint": "seuil",
-    "breakpoints": "seuils"
+    "breakpoints": "seuils",
+    "crafting order": "ordre de craft",
+    "off-hand": "main gauche",
+    "offhand": "main gauche",
+    "off-hands": "mains gauches",
+    "offhands": "mains gauches",
+    "embellishment": "embellissement",
+    "embellishments": "embellissements"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
