@@ -71,6 +71,14 @@ for page in cfg.get("pages", []):
     row = {"id": page["id"], "url": url, "ok": False, "blocks": [], "stats": {}}
     try:
         raw = fetch(url)
+        # A JS challenge can return HTTP 200; never score it as guide content.
+        lower = raw.casefold()
+        if "verify that you're not a robot" in lower or (
+            "javascript is disabled" in lower and "enable javascript" in lower
+        ):
+            row["error"] = "Wowhead JavaScript challenge: source unavailable (not a translation failure)"
+            report["pages"].append(row)
+            continue
         parsed_blocks = extract_blocks(raw)
         seen = set()
         blocks = []
