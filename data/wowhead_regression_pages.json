@@ -203,6 +203,22 @@
     {
       "id": "brewmaster-monk-stats",
       "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/stat-priority-pve-tank"
+    },
+    {
+      "id": "protection-warrior-talents",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/abilities-talents-pve-tank"
+    },
+    {
+      "id": "marksmanship-hunter-consumables",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/enchants-gems-pve-dps"
+    },
+    {
+      "id": "assassination-rogue-consumables",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/enchants-gems-pve-dps"
+    },
+    {
+      "id": "retribution-paladin-raid",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/midnight-season-2-raid-tips"
     }
   ]
 }
