@@ -7,6 +7,7 @@ import hashlib
 from pathlib import Path
 from blizzard_search_pairs import collect_search_pairs
 from index_retention import retain_on_partial_index
+from merge_entity_locales import project_locale_pairs
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -161,16 +162,11 @@ if blizzard_memory_path.exists():
         print("WARN Blizzard translation memory", exc)
         blizzard_memory = {}
 
-exact_candidates = {}
-for bucket in entities.values():
-    for row in bucket.values():
-        exact_candidates.setdefault(row["en"], set()).add(row["fr"])
-
-exact = {
-    en: next(iter(values))
-    for en, values in exact_candidates.items()
-    if len(values) == 1
-}
+# Project current EN->FR pack from canonical ID records, never by assuming
+# identical source names identify the same spell/item across entity types.
+# The helper accepts arbitrary source/target language keys for future packs.
+# Ambiguous or incomplete IDs fall back to prose translation, not a guessed name.
+exact = project_locale_pairs(entities, "en", "fr")
 
 # Official Blizzard translation-memory phrases are whole-string matches only.
 # This lets us reuse real Blizzard EN->FR wording without injecting fragments into prose.
