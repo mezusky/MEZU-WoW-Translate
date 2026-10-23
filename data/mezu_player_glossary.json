@@ -56,8 +56,8 @@
     "off pieces": "pièces hors set",
     "diminishing returns": "rendements décroissants",
     "diminishing return": "rendement décroissant",
-    "breakpoint": "palier",
-    "breakpoints": "paliers"
+    "breakpoint": "seuil",
+    "breakpoints": "seuils"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
