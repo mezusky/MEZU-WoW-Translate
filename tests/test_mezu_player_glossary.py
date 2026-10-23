@@ -57,6 +57,25 @@ class PlayerGlossaryTests(unittest.TestCase):
         self.assertEqual(jargon["breakpoints"], "seuils")
 
 
+    def test_crafting_terms_shared_across_unrelated_specs(self):
+        # Discipline Priest, Preservation Evoker, Fire Mage and Demonology
+        # Warlock gear guides use these common crafting/equipment terms.
+        jargon = GLOSSARY["jargon"]
+        self.assertEqual(jargon["crafting order"], "ordre de craft")
+        for spelling in ("off-hand", "offhand"):
+            with self.subTest(spelling=spelling):
+                self.assertEqual(jargon[spelling], "main gauche")
+        for spelling in ("off-hands", "offhands"):
+            with self.subTest(spelling=spelling):
+                self.assertEqual(jargon[spelling], "mains gauches")
+        self.assertEqual(jargon["embellishment"], "embellissement")
+        self.assertEqual(jargon["embellishments"], "embellissements")
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
+        self.assertNotIn("crafting order", manual.get("exact", {}))
+        # "off-piece" means non-set armor, not an off-hand weapon.
+        self.assertEqual(jargon["off-piece"], "pièce hors set")
+
+
     def test_locale_glossary_has_no_duplicate_legacy_jargon(self):
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
         overlapping = set(GLOSSARY["jargon"]) & set(manual.get("jargon", {}))
