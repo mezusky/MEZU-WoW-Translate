@@ -319,6 +319,14 @@
     {
       "id": "discipline-priest-gear",
       "url": "https://www.wowhead.com/guide/classes/priest/discipline/bis-gear"
+    },
+    {
+      "id": "preservation-evoker-gear",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/bis-gear"
+    },
+    {
+      "id": "fire-mage-gear",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/bis-gear"
     }
   ]
 }
