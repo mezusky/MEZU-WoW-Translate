@@ -1,0 +1,45 @@
+"""Normalize Blizzard search results by canonical entity ID, independent of locale."""
+from collections import defaultdict
+
+
+def search_names(document, locale):
+    """Read only search-hit entities, never nested category or media IDs."""
+    names = {}
+    ambiguous = set()
+    if not isinstance(document, dict):
+        return names
+    results = document.get("results", [])
+    if not isinstance(results, list):
+        return names
+    for hit in results:
+        data = hit.get("data") if isinstance(hit, dict) else None
+        if not isinstance(data, dict):
+            continue
+        entity_id = data.get("id")
+        if not isinstance(entity_id, int) or isinstance(entity_id, bool) or entity_id <= 0:
+            continue
+        name = data.get("name")
+        if isinstance(name, dict):
+            name = name.get(locale) or name.get(locale.replace("_", "-"))
+        if not isinstance(name, str) or not name.strip():
+            continue
+        key = str(entity_id)
+        name = name.strip()
+        if key in names and names[key] != name:
+            ambiguous.add(key)
+        else:
+            names[key] = name
+    for key in ambiguous:
+        names.pop(key, None)
+    return names
+
+
+def collect_search_pairs(source_document, target_document, source_locale, target_locale,
+                         source_key="en", target_key="fr"):
+    """Return a locale-aware name pair for IDs present in both search responses."""
+    if source_key == target_key:
+        raise ValueError("Source and target keys must differ")
+    source = search_names(source_document, source_locale)
+    target = search_names(target_document, target_locale)
+    return {key: {source_key: name, target_key: target[key]}
+            for key, name in source.items() if key in target}
