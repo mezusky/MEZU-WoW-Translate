@@ -174,8 +174,12 @@ manual = select_locale_data(manual, PACK_SOURCE_LANGUAGE, PACK_TARGET_LANGUAGE,
                             legacy_pair=("en", "fr"))
 community = select_locale_data(community, PACK_SOURCE_LANGUAGE, PACK_TARGET_LANGUAGE,
                                legacy_pair=("en", "fr"))
+# Official Blizzard translations use the en-US/fr-FR canonical regional
+# locales. Admit them to the current generic en/fr pack explicitly, not by
+# weakening the default region-isolation rule for every data source.
 blizzard_memory = select_locale_data(blizzard_memory, PACK_SOURCE_LANGUAGE,
-                                     PACK_TARGET_LANGUAGE)
+                                     PACK_TARGET_LANGUAGE,
+                                     canonical_pair=("en-US", "fr-FR"))
 player_glossary = select_locale_data(player_glossary, PACK_SOURCE_LANGUAGE,
                                     PACK_TARGET_LANGUAGE)
 
