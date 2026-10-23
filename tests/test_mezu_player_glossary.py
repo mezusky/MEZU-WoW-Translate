@@ -37,5 +37,16 @@ class PlayerGlossaryTests(unittest.TestCase):
                 self.assertEqual(jargon[source], target)
 
 
+    def test_offpiece_variants_share_one_locale_specific_translation(self):
+        # Seen across Preservation Evoker and unrelated Rogue/Monk gear guides.
+        jargon = GLOSSARY["jargon"]
+        for source in ("off-piece", "offpiece", "off piece"):
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], "pièce hors set")
+        for source in ("off-pieces", "offpieces", "off pieces"):
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], "pièces hors set")
+
+
 if __name__ == "__main__":
     unittest.main()
