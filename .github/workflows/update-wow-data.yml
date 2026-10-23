@@ -40,6 +40,7 @@ jobs:
           python scripts/preserve_blizzard_memory.py "$RUNNER_TEMP/blizzard_memory_previous.json" data/blizzard_translation_memory.json
           python -m unittest discover -s tests -p "test_blizzard_memory_retention.py"
           python -m unittest discover -s tests -p "test_blizzard_search_pairs.py"
+          python -m unittest discover -s tests -p "test_canonical_entity_locales.py"
           python -m unittest discover -s tests -p "test_index_retention.py"
           python -m unittest discover -s tests -p "test_wowhead_regression_corpus.py"
 
