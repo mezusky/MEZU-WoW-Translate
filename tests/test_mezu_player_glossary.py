@@ -53,8 +53,14 @@ class PlayerGlossaryTests(unittest.TestCase):
         jargon = GLOSSARY["jargon"]
         self.assertEqual(jargon["diminishing returns"], "rendements décroissants")
         self.assertEqual(jargon["diminishing return"], "rendement décroissant")
-        self.assertEqual(jargon["breakpoint"], "palier")
-        self.assertEqual(jargon["breakpoints"], "paliers")
+        self.assertEqual(jargon["breakpoint"], "seuil")
+        self.assertEqual(jargon["breakpoints"], "seuils")
+
+
+    def test_locale_glossary_has_no_duplicate_legacy_jargon(self):
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
+        overlapping = set(GLOSSARY["jargon"]) & set(manual.get("jargon", {}))
+        self.assertEqual(overlapping, set(), "Move terms to one locale-scoped source")
 
 
 if __name__ == "__main__":
