@@ -218,6 +218,35 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "canonical-pair code and independent source corpus committed; CI rebuild and browser Translator API verification pending"
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "direct Wowhead EN URLs returned JavaScript verification; current indexed English guide text inspected",
+      "sampledPageIds": [
+        "subtlety-rogue-gear",
+        "guardian-druid-tier-set",
+        "frost-death-knight-talent-builds",
+        "holy-priest-mythic-plus"
+      ],
+      "sampledPageCount": 4,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "ambiguous crafting order: recommended equipment-craft sequence versus Blizzard Crafting Orders profession service"
+      ],
+      "previouslyObservedRiskFamilies": [
+        "off-piece and 2/4-piece tier terminology",
+        "talent import/copy controls and linked official spells",
+        "conditional Mythic+ healer utility tables"
+      ],
+      "sourceQualityRisks": [
+        "Subtlety gear source contains blank season placeholders and malformed shortcode remnants; not classified as MEZU errors"
+      ],
+      "crossPageFixStatus": "removed unsafe bare crafting order jargon and added context-specific recommended crafting order phrase; tests committed; browser runtime unverified",
+      "priorCiRunId": 40020128698,
+      "priorCiConclusion": "success",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null
     }
   ]
 }
