@@ -56,6 +56,36 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "source-only audit classification and independent corpus coverage committed; browser output and novel issue rate remain unverified"
+    },
+    {
+      "date": "2026-10-23",
+      "sourceAccess": "indexed English Wowhead guide content; direct source pages returned JavaScript verification",
+      "sampledPageIds": [
+        "restoration-shaman-talent-builds",
+        "outlaw-rogue-consumables",
+        "affliction-warlock-mythic-plus",
+        "preservation-evoker-tier-set"
+      ],
+      "sampledPageCount": 4,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "offpiece/off piece/off-piece spelling variants across independent gearing guides"
+      ],
+      "newStructuralRiskFamiliesObserved": 0,
+      "previouslyObservedRiskFamilies": [
+        "talent import/copy controls",
+        "conditional gem tables and linked official item names",
+        "dungeon-specific utility panels",
+        "tier-set 2/4-piece conditions"
+      ],
+      "localeIsolationContractAdded": true,
+      "datapackLocaleDirection": "en->fr",
+      "ciRunId": 39997247266,
+      "ciUnitTestsPassed": 44,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "locale-scoped jargon selection and offpiece variants rebuilt and validated; live Chrome/Translator API and novel translation error rate remain unverified"
     }
   ]
 }
