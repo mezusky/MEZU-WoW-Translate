@@ -327,6 +327,22 @@
     {
       "id": "fire-mage-gear",
       "url": "https://www.wowhead.com/guide/classes/mage/fire/bis-gear"
+    },
+    {
+      "id": "vengeance-demon-hunter-tier-set",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/tier-set-bonuses"
+    },
+    {
+      "id": "balance-druid-gear",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/bis-gear"
+    },
+    {
+      "id": "discipline-priest-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/talent-builds-pve-healer"
+    },
+    {
+      "id": "survival-hunter-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/mythic-plus-dungeon-tips"
     }
   ]
 }
