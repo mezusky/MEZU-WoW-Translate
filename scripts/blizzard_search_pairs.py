@@ -1,5 +1,4 @@
 """Normalize Blizzard search results by canonical entity ID, independent of locale."""
-from collections import defaultdict
 
 
 def search_names(document, locale):
