@@ -159,7 +159,8 @@ def numeric_facts(text):
     pattern = (
         r"(?<!\w)([+\-\u2212]?\d+(?:[.,]\d+)*)"
         r"(?:\s*(%|milliseconds?|millisecondes?|ms|seconds?|secondes?|"
-        r"secs?\.?|s|minutes?|mins?\.?|min\.?|hours?|heures?|hrs?\.?|hr\.?|h|"\n        r"targets?|cibles?|stacks?|cumuls?)"
+        r"secs?\.?|s|minutes?|mins?\.?|min\.?|hours?|heures?|hrs?\.?|hr\.?|h|"
+        r"targets?|cibles?|stacks?|cumuls?)"
         r"(?![^\W\d_]))?"
     )
     aliases = {
