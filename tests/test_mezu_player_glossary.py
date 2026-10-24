@@ -83,6 +83,19 @@ class PlayerGlossaryTests(unittest.TestCase):
         self.assertEqual(jargon["off-piece"], "pièce hors set")
 
 
+    def test_active_trinket_jargon_generalizes_across_caster_specs(self):
+        # Shadow Priest and Affliction/Demonology Warlock opener guides use
+        # both hyphenated and spaced variants; not every trinket is activable.
+        jargon = GLOSSARY["jargon"]
+        for source in ("on-use trinket", "on use trinket"):
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], "bijou activable")
+        for source in ("on-use trinkets", "on use trinkets"):
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], "bijoux activables")
+        self.assertEqual(jargon["On-use Trinket"], "Bijou activable")
+        self.assertEqual(jargon["trinket"], "bijou")
+
     def test_locale_glossary_has_no_duplicate_legacy_jargon(self):
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
         overlapping = set(GLOSSARY["jargon"]) & set(manual.get("jargon", {}))
