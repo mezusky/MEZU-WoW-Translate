@@ -75,6 +75,18 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         self.assertTrue(required.issubset({p["id"] for p in PAGES}))
 
 
+    def test_proc_heading_samples_span_independent_dps_classes(self):
+        # Same source phrase occurs across Shaman, Warlock, Hunter and Rogue.
+        # Source-only coverage is not browser translation verification.
+        required = {
+            "elemental-shaman-overview",
+            "affliction-warlock-rotation",
+            "marksmanship-hunter-overview",
+            "outlaw-rogue-overview",
+        }
+        self.assertTrue(required.issubset({p["id"] for p in PAGES}))
+
+
 
 if __name__ == "__main__":
     unittest.main()
