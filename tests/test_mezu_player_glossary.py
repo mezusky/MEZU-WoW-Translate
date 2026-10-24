@@ -135,10 +135,14 @@ class PlayerGlossaryTests(unittest.TestCase):
         # damage; Havoc Demon Hunter describes a raidwide DoT.
         # These are prose patterns, not spell/entity name replacements.
         jargon = GLOSSARY["jargon"]
-        self.assertEqual(jargon["raidwide damage"], "dégâts sur tout le raid")
+        # Independent Preservation Evoker, Restoration Shaman and Holy/Discipline
+        # Priest raid guides use unhyphenated, hyphenated and spaced spellings.
+        for spelling in ("raidwide damage", "raid-wide damage", "raid wide damage"):
+            with self.subTest(spelling=spelling):
+                self.assertEqual(jargon[spelling], "dégâts sur tout le raid")
         self.assertEqual(jargon["raidwide DoT"], "DoT sur tout le raid")
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
-        for phrase in ("raidwide damage", "raidwide DoT"):
+        for phrase in ("raidwide damage", "raid-wide damage", "raid wide damage", "raidwide DoT"):
             self.assertNotIn(phrase, manual.get("jargon", {}))
             self.assertNotIn(phrase, manual.get("exact", {}))
 
