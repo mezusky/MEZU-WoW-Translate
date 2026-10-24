@@ -471,6 +471,26 @@
     {
       "id": "affliction-warlock-stats",
       "url": "https://www.wowhead.com/guide/classes/warlock/affliction/stat-priority-pve-dps"
+    },
+    {
+      "id": "balance-druid-overview",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/overview-pve-dps"
+    },
+    {
+      "id": "elemental-shaman-overview",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/overview-pve-dps"
+    },
+    {
+      "id": "beast-mastery-hunter-rotation",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "arms-warrior-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "retribution-paladin-stats",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/stat-priority-pve-dps"
     }
   ]
 }
