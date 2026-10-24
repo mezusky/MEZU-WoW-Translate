@@ -534,6 +534,29 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Shared source extractor correction and three offline tests committed; five distinct guide URLs added. GitHub Actions rebuild pending; browser Translator API remains unverified."
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Direct Wowhead URLs challenged by JavaScript; current indexed English guide text examined (not browser output).",
+      "sampledPageIds": [
+        "assassination-rogue-gear",
+        "frost-death-knight-mythic-plus",
+        "restoration-druid-talents",
+        "survival-hunter-gear"
+      ],
+      "sampledPageCount": 4,
+      "sourceCorpusCount": 142,
+      "newReusableTermFamiliesObserved": 0,
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "CSS visibility:collapse and content-visibility:hidden were not excluded from source-only HTML extraction; precautionary shared parser fix."
+      ],
+      "crossPageSourceValidation": "Independent Rogue/Hunter gear guides and Death Knight Mythic+/Druid talents expose tables, interactive builds and official spell/item names. Browser DOM not inspected; no claim these exact CSS properties occur on Wowhead.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Shared extractor updated with CSS cascade-aware hidden subtree handling; 3 offline tests committed; CI for latest changes pending."
     }
   ]
 }
