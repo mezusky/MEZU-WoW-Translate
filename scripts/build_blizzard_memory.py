@@ -13,9 +13,9 @@ import time
 import urllib.request
 from difflib import SequenceMatcher
 try:
-    from .html_block_extractor import extract_blocks
+    from .html_block_extractor import extract_readable_blocks
 except ImportError:  # Direct execution: python scripts/build_blizzard_memory.py
-    from html_block_extractor import extract_blocks
+    from html_block_extractor import extract_readable_blocks
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -55,9 +55,7 @@ def clean_blocks(raw_html):
     Wowhead source auditor; fall back to unscoped parsing only when needed.
     """
     tags = ("h1", "h2", "h3", "h4", "p", "li")
-    blocks = extract_blocks(raw_html, tags=tags, scoped=True)
-    if len(blocks) < 4:
-        blocks = extract_blocks(raw_html, tags=tags, scoped=False)
+    blocks = extract_readable_blocks(raw_html, tags=tags)
 
     out = []
     seen = set()
