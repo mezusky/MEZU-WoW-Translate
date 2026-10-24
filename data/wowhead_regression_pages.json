@@ -627,6 +627,22 @@
     {
       "id": "demonology-warlock-talents",
       "url": "https://www.wowhead.com/guide/classes/warlock/demonology/abilities-talents-pve-dps"
+    },
+    {
+      "id": "demonology-warlock-midnight-season-2",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/midnight-season-2"
+    },
+    {
+      "id": "retribution-paladin-talents",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/abilities-talents-pve-dps"
+    },
+    {
+      "id": "balance-druid-consumables",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/enchants-gems-pve-dps"
+    },
+    {
+      "id": "holy-paladin-stats",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/stat-priority-pve-healer"
     }
   ]
 }
