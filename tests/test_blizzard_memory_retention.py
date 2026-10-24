@@ -52,5 +52,27 @@ class BlizzardMemoryRetentionTests(unittest.TestCase):
         self.assertIsNone(merged)
 
 
+    def test_legacy_swapped_numeric_pair_is_removed(self):
+        en = "Health increases by 5%, while damage increases by 10%."
+        bad_fr = "Les points de vie augmentent de 10 %, tandis que les dégâts augmentent de 5 %."
+        old = {"exact": {en: bad_fr}, "sources": {en: "123"}}
+        result, merged = self.merge(old, {"exact": {}})
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertNotIn(en, merged["exact"])
+        self.assertNotIn(en, merged["sources"])
+
+    def test_corrected_pair_can_replace_unsafe_legacy_pair(self):
+        en = "Health increases by 5%, while damage increases by 10%."
+        bad_fr = "Les points de vie augmentent de 10 %, tandis que les dégâts augmentent de 5 %."
+        good_fr = "Les points de vie augmentent de 5 %, tandis que les dégâts augmentent de 10 %."
+        result, merged = self.merge(
+            {"exact": {en: bad_fr}},
+            {"exact": {en: good_fr}, "sources": {en: "456"}},
+        )
+        self.assertEqual(result.returncode, 0, result.stderr)
+        self.assertEqual(merged["exact"][en], good_fr)
+        self.assertNotIn(en, merged["ambiguous"])
+
+
 if __name__ == "__main__":
     unittest.main()
