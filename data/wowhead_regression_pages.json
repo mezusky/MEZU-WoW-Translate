@@ -403,6 +403,18 @@
     {
       "id": "mistweaver-monk-stats",
       "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/stat-priority-pve-healer"
+    },
+    {
+      "id": "arcane-mage-rotation",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "guardian-druid-rotation",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/rotation-cooldowns-pve-tank"
+    },
+    {
+      "id": "holy-paladin-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/talent-builds-pve-healer"
     }
   ]
 }
