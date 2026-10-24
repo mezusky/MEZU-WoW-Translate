@@ -509,6 +509,31 @@
       "publishedDatapackVersion": "a9c8fa31b329aee420c2",
       "publishedEntityCount": 24393,
       "publishedExactCount": 22198
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Live English Wowhead URLs attempted with assistant web access; direct HTML blocked by JavaScript challenge, indexed current English guide excerpts inspected (not browser DOM).",
+      "sampledPageIds": [
+        "windwalker-monk-raid",
+        "mistweaver-monk-raid",
+        "restoration-shaman-consumables",
+        "blood-death-knight-gear",
+        "holy-priest-stats",
+        "discipline-priest-raid"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 138,
+      "crossPageSourceValidation": "Windwalker and Mistweaver Monk raid guides expose different AoE/raidwide wording and boss-talent widgets; Restoration Shaman consumables and Blood Death Knight gear independently expose official item/entity names; Holy Priest stats includes numeric rating thresholds also present in other healers. Existing Discipline Priest raid source used as unrelated healer comparison.",
+      "sharedAuditInfrastructureFix": "Short main/article pages with real paragraph/list/table prose now stay scoped instead of falling back to site-wide navigation when fewer than four blocks. Heading-only empty wrappers retain unscoped fallback. Tests cover independent Wowhead-like and Blizzard-like documents.",
+      "novelRiskFamiliesObserved": [
+        "Potential overlapping jargon prefixes: raid-wide damage-over-time can contain the existing raid-wide damage rule; cannot confirm replacement behavior without browser extension.",
+        "Indexed Wowhead localized pages can mix English prose with localized entity names; not evidence of MEZU browser output."
+      ],
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Shared source extractor correction and three offline tests committed; five distinct guide URLs added. GitHub Actions rebuild pending; browser Translator API remains unverified."
     }
   ]
 }
