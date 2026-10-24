@@ -20,7 +20,7 @@ def inline_style_hidden(style):
     for declaration in CSS_COMMENT.sub("", style).split(";"):
         name, separator, value = declaration.partition(":")
         name = name.strip().lower()
-        if not separator or name not in ("display", "visibility"):
+        if not separator or name not in ("display", "visibility", "content-visibility"):
             continue
         match = CSS_VALUE.fullmatch(value)
         if not match:
@@ -30,7 +30,8 @@ def inline_style_hidden(style):
         if previous is None or important or not previous[1]:
             effective[name] = (match.group(1).lower(), important)
     return (effective.get("display", (None,))[0] == "none"
-            or effective.get("visibility", (None,))[0] == "hidden")
+            or effective.get("visibility", (None,))[0] in ("hidden", "collapse")
+            or effective.get("content-visibility", (None,))[0] == "hidden")
 
 
 def is_hidden(attrs):
