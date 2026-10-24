@@ -455,6 +455,22 @@
     {
       "id": "protection-warrior-raid",
       "url": "https://www.wowhead.com/guide/classes/warrior/protection/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "preservation-evoker-rotation",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/rotation-cooldowns-pve-healer"
+    },
+    {
+      "id": "marksmanship-hunter-gear",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/bis-gear"
+    },
+    {
+      "id": "frost-mage-raid",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "affliction-warlock-stats",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/stat-priority-pve-dps"
     }
   ]
 }
