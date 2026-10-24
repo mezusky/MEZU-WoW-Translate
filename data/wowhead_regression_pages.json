@@ -707,6 +707,18 @@
     {
       "id": "shadow-priest-overview",
       "url": "https://www.wowhead.com/guide/classes/priest/shadow/overview-pve-dps"
+    },
+    {
+      "id": "havoc-demon-hunter-talents",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/abilities-talents-pve-dps"
+    },
+    {
+      "id": "windwalker-monk-talents",
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/abilities-talents-pve-dps"
+    },
+    {
+      "id": "fury-warrior-talents",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/abilities-talents-pve-dps"
     }
   ]
 }
