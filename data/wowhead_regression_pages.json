@@ -391,6 +391,18 @@
     {
       "id": "devastation-evoker-stats",
       "url": "https://www.wowhead.com/guide/classes/evoker/devastation/stat-priority-pve-dps"
+    },
+    {
+      "id": "protection-warrior-consumables",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/enchants-gems-pve-tank"
+    },
+    {
+      "id": "elemental-shaman-raid",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "mistweaver-monk-stats",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/stat-priority-pve-healer"
     }
   ]
 }
