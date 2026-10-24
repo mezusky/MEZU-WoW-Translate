@@ -367,7 +367,7 @@
         "arms-warrior-stats"
       ],
       "sampledPageCount": 3,
-      "newReusableTermFamiliesObserved": null,
+      "newReusableTermFamiliesObserved": 1,
       "previouslyObservedRiskFamilies": [
         "resource overcapping and cooldown usage",
         "spot-healing and Holy Word priorities",
@@ -378,7 +378,10 @@
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
-      "crossPageFixStatus": "source-level cross-role review complete; CI rebuild pending; browser Translator API not reproducible in server audit"
+      "crossPageFixStatus": "shared Blizzard HTML extraction and locale-specific caster jargon committed; CI rebuild pending; Chrome Translator API not reproduced",
+      "termFamilies": [
+        "hyphenated stutter-stepping preserved in Elemental Shaman raid guide, alongside spaced Arcane Mage movement terminology"
+      ]
     }
   ]
 }
