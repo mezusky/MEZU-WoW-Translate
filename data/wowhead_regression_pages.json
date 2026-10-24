@@ -611,6 +611,22 @@
     {
       "id": "demonology-warlock-mythic-plus",
       "url": "https://www.wowhead.com/guide/classes/warlock/demonology/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "augmentation-evoker-stats",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/stat-priority-pve-dps"
+    },
+    {
+      "id": "fire-mage-raid",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "protection-warrior-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "demonology-warlock-talents",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/abilities-talents-pve-dps"
     }
   ]
 }
