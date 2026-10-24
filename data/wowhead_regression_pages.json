@@ -491,6 +491,18 @@
     {
       "id": "retribution-paladin-stats",
       "url": "https://www.wowhead.com/guide/classes/paladin/retribution/stat-priority-pve-dps"
+    },
+    {
+      "id": "marksmanship-hunter-overview",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/overview-pve-dps"
+    },
+    {
+      "id": "outlaw-rogue-overview",
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/overview-pve-dps"
+    },
+    {
+      "id": "elemental-shaman-basics",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/basics"
     }
   ]
 }
