@@ -101,3 +101,17 @@ def extract_blocks(html, tags=("h1", "h2", "h3", "h4", "p", "li", "td", "th"), s
     parser.feed(html)
     parser.close()
     return parser.blocks
+
+
+def extract_readable_blocks(html, tags=("h1", "h2", "h3", "h4", "p", "li", "td", "th"),
+                            min_scoped_blocks=4):
+    """Prefer article/main prose over site navigation for source-only audits.
+
+    Some upstream pages have no semantic main/article wrapper; in those cases
+    retain the original unscoped behavior instead of silently losing all text.
+    This is not a browser DOM reconstruction or translation simulation.
+    """
+    scoped = extract_blocks(html, tags=tags, scoped=True)
+    if len(scoped) >= min_scoped_blocks:
+        return scoped
+    return extract_blocks(html, tags=tags, scoped=False)
