@@ -50,8 +50,20 @@ def project_locale_pairs(entities, source_language, target_language):
                 incomplete.add(source_name)
                 continue
             candidates.setdefault(source_name, set()).add(target_name)
+    # Whole-name matching may be case-insensitive in downstream consumers.
+    # Two IDs that differ only by source capitalization must not project
+    # conflicting localized names; likewise a missing target blocks the
+    # case-folded source family. Preserve harmless capitalization variants.
+    folded_targets = {}
+    for name, translations in candidates.items():
+        folded_targets.setdefault(name.casefold(), set()).update(
+            value.casefold() for value in translations
+        )
+    incomplete_folded = {name.casefold() for name in incomplete}
     return {
         name: next(iter(translations))
         for name, translations in candidates.items()
-        if len(translations) == 1 and name not in incomplete
+        if len(translations) == 1
+        and name.casefold() not in incomplete_folded
+        and len(folded_targets[name.casefold()]) == 1
     }
