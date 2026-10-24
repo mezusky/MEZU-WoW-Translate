@@ -41,8 +41,25 @@ WS_RE = re.compile(r"\s+")
 SENT_RE = re.compile(r"(?<=[.!?])\s+(?=[A-ZÀ-ÖØ-Þ0-9])")
 
 
+def accept_language_for_url(url):
+    """Request Blizzard's locale explicitly, without assuming every page is English.
+
+    A localized URL determines the preferred response language. This avoids
+    accidentally requesting English when collecting official translated prose.
+    """
+    from urllib.parse import urlsplit
+
+    segment = urlsplit(url).path.strip("/").split("/", 1)[0]
+    if not re.fullmatch(r"[a-z]{2,3}-[a-z]{2}", segment, re.IGNORECASE):
+        raise ValueError("Blizzard article URL must contain a language-region locale")
+    language, region = segment.split("-", 1)
+    return f"{language.lower()}-{region.upper()},{language.lower()};q=0.8"
+
+
 def fetch(url):
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en-US,en;q=0.8"})
+    req = urllib.request.Request(
+        url, headers={"User-Agent": UA, "Accept-Language": accept_language_for_url(url)}
+    )
     with urllib.request.urlopen(req, timeout=40) as r:
         return r.read().decode("utf-8", "replace")
 
