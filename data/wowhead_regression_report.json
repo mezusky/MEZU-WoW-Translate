@@ -1,77 +1,90 @@
 {
-  "schema": 1,
+  "schema": 2,
+  "auditMethod": "historical source-only CI access report; not browser translation quality",
+  "sourceObservation": "Legacy GitHub-hosted Wowhead 403 results reclassified; no guide source was fetched during this migration",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
   "pages": [
     {
       "id": "vengeance-dh-overview",
       "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/overview-pve-tank",
       "ok": false,
+      "sourceStatus": "blocked_http",
       "blocks": [],
       "stats": {},
-      "error": "HTTP Error 403: Forbidden"
+      "accessNote": "HTTP 403 (GitHub-hosted source access restricted; not a translation failure)"
     },
     {
       "id": "protection-paladin-overview",
       "url": "https://www.wowhead.com/guide/classes/paladin/protection/overview-pve-tank",
       "ok": false,
+      "sourceStatus": "blocked_http",
       "blocks": [],
       "stats": {},
-      "error": "HTTP Error 403: Forbidden"
+      "accessNote": "HTTP 403 (GitHub-hosted source access restricted; not a translation failure)"
     },
     {
       "id": "frost-mage-overview",
       "url": "https://www.wowhead.com/guide/classes/mage/frost/overview-pve-dps",
       "ok": false,
+      "sourceStatus": "blocked_http",
       "blocks": [],
       "stats": {},
-      "error": "HTTP Error 403: Forbidden"
+      "accessNote": "HTTP 403 (GitHub-hosted source access restricted; not a translation failure)"
     },
     {
       "id": "holy-priest-overview",
       "url": "https://www.wowhead.com/guide/classes/priest/holy/overview-pve-healer",
       "ok": false,
+      "sourceStatus": "blocked_http",
       "blocks": [],
       "stats": {},
-      "error": "HTTP Error 403: Forbidden"
+      "accessNote": "HTTP 403 (GitHub-hosted source access restricted; not a translation failure)"
     },
     {
       "id": "restoration-druid-overview",
       "url": "https://www.wowhead.com/guide/classes/druid/restoration/overview-pve-healer",
       "ok": false,
+      "sourceStatus": "blocked_http",
       "blocks": [],
       "stats": {},
-      "error": "HTTP Error 403: Forbidden"
+      "accessNote": "HTTP 403 (GitHub-hosted source access restricted; not a translation failure)"
     },
     {
       "id": "protection-warrior-rotation",
       "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
       "ok": false,
+      "sourceStatus": "blocked_http",
       "blocks": [],
       "stats": {},
-      "error": "HTTP Error 403: Forbidden"
+      "accessNote": "HTTP 403 (GitHub-hosted source access restricted; not a translation failure)"
     },
     {
       "id": "restoration-shaman-rotation",
       "url": "https://www.wowhead.com/guide/classes/shaman/restoration/rotation-cooldowns-pve-healer",
       "ok": false,
+      "sourceStatus": "blocked_http",
       "blocks": [],
       "stats": {},
-      "error": "HTTP Error 403: Forbidden"
+      "accessNote": "HTTP 403 (GitHub-hosted source access restricted; not a translation failure)"
     },
     {
       "id": "assassination-rogue-talents",
       "url": "https://www.wowhead.com/guide/classes/rogue/assassination/abilities-talents-pve-dps",
       "ok": false,
+      "sourceStatus": "blocked_http",
       "blocks": [],
       "stats": {},
-      "error": "HTTP Error 403: Forbidden"
+      "accessNote": "HTTP 403 (GitHub-hosted source access restricted; not a translation failure)"
     },
     {
       "id": "beast-mastery-hunter-stats",
       "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/stat-priority-pve-dps",
       "ok": false,
+      "sourceStatus": "blocked_http",
       "blocks": [],
       "stats": {},
-      "error": "HTTP Error 403: Forbidden"
+      "accessNote": "HTTP 403 (GitHub-hosted source access restricted; not a translation failure)"
     }
   ]
 }
