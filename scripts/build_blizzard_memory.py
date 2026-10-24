@@ -155,8 +155,12 @@ def numeric_facts(text):
     }
     # Preserve negative signs: -5% and +5% must not become the same fact.
     # A leading + is equivalent to an unsigned positive value.
+    # Compact numeric ranges (10-20%, 2–3 targets) use a separator, not
+    # a negative sign. Normalize only a dash directly between digits; keep
+    # genuine signed modifiers such as -5% and 10 to -5% untouched.
+    normalized = re.sub(r"(?<=\d)[-–—](?=\d)", "–", text)
     facts = []
-    for value, unit in re.findall(pattern, text, flags=re.IGNORECASE):
+    for value, unit in re.findall(pattern, normalized, flags=re.IGNORECASE):
         unit = unit.casefold().rstrip(".")
         facts.append((value.replace(",", ".").replace("−", "-").lstrip("+"), aliases.get(unit, unit)))
     return facts  # Keep source order: swapping two percentage values is unsafe.
