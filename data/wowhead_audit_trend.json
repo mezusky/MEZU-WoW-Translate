@@ -756,6 +756,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Source-level cross-page check and shared memory collector fix committed; GitHub Actions full rebuild and browser Translator API behavior remain unconfirmed. Do not infer a clean-state cycle."
+    },
+    {
+      "date": "2026-10-25",
+      "sourceAccess": "Assistant web indexed live English Wowhead guides; no browser-rendered Translator API output.",
+      "sampledPageIds": [
+        "balance-druid-rotation",
+        "balance-druid-talents",
+        "elemental-shaman-rotation",
+        "enhancement-shaman-rotation",
+        "restoration-druid-stats",
+        "mistweaver-monk-rotation"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 183,
+      "newReusableTermFamiliesObserved": 2,
+      "termFamilies": [
+        "Canonical Astral Power (PowerType 8)",
+        "Canonical Maelstrom (PowerType 11), distinct from Maelstrom Weapon stacks"
+      ],
+      "newStructuralRiskFamiliesObserved": 0,
+      "crossPageSourceValidation": "Independent Balance Druid rotation/talents and Elemental/Enhancement Shaman rotations inspected; official Blizzard EN/FR news confirms resource wording. Five offline collector tests added, including a Maelstrom Weapon name boundary; Chrome output unverified.",
+      "sharedDataInfrastructureFix": "Two locale-scoped ID mappings, one reusable test file, three regression URLs; no engine release or manual sentence overrides.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Source-level multi-spec validation committed. CI on current changes and browser-local translation remain unconfirmed; no clean-state claim."
     }
   ]
 }
