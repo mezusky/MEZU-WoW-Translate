@@ -88,5 +88,21 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
 
 
 
+    def test_raidwide_effects_sample_independent_roles(self):
+        # English source coverage only; no assertion about Chrome output.
+        required = {
+            "preservation-evoker-raid",  # healer
+            "restoration-druid-raid",   # healer, unrelated class
+            "havoc-demon-hunter-raid",  # DPS
+        }
+        self.assertTrue(required.issubset({p["id"] for p in PAGES}))
+
+    def test_unholy_and_blood_dk_stats_are_independent_samples(self):
+        # Identical numerical threshold sections must remain comparable
+        # across two specs; no browser translation claim.
+        required = {"unholy-death-knight-stats", "blood-death-knight-stats"}
+        self.assertTrue(required.issubset({p["id"] for p in PAGES}))
+
+
 if __name__ == "__main__":
     unittest.main()
