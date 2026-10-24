@@ -567,6 +567,18 @@
     {
       "id": "survival-hunter-gear",
       "url": "https://www.wowhead.com/guide/classes/hunter/survival/bis-gear"
+    },
+    {
+      "id": "fire-mage-stats",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/stat-priority-pve-dps"
+    },
+    {
+      "id": "destruction-warlock-raid",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "enhancement-shaman-consumables",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/enchants-gems-pve-dps"
     }
   ]
 }
