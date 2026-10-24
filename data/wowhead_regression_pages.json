@@ -691,6 +691,22 @@
     {
       "id": "devastation-evoker-overview",
       "url": "https://www.wowhead.com/guide/classes/evoker/devastation/overview-pve-dps"
+    },
+    {
+      "id": "vengeance-demon-hunter-rotation",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/rotation-cooldowns-pve-tank"
+    },
+    {
+      "id": "windwalker-monk-overview",
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/overview-pve-dps"
+    },
+    {
+      "id": "unholy-death-knight-talents",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/abilities-talents-pve-dps"
+    },
+    {
+      "id": "shadow-priest-overview",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/overview-pve-dps"
     }
   ]
 }
