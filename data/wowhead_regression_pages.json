@@ -579,6 +579,22 @@
     {
       "id": "enhancement-shaman-consumables",
       "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/enchants-gems-pve-dps"
+    },
+    {
+      "id": "fury-warrior-stats",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/stat-priority-pve-dps"
+    },
+    {
+      "id": "guardian-druid-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "discipline-priest-consumables",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/enchants-gems-pve-healer"
+    },
+    {
+      "id": "frost-mage-gear",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/bis-gear"
     }
   ]
 }
