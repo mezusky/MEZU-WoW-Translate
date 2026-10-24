@@ -130,6 +130,18 @@ class PlayerGlossaryTests(unittest.TestCase):
             self.assertNotIn(spelling, manual.get("jargon", {}))
             self.assertNotIn(spelling, manual.get("exact", {}))
 
+    def test_raidwide_effect_terms_are_shared_across_roles(self):
+        # Preservation Evoker and Restoration Druid describe raidwide
+        # damage; Havoc Demon Hunter describes a raidwide DoT.
+        # These are prose patterns, not spell/entity name replacements.
+        jargon = GLOSSARY["jargon"]
+        self.assertEqual(jargon["raidwide damage"], "dégâts sur tout le raid")
+        self.assertEqual(jargon["raidwide DoT"], "DoT sur tout le raid")
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
+        for phrase in ("raidwide damage", "raidwide DoT"):
+            self.assertNotIn(phrase, manual.get("jargon", {}))
+            self.assertNotIn(phrase, manual.get("exact", {}))
+
     def test_locale_glossary_has_no_duplicate_legacy_jargon(self):
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
         overlapping = set(GLOSSARY["jargon"]) & set(manual.get("jargon", {}))
