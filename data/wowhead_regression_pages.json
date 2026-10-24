@@ -643,6 +643,22 @@
     {
       "id": "holy-paladin-stats",
       "url": "https://www.wowhead.com/guide/classes/paladin/holy/stat-priority-pve-healer"
+    },
+    {
+      "id": "subtlety-rogue-rotation",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "assassination-rogue-rotation",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "holy-paladin-rotation",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/rotation-cooldowns-pve-healer"
+    },
+    {
+      "id": "protection-paladin-talents",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/abilities-talents-pve-tank"
     }
   ]
 }
