@@ -10,6 +10,7 @@ on:
       - "tests/**"
       - "data/manual_overrides.json"
       - "data/mezu_player_glossary.json"
+      - "data/*_resource_terms.json"
       - "data/wowhead_regression_pages.json"
       - ".github/workflows/update-wow-data.yml"
 
