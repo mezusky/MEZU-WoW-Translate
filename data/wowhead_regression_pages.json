@@ -659,6 +659,22 @@
     {
       "id": "protection-paladin-talents",
       "url": "https://www.wowhead.com/guide/classes/paladin/protection/abilities-talents-pve-tank"
+    },
+    {
+      "id": "feral-druid-overview",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/overview-pve-dps"
+    },
+    {
+      "id": "beast-mastery-hunter-talents",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/abilities-talents-pve-dps"
+    },
+    {
+      "id": "fury-warrior-overview",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/overview-pve-dps"
+    },
+    {
+      "id": "protection-warrior-overview",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/overview-pve-tank"
     }
   ]
 }
