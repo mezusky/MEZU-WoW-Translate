@@ -69,6 +69,31 @@ class LocaleEntityTests(unittest.TestCase):
         }}
         self.assertNotIn("Charge", project_locale_pairs(entities, "en-US", "fr-FR"))
 
+    def test_casefolded_source_collision_blocks_conflicting_names(self):
+        # Protect consumers that match names case-insensitively, across kinds.
+        entities = {
+            "spell": {"1": {"en": "Echo", "fr": "Écho"}},
+            "item": {"2": {"en": "echo", "fr": "Réverbération"},
+                     "3": {"en": "Unique", "fr": "Unique FR"}},
+        }
+        self.assertEqual(project_locale_pairs(entities, "en", "fr"),
+                         {"Unique": "Unique FR"})
+
+    def test_casefolded_missing_target_blocks_all_variants(self):
+        entities = {
+            "spell": {"1": {"en": "Beacon", "fr": "Balise"}},
+            "item": {"2": {"en": "beacon"}},
+        }
+        self.assertEqual(project_locale_pairs(entities, "en-US", "fr-FR"), {})
+
+    def test_safe_capitalization_variants_are_retained(self):
+        entities = {"spell": {
+            "1": {"en": "Signal", "fr": "Signal"},
+            "2": {"en": "signal", "fr": "signal"},
+        }}
+        self.assertEqual(project_locale_pairs(entities, "en", "fr"),
+                         {"Signal": "Signal", "signal": "signal"})
+
     def test_skip_identical_languages(self):
         entities = {"spell": {"1": {"en": "Charge", "fr": "Charge"}}}
         self.assertEqual(project_locale_pairs(entities, "fr", "fr"), {})
