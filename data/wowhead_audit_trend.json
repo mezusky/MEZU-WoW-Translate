@@ -327,6 +327,30 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "shared audit-only CSS parsing fix and tests committed; no new sentence overrides; browser Translator API and computed styles remain unverified"
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Direct English Wowhead requests returned JavaScript verification; English source prose inspected through current indexed guide results (not a browser DOM snapshot).",
+      "sampledPageIds": [
+        "shadow-priest-rotation",
+        "protection-paladin-mythic-plus",
+        "restoration-druid-consumables",
+        "affliction-warlock-rotation",
+        "demonology-warlock-rotation",
+        "restoration-shaman-consumables"
+      ],
+      "sampledPageCount": 6,
+      "newReusableTermFamiliesObserved": 1,
+      "reusableTermFamily": "on-use/on use trinket(s) (active trinkets): French locale jargon only; avoid treating all trinkets as active",
+      "crossPageSourceValidation": "Shadow Priest opener uses 'on use trinkets'; Affliction and Demonology Warlock opener diagrams use 'On-use Trinket'. Protection Paladin Mythic+ utility selectors and Restoration Druid/Restoration Shaman consumable item tables independently confirm recurring interactive/official-ID risks.",
+      "canonicalEntitySafetyFix": "Casefolded English source-name collisions across canonical entity IDs/kinds, including missing target locales, now fail closed in generic locale projection; synthetic cross-kind tests added. This is a preventive safeguard, not a measured browser regression.",
+      "sourceCorpusCount": 107,
+      "newManualSentenceOverrides": 0,
+      "sourceOnlyNovelIssueRate": null,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Five focused commits for canonical projection, tests, corpus and reusable locale jargon; CI rebuild pending. Actual Translator API output and interaction ordering for compound jargon are browser-only verification items."
     }
   ]
 }
