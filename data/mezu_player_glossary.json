@@ -65,7 +65,12 @@
     "embellishment": "embellissement",
     "embellishments": "embellissements",
     "recommended crafting order": "ordre de fabrication recommandé",
-    "Recommended Crafting Order": "Ordre de fabrication recommandé"
+    "Recommended Crafting Order": "Ordre de fabrication recommandé",
+    "on-use trinket": "bijou activable",
+    "on-use trinkets": "bijoux activables",
+    "on use trinket": "bijou activable",
+    "on use trinkets": "bijoux activables",
+    "On-use Trinket": "Bijou activable"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
