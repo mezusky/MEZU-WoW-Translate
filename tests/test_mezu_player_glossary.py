@@ -118,6 +118,18 @@ class PlayerGlossaryTests(unittest.TestCase):
         for spelling in ("Always Be Casting", "Always be casting", "always be casting"):
             self.assertNotIn(spelling, manual.get("jargon", {}))
 
+    def test_react_to_procs_generalizes_across_dps_specs(self):
+        # Seen in Elemental Shaman, Affliction Warlock, Marksmanship Hunter
+        # and Outlaw Rogue; preserve the familiar WoW term "proc".
+        jargon = GLOSSARY["jargon"]
+        self.assertEqual(jargon["React to procs"], "Réagir aux procs")
+        self.assertEqual(jargon["React to Procs"], "Réagir aux procs")
+        self.assertEqual(jargon["react to procs"], "réagir aux procs")
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
+        for spelling in ("React to procs", "React to Procs", "react to procs"):
+            self.assertNotIn(spelling, manual.get("jargon", {}))
+            self.assertNotIn(spelling, manual.get("exact", {}))
+
     def test_locale_glossary_has_no_duplicate_legacy_jargon(self):
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
         overlapping = set(GLOSSARY["jargon"]) & set(manual.get("jargon", {}))
