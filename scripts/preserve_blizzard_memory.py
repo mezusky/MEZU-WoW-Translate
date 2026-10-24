@@ -15,16 +15,22 @@ for key in ("sourceLanguage", "targetLanguage"):
         raise SystemExit("Language mismatch: " + key)
     if old.get(key) and not new.get(key):
         new[key] = old[key]
+source_locale = new.get("sourceLanguage") or old.get("sourceLanguage") or "en-US"
+target_locale = new.get("targetLanguage") or old.get("targetLanguage") or "fr-FR"
+
+def safe_pair(source, target):
+    return numeric_semantics_match(source, target, source_locale, target_locale)
+
 blocked = set(old.get("ambiguous", [])) | set(new.get("ambiguous", []))
 merged = {
     source: target for source, target in old.get("exact", {}).items()
     if isinstance(source, str) and isinstance(target, str)
-    and numeric_semantics_match(source, target)
+    and safe_pair(source, target)
 }
 for source, target in new.get("exact", {}).items():
     if not isinstance(source, str) or not isinstance(target, str):
         continue
-    if not numeric_semantics_match(source, target):
+    if not safe_pair(source, target):
         continue
     if source in merged and merged[source] != target:
         blocked.add(source)
