@@ -141,7 +141,7 @@ def sentences(text):
 def numeric_facts(text):
     """Compare numbers and normalized units across source and target languages."""
     pattern = (
-        r"(?<!\w)(\d+(?:[.,]\d+)*)"
+        r"(?<!\w)([+\-\u2212]?\d+(?:[.,]\d+)*)"
         r"(?:\s*(%|milliseconds?|millisecondes?|ms|seconds?|secondes?|"
         r"secs?\.?|s|minutes?|mins?\.?|min\.?|hours?|heures?|hrs?\.?|hr\.?|h)"
         r"(?![^\W\d_]))?"
@@ -155,10 +155,12 @@ def numeric_facts(text):
         "hour": "h", "hours": "h", "heure": "h", "heures": "h",
         "hr": "h", "hrs": "h",
     }
+    # Preserve negative signs: -5% and +5% must not become the same fact.
+    # A leading + is equivalent to an unsigned positive value.
     facts = []
     for value, unit in re.findall(pattern, text, flags=re.IGNORECASE):
         unit = unit.casefold().rstrip(".")
-        facts.append((value.replace(",", "."), aliases.get(unit, unit)))
+        facts.append((value.replace(",", ".").replace("−", "-").lstrip("+"), aliases.get(unit, unit)))
     return sorted(facts)
 
 
