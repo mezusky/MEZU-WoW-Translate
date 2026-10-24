@@ -551,6 +551,22 @@
     {
       "id": "holy-priest-stats",
       "url": "https://www.wowhead.com/guide/classes/priest/holy/stat-priority-pve-healer"
+    },
+    {
+      "id": "assassination-rogue-gear",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/bis-gear"
+    },
+    {
+      "id": "frost-death-knight-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "restoration-druid-talents",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/abilities-talents-pve-healer"
+    },
+    {
+      "id": "survival-hunter-gear",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/bis-gear"
     }
   ]
 }
