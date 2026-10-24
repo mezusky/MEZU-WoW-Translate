@@ -12,6 +12,7 @@ import re
 import time
 import urllib.request
 from difflib import SequenceMatcher
+from functools import lru_cache
 try:
     from .html_block_extractor import extract_readable_blocks
 except ImportError:  # Direct execution: python scripts/build_blizzard_memory.py
@@ -201,10 +202,48 @@ def comparison_facts(text):
     ]
 
 
-def numeric_semantics_match(source, target):
-    """One shared safety gate for newly aligned and retained official pairs."""
+@lru_cache(maxsize=16)
+def _resource_names(locale):
+    """Load only the declared locale's canonical WoW resource names (data-only)."""
+    normalized = locale.strip().replace("_", "-").casefold()
+    path = ROOT / "data" / (normalized.replace("-", "_") + "_resource_terms.json")
+    if not path.is_file():
+        return ()
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if payload.get("targetLanguage", "").replace("_", "-").casefold() != normalized:
+        return ()
+    names = set()
+    for resource_id, forms in payload.get("resourceNames", {}).items():
+        if not isinstance(forms, dict):
+            continue
+        for form in forms.values():
+            if isinstance(form, str) and form.strip():
+                names.add((str(resource_id), " ".join(form.replace("’", "'").casefold().split())))
+    return tuple(sorted(names))
+
+
+def resource_count_facts(text, locale):
+    """Preserve counted WoW resources by canonical ID, not translated surface name.
+
+    Only explicit '3 Soul Shards' / '3 éclats d’âme' patterns are protected.
+    Unknown locales and uncounted references remain outside this conservative
+    check; browser prose translation is not simulated here.
+    """
+    normalized = " ".join(text.replace("’", "'").casefold().split())
+    found = set()
+    for resource_id, name in _resource_names(locale):
+        pattern = r"(?<!\\w)(\\d+(?:[.,]\\d+)?)\\s+" + re.escape(name) + r"(?!\\w)"
+        for match in re.finditer(pattern, normalized):
+            found.add((match.start(), match.group(1).replace(",", "."), resource_id))
+    return [(value, resource_id) for _, value, resource_id in sorted(found)]
+
+
+def numeric_semantics_match(source, target, source_language="en-US", target_language="fr-FR"):
+    """One locale-aware safety gate for new and retained official phrase pairs."""
     return (numeric_facts(source) == numeric_facts(target)
-            and comparison_facts(source) == comparison_facts(target))
+            and comparison_facts(source) == comparison_facts(target)
+            and resource_count_facts(source, source_language)
+                == resource_count_facts(target, target_language))
 
 
 def good_pair(en, fr, score):
