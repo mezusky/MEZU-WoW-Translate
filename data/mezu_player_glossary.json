@@ -77,7 +77,9 @@
     "stutter-stepping": "stutter-stepping",
     "Stutter-Stepping": "Stutter-Stepping",
     "raidwide damage": "dégâts sur tout le raid",
-    "raidwide DoT": "DoT sur tout le raid"
+    "raidwide DoT": "DoT sur tout le raid",
+    "raid-wide damage": "dégâts sur tout le raid",
+    "raid wide damage": "dégâts sur tout le raid"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
