@@ -166,6 +166,28 @@ def numeric_facts(text):
     return facts  # Keep source order: swapping two percentage values is unsafe.
 
 
+def comparison_facts(text):
+    """Keep explicit numeric inequalities when aligning official prose.
+
+    Different comparison directions (or strict versus inclusive thresholds)
+    can reverse gameplay advice despite identical numbers. Worded comparisons
+    are not inferred: mismatches simply remain outside exact phrase memory.
+    """
+    pattern = r"(?<![-=<>])(?P<op><=|>=|≤|≥|<|>)\s*(?P<value>[+\-\u2212]?\d+(?:[.,]\d+)*)"
+    aliases = {"≤": "<=", "≥": ">="}
+    return [
+        (aliases.get(match.group("op"), match.group("op")),
+         match.group("value").replace(",", ".").replace("−", "-").lstrip("+"))
+        for match in re.finditer(pattern, text)
+    ]
+
+
+def numeric_semantics_match(source, target):
+    """One shared safety gate for newly aligned and retained official pairs."""
+    return (numeric_facts(source) == numeric_facts(target)
+            and comparison_facts(source) == comparison_facts(target))
+
+
 def good_pair(en, fr, score):
     if score < 4.0:
         return False
@@ -179,7 +201,7 @@ def good_pair(en, fr, score):
     if ratio < 0.34:
         return False
     # Exact translation memory must not silently change numeric facts.
-    if numeric_facts(en) != numeric_facts(fr):
+    if not numeric_semantics_match(en, fr):
         return False
     # Avoid obvious nav/metadata.
     bad = ("cookie","privacy","facebook","twitter","instagram","youtube","copyright")
