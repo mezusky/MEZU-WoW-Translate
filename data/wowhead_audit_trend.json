@@ -357,6 +357,28 @@
       "publishedDatapackVersion": "330034d6356eed2adc68",
       "publishedEntityCount": 24393,
       "publishedExactCount": 21807
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "direct Wowhead URLs returned JavaScript challenge; indexed English guide content examined via assistant web access",
+      "sampledPageIds": [
+        "destruction-warlock-overview",
+        "holy-priest-rotation",
+        "arms-warrior-stats"
+      ],
+      "sampledPageCount": 3,
+      "newReusableTermFamiliesObserved": null,
+      "previouslyObservedRiskFamilies": [
+        "resource overcapping and cooldown usage",
+        "spot-healing and Holy Word priorities",
+        "stat diminishing returns and breakpoint thresholds"
+      ],
+      "newStructuralRiskFamiliesObserved": 0,
+      "sharedInfrastructureFix": "Blizzard official-memory extraction now reuses the audited visible-HTML parser; hidden script/template/style blocks excluded, with scoped/unscoped tests",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "source-level cross-role review complete; CI rebuild pending; browser Translator API not reproducible in server audit"
     }
   ]
 }
