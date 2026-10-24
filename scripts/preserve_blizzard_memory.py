@@ -3,6 +3,10 @@ import json
 import sys
 from pathlib import Path
 
+# Reuse the same numeric-fact validator as the collector: a previously
+# accepted but unsafe pair must not survive every future incremental sync.
+from build_blizzard_memory import numeric_facts
+
 old_path, new_path = map(Path, sys.argv[1:3])
 old = json.loads(old_path.read_text(encoding="utf-8"))
 new = json.loads(new_path.read_text(encoding="utf-8"))
@@ -12,8 +16,16 @@ for key in ("sourceLanguage", "targetLanguage"):
     if old.get(key) and not new.get(key):
         new[key] = old[key]
 blocked = set(old.get("ambiguous", [])) | set(new.get("ambiguous", []))
-merged = dict(old.get("exact", {}))
+merged = {
+    source: target for source, target in old.get("exact", {}).items()
+    if isinstance(source, str) and isinstance(target, str)
+    and numeric_facts(source) == numeric_facts(target)
+}
 for source, target in new.get("exact", {}).items():
+    if not isinstance(source, str) or not isinstance(target, str):
+        continue
+    if numeric_facts(source) != numeric_facts(target):
+        continue
     if source in merged and merged[source] != target:
         blocked.add(source)
     else:
