@@ -1,0 +1,34 @@
+{
+  "schema": 1,
+  "date": "2026-10-24",
+  "sourceAccess": "Assistant web search indexed English Wowhead guide text; direct English URLs returned JavaScript challenge",
+  "sampledPageIds": [
+    "outlaw-rogue-rotation",
+    "guardian-druid-gear",
+    "augmentation-evoker-mythic-plus",
+    "protection-warrior-raid"
+  ],
+  "sampledPageCount": 4,
+  "crossPageSourceObservations": [
+    "Outlaw Rogue rotation: combo-point overcapping, cooldown sequencing, and conditional hero-talent priority widgets",
+    "Guardian Druid gearing: crafted embellishments, trinkets, official item names, and best-in-slot tables",
+    "Augmentation Evoker Mythic+: utility selectors, dungeon-specific examples, and talent-import widgets",
+    "Protection Warrior raid: boss-specific tank swaps, imported talent builds, and spell-name links"
+  ],
+  "previouslyObservedRiskFamilies": [
+    "conditional rotation/utility widgets",
+    "official ID-backed item/spell names",
+    "context-dependent crafting terminology",
+    "raid-specific mechanic labels"
+  ],
+  "newReusableTermFamiliesObserved": 0,
+  "preventiveInfrastructureFix": "Blizzard phrase-memory numeric-fact comparison now distinguishes negative percentage modifiers from positive or unsigned values, preventing sign-flipped pairs from being accepted",
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "sourceOnlyNovelIssueRate": null,
+  "limitations": "Indexed source observations and synthetic unit tests are not a Chrome Translator API output audit; direct Wowhead HTML and browser DOM remain unavailable",
+  "ciRunId": 40066905811,
+  "ciConclusion": "pending"
+}
