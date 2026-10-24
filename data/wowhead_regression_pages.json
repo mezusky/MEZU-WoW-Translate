@@ -439,6 +439,22 @@
     {
       "id": "arms-warrior-stats",
       "url": "https://www.wowhead.com/guide/classes/warrior/arms/stat-priority-pve-dps"
+    },
+    {
+      "id": "outlaw-rogue-rotation",
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "guardian-druid-gear",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/bis-gear"
+    },
+    {
+      "id": "augmentation-evoker-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "protection-warrior-raid",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/midnight-season-2-raid-tips"
     }
   ]
 }
