@@ -719,6 +719,18 @@
     {
       "id": "fury-warrior-talents",
       "url": "https://www.wowhead.com/guide/classes/warrior/fury/abilities-talents-pve-dps"
+    },
+    {
+      "id": "balance-druid-rotation",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "balance-druid-talents",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/abilities-talents-pve-dps"
+    },
+    {
+      "id": "enhancement-shaman-rotation",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/rotation-cooldowns-pve-dps"
     }
   ]
 }
