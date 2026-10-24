@@ -207,7 +207,10 @@ def comparison_facts(text):
 def _resource_names(locale):
     """Load only the declared locale's canonical WoW resource names (data-only)."""
     normalized = locale.strip().replace("_", "-").casefold()
-    path = ROOT / "data" / (normalized.replace("-", "_") + "_resource_terms.json")
+    if not re.fullmatch(r"[a-z]{2,3}-[a-z]{2}", normalized):
+        return ()
+    language, region = normalized.split("-", 1)
+    path = ROOT / "data" / f"{language}_{region.upper()}_resource_terms.json"
     if not path.is_file():
         return ()
     payload = json.loads(path.read_text(encoding="utf-8"))
