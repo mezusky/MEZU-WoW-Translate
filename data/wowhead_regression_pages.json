@@ -531,6 +531,26 @@
     {
       "id": "subtlety-rogue-consumables",
       "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/enchants-gems-pve-dps"
+    },
+    {
+      "id": "windwalker-monk-raid",
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "mistweaver-monk-raid",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "restoration-shaman-consumables",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/enchants-gems-pve-healer"
+    },
+    {
+      "id": "blood-death-knight-gear",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/bis-gear"
+    },
+    {
+      "id": "holy-priest-stats",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/stat-priority-pve-healer"
     }
   ]
 }
