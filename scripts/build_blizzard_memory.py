@@ -232,7 +232,7 @@ def resource_count_facts(text, locale):
     normalized = " ".join(text.replace("’", "'").casefold().split())
     found = set()
     for resource_id, name in _resource_names(locale):
-        pattern = r"(?<!\\w)(\\d+(?:[.,]\\d+)?)\\s+" + re.escape(name) + r"(?!\\w)"
+        pattern = r"(?<!\w)(\d+(?:[.,]\d+)?)\s+" + re.escape(name) + r"(?!\w)"
         for match in re.finditer(pattern, normalized):
             found.add((match.start(), match.group(1).replace(",", "."), resource_id))
     return [(value, resource_id) for _, value, resource_id in sorted(found)]
