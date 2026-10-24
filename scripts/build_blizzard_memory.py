@@ -161,7 +161,7 @@ def numeric_facts(text):
     for value, unit in re.findall(pattern, text, flags=re.IGNORECASE):
         unit = unit.casefold().rstrip(".")
         facts.append((value.replace(",", ".").replace("−", "-").lstrip("+"), aliases.get(unit, unit)))
-    return sorted(facts)
+    return facts  # Keep source order: swapping two percentage values is unsafe.
 
 
 def good_pair(en, fr, score):
