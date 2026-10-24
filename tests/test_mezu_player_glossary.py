@@ -106,6 +106,18 @@ class PlayerGlossaryTests(unittest.TestCase):
         self.assertEqual(manual["jargon"]["stutter stepping"], "stutter stepping")
         self.assertNotIn("stutter-stepping", manual["jargon"])
 
+    def test_always_be_casting_is_idiomatic_across_caster_guides(self):
+        # Current Balance Druid and Elemental Shaman guides use the same
+        # heading; Fire Mage and Discipline Priest also use the phrase.
+        # Keep the player-facing verb "caster", not "être en train de cast".
+        jargon = GLOSSARY["jargon"]
+        self.assertEqual(jargon["Always Be Casting"], "Toujours caster")
+        self.assertEqual(jargon["Always be casting"], "Toujours caster")
+        self.assertEqual(jargon["always be casting"], "toujours caster")
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
+        for spelling in ("Always Be Casting", "Always be casting", "always be casting"):
+            self.assertNotIn(spelling, manual.get("jargon", {}))
+
     def test_locale_glossary_has_no_duplicate_legacy_jargon(self):
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
         overlapping = set(GLOSSARY["jargon"]) & set(manual.get("jargon", {}))
