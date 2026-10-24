@@ -96,6 +96,16 @@ class PlayerGlossaryTests(unittest.TestCase):
         self.assertEqual(jargon["On-use Trinket"], "Bijou activable")
         self.assertEqual(jargon["trinket"], "bijou")
 
+    def test_hyphenated_caster_movement_term_is_protected(self):
+        # Arcane Mage uses "Stutter Stepping"; Elemental Shaman raid tips
+        # use "stutter-stepping". Neither is a spell or item entity.
+        jargon = GLOSSARY["jargon"]
+        self.assertEqual(jargon["stutter-stepping"], "stutter-stepping")
+        self.assertEqual(jargon["Stutter-Stepping"], "Stutter-Stepping")
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
+        self.assertEqual(manual["jargon"]["stutter stepping"], "stutter stepping")
+        self.assertNotIn("stutter-stepping", manual["jargon"])
+
     def test_locale_glossary_has_no_duplicate_legacy_jargon(self):
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
         overlapping = set(GLOSSARY["jargon"]) & set(manual.get("jargon", {}))
