@@ -171,9 +171,9 @@
     },
     "24302544": {
       "accepted_pairs": 1,
-      "en_blocks": 4,
+      "en_blocks": 3,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24302544",
-      "fr_blocks": 4,
+      "fr_blocks": 3,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302544"
     },
     "24302546": {
@@ -192,9 +192,9 @@
     },
     "24302577": {
       "accepted_pairs": 2,
-      "en_blocks": 4,
+      "en_blocks": 3,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24302577",
-      "fr_blocks": 4,
+      "fr_blocks": 3,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302577"
     },
     "24303006": {
@@ -226,7 +226,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24303313"
     },
     "24303315": {
-      "accepted_pairs": 60,
+      "accepted_pairs": 61,
       "en_blocks": 43,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303315",
       "fr_blocks": 38,
@@ -7938,7 +7938,7 @@
     "Watch 4 hours of eligible World of Warcraft content while these Twitch Drops are active on any channel to earn the Cuddly Gold-Colored Grrgle Housing decor item.": "24302098",
     "Watch Now! WoW: Forever Podcast Ep.2": "24310649",
     "Watch the World of Warcraft Live Q&A Now": "24304074",
-    "Watch the World of Warcraft: Forever Podcast, Ep. 1": "24304076",
+    "Watch the World of Warcraft: Forever Podcast, Ep. 1": "24303315",
     "Watch the episode for a closer look at the team’s approach to PvP and what it means for players as they prepare to enter the fray.": "24313102",
     "Watch the episode to get insights from the development team about the beta and World of Warcraft: Forever arriving globally on November 4!": "24302577",
     "Watch the replay and join us for a closer look at what’s ahead.": "24303862",
