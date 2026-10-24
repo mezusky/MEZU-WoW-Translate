@@ -6,9 +6,8 @@ repeatable view of the real guide source so automated review can spot untranslat
 or uncovered WoW phrases before relying on screenshots from the user.
 """
 import json, re, urllib.request
-from html.parser import HTMLParser
 from pathlib import Path
-from html_block_extractor import extract_blocks
+from html_block_extractor import extract_readable_blocks
 from wowhead_source_status import classify_html_source, classify_fetch_error
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -20,36 +19,6 @@ UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/154 Sa
 WS = re.compile(r"\s+")
 EN_SIGNAL = re.compile(r"\b(?:the|and|with|when|your|you|this|that|for|from|into|while|should|will|can|are|is|of|to)\b", re.I)
 WOW_SIGNAL = re.compile(r"\b(?:Paladin|Demon Hunter|Tank|Mythic\+|Raid|cooldown|GCD|Holy Power|Haste|Crit|Mastery|Versatility|BiS|Best in Slot|Raidbots|Great Vault|spender|generator|overcap|defensive|mitigation)\b", re.I)
-
-class Parser(HTMLParser):
-    def __init__(self):
-        super().__init__(convert_charrefs=True)
-        self.capture = None
-        self.buf = []
-        self.blocks = []
-        self.skip = 0
-    def handle_starttag(self, tag, attrs):
-        if tag in {"script","style","noscript"}:
-            self.skip += 1
-            return
-        if self.skip:
-            return
-        if tag in {"h1","h2","h3","h4","p","li","td","th"}:
-            self.capture = tag
-            self.buf = []
-    def handle_endtag(self, tag):
-        if tag in {"script","style","noscript"} and self.skip:
-            self.skip -= 1
-            return
-        if self.capture == tag:
-            t = WS.sub(" ", "".join(self.buf)).strip()
-            if t:
-                self.blocks.append({"tag": tag, "text": t})
-            self.capture = None
-            self.buf = []
-    def handle_data(self, data):
-        if self.capture and not self.skip:
-            self.buf.append(data)
 
 def fetch(url):
     req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
@@ -78,7 +47,7 @@ for page in cfg.get("pages", []):
             row["accessNote"] = reason
             report["pages"].append(row)
             continue
-        parsed_blocks = extract_blocks(raw)
+        parsed_blocks = extract_readable_blocks(raw)
         seen = set()
         blocks = []
         for tag, value in parsed_blocks:
