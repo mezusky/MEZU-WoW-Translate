@@ -503,6 +503,22 @@
     {
       "id": "elemental-shaman-basics",
       "url": "https://www.wowhead.com/guide/classes/shaman/elemental/basics"
+    },
+    {
+      "id": "preservation-evoker-raid",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "restoration-druid-raid",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "havoc-demon-hunter-raid",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "unholy-death-knight-stats",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/stat-priority-pve-dps"
     }
   ]
 }
