@@ -302,6 +302,31 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "source-only audit, shared extractor and regression tests committed; no new sentence overrides; Chrome/Translator API output not verified"
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "three direct English Wowhead pages returned JavaScript verification; indexed English source snippets inspected using assistant web access",
+      "sampledPageIds": [
+        "arcane-mage-rotation",
+        "guardian-druid-rotation",
+        "holy-paladin-talent-builds",
+        "elemental-shaman-raid",
+        "mistweaver-monk-stats"
+      ],
+      "sampledPageCount": 5,
+      "newReusableTermFamiliesObserved": 0,
+      "previouslyObservedRiskFamilies": [
+        "caster stutter-stepping jargon is already deliberately preserved in legacy glossary; avoid contradictory replacement",
+        "interactive talent selectors and repeated conditional rotation blocks",
+        "healer talent-import controls and official spell IDs",
+        "stat thresholds and boss-specific raid utility tables"
+      ],
+      "crossPageSourceValidation": "Arcane Mage and Elemental Shaman source pages both use stutter-stepping terminology; Guardian Druid rotation and Holy Paladin talent guides both contain interactive conditional UI; these are source observations, not browser output validation",
+      "sourceAuditEngineFix": "offline HTML extractor now honors effective inline CSS declaration order and !important, avoiding false hidden/visible text when styles contain overrides; five unit tests added",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "shared audit-only CSS parsing fix and tests committed; no new sentence overrides; browser Translator API and computed styles remain unverified"
     }
   ]
 }
