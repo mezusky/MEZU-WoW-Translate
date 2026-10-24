@@ -627,6 +627,30 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Official-memory fetch locale header and offline tests committed; four independent guide URLs added. CI pending; browser Translator API still unverified."
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Direct English Wowhead URL fetch returned JavaScript verification; indexed English guide text inspected using assistant web access.",
+      "sampledPageIds": [
+        "augmentation-evoker-stats",
+        "fire-mage-raid",
+        "protection-warrior-mythic-plus",
+        "demonology-warlock-talents"
+      ],
+      "sampledPageCount": 4,
+      "sourceCorpusCount": 157,
+      "newReusableTermFamiliesObserved": 0,
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Official phrase-memory numeric checks previously ignored the difference between numbered target counts and stack counts."
+      ],
+      "crossPageSourceValidation": "Existing Frost Mage rotation uses 2/3/8 targets and 2/6/12 stacks; independent Demonology Warlock talents uses 4 targets and multiple stack mechanics. New Augmentation stats, Fire Mage raid, and Protection Warrior Mythic+ pages diversify numeric and interactive source coverage. These are indexed English source observations only.",
+      "sharedDataInfrastructureFix": "Locale-neutral numeric-fact aliases for target(s)/cible(s) and stack(s)/cumul(s) prevent cross-concept count swaps; deliberately do not equate ambiguous spell charges with stacks. Four focused tests committed.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Official memory unit guard, tests, and four guide URLs committed; CI and browser Translator API validation pending."
     }
   ]
 }
