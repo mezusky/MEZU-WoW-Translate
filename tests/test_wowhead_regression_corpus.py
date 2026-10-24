@@ -65,5 +65,16 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         self.assertGreaterEqual(len(classes), 4)
 
 
+    def test_raid_guides_cover_tank_healer_and_dps(self):
+        # Validate independent role coverage before generalizing raid terminology.
+        required = {
+            "protection-warrior-raid",  # tank
+            "holy-priest-raid",         # healer
+            "unholy-death-knight-raid", # damage dealer
+        }
+        self.assertTrue(required.issubset({p["id"] for p in PAGES}))
+
+
+
 if __name__ == "__main__":
     unittest.main()
