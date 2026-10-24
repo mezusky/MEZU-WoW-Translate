@@ -382,6 +382,30 @@
       "termFamilies": [
         "hyphenated stutter-stepping preserved in Elemental Shaman raid guide, alongside spaced Arcane Mage movement terminology"
       ]
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Live direct English Wowhead URLs challenged by JavaScript; independent indexed English guide content inspected",
+      "sampledPageIds": [
+        "preservation-evoker-rotation",
+        "marksmanship-hunter-gear",
+        "frost-mage-raid",
+        "affliction-warlock-stats"
+      ],
+      "sampledPageCount": 4,
+      "newReusableTermFamiliesObserved": 0,
+      "previouslyObservedRiskFamilies": [
+        "healing ramp and spot-healing jargon",
+        "on-use trinkets and crafting order",
+        "raid talent import widgets",
+        "diminishing returns and numeric thresholds"
+      ],
+      "architectureIssueFixed": "official Blizzard phrase-memory numeric facts were sorted, so swapped same-unit percentages could be accepted as equal; preserve source order to quarantine these pairs",
+      "crossPageVerification": "source examples cover multiple percentages in Marksmanship Hunter tier-set/gear and threshold facts in Affliction Warlock stats; deterministic synthetic swapped-percentage tests added; no browser output claim",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "small generator safety fix and independent corpus additions committed; GitHub Actions validation and browser-only translation audit pending"
     }
   ]
 }
