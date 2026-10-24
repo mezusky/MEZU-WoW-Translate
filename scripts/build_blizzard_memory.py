@@ -12,7 +12,10 @@ import re
 import time
 import urllib.request
 from difflib import SequenceMatcher
-from html_block_extractor import extract_blocks
+try:
+    from .html_block_extractor import extract_blocks
+except ImportError:  # Direct execution: python scripts/build_blizzard_memory.py
+    from html_block_extractor import extract_blocks
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
