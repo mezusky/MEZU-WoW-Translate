@@ -477,6 +477,32 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Two reusable locale-specific raidwide glossary phrases and cross-role regression tests committed; full CI and Chrome browser translation validation not confirmed."
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Direct English Wowhead guide URLs returned JavaScript verification; current indexed English content inspected with assistant web access.",
+      "sampledPageIds": [
+        "restoration-shaman-raid",
+        "vengeance-demon-hunter-stats",
+        "subtlety-rogue-consumables",
+        "holy-priest-raid",
+        "discipline-priest-raid",
+        "preservation-evoker-raid"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 133,
+      "newReusableTermFamiliesObserved": 0,
+      "existingTermVariantsFixed": [
+        "raid-wide damage",
+        "raid wide damage"
+      ],
+      "crossPageSourceValidation": "Restoration Shaman uses raid-wide damage; Holy and Discipline Priest use raid wide damage; Preservation Evoker uses raidwide damage. Vengeance Demon Hunter stats contains numeric diminishing-return thresholds and on-use trinket prose; Subtlety Rogue consumables includes localized enchant/item references.",
+      "sharedAuditInfrastructureFix": "Blizzard official-memory builder and Wowhead source analyzer now share article-first visible HTML extraction; old duplicate unused parser removed; three scoped/fallback regression tests added.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Locale-scoped spelling variants and shared audit extractor committed; CI and browser-only Translator API verification not yet confirmed."
     }
   ]
 }
