@@ -651,6 +651,32 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Official memory unit guard, tests, and four guide URLs committed; CI and browser Translator API validation pending."
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Assistant web search inspected current English Wowhead guide excerpts; direct English URLs returned JavaScript verification rather than article HTML.",
+      "sampledPageIds": [
+        "demonology-warlock-talents",
+        "demonology-warlock-midnight-season-2",
+        "retribution-paladin-talents",
+        "balance-druid-consumables",
+        "holy-paladin-stats",
+        "augmentation-evoker-stats"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 161,
+      "newReusableTermFamiliesObserved": 0,
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Numbered Soul Shards can be incorrectly aligned with a different resource noun despite matching numerical values in official Blizzard prose memory."
+      ],
+      "crossPageSourceValidation": "Demonology Warlock talents and gameplay use explicit Soul Shard counts; Retribution Paladin talents independently use numbered Holy Power, while Balance Druid consumables, Holy Paladin stats and Augmentation Evoker stats diversify classes and sections. This is a conservative collector safety check, not evidence of a Chrome translation failure.",
+      "sharedDataInfrastructureFix": "Official memory collector and retention now compare counted WoW resource names via existing locale-scoped canonical resource ID 7 data; unrecognized locales do not borrow French mappings. Fixed an existing literal backslash-n syntax error in numeric_facts that had broken CI; added fail-fast Python compilation and offline tests before network-dependent builds.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Resource ID guard, focused tests, 4 corpus URLs, Python syntax fix and CI preflight committed; full GitHub Actions rebuild and browser Translator API verification pending."
     }
   ]
 }
