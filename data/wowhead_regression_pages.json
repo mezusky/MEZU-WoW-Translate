@@ -595,6 +595,22 @@
     {
       "id": "frost-mage-gear",
       "url": "https://www.wowhead.com/guide/classes/mage/frost/bis-gear"
+    },
+    {
+      "id": "devastation-evoker-rotation",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "protection-paladin-stats",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/stat-priority-pve-tank"
+    },
+    {
+      "id": "subtlety-rogue-raid",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "demonology-warlock-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/mythic-plus-dungeon-tips"
     }
   ]
 }
