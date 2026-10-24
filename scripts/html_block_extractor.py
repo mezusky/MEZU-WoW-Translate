@@ -2,6 +2,11 @@
 from html.parser import HTMLParser
 import re
 
+# Inert DOM subtrees are not visible guide prose until a browser renders them.
+# Keep this audit-only list separate from the extension translation engine.
+SKIP_TAGS = frozenset(("script", "style", "noscript", "template", "svg"))
+
+
 class Extractor(HTMLParser):
     def __init__(self, tags, scoped):
         super().__init__(convert_charrefs=True)
@@ -12,7 +17,7 @@ class Extractor(HTMLParser):
         self.skip = 0
 
     def handle_starttag(self, tag, attrs):
-        if tag in ("script", "style", "noscript"):
+        if tag in SKIP_TAGS:
             self.skip += 1
             for _, parts in self.stack: parts.append(" ")
             return
@@ -30,7 +35,7 @@ class Extractor(HTMLParser):
             for _, parts in self.stack: parts.append(data)
 
     def handle_endtag(self, tag):
-        if tag in ("script", "style", "noscript") and self.skip:
+        if tag in SKIP_TAGS and self.skip:
             self.skip -= 1
             return
         if self.skip:
