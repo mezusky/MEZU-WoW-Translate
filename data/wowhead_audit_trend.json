@@ -426,6 +426,27 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Locale-scoped glossary and regression test committed; five independent guide URLs added; new CI rebuild and Chrome Translator API verification pending."
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "direct English Wowhead pages returned JavaScript verification; current indexed English guide text inspected via assistant web search",
+      "sampledPageIds": [
+        "marksmanship-hunter-overview",
+        "outlaw-rogue-overview",
+        "elemental-shaman-basics",
+        "affliction-warlock-rotation",
+        "elemental-shaman-overview"
+      ],
+      "sampledPageCount": 5,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "React to procs heading across Elemental Shaman, Affliction Warlock, Marksmanship Hunter and Outlaw Rogue"
+      ],
+      "crossPageSourceValidation": "same heading independently present across four DPS classes; capitalization variants mapped in locale-scoped French player glossary",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "source-only terminology fix and four-class regression tests committed; CI rebuild and Chrome Translator API verification pending"
     }
   ]
 }
