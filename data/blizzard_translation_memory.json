@@ -93,14 +93,14 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24301512"
     },
     "24301514": {
-      "accepted_pairs": 195,
+      "accepted_pairs": 194,
       "en_blocks": 131,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24301514",
       "fr_blocks": 133,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24301514"
     },
     "24301515": {
-      "accepted_pairs": 268,
+      "accepted_pairs": 267,
       "en_blocks": 174,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24301515",
       "fr_blocks": 176,
@@ -1421,7 +1421,6 @@
     "Enhancement Fixed an issue where Static Accumulation could cause Maelstrom Weapon stacks to stop automatically generating if activated during certain points of Ascendance or Doom Winds being active.": "Amélioration Correction d’un problème à cause duquel Accumulation statique pouvait empêcher la génération automatique de cumuls d’arme du Maelström si le talent était activé à certains moments pendant Ascendance ou Vents funestes.",
     "Enhancement Healing Surge healing increased by 40% in PvP combat (was 25%).": "Amélioration Soins prodigués par Afflux de soins augmentés de 40 % en combat JcJ (au lieu de 25 %).",
     "Enrage: (Redesigned.) Now has a chance to trigger from taking any damage.": "Enrager : (talent retravaillé). Il dispose désormais d’une chance de se déclencher lorsque vous subissez des dégâts.",
-    "Enrage: Now generates 10 initial Rage.": "Enrager : génère à présent 10 points de rage initiaux.",
     "Ensemble: Prowler’s Faded Headgear": "Ensemble : couvre-chef délavé de rôdeur",
     "Ensemble: Prowler’s Faded Headgear (with mask)": "Ensemble : couvre-chef délavé de rôdeur (avec masque)",
     "Ensemble: Radiant Vestments of the Heavens": "ensemble : habits radieux des cieux.",
@@ -3336,7 +3335,6 @@
     "Shield Slam: Damage scaling from Block Value increased.": "Heurt de bouclier : l’ajustement des dégâts issus de la valeur de blocage a été augmenté.",
     "Shield Specialization: Now also causes your blocks to have up to 100% chance to restore 6% of your maximum mana.": "Spécialisation Bouclier : désormais, vos blocages ont également jusqu’à 100 % de chances de restaurer 6 % de votre mana maximum.",
     "Shield Specialization: Now also causes your blocks to have up to 100% chance to restore 6% of your maximum mana. May only occur once every 3 seconds.": "Spécialisation Bouclier : désormais, vos blocages ont également jusqu’à 100 % de chances de restaurer 6 % de votre mana maximum. Cet effet ne peut se produire qu’une fois toutes les 3 secondes.",
-    "Shield Specialization: Now has chance on Blocks to generate 5 Rage instead of 1 Rage.": "Spécialisation Bouclier : le talent confère désormais une chance de générer 5 points de rage au lieu de 1 en cas de blocage.",
     "Shield Wall: No longer shares a cooldown with Recklessness and Retaliation.": "Mur protecteur : cette technique ne partage plus de temps de recharge avec Témérité et Représailles.",
     "Shield Wall: No longer shares a cooldown with Recklessness and Retaliation. Cooldown reduced to 15 minutes.": "Mur protecteur : cette technique ne partage plus de temps de recharge avec Témérité et Représailles. Le temps de recharge a été réduit à 15 min.",
     "Shifting Forms with the Druid Class": "Changer de forme avec la classe de druide/druidesse",
@@ -4569,7 +4567,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4124,
+  "pair_count": 4122,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -5435,7 +5433,6 @@
     "Enhance the Journey with World of Warcraft: Forever Digital Bundles": "24304160",
     "Enhanced Level 80 Character Boost Prepare for Midnight with this Enhanced Character Boost that will have you ready to begin leveling in Quel'Thalas.": "24245217",
     "Enrage: (Redesigned.) Now has a chance to trigger from taking any damage.": "24301514",
-    "Enrage: Now generates 10 initial Rage.": "24301515",
     "Ensemble: Prowler’s Faded Headgear": "24310656",
     "Ensemble: Prowler’s Faded Headgear (with mask)": "24310656",
     "Ensemble: Radiant Vestments of the Heavens": "24313103",
@@ -7123,7 +7120,6 @@
     "Shield Slam: Damage scaling from Block Value increased.": "24301514",
     "Shield Specialization: Now also causes your blocks to have up to 100% chance to restore 6% of your maximum mana.": "24302099",
     "Shield Specialization: Now also causes your blocks to have up to 100% chance to restore 6% of your maximum mana. May only occur once every 3 seconds.": "24302099",
-    "Shield Specialization: Now has chance on Blocks to generate 5 Rage instead of 1 Rage.": "24301514",
     "Shield Wall: No longer shares a cooldown with Recklessness and Retaliation.": "24301514",
     "Shield Wall: No longer shares a cooldown with Recklessness and Retaliation. Cooldown reduced to 15 minutes.": "24301514",
     "Shifting Forms with the Druid Class": "24301515",
