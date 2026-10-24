@@ -677,6 +677,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Resource ID guard, focused tests, 4 corpus URLs, Python syntax fix and CI preflight committed; full GitHub Actions rebuild and browser Translator API verification pending."
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Direct Wowhead guide URLs returned JavaScript verification; current indexed English guide excerpts and paired official Blizzard EN/FR articles inspected via assistant web access.",
+      "sampledPageIds": [
+        "subtlety-rogue-rotation",
+        "assassination-rogue-rotation",
+        "feral-druid-rotation",
+        "holy-paladin-rotation",
+        "protection-paladin-talents",
+        "retribution-paladin-talents",
+        "demonology-warlock-rotation"
+      ],
+      "sampledPageCount": 7,
+      "sourceCorpusCount": 165,
+      "newReusableTermFamiliesObserved": 0,
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Official phrase-memory numeric guards previously covered only Soul Shards; counted Combo Points and Holy Power could align with the wrong resource despite matching numbers."
+      ],
+      "crossPageSourceValidation": "Rogue Subtlety and Assassination plus Druid Feral use numbered Combo Points; Holy and Protection Paladins use numbered Holy Power. Blizzard's French patch notes confirm points de combo and charges/points de puissance sacrée. IDs 4 and 9 use locale-specific surface forms; no Chrome output was observed.",
+      "sharedDataInfrastructureFix": "Extended existing en-US and fr-FR canonical resource-name data with Enum.PowerType IDs 4 and 9 and added independent unit tests. No engine or browser code changes, no exact sentence overrides.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Locale data, regression tests and four new Wowhead guide URLs committed. Prior CI run 40117663190 succeeded; new commits require CI and Chrome Translator API validation."
     }
   ]
 }
