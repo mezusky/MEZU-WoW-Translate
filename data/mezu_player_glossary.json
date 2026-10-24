@@ -70,7 +70,9 @@
     "on-use trinkets": "bijoux activables",
     "on use trinket": "bijou activable",
     "on use trinkets": "bijoux activables",
-    "On-use Trinket": "Bijou activable"
+    "On-use Trinket": "Bijou activable",
+    "stutter-stepping": "stutter-stepping",
+    "Stutter-Stepping": "Stutter-Stepping"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
