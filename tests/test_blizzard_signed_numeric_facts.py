@@ -23,5 +23,18 @@ class SignedNumericMemoryTests(unittest.TestCase):
                                   "Dégâts augmentés de 5 %.", 6.0))
 
 
+    def test_swapped_percentages_are_not_an_exact_translation(self):
+        en = "Health increases by 5%, while damage increases by 10%."
+        fr = "Les points de vie augmentent de 10 %, tandis que les dégâts augmentent de 5 %."
+        self.assertEqual(numeric_facts(en), [("5", "%"), ("10", "%")])
+        self.assertEqual(numeric_facts(fr), [("10", "%"), ("5", "%")])
+        self.assertFalse(good_pair(en, fr, 7.0))
+
+    def test_correctly_ordered_percentages_remain_eligible(self):
+        en = "Health increases by 5%, while damage increases by 10%."
+        fr = "Les points de vie augmentent de 5 %, tandis que les dégâts augmentent de 10 %."
+        self.assertTrue(good_pair(en, fr, 7.0))
+
+
 if __name__ == "__main__":
     unittest.main()
