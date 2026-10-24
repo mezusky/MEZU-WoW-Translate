@@ -254,6 +254,28 @@
         "demonology-warlock-gear"
       ],
       "crossPageSourceValidation": "same Recommended Crafting Order section observed in Rogue, Priest, Mage and Warlock gearing guides; separate official Blizzard Crafting Orders UI meaning confirmed"
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "direct EN Wowhead URLs returned JavaScript challenge; current English guide prose inspected via indexed search",
+      "sampledPageIds": [
+        "unholy-death-knight-raid",
+        "windwalker-monk-mythic-plus",
+        "devastation-evoker-stats"
+      ],
+      "sampledPageCount": 3,
+      "newReusableTermFamiliesObserved": 0,
+      "previouslyObservedRiskFamilies": [
+        "raid boss talent-import/copy controls and official encounter/spell names",
+        "Mythic+ talent-swap and utility tables with dynamic builds",
+        "stat diminishing returns, numeric thresholds and linked abilities"
+      ],
+      "sourceAuditEngineFix": "offline HTML extraction now excludes inert template/SVG subtrees so hidden widget text cannot inflate source coverage",
+      "crossPageSourceValidation": "three unrelated class/role/section samples; source risks recur without requiring new sentence overrides",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "shared offline extractor and regression tests committed; CI validation pending; no claim of browser Translator API output"
     }
   ]
 }
