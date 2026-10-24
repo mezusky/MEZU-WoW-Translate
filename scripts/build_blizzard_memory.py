@@ -12,7 +12,7 @@ import re
 import time
 import urllib.request
 from difflib import SequenceMatcher
-from html.parser import HTMLParser
+from html_block_extractor import extract_blocks
 from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -44,66 +44,17 @@ def fetch(url):
         return r.read().decode("utf-8", "replace")
 
 
-class BlockParser(HTMLParser):
-    def __init__(self):
-        super().__init__(convert_charrefs=True)
-        self.in_article = 0
-        self.in_main = 0
-        self.capture = None
-        self.buf = []
-        self.blocks = []
-
-    def handle_starttag(self, tag, attrs):
-        if tag == "article":
-            self.in_article += 1
-        if tag == "main":
-            self.in_main += 1
-        if tag in {"h1","h2","h3","h4","p","li"} and (self.in_article or self.in_main):
-            self.capture = tag
-            self.buf = []
-
-    def handle_endtag(self, tag):
-        if self.capture == tag:
-            text = WS_RE.sub(" ", "".join(self.buf)).strip()
-            if text:
-                self.blocks.append((tag, text))
-            self.capture = None
-            self.buf = []
-        if tag == "article" and self.in_article:
-            self.in_article -= 1
-        if tag == "main" and self.in_main:
-            self.in_main -= 1
-
-    def handle_data(self, data):
-        if self.capture:
-            self.buf.append(data)
-
-
 def clean_blocks(raw_html):
-    p = BlockParser()
-    p.feed(raw_html)
-    blocks = p.blocks
+    """Extract only visible article prose with the shared, tested HTML parser.
 
-    # Fallback for pages whose body is not wrapped in <article>/<main>.
+    Official phrase memory must not learn JavaScript, template contents, or
+    hidden navigation text. Use the same block extraction semantics as the
+    Wowhead source auditor; fall back to unscoped parsing only when needed.
+    """
+    tags = ("h1", "h2", "h3", "h4", "p", "li")
+    blocks = extract_blocks(raw_html, tags=tags, scoped=True)
     if len(blocks) < 4:
-        class AnyParser(HTMLParser):
-            def __init__(self):
-                super().__init__(convert_charrefs=True)
-                self.capture = None
-                self.buf = []
-                self.blocks = []
-            def handle_starttag(self, tag, attrs):
-                if tag in {"h1","h2","h3","h4","p","li"}:
-                    self.capture = tag
-                    self.buf = []
-            def handle_endtag(self, tag):
-                if self.capture == tag:
-                    t = WS_RE.sub(" ", "".join(self.buf)).strip()
-                    if t: self.blocks.append((tag,t))
-                    self.capture = None; self.buf=[]
-            def handle_data(self, data):
-                if self.capture: self.buf.append(data)
-        q = AnyParser(); q.feed(raw_html); blocks = q.blocks
+        blocks = extract_blocks(raw_html, tags=tags, scoped=False)
 
     out = []
     seen = set()
