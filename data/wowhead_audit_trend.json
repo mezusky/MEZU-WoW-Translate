@@ -276,6 +276,32 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "shared offline extractor and regression tests committed; CI validation pending; no claim of browser Translator API output"
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "direct English Wowhead URLs returned JavaScript challenge; indexed English guide text inspected via assistant web search",
+      "sampledPageIds": [
+        "devastation-evoker-stats",
+        "windwalker-monk-mythic-plus",
+        "discipline-priest-gear",
+        "protection-warrior-consumables",
+        "elemental-shaman-raid",
+        "mistweaver-monk-stats"
+      ],
+      "sampledPageCount": 6,
+      "newReusableTermFamiliesObserved": 0,
+      "previouslyObservedRiskFamilies": [
+        "official consumable/item names embedded in English prose and equipment tables",
+        "stat diminishing returns and numerical rating thresholds shared by DPS and healer guides",
+        "raid and Mythic+ interactive talent-import/utility tables",
+        "context-dependent crafting order and off-hand equipment jargon"
+      ],
+      "crossPageSourceValidation": "Devastation Evoker and Mistweaver Monk both show the same diminishing-return thresholds; Elemental Shaman and existing raid guides share boss-specific talent import tables; Protection Warrior and existing consumables guides share official item-name table patterns",
+      "sourceAuditEngineFix": "offline HTML extractor now excludes hidden-attribute and inline display:none/visibility:hidden descendants, with nested/void tag safety and six new unit tests",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "source-only audit, shared extractor and regression tests committed; no new sentence overrides; Chrome/Translator API output not verified"
     }
   ]
 }
