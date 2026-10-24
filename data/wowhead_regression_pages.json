@@ -675,6 +675,22 @@
     {
       "id": "protection-warrior-overview",
       "url": "https://www.wowhead.com/guide/classes/warrior/protection/overview-pve-tank"
+    },
+    {
+      "id": "blood-death-knight-rotation",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/rotation-cooldowns-pve-tank"
+    },
+    {
+      "id": "frost-death-knight-rotation",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "augmentation-evoker-overview",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/overview-pve-dps"
+    },
+    {
+      "id": "devastation-evoker-overview",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/overview-pve-dps"
     }
   ]
 }
