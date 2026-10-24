@@ -350,7 +350,13 @@
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
-      "crossPageFixStatus": "Five focused commits for canonical projection, tests, corpus and reusable locale jargon; CI rebuild pending. Actual Translator API output and interaction ordering for compound jargon are browser-only verification items."
+      "crossPageFixStatus": "Shared canonical projection and locale-scoped jargon committed; GitHub Actions run 40059440090 succeeded, 79 unit tests passed, new Data Pack published. Browser Translator API and compound-rule application order remain unverified.",
+      "ciRunId": 40059440090,
+      "ciConclusion": "success",
+      "ciUnitTestsPassed": 79,
+      "publishedDatapackVersion": "330034d6356eed2adc68",
+      "publishedEntityCount": 24393,
+      "publishedExactCount": 21807
     }
   ]
 }
