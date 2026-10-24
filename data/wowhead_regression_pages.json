@@ -379,6 +379,18 @@
     {
       "id": "holy-priest-mythic-plus",
       "url": "https://www.wowhead.com/guide/classes/priest/holy/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "unholy-death-knight-raid",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "windwalker-monk-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "devastation-evoker-stats",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/stat-priority-pve-dps"
     }
   ]
 }
