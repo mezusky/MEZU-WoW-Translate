@@ -704,6 +704,32 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Locale data, regression tests and four new Wowhead guide URLs committed. Prior CI run 40117663190 succeeded; new commits require CI and Chrome Translator API validation."
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Assistant web indexed English Wowhead guide excerpts; direct guide HTML JavaScript challenge; no rendered Chrome Translator API.",
+      "sampledPageIds": [
+        "vengeance-demon-hunter-rotation",
+        "windwalker-monk-overview",
+        "unholy-death-knight-talents",
+        "shadow-priest-overview",
+        "blood-death-knight-rotation",
+        "mistweaver-monk-rotation"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 177,
+      "newReusableTermFamiliesObserved": 2,
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Numbered Chi can be mistaken for hyphenated Chi-Ji proper names; non-hyphenated Chi spell-name compounds remain an unresolved ambiguity."
+      ],
+      "crossPageSourceValidation": "Vengeance rotation uses 75 Fury; Windwalker overview uses Chi; Blood DK rotation uses 45 RP. Unholy DK talents, Shadow Priest overview and Mistweaver rotation diversify roles and expose prose, numerical and proper-name ambiguity. English source is indexed rather than DOM-rendered.",
+      "sharedDataInfrastructureFix": "Added canonical PowerType IDs 12 Chi and 17 Fury plus RP alias for ID 6 in locale-scoped resource data; made resource matcher reject hyphenated proper-name continuations; added seven offline regression tests and four corpus URLs. No extension code or manual sentence overrides.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Source data, boundary fix, tests and corpus committed. CI on new commits and actual browser translation quality remain unconfirmed; no cross-page clean-state claim."
     }
   ]
 }
