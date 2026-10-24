@@ -415,6 +415,18 @@
     {
       "id": "holy-paladin-talent-builds",
       "url": "https://www.wowhead.com/guide/classes/paladin/holy/talent-builds-pve-healer"
+    },
+    {
+      "id": "shadow-priest-rotation",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "protection-paladin-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "restoration-druid-consumables",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/enchants-gems-pve-healer"
     }
   ]
 }
