@@ -519,6 +519,18 @@
     {
       "id": "unholy-death-knight-stats",
       "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/stat-priority-pve-dps"
+    },
+    {
+      "id": "restoration-shaman-raid",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "vengeance-demon-hunter-stats",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/stat-priority-pve-tank"
+    },
+    {
+      "id": "subtlety-rogue-consumables",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/enchants-gems-pve-dps"
     }
   ]
 }
