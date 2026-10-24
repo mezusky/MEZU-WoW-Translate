@@ -557,6 +557,26 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Shared extractor updated with CSS cascade-aware hidden subtree handling; 3 offline tests committed; CI for latest changes pending."
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Direct Wowhead URL returned JavaScript challenge; current indexed English source excerpts reviewed using assistant web access (not browser output).",
+      "sampledPageIds": [
+        "protection-warrior-rotation",
+        "restoration-druid-talents",
+        "fire-mage-stats",
+        "destruction-warlock-raid",
+        "enhancement-shaman-consumables"
+      ],
+      "sampledPageCount": 5,
+      "sourceCorpusCount": 145,
+      "crossPageSourceValidation": "Protection Warrior rotation uses 10-20% cast-loss range; Fire Mage stats discusses 9-10 second Ignite duration; Destruction Warlock raid discusses 2-3 target cleave. These independently demonstrate compact numeric ranges across tank/DPS, while Restoration Druid talents and Enhancement Shaman consumables add unrelated healer/gear vocabulary and numeric contexts.",
+      "sharedAuditInfrastructureFix": "Official Blizzard phrase-memory numeric_facts no longer mistakes a compact hyphenated number range for a negative modifier. Preserve genuine -5% signs and ordered numeric facts; regression tests cover three dash forms, positive ranges and negative values.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Source generator and numeric tests committed; 3 independent pages added to corpus. CI rebuild and browser Translator API verification pending."
     }
   ]
 }
