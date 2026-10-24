@@ -400,12 +400,12 @@
         "raid talent import widgets",
         "diminishing returns and numeric thresholds"
       ],
-      "architectureIssueFixed": "official Blizzard phrase-memory numeric facts were sorted, so swapped same-unit percentages could be accepted as equal; preserve source order to quarantine these pairs",
+      "architectureIssueFixed": "official Blizzard phrase-memory numeric facts were sorted, so swapped same-unit percentages could be accepted as equal; preserve source order to quarantine these pairs; the incremental retention merger now revalidates old and new pairs so unsafe legacy entries cannot persist",
       "crossPageVerification": "source examples cover multiple percentages in Marksmanship Hunter tier-set/gear and threshold facts in Affliction Warlock stats; deterministic synthetic swapped-percentage tests added; no browser output claim",
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
-      "crossPageFixStatus": "small generator safety fix and independent corpus additions committed; GitHub Actions validation and browser-only translation audit pending"
+      "crossPageFixStatus": "collector and retention guards plus regression tests committed; full CI rebuild and browser-only translation verification pending"
     }
   ]
 }
