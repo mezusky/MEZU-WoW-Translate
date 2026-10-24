@@ -577,6 +577,32 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Source generator and numeric tests committed; 3 independent pages added to corpus. CI rebuild and browser Translator API verification pending."
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Direct English Wowhead URLs return JavaScript challenge; indexed current English source excerpts inspected through assistant web access.",
+      "sampledPageIds": [
+        "fury-warrior-stats",
+        "arms-warrior-stats",
+        "guardian-druid-mythic-plus",
+        "discipline-priest-consumables",
+        "frost-mage-gear",
+        "discipline-priest-rotation"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 149,
+      "newReusableTermFamiliesObserved": 0,
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Explicit numeric inequality operators (<, >, <=, >=, ≤, ≥) can reverse a threshold while preserving all numeric values in official Blizzard phrase-memory alignment."
+      ],
+      "crossPageSourceValidation": "Fury and Arms Warrior stat guides both contain the <1% racial-difference threshold; Discipline Priest rotation includes numeric health and charge thresholds. Guardian Druid Mythic+, Discipline Priest consumables, and Frost Mage gear add independent role/section source coverage. This is a preventive phrase-memory safety check, not a demonstrated Chrome mistranslation.",
+      "sharedAuditInfrastructureFix": "Official Blizzard phrase-memory collector and retention merger now use one numeric_semantics_match gate that compares ordered numbers and explicit inequality operators; ASCII/Unicode inclusive variants normalize identically.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Source collector and retention changes plus five offline regression tests committed; CI rebuild and browser Translator API verification pending."
     }
   ]
 }
