@@ -447,6 +447,36 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "source-only terminology fix and four-class regression tests committed; CI rebuild and Chrome Translator API verification pending"
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Live EN Wowhead URLs returned JavaScript verification; current English indexed guide passages inspected via assistant web access, not a browser DOM snapshot.",
+      "sampledPageIds": [
+        "preservation-evoker-raid",
+        "restoration-druid-raid",
+        "havoc-demon-hunter-raid",
+        "unholy-death-knight-stats",
+        "blood-death-knight-stats",
+        "brewmaster-monk-rotation"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 130,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "raidwide damage -> dégâts sur tout le raid (Preservation Evoker and Restoration Druid)",
+        "raidwide DoT -> DoT sur tout le raid (Havoc Demon Hunter)"
+      ],
+      "crossPageSourceValidation": "Three independent raid guides cover group-wide damage/DoT language across healer and DPS roles. Blood and Unholy DK stats share the same diminishing-return threshold prose and numbers; Brewmaster rotation has dense Stagger arithmetic and formula text, a distinct numeric/DOM stress case.",
+      "riskNotes": [
+        "Entity-linked spells and boss names require canonical ID mapping, not prose guessing.",
+        "WoW French Wowhead locale pages expose partial entity localization in English prose; this is not the output of MEZU.",
+        "Formulas and percentages cannot be validated without actual browser DOM/Translator API output."
+      ],
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Two reusable locale-specific raidwide glossary phrases and cross-role regression tests committed; full CI and Chrome browser translation validation not confirmed."
     }
   ]
 }
