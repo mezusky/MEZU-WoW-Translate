@@ -603,6 +603,30 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Source collector and retention changes plus five offline regression tests committed; CI rebuild and browser Translator API verification pending."
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Assistant web access attempted live English Wowhead URLs; direct HTML returned JavaScript challenge. Current indexed English guide text inspected, not browser DOM.",
+      "sampledPageIds": [
+        "devastation-evoker-rotation",
+        "protection-paladin-stats",
+        "subtlety-rogue-raid",
+        "demonology-warlock-mythic-plus"
+      ],
+      "sampledPageCount": 4,
+      "sourceCorpusCount": 153,
+      "newReusableTermFamiliesObserved": 0,
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Blizzard official news memory requested en-US Accept-Language even for fr-FR news URLs; locale header now follows URL, without asserting past responses were wrong."
+      ],
+      "crossPageSourceValidation": "Evoker rotation uses numeric <=30% thresholds and linked spells; Paladin tank stats uses rating thresholds and diminishing returns; Rogue raid uses encounter talent widgets; Warlock Mythic+ uses dungeon switches and utility names. Existing shared jargon covers breakpoint, diminishing returns, talent loadouts, and on-cooldown wording. Source-only comparison; Chrome output not observed.",
+      "sharedDataInfrastructureFix": "Blizzard paired-article fetch now requests the locale in each URL, including future language-region pairs. Four offline tests cover en-US/fr-FR, additional locales, invalid paths and request header propagation.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Official-memory fetch locale header and offline tests committed; four independent guide URLs added. CI pending; browser Translator API still unverified."
     }
   ]
 }
