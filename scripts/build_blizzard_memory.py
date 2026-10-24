@@ -158,7 +158,7 @@ def numeric_facts(text):
     pattern = (
         r"(?<!\w)([+\-\u2212]?\d+(?:[.,]\d+)*)"
         r"(?:\s*(%|milliseconds?|millisecondes?|ms|seconds?|secondes?|"
-        r"secs?\.?|s|minutes?|mins?\.?|min\.?|hours?|heures?|hrs?\.?|hr\.?|h)"
+        r"secs?\.?|s|minutes?|mins?\.?|min\.?|hours?|heures?|hrs?\.?|hr\.?|h|"\n        r"targets?|cibles?|stacks?|cumuls?)"
         r"(?![^\W\d_]))?"
     )
     aliases = {
@@ -169,6 +169,8 @@ def numeric_facts(text):
         "minute": "min", "minutes": "min", "mins": "min",
         "hour": "h", "hours": "h", "heure": "h", "heures": "h",
         "hr": "h", "hrs": "h",
+        "target": "target", "targets": "target", "cible": "target", "cibles": "target",
+        "stack": "stack", "stacks": "stack", "cumul": "stack", "cumuls": "stack",
     }
     # Preserve negative signs: -5% and +5% must not become the same fact.
     # A leading + is equivalent to an unsigned positive value.
