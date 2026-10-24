@@ -502,7 +502,13 @@
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
-      "crossPageFixStatus": "Locale-scoped spelling variants and shared audit extractor committed; CI and browser-only Translator API verification not yet confirmed."
+      "crossPageFixStatus": "Locale-scoped spelling variants and shared article-first source extraction committed; GitHub Actions 40086582374 succeeded with 101 tests, Data Pack rebuilt. Chrome Translator API remains browser-only and unverified.",
+      "ciRunId": 40086582374,
+      "ciConclusion": "success",
+      "ciUnitTestsPassed": 101,
+      "publishedDatapackVersion": "a9c8fa31b329aee420c2",
+      "publishedEntityCount": 24393,
+      "publishedExactCount": 22198
     }
   ]
 }
