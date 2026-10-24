@@ -226,6 +226,32 @@ def _resource_names(locale):
     return tuple(sorted(names))
 
 
+def _looks_like_proper_name_suffix(tail):
+    """Avoid counting resource words that begin longer title-cased entity names.
+
+    A number may count casts/players rather than the resource: "2 Chi Burst
+    casts", "3 Fury Warriors", "3 Fury of the Aldrachi procs". Permit up to
+    two short lowercase linking words between title-cased name components.
+    This conservative check may discard a valid memory pair, but never
+    invents a resource identity from a proper name. Unicode casing keeps
+    the heuristic independent of the locale's alphabet.
+    """
+    continuation = re.match(
+        r"\s+([^\W\d_][\w'-]*)(?:\s+([^\W\d_][\w'-]*))?(?:\s+([^\W\d_][\w'-]*))?",
+        tail,
+    )
+    if not continuation:
+        return False
+    preceding = []
+    for word in continuation.groups():
+        if word is None:
+            break
+        if word[0].isupper() and all(len(link) <= 3 and link.islower() for link in preceding):
+            return True
+        preceding.append(word)
+    return False
+
+
 def resource_count_facts(text, locale):
     """Preserve counted WoW resources by canonical ID, not translated surface name.
 
@@ -233,11 +259,15 @@ def resource_count_facts(text, locale):
     Unknown locales and uncounted references remain outside this conservative
     check; browser prose translation is not simulated here.
     """
-    normalized = " ".join(text.replace("’", "'").casefold().split())
+    # Keep original casing for title-cased spell/spec names. IGNORECASE
+    # still matches locale-specific resource forms without casefold offsets.
+    normalized = " ".join(text.replace("’", "'").split())
     found = set()
     for resource_id, name in _resource_names(locale):
         pattern = r"(?<!\w)(\d+(?:[.,]\d+)?)\s+" + re.escape(name) + r"(?![\w-])"
-        for match in re.finditer(pattern, normalized):
+        for match in re.finditer(pattern, normalized, flags=re.IGNORECASE):
+            if _looks_like_proper_name_suffix(normalized[match.end():]):
+                continue
             found.add((match.start(), match.group(1).replace(",", "."), resource_id))
     return [(value, resource_id) for _, value, resource_id in sorted(found)]
 
