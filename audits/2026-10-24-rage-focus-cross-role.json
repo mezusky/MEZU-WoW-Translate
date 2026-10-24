@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-24",
+  "auditMethod": "assistant web indexed English guide source; direct Wowhead page HTML challenged; no browser Translator API execution",
+  "sourcePages": [
+    {
+      "id": "beast-mastery-hunter-talents",
+      "evidence": "Steady Shot generates 10 Focus; Counter Shot restores 30 Focus",
+      "role": "dps"
+    },
+    {
+      "id": "survival-hunter-rotation",
+      "evidence": "Focus and Tip of the Spear tracked as separate resources",
+      "role": "dps"
+    },
+    {
+      "id": "fury-warrior-overview",
+      "evidence": "Fury gameplay generates and spends Rage",
+      "role": "dps"
+    },
+    {
+      "id": "protection-warrior-overview",
+      "evidence": "Protection gameplay includes Rage generation and overcap",
+      "role": "tank"
+    },
+    {
+      "id": "feral-druid-overview",
+      "evidence": "Energy and Combo Points are independent resources",
+      "role": "dps"
+    }
+  ],
+  "officialFrenchTerms": [
+    {
+      "canonicalPowerTypeId": 1,
+      "source": "Rage",
+      "target": "point(s) de rage",
+      "authority": "Blizzard French Warrior class overview"
+    },
+    {
+      "canonicalPowerTypeId": 2,
+      "source": "Focus",
+      "target": "point(s) de focalisation",
+      "authority": "Blizzard French Hunter class overview"
+    }
+  ],
+  "changes": "Locale-scoped resource data and five offline numeric semantics tests; 4 new guide URLs. No exact sentence overrides or extension code changes.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "corpusSize": 169,
+  "limits": "English source indexed text was inspected, not actual Chrome translations; do not infer quality improvement rate. Previous CI succeeded; current commit CI not yet confirmed."
+}
