@@ -730,6 +730,32 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Source data, boundary fix, tests and corpus committed. CI on new commits and actual browser translation quality remain unconfirmed; no cross-page clean-state claim."
+    },
+    {
+      "date": "2026-10-25",
+      "sourceAccess": "Direct English Wowhead guide URLs returned JavaScript verification; current English indexed guide excerpts inspected via assistant web access.",
+      "sampledPageIds": [
+        "windwalker-monk-overview",
+        "vengeance-demon-hunter-rotation",
+        "brewmaster-monk-talents",
+        "havoc-demon-hunter-talents",
+        "windwalker-monk-talents",
+        "fury-warrior-talents"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 180,
+      "newReusableTermFamiliesObserved": 0,
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Canonical counted resource aliases can be misread as the beginning of title-cased spell, talent or spec names, such as Chi Burst, Fury Warriors or Fury of the Aldrachi."
+      ],
+      "crossPageSourceValidation": "Indexed Brewmaster and Windwalker Monk talents include Chi Burst, Chi Wave and Chi-Ji proper names; independent Havoc Demon Hunter talents include Fury as a resource and Fury of the Aldrachi as a talent name; Fury Warrior talents supply another Fury-as-spec context. The risk was reproduced using synthetic numeric-prefix cases, not observed as a Chrome translation error.",
+      "sharedDataInfrastructureFix": "Preserved source casing in the shared canonical resource-count matcher and conservatively rejected resource matches followed by title-cased entity continuations (including short linking words); five regression tests added and three independent talents guides included in corpus. No manual sentence overrides or browser engine changes.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Source-level cross-page check and shared memory collector fix committed; GitHub Actions full rebuild and browser Translator API behavior remain unconfirmed. Do not infer a clean-state cycle."
     }
   ]
 }
