@@ -104,5 +104,22 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         self.assertTrue(required.issubset({p["id"] for p in PAGES}))
 
 
+    def test_raid_damage_spelling_samples_span_healer_classes(self):
+        # Indexed English sources: Evoker uses raidwide, Shaman raid-wide,
+        # and Holy/Discipline Priest use raid wide. No browser output claim.
+        required = {
+            "preservation-evoker-raid",
+            "restoration-shaman-raid",
+            "holy-priest-raid",
+            "discipline-priest-raid",
+        }
+        self.assertTrue(required.issubset({p["id"] for p in PAGES}))
+
+    def test_new_tank_stats_and_melee_consumables_are_independent(self):
+        # Numeric threshold prose and official item IDs are separate risks.
+        required = {"vengeance-demon-hunter-stats", "subtlety-rogue-consumables"}
+        self.assertTrue(required.issubset({p["id"] for p in PAGES}))
+
+
 if __name__ == "__main__":
     unittest.main()
