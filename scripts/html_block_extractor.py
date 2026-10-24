@@ -112,6 +112,12 @@ def extract_readable_blocks(html, tags=("h1", "h2", "h3", "h4", "p", "li", "td",
     This is not a browser DOM reconstruction or translation simulation.
     """
     scoped = extract_blocks(html, tags=tags, scoped=True)
-    if len(scoped) >= min_scoped_blocks:
+    # A short but real article (for example a two-paragraph Blizzard notice)
+    # must not fall back to global navigation/footer text just because it has
+    # fewer than four blocks. Only heading-only wrappers remain eligible for
+    # fallback: they can be empty page shells with the prose elsewhere.
+    if len(scoped) >= min_scoped_blocks or any(
+        tag in ("p", "li", "td", "th") for tag, _ in scoped
+    ):
         return scoped
     return extract_blocks(html, tags=tags, scoped=False)
