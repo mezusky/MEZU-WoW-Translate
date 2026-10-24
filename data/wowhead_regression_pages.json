@@ -427,6 +427,18 @@
     {
       "id": "restoration-druid-consumables",
       "url": "https://www.wowhead.com/guide/classes/druid/restoration/enchants-gems-pve-healer"
+    },
+    {
+      "id": "destruction-warlock-overview",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/overview-pve-dps"
+    },
+    {
+      "id": "holy-priest-rotation",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/rotation-cooldowns-pve-healer"
+    },
+    {
+      "id": "arms-warrior-stats",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/stat-priority-pve-dps"
     }
   ]
 }
