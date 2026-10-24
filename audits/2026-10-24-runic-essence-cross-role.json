@@ -1,0 +1,56 @@
+{
+  "date": "2026-10-24",
+  "auditMethod": "Assistant live Wowhead URL attempt (JavaScript anti-bot) plus independently indexed English guide snippets; no Chrome Translator API execution",
+  "sourcePages": [
+    {
+      "id": "blood-death-knight-rotation",
+      "role": "tank",
+      "section": "rotation",
+      "evidence": "75 Runic Power threshold, 45 RP overcap advice, and 1 RP/second decay"
+    },
+    {
+      "id": "frost-death-knight-rotation",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Runes/Runic Power resource management, proc priorities"
+    },
+    {
+      "id": "preservation-evoker-rotation",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Essence, Essence Burst and Echo are separate concepts; no assumption that 'essence' in all contexts is the resource"
+    },
+    {
+      "id": "augmentation-evoker-overview",
+      "role": "dps",
+      "section": "overview",
+      "evidence": "The phrase 'essence of the Black Dragonflight' is narrative prose, not a numbered resource"
+    },
+    {
+      "id": "devastation-evoker-overview",
+      "role": "dps",
+      "section": "overview",
+      "evidence": "The phrase 'essence of dragons' is narrative prose, not a numbered resource"
+    }
+  ],
+  "officialFrenchTerms": [
+    {
+      "canonicalPowerTypeId": 6,
+      "source": "Runic Power",
+      "target": "point(s) de puissance runique",
+      "authority": "Blizzard fr-fr news 19955663 and 16279304"
+    },
+    {
+      "canonicalPowerTypeId": 19,
+      "source": "Essence",
+      "target": "point(s) d’essence",
+      "authority": "Blizzard fr-fr news 23885941"
+    }
+  ],
+  "changes": "Two additional canonical resource IDs in en-US/fr-FR data; six focused offline regression tests; four new guide URLs. No extension code, remote executable code, or exact sentence overrides.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "corpusSize": 173,
+  "limitations": "Direct Wowhead HTML still returns JavaScript verification; indexed source text is not the actual rendered DOM. This only validates counted-resource phrase-memory safeguards, not browser translation quality. New GitHub Actions run not confirmed."
+}
