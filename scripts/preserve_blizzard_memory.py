@@ -5,7 +5,7 @@ from pathlib import Path
 
 # Reuse the same numeric-fact validator as the collector: a previously
 # accepted but unsafe pair must not survive every future incremental sync.
-from build_blizzard_memory import numeric_facts
+from build_blizzard_memory import numeric_semantics_match
 
 old_path, new_path = map(Path, sys.argv[1:3])
 old = json.loads(old_path.read_text(encoding="utf-8"))
@@ -19,12 +19,12 @@ blocked = set(old.get("ambiguous", [])) | set(new.get("ambiguous", []))
 merged = {
     source: target for source, target in old.get("exact", {}).items()
     if isinstance(source, str) and isinstance(target, str)
-    and numeric_facts(source) == numeric_facts(target)
+    and numeric_semantics_match(source, target)
 }
 for source, target in new.get("exact", {}).items():
     if not isinstance(source, str) or not isinstance(target, str):
         continue
-    if numeric_facts(source) != numeric_facts(target):
+    if not numeric_semantics_match(source, target):
         continue
     if source in merged and merged[source] != target:
         blocked.add(source)
