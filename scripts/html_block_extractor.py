@@ -7,16 +7,36 @@ import re
 SKIP_TAGS = frozenset(("script", "style", "noscript", "template", "svg"))
 VOID_TAGS = frozenset(("area", "base", "br", "col", "embed", "hr", "img", "input",
                        "link", "meta", "param", "source", "track", "wbr"))
-HIDDEN_STYLE = re.compile(
-    r"(?:^|;)\s*(?:display\s*:\s*none|visibility\s*:\s*hidden)\s*"
-    r"(?:!\s*important)?\s*(?:;|$)", re.IGNORECASE
-)
+CSS_COMMENT = re.compile(r"/\*.*?\*/", re.DOTALL)
+CSS_VALUE = re.compile(r"\s*([a-z-]+)\s*(!\s*important)?\s*$", re.IGNORECASE)
+
+
+def inline_style_hidden(style):
+    """Resolve repeated inline declarations using CSS importance and source order.
+
+    This does not attempt stylesheet/class resolution or browser layout.
+    """
+    effective = {}
+    for declaration in CSS_COMMENT.sub("", style).split(";"):
+        name, separator, value = declaration.partition(":")
+        name = name.strip().lower()
+        if not separator or name not in ("display", "visibility"):
+            continue
+        match = CSS_VALUE.fullmatch(value)
+        if not match:
+            continue
+        important = bool(match.group(2))
+        previous = effective.get(name)
+        if previous is None or important or not previous[1]:
+            effective[name] = (match.group(1).lower(), important)
+    return (effective.get("display", (None,))[0] == "none"
+            or effective.get("visibility", (None,))[0] == "hidden")
 
 
 def is_hidden(attrs):
-    """Only honor HTML/CSS attributes that unambiguously hide an element."""
+    """Honor explicit hidden attributes and effective inline CSS declarations."""
     attrs = dict(attrs)
-    return "hidden" in attrs or bool(HIDDEN_STYLE.search(attrs.get("style") or ""))
+    return "hidden" in attrs or inline_style_hidden(attrs.get("style") or "")
 
 
 class Extractor(HTMLParser):
