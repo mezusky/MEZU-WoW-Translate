@@ -406,6 +406,26 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "collector and retention guards plus regression tests committed; full CI rebuild and browser-only translation verification pending"
+    },
+    {
+      "date": "2026-10-24",
+      "sourceAccess": "Direct EN Wowhead pages challenged by JavaScript; current indexed English source passages inspected, not browser DOM.",
+      "sampledPageIds": [
+        "balance-druid-overview",
+        "elemental-shaman-overview",
+        "beast-mastery-hunter-rotation",
+        "arms-warrior-mythic-plus",
+        "retribution-paladin-stats"
+      ],
+      "sampledPageCount": 5,
+      "newReusableTermFamiliesObserved": 0,
+      "existingJargonQualityFix": "Replace awkward 'Toujours être en train de cast' with player-natural 'Toujours caster' for three case variants of Always Be Casting.",
+      "crossPageSourceValidation": "Balance Druid and Elemental Shaman current overviews use the identical caster rule; Fire Mage and Discipline Priest independently use the same principle. BM Hunter rotation and Arms Warrior Mythic+ expose conditional priorities; Retribution Paladin stats contain numerical thresholds.",
+      "sourceOnlyNovelIssueRate": null,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Locale-scoped glossary and regression test committed; five independent guide URLs added; new CI rebuild and Chrome Translator API verification pending."
     }
   ]
 }
