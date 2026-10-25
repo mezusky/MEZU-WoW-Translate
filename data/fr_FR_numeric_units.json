@@ -5,6 +5,9 @@
     "wow_distance": [
       "mètre",
       "mètres"
+    ],
+    "wow_ability_charge": [
+      "charges"
     ]
   }
 }
