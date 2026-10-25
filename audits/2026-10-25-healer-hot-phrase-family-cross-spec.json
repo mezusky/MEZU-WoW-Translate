@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "auditScope": "Current indexed English Wowhead guide prose; direct live URL requests returned JavaScript verification, not Chrome translation output",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "sampledPageIds": [
+    "restoration-druid-overview",
+    "restoration-druid-rotation",
+    "preservation-evoker-stats",
+    "mistweaver-monk-overview"
+  ],
+  "newRegressionPageIds": [
+    "restoration-druid-rotation",
+    "mistweaver-monk-overview"
+  ],
+  "regressionCorpusSize": 236,
+  "sharedIssueFamiliesObserved": 1,
+  "sharedIssue": "Heal-over-time / healing-over-time effect(s) are a reusable healing concept; existing locale player glossary had HoT but not these grammatical prose collocations",
+  "sourceEvidence": "Current indexed guides use both spellings in independent Restoration Druid, Preservation Evoker and Mistweaver Monk sections; exact rendered MEZU French output not observed",
+  "fixLayer": "data/mezu_player_glossary.json (data-only locale-scoped phrase patterns)",
+  "translationPattern": "English heal-over-time/healing-over-time effect(s) -> French effet(s) de soin sur la durée",
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "GitHub Actions test and Data Pack rebuild",
+    "Chrome Translator API and rich-text reconstruction",
+    "Validate on newly sampled healer guides without additional phrase exceptions"
+  ],
+  "sourceUrls": [
+    "https://www.wowhead.com/guide/classes/druid/restoration/overview-pve-healer",
+    "https://www.wowhead.com/guide/classes/druid/restoration/rotation-cooldowns-pve-healer",
+    "https://www.wowhead.com/guide/classes/evoker/preservation/stat-priority-pve-healer",
+    "https://www.wowhead.com/guide/classes/monk/mistweaver/overview-pve-healer"
+  ]
+}
