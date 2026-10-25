@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "auditType": "indexed-English-source cross-page review; not a browser translation audit",
+  "sourceAccess": "direct live Wowhead URLs returned JavaScript verification; current indexed English source text reviewed",
+  "existingHealerPageIds": [
+    "preservation-evoker-talents",
+    "restoration-shaman-abilities",
+    "mistweaver-monk-abilities",
+    "restoration-druid-talents"
+  ],
+  "newPageIds": [
+    "protection-warrior-ui-macros",
+    "preservation-evoker-ui-macros",
+    "fire-mage-ui-macros"
+  ],
+  "reusableTermFamiliesAlreadyKnown": [
+    "heal-over-time effects"
+  ],
+  "newPhraseVariantsWithinKnownFamily": 2,
+  "newDistinctTermFamiliesObserved": 0,
+  "newStructuralRiskFamiliesObserved": 1,
+  "structuralRiskFamilies": [
+    "WoW UI import strings, macro slash commands and copy buttons must remain byte-preserved; browser-only verification outstanding"
+  ],
+  "sourceQualityRisks": [
+    "localized Wowhead pages can contain English prose with localized linked spell names; avoid treating localized source HTML as MEZU output"
+  ],
+  "fixes": [
+    "two locale-scoped HoT noun-phrase variants added; no new sentence overrides",
+    "offline four-healer cross-spec tests",
+    "cross-role UI/macro corpus coverage"
+  ],
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "crossPageFixStatus": "source-only glossary regression and corpus coverage committed; CI rebuild and browser verification pending"
+}
