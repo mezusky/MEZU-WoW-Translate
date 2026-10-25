@@ -157,7 +157,7 @@ def sentences(text):
 def numeric_facts(text):
     """Compare numbers and normalized units across source and target languages."""
     pattern = (
-        r"(?<!\w)([+\-\u2212]?\d+(?:[.,]\d+)*)"
+        r"(?<!\w)([+\-\u2212]?\d+(?:[.,]\d+)*)(\+(?!\d))?"
         r"(?:\s*(%|milliseconds?|millisecondes?|ms|seconds?|secondes?|"
         r"secs?\.?|s|minutes?|mins?\.?|min\.?|hours?|heures?|hrs?\.?|hr\.?|h|"
         r"targets?|cibles?|stacks?|cumuls?)"
@@ -174,6 +174,7 @@ def numeric_facts(text):
         "target": "target", "targets": "target", "cible": "target", "cibles": "target",
         "stack": "stack", "stacks": "stack", "cumul": "stack", "cumuls": "stack",
     }
+    # Preserve postfix lower bounds: 5+ stacks is not equivalent to 5 stacks.
     # Preserve negative signs: -5% and +5% must not become the same fact.
     # A leading + is equivalent to an unsigned positive value.
     # Compact numeric ranges (10-20%, 2–3 targets) use a separator, not
@@ -181,9 +182,9 @@ def numeric_facts(text):
     # genuine signed modifiers such as -5% and 10 to -5% untouched.
     normalized = re.sub(r"(?<=\d)[-–—](?=\d)", "–", text)
     facts = []
-    for value, unit in re.findall(pattern, normalized, flags=re.IGNORECASE):
+    for value, lower_bound, unit in re.findall(pattern, normalized, flags=re.IGNORECASE):
         unit = unit.casefold().rstrip(".")
-        facts.append((value.replace(",", ".").replace("−", "-").lstrip("+"), aliases.get(unit, unit)))
+        facts.append((value.replace(",", ".").replace("−", "-").lstrip("+") + lower_bound, aliases.get(unit, unit)))
     return facts  # Keep source order: swapping two percentage values is unsafe.
 
 
