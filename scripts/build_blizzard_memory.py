@@ -204,38 +204,25 @@ def _suffix_comparator_gap(locale):
 
 
 def numeric_facts(text, locale=None):
-    """Compare numeric facts, including locale-scoped WoW range units."""
-    extra_units = _numeric_unit_aliases(locale)
-    extra_pattern = "|".join(re.escape(alias) for alias in sorted(extra_units, key=len, reverse=True))
+    """Compare numeric facts using only the declared locale's unit vocabulary.
+
+    Symbols shared across languages stay in the engine; written unit names
+    belong to data/<locale>_numeric_units.json. Do not interpret French words
+    on an English page (or English words on an unknown-language page).
+    """
+    shared_units = {"ms": "ms", "s": "s", "min": "min", "h": "h"}
+    aliases = {**shared_units, **_numeric_unit_aliases(locale)}
+    unit_pattern = "|".join(
+        re.escape(unit) for unit in sorted(aliases, key=len, reverse=True)
+    )
     pattern = (
         r"(?<!\w)(" + NUMBER_VALUE_PATTERN + r")(\+(?!\d))?"
         + _suffix_comparator_gap(locale)
-        # Hyphenated modifiers (6-second-long, 45-seconds) carry units.
-        # A dash is accepted only before a recognized unit; 2-3 stays a range.
-        + r"(?:(?:\s*[-‑–—]\s*|\s*)(%|milliseconds?|millisecondes?|ms|seconds?|secondes?|"
-        r"secs?\.?|s|minutes?|mins?\.?|min\.?|hours?|heures?|hrs?\.?|hr\.?|h|"
-        r"targets?|cibles?|stacks?|cumuls?"
-        + ("|" + extra_pattern if extra_pattern else "") + r")"
+        # A dash is accepted only before a recognized unit; 2-3 is a range.
+        + r"(?:(?:\s*[-‑–—]\s*|\s*)(%|" + unit_pattern + r")"
         r"(?![^\W\d_]))?"
     )
-    aliases = {
-        "second": "s", "seconds": "s", "seconde": "s", "secondes": "s",
-        "sec": "s", "secs": "s",
-        "millisecond": "ms", "milliseconds": "ms",
-        "milliseconde": "ms", "millisecondes": "ms",
-        "minute": "min", "minutes": "min", "mins": "min",
-        "hour": "h", "hours": "h", "heure": "h", "heures": "h",
-        "hr": "h", "hrs": "h",
-        "target": "target", "targets": "target", "cible": "target", "cibles": "target",
-        "stack": "stack", "stacks": "stack", "cumul": "stack", "cumuls": "stack",
-    }
-    aliases.update(extra_units)
-    # Preserve postfix lower bounds: 5+ stacks is not equivalent to 5 stacks.
-    # Preserve negative signs: -5% and +5% must not become the same fact.
-    # A leading + is equivalent to an unsigned positive value.
-    # Compact numeric ranges (10-20%, 2–3 targets) use a separator, not
-    # a negative sign. Normalize only a dash directly between digits; keep
-    # genuine signed modifiers such as -5% and 10 to -5% untouched.
+    # Compact ranges (2-3 targets) use a separator, not a negative sign.
     normalized = re.sub(r"(?<=\d)[-–—](?=\d)", "–", text)
     facts = []
     for value, lower_bound, unit in re.findall(pattern, normalized, flags=re.IGNORECASE):
@@ -243,45 +230,6 @@ def numeric_facts(text, locale=None):
         facts.append((_normalize_numeric_value(value, locale) + lower_bound,
                       aliases.get(unit, unit)))
     return facts  # Keep source order: swapping two percentage values is unsafe.
-
-
-@lru_cache(maxsize=16)
-def _comparison_terms(locale):
-    """Read data-only, locale-scoped inequality phrases; never execute remote rules."""
-    normalized = (locale or "").strip().replace("_", "-").casefold()
-    if not re.fullmatch(r"[a-z]{2,3}-[a-z]{2}", normalized):
-        return {}
-    language, region = normalized.split("-", 1)
-    path = ROOT / "data" / f"{language}_{region.upper()}_comparison_terms.json"
-    if not path.is_file():
-        return {}
-    payload = json.loads(path.read_text(encoding="utf-8"))
-    if payload.get("locale", "").replace("_", "-").casefold() != normalized:
-        return {}
-    return payload
-
-
-@lru_cache(maxsize=16)
-def _numeric_unit_aliases(locale):
-    """Load data-only unit spellings by locale; never infer another locale."""
-    normalized = (locale or "").strip().replace("_", "-").casefold()
-    if not re.fullmatch(r"[a-z]{2,3}-[a-z]{2}", normalized):
-        return {}
-    language, region = normalized.split("-", 1)
-    path = ROOT / "data" / f"{language}_{region.upper()}_numeric_units.json"
-    if not path.is_file():
-        return {}
-    payload = json.loads(path.read_text(encoding="utf-8"))
-    if payload.get("locale", "").replace("_", "-").casefold() != normalized:
-        return {}
-    aliases = {}
-    for canonical, forms in payload.get("aliases", {}).items():
-        if not re.fullmatch(r"[a-z][a-z0-9_]*", canonical) or not isinstance(forms, list):
-            continue
-        for form in forms:
-            if isinstance(form, str) and re.fullmatch(r"[^\W\d_][\w.-]{0,30}", form):
-                aliases[form.casefold()] = canonical
-    return aliases
 
 
 def range_facts(text, locale=None):
