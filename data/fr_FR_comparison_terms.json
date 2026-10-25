@@ -1,0 +1,35 @@
+{
+  "locale": "fr-FR",
+  "prefix": {
+    "lt": [
+      "moins de",
+      "moins d'",
+      "inférieur à",
+      "inférieure à"
+    ],
+    "lte": [
+      "au plus",
+      "au maximum",
+      "pas plus de",
+      "jusqu'à"
+    ],
+    "gt": [
+      "plus de",
+      "plus d'",
+      "supérieur à",
+      "supérieure à"
+    ],
+    "gte": [
+      "au moins",
+      "pas moins de"
+    ]
+  },
+  "suffix": {
+    "lte": [
+      "ou moins"
+    ],
+    "gte": [
+      "ou plus"
+    ]
+  }
+}
