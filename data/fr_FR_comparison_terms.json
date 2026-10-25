@@ -31,5 +31,6 @@
     "gte": [
       "ou plus"
     ]
-  }
+  },
+  "suffixMaxUnitWords": 4
 }
