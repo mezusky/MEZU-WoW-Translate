@@ -235,6 +235,27 @@ def _comparison_terms(locale):
     return payload
 
 
+def range_facts(text, locale=None):
+    """Preserve bounded numeric intervals across locale-specific word order.
+
+    Dash ranges are language-neutral; spelled-out connectors live in locale
+    data. The ordered endpoints are semantic: 1-2 is not 1 and 2, or 2-1.
+    Unknown locales only recognize dash ranges, never borrowed vocabulary.
+    """
+    connectors = _comparison_terms(locale).get("rangeConnectors", [])
+    words = [re.escape(word.strip()) for word in connectors
+             if isinstance(word, str) and word.strip()]
+    separator = r"\\s*[-–—]\\s*"
+    if words:
+        separator += r"|\\s+(?:" + "|".join(words) + r")\\s+"
+    pattern = (r"(?<![\\w.,])(?P<lower>" + NUMBER_VALUE_PATTERN + r")"
+               r"(?:" + separator + r")"
+               r"(?P<upper>" + NUMBER_VALUE_PATTERN + r")(?![\\w.,])")
+    return [(_normalize_numeric_value(m.group("lower"), locale),
+             _normalize_numeric_value(m.group("upper"), locale))
+            for m in re.finditer(pattern, text, flags=re.IGNORECASE)]
+
+
 def comparison_facts(text, locale=None):
     """Preserve strict/inclusive numeric thresholds across supported locales.
 
@@ -370,6 +391,8 @@ def numeric_semantics_match(source, target, source_language="en-US", target_lang
     return (numeric_facts(source, source_language) == numeric_facts(target, target_language)
             and comparison_facts(source, source_language)
                 == comparison_facts(target, target_language)
+            and range_facts(source, source_language)
+                == range_facts(target, target_language)
             and resource_count_facts(source, source_language)
                 == resource_count_facts(target, target_language))
 
