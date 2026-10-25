@@ -14,7 +14,7 @@
   "issueFamilies": [
     "Blizzard article structural alignment scored spelled-out cardinal quantities as absent digits, losing high-confidence number agreement signals across source and target locale even though the later safety gate normalized them."
   ],
-  "remediation": "Normalize unambiguous count words using per-locale data when computing block alignment number evidence; parameterize source/target locale instead of hardcoding the parser. Preserve strict downstream semantic safety checks.",
+  "remediation": "Normalize unambiguous count words using per-locale data when computing block alignment number evidence; parameterize source/target locale instead of hardcoding the parser. Preserve strict downstream semantic safety checks. Cache normalized numeric evidence across dynamic-programming alignment cells to bound repeated parsing cost.",
   "crossPageChecks": [
     "Preservation Evoker Stasis: three spells vs 3 sorts",
     "Brewmaster Monk: four major cooldowns vs quatre CD; leveling: three defensive abilities",
