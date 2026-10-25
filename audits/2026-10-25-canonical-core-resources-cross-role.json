@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "auditMethod": "Assistant web indexed live English Wowhead guides; direct URL requests challenged by JavaScript. Synthetic EN-to-FR semantic safety tests, not browser Translator API output.",
+  "sampledPageIds": [
+    "feral-druid-rotation",
+    "brewmaster-monk-talents",
+    "shadow-priest-abilities",
+    "blood-death-knight-abilities",
+    "mistweaver-monk-abilities",
+    "outlaw-rogue-abilities"
+  ],
+  "sourceCorpusBefore": 214,
+  "sourceCorpusAfter": 218,
+  "newUniqueSourcePages": 4,
+  "independentRoleCoverage": [
+    "DPS",
+    "tank",
+    "healer"
+  ],
+  "novelReusableIssueFamilies": 1,
+  "issueFamilies": [
+    "Official WoW PowerType IDs 0 (Mana), 3 (Energy), 5 (Runes), and 13 (Insanity) absent from locale-scoped counted-resource validation; equal numbers with different resources could pass the memory safety gate."
+  ],
+  "remediation": "Add four canonical power IDs to en-US/fr-FR data-only resource lexicons; validate on Feral/Brewmaster/Blood/Shadow/Mistweaver synthetic phrases and mismatched-resource negatives.",
+  "newManualSentenceOverrides": 0,
+  "extensionReleaseRequired": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "sourceOnlyInterventionFamiliesPerNewPage": 0.25,
+  "proxyMetricWarning": "1 issue family / 4 newly added unique source URLs is a source-level observation proxy, not a measured translation error rate or proof of decreasing intervention cost.",
+  "browserOnlyVerification": [
+    "Translator API output",
+    "real Wowhead DOM reconstruction",
+    "French readability and official spell rendering"
+  ]
+}
