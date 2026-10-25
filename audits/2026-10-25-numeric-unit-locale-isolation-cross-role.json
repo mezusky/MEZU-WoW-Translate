@@ -38,5 +38,7 @@
     "Chrome Translator API output",
     "Rendered Wowhead DOM and linked spell-name reconstruction",
     "Mixed-language localized Wowhead pages"
-  ]
+  ],
+  "sourceOnlyIssueFamiliesPerSampledPage": 0.1667,
+  "proxyMetricWarning": "1 shared engine issue family across 6 indexed English source guides (0.1667 families/page). Prior audits use different sampling and issue categories, so this is not comparable to browser translation error rates and cannot establish declining novel-issue frequency."
 }
