@@ -819,6 +819,14 @@
     {
       "id": "windwalker-monk-stats",
       "url": "https://www.wowhead.com/guide/classes/monk/windwalker/stat-priority-pve-dps"
+    },
+    {
+      "id": "shadow-priest-leveling",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/dps-leveling-tips"
+    },
+    {
+      "id": "protection-warrior-leveling",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/tank-leveling-tips"
     }
   ]
 }
