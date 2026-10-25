@@ -855,6 +855,18 @@
     {
       "id": "holy-priest-abilities",
       "url": "https://www.wowhead.com/guide/classes/priest/holy/abilities-talents-pve-healer"
+    },
+    {
+      "id": "shadow-priest-abilities",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/abilities-talents-pve-dps"
+    },
+    {
+      "id": "blood-death-knight-abilities",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/abilities-talents-pve-tank"
+    },
+    {
+      "id": "mistweaver-monk-abilities",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/abilities-talents-pve-healer"
     }
   ]
 }
