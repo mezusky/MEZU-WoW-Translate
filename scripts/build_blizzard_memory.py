@@ -225,10 +225,22 @@ def numeric_facts(text, locale=None):
     # Compact ranges (2-3 targets) use a separator, not a negative sign.
     normalized = re.sub(r"(?<=\d)[-–—](?=\d)", "–", text)
     facts = []
-    for value, lower_bound, unit in re.findall(pattern, normalized, flags=re.IGNORECASE):
+    for match in re.finditer(pattern, normalized, flags=re.IGNORECASE):
+        value, lower_bound, unit = match.groups()
         unit = unit.casefold().rstrip(".")
+        canonical_unit = aliases.get(unit, unit)
+        if canonical_unit == "wow_ability_charge":
+            # A resource such as "3 charges de puissance sacrée" is NOT
+            # three spell charges. Its complete localized name is checked
+            # independently against the canonical resource ID below.
+            tail = normalized[match.end():]
+            if any(name.startswith(unit + " ") and
+                   re.match(re.escape(name[len(unit):]) + r"(?![\\w-])",
+                            tail, flags=re.IGNORECASE)
+                   for _, name in _resource_names(locale)):
+                canonical_unit = ""
         facts.append((_normalize_numeric_value(value, locale) + lower_bound,
-                      aliases.get(unit, unit)))
+                      canonical_unit))
     return facts  # Keep source order: swapping two percentage values is unsafe.
 
 
