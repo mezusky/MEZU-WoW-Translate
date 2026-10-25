@@ -11,7 +11,9 @@
       "au plus",
       "au maximum",
       "pas plus de",
-      "jusqu'à"
+      "jusqu'à",
+      "inférieur ou égal à",
+      "inférieure ou égale à"
     ],
     "gt": [
       "plus de",
@@ -21,7 +23,9 @@
     ],
     "gte": [
       "au moins",
-      "pas moins de"
+      "pas moins de",
+      "supérieur ou égal à",
+      "supérieure ou égale à"
     ]
   },
   "suffix": {
