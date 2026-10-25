@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "auditType": "source-indexed cross-guide semantic regression; browser translation not verified",
+  "sourceAccess": "Assistant web search returned indexed English guide prose; direct Wowhead opens returned JavaScript anti-bot challenge. GitHub-hosted Wowhead 403 is not a translation failure.",
+  "corpusBefore": 201,
+  "corpusAfter": 205,
+  "sampledSourceGuideIds": [
+    "enhancement-shaman-rotation",
+    "vengeance-demon-hunter-rotation",
+    "outlaw-rogue-rotation",
+    "frost-mage-rotation",
+    "restoration-shaman-mythic-plus",
+    "holy-paladin-raid",
+    "windwalker-monk-stats"
+  ],
+  "independentSourceEvidence": [
+    {
+      "id": "enhancement-shaman-rotation",
+      "pattern": "5+ stacks of Maelstrom Weapon",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/shaman/enhancement/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "vengeance-demon-hunter-rotation",
+      "pattern": "4+ Souls and 5+ Souls",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/rotation-cooldowns-pve-tank"
+    },
+    {
+      "id": "outlaw-rogue-rotation",
+      "pattern": "stage 3 or higher and 6 or more combo points",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/rogue/outlaw/rotation-cooldowns-pve-dps"
+    }
+  ],
+  "finding": "Official phrase-memory numeric_facts preserves postfix + as part of value; equivalent localized worded >= expressions then fail the exact numeric-fact equality gate even when the threshold semantics match. The comparison grammar also lacked 'or higher'/'or lower'.",
+  "fix": "Keep numeric_facts API stable, normalize postfix + only in semantic value comparison, classify compact postfix + as locale-neutral >=, recognize + before canonical resource names, and extend English locale-scoped suffix phrases.",
+  "validation": "Seven synthetic offline regression tests added for cross-locale equivalence, reversals, resource IDs, addition and signed modifiers. GitHub Actions CI result must be checked separately; no browser-local Translator API result claimed.",
+  "newManualSentenceOverrides": 0,
+  "newEngineReleaseRequired": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "nextSteps": "Confirm CI, audit unrelated guides for novel patterns and manually verify browser output. Do not mark a clean cycle without representative browser checks."
+}
