@@ -18,6 +18,10 @@ try:
 except ImportError:  # Direct execution: python scripts/build_blizzard_memory.py
     from html_block_extractor import extract_readable_blocks
 from pathlib import Path
+try:
+    from .locale_number_words import normalize_count_words
+except ImportError:  # Direct execution from scripts/
+    from locale_number_words import normalize_count_words
 
 ROOT = Path(__file__).resolve().parents[1]
 OUT = ROOT / "data" / "blizzard_translation_memory.json"
@@ -446,6 +450,10 @@ def resource_count_facts(text, locale):
 
 def numeric_semantics_match(source, target, source_language="en-US", target_language="fr-FR"):
     """One locale-aware safety gate for new and retained official phrase pairs."""
+    # Locale-specific spelled counts share the same numeric checks as digits.
+    # This is validation-only; no remote executable translation logic.
+    source = normalize_count_words(source, source_language)
+    target = normalize_count_words(target, target_language)
     # A postfix + carries comparator meaning, checked independently below.
     # Compare numeric magnitudes/units without rejecting valid 5+ -> au moins 5
     # locale translations; the comparison gate still rejects a missing >=.
