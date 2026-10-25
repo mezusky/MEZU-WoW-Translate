@@ -43,6 +43,45 @@ class HealerHotGlossaryTests(unittest.TestCase):
         for term in ("heal-over-time effect", "healing-over-time effect"):
             self.assertNotIn(term, manual.get("jargon", {}))
 
+    def test_modern_abilities_pages_cover_remaining_hot_spellings(self):
+        # Indexed EN source excerpts from four independent Midnight healer
+        # abilities/talents guides. These are NOT Chrome Translator API output.
+        jargon = select_jargon(GLOSSARY, "en-US", "fr-FR")
+        fixtures = {
+            "preservation-evoker-talents": (
+                "Adds a Heal over Time (HoT) effect to Verdant Embrace.",
+                "Heal over Time (HoT) effect",
+                "effet de soin sur la durée (HoT)",
+            ),
+            "restoration-shaman-abilities": (
+                "Single target heal that applies a heal over time effect.",
+                "heal over time effect",
+                "effet de soin sur la durée",
+            ),
+            "mistweaver-monk-abilities": (
+                "Place a heal-over-time effect on your current target.",
+                "heal-over-time effect",
+                "effet de soin sur la durée",
+            ),
+            "restoration-druid-talents": (
+                "It gives it a chance to extend all of your heal-over-time effects!",
+                "heal-over-time effects",
+                "effets de soin sur la durée",
+            ),
+        }
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
+        corpus = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(encoding="utf-8"))
+        ids = {page["id"] for page in corpus["pages"]}
+        for guide, (excerpt, phrase, expected) in fixtures.items():
+            with self.subTest(guide=guide):
+                self.assertIn(guide, ids)
+                self.assertIn(phrase, excerpt)
+                self.assertEqual(jargon[phrase], expected)
+                self.assertNotIn(phrase, manual.get("exact", {}))
+                self.assertNotIn(phrase, manual.get("jargon", {}))
+        # Bare wording can be verbal prose ("heal over time"), not a noun.
+        self.assertNotIn("heal over time", jargon)
+
     def test_glossary_is_not_available_to_other_translation_directions(self):
         self.assertEqual(select_jargon(GLOSSARY, "fr-FR", "fr-CA"), {})
         for source, target in (("de-DE", "fr-FR"), ("en-US", "de-DE"),
