@@ -1,0 +1,37 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "auditMethod": "Attempted direct English Wowhead URLs through assistant web; JavaScript anti-bot gate blocked direct HTML. Reviewed current indexed English prose on independent Evoker, Brewmaster Monk, and Fire Mage pages. Inspected repository generator and locale number lexicons; tests are synthetic and not Chrome Translator API output.",
+  "sampledPageIds": [
+    "preservation-evoker-rotation",
+    "brewmaster-monk-rotation",
+    "brewmaster-monk-leveling",
+    "fire-mage-leveling"
+  ],
+  "sourceCorpusBefore": 219,
+  "sourceCorpusAfter": 221,
+  "newUniqueSourcePages": 2,
+  "issueFamilies": [
+    "Blizzard article structural alignment scored spelled-out cardinal quantities as absent digits, losing high-confidence number agreement signals across source and target locale even though the later safety gate normalized them."
+  ],
+  "remediation": "Normalize unambiguous count words using per-locale data when computing block alignment number evidence; parameterize source/target locale instead of hardcoding the parser. Preserve strict downstream semantic safety checks.",
+  "crossPageChecks": [
+    "Preservation Evoker Stasis: three spells vs 3 sorts",
+    "Brewmaster Monk: four major cooldowns vs quatre CD; leveling: three defensive abilities",
+    "Fire Mage: 4 targets threshold and cooldown recommendations"
+  ],
+  "newTests": 5,
+  "newManualSentenceOverrides": 0,
+  "extensionReleaseRequired": false,
+  "sourceOnlyIssueFamiliesPerSampledPage": 0.25,
+  "proxyMetricWarning": "One generator-level alignment issue family across four sampled guide sources. Not a browser translation error rate and not directly comparable with earlier samples.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "browserOnlyVerification": [
+    "Actual Chrome Translator API output",
+    "Wowhead DOM/rich-text reconstruction",
+    "Official entity localization and player jargon on rendered pages"
+  ],
+  "githubActionsStatusAtAudit": "Previous run 40198257727 completed successfully. CI for this cycle's commits not yet confirmed."
+}
