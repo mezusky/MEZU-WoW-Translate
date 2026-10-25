@@ -927,6 +927,14 @@
     {
       "id": "arcane-mage-raid",
       "url": "https://www.wowhead.com/guide/classes/mage/arcane/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "preservation-evoker-stats",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/stat-priority-pve-healer"
+    },
+    {
+      "id": "affliction-warlock-overview",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/overview-pve-dps"
     }
   ]
 }
