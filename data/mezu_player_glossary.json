@@ -79,7 +79,13 @@
     "raidwide damage": "dégâts sur tout le raid",
     "raidwide DoT": "DoT sur tout le raid",
     "raid-wide damage": "dégâts sur tout le raid",
-    "raid wide damage": "dégâts sur tout le raid"
+    "raid wide damage": "dégâts sur tout le raid",
+    "heal-over-time effect": "effet de soin sur la durée",
+    "heal-over-time effects": "effets de soin sur la durée",
+    "healing-over-time effect": "effet de soin sur la durée",
+    "healing-over-time effects": "effets de soin sur la durée",
+    "heal over time effects": "effets de soin sur la durée",
+    "Heal over Time effects": "effets de soin sur la durée"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
