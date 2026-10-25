@@ -276,6 +276,14 @@ def comparison_facts(text, locale=None):
                            symbols.get(match.group("op"), match.group("op")),
                            _normalize_numeric_value(match.group("value"), locale)))
 
+    # Compact inclusive thresholds (5+ stacks / 4+ Souls) are a
+    # language-neutral >= operator, not an exact count. Do not interpret
+    # addition (5+10) or signed positive modifiers (+5%) as thresholds.
+    plus_pattern = r"(?<![\\w.+-])(?P<value>" + NUMBER_VALUE_PATTERN + r")\\+(?![\\w+])"
+    for match in re.finditer(plus_pattern, normalized):
+        candidates.append((match.start(), match.end(), ">=",
+                           _normalize_numeric_value(match.group("value"), locale)))
+
     terms = _comparison_terms(locale)
     for position in ("prefix", "suffix"):
         for operator, phrases in terms.get(position, {}).items():
@@ -377,7 +385,7 @@ def resource_count_facts(text, locale):
     # "6 or more Combo Points". Other locales place it after the resource.
     gap = _suffix_comparator_gap(locale)
     for resource_id, name in _resource_names(locale):
-        pattern = (r"(?<!\w)(\d+(?:[.,]\d+)?)" + gap + r"\s+"
+        pattern = (r"(?<!\w)(\d+(?:[.,]\d+)?)(?:\+(?!\d))?" + gap + r"\s+"
                    + re.escape(name) + r"(?![\w-])")
         for match in re.finditer(pattern, normalized, flags=re.IGNORECASE):
             if _looks_like_proper_name_suffix(normalized[match.end():]):
@@ -388,7 +396,14 @@ def resource_count_facts(text, locale):
 
 def numeric_semantics_match(source, target, source_language="en-US", target_language="fr-FR"):
     """One locale-aware safety gate for new and retained official phrase pairs."""
-    return (numeric_facts(source, source_language) == numeric_facts(target, target_language)
+    # A postfix + carries comparator meaning, checked independently below.
+    # Compare numeric magnitudes/units without rejecting valid 5+ -> au moins 5
+    # locale translations; the comparison gate still rejects a missing >=.
+    source_numbers = [(value.removesuffix("+"), unit)
+                      for value, unit in numeric_facts(source, source_language)]
+    target_numbers = [(value.removesuffix("+"), unit)
+                      for value, unit in numeric_facts(target, target_language)]
+    return (source_numbers == target_numbers
             and comparison_facts(source, source_language)
                 == comparison_facts(target, target_language)
             and range_facts(source, source_language)
