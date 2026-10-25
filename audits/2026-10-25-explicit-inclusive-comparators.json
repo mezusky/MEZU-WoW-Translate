@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-25",
+  "auditType": "source-indexed-inclusive-written-comparators",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "sampledPageIds": [
+    "arcane-mage-rotation",
+    "assassination-rogue-talent-builds",
+    "preservation-evoker-rotation"
+  ],
+  "sourceEvidence": [
+    {
+      "pageId": "arcane-mage-rotation",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/rotation-cooldowns-pve-dps",
+      "observedPattern": "less than or equal to 15 seconds",
+      "risk": "Previously the written inclusive operator was not recognized, allowing a strictly-less translation with the same number."
+    }
+  ],
+  "sharedFix": "Data-only locale-scoped comparator vocabulary; no engine or browser extension change for this second pattern.",
+  "newTests": 4,
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "sourceAccess": "Indexed English Wowhead guide source; direct source URL challenges JavaScript.",
+  "qualityStatus": "NOT_CLEAN; two clean cross-page browser audit cycles unconfirmed."
+}
