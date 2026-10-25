@@ -268,7 +268,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24304074"
     },
     "24304075": {
-      "accepted_pairs": 136,
+      "accepted_pairs": 137,
       "en_blocks": 81,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24304075",
       "fr_blocks": 93,
@@ -408,7 +408,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24310659"
     },
     "24310968": {
-      "accepted_pairs": 155,
+      "accepted_pairs": 156,
       "en_blocks": 127,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24310968",
       "fr_blocks": 126,
@@ -1414,6 +1414,7 @@
     "Escape Artist: Brief Immunity to Roots and Snares.": "Maître de l’évasion : brève immunité aux immobilisations et aux ralentissements.",
     "Eternal Nightfall cast time increased by 2 seconds on all difficulties.": "Le temps d’incantation de Crépuscule éternel a été augmenté de 2 s dans tous les modes.",
     "Eternally Powered Glowskull": "crâne luminescent éternel",
+    "Eureka!: Reduced cost and 10% increased damage or healing on next 3 spells or abilities.": "Eurêka ! : le coût des 3 prochains sorts ou techniques est réduit et leurs dégâts ou leurs soins sont augmentés de 10 %.",
     "Even so, due to a massive trogg invasion, the city was lost.": "Malheureusement, la cité fut perdue à la suite d’une invasion massive de Troggs.",
     "Even while the system is disabled, players can continue collecting appearances from new gear in case they decide to use transmog later.": "Cependant, même lorsque vous désactivez la transmogrification, vous pourrez continuer à collectionner les apparences provenant de nouveaux équipements au cas où vous décideriez d’utiliser la transmogrification plus tard.",
     "Eventually the trolls befriended the orcish Horde and Thrall, the orcs’ young warchief convinced the trolls to travel with him to Kalimdor.": "Ils finirent par se lier d’amitié avec la Horde des Orcs, et Thrall, le jeune chef orc, les convainquit de partir avec lui pour Kalimdor.",
@@ -2191,6 +2192,7 @@
     "Infused Whelp’s Cold Claws cooldown increased.": "Le temps de recharge de Griffes gelées des dragonnets imprégnés a été augmenté.",
     "Infusion of Light rewards Holy Shock and Flash of Light critical heals by reducing the cast time of Holy Light, encouraging healers to mix their spells rather than repeat the same cast.": "Imprégnation de lumière récompense les soins critiques de Horion sacré et d’Éclair lumineux en réduisant le temps d’incantation de Lumière sacrée, ce qui encourage les personnages axés sur les soins à varier leurs sorts plutôt que de répéter sans cesse le même.",
     "Infusion of Light rewards Holy Shock and Flash of Light critical heals by reducing the cast time of Holy Light, encouraging healers to mix their spells rather than repeat the same cast. Holy Shock moves to a 10-second cooldown, Consecrated Ground causes enemies in Consecration to take increased Holy damage, and Light’s Vigil gives Paladins a high-cost cooldown that can reset Holy Shock and trigger either extra damage against enemies or party-wide healing through an ally.": "Imprégnation de lumière récompense les soins critiques de Horion sacré et d’Éclair lumineux en réduisant le temps d’incantation de Lumière sacrée, ce qui encourage les personnages axés sur les soins à varier leurs sorts plutôt que de répéter sans cesse le même. Le temps de recharge de Horion sacré a été porté à 10 secondes ; Terre consacrée fait subir aux adversaires se trouvant dans la zone de Consécration des dégâts du sacré accrus ; et Vigile de Lumière confère aux paladins un temps de recharge coûteux qui permet de réinitialiser Horion sacré et de déclencher soit des dégâts supplémentaires contre les adversaires, soit un soin pour tout le groupe par l’intermédiaire d’un personnage allié.",
+    "Initiative: Chance for this to activate increased so that it has a 100% chance with 3 talent points.": "Initiative : les chances d’activation ont été augmentées de manière à ce que 3 points de talent suffisent pour octroyer 100 % de chances.",
     "Insect Swarm: New 16-point gold medal talent.": "Essaim d’insectes : nouveau talent majeur à 16 points.",
     "Inside, 10-player groups will face eight bosses as they explore the prison’s depths.": "Une fois à l’intérieur, les groupes de 10 personnages-joueurs pourront affronter huit boss au fil de leur exploration des profondeurs de la prison.",
     "Inside, the World of Warcraft: Forever Collector’s Edition brings together a keepsake selection of physical collectibles inspired by the earliest days of Azeroth and the new adventures ahead:": "L’édition Collector de World of Warcraft: Forever réunit une sélection d’objets de collection physiques inspirés des premiers jours d’Azeroth et des nouvelles aventures à venir :",
@@ -4438,7 +4440,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 3993,
+  "pair_count": 3995,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -8435,7 +8437,9 @@
     "Join them for some fun Housing giveaways to help celebrate this amazing milestone!": "24303315",
     "Master Summoner moved from row 4 up to row 3.": "24310968",
     "Now reduces duration of Stuns instead of increasing resistance to them.": "24301514",
-    "Soul Link moved from row 7 up to row 5.": "24310968"
+    "Soul Link moved from row 7 up to row 5.": "24310968",
+    "Eureka!: Reduced cost and 10% increased damage or healing on next 3 spells or abilities.": "24304075",
+    "Initiative: Chance for this to activate increased so that it has a 100% chance with 3 talent points.": "24310968"
   },
   "targetLanguage": "fr-FR"
 }
