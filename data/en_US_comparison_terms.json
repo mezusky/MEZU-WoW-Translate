@@ -32,5 +32,8 @@
       "or more"
     ]
   },
-  "suffixMaxUnitWords": 4
+  "suffixMaxUnitWords": 4,
+  "rangeConnectors": [
+    "to"
+  ]
 }
