@@ -245,12 +245,12 @@ def range_facts(text, locale=None):
     connectors = _comparison_terms(locale).get("rangeConnectors", [])
     words = [re.escape(word.strip()) for word in connectors
              if isinstance(word, str) and word.strip()]
-    separator = r"\\s*[-–—]\\s*"
+    separator = r"\s*[-–—]\s*"
     if words:
-        separator += r"|\\s+(?:" + "|".join(words) + r")\\s+"
-    pattern = (r"(?<![\\w.,])(?P<lower>" + NUMBER_VALUE_PATTERN + r")"
+        separator += r"|\s+(?:" + "|".join(words) + r")\s+"
+    pattern = (r"(?<![\w.,])(?P<lower>" + NUMBER_VALUE_PATTERN + r")"
                r"(?:" + separator + r")"
-               r"(?P<upper>" + NUMBER_VALUE_PATTERN + r")(?![\\w.,])")
+               r"(?P<upper>" + NUMBER_VALUE_PATTERN + r")(?![\w.,])")
     return [(_normalize_numeric_value(m.group("lower"), locale),
              _normalize_numeric_value(m.group("upper"), locale))
             for m in re.finditer(pattern, text, flags=re.IGNORECASE)]
