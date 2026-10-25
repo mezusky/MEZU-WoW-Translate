@@ -5,7 +5,8 @@
       "moins de",
       "moins d'",
       "inférieur à",
-      "inférieure à"
+      "inférieure à",
+      "en dessous de"
     ],
     "lte": [
       "au plus",
@@ -19,7 +20,8 @@
       "plus de",
       "plus d'",
       "supérieur à",
-      "supérieure à"
+      "supérieure à",
+      "au-dessus de"
     ],
     "gte": [
       "au moins",
