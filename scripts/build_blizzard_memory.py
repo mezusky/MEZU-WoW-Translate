@@ -154,10 +154,11 @@ def sentences(text):
     return parts if parts else [text]
 
 
-def numeric_facts(text):
-    """Compare numbers and normalized units across source and target languages."""
+def numeric_facts(text, locale=None):
+    """Compare numbers and units, preserving locale-specific thousands separators."""
     pattern = (
-        r"(?<!\w)([+\-\u2212]?\d+(?:[.,]\d+)*)(\+(?!\d))?"
+        r"(?<!\w)([+\-\u2212]?(?:\d{1,3}(?:[ \u00a0\u202f]\d{3})+(?:[.,]\d+)?|"
+        r"\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:[.,]\d+)?))(\+(?!\d))?"
         r"(?:\s*(%|milliseconds?|millisecondes?|ms|seconds?|secondes?|"
         r"secs?\.?|s|minutes?|mins?\.?|min\.?|hours?|heures?|hrs?\.?|hr\.?|h|"
         r"targets?|cibles?|stacks?|cumuls?)"
@@ -181,10 +182,18 @@ def numeric_facts(text):
     # a negative sign. Normalize only a dash directly between digits; keep
     # genuine signed modifiers such as -5% and 10 to -5% untouched.
     normalized = re.sub(r"(?<=\d)[-–—](?=\d)", "–", text)
+    language = (locale or "").replace("_", "-").split("-", 1)[0].casefold()
     facts = []
     for value, lower_bound, unit in re.findall(pattern, normalized, flags=re.IGNORECASE):
         unit = unit.casefold().rstrip(".")
-        facts.append((value.replace(",", ".").replace("−", "-").lstrip("+") + lower_bound, aliases.get(unit, unit)))
+        value = re.sub(r"[ \u00a0\u202f]", "", value.replace("−", "-").lstrip("+"))
+        # English uses comma grouping; French uses comma decimals and spaced
+        # thousands. Unknown locales retain the conservative decimal fallback.
+        if language == "en" and re.fullmatch(r"-?\d{1,3}(?:,\d{3})+(?:\.\d+)?", value):
+            value = value.replace(",", "")
+        else:
+            value = value.replace(",", ".")
+        facts.append((value + lower_bound, aliases.get(unit, unit)))
     return facts  # Keep source order: swapping two percentage values is unsafe.
 
 
@@ -275,7 +284,7 @@ def resource_count_facts(text, locale):
 
 def numeric_semantics_match(source, target, source_language="en-US", target_language="fr-FR"):
     """One locale-aware safety gate for new and retained official phrase pairs."""
-    return (numeric_facts(source) == numeric_facts(target)
+    return (numeric_facts(source, source_language) == numeric_facts(target, target_language)
             and comparison_facts(source) == comparison_facts(target)
             and resource_count_facts(source, source_language)
                 == resource_count_facts(target, target_language))
