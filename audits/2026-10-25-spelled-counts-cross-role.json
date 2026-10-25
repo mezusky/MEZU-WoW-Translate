@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "auditMethod": "Live Wowhead URL fetch attempted with assistant web; JavaScript verification blocked direct reads. English guide prose inspected from current search index. Offline synthetic EN-to-FR semantic checks, not Chrome Translator API output.",
+  "sampledPageIds": [
+    "preservation-evoker-rotation",
+    "preservation-evoker-talents",
+    "subtlety-rogue-rotation",
+    "subtlety-rogue-basics",
+    "brewmaster-monk-rotation",
+    "brewmaster-monk-talents"
+  ],
+  "sourceCorpusBefore": 218,
+  "sourceCorpusAfter": 219,
+  "newUniqueSourcePages": 1,
+  "independentRoleCoverage": [
+    "healer",
+    "DPS",
+    "tank"
+  ],
+  "novelReusableIssueFamilies": 1,
+  "issueFamilies": [
+    "Spelled-out cardinal quantities (e.g. three spells, two or more targets, up to five targets) were ignored by numeric safety validation; changed counts could be admitted to Blizzard phrase memory."
+  ],
+  "remediation": "Use a reusable, locale-scoped data-only cardinal lexicon and conservative normalization before the shared numeric/comparison/range/resource safety gate. Only lower-case unambiguous 2..12 cardinals are normalized; one/un, titles and unknown locales are deliberately excluded.",
+  "crossPageChecks": [
+    "Preservation Evoker Stasis three spells and five-target caps",
+    "Subtlety Rogue AoE two-or-more threshold",
+    "Brewmaster Monk four major cooldowns"
+  ],
+  "newTests": 8,
+  "newManualSentenceOverrides": 0,
+  "extensionReleaseRequired": false,
+  "sourceOnlyIssueFamiliesPerSampledPage": 0.1667,
+  "proxyMetricWarning": "One reusable issue family / six indexed-source guide samples; not a browser translation error rate, and not comparable to prior per-new-page proxy without matched sampling.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "browserOnlyVerification": [
+    "Chrome Translator API output",
+    "real Wowhead DOM/rich text reconstruction",
+    "French idiom and official spell/item rendering"
+  ],
+  "githubActionsStatusAtAudit": "Regression test step passed; full Data Pack rebuild not yet confirmed."
+}
