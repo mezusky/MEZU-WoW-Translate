@@ -747,6 +747,22 @@
     {
       "id": "outlaw-rogue-raid",
       "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "destruction-warlock-talents",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/abilities-talents-pve-dps"
+    },
+    {
+      "id": "preservation-evoker-talents",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/abilities-talents-pve-healer"
+    },
+    {
+      "id": "guardian-druid-talents",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/abilities-talents-pve-tank"
+    },
+    {
+      "id": "unholy-death-knight-consumables",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/enchants-gems-pve-dps"
     }
   ]
 }
