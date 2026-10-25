@@ -107,6 +107,23 @@ def _alignment_number_tokens(text, locale):
                  for value, unit in numeric_facts(normalized, locale))
 
 
+def _numeric_fact_sequences_match(source_facts, target_facts):
+    """Allow locale word-order changes only between different numeric unit types.
+
+    A French sentence may place a distance before a target count even when
+    English does the reverse. Keep values ordered *within* each unit type:
+    swapping 10% and 20% must still fail closed. Unlabelled numbers form
+    their own ordered group, so this does not guess semantic bindings.
+    """
+    def by_unit(facts):
+        groups = {}
+        for value, unit in facts:
+            groups.setdefault(unit, []).append(value)
+        return groups
+
+    return by_unit(source_facts) == by_unit(target_facts)
+
+
 def structural_score(a, b, source_language="en-US", target_language="fr-FR"):
     taga, ea = a
     tagb, fr = b
@@ -117,7 +134,7 @@ def structural_score(a, b, source_language="en-US", target_language="fr-FR"):
     # Locale data supplies vocabulary; the collector's current defaults are EN/FR.
     na = _alignment_number_tokens(ea, source_language)
     nb = _alignment_number_tokens(fr, target_language)
-    if na and na == nb:
+    if na and _numeric_fact_sequences_match(na, nb):
         score += 4.0
     elif not na and not nb:
         score += 0.7
@@ -477,7 +494,7 @@ def numeric_semantics_match(source, target, source_language="en-US", target_lang
                       for value, unit in numeric_facts(source, source_language)]
     target_numbers = [(value.removesuffix("+"), unit)
                       for value, unit in numeric_facts(target, target_language)]
-    return (source_numbers == target_numbers
+    return (_numeric_fact_sequences_match(source_numbers, target_numbers)
             and comparison_facts(source, source_language)
                 == comparison_facts(target, target_language)
             and range_facts(source, source_language)
