@@ -1,0 +1,52 @@
+{
+  "date": "2026-10-25",
+  "auditType": "source-indexed-bounded-interval-cross-spec",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "corpusBefore": 207,
+  "corpusAfter": 208,
+  "sampledPageIds": [
+    "assassination-rogue-talent-builds",
+    "preservation-evoker-rotation"
+  ],
+  "additionalIndependentSource": "https://www.wowhead.com/mop-classic/guide/classes/mage/frost/dps-rotation-cooldowns-abilities-pve",
+  "sourceEvidence": [
+    {
+      "pageId": "assassination-rogue-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/talent-builds-pve-dps",
+      "observedPatterns": [
+        "between 2 and 3 targets",
+        "between 2-3% behind"
+      ],
+      "risk": "Plain conjunction could pass numeric-only safety gate even when the bounded interval is omitted."
+    },
+    {
+      "pageId": "preservation-evoker-rotation",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/rotation-cooldowns-pve-healer",
+      "observedPatterns": [
+        "0-2 Echoes",
+        "10-50 yards",
+        "1-2 hours"
+      ],
+      "risk": "Independent healer regression sample for pre-existing compact numeric range handling."
+    },
+    {
+      "pageId": "mop-classic-frost-mage-rotation",
+      "url": "https://www.wowhead.com/mop-classic/guide/classes/mage/frost/dps-rotation-cooldowns-abilities-pve",
+      "observedPatterns": [
+        "between 1 and 2 targets",
+        "between 3 and 5 targets"
+      ],
+      "risk": "Independent cross-specialization evidence; outside retail regression corpus."
+    }
+  ],
+  "sharedFix": "Locale-scoped boundedRange prefix/join vocabulary recognizes between X and Y and entre X et Y as ordered numeric intervals. No sentence overrides or extension update.",
+  "newTests": 6,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "sourceAccess": "Direct retail guide fetch returned JS verification; indexed live Wowhead English source inspected via assistant web search. Not a browser output audit.",
+  "qualityStatus": "NOT_CLEAN: two consecutive clean browser cross-page audits not established."
+}
