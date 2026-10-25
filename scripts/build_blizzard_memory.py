@@ -154,11 +154,26 @@ def sentences(text):
     return parts if parts else [text]
 
 
+# Shared number grammar for locale-aware facts and threshold comparisons.
+NUMBER_VALUE_PATTERN = (
+    r"[+\-\u2212]?(?:\d{1,3}(?:[ \u00a0\u202f]\d{3})+(?:[.,]\d+)?|"
+    r"\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:[.,]\d+)?)"
+)
+
+
+def _normalize_numeric_value(value, locale):
+    """Normalize numeric separators without conflating 1,000 EN and 1,000 FR."""
+    language = (locale or "").replace("_", "-").split("-", 1)[0].casefold()
+    value = re.sub(r"[ \u00a0\u202f]", "", value.replace("−", "-").lstrip("+"))
+    if language == "en" and re.fullmatch(r"-?\d{1,3}(?:,\d{3})+(?:\.\d+)?", value):
+        return value.replace(",", "")
+    return value.replace(",", ".")
+
+
 def numeric_facts(text, locale=None):
     """Compare numbers and units, preserving locale-specific thousands separators."""
     pattern = (
-        r"(?<!\w)([+\-\u2212]?(?:\d{1,3}(?:[ \u00a0\u202f]\d{3})+(?:[.,]\d+)?|"
-        r"\d{1,3}(?:,\d{3})+(?:\.\d+)?|\d+(?:[.,]\d+)?))(\+(?!\d))?"
+        r"(?<!\w)(" + NUMBER_VALUE_PATTERN + r")(\+(?!\d))?"
         r"(?:\s*(%|milliseconds?|millisecondes?|ms|seconds?|secondes?|"
         r"secs?\.?|s|minutes?|mins?\.?|min\.?|hours?|heures?|hrs?\.?|hr\.?|h|"
         r"targets?|cibles?|stacks?|cumuls?)"
@@ -182,35 +197,78 @@ def numeric_facts(text, locale=None):
     # a negative sign. Normalize only a dash directly between digits; keep
     # genuine signed modifiers such as -5% and 10 to -5% untouched.
     normalized = re.sub(r"(?<=\d)[-–—](?=\d)", "–", text)
-    language = (locale or "").replace("_", "-").split("-", 1)[0].casefold()
     facts = []
     for value, lower_bound, unit in re.findall(pattern, normalized, flags=re.IGNORECASE):
         unit = unit.casefold().rstrip(".")
-        value = re.sub(r"[ \u00a0\u202f]", "", value.replace("−", "-").lstrip("+"))
-        # English uses comma grouping; French uses comma decimals and spaced
-        # thousands. Unknown locales retain the conservative decimal fallback.
-        if language == "en" and re.fullmatch(r"-?\d{1,3}(?:,\d{3})+(?:\.\d+)?", value):
-            value = value.replace(",", "")
-        else:
-            value = value.replace(",", ".")
-        facts.append((value + lower_bound, aliases.get(unit, unit)))
+        facts.append((_normalize_numeric_value(value, locale) + lower_bound,
+                      aliases.get(unit, unit)))
     return facts  # Keep source order: swapping two percentage values is unsafe.
 
 
-def comparison_facts(text):
-    """Keep explicit numeric inequalities when aligning official prose.
+@lru_cache(maxsize=16)
+def _comparison_terms(locale):
+    """Read data-only, locale-scoped inequality phrases; never execute remote rules."""
+    normalized = (locale or "").strip().replace("_", "-").casefold()
+    if not re.fullmatch(r"[a-z]{2,3}-[a-z]{2}", normalized):
+        return {}
+    language, region = normalized.split("-", 1)
+    path = ROOT / "data" / f"{language}_{region.upper()}_comparison_terms.json"
+    if not path.is_file():
+        return {}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if payload.get("locale", "").replace("_", "-").casefold() != normalized:
+        return {}
+    return payload
 
-    Different comparison directions (or strict versus inclusive thresholds)
-    can reverse gameplay advice despite identical numbers. Worded comparisons
-    are not inferred: mismatches simply remain outside exact phrase memory.
+
+def comparison_facts(text, locale=None):
+    """Preserve strict/inclusive numeric thresholds across supported locales.
+
+    Textual comparator vocabulary is locale data; the engine only recognizes
+    exact phrases adjacent to a number. Longest-match wins so 'no more than'
+    cannot accidentally become 'more than'. Unknown locales retain symbol
+    comparison only, rather than guessing another language's phrases.
     """
-    pattern = r"(?<![-=<>])(?P<op><=|>=|≤|≥|<|>)\s*(?P<value>[+\-\u2212]?\d+(?:[.,]\d+)*)"
-    aliases = {"≤": "<=", "≥": ">="}
-    return [
-        (aliases.get(match.group("op"), match.group("op")),
-         match.group("value").replace(",", ".").replace("−", "-").lstrip("+"))
-        for match in re.finditer(pattern, text)
-    ]
+    normalized = text.replace("’", "'")
+    candidates = []
+    symbol_pattern = (
+        r"(?<![-=<>])(?P<op><=|>=|≤|≥|<|>)\s*"
+        r"(?P<value>" + NUMBER_VALUE_PATTERN + r")"
+    )
+    symbols = {"≤": "<=", "≥": ">="}
+    for match in re.finditer(symbol_pattern, normalized):
+        candidates.append((match.start(), match.end(),
+                           symbols.get(match.group("op"), match.group("op")),
+                           _normalize_numeric_value(match.group("value"), locale)))
+
+    terms = _comparison_terms(locale)
+    for position in ("prefix", "suffix"):
+        for operator, phrases in terms.get(position, {}).items():
+            if operator not in {"<", "<=", ">", ">=", "lt", "lte", "gt", "gte"}:
+                continue
+            canonical = {"lt": "<", "lte": "<=", "gt": ">", "gte": ">="}.get(operator, operator)
+            for phrase in phrases:
+                if not isinstance(phrase, str) or not phrase.strip():
+                    continue
+                escaped = re.escape(phrase.replace("’", "'")).replace(r"\ ", r"\s+")
+                if position == "prefix":
+                    expression = (r"(?<!\w)" + escaped + r"\s*"
+                                  r"(?P<value>" + NUMBER_VALUE_PATTERN + r")")
+                else:
+                    expression = (r"(?<!\w)(?P<value>" + NUMBER_VALUE_PATTERN
+                                  + r")\s+" + escaped + r"(?!\w)")
+                for match in re.finditer(expression, normalized, flags=re.IGNORECASE):
+                    candidates.append((match.start(), match.end(), canonical,
+                                       _normalize_numeric_value(match.group("value"), locale)))
+
+    # Prefer longer overlapping phrases, then preserve their original order.
+    chosen = []
+    for candidate in sorted(candidates, key=lambda x: (-(x[1] - x[0]), x[0])):
+        if not any(candidate[0] < other[1] and other[0] < candidate[1]
+                   for other in chosen):
+            chosen.append(candidate)
+    return [(operator, value) for _, _, operator, value
+            in sorted(chosen, key=lambda x: x[0])]
 
 
 @lru_cache(maxsize=16)
@@ -285,7 +343,8 @@ def resource_count_facts(text, locale):
 def numeric_semantics_match(source, target, source_language="en-US", target_language="fr-FR"):
     """One locale-aware safety gate for new and retained official phrase pairs."""
     return (numeric_facts(source, source_language) == numeric_facts(target, target_language)
-            and comparison_facts(source) == comparison_facts(target)
+            and comparison_facts(source, source_language)
+                == comparison_facts(target, target_language)
             and resource_count_facts(source, source_language)
                 == resource_count_facts(target, target_language))
 
