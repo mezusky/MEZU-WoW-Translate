@@ -5,7 +5,7 @@ The locale files contain official surface forms; the collector only compares IDs
 """
 import unittest
 
-from scripts.build_blizzard_memory import numeric_semantics_match, resource_count_facts
+from scripts.build_blizzard_memory import numeric_facts, numeric_semantics_match, resource_count_facts
 
 
 class CanonicalPowerTypeCountTests(unittest.TestCase):
@@ -26,6 +26,18 @@ class CanonicalPowerTypeCountTests(unittest.TestCase):
                 self.assertTrue(numeric_semantics_match("Spend 3 Holy Power.", translation))
         self.assertTrue(numeric_semantics_match(
             "Gain 1 Holy Power.", "Gagnez 1 charge de puissance sacrée."))
+
+    def test_ability_charge_word_inside_official_resource_name(self):
+        # The locale-specific canonical resource takes precedence over the
+        # generic ability-charge noun; do not remove charge protection elsewhere.
+        self.assertEqual(numeric_facts("Dépensez 3 charges de puissance sacrée.", "fr-FR"),
+                         [("3", "")])
+        self.assertEqual(numeric_facts("Gardez 3 charges disponibles.", "fr-FR"),
+                         [("3", "wow_ability_charge")])
+        self.assertFalse(numeric_semantics_match(
+            "Spend 3 Holy Power.", "Gardez 3 charges disponibles."))
+        self.assertFalse(numeric_semantics_match(
+            "Keep 3 charges available.", "Dépensez 3 charges de puissance sacrée."))
 
     def test_resource_swap_and_wrong_quantity_are_rejected(self):
         self.assertFalse(numeric_semantics_match(
