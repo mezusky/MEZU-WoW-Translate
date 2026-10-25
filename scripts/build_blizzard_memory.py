@@ -235,7 +235,7 @@ def numeric_facts(text, locale=None):
             # independently against the canonical resource ID below.
             tail = normalized[match.end():]
             if any(name.startswith(unit + " ") and
-                   re.match(re.escape(name[len(unit):]) + r"(?![\\w-])",
+                   re.match(re.escape(name[len(unit):]) + r"(?![\w-])",
                             tail, flags=re.IGNORECASE)
                    for _, name in _resource_names(locale)):
                 canonical_unit = ""
