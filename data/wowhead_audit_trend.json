@@ -783,6 +783,35 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Source-level multi-spec validation committed. CI on current changes and browser-local translation remain unconfirmed; no clean-state claim."
+    },
+    {
+      "date": "2026-10-25",
+      "sourceAccess": "Assistant web live URL requests challenged by Wowhead JavaScript; indexed English guides available for cross-page source inspection.",
+      "sampledPageIds": [
+        "enhancement-shaman-rotation",
+        "windwalker-monk-talents",
+        "discipline-priest-rotation",
+        "balance-druid-rotation",
+        "discipline-priest-stats",
+        "elemental-shaman-mythic-plus",
+        "guardian-druid-consumables",
+        "outlaw-rogue-raid"
+      ],
+      "sampledPageCount": 8,
+      "sourceCorpusCount": 187,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Postfix plus numeric lower bounds (5+, 9+, ~6+) silently reduced to exact numbers in official phrase-memory numeric facts"
+      ],
+      "crossPageSourceValidation": "Indexed Enhancement Shaman 5+/9+ Maelstrom Weapon thresholds, Discipline Priest ~6+ stacks, and unrelated Balance/Monk guides inspected. Generic numeric safety gate corrected; five synthetic tests added. Newly sampled class/role pages broaden regression corpus; no browser output verified.",
+      "sharedDataInfrastructureFix": "One shared official-memory collector change and focused tests; no new manual overrides, browser code, or extension release.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Three small commits published; CI rebuild and Chrome Translator API rendering not yet confirmed. Not a clean-state cycle."
     }
   ]
 }
