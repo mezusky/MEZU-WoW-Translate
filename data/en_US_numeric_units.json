@@ -10,6 +10,41 @@
     ],
     "wow_ability_charge": [
       "charges"
+    ],
+    "s": [
+      "second",
+      "seconds",
+      "sec",
+      "secs",
+      "sec.",
+      "secs."
+    ],
+    "ms": [
+      "millisecond",
+      "milliseconds"
+    ],
+    "min": [
+      "minute",
+      "minutes",
+      "mins",
+      "min.",
+      "mins."
+    ],
+    "h": [
+      "hour",
+      "hours",
+      "hr",
+      "hrs",
+      "hr.",
+      "hrs."
+    ],
+    "target": [
+      "target",
+      "targets"
+    ],
+    "stack": [
+      "stack",
+      "stacks"
     ]
   }
 }
