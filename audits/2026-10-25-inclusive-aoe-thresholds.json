@@ -1,0 +1,48 @@
+{
+  "date": "2026-10-25",
+  "auditType": "source-indexed-cross-spec-thresholds",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "corpusBefore": 200,
+  "corpusAfter": 201,
+  "sampledPageIds": [
+    "balance-druid-rotation",
+    "marksmanship-hunter-leveling",
+    "enhancement-shaman-rotation"
+  ],
+  "sourceEvidence": [
+    {
+      "pageId": "balance-druid-rotation",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/rotation-cooldowns-pve-dps",
+      "patterns": [
+        "4 targets and above",
+        "up to and including 3 targets",
+        "up to and including 4 targets"
+      ]
+    },
+    {
+      "pageId": "marksmanship-hunter-leveling",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/dps-leveling-tips",
+      "patterns": [
+        "3 targets and above",
+        "3+ targets"
+      ]
+    },
+    {
+      "pageId": "enhancement-shaman-rotation",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/rotation-cooldowns-pve-dps",
+      "patterns": [
+        "5+ Maelstrom Weapon",
+        "10 stacks"
+      ]
+    }
+  ],
+  "sharedFix": "Data-only en-US comparison vocabulary adds inclusive prefix 'up to and including' and suffix 'and above'; comparison operators remain locale-neutral and French expressions use existing fr-FR data.",
+  "newTests": 2,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "novelTranslationIssueRate": null,
+  "validation": "Source examples checked using assistant web indexed live Wowhead URLs. GitHub CI after commits not yet confirmed; no browser-local Translator API or DOM verification.",
+  "qualityStatus": "NOT_CLEAN: two consecutive clean cross-page browser audits not established."
+}
