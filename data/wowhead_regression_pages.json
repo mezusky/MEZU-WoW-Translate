@@ -839,6 +839,14 @@
     {
       "id": "preservation-evoker-mythic-plus",
       "url": "https://www.wowhead.com/guide/classes/evoker/preservation/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "restoration-shaman-abilities",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/abilities-talents-pve-healer"
+    },
+    {
+      "id": "affliction-warlock-abilities",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/abilities-talents-pve-dps"
     }
   ]
 }
