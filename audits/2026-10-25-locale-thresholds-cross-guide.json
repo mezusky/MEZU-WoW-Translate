@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "focus": "locale-scoped numeric inequality semantics and word-order safety",
+  "sourceAccess": "Assistant web indexed English Wowhead guides; direct Wowhead URLs return JavaScript verification, no live browser DOM",
+  "sampledPageIds": [
+    "destruction-warlock-rotation",
+    "brewmaster-monk-rotation",
+    "subtlety-rogue-rotation",
+    "survival-hunter-raid",
+    "mistweaver-monk-consumables",
+    "arcane-mage-talents",
+    "blood-death-knight-consumables"
+  ],
+  "sampledPageCount": 7,
+  "newRegressionPagesAdded": 4,
+  "regressionCorpusPages": 195,
+  "crossPageSourceObservations": [
+    "Destruction Warlock rotation uses less than 4 Soul Shards, more than 4 Soul Shards and 3+ / 5+ targets.",
+    "Subtlety Rogue rotation uses 6 or more Combo Points, including variable position of the inequality relative to the resource name.",
+    "Survival Hunter raid guide says fewer than 3 hunters and has boss-specific 2/3-target recommendations.",
+    "Brewmaster Monk rotation includes grouped numeric damage and percent thresholds, testing existing numeric invariants.",
+    "Mistweaver Monk consumables, Arcane Mage talents and Blood Death Knight consumables add independent healer/DPS/tank tables and official linked entity names."
+  ],
+  "reusableFix": "Official Blizzard phrase-memory gate compares locale-specific worded inequalities by canonical strict/inclusive operators; unit/resource detection accommodates short intervening comparison phrases. Vocabulary remains data-only in en_US and fr_FR files, not extension code.",
+  "sourceOnlySyntheticCasesChecked": 12,
+  "newUnitTests": 10,
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "sourceOnlyNovelIssueRate": null,
+  "ciStatus": "Pending confirmation for this commit set",
+  "crossPageFixStatus": "Cross-guide source patterns reproduced in synthetic unit tests; no claim that Chrome output is corrected.",
+  "limitations": "Direct Wowhead HTML challenged; browser Translator API, DOM/rich-text reconstruction, remote Data Pack rebuild and measured novel-issue rate remain unverified. No copyrighted guide prose mirrored."
+}
