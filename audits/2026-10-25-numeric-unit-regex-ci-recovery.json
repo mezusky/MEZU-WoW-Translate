@@ -1,0 +1,50 @@
+{
+  "date": "2026-10-25",
+  "auditType": "cross-role-numeric-unit-ci-recovery-and-source-sampling",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "sampledPageIds": [
+    "assassination-rogue-rotation",
+    "brewmaster-monk-rotation",
+    "arcane-mage-rotation",
+    "restoration-shaman-abilities",
+    "affliction-warlock-abilities"
+  ],
+  "sourceAccess": "Live direct Wowhead URLs returned JavaScript challenge; indexed current English guide text inspected via assistant web search.",
+  "sourceEvidence": [
+    {
+      "pageId": "restoration-shaman-abilities",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/abilities-talents-pve-healer",
+      "patterns": [
+        "one-minute and seconds-based cooldowns",
+        "percent-based talent effects",
+        "source-side :cleanseSpirit: placeholder"
+      ]
+    },
+    {
+      "pageId": "affliction-warlock-abilities",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/abilities-talents-pve-dps",
+      "patterns": [
+        "2+ Target threshold",
+        "35% health condition",
+        "source-side (Spell #316099) placeholder"
+      ]
+    }
+  ],
+  "ciIssue": "Repeated failures in numeric_facts: re.error unbalanced parenthesis from optional unit group introduced with hyphenated duration support.",
+  "fixLayer": "Shared Blizzard phrase-memory validation parser, not Chrome extension.",
+  "fix": "Restore noncapturing outer group around optional unit and separator; retain three captures (value, postfix plus, unit).",
+  "fixCommit": "40168f39dd726ff3a4f312cf06082c3304963fa6",
+  "unitTestStatus": "CI validation step passed on fix commit; full data rebuild pending when sampled.",
+  "newRegressionPages": 2,
+  "totalRegressionPages": 212,
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "sourceQualityNotes": [
+    "Wowhead /fr pages may localize linked spell names while leaving English guide prose; page locale alone is not a prose-language signal.",
+    "Source placeholders should not be treated as translation defects without browser DOM evidence."
+  ],
+  "qualityStatus": "NOT_CLEAN; no Chrome Translator API verification; two consecutive clean cross-page audit cycles unconfirmed."
+}
