@@ -6,7 +6,9 @@ browser Translator API audit.
 """
 import unittest
 
-from scripts.build_blizzard_memory import comparison_facts, numeric_semantics_match, good_pair
+from scripts.build_blizzard_memory import (
+    comparison_facts, numeric_facts, resource_count_facts, numeric_semantics_match, good_pair
+)
 
 
 class LocalizedThresholdTests(unittest.TestCase):
@@ -77,6 +79,23 @@ class LocalizedThresholdTests(unittest.TestCase):
         wrong = "Vous devriez lancer le sort avec plus de 4 éclats d'âme."
         self.assertTrue(good_pair(source, correct, 8.0))
         self.assertFalse(good_pair(source, wrong, 8.0))
+
+    def test_threshold_between_number_and_target_unit(self):
+        source = "Cast when there are 3 or more targets."
+        target = "Lancez le sort lorsqu'il y a 3 cibles ou plus."
+        self.assertEqual(numeric_facts(source, "en-US"), [("3", "target")])
+        self.assertEqual(numeric_facts(target, "fr-FR"), [("3", "target")])
+        self.assertTrue(numeric_semantics_match(source, target))
+        self.assertFalse(numeric_semantics_match(
+            source, "Lancez le sort lorsqu'il y a 3 cibles ou moins."
+        ))
+
+    def test_resource_count_with_intervening_comparator(self):
+        source = "Use finishers with 6 or more Combo Points."
+        target = "Utilisez les coups de grâce avec 6 points de combo ou plus."
+        self.assertEqual(resource_count_facts(source, "en-US"), [("6", "4")])
+        self.assertEqual(resource_count_facts(target, "fr-FR"), [("6", "4")])
+        self.assertTrue(numeric_semantics_match(source, target))
 
     def test_locale_isolation_and_non_comparison_prose(self):
         self.assertEqual(comparison_facts("less than 4", "de-DE"), [])
