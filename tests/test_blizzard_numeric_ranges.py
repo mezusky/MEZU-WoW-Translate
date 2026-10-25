@@ -53,6 +53,16 @@ class NumericRangeTests(unittest.TestCase):
         ))
         self.assertEqual(range_facts("1,000-2,000", "en-US"), [("1000", "2000")])
 
+    def test_devourer_collapsing_star_and_soul_ranges(self):
+        self.assertTrue(numeric_semantics_match(
+            "Cast 4-5 Collapsing Stars per window.",
+            "Lancez 4 à 5 Étoiles effondrées par fenêtre."
+        ))
+        self.assertFalse(numeric_semantics_match(
+            "Collect 10-20 souls before the next window.",
+            "Récupérez 10 ou 20 âmes avant la prochaine fenêtre."
+        ))
+
     def test_unknown_locale_isolation(self):
         self.assertEqual(range_facts("1 to 2 targets", "de-DE"), [])
         self.assertEqual(range_facts("1 à 2 cibles", "en-US"), [])
