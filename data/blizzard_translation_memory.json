@@ -93,7 +93,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24301512"
     },
     "24301514": {
-      "accepted_pairs": 205,
+      "accepted_pairs": 208,
       "en_blocks": 131,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24301514",
       "fr_blocks": 133,
@@ -142,7 +142,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302093"
     },
     "24302097": {
-      "accepted_pairs": 164,
+      "accepted_pairs": 165,
       "en_blocks": 124,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24302097",
       "fr_blocks": 125,
@@ -226,7 +226,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24303313"
     },
     "24303315": {
-      "accepted_pairs": 59,
+      "accepted_pairs": 62,
       "en_blocks": 43,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303315",
       "fr_blocks": 38,
@@ -408,7 +408,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24310659"
     },
     "24310968": {
-      "accepted_pairs": 153,
+      "accepted_pairs": 155,
       "en_blocks": 127,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24310968",
       "fr_blocks": 126,
@@ -679,6 +679,8 @@
     "Arcanist: provides new potions, draughts, and flasks to be found throughout the tale.": "Arcaniste : propose de nouvelles potions, breuvages et flacons que vous trouverez tout au long de l’histoire.",
     "Archaeology Survey equipment should now appropriately despawn.": "L’équipement topographique pour l’archéologie devrait désormais disparaître comme prévu.",
     "Architects of Azeroth Celebrates a Membership Milestone": "Architects of Azeroth célèbre un nouveau cap de membres",
+    "Architects of Azeroth is celebrating a huge membership milestone—4,000 members!": "Architects of Azeroth fête une étape majeure : la communauté compte désormais 4 000 membres !",
+    "Architects of Azeroth is celebrating a huge membership milestone—4,000 members! Join them for some fun Housing giveaways to help celebrate this amazing milestone!": "Architects of Azeroth fête une étape majeure : la communauté compte désormais 4 000 membres ! Rejoignez-les pour participer à des concours amusants autour du système de logis et célébrer ensemble cette étape exceptionnelle !",
     "Architects of Azeroth is one of the oldest and largest WoW Housing communities where decorators gather to plot questionable furniture decisions.": "Architects of Azeroth est l’une des plus anciennes et des plus grandes communautés dédiées aux logis de WoW, où les décorateurs se réunissent pour échafauder des projets d’ameublement pour le moins douteux.",
     "Architects of Azeroth is one of the oldest and largest WoW Housing communities where decorators gather to plot questionable furniture decisions. Share your builds, ask questions, get help when your layout refuses to cooperate, and browse our growing collection of resources. Whether you’re placing your first chair or building a palace, you’ll fit right in.": "Architects of Azeroth est l’une des plus anciennes et des plus grandes communautés dédiées aux logis de WoW, où les décorateurs se réunissent pour échafauder des projets d’ameublement pour le moins douteux. Partagez vos créations, posez vos questions, obtenez de l’aide lorsque votre décoration vous donne du fil à retordre et parcourez notre collection de ressources en constante expansion. Que vous placiez votre toute première chaise ou bâtissiez un château, vous y trouverez votre place.",
     "Art and Animations": "Art et animations",
@@ -1348,6 +1350,7 @@
     "Earthbound: This new 21-point gold medal talent causes Earthbind Totem to instantly immobilize nearby targets for 5 seconds when cast.": "Lien terrestre : avec ce nouveau talent majeur à 21 points, le lancement de Totem de lien terrestre immobilise instantanément les cibles à proximité pendant 5 secondes.",
     "Earthbound’s Imprint impact damage reduced by 21%.": "Les dégâts d’impact d’Empreinte liée à la terre ont été réduits de 21 %.",
     "Earthbound’s Imprint periodic damage reduced by 13%.": "Les dégâts périodiques d’Empreinte liée à la terre ont été réduits de 13 %.",
+    "Earth’s Grasp: Moved from Elemental to row 1 of Enhancement.": "Emprise de la terre : ce talent a été déplacé de la spécialisation Élémentaire à la 1re rangée de la spécialisation Amélioration.",
     "Eat delicious food, drink bountiful beverages, and ride rams around barrels of apples!": "Remplissez-vous la panse, rincez-vous le gosier et chevauchez des béliers autour de barils de pommes !",
     "Eat delicious food, drink bountiful beverages, and ride rams around barrels of apples! Brewfest has arrived, and you can enjoy all that and more!": "Remplissez-vous la panse, rincez-vous le gosier et chevauchez des béliers autour de barils de pommes ! La fête des Brasseurs est là, alors donnez-vous-en à cœur joie !",
     "Eclipse: (New talent in row 5.) Casting Wrath reduces the cast time of your next 2 Starfire casts, stacking up to 4 charges.": "Éclipse : (nouveau talent de la 5e ligne). Lancer Colère réduit le temps d’incantation de vos 2 prochaines utilisations de Feu stellaire, cumulable jusqu’à 4 charges.",
@@ -2212,6 +2215,8 @@
     "Intimidation: Now requires Bestial Swiftness as a pre-requisite. Now also grants your pet 100% increased critical strike chance on its next attack.": "Intimidation : Rapidité bestiale est désormais un prérequis. Confère à présent également 100 % de chances de coup critique en bonus à votre familier pour sa prochaine attaque.",
     "Introducing the Devourer Demon Hunter, a third specialization that utilizes the power of the Void instead of Fel, like other Demon Hunters.": "Les chasseurs et chasseuses de démons Dévoration arrivent en jeu, une troisième spécialisation utilisant le pouvoir du Vide au lieu de la gangrène, à l’inverse de leurs congénères.",
     "Introducing the Devourer Demon Hunter, a third specialization that utilizes the power of the Void instead of Fel, like other Demon Hunters. This glaive-wielding, soul-harvesting, and planet-crushing spellcaster operates from mid-range with the full suite of mobility you'd expect from Demon Hunters. Use specialization and Hero Talents to augment your playstyle, enabling you to dive into melee and unleash devastating combo attacks.": "Les chasseurs et chasseuses de démons Dévoration arrivent en jeu, une troisième spécialisation utilisant le pouvoir du Vide au lieu de la gangrène, à l’inverse de leurs congénères. Ces lanceurs ou lanceuses de sorts détruisant des planètes, récoltant des âmes et maniant des glaives agissent à mi-distance avec la mobilité que l’on attend des chasseurs et chasseuses de démons. Utilisez la spécialisation et les talents héroïques pour améliorer votre style de jeu, vous permettant de plonger dans la mêlée et de déchaîner des enchaînements d’attaques dévastateurs.",
+    "Iron Will: Moved from Protection to row 2 of Arms.": "Volonté de fer : le talent a été déplacé de la spécialisation Protection à la 2e ligne de la spécialisation Armes.",
+    "Iron Will: Moved from Protection to row 2 of Arms. Now reduces duration of Stuns instead of increasing resistance to them.": "Volonté de fer : le talent a été déplacé de la spécialisation Protection à la 2e ligne de la spécialisation Armes. Il réduit désormais la durée des effets d’étourdissement plutôt que d’augmenter la résistance à ces derniers.",
     "It can also be used to instantly unsummon a totem by right clicking on the UI.": "Elle permet également de révoquer instantanément un totem en faisant un clic droit dessus.",
     "It can be humorous, heroic, mysterious, deeply personal, or something that only makes sense to the friends who have adventured with you for years.": "Il peut être drôle, héroïque, mystérieux, personnel, ou n’avoir de sens que pour les gens avec qui vous avez l’habitude de partir à l’aventure.",
     "It can cancel other attacks for fast movement.": "Cette technique peut annuler d’autres attaques pour un mouvement plus rapide.",
@@ -2256,6 +2261,7 @@
     "Join WoW: Forever Podcast host Countdown To Classic and special guest Meeix as they sit down with Senior Game Designer Josh “Aggrend” Greenfield, Associate Production Director Clay Stone, Lead Software Engineer Ana Resendez, and Lead Encounter Designer Michael Nuthals for a special episode.": "Retrouvez Countdown To Classic, animateur du podcast WoW: Forever et son invitée spéciale Meeix dans leur discussion avec Josh « Aggrend » Greenfield, concepteur de jeu senior, Clay Stone, directeur de production associé, Ana Resendez, responsable ingénierie logicielle et Michael Nuthals, concepteur principal des rencontres.",
     "Join WoW: Forever Podcast host Countdown To Classic and special guests Savix and Tips Out as they sit down with Senior Game Designer Josh “Aggrend” Greenfield and Lead Designer Tim Jones as they dive into Player-vs-Player (PvP) in World of Warcraft: Forever.": "Countdown To Classic, qui anime le podcast WoW: Forever, reçoit Savix et Tips Out, ainsi que Josh « Aggrend » Greenfield, concepteur de jeu senior, et Tim Jones, concepteur en chef. Au menu : le JcJ dans World of Warcraft: Forever.",
     "Join the Horde and fight to build a world where their people can live free.": "Rejoignez la Horde pour construire un monde où l’on puisse vivre libre.",
+    "Join them for some fun Housing giveaways to help celebrate this amazing milestone!": "Rejoignez-les pour participer à des concours amusants autour du système de logis et célébrer ensemble cette étape exceptionnelle !",
     "Journey deeper into Azeroth, where familiar places hold new challenges and stories waiting to be discovered.": "Aventurez-vous au cœur d’Azeroth, où des lieux familiers vous réservent encore des défis et des histoires à découvrir.",
     "Journey through an untamed Azeroth in its wild beginnings with a keepsake set crafted for champions ready to carve a new path, display their Warcraft pride, and take their first steps into this new chapter.": "Parcourez une Azeroth encore à l’état sauvage, à l’aube de son histoire, avec un ensemble collector conçu pour les champions et championnes prêt(e)s à tracer leur propre voie, à afficher fièrement leur passion pour Warcraft et à faire leurs premiers pas dans ce nouveau chapitre.",
     "Judgement: This ability no longer consumes the Paladin’s active Seal.": "Jugement : cette technique ne consomme plus le sceau actif du personnage.",
@@ -2430,6 +2436,7 @@
     "Master Chef grants a chance for your cooking recipes to produce additional results.": "Cordon bleu permet à vos recettes de cuisine d’avoir des chances de produire un plat supplémentaire.",
     "Master Demonologist redesigned: Bonuses provided by each pet changed.": "Maître démonologue : le talent a été remanié et les bonus octroyés par chaque familier ont changé.",
     "Master Demonologist redesigned: Bonuses provided by each pet changed. Imp increases Fire damage done, Voidwalker reduces Physical damage taken, Succubus/Incubus Increases Shadow damage done and Felhunter reduces Magic damage taken.": "Maître démonologue : le talent a été remanié et les bonus octroyés par chaque familier ont changé. Le diablotin augmente les dégâts de feu infligés, le marcheur du Vide réduit les dégâts physiques subis, la succube et l’incube augmentent les dégâts d’ombre infligés tandis que le chasseur corrompu réduit les dégâts magiques subis.",
+    "Master Summoner moved from row 4 up to row 3.": "Maître invocateur : le talent a été déplacé de la 4e à la 3e rangée.",
     "Master of Defense: New row 3 talent.": "Maître de la Défense : nouveau talent de 3e ligne.",
     "Master of Defense: New row 3 talent. Requires Shield Specializaton. Grants a chance to gain 5 Rage when the Warrior Dodges or Parries while a shield is equipped.": "Maître de la Défense : nouveau talent de 3e ligne. Nécessite le talent Spécialisation Bouclier. Confère une chance de générer 5 points de rage lorsque le guerrier/la guerrière esquive ou pare un coup avec un bouclier équipé.",
     "Master the Darkness duration reduced to 30 seconds (was 1 minute).": "La durée de Maîtrise des ténèbres a été réduite à 30 s (au lieu de 1 min).",
@@ -2613,6 +2620,7 @@
     "Now lasts 30 seconds and increases damage by up to 3% per stack for a maximum of 3 stacks (so total of 9% damage increase).": "Jugement sanctifié dure désormais 30 secondes et augmente les dégâts de 3 % maximum par cumul, jusqu’à 3 cumuls (soit une augmentation totale des dégâts de 9 %).",
     "Now lasts 30 seconds with a 1-minute Cooldown.": "La technique dure désormais 30 s avec un temps de recharge de 1 min.",
     "Now reduces all threat from spells and moved up to earlier in the tree to make it more accessible to Elemental Shaman.": "Ce talent réduit désormais la menace générée par tous les sorts et a été déplacé plus tôt dans l’arbre afin d’être plus accessible aux spécialisations élémentaires.",
+    "Now reduces duration of Stuns instead of increasing resistance to them.": "Il réduit désormais la durée des effets d’étourdissement plutôt que d’augmenter la résistance à ces derniers.",
     "Now reduces the Mana cost of all damaging spells but no longer modifies healing spells.": "Réduit à présent le coût en mana de tous les sorts de dégâts mais ne modifie plus les sorts de soins.",
     "Now reduces the chance for melee and ranged attacks to hit the Priest by 50% for 15 seconds or until 3 attacks have missed.": "Il réduit désormais la chance qu’ont les attaques de mêlée ou à distance de toucher le prêtre ou la prêtresse de 50 % pendant 15 s ou jusqu’à ce que 3 attaques aient raté.",
     "Now reduces the duration of Fear and Disorient effects instead of increasing chance to resist them.": "Désormais, il réduit la durée des effets de peur ou de désorientation au lieu d’augmenter les chances de leur résister.",
@@ -3281,6 +3289,7 @@
     "Something wickedly stylish is stirring in Azeroth. Four bewitching bundles are in the Hexed Witchwick Collection, each pairing a spellbinding transmog ensemble with its own enchanted mount.": "Quelque chose de méchamment élégant mijote sur Azeroth. Quatre packs ensorceleurs vous attendent dans la collection ensorceleuse maléficiée, chacun associant un ensemble de transmogrification envoûtant à sa propre monture enchantée.",
     "Soul Cleave damage reduced by 8%.": "Dégâts de Division de l’âme réduits de 8 %.",
     "Soul Flame damage increased by 20%.": "Dégâts de Flamme de l’âme augmentés de 20 %.",
+    "Soul Link moved from row 7 up to row 5.": "Lien spirituel : le talent a été déplacé de la 7e à la 5e rangée.",
     "Soul Rot damage increased by 5%.": "Dégâts de Pourriture d’âme augmentés de 5 %.",
     "Soul Warding: This new 16-point gold medal talent reduces the cooldown on Power Word: Shield and its Mana cost.": "Protection de l’âme : ce nouveau talent majeur à 16 points réduit le temps de recharge de Mot de pouvoir : Bouclier, ainsi que son coût en mana.",
     "Soul Warding: This new 16-point gold medal talent reduces the cooldown on Power Word: Shield and its Mana cost. Requires Improved Power Word: Shield.": "Protection de l’âme : ce nouveau talent majeur à 16 points réduit le temps de recharge de Mot de pouvoir : Bouclier, ainsi que son coût en mana. Requiert le talent Mot de pouvoir : Bouclier amélioré.",
@@ -4432,7 +4441,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 3987,
+  "pair_count": 3996,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -8423,7 +8432,16 @@
     "Developer's note: The 2 Piece Elemental Shaman Tier 4 bonus has a bug that existed in original Cataclysm, but was found later on in Warlords of Draenor. If this bonus were to remain in its bugged state, it would cause Elemental Shamans to wear 2 Pieces of The Burning Crusade tier for the entire expansion and we kind of like it when people have to progress their gear. Because the real fix we wish to do requires server restarts, we are removing the 2-set bonus off of the set for the weekend, and then placing it back after server restarts in its fixed state.": "24066687",
     "Normal scenarios, Normal dungeons, Heroic scenarios, Heroic dungeons, and daily Infinite Bazaar quests now award a Cache containing 5x as much Bronze as before.": "24066687",
     "Normal scenarios, Normal dungeons, Heroic scenarios, Heroic dungeons, and daily Infinite Bazaar quests now award a Cache containing 5x as much Bronze as before. Developers' notes: We intend for players to earn more Bronze as you level up, so you can more easily start purchasing upgrades and rewards. At level 70, these caches now award 8750 Bronze (this was previously 1750 Bronze).": "24066687",
-    "Temporarily removed the Elemental Shaman (2) Set Bonus on the Burning Crusade Tier 4 set. Developer's note: The 2 Piece Elemental Shaman Tier 4 bonus has a bug that existed in original Cataclysm, but was found later on in Warlords of Draenor. If this bonus were to remain in its bugged state, it would cause Elemental Shamans to wear 2 Pieces of The Burning Crusade tier for the entire expansion and we kind of like it when people have to progress their gear. Because the real fix we wish to do requires server restarts, we are removing the 2-set bonus off of the set for the weekend, and then placing it back after server restarts in its fixed state.": "24066687"
+    "Temporarily removed the Elemental Shaman (2) Set Bonus on the Burning Crusade Tier 4 set. Developer's note: The 2 Piece Elemental Shaman Tier 4 bonus has a bug that existed in original Cataclysm, but was found later on in Warlords of Draenor. If this bonus were to remain in its bugged state, it would cause Elemental Shamans to wear 2 Pieces of The Burning Crusade tier for the entire expansion and we kind of like it when people have to progress their gear. Because the real fix we wish to do requires server restarts, we are removing the 2-set bonus off of the set for the weekend, and then placing it back after server restarts in its fixed state.": "24066687",
+    "Architects of Azeroth is celebrating a huge membership milestone—4,000 members!": "24303315",
+    "Architects of Azeroth is celebrating a huge membership milestone—4,000 members! Join them for some fun Housing giveaways to help celebrate this amazing milestone!": "24303315",
+    "Earth’s Grasp: Moved from Elemental to row 1 of Enhancement.": "24302097",
+    "Iron Will: Moved from Protection to row 2 of Arms.": "24301514",
+    "Iron Will: Moved from Protection to row 2 of Arms. Now reduces duration of Stuns instead of increasing resistance to them.": "24301514",
+    "Join them for some fun Housing giveaways to help celebrate this amazing milestone!": "24303315",
+    "Master Summoner moved from row 4 up to row 3.": "24310968",
+    "Now reduces duration of Stuns instead of increasing resistance to them.": "24301514",
+    "Soul Link moved from row 7 up to row 5.": "24310968"
   },
   "targetLanguage": "fr-FR"
 }
