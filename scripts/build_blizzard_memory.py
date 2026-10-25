@@ -251,9 +251,30 @@ def range_facts(text, locale=None):
     pattern = (r"(?<![\w.,])(?P<lower>" + NUMBER_VALUE_PATTERN + r")"
                r"(?:" + separator + r")"
                r"(?P<upper>" + NUMBER_VALUE_PATTERN + r")(?![\w.,])")
+    matches = list(re.finditer(pattern, text, flags=re.IGNORECASE))
+
+    # Locale-scoped paired delimiters: "between 2 and 3" / "entre 2 et 3".
+    # Do not mistake "2 and 3" (two separate values) for a numeric interval.
+    # Only data supplies the words; the parser remains locale-neutral.
+    bounded = _comparison_terms(locale).get("boundedRange", {})
+    prefixes = bounded.get("prefix", [])
+    joins = bounded.get("join", [])
+    if isinstance(prefixes, list) and isinstance(joins, list):
+        prefix_words = [re.escape(x.strip()).replace(r"\ ", r"\s+")
+                        for x in prefixes if isinstance(x, str) and x.strip()]
+        join_words = [re.escape(x.strip()).replace(r"\ ", r"\s+")
+                      for x in joins if isinstance(x, str) and x.strip()]
+        if prefix_words and join_words:
+            bounded_pattern = (
+                r"(?<!\w)(?:" + "|".join(prefix_words) + r")\s+"
+                r"(?P<lower>" + NUMBER_VALUE_PATTERN + r")\s+"
+                r"(?:" + "|".join(join_words) + r")\s+"
+                r"(?P<upper>" + NUMBER_VALUE_PATTERN + r")(?![\w.,])"
+            )
+            matches.extend(re.finditer(bounded_pattern, text, flags=re.IGNORECASE))
     return [(_normalize_numeric_value(m.group("lower"), locale),
              _normalize_numeric_value(m.group("upper"), locale))
-            for m in re.finditer(pattern, text, flags=re.IGNORECASE)]
+            for m in sorted(matches, key=lambda match: match.start())]
 
 
 def comparison_facts(text, locale=None):
