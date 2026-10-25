@@ -11,7 +11,8 @@
       "at most",
       "no more than",
       "up to",
-      "up to and including"
+      "up to and including",
+      "at or below"
     ],
     "gt": [
       "more than",
@@ -21,7 +22,8 @@
     ],
     "gte": [
       "at least",
-      "no less than"
+      "no less than",
+      "at or above"
     ]
   },
   "suffix": {
