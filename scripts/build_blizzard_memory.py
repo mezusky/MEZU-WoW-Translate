@@ -170,11 +170,25 @@ def _normalize_numeric_value(value, locale):
     return value.replace(",", ".")
 
 
+def _suffix_comparator_gap(locale):
+    """Optional data-only threshold phrase between a number and its unit."""
+    suffixes = [phrase for forms in _comparison_terms(locale).get("suffix", {}).values()
+                for phrase in forms if isinstance(phrase, str) and phrase.strip()]
+    if not suffixes:
+        return ""
+    alternatives = "|".join(
+        re.escape(phrase.replace("’", "'")).replace(r"\ ", r"\s+")
+        for phrase in sorted(suffixes, key=len, reverse=True)
+    )
+    return r"(?:\s+(?:" + alternatives + r"))?"
+
+
 def numeric_facts(text, locale=None):
     """Compare numbers and units, preserving locale-specific thousands separators."""
     pattern = (
         r"(?<!\w)(" + NUMBER_VALUE_PATTERN + r")(\+(?!\d))?"
-        r"(?:\s*(%|milliseconds?|millisecondes?|ms|seconds?|secondes?|"
+        + _suffix_comparator_gap(locale)
+        + r"(?:\s*(%|milliseconds?|millisecondes?|ms|seconds?|secondes?|"
         r"secs?\.?|s|minutes?|mins?\.?|min\.?|hours?|heures?|hrs?\.?|hr\.?|h|"
         r"targets?|cibles?|stacks?|cumuls?)"
         r"(?![^\W\d_]))?"
@@ -340,12 +354,7 @@ def resource_count_facts(text, locale):
     found = set()
     # Some languages place a comparator between a quantity and its resource:
     # "6 or more Combo Points". Other locales place it after the resource.
-    suffixes = [phrase for forms in _comparison_terms(locale).get("suffix", {}).values()
-                for phrase in forms if isinstance(phrase, str) and phrase.strip()]
-    gap = (r"(?:\s+(?:" + "|".join(
-        re.escape(phrase.replace("’", "'")).replace(r"\ ", r"\s+")
-        for phrase in sorted(suffixes, key=len, reverse=True)) + r"))?"
-        if suffixes else "")
+    gap = _suffix_comparator_gap(locale)
     for resource_id, name in _resource_names(locale):
         pattern = (r"(?<!\w)(\d+(?:[.,]\d+)?)" + gap + r"\s+"
                    + re.escape(name) + r"(?![\w-])")
