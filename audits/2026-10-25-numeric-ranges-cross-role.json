@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-25",
+  "auditType": "source-indexed-cross-page",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "corpusBefore": 195,
+  "corpusAfter": 200,
+  "sampledPageIds": [
+    "devourer-demon-hunter-rotation",
+    "devourer-demon-hunter-gear",
+    "brewmaster-monk-rotation",
+    "brewmaster-monk-overview",
+    "devastation-evoker-rotation",
+    "destruction-warlock-rotation",
+    "restoration-shaman-stats",
+    "fire-mage-consumables"
+  ],
+  "sourceAccess": "Assistant web indexed English Wowhead snippets; direct Wowhead HTML returned JavaScript verification. No Chrome Translator API output.",
+  "observations": [
+    "Devourer Demon Hunter rotation uses 4-5, 3-4 and 10-20 bounded ranges; distinct from 4+ and 5+ minimums.",
+    "Devastation Evoker rotation uses rank-specific 1-2, 3-4, 5-6, 7-8 target bands.",
+    "Destruction Warlock rotation uses 1-2 targets and 3+/5+ target thresholds.",
+    "Brewmaster Stagger descriptions use 1-29% and 30-59% health bands.",
+    "New healer stats, caster consumables and crafted gear pages broaden cross-role and official-item coverage."
+  ],
+  "sharedFix": "Official Blizzard memory now validates ordered numeric intervals with locale-scoped word connectors; common dash notation remains language-neutral. No browser engine change or manual sentence override.",
+  "newTests": 7,
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "novelTranslationIssueRate": null,
+  "browserOnlyVerification": "Rich-text reconstruction and Chrome Translator API output are not reproducible from indexed sources.",
+  "qualityStatus": "NOT_CLEAN: source-level patterns and offline safety tests do not establish translated browser quality; at least two consecutive clean cycles still required."
+}
