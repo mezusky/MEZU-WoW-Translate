@@ -94,16 +94,16 @@ def clean_blocks(raw_html):
     return out
 
 
-def structural_score(a, b):
+def structural_score(a, b, source_language="en-US", target_language="fr-FR"):
     taga, ea = a
     tagb, fr = b
     score = 0.0
     if taga == tagb:
         score += 2.2
     # Compare digit and spelled-out counts consistently with the safety gate.
-    # Locale data supplies vocabulary; this collector currently pairs en-US/fr-FR.
-    na = NUM_RE.findall(normalize_count_words(ea, "en-US"))
-    nb = NUM_RE.findall(normalize_count_words(fr, "fr-FR"))
+    # Locale data supplies vocabulary; the collector's current defaults are EN/FR.
+    na = NUM_RE.findall(normalize_count_words(ea, source_language))
+    nb = NUM_RE.findall(normalize_count_words(fr, target_language))
     if na and na == nb:
         score += 4.0
     elif not na and not nb:
@@ -123,7 +123,7 @@ def structural_score(a, b):
     return score
 
 
-def align_blocks(en_blocks, fr_blocks):
+def align_blocks(en_blocks, fr_blocks, source_language="en-US", target_language="fr-FR"):
     # Dynamic-programming alignment with gaps; conservative acceptance later.
     n, m = len(en_blocks), len(fr_blocks)
     gap = -1.8
@@ -135,7 +135,7 @@ def align_blocks(en_blocks, fr_blocks):
         dp[0][j] = dp[0][j-1] + gap; bt[0][j] = "L"
     for i in range(1,n+1):
         for j in range(1,m+1):
-            diag = dp[i-1][j-1] + structural_score(en_blocks[i-1], fr_blocks[j-1])
+            diag = dp[i-1][j-1] + structural_score(en_blocks[i-1], fr_blocks[j-1], source_language, target_language)
             up = dp[i-1][j] + gap
             left = dp[i][j-1] + gap
             best = max(diag, up, left)
@@ -146,7 +146,7 @@ def align_blocks(en_blocks, fr_blocks):
     while i or j:
         move = bt[i][j]
         if move == "D":
-            pairs.append((en_blocks[i-1], fr_blocks[j-1], structural_score(en_blocks[i-1], fr_blocks[j-1])))
+            pairs.append((en_blocks[i-1], fr_blocks[j-1], structural_score(en_blocks[i-1], fr_blocks[j-1], source_language, target_language)))
             i-=1; j-=1
         elif move == "U":
             i-=1
