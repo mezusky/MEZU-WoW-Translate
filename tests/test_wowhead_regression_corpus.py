@@ -97,6 +97,20 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         }
         self.assertTrue(required.issubset({p["id"] for p in PAGES}))
 
+    def test_ui_macro_guides_span_tank_healer_and_dps(self):
+        # New Midnight UI pages contain import strings and /cast macros.
+        # Those are non-prose payloads, not translation training material.
+        required = {
+            "protection-warrior-ui-macros",   # tank
+            "preservation-evoker-ui-macros", # healer
+            "fire-mage-ui-macros",           # DPS
+        }
+        pages = {page["id"]: page["url"] for page in PAGES}
+        self.assertTrue(required.issubset(pages))
+        for page_id in required:
+            with self.subTest(page=page_id):
+                self.assertTrue(pages[page_id].endswith("/addons-macro-ui-imports"))
+
     def test_unholy_and_blood_dk_stats_are_independent_samples(self):
         # Identical numerical threshold sections must remain comparable
         # across two specs; no browser translation claim.
