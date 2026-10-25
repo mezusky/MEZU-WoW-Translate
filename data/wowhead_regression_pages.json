@@ -763,6 +763,22 @@
     {
       "id": "unholy-death-knight-consumables",
       "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/enchants-gems-pve-dps"
+    },
+    {
+      "id": "survival-hunter-raid",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "mistweaver-monk-consumables",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/enchants-gems-pve-healer"
+    },
+    {
+      "id": "arcane-mage-talents",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/abilities-talents-pve-dps"
+    },
+    {
+      "id": "blood-death-knight-consumables",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/enchants-gems-pve-tank"
     }
   ]
 }
