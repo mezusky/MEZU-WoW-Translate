@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "topic": "canonical-numeric-fact-word-order-cross-role",
+  "method": "Assistant web inspected English Wowhead guide URLs in the existing regression corpus via indexed live pages. Direct Wowhead HTML access required JavaScript verification; no Chrome Translator API output or rendered DOM was available. Two additional English guide pages were inspected and added.",
+  "sampledPageIds": [
+    "preservation-evoker-rotation",
+    "restoration-shaman-rotation",
+    "arms-warrior-rotation",
+    "windwalker-monk-rotation",
+    "unholy-death-knight-mythic-plus",
+    "arcane-mage-raid"
+  ],
+  "corpusBefore": 230,
+  "corpusAfter": 232,
+  "newUniquePages": 2,
+  "sourceIssueFamilies": [
+    "Blizzard phrase-memory numeric validation and alignment previously required numbers to occur in identical global order, even when a translation reorders distinct canonical unit types (e.g. target count versus distance; percentage versus duration). This could reject valid official prose pairs and penalize alignment."
+  ],
+  "fix": "Compare ordered numeric magnitudes within each canonical unit group, but permit reorder between different unit types. Reuse the same helper for structural alignment and the final numeric safety gate. Keep comparisons, ranges, and canonical resource-ID checks unchanged. No exact sentence overrides or extension changes.",
+  "crossPageChecks": [
+    "Restoration Shaman: Healing Tide Totem describes 40-yard range and healing beyond 5 targets.",
+    "Preservation Evoker: Rewind describes 33% damage and 5-second windows; Dream Flight describes 10–50 yards.",
+    "Arms Warrior: stack thresholds, cooldown durations and priority ordering.",
+    "Windwalker Monk: Chi counts, charge/stack descriptions and 60–90-second cooldown windows.",
+    "Unholy Death Knight Mythic+: Runic Power, interrupt/utility labels and dungeon tables require independent UI verification.",
+    "Arcane Mage raid: boss-specific tips, build import buttons, encounter names and 2-second cast timing require independent UI verification."
+  ],
+  "newTests": 8,
+  "newManualSentenceOverrides": 0,
+  "extensionReleaseRequired": false,
+  "testsStatus": "Committed; CI status for new commits not confirmed at report time.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "sourceOnlyIssueFamiliesPerSampledPage": 0.16666666666666666,
+  "metricWarning": "One shared candidate issue family across six indexed source pages. This is not an observed translation error rate, and no comparable browser baseline exists. Do not interpret as an improvement trend.",
+  "browserOnlyVerification": [
+    "Chrome Translator API prose output",
+    "Rich-text and linked spell/item names",
+    "Interactive talent/raid/dungeon DOM",
+    "Mixed-language localized Wowhead pages"
+  ],
+  "nextAudit": "Verify CI and Data Pack rebuild; compare phrase-memory acceptance and alignment changes against prior build; audit additional unrelated role/spec pages before claiming generalized quality improvement."
+}
