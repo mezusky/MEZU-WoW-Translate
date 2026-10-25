@@ -24,7 +24,6 @@ class InclusiveHealthThresholdTests(unittest.TestCase):
 
     def test_priest_execute_cross_class(self):
         source = "Shadow Word: Death targets at or below 20% health."
-        target = "Mot de l'ombre : Mort sur les cibles à 20 % de vie au maximum."
         # Prefix wording is unambiguous; a compact postposed variant is not
         # assumed to work unless the locale grammar explicitly recognizes it.
         canonical = "Utilisez Mot de l'ombre : Mort sur les cibles avec au maximum 20 % de vie."
@@ -37,7 +36,7 @@ class InclusiveHealthThresholdTests(unittest.TestCase):
         self.assertEqual(comparison_facts("at or above 80% health", "en-US"), [(">=", "80")])
         self.assertTrue(numeric_semantics_match(
             "Use this above threshold at or above 80% health.",
-            "Utilisez ceci au moins à 80 % de points de vie."
+            "Utilisez ceci avec au moins 80 % de points de vie."
         ))
         self.assertEqual(comparison_facts("at or below 20%", "de-DE"), [])
         self.assertEqual(comparison_facts("at or above 80%", "fr-FR"), [])
