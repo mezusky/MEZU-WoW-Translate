@@ -943,6 +943,18 @@
     {
       "id": "restoration-druid-rotation",
       "url": "https://www.wowhead.com/guide/classes/druid/restoration/rotation-cooldowns-pve-healer"
+    },
+    {
+      "id": "protection-warrior-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/addons-macro-ui-imports"
+    },
+    {
+      "id": "preservation-evoker-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/addons-macro-ui-imports"
+    },
+    {
+      "id": "fire-mage-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/addons-macro-ui-imports"
     }
   ]
 }
