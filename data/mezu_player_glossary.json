@@ -85,7 +85,9 @@
     "healing-over-time effect": "effet de soin sur la durée",
     "healing-over-time effects": "effets de soin sur la durée",
     "heal over time effects": "effets de soin sur la durée",
-    "Heal over Time effects": "effets de soin sur la durée"
+    "Heal over Time effects": "effets de soin sur la durée",
+    "heal over time effect": "effet de soin sur la durée",
+    "Heal over Time (HoT) effect": "effet de soin sur la durée (HoT)"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
