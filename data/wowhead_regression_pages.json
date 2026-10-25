@@ -803,6 +803,22 @@
     {
       "id": "marksmanship-hunter-leveling",
       "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/dps-leveling-tips"
+    },
+    {
+      "id": "frost-mage-rotation",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "restoration-shaman-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "holy-paladin-raid",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "windwalker-monk-stats",
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/stat-priority-pve-dps"
     }
   ]
 }
