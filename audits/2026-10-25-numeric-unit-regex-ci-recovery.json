@@ -35,7 +35,7 @@
   "fixLayer": "Shared Blizzard phrase-memory validation parser, not Chrome extension.",
   "fix": "Restore noncapturing outer group around optional unit and separator; retain three captures (value, postfix plus, unit).",
   "fixCommit": "40168f39dd726ff3a4f312cf06082c3304963fa6",
-  "unitTestStatus": "CI validation step passed on fix commit; full data rebuild pending when sampled.",
+  "unitTestStatus": "Passed on CI run 40185650567.",
   "newRegressionPages": 2,
   "totalRegressionPages": 212,
   "newManualSentenceOverrides": 0,
@@ -46,5 +46,10 @@
     "Wowhead /fr pages may localize linked spell names while leaving English guide prose; page locale alone is not a prose-language signal.",
     "Source placeholders should not be treated as translation defects without browser DOM evidence."
   ],
-  "qualityStatus": "NOT_CLEAN; no Chrome Translator API verification; two consecutive clean cross-page audit cycles unconfirmed."
+  "qualityStatus": "NOT_CLEAN; no Chrome Translator API verification; two consecutive clean cross-page audit cycles unconfirmed.",
+  "ciRunId": 40185650567,
+  "ciConclusion": "success",
+  "datapackRebuilt": true,
+  "datapackVersion": "048fffc61b6ca4504091",
+  "datapackValidation": "passed"
 }
