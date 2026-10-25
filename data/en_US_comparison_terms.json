@@ -27,11 +27,13 @@
   "suffix": {
     "lte": [
       "or less",
-      "or fewer"
+      "or fewer",
+      "or lower"
     ],
     "gte": [
       "or more",
-      "and above"
+      "and above",
+      "or higher"
     ]
   },
   "suffixMaxUnitWords": 4,
