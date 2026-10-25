@@ -35,5 +35,13 @@
   "suffixMaxUnitWords": 4,
   "rangeConnectors": [
     "à"
-  ]
+  ],
+  "boundedRange": {
+    "prefix": [
+      "entre"
+    ],
+    "join": [
+      "et"
+    ]
+  }
 }
