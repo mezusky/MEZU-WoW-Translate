@@ -279,7 +279,7 @@ def comparison_facts(text, locale=None):
     # Compact inclusive thresholds (5+ stacks / 4+ Souls) are a
     # language-neutral >= operator, not an exact count. Do not interpret
     # addition (5+10) or signed positive modifiers (+5%) as thresholds.
-    plus_pattern = r"(?<![\\w.+-])(?P<value>" + NUMBER_VALUE_PATTERN + r")\\+(?![\\w+])"
+    plus_pattern = r"(?<![\w.+-])(?P<value>" + NUMBER_VALUE_PATTERN + r")\+(?![\w+])"
     for match in re.finditer(plus_pattern, normalized):
         candidates.append((match.start(), match.end(), ">=",
                            _normalize_numeric_value(match.group("value"), locale)))
