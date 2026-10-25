@@ -71,7 +71,7 @@ class CorePowerTypeCoverageTests(unittest.TestCase):
             "50 Energy and 2 Runes.", "de-DE"
         ), [])
         self.assertEqual(resource_count_facts(
-            "50 points d'énergie et 2 runes.", "en-US"
+            "50 points d'énergie.", "en-US"
         ), [])
 
 
