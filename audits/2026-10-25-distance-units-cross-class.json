@@ -1,0 +1,49 @@
+{
+  "date": "2026-10-25",
+  "auditType": "wow-range-distance-unit-cross-class",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "sampledPageIds": [
+    "enhancement-shaman-abilities",
+    "holy-priest-abilities"
+  ],
+  "sourceAccess": "Direct live Wowhead URLs returned JavaScript verification; indexed English guide excerpts inspected.",
+  "sourceEvidence": [
+    {
+      "pageId": "enhancement-shaman-abilities",
+      "observedPatterns": [
+        "10 yards totem radius",
+        "8 and 25 yards minimum/maximum leap distance",
+        "30 second cooldown",
+        "40 yard totem range"
+      ]
+    },
+    {
+      "pageId": "holy-priest-abilities",
+      "observedPatterns": [
+        "Prayer of Healing heals 4 allies within 40 yards"
+      ]
+    }
+  ],
+  "issueClass": "Official Blizzard prose memory previously did not distinguish range units (yards/metres) from bare numbers; same numeric values could be accepted despite changing distance to duration or target count.",
+  "fixLayer": "Locale-scoped data-only numeric unit aliases plus reusable phrase-memory safety gate; no Chrome extension changes.",
+  "canonicalFact": "wow_distance",
+  "fixCommits": [
+    "f421522c1159d43012ed6234ad9435de21e2d5c5",
+    "4ce2a7765004c75ce988cd7813d44df6c679e8fe",
+    "dafd82a19be21ae822b65578e6a6dc0c8ab033f8"
+  ],
+  "testFile": "tests/test_blizzard_distance_units.py",
+  "newRegressionPages": 2,
+  "totalRegressionPages": 214,
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "qualityStatus": "NOT_CLEAN: browser Translator API and cross-page language quality unverified.",
+  "notes": [
+    "WoW uses yards in English guide prose and mètres in French game localization; wow_distance is a game range unit, not a physical unit conversion.",
+    "Tests use expected French examples, not Chrome-generated output.",
+    "Direct Wowhead source access is a JS challenge, not a translation failure."
+  ]
+}
