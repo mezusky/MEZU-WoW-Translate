@@ -26,6 +26,15 @@ class NumericWordOrderTests(unittest.TestCase):
 
     def test_healer_duration_and_percent_may_reorder(self):
         self.assertTrue(numeric_semantics_match(
+            "Rewind restores 33% of damage taken for 5 seconds.",
+            "Pendant 5 secondes, Rembobinage rend 33 % des dégâts subis.",
+        ))
+
+    def test_ambiguous_over_duration_stays_conservative(self):
+        # English "over 5 seconds" can describe elapsed time or a strict
+        # greater-than threshold. Do not infer its meaning from unit alone.
+        # A false negative is safer than teaching Blizzard memory a false pair.
+        self.assertFalse(numeric_semantics_match(
             "Rewind restores 33% of damage taken over 5 seconds.",
             "Pendant 5 secondes, Rembobinage rend 33 % des dégâts subis.",
         ))
