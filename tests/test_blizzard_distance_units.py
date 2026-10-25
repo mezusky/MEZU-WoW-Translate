@@ -11,7 +11,7 @@ from scripts.build_blizzard_memory import numeric_facts, numeric_semantics_match
 class BlizzardDistanceUnitTests(unittest.TestCase):
     def test_shaman_range_and_cooldown_are_separate_facts(self):
         source = "Slows enemies within 10 yards for 8 seconds."
-        target = "Ralentit les ennemis à moins de 10 mètres pendant 8 secondes."
+        target = "Ralentit les ennemis dans un rayon de 10 mètres pendant 8 secondes."
         self.assertEqual(numeric_facts(source, "en-US"), [("10", "wow_distance"), ("8", "s")])
         self.assertEqual(numeric_facts(target, "fr-FR"), [("10", "wow_distance"), ("8", "s")])
         self.assertTrue(numeric_semantics_match(source, target))
