@@ -26,7 +26,6 @@
   "browserTranslationErrorRate": null,
   "novelTranslationIssueRate": null,
   "remainingVerification": [
-    "GitHub Actions test and Data Pack rebuild",
     "Chrome Translator API and rich-text reconstruction",
     "Validate on newly sampled healer guides without additional phrase exceptions"
   ],
@@ -35,5 +34,14 @@
     "https://www.wowhead.com/guide/classes/druid/restoration/rotation-cooldowns-pve-healer",
     "https://www.wowhead.com/guide/classes/evoker/preservation/stat-priority-pve-healer",
     "https://www.wowhead.com/guide/classes/monk/mistweaver/overview-pve-healer"
-  ]
+  ],
+  "validation": {
+    "workflowRunId": 40241216741,
+    "workflowStatus": "success",
+    "unitAndRegressionTests": "passed",
+    "blizzardMemoryBuild": "passed",
+    "datapackBuild": "passed",
+    "datapackValidation": "passed",
+    "datapackVersion": "28379a514ffd74dd77e0"
+  }
 }
