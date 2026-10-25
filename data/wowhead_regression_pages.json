@@ -935,6 +935,14 @@
     {
       "id": "affliction-warlock-overview",
       "url": "https://www.wowhead.com/guide/classes/warlock/affliction/overview-pve-dps"
+    },
+    {
+      "id": "mistweaver-monk-overview",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/overview-pve-healer"
+    },
+    {
+      "id": "restoration-druid-rotation",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/rotation-cooldowns-pve-healer"
     }
   ]
 }
