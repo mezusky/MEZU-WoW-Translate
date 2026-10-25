@@ -31,6 +31,13 @@ class SpelledCountAlignmentTests(unittest.TestCase):
         self.assertGreater(structural_score(source, equivalent),
                            structural_score(source, wrong))
 
+    def test_unknown_locale_does_not_borrow_english_number_words(self):
+        source = ("p", "three spells")
+        target = ("p", "trois sorts")
+        known = structural_score(source, target, "en-US", "fr-FR")
+        unknown = structural_score(source, target, "de-DE", "es-ES")
+        self.assertGreater(known, unknown)
+
     def test_proper_name_remains_unmodified(self):
         source = ("p", "The Four Horsemen require 3 players.")
         equivalent = ("p", "Les Quatre Cavaliers nécessitent 3 joueurs.")
