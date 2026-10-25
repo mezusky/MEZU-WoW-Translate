@@ -12,6 +12,7 @@ on:
       - "data/mezu_player_glossary.json"
       - "data/*_resource_terms.json"
       - "data/*_comparison_terms.json"
+      - "data/*_numeric_units.json"
       - "data/wowhead_regression_pages.json"
       - ".github/workflows/update-wow-data.yml"
 
