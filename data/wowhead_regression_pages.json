@@ -779,6 +779,26 @@
     {
       "id": "blood-death-knight-consumables",
       "url": "https://www.wowhead.com/guide/classes/death-knight/blood/enchants-gems-pve-tank"
+    },
+    {
+      "id": "devourer-demon-hunter-rotation",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "devourer-demon-hunter-gear",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/bis-gear"
+    },
+    {
+      "id": "brewmaster-monk-overview",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/overview-pve-tank"
+    },
+    {
+      "id": "restoration-shaman-stats",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/stat-priority-pve-healer"
+    },
+    {
+      "id": "fire-mage-consumables",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/enchants-gems-pve-dps"
     }
   ]
 }
