@@ -1,0 +1,12 @@
+{
+  "schema": 1,
+  "locale": "en-US",
+  "aliases": {
+    "wow_distance": [
+      "yard",
+      "yards",
+      "yd",
+      "yds"
+    ]
+  }
+}
