@@ -883,6 +883,18 @@
     {
       "id": "brewmaster-monk-leveling",
       "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/tank-leveling-tips"
+    },
+    {
+      "id": "balance-druid-stats",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/stat-priority-pve-dps"
+    },
+    {
+      "id": "demonology-warlock-stats",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/stat-priority-pve-dps"
+    },
+    {
+      "id": "arcane-mage-consumables",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/enchants-gems-pve-dps"
     }
   ]
 }
