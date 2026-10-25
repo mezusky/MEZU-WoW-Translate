@@ -94,6 +94,12 @@ def clean_blocks(raw_html):
     return out
 
 
+@lru_cache(maxsize=4096)
+def _alignment_number_tokens(text, locale):
+    """Cache locale-normalized number evidence across alignment DP cells."""
+    return tuple(NUM_RE.findall(normalize_count_words(text, locale)))
+
+
 def structural_score(a, b, source_language="en-US", target_language="fr-FR"):
     taga, ea = a
     tagb, fr = b
@@ -102,8 +108,8 @@ def structural_score(a, b, source_language="en-US", target_language="fr-FR"):
         score += 2.2
     # Compare digit and spelled-out counts consistently with the safety gate.
     # Locale data supplies vocabulary; the collector's current defaults are EN/FR.
-    na = NUM_RE.findall(normalize_count_words(ea, source_language))
-    nb = NUM_RE.findall(normalize_count_words(fr, target_language))
+    na = _alignment_number_tokens(ea, source_language)
+    nb = _alignment_number_tokens(fr, target_language)
     if na and na == nb:
         score += 4.0
     elif not na and not nb:
