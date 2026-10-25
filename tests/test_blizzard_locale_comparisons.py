@@ -97,6 +97,31 @@ class LocalizedThresholdTests(unittest.TestCase):
         self.assertEqual(resource_count_facts(target, "fr-FR"), [("6", "4")])
         self.assertTrue(numeric_semantics_match(source, target))
 
+    def test_cross_role_rating_threshold_above_below(self):
+        # Live-indexed stat guides for Preservation Evoker, Arcane Mage,
+        # Balance Druid and Discipline Priest use "Above N rating".
+        # These are synthetic French fixtures, not Chrome translations.
+        source = "Critical Strike - Above 1380 rating."
+        target = "Coup critique : au-dessus de 1 380 points."
+        self.assertEqual(comparison_facts(source, "en-US"), [(">", "1380")])
+        self.assertEqual(comparison_facts(target, "fr-FR"), [(">", "1380")])
+        self.assertTrue(numeric_semantics_match(source, target))
+        self.assertFalse(numeric_semantics_match(
+            source, "Coup critique : en dessous de 1 380 points."
+        ))
+        self.assertFalse(numeric_semantics_match(
+            source, "Coup critique : au-dessus de 1 381 points."
+        ))
+
+    def test_strict_below_and_locale_isolation(self):
+        self.assertTrue(numeric_semantics_match(
+            "Below 1320 rating, prioritize Haste.",
+            "En dessous de 1 320 points, privilégiez la Hâte."
+        ))
+        self.assertEqual(comparison_facts("au-dessus de 1380", "en-US"), [])
+        self.assertEqual(comparison_facts("en dessous de 1380", "de-DE"), [])
+        self.assertEqual(comparison_facts("above 1380", "fr-FR"), [])
+
     def test_locale_isolation_and_non_comparison_prose(self):
         self.assertEqual(comparison_facts("less than 4", "de-DE"), [])
         self.assertEqual(comparison_facts("moins de 4", "en-US"), [])
