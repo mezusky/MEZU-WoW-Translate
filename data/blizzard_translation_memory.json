@@ -37,7 +37,7 @@
   "article_count": 58,
   "articles": {
     "24066687": {
-      "accepted_pairs": 792,
+      "accepted_pairs": 798,
       "en_blocks": 689,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24066687",
       "fr_blocks": 692,
@@ -784,6 +784,7 @@
     "Battle for Azeroth quests should no longer be appearing on the quest logs of characters that didn't complete them when outside of Battle for Azeroth content.": "Les quêtes de Battle for Azeroth n’apparaissent plus dans le journal de quête des personnages qui ne les ont pas terminées, quand ces derniers se trouvent en dehors du contenu de Battle for Azeroth.",
     "Battle for the Darkspear Islands in World of Warcraft: Forever": "Battez-vous pour les îles des Sombrelances dans World of Warcraft: Forever",
     "Battle-Scarred Veteran has been updated.": "Vétéran aguerri a été mis à jour.",
+    "Battle-Scarred Veteran has been updated. Now, when a damage event reduces your health below 30%, the portion of that damage event that would apply to the last 30% of your health is also reduced by 80%. Developers’ notes: For example, if you are at 50% health and receive damage for 40% of your health, your damage taken will be 20% + 20% * (1-0.8), or 24%, and you will have 26% health remaining when Battle-Scarred Veteran activates.": "Vétéran aguerri a été mis à jour. Désormais, lorsque vos points de vie passent en dessous de 30 % suite à des dégâts reçus, la proportion de ces dégâts qui devrait être appliquée aux derniers 30 % de vos points de vie sera elle aussi réduite de 80 %. Commentaire de l’équipe de développement : par exemple, si vous êtes à 50 % de vos points de vie et que vous recevez des dégâts correspondant à 40 % de vos points de vie, les dégâts subis seront de 20 % + 20 % * (1 – 0,8), soit 24 %, et il vous restera 26 % de points de vie lorsque Vétéran aguerri s’activera.",
     "Battle-ready item level 102 gear": "de l’équipement de combat (niveau d’objet 102) ;",
     "Battlegrounds, Builds, and Beyond in This Week's WoW Weekly": "Champs de bataille, configurations et bien plus encore dans le résumé hebdomadaire de WoW de cette semaine",
     "Be A Good Neighbor": "Faites bonne impression dans le quartier",
@@ -2634,6 +2635,7 @@
     "Now the 16-point gold medal talent.": "Remplace le talent majeur à 16 points.",
     "Now the 21-point gold medal talent.": "Remplace le talent majeur à 21 points.",
     "Now, intruders—suspected to be Dark Iron dwarves—have broken into its sacred corridors.": "Aujourd’hui, des personnes intruses, soupçonnées de faire partie des Nains sombrefer, ont pénétré dans ses couloirs sacrés.",
+    "Now, when a damage event reduces your health below 30%, the portion of that damage event that would apply to the last 30% of your health is also reduced by 80%.": "Désormais, lorsque vos points de vie passent en dessous de 30 % suite à des dégâts reçus, la proportion de ces dégâts qui devrait être appliquée aux derniers 30 % de vos points de vie sera elle aussi réduite de 80 %.",
     "Numbers across the game are being reduced to improve clarity and readability.": "Les chiffres apparaissant dans le jeu seront réduits afin de rendre les choses plus claires et lisibles.",
     "Numbers across the game are being reduced to improve clarity and readability. As always, your power level relative to that of your enemies will remain the same, there will simply be more relatable numbers on your screen.": "Les chiffres apparaissant dans le jeu seront réduits afin de rendre les choses plus claires et lisibles. Comme toujours, votre niveau de puissance restera le même par rapport à celui de vos ennemis, mais les chiffres qui s’afficheront à l’écran seront simplement plus accessibles.",
     "Oblivion damage increased by 25%.": "Dégâts d’Oubli augmentés de 25 %.",
@@ -4082,6 +4084,7 @@
     "Warlock Affliction Oblivion damage increased by 25%.": "Démoniste Affliction Dégâts d’Oubli augmentés de 25 %.",
     "Warlock Affliction Oblivion damage increased by 25%. Drain Soul damage increased by 30% in PvP combat (was 15%). Shadow Bolt damage increased by 90% in PvP combat (was 60%). Agony damage increased by 25% in PvP combat (was 40%). Demonology Shadow Bolt damage increased by 90% in PvP combat (was 60%).": "Démoniste Affliction Dégâts d’Oubli augmentés de 25 %. Dégâts de Drain d’âme augmentés de 30 % en combat JcJ (au lieu de 15 %). Dégâts de Trait de l’ombre augmentés de 90 % en combat JcJ (au lieu de 60 %). Dégâts d’Agonie augmentés de 25 % en combat JcJ (au lieu de 40 %). Démonologie Dégâts de Trait de l’ombre augmentés de 90 % en combat JcJ (au lieu de 60 %).",
     "Warlock Affliction Resolved an issue causing Drain Life to sometimes incorrectly consume mana while Soul Rot is active.": "Démoniste Affliction Correction d’un problème à cause duquel Drain de vie consommait parfois du mana de manière incorrecte lorsque Pourriture d’âme était actif.",
+    "Warlock Affliction Resolved an issue causing Drain Life to sometimes incorrectly consume mana while Soul Rot is active. Warrior Protection Battle-Scarred Veteran has been updated. Now, when a damage event reduces your health below 30%, the portion of that damage event that would apply to the last 30% of your health is also reduced by 80%. Developers’ notes: For example, if you are at 50% health and receive damage for 40% of your health, your damage taken will be 20% + 20% * (1-0.8), or 24%, and you will have 26% health remaining when Battle-Scarred Veteran activates.": "Démoniste Affliction Correction d’un problème à cause duquel Drain de vie consommait parfois du mana de manière incorrecte lorsque Pourriture d’âme était actif. Guerrier/Guerrière Protection Vétéran aguerri a été mis à jour. Désormais, lorsque vos points de vie passent en dessous de 30 % suite à des dégâts reçus, la proportion de ces dégâts qui devrait être appliquée aux derniers 30 % de vos points de vie sera elle aussi réduite de 80 %. Commentaire de l’équipe de développement : par exemple, si vous êtes à 50 % de vos points de vie et que vous recevez des dégâts correspondant à 40 % de vos points de vie, les dégâts subis seront de 20 % + 20 % * (1 – 0,8), soit 24 %, et il vous restera 26 % de points de vie lorsque Vétéran aguerri s’activera.",
     "Warlock Drain Life will no longer turn its target permanently green until they log out.": "Démoniste Drain de vie ne rend plus sa cible verte de manière permanente jusqu’à la déconnexion.",
     "Warlock Fear now costs 4% of base mana (was 5%).": "Démoniste Peur coûte désormais 4 % du mana de base (au lieu de 5 %).",
     "Warlock Fear now costs 4% of base mana (was 5%). Demonic Gateway now costs 10% of base mana (was 20%).": "Démoniste Peur coûte désormais 4 % du mana de base (au lieu de 5 %). Porte des démons coûte désormais 10 % du mana de base (au lieu de 20 %).",
@@ -4440,7 +4443,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 3995,
+  "pair_count": 3998,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -8439,7 +8442,10 @@
     "Now reduces duration of Stuns instead of increasing resistance to them.": "24301514",
     "Soul Link moved from row 7 up to row 5.": "24310968",
     "Eureka!: Reduced cost and 10% increased damage or healing on next 3 spells or abilities.": "24304075",
-    "Initiative: Chance for this to activate increased so that it has a 100% chance with 3 talent points.": "24310968"
+    "Initiative: Chance for this to activate increased so that it has a 100% chance with 3 talent points.": "24310968",
+    "Battle-Scarred Veteran has been updated. Now, when a damage event reduces your health below 30%, the portion of that damage event that would apply to the last 30% of your health is also reduced by 80%. Developers’ notes: For example, if you are at 50% health and receive damage for 40% of your health, your damage taken will be 20% + 20% * (1-0.8), or 24%, and you will have 26% health remaining when Battle-Scarred Veteran activates.": "24066687",
+    "Now, when a damage event reduces your health below 30%, the portion of that damage event that would apply to the last 30% of your health is also reduced by 80%.": "24066687",
+    "Warlock Affliction Resolved an issue causing Drain Life to sometimes incorrectly consume mana while Soul Rot is active. Warrior Protection Battle-Scarred Veteran has been updated. Now, when a damage event reduces your health below 30%, the portion of that damage event that would apply to the last 30% of your health is also reduced by 80%. Developers’ notes: For example, if you are at 50% health and receive damage for 40% of your health, your damage taken will be 20% + 20% * (1-0.8), or 24%, and you will have 26% health remaining when Battle-Scarred Veteran activates.": "24066687"
   },
   "targetLanguage": "fr-FR"
 }
