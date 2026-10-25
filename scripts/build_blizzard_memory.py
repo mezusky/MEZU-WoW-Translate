@@ -232,6 +232,45 @@ def numeric_facts(text, locale=None):
     return facts  # Keep source order: swapping two percentage values is unsafe.
 
 
+@lru_cache(maxsize=16)
+def _comparison_terms(locale):
+    """Read data-only, locale-scoped inequality phrases; never execute remote rules."""
+    normalized = (locale or "").strip().replace("_", "-").casefold()
+    if not re.fullmatch(r"[a-z]{2,3}-[a-z]{2}", normalized):
+        return {}
+    language, region = normalized.split("-", 1)
+    path = ROOT / "data" / f"{language}_{region.upper()}_comparison_terms.json"
+    if not path.is_file():
+        return {}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if payload.get("locale", "").replace("_", "-").casefold() != normalized:
+        return {}
+    return payload
+
+
+@lru_cache(maxsize=16)
+def _numeric_unit_aliases(locale):
+    """Load data-only unit spellings by locale; never infer another locale."""
+    normalized = (locale or "").strip().replace("_", "-").casefold()
+    if not re.fullmatch(r"[a-z]{2,3}-[a-z]{2}", normalized):
+        return {}
+    language, region = normalized.split("-", 1)
+    path = ROOT / "data" / f"{language}_{region.upper()}_numeric_units.json"
+    if not path.is_file():
+        return {}
+    payload = json.loads(path.read_text(encoding="utf-8"))
+    if payload.get("locale", "").replace("_", "-").casefold() != normalized:
+        return {}
+    aliases = {}
+    for canonical, forms in payload.get("aliases", {}).items():
+        if not re.fullmatch(r"[a-z][a-z0-9_]*", canonical) or not isinstance(forms, list):
+            continue
+        for form in forms:
+            if isinstance(form, str) and re.fullmatch(r"[^\W\d_][\w.-]{0,30}", form):
+                aliases[form.casefold()] = canonical
+    return aliases
+
+
 def range_facts(text, locale=None):
     """Preserve bounded numeric intervals across locale-specific word order.
 
