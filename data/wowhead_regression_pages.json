@@ -847,6 +847,14 @@
     {
       "id": "affliction-warlock-abilities",
       "url": "https://www.wowhead.com/guide/classes/warlock/affliction/abilities-talents-pve-dps"
+    },
+    {
+      "id": "enhancement-shaman-abilities",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/abilities-talents-pve-dps"
+    },
+    {
+      "id": "holy-priest-abilities",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/abilities-talents-pve-healer"
     }
   ]
 }
