@@ -10,7 +10,8 @@
     "lte": [
       "at most",
       "no more than",
-      "up to"
+      "up to",
+      "up to and including"
     ],
     "gt": [
       "more than",
@@ -29,7 +30,8 @@
       "or fewer"
     ],
     "gte": [
-      "or more"
+      "or more",
+      "and above"
     ]
   },
   "suffixMaxUnitWords": 4,
