@@ -24,7 +24,7 @@
     "New healer stats, caster consumables and crafted gear pages broaden cross-role and official-item coverage."
   ],
   "sharedFix": "Official Blizzard memory now validates ordered numeric intervals with locale-scoped word connectors; common dash notation remains language-neutral. No browser engine change or manual sentence override.",
-  "newTests": 7,
+  "newTests": 8,
   "newManualSentenceOverrides": 0,
   "browserRenderedPagesVerified": 0,
   "novelTranslationIssueRate": null,
