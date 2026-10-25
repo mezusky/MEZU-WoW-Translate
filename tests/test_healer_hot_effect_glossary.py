@@ -36,7 +36,7 @@ class HealerHotGlossaryTests(unittest.TestCase):
         for guide, excerpt in fixtures.items():
             with self.subTest(guide=guide):
                 matches = [term for term in jargon if re.search(
-                    r"(?<!\\w)" + re.escape(term) + r"(?!\\w)", excerpt, re.I
+                    r"(?<!\w)" + re.escape(term) + r"(?!\w)", excerpt, re.I
                 )]
                 self.assertTrue(matches, guide)
                 self.assertNotIn(excerpt, manual.get("exact", {}))
