@@ -1,0 +1,43 @@
+{
+  "date": "2026-10-25",
+  "auditType": "cross-spec-hyphenated-duration-units",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "sampledPageIds": [
+    "assassination-rogue-rotation",
+    "arcane-mage-rotation",
+    "brewmaster-monk-rotation",
+    "feral-druid-raid",
+    "preservation-evoker-mythic-plus"
+  ],
+  "sourceEvidence": [
+    {
+      "pageId": "assassination-rogue-rotation",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/rotation-cooldowns-pve-dps",
+      "observedPattern": "6-second-long Improved Garrote window"
+    },
+    {
+      "pageId": "arcane-mage-rotation",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/rotation-cooldowns-pve-dps",
+      "observedPattern": "45-seconds later; 45-second cooldown"
+    },
+    {
+      "pageId": "brewmaster-monk-rotation",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/rotation-cooldowns-pve-tank",
+      "observedPattern": "6-minute cooldown; 2-3 minute ability"
+    }
+  ],
+  "observedSharedIssue": "Numeric unit parser dropped the unit when English used hyphenated number-unit modifiers; valid English-to-French official phrase pairs could be rejected.",
+  "fixLayer": "Shared Blizzard phrase-memory validation parser; no extension runtime changes.",
+  "testFile": "tests/test_blizzard_hyphenated_duration_units.py",
+  "newTests": 5,
+  "newManualSentenceOverrides": 0,
+  "newRegressionPages": 2,
+  "totalRegressionPages": 210,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "sourceAccess": "Direct Wowhead URL challenged JavaScript; indexed English source inspected via assistant web access.",
+  "limitations": "Synthetic expected French text only. No Chrome Translator API or DOM reconstruction reproduction. New pages have not been proven clean.",
+  "qualityStatus": "NOT_CLEAN; two clean cross-page browser audit cycles unconfirmed."
+}
