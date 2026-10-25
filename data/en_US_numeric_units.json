@@ -7,6 +7,9 @@
       "yards",
       "yd",
       "yds"
+    ],
+    "wow_ability_charge": [
+      "charges"
     ]
   }
 }
