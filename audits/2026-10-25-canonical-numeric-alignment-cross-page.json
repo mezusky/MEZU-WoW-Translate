@@ -1,0 +1,40 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "auditMethod": "Assistant web attempted live Wowhead English guide URLs; direct HTML returned a JavaScript verification gate. Reviewed fresh indexed English guide text and locale variants. Inspected current Blizzard memory alignment and safety code via GitHub connector. Synthetic expected-French tests do not reproduce Chrome Translator API.",
+  "sampledPageIds": [
+    "blood-death-knight-abilities",
+    "brewmaster-monk-talents",
+    "balance-druid-stats",
+    "demonology-warlock-stats",
+    "arcane-mage-consumables"
+  ],
+  "sourceCorpusBefore": 221,
+  "sourceCorpusAfter": 224,
+  "newUniqueSourcePages": 3,
+  "issueFamilies": [
+    "Blizzard phrase-memory structural alignment compared raw digit strings rather than the canonical locale-aware numeric facts used by the downstream safety gate; decimal comma/dot, grouped thousands, and WoW yard/metre aliases could lose agreement evidence."
+  ],
+  "remediation": "Reuse cached locale-aware numeric_facts after count-word normalization for alignment evidence, stripping postfix + for scoring only while keeping strict comparison_facts verification before publication. No new sentence overrides, extension code, remote executable code, or additional dependencies.",
+  "crossPageChecks": [
+    "Blood DK talents: 7.2% and 1.3% percentages; 1.5-minute cooldown.",
+    "Brewmaster Monk talents: 12.5% healing, 0.5-second reductions and 8-yard effects.",
+    "Balance Druid stats: 0.9% diminished-return example.",
+    "Demonology Warlock stats: 0.9% diminished-return example, plus thousands-rating thresholds.",
+    "Arcane Mage consumables: official item names localized on /fr while surrounding guide prose remains English; page URL locale is not reliable evidence of prose language."
+  ],
+  "newTests": 6,
+  "newManualSentenceOverrides": 0,
+  "extensionReleaseRequired": false,
+  "sourceOnlyIssueFamiliesPerSampledPage": 0.2,
+  "proxyMetricWarning": "One shared generator issue family across five inspected source pages; not a measured browser translation error rate. Cross-cycle comparability remains limited by different samples.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "browserOnlyVerification": [
+    "Chrome Translator API actual output",
+    "Rendered Wowhead DOM and rich-text reconstruction",
+    "Automatic source-language detection in mixed-language pages"
+  ],
+  "githubActionsStatusAtAudit": "Commits published; new workflow execution outcome not verified via connector."
+}
