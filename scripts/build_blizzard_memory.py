@@ -255,8 +255,15 @@ def comparison_facts(text, locale=None):
                     expression = (r"(?<!\w)" + escaped + r"\s*"
                                   r"(?P<value>" + NUMBER_VALUE_PATTERN + r")")
                 else:
+                    # "6 or more Combo Points" and "6 points de combo ou plus"
+                    # express the same threshold despite different word order.
+                    # Permit only a short run of non-numeric words before the
+                    # suffix, bounded by locale data to avoid crossing clauses.
+                    max_words = max(0, min(4, int(terms.get("suffixMaxUnitWords", 0))))
+                    unit_words = (r"(?:[ \t]+[^\W\d_][\w'-]*){0,"
+                                  + str(max_words) + r"}")
                     expression = (r"(?<!\w)(?P<value>" + NUMBER_VALUE_PATTERN
-                                  + r")\s+" + escaped + r"(?!\w)")
+                                  + r")" + unit_words + r"\s+" + escaped + r"(?!\w)")
                 for match in re.finditer(expression, normalized, flags=re.IGNORECASE):
                     candidates.append((match.start(), match.end(), canonical,
                                        _normalize_numeric_value(match.group("value"), locale)))
@@ -331,8 +338,17 @@ def resource_count_facts(text, locale):
     # still matches locale-specific resource forms without casefold offsets.
     normalized = " ".join(text.replace("’", "'").split())
     found = set()
+    # Some languages place a comparator between a quantity and its resource:
+    # "6 or more Combo Points". Other locales place it after the resource.
+    suffixes = [phrase for forms in _comparison_terms(locale).get("suffix", {}).values()
+                for phrase in forms if isinstance(phrase, str) and phrase.strip()]
+    gap = (r"(?:\s+(?:" + "|".join(
+        re.escape(phrase.replace("’", "'")).replace(r"\ ", r"\s+")
+        for phrase in sorted(suffixes, key=len, reverse=True)) + r"))?"
+        if suffixes else "")
     for resource_id, name in _resource_names(locale):
-        pattern = r"(?<!\w)(\d+(?:[.,]\d+)?)\s+" + re.escape(name) + r"(?![\w-])"
+        pattern = (r"(?<!\w)(\d+(?:[.,]\d+)?)" + gap + r"\s+"
+                   + re.escape(name) + r"(?![\w-])")
         for match in re.finditer(pattern, normalized, flags=re.IGNORECASE):
             if _looks_like_proper_name_suffix(normalized[match.end():]):
                 continue
