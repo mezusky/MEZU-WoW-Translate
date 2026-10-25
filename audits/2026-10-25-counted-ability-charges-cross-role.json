@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "topic": "counted-ability-charge-units",
+  "method": "Assistant web attempted live Wowhead URLs; direct page HTML requires JavaScript verification. Reviewed freshly indexed English source guides. Expected French cases are synthetic; no Chrome Translator API reproduction.",
+  "sampledPageIds": [
+    "frost-mage-rotation",
+    "vengeance-demon-hunter-rotation",
+    "vengeance-demon-hunter-abilities",
+    "frost-mage-abilities"
+  ],
+  "corpusBefore": 224,
+  "corpusAfter": 226,
+  "newUniquePages": 2,
+  "sourceIssueFamilies": [
+    "Counted ability charges (e.g. 2 charges) were previously parsed as bare numbers, allowing a different counted concept such as 2 stacks or 2 casts to pass official phrase-memory numeric safety checks."
+  ],
+  "fix": "Add data-only locale-scoped wow_ability_charge aliases to en-US and fr-FR numeric unit vocabularies; avoid singular 'charge' because Charge is also a named Warrior spell. No extension code, remote executable code, dependencies or sentence overrides.",
+  "crossPageChecks": [
+    "Frost Mage rotation: Ray of Frost has 2 charges.",
+    "Vengeance Demon Hunter rotation: Infernal Strike and Fracture near 2 charges.",
+    "Vengeance Demon Hunter abilities: Demon Spikes can hold 2 charges.",
+    "Frost Mage abilities: additional charges are discussed for Ray of Frost and Frost Nova."
+  ],
+  "newTests": 7,
+  "newManualSentenceOverrides": 0,
+  "extensionReleaseRequired": false,
+  "sourceOnlyIssueFamiliesPerSampledPage": 0.25,
+  "proxyMetricWarning": "One reusable issue family across four English source pages; not a measured browser translation issue rate or evidence of declining novel-error frequency. Continue comparable samples.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "browserOnlyVerification": [
+    "Chrome Translator API output",
+    "Rendered Wowhead DOM/rich-text reconstruction",
+    "Mixed-language page detection"
+  ],
+  "githubActionsStatusAtAudit": "Source/data/test commits published; final workflow run not yet confirmed. The prior workflow run 40198257727 completed successfully."
+}
