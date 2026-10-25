@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "sourceAccess": "Assistant web indexed English Wowhead guides; direct page requests returned JavaScript verification, no browser DOM",
+  "sampledPageIds": [
+    "brewmaster-monk-rotation",
+    "destruction-warlock-rotation",
+    "destruction-warlock-talents",
+    "preservation-evoker-talents",
+    "guardian-druid-talents",
+    "unholy-death-knight-consumables"
+  ],
+  "sampledPageCount": 6,
+  "newRegressionPagesAdded": 4,
+  "crossPageSourceObservations": [
+    "Brewmaster Monk tank rotation includes 25,000 / 12,500 / 6,250 damage examples and decimal timing; grouped damage amounts are high-impact facts",
+    "Destruction Warlock DPS rotation includes 5+ / 3+ target thresholds, Soul Shard fragments and a source-authored 2,5 Soul Shards decimal",
+    "Destruction talents and Preservation Evoker healer talents combine official spell links, resource quantities, percentages and variable-length ranges",
+    "Guardian Druid tank talents include Combo Points, Rage and conditional stack counts; Unholy Death Knight consumables use official item names and table rows"
+  ],
+  "preventiveInfrastructureFix": "Official Blizzard phrase-memory numeric gate now compares grouped English comma thousands with French spaced thousands and locale-specific decimal punctuation; retains signs, postfix + thresholds and unit checks",
+  "newReusableTermFamiliesObserved": 0,
+  "newManualSentenceOverrides": 0,
+  "newUnitTests": 6,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "sourceOnlyNovelIssueRate": null,
+  "crossPageFixStatus": "Synthetic tests passed in GitHub Actions; full Data Pack rebuild pending at audit time. Indexed guide content is not proof of browser translation quality.",
+  "limitations": "Wowhead direct HTML challenged; Chrome Translator API, live rich-text reconstruction and real output error rates not reproduced. Source-only grouped-number examples do not demonstrate an existing production mistranslation."
+}
