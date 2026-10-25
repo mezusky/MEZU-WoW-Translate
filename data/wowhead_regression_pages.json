@@ -903,6 +903,14 @@
     {
       "id": "frost-mage-abilities",
       "url": "https://www.wowhead.com/guide/classes/mage/frost/abilities-talents-pve-dps"
+    },
+    {
+      "id": "beast-mastery-hunter-raid",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "protection-paladin-raid",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/midnight-season-2-raid-tips"
     }
   ]
 }
