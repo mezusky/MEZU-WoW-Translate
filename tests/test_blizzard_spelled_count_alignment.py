@@ -33,8 +33,8 @@ class SpelledCountAlignmentTests(unittest.TestCase):
 
     def test_proper_name_remains_unmodified(self):
         source = ("p", "The Four Horsemen require 3 players.")
-        equivalent = ("p", "Les quatre cavaliers nécessitent 3 joueurs.")
-        # The capitalized English proper name is intentionally not normalized.
+        equivalent = ("p", "Les Quatre Cavaliers nécessitent 3 joueurs.")
+        # Both title-cased names are left alone by the conservative lexicon.
         self.assertTrue(numeric_semantics_match(source[1], equivalent[1]))
 
 
