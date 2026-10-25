@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "date": "2026-10-25",
+  "topic": "numeric-unit-locale-isolation",
+  "method": "Assistant web inspected freshly indexed live English Wowhead URLs from the regression corpus (Brewmaster Monk rotation, Restoration Shaman rotation, Beast Mastery Hunter rotation, Preservation Evoker rotation) and two new raid guides. Browser-local Translator API and rendered DOM were not available.",
+  "sampledPageIds": [
+    "brewmaster-monk-rotation",
+    "restoration-shaman-rotation",
+    "beast-mastery-hunter-rotation",
+    "preservation-evoker-rotation",
+    "beast-mastery-hunter-raid",
+    "protection-paladin-raid"
+  ],
+  "corpusBefore": 226,
+  "corpusAfter": 228,
+  "newUniquePages": 2,
+  "sourceIssueFamilies": [
+    "The official phrase-memory numeric parser had hardcoded English and French written time/count units in the shared engine. An en-US sentence containing French units or an unsupported locale containing English units was incorrectly interpreted as canonical units, allowing cross-locale leakage as more source languages are introduced."
+  ],
+  "fix": "Move written time, target-count and stack-count aliases into existing en-US and fr-FR data-only locale vocabularies. Keep language-neutral ms/s/min/h/% symbols in the shared engine. Retain ID-based WoW distance and ability-charge units, and do not introduce exact sentence overrides.",
+  "crossPageChecks": [
+    "Brewmaster Monk: 0.5-second Stagger ticks, 10-second periods, two Purifying Brew charges.",
+    "Restoration Shaman: 60-second buff, 40-yard healing, 5 targets.",
+    "Beast Mastery Hunter: 3-second cooldown window and two charges.",
+    "Preservation Evoker: 10-50-yard Dream Flight and 5-second HoT.",
+    "Hunter and Paladin raid guides: independent DPS/tank source samples, with class names and encounter-specific rich-text elements requiring browser validation."
+  ],
+  "newTests": 8,
+  "newManualSentenceOverrides": 0,
+  "extensionReleaseRequired": false,
+  "numericLocaleLeakageBefore": "English and French spelled-out units recognized in every locale.",
+  "numericLocaleLeakageExpectedAfter": "Written units recognized only in declared locale; language-neutral abbreviations remain shared.",
+  "testsStatus": "Committed; GitHub Actions validation not confirmed at audit time.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "browserOnlyVerification": [
+    "Chrome Translator API output",
+    "Rendered Wowhead DOM and linked spell-name reconstruction",
+    "Mixed-language localized Wowhead pages"
+  ]
+}
