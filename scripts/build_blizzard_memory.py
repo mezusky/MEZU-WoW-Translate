@@ -100,7 +100,10 @@ def structural_score(a, b):
     score = 0.0
     if taga == tagb:
         score += 2.2
-    na, nb = NUM_RE.findall(ea), NUM_RE.findall(fr)
+    # Compare digit and spelled-out counts consistently with the safety gate.
+    # Locale data supplies vocabulary; this collector currently pairs en-US/fr-FR.
+    na = NUM_RE.findall(normalize_count_words(ea, "en-US"))
+    nb = NUM_RE.findall(normalize_count_words(fr, "fr-FR"))
     if na and na == nb:
         score += 4.0
     elif not na and not nb:
