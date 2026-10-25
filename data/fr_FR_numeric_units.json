@@ -1,0 +1,10 @@
+{
+  "schema": 1,
+  "locale": "fr-FR",
+  "aliases": {
+    "wow_distance": [
+      "mètre",
+      "mètres"
+    ]
+  }
+}
