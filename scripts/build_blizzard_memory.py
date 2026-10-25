@@ -40,7 +40,6 @@ NOISE = {
     "share","tweet","learn more","read more","world of warcraft","blizzard entertainment",
     "news","patch notes","hotfixes","back to top","previous article","next article",
 }
-NUM_RE = re.compile(r"\b\d+(?:[.,]\d+)?%?\b")
 ID_RE = re.compile(r"/(?:en-us|fr-fr)/news/(\d+)")
 WS_RE = re.compile(r"\s+")
 SENT_RE = re.compile(r"(?<=[.!?])\s+(?=[A-ZÀ-ÖØ-Þ0-9])")
@@ -96,8 +95,16 @@ def clean_blocks(raw_html):
 
 @lru_cache(maxsize=4096)
 def _alignment_number_tokens(text, locale):
-    """Cache locale-normalized number evidence across alignment DP cells."""
-    return tuple(NUM_RE.findall(normalize_count_words(text, locale)))
+    """Cache canonical numeric evidence across alignment DP cells.
+
+    Reuse the locale-aware safety parser: EN decimal dots and FR decimal
+    commas, or yards and metres, must not appear to be different facts.
+    Strip a postfix + only for alignment scoring; comparison_facts still
+    verifies inclusive thresholds before a phrase enters the memory.
+    """
+    normalized = normalize_count_words(text, locale)
+    return tuple((value.removesuffix("+"), unit)
+                 for value, unit in numeric_facts(normalized, locale))
 
 
 def structural_score(a, b, source_language="en-US", target_language="fr-FR"):
