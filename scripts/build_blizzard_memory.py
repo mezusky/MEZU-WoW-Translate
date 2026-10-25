@@ -227,7 +227,8 @@ def numeric_facts(text, locale=None):
     facts = []
     for match in re.finditer(pattern, normalized, flags=re.IGNORECASE):
         value, lower_bound, unit = match.groups()
-        unit = unit.casefold().rstrip(".")
+        lower_bound = lower_bound or ""
+        unit = (unit or "").casefold().rstrip(".")
         canonical_unit = aliases.get(unit, unit)
         if canonical_unit == "wow_ability_charge":
             # A resource such as "3 charges de puissance sacrée" is NOT
