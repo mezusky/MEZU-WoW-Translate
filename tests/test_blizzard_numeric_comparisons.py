@@ -61,5 +61,37 @@ class NumericComparisonTests(unittest.TestCase):
             self.assertNotIn(source, merged["sources"])
 
 
+    def test_balance_druid_inclusive_aoe_breakpoints(self):
+        # Live English Balance Druid rotation: inclusive bounds are gameplay-critical.
+        self.assertEqual(comparison_facts("on 4 targets and above", "en-US"),
+                         [(">=", "4")])
+        self.assertEqual(comparison_facts("up to and including 3 targets", "en-US"),
+                         [("<=", "3")])
+        self.assertTrue(numeric_semantics_match(
+            "Enter Lunar Eclipse on 4 targets and above.",
+            "Entrez en Éclipse lunaire sur 4 cibles ou plus."
+        ))
+        self.assertTrue(numeric_semantics_match(
+            "Enter Solar Eclipse up to and including 3 targets.",
+            "Entrez en Éclipse solaire jusqu'à 3 cibles."
+        ))
+        self.assertFalse(numeric_semantics_match(
+            "Enter Lunar Eclipse on 4 targets and above.",
+            "Entrez en Éclipse lunaire sur 4 cibles ou moins."
+        ))
+
+    def test_marksmanship_hunter_independent_threshold(self):
+        # Independent spec/section: Marksmanship leveling, not Balance rotation.
+        self.assertTrue(numeric_semantics_match(
+            "Use Multi-Shot on 3 targets and above.",
+            "Utilisez Flèches multiples sur 3 cibles ou plus."
+        ))
+        self.assertFalse(numeric_semantics_match(
+            "Use Multi-Shot on 3 targets and above.",
+            "Utilisez Flèches multiples sur 3 cibles ou moins."
+        ))
+        # Keep unknown locale isolation: never borrow English phrase patterns.
+        self.assertEqual(comparison_facts("3 targets and above", "de-DE"), [])
+
 if __name__ == "__main__":
     unittest.main()
