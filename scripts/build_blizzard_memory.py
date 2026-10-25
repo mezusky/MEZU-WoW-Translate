@@ -188,7 +188,9 @@ def numeric_facts(text, locale=None):
     pattern = (
         r"(?<!\w)(" + NUMBER_VALUE_PATTERN + r")(\+(?!\d))?"
         + _suffix_comparator_gap(locale)
-        + r"(?:\s*(%|milliseconds?|millisecondes?|ms|seconds?|secondes?|"
+        # Hyphenated modifiers (6-second-long, 45-seconds) carry units.
+        # A dash is accepted only before a recognized unit; 2-3 stays a range.
+        + r"(?:\s*[-‑–—]\s*|\s*)(%|milliseconds?|millisecondes?|ms|seconds?|secondes?|"
         r"secs?\.?|s|minutes?|mins?\.?|min\.?|hours?|heures?|hrs?\.?|hr\.?|h|"
         r"targets?|cibles?|stacks?|cumuls?)"
         r"(?![^\W\d_]))?"
