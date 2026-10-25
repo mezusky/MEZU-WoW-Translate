@@ -1,0 +1,35 @@
+{
+  "locale": "en-US",
+  "prefix": {
+    "lt": [
+      "less than",
+      "fewer than",
+      "under",
+      "below"
+    ],
+    "lte": [
+      "at most",
+      "no more than",
+      "up to"
+    ],
+    "gt": [
+      "more than",
+      "greater than",
+      "over",
+      "above"
+    ],
+    "gte": [
+      "at least",
+      "no less than"
+    ]
+  },
+  "suffix": {
+    "lte": [
+      "or less",
+      "or fewer"
+    ],
+    "gte": [
+      "or more"
+    ]
+  }
+}
