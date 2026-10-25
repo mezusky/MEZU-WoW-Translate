@@ -911,6 +911,14 @@
     {
       "id": "protection-paladin-raid",
       "url": "https://www.wowhead.com/guide/classes/paladin/protection/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "arms-warrior-rotation",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "windwalker-monk-rotation",
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/rotation-cooldowns-pve-dps"
     }
   ]
 }
