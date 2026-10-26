@@ -1239,6 +1239,18 @@
     {
       "id": "guardian-druid-cheat-sheet",
       "url": "https://www.wowhead.com/guide/classes/druid/guardian/cheat-sheet"
+    },
+    {
+      "id": "unholy-death-knight-gear",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/bis-gear"
+    },
+    {
+      "id": "beast-mastery-hunter-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/cheat-sheet"
+    },
+    {
+      "id": "enhancement-shaman-stats",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/stat-priority-pve-dps"
     }
   ]
 }
