@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web indexed English Wowhead Midnight guides; direct live URLs challenged by JavaScript; no Chrome Translator API replay",
+  "issueClass": "Shared tank damage-intake and spike nouns (not official WoW entity names)",
+  "sourceEvidence": [
+    {
+      "guide": "protection-warrior-overview",
+      "excerpt": "smooth damage intake; damage spikes",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/overview-pve-tank"
+    },
+    {
+      "guide": "brewmaster-monk-rotation",
+      "excerpt": "handle your damage intake",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/rotation-cooldowns-pve-tank"
+    },
+    {
+      "guide": "guardian-druid-overview",
+      "excerpt": "consistent, stable damage intake",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/overview-pve-tank"
+    },
+    {
+      "guide": "guardian-druid-rotation",
+      "excerpt": "smooth overall damage intake; bigger damage spikes",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/rotation-cooldowns-pve-tank"
+    },
+    {
+      "guide": "protection-paladin-rotation",
+      "excerpt": "high damage intake periods",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/rotation-cooldowns-pve-tank"
+    }
+  ],
+  "fixLayer": "Data-only player glossary scoped en->fr",
+  "newReusableEntries": 3,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "newCorpusPages": [
+    "protection-paladin-rotation",
+    "guardian-druid-stats",
+    "augmentation-evoker-raid"
+  ],
+  "corpusPageCountAfter": 292,
+  "sourceOnlyCrossClassTests": "tests/test_tank_damage_intake_glossary.py",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "caveats": [
+    "Source-indexed fragments establish terminology occurrence, not that MEZU's Chrome translator currently mistranslates them.",
+    "Do not add bare damage/intake/spike substitutions; verbs and grammatical context remain for the translation engine.",
+    "Canonical spell, item and talent translations still require official IDs.",
+    "Browser-local Translator API and DOM reconstruction remain unverified.",
+    "No GitHub Actions Wowhead fetch attempted."
+  ]
+}
