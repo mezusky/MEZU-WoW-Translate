@@ -1,0 +1,79 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web inspection of indexed English Wowhead Midnight Season 2 guides; direct HTML challenged by JavaScript; no Chrome Translator API replay",
+  "issueClass": "Priority-target damage hyphenated phrase not covered; duplicated unscoped legacy priority damage entries",
+  "sourceEvidence": [
+    {
+      "guide": "marksmanship-hunter-mythic-plus",
+      "excerpt": "extremely poor priority-target damage",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/mythic-plus-dungeon-tips"
+    },
+    {
+      "guide": "survival-hunter-mythic-plus",
+      "excerpt": "free cleave, priority damage",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/mythic-plus-dungeon-tips"
+    },
+    {
+      "guide": "fire-mage-mythic-plus",
+      "excerpt": "gives up much of its priority damage to AoE",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/mythic-plus-dungeon-tips"
+    },
+    {
+      "guide": "devourer-demon-hunter-mythic-plus",
+      "excerpt": "strong priority damage",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/mythic-plus-dungeon-tips"
+    }
+  ],
+  "fixLayer": "Data-only player glossary scoped en->fr; remove two duplicated legacy manual entries",
+  "newReusableEntries": 1,
+  "migratedLegacyTermEntries": 1,
+  "removedDuplicateLegacyEntries": 2,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "newCorpusPages": [
+    "fire-mage-mythic-plus",
+    "devourer-demon-hunter-mythic-plus",
+    "discipline-priest-abilities"
+  ],
+  "corpusPageCountAfter": 295,
+  "sourceOnlyCrossClassTests": "tests/test_priority_damage_locale_glossary.py",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "reuseChecksOnNewUnrelatedPages": [
+    {
+      "guide": "fire-mage-mythic-plus",
+      "alreadyCovered": [
+        "damage profile",
+        "priority damage"
+      ],
+      "newRuleRequiredInSample": false
+    },
+    {
+      "guide": "devourer-demon-hunter-mythic-plus",
+      "alreadyCovered": [
+        "priority damage",
+        "burst damage"
+      ],
+      "newRuleRequiredInSample": false
+    },
+    {
+      "guide": "discipline-priest-abilities",
+      "alreadyCovered": [
+        "Damage over Time (DoT) effect"
+      ],
+      "newRuleRequiredInSample": false
+    }
+  ],
+  "caveats": [
+    "Indexed English source proves term occurrence but does not demonstrate a Chrome mistranslation.",
+    "New hyphenated phrase requires browser output verification; no runtime Translator API emulation is claimed.",
+    "Do not treat a source-only excerpt as full guide coverage or measured novel-issue rate.",
+    "Official spells and talents remain ID-based; do not put names in prose glossary.",
+    "Direct Wowhead HTML challenge is not a GitHub Actions audit failure; no Actions Wowhead fetch attempted.",
+    "CI build of current commits not confirmed at audit creation."
+  ]
+}
