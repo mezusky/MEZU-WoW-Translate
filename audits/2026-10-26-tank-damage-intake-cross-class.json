@@ -52,8 +52,29 @@
     "Canonical spell, item and talent translations still require official IDs.",
     "Browser-local Translator API and DOM reconstruction remain unverified.",
     "No GitHub Actions Wowhead fetch attempted.",
-    "The existing 'damage intake' rule was migrated from unscoped legacy manual jargon into locale-scoped player data; it is not a novel term."
+    "The existing 'damage intake' rule was migrated from unscoped legacy manual jargon into locale-scoped player data; it is not a novel term.",
+    "The two unrelated new-page reuse checks cover inspected indexed excerpts only; they do not measure all prose or browser translations."
   ],
   "migratedLegacyJargonEntries": 1,
-  "localeGlossaryEntriesCovered": 3
+  "localeGlossaryEntriesCovered": 3,
+  "reuseChecksOnNewUnrelatedPages": [
+    {
+      "guide": "guardian-druid-stats",
+      "alreadyCovered": [
+        "diminishing returns",
+        "breakpoint",
+        "breakpoints"
+      ],
+      "newRuleRequiredInSample": false
+    },
+    {
+      "guide": "augmentation-evoker-raid",
+      "alreadyCovered": [
+        "raid-wide damage",
+        "group soak",
+        "damage profile"
+      ],
+      "newRuleRequiredInSample": false
+    }
+  ]
 }
