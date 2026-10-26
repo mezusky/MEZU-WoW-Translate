@@ -4,7 +4,10 @@ import re
 
 # Inert and explicitly hidden subtrees are not visible guide prose.
 # This is audit-only behavior, separate from the extension translation engine.
-SKIP_TAGS = frozenset(("script", "style", "noscript", "template", "svg"))
+# Source-only prose audits must not train on executable macro snippets, import
+# payloads or copy-button labels. This does not modify browser translation.
+SKIP_TAGS = frozenset(("script", "style", "noscript", "template", "svg",
+                       "pre", "code", "kbd", "samp", "textarea", "button"))
 VOID_TAGS = frozenset(("area", "base", "br", "col", "embed", "hr", "img", "input",
                        "link", "meta", "param", "source", "track", "wbr"))
 CSS_COMMENT = re.compile(r"/\*.*?\*/", re.DOTALL)
