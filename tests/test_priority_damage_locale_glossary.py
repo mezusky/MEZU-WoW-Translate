@@ -37,6 +37,7 @@ class PriorityDamageLocaleGlossaryTests(unittest.TestCase):
             "survival-hunter-mythic-plus": "free cleave, priority damage, and good AoE",
             "fire-mage-mythic-plus": "gives up much of its priority damage to AoE",
             "devourer-demon-hunter-mythic-plus": "high burst cleave and strong priority damage",
+            "enhancement-shaman-mythic-plus": "the priority damage lost by Crash Lightning splitting between targets",
         }
         pages = {p["id"]: p["url"] for p in PAGES}
         for guide, excerpt in evidence.items():
