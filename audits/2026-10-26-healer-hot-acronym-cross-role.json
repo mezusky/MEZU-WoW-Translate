@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "auditMethod": "indexed English Wowhead guide excerpts; direct live URLs returned JavaScript verification; browser Translator API not reproduced",
+  "sampledPageIds": [
+    "holy-priest-overview",
+    "restoration-druid-overview",
+    "frost-death-knight-overview",
+    "marksmanship-hunter-mythic-plus",
+    "guardian-druid-raid",
+    "holy-priest-talent-builds"
+  ],
+  "newCorpusPageCount": 4,
+  "corpusPageCountAfter": 265,
+  "newReusableTermFamiliesObserved": 1,
+  "termFamilies": [
+    "parenthesized healing-over-time (HoT/HoTs) noun phrases; singular/plural preserved"
+  ],
+  "independentEvidence": [
+    "Holy Priest overview: Healing over Time (HoT) effect",
+    "Restoration Druid overview: Heal over Time effects (HoTs)"
+  ],
+  "newManualSentenceOverrides": 0,
+  "codeChanges": 0,
+  "translationPair": {
+    "sourceLanguage": "en",
+    "targetLanguage": "fr"
+  },
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "verification": "cross-guide source phrases and locale-scoped unit tests committed; CI rebuild status tracked separately",
+  "caveats": [
+    "No claim of live DOM preservation or Chrome Translator API correctness",
+    "Indexed English source may differ from live page HTML",
+    "A new source phrase family is not a measured decrease in novel translation errors"
+  ]
+}
