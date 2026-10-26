@@ -1155,6 +1155,18 @@
     {
       "id": "beast-mastery-hunter-mythic-plus",
       "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "protection-paladin-rotation",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/rotation-cooldowns-pve-tank"
+    },
+    {
+      "id": "guardian-druid-stats",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/stat-priority-pve-tank"
+    },
+    {
+      "id": "augmentation-evoker-raid",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/midnight-season-2-raid-tips"
     }
   ]
 }
