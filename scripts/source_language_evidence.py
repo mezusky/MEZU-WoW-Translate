@@ -5,7 +5,7 @@ language detector. Unknown/mixed evidence must never be counted as a failure.
 """
 import re
 
-TOKEN = re.compile(r"[^\\W\\d_]+", re.UNICODE)
+TOKEN = re.compile(r"[^\W\d_]+", re.UNICODE)
 PROSE_TAGS = frozenset(("p", "li", "td", "th"))
 
 
