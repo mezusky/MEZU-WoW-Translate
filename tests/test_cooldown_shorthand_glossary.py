@@ -1,7 +1,8 @@
-"""Cross-role cooldown shorthand contract from indexed Wowhead English guides.
+"""Cooldown-state ambiguity regression from independent Wowhead guides.
 
-Only verifies locale-scoped data and source phrase coverage. Chrome Translator
-API output and rich-text rendering remain browser-only checks.
+Source-only tests: these do not simulate Chrome Translator API output.
+A flat glossary cannot distinguish an instruction to cast when ready from
+a statement that an ability is currently unavailable.
 """
 import json
 import re
@@ -17,40 +18,38 @@ PAGES = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(encod
 
 
 class CooldownShorthandTests(unittest.TestCase):
-    def test_full_and_abbreviated_cooldown_have_same_meaning(self):
+    def test_ambiguous_shorthand_is_not_a_context_free_replacement(self):
         terms = select_jargon(GLOSSARY, "en-US", "fr-FR")
-        for phrase in ("on cooldown", "on cd"):
+        for phrase in ("on cooldown", "on cd", "On CD"):
             with self.subTest(phrase=phrase):
-                self.assertEqual(terms[phrase], "dès que disponible")
-        self.assertEqual(terms["On CD"], "Dès que disponible")
+                self.assertNotIn(phrase, terms)
+                self.assertNotIn(phrase, MANUAL.get("jargon", {}))
+                self.assertNotIn(phrase, MANUAL.get("exact", {}))
+        # Unlike "on cooldown", "off cooldown" consistently means ready.
         self.assertEqual(terms["off cooldown"], "disponible")
-        self.assertNotIn("cd", terms)  # bare CD can occur in other contexts
+        self.assertNotIn("cd", terms)
 
-    def test_independent_healer_and_dps_source_samples(self):
-        # Short excerpts from indexed English guides, not translated output.
-        examples = {
-            "discipline-priest-rotation": "Cast Mind Blast on cd",
-            "restoration-druid-rotation": "On CD, On Self",
-            "affliction-warlock-rotation": "cast Dark Harvest essentially on CD",
-        }
+    def test_same_words_have_opposite_meanings_across_guides(self):
+        # Brief English source fixtures, not observed French output.
+        # The Priest guide itself uses "on cd" for BOTH instructions and
+        # the unavailable state, so matching solely by substring is unsafe.
+        examples = (
+            ("discipline-priest-rotation", "Cast Mind Blast on cd", "cast_when_ready"),
+            ("discipline-priest-rotation", "if Evang is on cd", "currently_unavailable"),
+            ("frost-mage-rotation", "Keep it on cooldown", "cast_when_ready"),
+            ("brewmaster-monk-rotation", "using them on cooldown", "cast_when_ready"),
+        )
         ids = {page["id"] for page in PAGES}
-        terms = select_jargon(GLOSSARY, "en-US", "fr-FR")
-        for guide, sample in examples.items():
-            with self.subTest(guide=guide):
+        observed = set()
+        for guide, sample, sense in examples:
+            with self.subTest(guide=guide, sense=sense):
                 self.assertIn(guide, ids)
-                self.assertTrue(any(re.search(
-                    r"(?<!\w)" + re.escape(term) + r"(?!\w)", sample, re.I
-                ) for term in ("on cd", "On CD")))
+                self.assertRegex(sample.lower(), r"\\bon (?:cd|cooldown)\\b")
                 self.assertNotIn(sample, MANUAL.get("exact", {}))
-        self.assertEqual(terms["on cd"], "dès que disponible")
+                observed.add(sense)
+        self.assertEqual(observed, {"cast_when_ready", "currently_unavailable"})
 
-    def test_one_source_of_truth_for_cooldown_terms(self):
-        for term in ("on cooldown", "off cooldown", "on cd", "On CD"):
-            with self.subTest(term=term):
-                self.assertNotIn(term, MANUAL.get("jargon", {}))
-                self.assertNotIn(term, MANUAL.get("exact", {}))
-
-    def test_no_cross_locale_leakage(self):
+    def test_locale_isolation(self):
         self.assertEqual(select_jargon(GLOSSARY, "fr-FR", "fr-CA"), {})
         for source, target in (("fr-FR", "en-US"), ("en-US", "de-DE")):
             with self.subTest(source=source, target=target):
