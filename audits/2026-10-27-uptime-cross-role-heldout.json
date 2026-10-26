@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web search indexed English Wowhead guide excerpts; direct Wowhead HTML access returned JavaScript verification. No Chrome Translator API replay.",
+  "sampledPageIds": [
+    "guardian-druid-overview",
+    "feral-druid-overview",
+    "feral-druid-basics",
+    "preservation-evoker-talents",
+    "guardian-druid-cheat-sheet",
+    "unholy-death-knight-gear",
+    "beast-mastery-hunter-cheat-sheet",
+    "enhancement-shaman-stats"
+  ],
+  "newCorpusPageIds": [
+    "guardian-druid-cheat-sheet",
+    "unholy-death-knight-gear",
+    "beast-mastery-hunter-cheat-sheet",
+    "enhancement-shaman-stats"
+  ],
+  "corpusCountAfter": 313,
+  "reusableIssueFamilies": [
+    {
+      "name": "WoW combat effect uptime percentage",
+      "sourcePhrase": "100% uptime",
+      "targetPhrase": "100 % d’uptime",
+      "evidencePages": [
+        "guardian-druid-overview",
+        "feral-druid-overview",
+        "preservation-evoker-talents"
+      ],
+      "fixLayer": "locale-scoped player jargon",
+      "newRuleCount": 1,
+      "guard": "Do not override bare uptime; do not apply English phrase to non-French targets; no exact sentence overrides."
+    }
+  ],
+  "sourceQualityWarnings": [
+    "Indexed /fr Wowhead pages sometimes retain English prose alongside localized entity links, so localized Wowhead pages are not a faithful Chrome Translator API output.",
+    "Preservation Evoker abilities /fr indexed text contains a hybrid translated-name suffix; needs canonical ID + DOM browser verification before any engine fix.",
+    "Enhancement Shaman stats indexed source has source spelling errors and dynamic stat widgets; do not invent global overrides from typos."
+  ],
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "newPageInterventionsObserved": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "GitHub Actions rebuild/tests after commits",
+    "Browser-only Chrome Translator API rendering and spell links",
+    "Cross-cycle measured interventions per newly sampled page"
+  ]
+}
