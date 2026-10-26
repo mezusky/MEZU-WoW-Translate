@@ -1043,6 +1043,22 @@
     {
       "id": "marksmanship-hunter-raid",
       "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "frost-death-knight-overview",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/overview-pve-dps"
+    },
+    {
+      "id": "marksmanship-hunter-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "guardian-druid-raid",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "holy-priest-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/talent-builds-pve-healer"
     }
   ]
 }
