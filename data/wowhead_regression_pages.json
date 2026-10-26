@@ -1203,6 +1203,18 @@
     {
       "id": "holy-paladin-abilities",
       "url": "https://www.wowhead.com/guide/classes/paladin/holy/abilities-talents-pve-healer"
+    },
+    {
+      "id": "outlaw-rogue-gear",
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/bis-gear"
+    },
+    {
+      "id": "demonology-warlock-raid",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "restoration-shaman-gear",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/bis-gear"
     }
   ]
 }
