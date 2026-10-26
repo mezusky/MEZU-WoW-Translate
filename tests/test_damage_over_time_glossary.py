@@ -57,7 +57,7 @@ class DamageOverTimeGlossaryTests(unittest.TestCase):
         for guide, (excerpt, term) in fixtures.items():
             with self.subTest(guide=guide):
                 self.assertIn(guide, ids)
-                self.assertIsNotNone(re.search(r"(?<!\\w)" + re.escape(term) + r"(?!\\w)", excerpt, re.I))
+                self.assertIsNotNone(re.search(r"(?<!\w)" + re.escape(term) + r"(?!\w)", excerpt, re.I))
                 self.assertIn(term, jargon)
                 self.assertNotIn(term, MANUAL.get("exact", {}))
                 self.assertNotIn(term, MANUAL.get("jargon", {}))
