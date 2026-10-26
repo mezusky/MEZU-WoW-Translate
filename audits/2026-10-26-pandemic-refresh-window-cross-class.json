@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web indexed current English Wowhead guide content; direct HTML blocked by JS verification; no browser Translator API replay",
+  "issueClass": "DoT refresh-window (Pandemic) jargon shared across independent DPS classes",
+  "sourceEvidence": [
+    {
+      "guide": "feral-druid-rotation",
+      "role": "melee-dps",
+      "excerpt": "Pandemic and Snapshotting",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/rotation-cooldowns-pve-dps"
+    },
+    {
+      "guide": "affliction-warlock-rotation",
+      "role": "ranged-dps",
+      "excerpt": "before your Pandemic window",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/rotation-cooldowns-pve-dps"
+    },
+    {
+      "guide": "elemental-shaman-rotation",
+      "role": "ranged-dps",
+      "excerpt": "within the pandemic window",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/rotation-cooldowns-pve-dps"
+    }
+  ],
+  "fixLayer": "Data-only locale-scoped player jargon",
+  "newReusableEntries": 3,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "crossClassRegressionTests": "tests/test_pandemic_window_cross_class.py",
+  "newCorpusPages": [
+    "feral-druid-basics",
+    "destruction-warlock-consumables",
+    "beast-mastery-hunter-mythic-plus"
+  ],
+  "corpusPageCountAfter": 289,
+  "glossaryContractCheck": "EN->FR locale pair, regional locale compatibility, no bare Pandemic rule, no legacy override overlap",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "caveats": [
+    "Indexed Wowhead /fr pages also retain English guide prose; a URL locale does not prove prose language.",
+    "Term-level data checks cannot reproduce Chrome Translator API, exact phrase substitution order or DOM reconstruction.",
+    "Official spell/item/talent names must remain resolved through canonical IDs, not inferred from these jargon rules.",
+    "No GitHub Actions Wowhead fetch; the assistant web layer supplied live-indexed evidence."
+  ]
+}
