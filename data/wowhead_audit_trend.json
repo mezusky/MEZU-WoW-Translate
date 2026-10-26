@@ -812,6 +812,27 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Three small commits published; CI rebuild and Chrome Translator API rendering not yet confirmed. Not a clean-state cycle."
+    },
+    {
+      "date": "2026-10-26",
+      "sourceAccess": "Live Wowhead URL 403/JavaScript challenge; English indexed source excerpts inspected via assistant web",
+      "sampledPageIds": [
+        "devastation-evoker-overview",
+        "havoc-demon-hunter-overview",
+        "assassination-rogue-raid",
+        "holy-priest-consumables"
+      ],
+      "sampledPageCount": 4,
+      "sourceCorpusCount": 279,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "damage profile(s) -> profil(s) de dégâts"
+      ],
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Cross-class locale-scoped glossary and tests committed; no browser-rendered verification or measured novel issue rate."
     }
   ]
 }
