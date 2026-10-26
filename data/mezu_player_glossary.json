@@ -104,7 +104,10 @@
     "group soaks": "soaks de groupe",
     "external cooldown": "CD externe",
     "external cooldowns": "CD externes",
-    "external raid cooldowns": "CD externes de raid"
+    "external raid cooldowns": "CD externes de raid",
+    "pandemic window": "fenêtre Pandemic",
+    "Pandemic window": "fenêtre Pandemic",
+    "DOT Pandemic Range": "fenêtre Pandemic des DoT"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
