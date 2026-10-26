@@ -44,7 +44,7 @@ class ExternalCooldownGlossaryTests(unittest.TestCase):
             with self.subTest(guide=guide):
                 self.assertIn(guide, ids)
                 self.assertIn("external", excerpt.casefold())
-        self.assertIn("protection-paladin-abilities", ids)
+        self.assertIn("holy-paladin-overview", ids)
 
 
 if __name__ == "__main__":
