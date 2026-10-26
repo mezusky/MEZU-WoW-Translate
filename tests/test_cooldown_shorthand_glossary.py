@@ -44,7 +44,7 @@ class CooldownShorthandTests(unittest.TestCase):
         for guide, sample, sense in examples:
             with self.subTest(guide=guide, sense=sense):
                 self.assertIn(guide, ids)
-                self.assertRegex(sample.lower(), r"\\bon (?:cd|cooldown)\\b")
+                self.assertRegex(sample.lower(), r"\bon (?:cd|cooldown)\b")
                 self.assertNotIn(sample, MANUAL.get("exact", {}))
                 observed.add(sense)
         self.assertEqual(observed, {"cast_when_ready", "currently_unavailable"})
