@@ -28,8 +28,10 @@
       ],
       "officialFrenchEvidence": "Blizzard French news 24206305: bouclier d’absorption",
       "fixLayer": "locale-scoped player terminology",
-      "newRuleCount": 2,
-      "guard": "No bare absorb/shield rule; healing absorb remains absorption de soins"
+      "newRuleCount": 1,
+      "guard": "No bare absorb/shield rule; healing absorb remains absorption de soins",
+      "migratedLegacyRuleCount": 1,
+      "legacyDuplicatesRemaining": 0
     }
   ],
   "newManualSentenceOverrides": 0,
