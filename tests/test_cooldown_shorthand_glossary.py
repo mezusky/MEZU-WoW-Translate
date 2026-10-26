@@ -39,7 +39,7 @@ class CooldownShorthandTests(unittest.TestCase):
             with self.subTest(guide=guide):
                 self.assertIn(guide, ids)
                 self.assertTrue(any(re.search(
-                    r"(?<!\\w)" + re.escape(term) + r"(?!\\w)", sample, re.I
+                    r"(?<!\w)" + re.escape(term) + r"(?!\w)", sample, re.I
                 ) for term in ("on cd", "On CD")))
                 self.assertNotIn(sample, MANUAL.get("exact", {}))
         self.assertEqual(terms["on cd"], "dès que disponible")
