@@ -97,7 +97,11 @@
     "Damage over Time (DoT) effect": "effet de dégâts sur la durée (DoT)",
     "damage-over-time effect": "effet de dégâts sur la durée",
     "damage profile": "profil de dégâts",
-    "damage profiles": "profils de dégâts"
+    "damage profiles": "profils de dégâts",
+    "soak mechanic": "mécanique de soak",
+    "soak mechanics": "mécaniques de soak",
+    "group soak": "soak de groupe",
+    "group soaks": "soaks de groupe"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
