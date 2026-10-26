@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "scope": "Source-only EN Wowhead guide audit for FR output; not a Chrome Translator API validation",
+  "sourceAccess": "Direct Wowhead HTML requires JavaScript verification; indexed English guide excerpts inspected using assistant web access, not GitHub-hosted runners.",
+  "regressionPagesBefore": 258,
+  "regressionPagesAfter": 261,
+  "newSamples": [
+    "feral-druid-stats",
+    "havoc-demon-hunter-mythic-plus",
+    "marksmanship-hunter-raid"
+  ],
+  "crossPageObservations": [
+    "Feral stat guide: threshold comparators and ordered stat tables; preserve numeric comparisons and hero-talent variants.",
+    "Havoc Mythic+ guide: source contains generated UTIL3_USECASE/UTIL4_USECASE placeholders alongside real prose and copy-build controls.",
+    "Marksmanship raid guide: per-boss talent build imports and interactive copy controls must remain functional."
+  ],
+  "issue": "Uppercase underscore-delimited UI placeholder markers can dilute offline language evidence by being counted as prose tokens; source placeholders are not MEZU translation mistakes.",
+  "fix": "Exclude generic generated uppercase underscore-delimited markers before tokenization, without changing locale profiles, translation runtime, or remote Data Pack.",
+  "layer": "Offline audit language evidence; generic source-independent syntax guard.",
+  "crossPageVerification": "Added synthetic tests for placeholder-heavy English prose, placeholder-only cells, and lowercase underscore identifiers. Indexed unrelated Feral and Marksmanship pages used for scope comparison; no browser output verified.",
+  "metrics": {
+    "newPagesSampled": 3,
+    "newAuditIssueFamilies": 1,
+    "newTranslationIssueRate": null,
+    "browserPagesVerified": 0,
+    "manualSentenceOverridesAdded": 0,
+    "extensionChanged": false,
+    "dataPackChanged": false
+  },
+  "limitations": [
+    "Source indexed excerpts are not a complete live DOM audit.",
+    "Wowhead-generated placeholder defects must be distinguished from translation defects.",
+    "Chrome Translator API output, import/copy interactions and actual French wording remain browser-only checks."
+  ],
+  "commits": [
+    "c0408a7d19147a64627ac8f13fdfd64a2b3c9d2a",
+    "9427ac666a1fb710585561747d13a5338526466d",
+    "cc575051f7469f83b79dd605cf5c6344af10f108"
+  ],
+  "ci": {
+    "status": "not_confirmed",
+    "tests": "pending",
+    "dataPack": "pending"
+  }
+}
