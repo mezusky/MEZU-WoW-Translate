@@ -1219,6 +1219,14 @@
     {
       "id": "restoration-druid-gear",
       "url": "https://www.wowhead.com/guide/classes/druid/restoration/bis-gear"
+    },
+    {
+      "id": "subtlety-rogue-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "subtlety-rogue-abilities",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/abilities-talents-pve-dps"
     }
   ]
 }
