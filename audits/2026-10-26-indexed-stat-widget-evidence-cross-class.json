@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "auditMethod": "Live indexed English Wowhead excerpts; direct HTML returned JavaScript verification; no browser Translator API replay",
+  "sampledPageIds": [
+    "devourer-demon-hunter-overview",
+    "devourer-demon-hunter-abilities",
+    "devourer-demon-hunter-stats",
+    "devastation-evoker-consumables",
+    "arms-warrior-overview",
+    "outlaw-rogue-overview",
+    "protection-paladin-overview"
+  ],
+  "newCorpusPageCount": 5,
+  "corpusPageCountAfter": 276,
+  "issueClass": "indexed guide widget key=value configuration contaminates offline language evidence",
+  "evidence": "stat-guide=<number> and stats=<priority expression> appear in multiple independent overview cheat sheets (Devourer, Outlaw Rogue, Protection Paladin, Arms Warrior).",
+  "fixLayer": "offline audit language evidence only; generic key=value token filter; no brittle class selectors, Data Pack changes, or browser code",
+  "newAutomatedTests": 5,
+  "newManualSentenceOverrides": 0,
+  "translationPair": {
+    "sourceLanguage": "en",
+    "targetLanguage": "fr"
+  },
+  "crossClassVerification": [
+    "demon-hunter",
+    "rogue",
+    "paladin",
+    "warrior"
+  ],
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "sourceIssuesNotMezuErrors": [
+    "Some indexed pages omit dynamic spell/expansion placeholders or duplicate cheat-sheet text; these cannot be attributed to MEZU translation."
+  ],
+  "caveats": [
+    "The source-only filter removes assignment-like widget tokens from language evidence; it does not remove them from rendered guide content.",
+    "The new tests use short source fragments and synthetic prose, not full copyrighted guides.",
+    "CI for the latest commits was not confirmed at write time.",
+    "Quality stop criteria remain unmet."
+  ]
+}
