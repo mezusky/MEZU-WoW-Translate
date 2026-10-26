@@ -101,7 +101,10 @@
     "soak mechanic": "mécanique de soak",
     "soak mechanics": "mécaniques de soak",
     "group soak": "soak de groupe",
-    "group soaks": "soaks de groupe"
+    "group soaks": "soaks de groupe",
+    "external cooldown": "CD externe",
+    "external cooldowns": "CD externes",
+    "external raid cooldowns": "CD externes de raid"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
