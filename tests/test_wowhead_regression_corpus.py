@@ -103,7 +103,10 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         required = {
             "protection-warrior-ui-macros",   # tank
             "preservation-evoker-ui-macros", # healer
-            "fire-mage-ui-macros",           # DPS
+            "fire-mage-ui-macros",           # ranged DPS
+            "protection-paladin-ui-macros", # independent tank class
+            "restoration-druid-ui-macros",  # independent healer class
+            "outlaw-rogue-ui-macros",       # melee DPS
         }
         pages = {page["id"]: page["url"] for page in PAGES}
         self.assertTrue(required.issubset(pages))
