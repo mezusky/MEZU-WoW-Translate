@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourceAccess": "Direct Wowhead URLs inspected with assistant web; JavaScript challenge on page open. English indexed source excerpts inspected instead. No Wowhead fetching in GitHub Actions.",
+  "sampledPageIds": [
+    "outlaw-rogue-gear",
+    "restoration-shaman-gear",
+    "restoration-druid-gear",
+    "demonology-warlock-raid"
+  ],
+  "sampledPageCount": 4,
+  "sourceCorpusCount": 305,
+  "issueClass": "Repeated bonus-loot-roll terminology in independent Midnight gear guides",
+  "independentSourceEvidence": [
+    {
+      "id": "outlaw-rogue-gear",
+      "patterns": [
+        "Bonus Roll",
+        "Bonus Loot rolls"
+      ]
+    },
+    {
+      "id": "restoration-shaman-gear",
+      "patterns": [
+        "bonus rolls",
+        "Bonus Roll",
+        "Bonus Loot rolls"
+      ]
+    },
+    {
+      "id": "restoration-druid-gear",
+      "patterns": [
+        "Bonus Loot rolls"
+      ]
+    },
+    {
+      "id": "demonology-warlock-raid",
+      "structuralRisk": "long talent import codes and interactive raid build widgets; unrelated verification sample"
+    }
+  ],
+  "crossPageValidation": "The same source terminology occurs in Rogue, Shaman and Druid gearing; Warlock raid adds independent widget/role coverage. Indexed text is not a browser translation.",
+  "frenchTerminologyEvidence": "French WoW community sources use 'jet bonus' and Blizzard French patch wording cited by GAMEWAVE uses 'jet de butin bonus'.",
+  "fixLayer": "data-only target-language player glossary",
+  "newReusableTermFamiliesObserved": 1,
+  "termFamilies": [
+    "Bonus Roll(s) / Bonus Loot rolls -> jet(s) bonus / jets de butin bonus"
+  ],
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "newPageInterventionProxy": "1 reusable terminology family found in 3 independent gearing sources; not a measured error rate or evidence of improvement in Chrome.",
+  "buildValidationStatus": "GitHub Actions started after commits; latest validation to be confirmed",
+  "remainingBrowserOnlyVerification": [
+    "Translator API fallback wording and final French grammar",
+    "rich-text spell/item links, talent-import widgets, DOM reconstruction"
+  ],
+  "commits": [
+    "2ebd522db0ced78f2e8ac8e7cc89d03d4f6ba067",
+    "713ee7ab3031e468cbe3ec2fcac69a81efc3e5e8",
+    "e4ee5ae9b8ac1a93605b75ecc1c6f4cc44823a12",
+    "3b62884aa95065a3aeb404b111519e4f68de65e7"
+  ]
+}
