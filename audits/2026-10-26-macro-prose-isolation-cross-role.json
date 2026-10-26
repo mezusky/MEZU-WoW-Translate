@@ -1,0 +1,28 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "auditScope": "source-only HTML extraction; not browser Translator API output",
+  "sourceAccess": "Direct live Wowhead URLs returned JavaScript challenge; current English guide text inspected through indexed results",
+  "existingCrossRolePageIds": [
+    "protection-warrior-ui-macros",
+    "preservation-evoker-ui-macros",
+    "fire-mage-ui-macros"
+  ],
+  "newCrossRolePageIds": [
+    "protection-paladin-ui-macros",
+    "restoration-druid-ui-macros",
+    "outlaw-rogue-ui-macros"
+  ],
+  "sourceRiskFamily": "Macro commands, inline code, UI import payloads and copy controls are non-prose and must not enter source-only translation coverage samples",
+  "reusableFix": "Exclude pre/code/kbd/samp/textarea/button subtrees from shared offline HTML block extractor; retain adjacent prose and linked spell names",
+  "testsAdded": 5,
+  "newManualSentenceOverrides": 0,
+  "extensionChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "validation": "New offline regression tests passed in CI; full Data Pack rebuild was in progress when recorded",
+  "browserOnlyFollowUp": "Verify that Chrome leaves copy/import payloads and macro command syntax intact while preserving French official spell-name handling where appropriate"
+}
