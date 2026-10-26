@@ -1115,6 +1115,18 @@
     {
       "id": "holy-priest-consumables",
       "url": "https://www.wowhead.com/guide/classes/priest/holy/enchants-gems-pve-healer"
+    },
+    {
+      "id": "devastation-evoker-raid",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "restoration-druid-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "assassination-rogue-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/mythic-plus-dungeon-tips"
     }
   ]
 }
