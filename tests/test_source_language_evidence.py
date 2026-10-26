@@ -137,6 +137,38 @@ class SourceLanguageEvidenceTests(unittest.TestCase):
                 self.assertEqual(result["detectedLanguage"], "en")
                 self.assertGreaterEqual(result["distinctSignalCounts"]["en"], 4)
 
+    def test_indexed_stat_widget_formulas_do_not_dilute_prose(self):
+        # Devourer overview index repeats calculator configuration fields.
+        # Only the surrounding prose may be used as language evidence.
+        prose = ("Your abilities can be used when you have enough resources "
+                 "for the next burst window. This guide explains how to use "
+                 "your cooldowns and manage spells during a difficult fight.")
+        widgets = ("stat-guide=32588 "
+                   "stats=Int>mastery>haste>=crit>>versatility ")
+        result = detect_source_language(
+            [("p", prose + widgets * 100)], PROFILES)
+        self.assertEqual(result["detectedLanguage"], "en")
+        self.assertLess(result["tokenCount"], 40)
+
+    def test_key_value_widgets_alone_are_not_prose(self):
+        widgets = ("stat-guide=32588 "
+                   "stats=Int>mastery>haste>=crit>>versatility "
+                   "talent-code=ABC123 " * 20)
+        result = detect_source_language([("td", widgets)], PROFILES)
+        self.assertIsNone(result["detectedLanguage"])
+        self.assertEqual(result["status"], "insufficient_prose")
+        self.assertEqual(result["tokenCount"], 0)
+
+    def test_plain_stat_comparison_prose_is_not_stripped(self):
+        # The filter targets assignment syntax, not ordinary guide advice.
+        prose = ("You should use your spells when you have enough resources "
+                 "and your abilities are ready. The stats of this gear can "
+                 "help your group during the next fight, especially when "
+                 "your damage and haste are higher than before.")
+        result = detect_source_language([("p", prose)], PROFILES)
+        self.assertEqual(result["detectedLanguage"], "en")
+        self.assertGreater(result["tokenCount"], 30)
+
     def test_bad_profiles_fail_closed(self):
         with self.assertRaises(ValueError):
             detect_source_language([], {"en": ["the"], "fr": [None]})
