@@ -1127,6 +1127,22 @@
     {
       "id": "assassination-rogue-mythic-plus",
       "url": "https://www.wowhead.com/guide/classes/rogue/assassination/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "mop-blood-death-knight-rotation",
+      "url": "https://www.wowhead.com/mop-classic/guide/classes/death-knight/blood/tank-rotation-cooldowns-abilities-pve"
+    },
+    {
+      "id": "brewmaster-monk-faq",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/faq"
+    },
+    {
+      "id": "mop-holy-priest-overview",
+      "url": "https://www.wowhead.com/mop-classic/guide/classes/priest/holy/healer-overview-pve"
+    },
+    {
+      "id": "holy-paladin-overview",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/overview-pve-healer"
     }
   ]
 }
