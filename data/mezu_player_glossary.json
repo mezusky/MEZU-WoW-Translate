@@ -115,7 +115,12 @@
     "damage spikes": "pics de dégâts",
     "healing absorb": "absorption de soins",
     "healing absorbs": "absorptions de soins",
-    "heal absorbs": "absorptions de soins"
+    "heal absorbs": "absorptions de soins",
+    "bonus roll": "jet bonus",
+    "bonus rolls": "jets bonus",
+    "Bonus Roll": "Jet bonus",
+    "Bonus Rolls": "Jets bonus",
+    "Bonus Loot rolls": "jets de butin bonus"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
