@@ -1,0 +1,38 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "scope": "Source-only Wowhead EN -> FR regression audit; multilingual-ready evidence; browser Translator API not tested",
+  "sourceAccess": "Direct English Wowhead URLs returned JavaScript verification; current indexed guide text was inspected via assistant web search, not GitHub Actions.",
+  "regressionPagesBefore": 255,
+  "regressionPagesAfter": 258,
+  "existingSamples": [
+    "outlaw-rogue-leveling",
+    "holy-priest-leveling",
+    "protection-warrior-leveling",
+    "blood-death-knight-overview",
+    "protection-paladin-consumables"
+  ],
+  "newSamples": [
+    "guardian-druid-leveling",
+    "frost-mage-leveling",
+    "restoration-shaman-leveling"
+  ],
+  "crossLocaleEvidence": [
+    "French-localized Guardian Druid page has English prose and French ability names",
+    "German-localized Protection Warrior page has English prose and German ability names",
+    "Italian-localized Protection Paladin page has English prose and Italian item names"
+  ],
+  "issue": "URL locale and heading language are not reliable proxies for guide prose language; mixed localized spell names can bias naive detection.",
+  "fix": "Added conservative data-driven stopword evidence from prose-only blocks, with an unknown state. Source-only analyzer marks confident language mismatches as unscorable rather than translation errors.",
+  "layer": "Offline audit infrastructure; no extension code or runtime dependency; profiles data-only",
+  "verification": "Synthetic tests cover English Rogue/Evoker, French with English spell names, German/Italian, unknown short text, long widget payloads and a new language profile.",
+  "limits": {
+    "liveHtmlChallenge": true,
+    "browserRenderedPagesVerified": 0,
+    "browserTranslationErrorRate": null,
+    "novelTranslationIssueRate": null,
+    "manualSentenceOverridesAdded": 0,
+    "extensionChanged": false
+  },
+  "next": "Confirm CI, then gather browser-local Translator API outputs to measure real translation errors and validate DOM behavior."
+}
