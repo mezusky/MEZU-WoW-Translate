@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "auditMethod": "Assistant web indexed English Wowhead excerpts; direct HTML returns JavaScript challenge; no browser Translator API replay",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sampledPageIds": [
+    "brewmaster-monk-talents",
+    "mistweaver-monk-abilities",
+    "holy-paladin-abilities",
+    "discipline-priest-abilities",
+    "brewmaster-monk-raid",
+    "elemental-shaman-talent-builds"
+  ],
+  "newCorpusPageIds": [
+    "brewmaster-monk-raid",
+    "elemental-shaman-talent-builds"
+  ],
+  "corpusCountAfter": 309,
+  "reusableIssueFamilies": [
+    {
+      "name": "damage-absorption shield distinct from healing-absorb debuff",
+      "evidence": [
+        "Brewmaster talents: absorb shield",
+        "Mistweaver talents: absorb shield",
+        "Holy Paladin talents: absorb shield",
+        "Discipline talents: absorb shields"
+      ],
+      "officialFrenchEvidence": "Blizzard French news 24206305: bouclier d’absorption",
+      "fixLayer": "locale-scoped player terminology",
+      "newRuleCount": 2,
+      "guard": "No bare absorb/shield rule; healing absorb remains absorption de soins"
+    }
+  ],
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "newPageInterventionsObserved": null,
+  "newPageInterventionMeasurement": "not measured: indexed source is not actual extension translation; held-out pages sampled for later comparison",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "Confirm CI rebuild and Data Pack validation after source commits",
+    "Compare actual Chrome Translator API EN->FR output for shields, spell links, table cells and build-copy controls",
+    "Measure novel error families and interventions per held-out page in consecutive cycles"
+  ]
+}
