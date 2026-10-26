@@ -1129,20 +1129,20 @@
       "url": "https://www.wowhead.com/guide/classes/rogue/assassination/mythic-plus-dungeon-tips"
     },
     {
-      "id": "mop-blood-death-knight-rotation",
-      "url": "https://www.wowhead.com/mop-classic/guide/classes/death-knight/blood/tank-rotation-cooldowns-abilities-pve"
-    },
-    {
-      "id": "brewmaster-monk-faq",
-      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/faq"
-    },
-    {
-      "id": "mop-holy-priest-overview",
-      "url": "https://www.wowhead.com/mop-classic/guide/classes/priest/holy/healer-overview-pve"
-    },
-    {
       "id": "holy-paladin-overview",
       "url": "https://www.wowhead.com/guide/classes/paladin/holy/overview-pve-healer"
+    },
+    {
+      "id": "guardian-druid-overview",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/overview-pve-tank"
+    },
+    {
+      "id": "preservation-evoker-overview",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/overview-pve-healer"
+    },
+    {
+      "id": "mistweaver-monk-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/talent-builds-pve-healer"
     }
   ]
 }
