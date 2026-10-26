@@ -25,6 +25,7 @@
     "Players who pre-purchase the Skyborne Heroic Pack, Skyborne Epic Pack, or limited-time Warcraft Forever Collection will have access to WoW®: Forever Early Name Reservation from October 27 through November 3. Character names will be available on a first-come, first-served basis, and desired names cannot be guaranteed.",
     "Please note that class abilities and talents may continue to evolve throughout the beta test and are subject to additional changes.",
     "Pre-Purchase World of Warcraft: Forever Upgrades and Begin Your Next Journey in Azeroth",
+    "Read more stories and stay up to date on the latest World of Warcraft news at worldofwarcraft.blizzard.com/news.",
     "Save Up to 30% on Select Game Services",
     "The Windshapers are the descendants of the first shen’dorei high elves to receive the wind spirits’ gift of elemental skysight. A new generation of Windshapers is called to Azeroth from their home within Skywall to solve the mystery of what became of their missing elemental mentors and will stop at nothing to see the wind spirits restored and their way of life preserved.",
     "Watch now for more insight into the BlizzCon 2026 reveals and a look at what’s ahead for modern WoW and WoW Forever.",
@@ -34,7 +35,7 @@
     "World of Warcraft: Forever Raid Overview—Locations, Raid Sizes, and Attunement",
     "World of Warcraft: Forever- The Future of Skyborne Visual Updates"
   ],
-  "article_count": 58,
+  "article_count": 59,
   "articles": {
     "24066687": {
       "accepted_pairs": 798,
@@ -429,7 +430,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24313103"
     },
     "24313104": {
-      "accepted_pairs": 2,
+      "accepted_pairs": 1,
       "en_blocks": 5,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24313104",
       "fr_blocks": 5,
@@ -441,6 +442,13 @@
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24313106",
       "fr_blocks": 52,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24313106"
+    },
+    "24313105": {
+      "accepted_pairs": 7,
+      "en_blocks": 6,
+      "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24313105",
+      "fr_blocks": 6,
+      "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24313105"
     }
   },
   "exact": {
@@ -567,6 +575,7 @@
     "Affliction Resolved an issue causing Drain Life to sometimes incorrectly consume mana while Soul Rot is active.": "Affliction Correction d’un problème à cause duquel Drain de vie consommait parfois du mana de manière incorrecte lorsque Pourriture d’âme était actif.",
     "After collecting 10 Ascendant Venomstones, use them near the Catalyst in Silvermoon City to raise the item level of a fully upgraded Season 2 Hero, Myth, or maximum-quality Tidal Crafted weapon, trinket, or necklace.": "Une fois 10 venithes ascendantes obtenues, utilisez-les près du catalyseur de Lune-d’Argent pour augmenter le nivO d’une arme, d’un bijou ou d’un collier de la saison 2 entièrement amélioré de niveau héroïque ou mythique, ou de l’artisanat des marées de la plus haute qualité.",
     "After completing four Timewalking dungeons, the buff will upgrade to Mastery of Timeways, granting 30% experience gain for the duration of the buff.": "Après avoir terminé quatre donjons des Marcheurs du temps, ce bonus devient Maîtrise des voies temporelles, augmentant vos gains d’expérience de 30 % pendant toute sa durée.",
+    "After confronting both his past and the beliefs that defined him, he is left to ask himself: can a Forsaken still serve the Light?": "Confronté à son passé et aux convictions qui l’ont façonné, il doit désormais trouver la réponse à une unique question : un Réprouvé peut-il encore servir la Lumière ?",
     "After each run of a tale, return to Quillgrave to work together with the Arcanist, Scribe, Outfitter, and Antiquarian to improve your odds in your next attempt.": "Après chaque récit, rentrez à Plumetombe pour travailler de concert avec l’Arcaniste, le Scribe, le Tailleur et l’Antiquaire afin d’améliorer vos chances lors de votre prochaine tentative.",
     "After earning the Kirin Tor’s trust, your group will enter through the sewers and make its way into the city proper, choosing among multiple paths and encounters on the way to the source of the disruption.": "Après avoir gagné la confiance du Kirin Tor, votre groupe pénétrera dans la cité par les égouts et progressera jusqu’en son cœur en choisissant parmi plusieurs chemins et affrontements pour atteindre la source des perturbations.",
     "After speaking with Myranda, she will give you the quest “Oculus Illusions” to obtain Black Dragonspawn Eyes.": "Après avoir parlé avec Myranda, cette dernière vous confiera la quête « Illusions d’Occulus », qui vous demandera d’obtenir des yeux de draconide noir.",
@@ -1083,6 +1092,8 @@
     "Cook Whip up your finest tasty goodies using materials gathered from the gatherers to cook pretzels, soup, or brew.": "Cuisine Retroussez-vous les manches et utilisez les ingrédients récoltés par vos camarades pour préparer des bretzels, de la soupe ou de la bière.",
     "Cooldown increased to 6 seconds.": "Le temps de recharge a été augmenté à 6 s.",
     "Cooldown reduced to 15 minutes.": "Le temps de recharge a été réduit à 15 min.",
+    "Cormack, a former Scarlet Crusader in life, now raised as Forsaken, struggles to accept his undead existence.": "Cormack, ancien membre de la Croisade écarlate, peine à accepter sa nouvelle existence de Mort-vivant au sein des Réprouvés.",
+    "Cormack, a former Scarlet Crusader in life, now raised as Forsaken, struggles to accept his undead existence. After confronting both his past and the beliefs that defined him, he is left to ask himself: can a Forsaken still serve the Light?": "Cormack, ancien membre de la Croisade écarlate, peine à accepter sa nouvelle existence de Mort-vivant au sein des Réprouvés. Confronté à son passé et aux convictions qui l’ont façonné, il doit désormais trouver la réponse à une unique question : un Réprouvé peut-il encore servir la Lumière ?",
     "Corrected Seal of Righteousness so that it cannot crit.": "Correction de Sceau de piété pour qu’il ne puisse pas infliger de coups critiques.",
     "Corrected the stats on the Old Guard Retaliator.": "Les caractéristiques de revancharde de vieux garde ont été corrigées.",
     "Corruption Calls with the Abyssal Crown Collection": "La corruption vous appelle avec la collection de la couronne abyssale",
@@ -2260,6 +2271,7 @@
     "Jepetto Joybuzz and his clockwork assistant have received a new shipment of Prismatic Baubles in stock from the Mad Merchant. They can be purchased during the month of June for the standard price of 250,000 gold.": "Jepetto Mizanjoie et son assistant mécanique ont reçu une livraison de babioles prismatiques de la part du marchand fou. Vous pouvez les acheter pendant le mois de juin aux prix standard de 250 000 pièces d’or.",
     "Join Arator Windrunner as he ventures into the depths of the Void with the aid of his mentor, Umbric, in search of clues to his missing parents' fate.": "Rejoignez Arator Coursevent alors qu’il s’aventure dans les profondeurs du Vide avec l’aide de son mentor Umbric, à la recherche d’indices qui lui permettraient de découvrir ce qu’il est advenu de ses parents disparus.",
     "Join Arator Windrunner as he ventures into the depths of the Void with the aid of his mentor, Umbric, in search of clues to his missing parents' fate. As reality twists and dark whispers prey on his mind and fears, he must learn to confront the Void without losing himself to it.": "Rejoignez Arator Coursevent alors qu’il s’aventure dans les profondeurs du Vide avec l’aide de son mentor Umbric, à la recherche d’indices qui lui permettraient de découvrir ce qu’il est advenu de ses parents disparus. Alors que la réalité se déforme et que les sombres murmures commencent à jouer avec son esprit et ses peurs, il doit apprendre à affronter le Vide sans s’y perdre.",
+    "Join Cormack for a special fireside telling of our newest short story, “Unbowed”.": "Retrouvez Cormack pour une lecture exceptionnelle au coin du feu de notre dernière nouvelle, « Inébranlable ».",
     "Join WoW: Forever Podcast host Countdown To Classic and special guest Hammerdance as they sit down with Senior Game Designers Josh “Aggrend” Greenfield, Jay Hartman, and Rowan Ryder as they dive into dungeon leveling, questing, and more.": "Pour ce nouvel épisode, Countdown To Classic, qui anime le podcast WoW: Forever, reçoit Hammerdance, ainsi que Josh « Aggrend » Greenfield, Jay Hartman et Rowan Ryder, de l’équipe de conception du jeu. Au menu : montée de niveau en donjon, quêtes, et bien plus encore.",
     "Join WoW: Forever Podcast host Countdown To Classic and special guest Meeix as they sit down with Senior Game Designer Josh “Aggrend” Greenfield, Associate Production Director Clay Stone, Lead Software Engineer Ana Resendez, and Lead Encounter Designer Michael Nuthals for a special episode.": "Retrouvez Countdown To Classic, animateur du podcast WoW: Forever et son invitée spéciale Meeix dans leur discussion avec Josh « Aggrend » Greenfield, concepteur de jeu senior, Clay Stone, directeur de production associé, Ana Resendez, responsable ingénierie logicielle et Michael Nuthals, concepteur principal des rencontres.",
     "Join WoW: Forever Podcast host Countdown To Classic and special guests Savix and Tips Out as they sit down with Senior Game Designer Josh “Aggrend” Greenfield and Lead Designer Tim Jones as they dive into Player-vs-Player (PvP) in World of Warcraft: Forever.": "Countdown To Classic, qui anime le podcast WoW: Forever, reçoit Savix et Tips Out, ainsi que Josh « Aggrend » Greenfield, concepteur de jeu senior, et Tim Jones, concepteur en chef. Au menu : le JcJ dans World of Warcraft: Forever.",
@@ -2997,7 +3009,6 @@
     "Read By: Yuri Lowenthal as Arator Windrunner Written By: Robert Brooks Art & Cover: Joseph Lacroix Colors: Marco Lacoti Letters: AndWorld Design": "Lue par : Yuri Lowenthal, dans le rôle d’Arator Coursevent Écrite par : Robert Brooks Dessin et couverture : Joseph Lacroix Couleur : Marco Lacoti Lettrage : AndWorld Design",
     "Read Ley Line: Activate a ley line to gain 100% increased Health and Mana regeneration.": "Lecture des lignes telluriques : vous activez une ligne tellurique pour augmenter de 100 % votre régénération de points de vie et de mana.",
     "Read by: Yuri Lowenthal as Arator Windrunner Written by: Robert Brooks Art & Cover: Joseph Lacroix Colors: Marco Lacoti Letters: AndWorld Design": "Lue par : Yuri Lowenthal, dans le rôle d’Arator Coursevent Écrite par : Robert Brooks Dessin et couverture : Joseph Lacroix Couleur : Marco Lacoti Lettrage : AndWorld Design",
-    "Read more stories and stay up to date on the latest World of Warcraft news at worldofwarcraft.blizzard.com/news.": "Pour lire d’autres histoires et suivre l’actualité de World of Warcraft, rendez-vous sur https://worldofwarcraft.blizzard.com/fr-fr/news.",
     "Read our Frequently Asked Questions section for more information.": "Pour en savoir plus, lisez notre FAQ.",
     "Ready to join the haunted festivities?": "Vous voulez vous joindre aux festivités macabres ?",
     "Reagent Economy causes class abilities to no longer require purchasable reagents, and tier 1 camping features to require no materials to craft.": "Économie des composants permet à vos techniques de classe de ne plus nécessiter de composants achetables, et la fabrication de vos éléments de campement de niveau 1 ne nécessite plus de composants.",
@@ -4119,6 +4130,7 @@
     "Watch 4 hours of eligible World of Warcraft content on any channel on Twitch.tv while these Twitch Drops are active to claim the Cuddly Gold-Colored Grrgle Housing decor item.": "Regardez 4 heures de contenu World of Warcraft éligible sur n’importe quelle chaîne Twitch.tv pendant que ces drops Twitch sont actifs pour obtenir l’élément de décoration Grrgl doré tout doux.",
     "Watch 4 hours of eligible World of Warcraft content while these Twitch Drops are active on any channel to earn the Cuddly Gold-Colored Grrgle Housing decor item.": "Regardez 4 h de contenu de World of Warcraft éligible pendant que ces drops Twitch sont actifs sur n’importe quelle chaîne pour obtenir l’élément de décoration Grrgl doré tout doux.",
     "Watch Now! WoW: Forever Podcast Ep.2": "Regardez l’épisode 2 du podcast de WoW: Forever dès maintenant !",
+    "Watch the WoW: Forever Short Story, “Unbowed”": "Découvrez la nouvelle de WoW: Forever, « Inébranlable »",
     "Watch the World of Warcraft Live Q&A Now": "Regardez la session de questions-réponses World of Warcraft en direct dès maintenant",
     "Watch the World of Warcraft: Forever Podcast, Ep. 1": "Regardez le 1er épisode du podcast de World of Warcraft: Forever",
     "Watch the World of Warcraft: Midnight Motion Comic, “Singularity”": "Regardez la nouvelle bande dessinée animée de World of Warcraft: Midnight, « Singularité ».",
@@ -4377,6 +4389,7 @@
     "Wrack: (New 31-point gold medal talent.) Tears the target apart from within, inflicting Shadow damage every second and increasing the damage they take from your other Shadow damage-over- time (DoT) effects by 10% for 6 seconds. This spell grants the Affliction Warlock a powerful drain-style spell to use as their primary spell when not re-casting damage-over- time spells or instant Shadow Bolts from Nightfall.": "Calvaire (nouveau talent majeur à 31 points) : vous déchirez la cible de l’intérieur, ce qui lui inflige des dégâts d’ombre chaque seconde et augmente de 10 % les dégâts qu’elle subit de la part de vos autres effets de dégâts d’ombre sur la durée pendant 6 secondes. Ce sort offre aux démonistes spécialisés dans l’affliction un puissant drain qu’ils peuvent utiliser comme sort principal lorsqu’ils ne relancent pas les sorts de dégâts sur la durée ou les traits de l’ombre instantanés octroyés par Crépuscule.",
     "Wrath damage increased by 50% in PvP combat.": "Dégâts de Colère augmentés de 50 % en combat JcJ.",
     "Wrath: Significantly redesigned to be a much cheaper Mana cost, but damage also lower significantly to match.": "Colère : repensé pour diminuer le coût en mana, mais les dégâts ont aussi été considérablement réduits.",
+    "Written By: Sean Copeland Illustrated By: Surfside 3D Narrated By: Jesse Burch as Cormack": "Écrite par : Sean Copeland Illustrée par : Surfside 3D Lue par : Jesse Burch dans le rôle de Cormack",
     "Wyvern Strike will no longer return an ‘immune’ message against targets that are immune to its Bleed effect.": "Frappe de wyverne n’affichera plus de message « insensible » contre des cibles insensibles à son effet de saignement.",
     "Wyvern Strike will no longer return an ‘immune’ message against targets that are immune to its Bleed effect. It will now deal its direct damage, but not apply the Bleed.": "Frappe de wyverne n’affichera plus de message « insensible » contre des cibles insensibles à son effet de saignement. Il inflige désormais ses dégâts directs, mais n’applique pas l’effet de saignement.",
     "You can also exit the story at any time by clicking the X in the UI.": "Vous pouvez également quitter l’histoire à tout moment en cliquant sur le bouton X dans l’interface utilisateur.",
@@ -4443,7 +4456,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 3998,
+  "pair_count": 4003,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -7945,7 +7958,6 @@
     "Midnight Candy Buckets Throughout Quel’Thalas": "24313106",
     "Read By: Yuri Lowenthal as Arator Windrunner Written By: Robert Brooks Art & Cover: Joseph Lacroix Colors: Marco Lacoti Letters: AndWorld Design": "24313104",
     "Read by: Yuri Lowenthal as Arator Windrunner Written by: Robert Brooks Art & Cover: Joseph Lacroix Colors: Marco Lacoti Letters: AndWorld Design": "24313106",
-    "Read more stories and stay up to date on the latest World of Warcraft news at worldofwarcraft.blizzard.com/news.": "24313104",
     "Save big on your World of Warcraft®: Midnight and WoW Burning Crusade Anniversary Classic experience from now through November 2.": "24313106",
     "There is something special about seeing another adventurer on the road. Maybe they are headed toward the same quest objective, recovering after a close fight, or simply taking the long way through a dangerous zone. The Camping system gives those moments more room to grow by turning a simple Cooking Fire into a place where players can rest, prepare, and connect.": "24313106",
     "Up to 33% Off Burning Crusade Classic Anniversary Game Services": "24313106",
@@ -8445,7 +8457,13 @@
     "Initiative: Chance for this to activate increased so that it has a 100% chance with 3 talent points.": "24310968",
     "Battle-Scarred Veteran has been updated. Now, when a damage event reduces your health below 30%, the portion of that damage event that would apply to the last 30% of your health is also reduced by 80%. Developers’ notes: For example, if you are at 50% health and receive damage for 40% of your health, your damage taken will be 20% + 20% * (1-0.8), or 24%, and you will have 26% health remaining when Battle-Scarred Veteran activates.": "24066687",
     "Now, when a damage event reduces your health below 30%, the portion of that damage event that would apply to the last 30% of your health is also reduced by 80%.": "24066687",
-    "Warlock Affliction Resolved an issue causing Drain Life to sometimes incorrectly consume mana while Soul Rot is active. Warrior Protection Battle-Scarred Veteran has been updated. Now, when a damage event reduces your health below 30%, the portion of that damage event that would apply to the last 30% of your health is also reduced by 80%. Developers’ notes: For example, if you are at 50% health and receive damage for 40% of your health, your damage taken will be 20% + 20% * (1-0.8), or 24%, and you will have 26% health remaining when Battle-Scarred Veteran activates.": "24066687"
+    "Warlock Affliction Resolved an issue causing Drain Life to sometimes incorrectly consume mana while Soul Rot is active. Warrior Protection Battle-Scarred Veteran has been updated. Now, when a damage event reduces your health below 30%, the portion of that damage event that would apply to the last 30% of your health is also reduced by 80%. Developers’ notes: For example, if you are at 50% health and receive damage for 40% of your health, your damage taken will be 20% + 20% * (1-0.8), or 24%, and you will have 26% health remaining when Battle-Scarred Veteran activates.": "24066687",
+    "After confronting both his past and the beliefs that defined him, he is left to ask himself: can a Forsaken still serve the Light?": "24313105",
+    "Cormack, a former Scarlet Crusader in life, now raised as Forsaken, struggles to accept his undead existence.": "24313105",
+    "Cormack, a former Scarlet Crusader in life, now raised as Forsaken, struggles to accept his undead existence. After confronting both his past and the beliefs that defined him, he is left to ask himself: can a Forsaken still serve the Light?": "24313105",
+    "Join Cormack for a special fireside telling of our newest short story, “Unbowed”.": "24313105",
+    "Watch the WoW: Forever Short Story, “Unbowed”": "24313105",
+    "Written By: Sean Copeland Illustrated By: Surfside 3D Narrated By: Jesse Burch as Cormack": "24313105"
   },
   "targetLanguage": "fr-FR"
 }
