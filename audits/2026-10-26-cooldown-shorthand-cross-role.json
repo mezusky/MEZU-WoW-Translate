@@ -1,0 +1,32 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "sourceAccess": "Direct live Wowhead URLs returned JavaScript challenge; current English guide content inspected via indexed Wowhead results",
+  "auditScope": "Source-only English prose and expected French terminology; not Chrome Translator API output",
+  "sampledPageIds": [
+    "discipline-priest-rotation",
+    "restoration-druid-rotation",
+    "affliction-warlock-rotation",
+    "holy-paladin-rotation",
+    "destruction-warlock-mythic-plus",
+    "frost-death-knight-raid"
+  ],
+  "newCorpusPageIds": [
+    "destruction-warlock-mythic-plus",
+    "frost-death-knight-raid"
+  ],
+  "observedReusablePattern": "on cd / On CD are shorthand for on cooldown across healer and DPS guides; do not translate CD without the preposition",
+  "reusableFix": "Locale-scoped fr player glossary maps on cd, On CD, on cooldown, off cooldown; remove duplicate legacy manual jargon",
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "sourceQualityRisks": [
+    "Indexed localized Wowhead pages mix English prose with translated official spell names; do not use localized pages as proof of MEZU output",
+    "Mythic+ and raid talent-import controls need browser-only verification"
+  ],
+  "validation": "Locale isolation, independent cross-role source phrase fixtures and CI Data Pack rebuild pending at commit time",
+  "browserOnlyFollowUp": "Verify actual browser translation for shorthand and that talent import/copy UI remains intact"
+}
