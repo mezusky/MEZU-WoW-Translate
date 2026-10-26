@@ -81,6 +81,32 @@ class SourceLanguageEvidenceTests(unittest.TestCase):
         result = detect_source_language([("p", text)], portuguese)
         self.assertEqual(result["detectedLanguage"], "pt")
 
+    def test_generated_utility_placeholders_do_not_dilute_english_prose(self):
+        # Indexed Havoc M+ utility tables expose unfinished UTIL*_USECASE cells.
+        prose = ("Your abilities should be used when the group takes damage, "
+                 "and you can cast healing spells before the next wave while "
+                 "you have mana for the fight.")
+        blocks = [("td", prose + " " + "UTIL3_USECASE " * 120)]
+        result = detect_source_language(blocks, PROFILES)
+        self.assertEqual(result["detectedLanguage"], "en")
+        self.assertLess(result["tokenCount"], 40)
+
+    def test_generated_placeholders_alone_are_not_language_evidence(self):
+        blocks = [("td", "UTIL3_USECASE UTIL4_USECASE RAID_BOSS_TIP"),
+                  ("li", "DUNGEON_2_TALENT_OPTION")]
+        result = detect_source_language(blocks, PROFILES)
+        self.assertIsNone(result["detectedLanguage"])
+        self.assertEqual(result["status"], "insufficient_prose")
+        self.assertEqual(result["tokenCount"], 0)
+
+    def test_lowercase_underscores_remain_prose(self):
+        prose = ("Your player_name can be used with the group when you have "
+                 "the right spells and abilities for this fight. You should "
+                 "also use your other spells before the next wave.")
+        result = detect_source_language([("p", prose)], PROFILES)
+        self.assertEqual(result["detectedLanguage"], "en")
+        self.assertGreaterEqual(result["tokenCount"], 25)
+
     def test_bad_profiles_fail_closed(self):
         with self.assertRaises(ValueError):
             detect_source_language([], {"en": ["the"], "fr": [None]})
