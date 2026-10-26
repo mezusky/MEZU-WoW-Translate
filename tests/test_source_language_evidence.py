@@ -159,6 +159,22 @@ class SourceLanguageEvidenceTests(unittest.TestCase):
         self.assertEqual(result["status"], "insufficient_prose")
         self.assertEqual(result["tokenCount"], 0)
 
+    def test_same_widget_artifact_across_unrelated_specs(self):
+        # Indexed English source fragments, not Chrome-rendered output.
+        # Rogue, Paladin and Warrior overviews share the widget syntax.
+        variants = (
+            ("outlaw-rogue-overview", "stat-guide=5565 stats=agi>>haste=crit>vers>mast]"),
+            ("protection-paladin-overview",
+             "stat-guide=5561 stats=str>haste=crit>mastery>versatility]"),
+            ("arms-warrior-overview",
+             "stat-guide=5533 stats=str>>crit>haste>mastery>versatility]"),
+        )
+        for guide, widget in variants:
+            with self.subTest(guide=guide):
+                result = detect_source_language([("td", widget * 25)], PROFILES)
+                self.assertEqual(result["tokenCount"], 0)
+                self.assertIsNone(result["detectedLanguage"])
+
     def test_plain_stat_comparison_prose_is_not_stripped(self):
         # The filter targets assignment syntax, not ordinary guide advice.
         prose = ("You should use your spells when you have enough resources "
