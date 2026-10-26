@@ -107,6 +107,36 @@ class SourceLanguageEvidenceTests(unittest.TestCase):
         self.assertEqual(result["detectedLanguage"], "en")
         self.assertGreaterEqual(result["tokenCount"], 25)
 
+    def test_repeated_template_words_are_not_strong_language_evidence(self):
+        # Synthetic noisy Wowhead-like table cells, not actual page output.
+        # Repetition alone must not misclassify a source language.
+        for locale, words in (("en", "the and "),
+                              ("fr", "les des "),
+                              ("de", "der und "),
+                              ("it", "che per ")):
+            with self.subTest(locale=locale):
+                result = detect_source_language([("td", words * 45)], PROFILES)
+                self.assertIsNone(result["detectedLanguage"])
+                self.assertEqual(result["status"], "ambiguous")
+                self.assertLessEqual(result["distinctSignalCounts"][locale], 2)
+
+    def test_distinct_signals_preserve_independent_guide_prose(self):
+        # Short source-only paraphrases of Arcane overview and Unholy basics;
+        # no Chrome Translator API result is inferred from this evidence.
+        examples = (
+            "Your spells and abilities should be used when you have enough "
+            "mana for the next burst window. The group can use this utility "
+            "while you plan your defensive cooldowns and movement.",
+            "You should use your cooldowns when they are available and "
+            "spend your procs before the next fight. This can help your "
+            "group while you have spells to cast during the encounter.",
+        )
+        for prose in examples:
+            with self.subTest(prose=prose[:24]):
+                result = detect_source_language([("p", prose)], PROFILES)
+                self.assertEqual(result["detectedLanguage"], "en")
+                self.assertGreaterEqual(result["distinctSignalCounts"]["en"], 4)
+
     def test_bad_profiles_fail_closed(self):
         with self.assertRaises(ValueError):
             detect_source_language([], {"en": ["the"], "fr": [None]})
