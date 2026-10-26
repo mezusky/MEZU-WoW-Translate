@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "auditMethod": "assistant web indexed English Wowhead source; direct HTML challenged by JavaScript; no Chrome Translator API replay",
+  "sampledPageIds": [
+    "blood-death-knight-abilities",
+    "subtlety-rogue-mythic-plus",
+    "subtlety-rogue-abilities",
+    "subtlety-rogue-overview",
+    "frost-mage-mythic-plus",
+    "marksmanship-hunter-mythic-plus"
+  ],
+  "sampledPageCount": 6,
+  "newCorpusPageIds": [
+    "subtlety-rogue-mythic-plus",
+    "subtlety-rogue-abilities"
+  ],
+  "corpusCountAfter": 307,
+  "newReusableTermFamiliesObserved": 2,
+  "termFamilies": [
+    {
+      "name": "source typo thread used for WoW threat",
+      "crossPageEvidence": [
+        "Blood DK abilities: bonus thread",
+        "Subtlety Rogue Mythic+: thread transfer / thread generation / thread reduction"
+      ],
+      "fixLayer": "locale-scoped MEZU player glossary",
+      "ruleCount": 5,
+      "scopeGuard": "no bare thread/threads rule; preserve forum/thread usage"
+    },
+    {
+      "name": "unhyphenated priority target damage",
+      "crossPageEvidence": [
+        "Frost Mage Mythic+: priority target damage",
+        "Subtlety Rogue overview: priority target damage",
+        "Marksmanship Hunter Mythic+: priority-target damage"
+      ],
+      "fixLayer": "locale-scoped MEZU player glossary",
+      "ruleCount": 1,
+      "scopeGuard": "no bare priority/target rule"
+    }
+  ],
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "newPageInterventionProxy": "Two new corpus pages broaden structural coverage; this source-only sample is not a held-out translation-quality measurement",
+  "remainingVerification": [
+    "Confirm GitHub Actions rebuild and pack validation",
+    "Verify Chrome Translator API output, entity IDs and rich-text/DOM behavior on independent guides",
+    "Measure novel translation issues on newly sampled held-out pages over consecutive cycles"
+  ]
+}
