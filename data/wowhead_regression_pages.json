@@ -1179,6 +1179,18 @@
     {
       "id": "discipline-priest-abilities",
       "url": "https://www.wowhead.com/guide/classes/priest/discipline/abilities-talents-pve-healer"
+    },
+    {
+      "id": "enhancement-shaman-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "windwalker-monk-consumables",
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/enchants-gems-pve-dps"
+    },
+    {
+      "id": "fury-warrior-consumables",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/enchants-gems-pve-dps"
     }
   ]
 }
