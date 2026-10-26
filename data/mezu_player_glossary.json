@@ -107,7 +107,10 @@
     "external raid cooldowns": "CD externes de raid",
     "pandemic window": "fenêtre Pandemic",
     "Pandemic window": "fenêtre Pandemic",
-    "DOT Pandemic Range": "fenêtre Pandemic des DoT"
+    "DOT Pandemic Range": "fenêtre Pandemic des DoT",
+    "damage intake": "dégâts subis",
+    "damage spike": "pic de dégâts",
+    "damage spikes": "pics de dégâts"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
