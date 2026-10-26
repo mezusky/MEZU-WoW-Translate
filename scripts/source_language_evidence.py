@@ -6,6 +6,8 @@ language detector. Unknown/mixed evidence must never be counted as a failure.
 import re
 
 TOKEN = re.compile(r"[^\W\d_]+", re.UNICODE)
+# Generated UI placeholders are not prose, even inside otherwise readable cells.
+NON_PROSE_PLACEHOLDER = re.compile(r"\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b")
 PROSE_TAGS = frozenset(("p", "li", "td", "th"))
 
 
@@ -31,8 +33,8 @@ def detect_source_language(blocks, profiles, min_tokens=25, min_hits=7):
     for tag, value in blocks:
         if tag not in PROSE_TAGS or not isinstance(value, str):
             continue
-        normalized = " ".join(value.split()).casefold()
-        if normalized in seen or len(normalized) > 1200:
+        normalized = " ".join(NON_PROSE_PLACEHOLDER.sub(" ", value).split()).casefold()
+        if not normalized or normalized in seen or len(normalized) > 1200:
             continue
         seen.add(normalized)
         tokens.extend(word for word in TOKEN.findall(normalized) if len(word) > 1)
