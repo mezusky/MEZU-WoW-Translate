@@ -90,7 +90,11 @@
     "Heal over Time (HoT) effect": "effet de soin sur la durée (HoT)",
     "Healing over Time (HoT) effect": "effet de soin sur la durée (HoT)",
     "Heal over Time effects (HoTs)": "effets de soin sur la durée (HoTs)",
-    "healing-over-time effects (HoTs)": "effets de soin sur la durée (HoTs)"
+    "healing-over-time effects (HoTs)": "effets de soin sur la durée (HoTs)",
+    "damage over time effect": "effet de dégâts sur la durée",
+    "damage over time effects": "effets de dégâts sur la durée",
+    "damage-over-time effects": "effets de dégâts sur la durée",
+    "Damage over Time (DoT) effect": "effet de dégâts sur la durée (DoT)"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
