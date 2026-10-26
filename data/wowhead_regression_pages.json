@@ -955,6 +955,18 @@
     {
       "id": "fire-mage-ui-macros",
       "url": "https://www.wowhead.com/guide/classes/mage/fire/addons-macro-ui-imports"
+    },
+    {
+      "id": "protection-paladin-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/addons-macro-ui-imports"
+    },
+    {
+      "id": "restoration-druid-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/addons-macro-ui-imports"
+    },
+    {
+      "id": "outlaw-rogue-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/addons-macro-ui-imports"
     }
   ]
 }
