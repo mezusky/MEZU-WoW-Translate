@@ -1143,6 +1143,18 @@
     {
       "id": "mistweaver-monk-talent-builds",
       "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/talent-builds-pve-healer"
+    },
+    {
+      "id": "feral-druid-basics",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/basics"
+    },
+    {
+      "id": "destruction-warlock-consumables",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/enchants-gems-pve-dps"
+    },
+    {
+      "id": "beast-mastery-hunter-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/mythic-plus-dungeon-tips"
     }
   ]
 }
