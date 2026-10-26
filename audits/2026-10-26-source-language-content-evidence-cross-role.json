@@ -34,5 +34,13 @@
     "manualSentenceOverridesAdded": 0,
     "extensionChanged": false
   },
-  "next": "Confirm CI, then gather browser-local Translator API outputs to measure real translation errors and validate DOM behavior."
+  "next": "Collect browser-local Translator API output to measure actual translation quality and DOM behavior; do not treat source-language evidence as browser auto-detection.",
+  "ci": {
+    "workflowRun": 40281413012,
+    "conclusion": "success",
+    "testsPassed": 304,
+    "datapackValidated": true,
+    "datapackVersion": "fcc9790ef6e6bca1902b",
+    "datapackChanged": false
+  }
 }
