@@ -1167,6 +1167,18 @@
     {
       "id": "augmentation-evoker-raid",
       "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "fire-mage-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "devourer-demon-hunter-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "discipline-priest-abilities",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/abilities-talents-pve-healer"
     }
   ]
 }
