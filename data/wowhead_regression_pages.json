@@ -1083,6 +1083,26 @@
     {
       "id": "unholy-death-knight-basics",
       "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/basics"
+    },
+    {
+      "id": "devourer-demon-hunter-overview",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/overview-pve-dps"
+    },
+    {
+      "id": "devourer-demon-hunter-abilities",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/abilities-talents-pve-dps"
+    },
+    {
+      "id": "devourer-demon-hunter-stats",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/stat-priority-pve-dps"
+    },
+    {
+      "id": "devastation-evoker-consumables",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/enchants-gems-pve-dps"
+    },
+    {
+      "id": "arms-warrior-overview",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/overview-pve-dps"
     }
   ]
 }
