@@ -24,11 +24,11 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
                 # but localizes spell links, so it is NOT an English-source URL.
                 # The English PTR preview uses /ptr-2/guide/... instead.
                 self.assertRegex(parsed.path,
-                                 r"^/(?:ptr(?:-\\d+)?/)?guide/classes/[a-z-]+/[a-z-]+/[a-z0-9-]+$")
+                                 r"^/(?:ptr(?:-\d+)?/)?guide/classes/[a-z-]+/[a-z-]+/[a-z0-9-]+$")
                 self.assertFalse(parsed.query or parsed.fragment)
 
     def test_localized_url_is_not_an_english_source(self):
-        pattern = r"^/(?:ptr(?:-\\d+)?/)?guide/classes/[a-z-]+/[a-z-]+/[a-z0-9-]+$"
+        pattern = r"^/(?:ptr(?:-\d+)?/)?guide/classes/[a-z-]+/[a-z-]+/[a-z0-9-]+$"
         for locale in ("fr", "de", "it", "pt", "cn"):
             with self.subTest(locale=locale):
                 self.assertIsNone(re.fullmatch(pattern,
