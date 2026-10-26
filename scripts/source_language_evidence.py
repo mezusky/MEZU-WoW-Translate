@@ -40,10 +40,17 @@ def detect_source_language(blocks, profiles, min_tokens=25, min_hits=7):
         tokens.extend(word for word in TOKEN.findall(normalized) if len(word) > 1)
     counts = {locale: sum(word in words for word in tokens)
               for locale, words in signals.items()}
+    # Repeated template text (e.g. many cells containing only "the and")
+    # must not become strong language evidence merely through repetition.
+    # Require several DIFFERENT signal words, independently of locale.
+    unique_tokens = set(tokens)
+    distinct_counts = {locale: len(unique_tokens & words)
+                       for locale, words in signals.items()}
     ranking = sorted(counts.items(), key=lambda entry: entry[1], reverse=True)
     winner, hits = ranking[0]
     runner_up = ranking[1][1] if len(ranking) > 1 else 0
     enough = (len(tokens) >= min_tokens and hits >= min_hits
+              and distinct_counts[winner] >= 4
               and hits / len(tokens) >= 0.12 and hits >= 1.7 * runner_up)
     return {
         "detectedLanguage": winner if enough else None,
@@ -51,4 +58,5 @@ def detect_source_language(blocks, profiles, min_tokens=25, min_hits=7):
                   ("insufficient_prose" if len(tokens) < min_tokens else "ambiguous"),
         "tokenCount": len(tokens),
         "signalCounts": counts,
+        "distinctSignalCounts": distinct_counts,
     }
