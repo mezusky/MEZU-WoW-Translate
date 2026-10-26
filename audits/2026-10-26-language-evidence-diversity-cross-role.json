@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "auditMethod": "Live indexed English Wowhead source excerpts; direct HTML subject to JS verification; no browser Translator API replay",
+  "sampledPageIds": [
+    "feral-druid-rotation",
+    "arcane-mage-overview",
+    "enhancement-shaman-gear",
+    "unholy-death-knight-basics"
+  ],
+  "newCorpusPageCount": 3,
+  "corpusPageCountAfter": 271,
+  "issueClass": "source-language evidence overconfidence from repeated low-diversity UI words",
+  "finding": "Preventive audit-only guard: many repetitions of one or two stopwords can previously meet token/hit thresholds without demonstrating varied natural-language prose. Synthetic cross-locale tests cover this risk; not asserted as observed in live Wowhead HTML.",
+  "fixLayer": "offline audit language evidence; no extension code or Data Pack terminology changed",
+  "languageProfiles": [
+    "en",
+    "fr",
+    "de",
+    "it"
+  ],
+  "newManualSentenceOverrides": 0,
+  "translationPair": {
+    "sourceLanguage": "en",
+    "targetLanguage": "fr"
+  },
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "verification": "3 commits; latest CI pending at commit time; source language evidence now requires at least four distinct locale signal words",
+  "caveats": [
+    "Live source pages were inspected via indexed search rather than full raw HTML; no claim that the repeated-stopword defect was directly observed on Wowhead.",
+    "No browser-local Translator API output was available; this is audit reliability, not demonstrated French translation quality.",
+    "Novel issue-rate trend remains unknown; cross-page completion criteria are not met."
+  ]
+}
