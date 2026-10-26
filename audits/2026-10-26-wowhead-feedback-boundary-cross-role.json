@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "scope": "English-source Wowhead -> French; source-only audit",
+  "sourceAccess": "Direct live English URLs returned Wowhead JavaScript verification; indexed English source was inspected separately",
+  "regressionPagesBefore": 252,
+  "regressionPagesAfter": 255,
+  "sampledExisting": [
+    "brewmaster-monk-rotation",
+    "discipline-priest-rotation",
+    "demonology-warlock-consumables",
+    "survival-hunter-talent-builds"
+  ],
+  "newSamples": [
+    "preservation-evoker-leveling",
+    "holy-priest-leveling",
+    "outlaw-rogue-leveling"
+  ],
+  "issue": {
+    "class": "post-guide discussion contamination",
+    "evidence": "Indexed Outlaw Rogue and Holy Priest leveling guides and Preservation Evoker consumables contain a Feedback heading followed by reader-facing discussion or author material; existing analyzer stopped only at Comments/Contribute h2.",
+    "fix": "Trim standalone Feedback/Comments/Contribute h2/h3 sections before source-only scoring.",
+    "layer": "offline audit engine",
+    "crossRoleTests": "DPS rogue, healer priest, healer evoker; protect legitimate prose containing feedback"
+  },
+  "quality": {
+    "newNovelTranslationIssueRate": null,
+    "reason": "Cannot measure real translated output or new-page linguistic error rate from indexed English prose",
+    "browserTranslatorVerified": false,
+    "manualSentenceOverridesAdded": 0,
+    "extensionCodeChanged": false,
+    "datapackContentChangeExpected": false
+  },
+  "followUp": "Validate CI and compare source-only counts on accessible pages; do not classify browser translation as fixed."
+}
