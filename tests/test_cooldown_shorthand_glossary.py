@@ -25,8 +25,9 @@ class CooldownShorthandTests(unittest.TestCase):
                 self.assertNotIn(phrase, terms)
                 self.assertNotIn(phrase, MANUAL.get("jargon", {}))
                 self.assertNotIn(phrase, MANUAL.get("exact", {}))
-        # Unlike "on cooldown", "off cooldown" consistently means ready.
-        self.assertEqual(terms["off cooldown"], "disponible")
+        # The state is stable, but a fragment cannot encode French agreement.
+        # E.g. "charges sitting off cooldown" vs "it is off cooldown".
+        self.assertNotIn("off cooldown", terms)
         self.assertNotIn("cd", terms)
 
     def test_same_words_have_opposite_meanings_across_guides(self):
@@ -48,6 +49,31 @@ class CooldownShorthandTests(unittest.TestCase):
                 self.assertNotIn(sample, MANUAL.get("exact", {}))
                 observed.add(sense)
         self.assertEqual(observed, {"cast_when_ready", "currently_unavailable"})
+
+    def test_off_cooldown_needs_grammatical_context_across_guides(self):
+        # Indexed English guide excerpts, NOT observed Chrome translations.
+        # A blanket "disponible" fragment loses plural/singular agreement and
+        # the construction "sitting off cooldown" needs a natural French verb.
+        sources = (
+            ("brewmaster-monk-rotation",
+             "both charges of Purifying Brew sitting off cooldown"),
+            ("windwalker-monk-overview",
+             "abilities are sitting off cooldown without being used"),
+            ("holy-paladin-basics",
+             "keep Holy Shock on cooldown"),
+        )
+        ids = {page["id"] for page in PAGES}
+        for guide, excerpt in sources:
+            with self.subTest(guide=guide):
+                self.assertIn(guide, ids)
+                self.assertIn("cooldown", excerpt)
+        terms = select_jargon(GLOSSARY, "en-US", "fr-FR")
+        for phrase in ("off cooldown", "on cooldown", "on cd"):
+            self.assertNotIn(phrase, terms)
+            self.assertNotIn(phrase, MANUAL.get("jargon", {}))
+        # Existing unambiguous verb phrase remains available.
+        self.assertEqual(MANUAL["jargon"]["comes off cooldown"],
+                         "redevient disponible")
 
     def test_locale_isolation(self):
         self.assertEqual(select_jargon(GLOSSARY, "fr-FR", "fr-CA"), {})
