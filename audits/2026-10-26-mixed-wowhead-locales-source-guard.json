@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "scope": "English-source Wowhead guides; expected MEZU French output",
+  "sampledPageIds": [
+    "blood-death-knight-overview",
+    "demonology-warlock-consumables",
+    "survival-hunter-talent-builds"
+  ],
+  "sampledPageCount": 3,
+  "sourceAccess": "Direct English guide URLs returned Wowhead JavaScript challenge; indexed Wowhead English and localized guide content inspected via assistant web access",
+  "observations": [
+    {
+      "family": "localized Wowhead pages retain English prose but localize linked official entity names",
+      "crossPageEvidence": [
+        "Blood DK overview /fr and /it",
+        "Demonology consumables /fr and /it",
+        "Survival talent builds /fr and /de"
+      ],
+      "risk": "Page URL locale cannot substitute for source-prose detection; /fr is not a valid EN-source regression fixture."
+    },
+    {
+      "family": "source-side stale or missing guide placeholders",
+      "crossPageEvidence": [
+        "Demonology consumables mentions The War Within in Midnight section",
+        "Survival talent-build localized index has blank season placeholders"
+      ],
+      "risk": "Do not misclassify source author/template defects as MEZU translation regressions."
+    },
+    {
+      "family": "interactive and official-name boundaries",
+      "crossPageEvidence": [
+        "Survival talent copy/import controls",
+        "Demonology enchant item names",
+        "Blood DK linked abilities and Runic Power"
+      ],
+      "risk": "Canonical entity ID localization and browser DOM verification remain required."
+    }
+  ],
+  "changes": [
+    "Added three independent English-source pages to regression corpus (252 total).",
+    "Tightened corpus URL validation to reject localized paths while allowing English PTR previews."
+  ],
+  "newReusableTermFamiliesObserved": 0,
+  "newManualOverrides": 0,
+  "chromeRenderedPagesVerified": 0,
+  "novelTranslationIssueRate": null,
+  "crossPageQualityMet": false,
+  "remainingVerification": "No live Chrome Translator API output or DOM reconstruction verified; source-only findings are not proof of translated-output quality."
+}
