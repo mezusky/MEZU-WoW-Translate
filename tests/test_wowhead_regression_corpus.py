@@ -57,6 +57,20 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
                 self.assertTrue(any(pattern in section for section in sections))
 
 
+    def test_all_current_specs_and_new_widget_risks_are_represented(self):
+        # Every Midnight specialization should remain represented at least once.
+        paths = [p["url"].split("/guide/classes/", 1)[1].split("/")
+                 for p in PAGES]
+        self.assertGreaterEqual(len({(parts[0], parts[1]) for parts in paths}), 40)
+        required = {
+            "devourer-demon-hunter-overview",
+            "devourer-demon-hunter-abilities",
+            "devourer-demon-hunter-stats",
+            "devastation-evoker-consumables",
+            "arms-warrior-overview",
+        }
+        self.assertTrue(required.issubset({p["id"] for p in PAGES}))
+
     def test_tier_set_guides_cover_independent_classes(self):
         # A shared terminology rule must not be validated on one spec alone.
         tier_classes = {
