@@ -1191,6 +1191,18 @@
     {
       "id": "fury-warrior-consumables",
       "url": "https://www.wowhead.com/guide/classes/warrior/fury/enchants-gems-pve-dps"
+    },
+    {
+      "id": "holy-priest-gear",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/bis-gear"
+    },
+    {
+      "id": "preservation-evoker-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/talent-builds-pve-healer"
+    },
+    {
+      "id": "holy-paladin-abilities",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/abilities-talents-pve-healer"
     }
   ]
 }
