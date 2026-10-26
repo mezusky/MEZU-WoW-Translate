@@ -1,0 +1,30 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "sourceAccess": "Live Wowhead URLs challenged by JavaScript; indexed English guide content examined",
+  "sampledPageIds": [
+    "discipline-priest-rotation",
+    "frost-mage-rotation",
+    "brewmaster-monk-rotation",
+    "discipline-priest-mythic-plus",
+    "protection-paladin-consumables"
+  ],
+  "newCorpusPageIds": [
+    "discipline-priest-mythic-plus",
+    "protection-paladin-consumables"
+  ],
+  "observedIssue": "The same phrase 'on cd' means use when ready in 'Cast Mind Blast on cd' but unavailable in 'if Evang is on cd' (both Discipline Priest). 'on cooldown' also appears in instructions in Frost Mage and Brewmaster Monk guides.",
+  "risk": "A global glossary mapping to 'dès que disponible' reverses the unavailable-state meaning.",
+  "fix": "Remove ambiguous on cd / On CD / on cooldown from context-free fr-FR jargon; retain unambiguous off cooldown -> disponible. Leave disambiguation to contextual prose translation until a tested reusable semantic rule exists.",
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "requiresReinstall": false,
+  "tests": "Cross-context and locale-isolation regression fixtures",
+  "browserRenderedPagesVerified": 0,
+  "novelTranslationIssueRate": null,
+  "translatorApiOutputVerified": false,
+  "ciStatusAtCommit": "pending",
+  "browserOnlyFollowUp": "Verify both imperative and unavailable-state translations in Chrome, including rich-text ability links and import controls."
+}
