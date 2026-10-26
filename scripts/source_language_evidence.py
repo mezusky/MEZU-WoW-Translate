@@ -8,6 +8,9 @@ import re
 TOKEN = re.compile(r"[^\W\d_]+", re.UNICODE)
 # Generated UI placeholders are not prose, even inside otherwise readable cells.
 NON_PROSE_PLACEHOLDER = re.compile(r"\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b")
+# Indexed guide widgets can leak key=value configuration (e.g. stat-guide=32588
+# or stats=Int>mastery>haste). Such formulas are not natural-language prose.
+NON_PROSE_ASSIGNMENT = re.compile(r"\b[a-z][a-z0-9-]{1,40}=[^\s\]\[]+")
 PROSE_TAGS = frozenset(("p", "li", "td", "th"))
 
 
@@ -33,7 +36,8 @@ def detect_source_language(blocks, profiles, min_tokens=25, min_hits=7):
     for tag, value in blocks:
         if tag not in PROSE_TAGS or not isinstance(value, str):
             continue
-        normalized = " ".join(NON_PROSE_PLACEHOLDER.sub(" ", value).split()).casefold()
+        clean = NON_PROSE_ASSIGNMENT.sub(" ", NON_PROSE_PLACEHOLDER.sub(" ", value))
+        normalized = " ".join(clean.split()).casefold()
         if not normalized or normalized in seen or len(normalized) > 1200:
             continue
         seen.add(normalized)
