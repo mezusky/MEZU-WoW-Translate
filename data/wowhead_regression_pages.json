@@ -1103,6 +1103,18 @@
     {
       "id": "arms-warrior-overview",
       "url": "https://www.wowhead.com/guide/classes/warrior/arms/overview-pve-dps"
+    },
+    {
+      "id": "havoc-demon-hunter-overview",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/overview-pve-dps"
+    },
+    {
+      "id": "assassination-rogue-raid",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "holy-priest-consumables",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/enchants-gems-pve-healer"
     }
   ]
 }
