@@ -33,7 +33,7 @@
     }
   ],
   "fixLayer": "Data-only player glossary scoped en->fr",
-  "newReusableEntries": 3,
+  "newReusableEntries": 2,
   "newManualSentenceOverrides": 0,
   "extensionCodeChanged": false,
   "newCorpusPages": [
@@ -51,6 +51,9 @@
     "Do not add bare damage/intake/spike substitutions; verbs and grammatical context remain for the translation engine.",
     "Canonical spell, item and talent translations still require official IDs.",
     "Browser-local Translator API and DOM reconstruction remain unverified.",
-    "No GitHub Actions Wowhead fetch attempted."
-  ]
+    "No GitHub Actions Wowhead fetch attempted.",
+    "The existing 'damage intake' rule was migrated from unscoped legacy manual jargon into locale-scoped player data; it is not a novel term."
+  ],
+  "migratedLegacyJargonEntries": 1,
+  "localeGlossaryEntriesCovered": 3
 }
