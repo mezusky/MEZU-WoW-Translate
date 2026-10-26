@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-26",
+  "auditMethod": "indexed live English Wowhead sources; direct URL returned JavaScript challenge; Chrome Translator API not observed",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sampledPageIds": [
+    "brewmaster-monk-rotation",
+    "windwalker-monk-overview",
+    "windwalker-monk-basics",
+    "holy-paladin-basics",
+    "affliction-warlock-basics"
+  ],
+  "sampledPageCount": 5,
+  "sourceUrls": [
+    "https://www.wowhead.com/guide/classes/monk/brewmaster/rotation-cooldowns-pve-tank",
+    "https://www.wowhead.com/guide/classes/monk/windwalker/overview-pve-dps",
+    "https://www.wowhead.com/guide/classes/paladin/holy/basics",
+    "https://www.wowhead.com/guide/classes/warlock/affliction/basics"
+  ],
+  "issueFamily": "Context-free cooldown fragments cause awkward French agreement in full prose",
+  "change": "Removed bare 'off cooldown' -> 'disponible' from fr player glossary; preserved unambiguous verb phrase in legacy data; extended cross-role source-only regression fixtures.",
+  "newManualSentenceOverrides": 0,
+  "extensionChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "novelTranslationIssueRate": null,
+  "verificationRemaining": "Confirm French sentence quality for ready-state expressions in Chrome; CI rebuild and pack validation."
+}
