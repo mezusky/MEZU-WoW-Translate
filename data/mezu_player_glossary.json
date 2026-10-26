@@ -120,7 +120,12 @@
     "bonus rolls": "jets bonus",
     "Bonus Roll": "Jet bonus",
     "Bonus Rolls": "Jets bonus",
-    "Bonus Loot rolls": "jets de butin bonus"
+    "Bonus Loot rolls": "jets de butin bonus",
+    "bonus thread": "menace supplémentaire",
+    "thread transfer": "transfert de menace",
+    "thread transferred": "menace transférée",
+    "thread generation": "génération de menace",
+    "thread reduction": "réduction de menace"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
