@@ -995,6 +995,18 @@
     {
       "id": "affliction-warlock-basics",
       "url": "https://www.wowhead.com/guide/classes/warlock/affliction/basics"
+    },
+    {
+      "id": "blood-death-knight-overview",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/overview-pve-tank"
+    },
+    {
+      "id": "demonology-warlock-consumables",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/enchants-gems-pve-dps"
+    },
+    {
+      "id": "survival-hunter-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/talent-builds-pve-dps"
     }
   ]
 }
