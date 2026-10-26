@@ -2301,6 +2301,7 @@
     "Join WoW: Forever Podcast host Countdown To Classic and special guest Meeix as they sit down with Senior Game Designer Josh “Aggrend” Greenfield, Associate Production Director Clay Stone, Lead Software Engineer Ana Resendez, and Lead Encounter Designer Michael Nuthals for a special episode.": "Retrouvez Countdown To Classic, animateur du podcast WoW: Forever et son invitée spéciale Meeix dans leur discussion avec Josh « Aggrend » Greenfield, concepteur de jeu senior, Clay Stone, directeur de production associé, Ana Resendez, responsable ingénierie logicielle et Michael Nuthals, concepteur principal des rencontres.",
     "Join WoW: Forever Podcast host Countdown To Classic and special guests Savix and Tips Out as they sit down with Senior Game Designer Josh “Aggrend” Greenfield and Lead Designer Tim Jones as they dive into Player-vs-Player (PvP) in World of Warcraft: Forever.": "Countdown To Classic, qui anime le podcast WoW: Forever, reçoit Savix et Tips Out, ainsi que Josh « Aggrend » Greenfield, concepteur de jeu senior, et Tim Jones, concepteur en chef. Au menu : le JcJ dans World of Warcraft: Forever.",
     "Join in WoW: Midnight’s Talebound Demo on October 30": "Participez à la démo des Entrelacs de l’histoire dans Midnight le 30 octobre",
+    "Join in the Talebound Demo on October 30": "Participez à la démo des Entrelacs de l’histoire le 30 octobre",
     "Join the Horde and fight to build a world where their people can live free.": "Rejoignez la Horde pour construire un monde où l’on puisse vivre libre.",
     "Join them for some fun Housing giveaways to help celebrate this amazing milestone!": "Rejoignez-les pour participer à des concours amusants autour du système de logis et célébrer ensemble cette étape exceptionnelle !",
     "Journey deeper into Azeroth, where familiar places hold new challenges and stories waiting to be discovered.": "Aventurez-vous au cœur d’Azeroth, où des lieux familiers vous réservent encore des défis et des histoires à découvrir.",
@@ -4496,7 +4497,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4030,
+  "pair_count": 4031,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -8530,7 +8531,8 @@
     "What’s in the Demo": "24313107",
     "When: October 30–November 1": "24313107",
     "You’re a lone traveler, journeying down a darkened road where you’ll encounter a mysterious storyteller who pulls you into a world of his own creation.": "24313107",
-    "You’re a lone traveler, journeying down a darkened road where you’ll encounter a mysterious storyteller who pulls you into a world of his own creation. This is the very beginning of your adventure in Quillgrave.": "24313107"
+    "You’re a lone traveler, journeying down a darkened road where you’ll encounter a mysterious storyteller who pulls you into a world of his own creation. This is the very beginning of your adventure in Quillgrave.": "24313107",
+    "Join in the Talebound Demo on October 30": "24313107"
   },
   "targetLanguage": "fr-FR"
 }
