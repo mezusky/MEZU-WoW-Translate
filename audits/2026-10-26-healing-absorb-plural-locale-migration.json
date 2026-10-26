@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "issueClass": "Healing-absorb singular/plural variants absent from reusable locale-scoped jargon",
+  "fixLayer": "data-only French player glossary",
+  "fixCommits": [
+    "4f0216e4a07cf18fc5058b7ab2dba2ee145db7d3",
+    "9035ada8dba24981f0b39b3031434568ce1861ab"
+  ],
+  "regressionCommits": [
+    "b29ae2ccf1459474505169e5771b402fe6d1bc0a",
+    "618eb403800b31c3c2baa1580847fd032d140177"
+  ],
+  "rules": {
+    "migratedFromLegacy": [
+      "healing absorb"
+    ],
+    "added": [
+      "healing absorbs",
+      "heal absorbs"
+    ],
+    "removedLegacyDuplicates": 1
+  },
+  "independentSourceEvidence": [
+    {
+      "id": "restoration-shaman-raid",
+      "pattern": "healing absorb"
+    },
+    {
+      "id": "restoration-druid-raid",
+      "pattern": "healing absorb"
+    },
+    {
+      "id": "mistweaver-monk-raid",
+      "pattern": "heal absorb"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/tier-lists/healer-rankings-raids",
+      "patterns": [
+        "healing absorbs",
+        "heal absorbs"
+      ]
+    }
+  ],
+  "newCorpusPages": [
+    "holy-priest-gear",
+    "preservation-evoker-talent-builds",
+    "holy-paladin-abilities"
+  ],
+  "corpusPageCountAfter": 301,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "novelTranslationIssueRate": null,
+  "buildValidationStatus": "not yet confirmed for these commits",
+  "caveats": [
+    "Direct live Wowhead HTML challenged by JavaScript; indexed English source inspected instead.",
+    "Regression tests check locale-data contract and short source evidence, not Chrome Translator API output.",
+    "Do not infer a declining novel-issue rate from corpus growth alone."
+  ]
+}
