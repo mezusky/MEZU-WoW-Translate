@@ -983,6 +983,18 @@
     {
       "id": "protection-paladin-consumables",
       "url": "https://www.wowhead.com/guide/classes/paladin/protection/enchants-gems-pve-tank"
+    },
+    {
+      "id": "windwalker-monk-basics",
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/basics"
+    },
+    {
+      "id": "holy-paladin-basics",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/basics"
+    },
+    {
+      "id": "affliction-warlock-basics",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/basics"
     }
   ]
 }
