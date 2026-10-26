@@ -82,6 +82,35 @@ class HealerHotGlossaryTests(unittest.TestCase):
         # Bare wording can be verbal prose ("heal over time"), not a noun.
         self.assertNotIn("heal over time", jargon)
 
+    def test_parenthesized_hot_variants_across_independent_healers(self):
+        # Indexed 2026-10-26 Wowhead EN: Holy Priest overview and Restoration
+        # Druid overview; source-only assertions, NOT rendered Chrome output.
+        jargon = select_jargon(GLOSSARY, "en-US", "fr-FR")
+        fixtures = {
+            "holy-priest-overview": (
+                "All these healing effects also place a Healing over Time (HoT) effect",
+                "Healing over Time (HoT) effect",
+                "effet de soin sur la durée (HoT)",
+            ),
+            "restoration-druid-overview": (
+                "Can concentrate Heal over Time effects (HoTs) on a single ally",
+                "Heal over Time effects (HoTs)",
+                "effets de soin sur la durée (HoTs)",
+            ),
+        }
+        corpus = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(
+            encoding="utf-8"))
+        ids = {page["id"] for page in corpus["pages"]}
+        for guide, (excerpt, phrase, expected) in fixtures.items():
+            with self.subTest(guide=guide):
+                self.assertIn(guide, ids)
+                self.assertIn(phrase, excerpt)
+                self.assertEqual(jargon[phrase], expected)
+        self.assertEqual(jargon["healing-over-time effects (HoTs)"],
+                         "effets de soin sur la durée (HoTs)")
+        # Bare verbal wording has a different syntax and must stay contextual.
+        self.assertNotIn("healing over time", jargon)
+
     def test_glossary_is_not_available_to_other_translation_directions(self):
         self.assertEqual(select_jargon(GLOSSARY, "fr-FR", "fr-CA"), {})
         for source, target in (("de-DE", "fr-FR"), ("en-US", "de-DE"),
