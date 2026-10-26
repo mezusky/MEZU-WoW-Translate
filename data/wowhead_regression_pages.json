@@ -1031,6 +1031,18 @@
     {
       "id": "restoration-shaman-leveling",
       "url": "https://www.wowhead.com/guide/classes/shaman/restoration/healer-leveling-tips"
+    },
+    {
+      "id": "feral-druid-stats",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/stat-priority-pve-dps"
+    },
+    {
+      "id": "havoc-demon-hunter-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "marksmanship-hunter-raid",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/midnight-season-2-raid-tips"
     }
   ]
 }
