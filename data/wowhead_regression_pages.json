@@ -1019,6 +1019,18 @@
     {
       "id": "outlaw-rogue-leveling",
       "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/dps-leveling-tips"
+    },
+    {
+      "id": "guardian-druid-leveling",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/tank-leveling-tips"
+    },
+    {
+      "id": "frost-mage-leveling",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/dps-leveling-tips"
+    },
+    {
+      "id": "restoration-shaman-leveling",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/healer-leveling-tips"
     }
   ]
 }
