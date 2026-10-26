@@ -10,6 +10,7 @@ from pathlib import Path
 from html_block_extractor import extract_readable_blocks
 from guide_audit_boundaries import trim_guide_footer
 from wowhead_source_status import classify_html_source, classify_fetch_error
+from source_language_evidence import detect_source_language
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -34,8 +35,14 @@ pack = load_json(DATA / "datapack.json")
 exact = pack.get("exact", {}) or {}
 phrase_memory = pack.get("phrase_memory", {}) or {}
 jargon = pack.get("jargon", {}) or {}
+source_language = cfg.get("sourceLanguage", pack.get("sourceLanguage", "en"))
+target_language = cfg.get("targetLanguage", pack.get("targetLanguage", "fr"))
+language_profiles = load_json(DATA / "audit_language_signals.json")["profiles"]
 
-report = {"schema": 2, "auditMethod": "source-only; browser translation not verified", "pages": []}
+report = {"schema": 2, "auditMethod": "source-only; browser translation not verified",
+          "expectedSourceLanguage": source_language, "targetLanguage": target_language,
+          "languageEvidenceMethod": "conservative prose stopword evidence; unknown is not a failure",
+          "pages": []}
 
 for page in cfg.get("pages", []):
     url = page["url"]
@@ -49,6 +56,16 @@ for page in cfg.get("pages", []):
             report["pages"].append(row)
             continue
         parsed_blocks = trim_guide_footer(extract_readable_blocks(raw))
+        evidence = detect_source_language(parsed_blocks, language_profiles)
+        row["sourceLanguageEvidence"] = evidence
+        detected = evidence["detectedLanguage"]
+        if detected and detected.split("-")[0] != source_language.split("-")[0]:
+            row["sourceStatus"] = "language_mismatch"
+            row["accessNote"] = ("Prose appears to be " + detected +
+                                 ", not expected " + source_language +
+                                 "; not scored as a translation failure")
+            report["pages"].append(row)
+            continue
         seen = set()
         blocks = []
         for tag, value in parsed_blocks:
