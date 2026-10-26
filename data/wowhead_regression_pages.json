@@ -1071,6 +1071,18 @@
     {
       "id": "marksmanship-hunter-abilities",
       "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/abilities-talents-pve-dps"
+    },
+    {
+      "id": "enhancement-shaman-gear",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/bis-gear"
+    },
+    {
+      "id": "arcane-mage-overview",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/overview-pve-dps"
+    },
+    {
+      "id": "unholy-death-knight-basics",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/basics"
     }
   ]
 }
