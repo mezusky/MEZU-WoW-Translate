@@ -1007,6 +1007,18 @@
     {
       "id": "survival-hunter-talent-builds",
       "url": "https://www.wowhead.com/guide/classes/hunter/survival/talent-builds-pve-dps"
+    },
+    {
+      "id": "preservation-evoker-leveling",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/healer-leveling-tips"
+    },
+    {
+      "id": "holy-priest-leveling",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/healer-leveling-tips"
+    },
+    {
+      "id": "outlaw-rogue-leveling",
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/dps-leveling-tips"
     }
   ]
 }
