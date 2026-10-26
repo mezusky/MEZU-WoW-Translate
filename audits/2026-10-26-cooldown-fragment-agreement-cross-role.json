@@ -6,11 +6,10 @@
   "sampledPageIds": [
     "brewmaster-monk-rotation",
     "windwalker-monk-overview",
-    "windwalker-monk-basics",
     "holy-paladin-basics",
     "affliction-warlock-basics"
   ],
-  "sampledPageCount": 5,
+  "sampledPageCount": 4,
   "sourceUrls": [
     "https://www.wowhead.com/guide/classes/monk/brewmaster/rotation-cooldowns-pve-tank",
     "https://www.wowhead.com/guide/classes/monk/windwalker/overview-pve-dps",
