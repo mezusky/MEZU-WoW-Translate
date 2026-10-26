@@ -126,7 +126,9 @@
     "thread transferred": "menace transférée",
     "thread generation": "génération de menace",
     "thread reduction": "réduction de menace",
-    "priority target damage": "dégâts sur la cible prioritaire"
+    "priority target damage": "dégâts sur la cible prioritaire",
+    "absorb shield": "bouclier d’absorption",
+    "absorb shields": "boucliers d’absorption"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
