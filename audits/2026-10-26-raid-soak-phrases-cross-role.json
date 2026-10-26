@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "auditMethod": "Live English Wowhead pages via assistant web index; no Chrome Translator API replay",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sampledPageIds": [
+    "assassination-rogue-raid",
+    "devastation-evoker-raid",
+    "holy-priest-raid",
+    "restoration-druid-mythic-plus",
+    "assassination-rogue-mythic-plus"
+  ],
+  "newCorpusPageCount": 3,
+  "corpusPageCountAfter": 282,
+  "issueClass": "Raid soak noun phrases lack explicit French player-jargon coverage",
+  "sourceEvidence": [
+    {
+      "guide": "assassination-rogue-raid",
+      "excerpt": "The other boss has a soak mechanic"
+    },
+    {
+      "guide": "devastation-evoker-raid",
+      "excerpt": "Mighty Thud creates multiple group soaks"
+    },
+    {
+      "guide": "holy-priest-raid",
+      "excerpt": "each soak of the orbs will pulse the raid for damage"
+    }
+  ],
+  "fixLayer": "Locale-scoped data-only MEZU player glossary; no browser engine changes",
+  "newReusableTermFamiliesObserved": 1,
+  "newReusableEntries": 4,
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "caveats": [
+    "English source evidence is not proof of actual Chrome Translator API output.",
+    "Standalone soak/soaking deliberately remain contextual; group-soak and soak-mechanic noun phrases are safe.",
+    "Direct Wowhead access may be JavaScript challenged; do not run live Wowhead fetches on GitHub Actions.",
+    "Source author mistakes, outdated headings and mixed-localized spell links are not automatically MEZU translation failures."
+  ]
+}
