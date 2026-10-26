@@ -833,6 +833,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Cross-class locale-scoped glossary and tests committed; no browser-rendered verification or measured novel issue rate."
+    },
+    {
+      "date": "2026-10-26",
+      "sourceAccess": "Direct Wowhead HTML challenged by JavaScript; indexed English source inspected via assistant web (no GitHub runner scraping).",
+      "sampledPageIds": [
+        "protection-warrior-overview",
+        "brewmaster-monk-rotation",
+        "guardian-druid-overview",
+        "guardian-druid-rotation",
+        "protection-paladin-rotation",
+        "guardian-druid-stats",
+        "augmentation-evoker-raid"
+      ],
+      "sampledPageCount": 7,
+      "sourceCorpusCount": 292,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "tank damage intake / damage spike(s) -> dégâts subis / pic(s) de dégâts"
+      ],
+      "newStructuralRiskFamiliesObserved": 0,
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "newPageInterventionProxy": "1 shared phrase family on 3 newly added pages, not a measured translation error rate; other 4 guides are cross-class evidence.",
+      "crossPageSourceValidation": "Warrior Protection, Monk Brewmaster, Druid Guardian and Paladin Protection English indexed guides share damage-intake vocabulary; sampled Guardian stats and Augmentation raid for broader sections. Offline locale-bound tests added; no Chrome replay.",
+      "crossPageFixStatus": "Locale-scoped glossary, regression pages and tests committed. Do not infer a clean-state cycle until browser output and novel issue rate are measured."
     }
   ]
 }
