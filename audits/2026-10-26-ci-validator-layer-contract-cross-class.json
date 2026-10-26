@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "issueClass": "CI Data Pack validation wrongly required locale-scoped priority damage jargon in the exact layer",
+  "rootCause": "Validator's legacy required-exact dictionary still contained priority damage after migration to data/mezu_player_glossary.json; pack correctly publishes it under jargon.",
+  "fixLayer": "Validator code contract, not a duplicated data override",
+  "fixCommit": "cb897f5ab0d0179ba176cc1049cd70ab8335c96f",
+  "verification": {
+    "failedWorkflow": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40373414869",
+    "repairedWorkflow": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40379209231",
+    "repairedWorkflowConclusion": "success",
+    "dataPackGeneratedByCI": true
+  },
+  "sampledPages": [
+    {
+      "id": "enhancement-shaman-mythic-plus",
+      "sourceEvidence": "priority damage lost by Crash Lightning splitting between targets",
+      "existingGlossaryRuleReused": true
+    },
+    {
+      "id": "windwalker-monk-consumables",
+      "sourceEvidence": "Enchant Weapon - Rite of the Hash'ey",
+      "officialEntityIDMappingPreferred": true
+    },
+    {
+      "id": "fury-warrior-consumables",
+      "sourceEvidence": "Potion of Recklessness",
+      "officialEntityIDMappingPreferred": true
+    }
+  ],
+  "newCorpusPages": [
+    "enhancement-shaman-mythic-plus",
+    "windwalker-monk-consumables",
+    "fury-warrior-consumables"
+  ],
+  "corpusPageCountAfter": 298,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "novelTranslationIssueRate": null,
+  "caveats": [
+    "Direct Wowhead HTML requires JavaScript; English source checked via indexed results.",
+    "No claim of browser Translator API or reconstructed DOM validation.",
+    "No new glossary entry needed for the sampled priority damage expression.",
+    "CI rebuild for subsequent corpus/test commits must be checked separately."
+  ]
+}
