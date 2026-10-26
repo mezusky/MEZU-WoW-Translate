@@ -39,7 +39,7 @@ class ExternalCooldownGlossaryTests(unittest.TestCase):
         evidence = {
             "mop-blood-death-knight-rotation": "External Raid Cooldowns",
             "brewmaster-monk-faq": "The most common external cooldowns you can call for",
-            "mop-holy-priest-overview": "Great external single-target cooldowns",
+            "healing-advanced-guide": "External cooldowns are abilities that increase the healing received",
         }
         terms = select_jargon(GLOSSARY, "en", "fr")
         for guide, excerpt in evidence.items():
