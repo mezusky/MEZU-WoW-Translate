@@ -60,16 +60,20 @@ required = {
     "Rogues": "Voleurs",
     "Demon Hunter": "Chasseur de démons",
     "Demon Hunters": "Chasseurs de démons",
-    "priority damage": "dégâts prio",
     "priority burst damage": "burst prio",
     "single target": "monocible",
     "Debuff-based defensives (Fiery Brand and Frailty) still require targets to be cast.": "Les défensifs basés sur des debuffs (Marque enflammée et Fragilité) nécessitent toujours une cible.",
     "Vengeance Demon Hunter gearing is much simpler than one might expect.": "L’équipement du Chasseur de démons Vengeance est beaucoup plus simple qu’on pourrait le penser.",
 }
-for en, expected in required.items():
-    actual = exact.get(en)
-    if actual != expected:
-        errors.append(f"required override mismatch: {en!r}: {actual!r} != {expected!r}")
+# These legacy exact overrides are specific to the published EN->FR pack.
+# Locale-scoped player jargon is checked separately against pack["jargon"]
+# above, so moving a term from manual exact to the player glossary does not
+# break validation or require duplicating it in two data layers.
+if (source_language, target_language) == ("en", "fr"):
+    for en, expected in required.items():
+        actual = exact.get(en)
+        if actual != expected:
+            errors.append(f"required exact mismatch: {en!r}: {actual!r} != {expected!r}")
 
 entity_count = sum(len(v) for v in entities.values() if isinstance(v, dict))
 if entity_count < 10000:
