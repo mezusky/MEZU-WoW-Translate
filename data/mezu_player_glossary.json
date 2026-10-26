@@ -125,7 +125,8 @@
     "thread transfer": "transfert de menace",
     "thread transferred": "menace transférée",
     "thread generation": "génération de menace",
-    "thread reduction": "réduction de menace"
+    "thread reduction": "réduction de menace",
+    "priority target damage": "dégâts sur la cible prioritaire"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
