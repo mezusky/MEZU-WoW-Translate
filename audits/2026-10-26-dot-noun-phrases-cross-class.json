@@ -1,0 +1,36 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "auditMethod": "English Wowhead guide excerpts indexed by web search; direct page fetches returned JavaScript verification; browser Translator API not reproduced",
+  "sampledPageIds": [
+    "feral-druid-rotation",
+    "assassination-rogue-leveling",
+    "shadow-priest-abilities",
+    "marksmanship-hunter-abilities",
+    "assassination-rogue-rotation",
+    "mistweaver-monk-raid",
+    "shadow-priest-basics"
+  ],
+  "newCorpusPageCount": 3,
+  "corpusPageCountAfter": 268,
+  "newReusableTermFamiliesObserved": 1,
+  "termFamilies": [
+    "damage over time effect(s), hyphenated effect(s), and Damage over Time (DoT) effect"
+  ],
+  "newReusableGlossaryEntries": 5,
+  "newManualSentenceOverrides": 0,
+  "translationPair": {
+    "sourceLanguage": "en",
+    "targetLanguage": "fr"
+  },
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "verification": "source-only cross-class phrase fixtures; GitHub Actions rebuild pending at commit time",
+  "caveats": [
+    "No assertion that browser-local Translator API outputs are correct",
+    "No claim that adding one phrase family proves declining novel error rate",
+    "Guide sources may differ from indexed English snippets",
+    "Shadow Priest basics has an upstream repeated 'time' typo; not patched as a MEZU issue"
+  ]
+}
