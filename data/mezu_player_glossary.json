@@ -112,7 +112,10 @@
     "priority-target damage": "dégâts sur la cible prioritaire",
     "damage intake": "dégâts subis",
     "damage spike": "pic de dégâts",
-    "damage spikes": "pics de dégâts"
+    "damage spikes": "pics de dégâts",
+    "healing absorb": "absorption de soins",
+    "healing absorbs": "absorptions de soins",
+    "heal absorbs": "absorptions de soins"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
