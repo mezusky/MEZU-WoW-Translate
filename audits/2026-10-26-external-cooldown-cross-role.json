@@ -1,0 +1,49 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web indexed English Wowhead sources; direct HTML JavaScript-challenged; no Chrome Translator API replay",
+  "issueClass": "External defensive cooldown terminology across tanks and healers",
+  "sourceEvidence": [
+    {
+      "guide": "mop-classic-blood-death-knight-rotation",
+      "excerpt": "External Raid Cooldowns",
+      "role": "tank",
+      "era": "MoP Classic"
+    },
+    {
+      "guide": "brewmaster-monk-faq",
+      "excerpt": "The most common external cooldowns you can call for",
+      "role": "tank",
+      "era": "Dragonflight"
+    },
+    {
+      "guide": "healing-advanced-guide",
+      "excerpt": "External cooldowns are abilities that increase the healing received",
+      "role": "healer",
+      "era": "historical"
+    }
+  ],
+  "currentRetailRegressionAdditions": [
+    "holy-paladin-overview",
+    "guardian-druid-overview",
+    "preservation-evoker-overview",
+    "mistweaver-monk-talent-builds"
+  ],
+  "newCorpusPageCount": 4,
+  "corpusPageCountAfter": 286,
+  "fixLayer": "Data-only locale-scoped player jargon",
+  "newReusableEntries": 3,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "caveats": [
+    "Cross-era examples establish terminology reuse but are intentionally not added to the current retail regression corpus.",
+    "Official spell/item/talent names still require canonical ID-based locale resolution.",
+    "Glossary tests do not prove browser-local Translator API output or DOM reconstruction correctness.",
+    "Wowhead HTML requires JavaScript verification; GitHub Actions must not fetch live Wowhead pages."
+  ]
+}
