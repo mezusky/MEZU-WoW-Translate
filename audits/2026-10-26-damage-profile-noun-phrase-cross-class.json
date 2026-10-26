@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "date": "2026-10-26",
+  "auditMethod": "English Wowhead guide excerpts from assistant web index; direct guide HTML returned 403/JavaScript challenge; no browser Translator API replay",
+  "sampledPageIds": [
+    "havoc-demon-hunter-overview",
+    "assassination-rogue-raid",
+    "holy-priest-consumables",
+    "devastation-evoker-overview",
+    "assassination-rogue-talent-builds"
+  ],
+  "newCorpusPageCount": 3,
+  "corpusPageCountAfter": 279,
+  "newReusableTermFamiliesObserved": 1,
+  "termFamilies": [
+    "damage profile(s) -> profil(s) de dégâts"
+  ],
+  "issueClass": "Cross-class DPS damage-profile noun phrase absent from locale-scoped player glossary",
+  "fixLayer": "Data-only en->fr MEZU player glossary; no extension code or manual sentence overrides",
+  "sourceEvidence": [
+    {
+      "guide": "devastation-evoker-overview",
+      "excerpt": "a bit of a different damage profile"
+    },
+    {
+      "guide": "havoc-demon-hunter-overview",
+      "excerpt": "Throughput & Damage Profiles"
+    },
+    {
+      "guide": "assassination-rogue-raid",
+      "excerpt": "a good damage profile for Assassination"
+    }
+  ],
+  "newAutomatedTests": 2,
+  "newManualSentenceOverrides": 0,
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "caveats": [
+    "Glossary coverage is not proof of final Chrome Translator API output or DOM reconstruction.",
+    "Wowhead author content may include stale expansion references; these are not MEZU translation regressions.",
+    "Do not translate the standalone word 'profile' without context."
+  ]
+}
