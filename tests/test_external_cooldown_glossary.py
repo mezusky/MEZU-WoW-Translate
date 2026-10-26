@@ -33,18 +33,24 @@ class ExternalCooldownGlossaryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             select_jargon(GLOSSARY, "en-US", "it-IT")
 
-    def test_independent_tank_and_healer_sources(self):
-        ids = {page["id"] for page in PAGES}
+    def test_independent_tank_and_healer_source_phrases(self):
+        # Historical cross-era English source excerpts validate the concept.
+        # Keep the main regression corpus on current Midnight retail pages.
         evidence = {
             "mop-blood-death-knight-rotation": "External Raid Cooldowns",
             "brewmaster-monk-faq": "The most common external cooldowns you can call for",
             "mop-holy-priest-overview": "Great external single-target cooldowns",
         }
+        terms = select_jargon(GLOSSARY, "en", "fr")
         for guide, excerpt in evidence.items():
             with self.subTest(guide=guide):
+                self.assertTrue(any(phrase in excerpt.casefold()
+                                    for phrase in terms if phrase.startswith("external")))
+        ids = {page["id"] for page in PAGES}
+        for guide in ("guardian-druid-overview", "preservation-evoker-overview",
+                      "mistweaver-monk-talent-builds", "holy-paladin-overview"):
+            with self.subTest(current_guide=guide):
                 self.assertIn(guide, ids)
-                self.assertIn("external", excerpt.casefold())
-        self.assertIn("holy-paladin-overview", ids)
 
 
 if __name__ == "__main__":
