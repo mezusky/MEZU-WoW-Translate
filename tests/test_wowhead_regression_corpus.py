@@ -1,5 +1,6 @@
 """Regression corpus structure and cross-role/section representation (offline)."""
 import json
+import re
 import unittest
 from pathlib import Path
 from urllib.parse import urlparse
@@ -19,8 +20,29 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
                 parsed = urlparse(page["url"])
                 self.assertEqual(parsed.scheme, "https")
                 self.assertEqual(parsed.netloc, "www.wowhead.com")
-                self.assertIn("/guide/classes/", parsed.path)
+                # A localized /fr/guide/... URL may still contain English prose
+                # but localizes spell links, so it is NOT an English-source URL.
+                # The English PTR preview uses /ptr-2/guide/... instead.
+                self.assertRegex(parsed.path,
+                                 r"^/(?:ptr(?:-\\d+)?/)?guide/classes/[a-z-]+/[a-z-]+/[a-z0-9-]+$")
                 self.assertFalse(parsed.query or parsed.fragment)
+
+    def test_localized_url_is_not_an_english_source(self):
+        pattern = r"^/(?:ptr(?:-\\d+)?/)?guide/classes/[a-z-]+/[a-z-]+/[a-z0-9-]+$"
+        for locale in ("fr", "de", "it", "pt", "cn"):
+            with self.subTest(locale=locale):
+                self.assertIsNone(re.fullmatch(pattern,
+                    f"/{locale}/guide/classes/priest/discipline/rotation-cooldowns-pve-healer"))
+        self.assertIsNotNone(re.fullmatch(pattern,
+            "/ptr-2/guide/classes/shaman/enhancement/midnight-season-2-raid-tips"))
+
+    def test_new_independent_guides_cover_id_names_and_widgets(self):
+        required = {
+            "blood-death-knight-overview",  # tank; Runic Power and linked spells
+            "demonology-warlock-consumables",  # DPS; item/enchant names
+            "survival-hunter-talent-builds",  # DPS; talent copy/import widgets
+        }
+        self.assertTrue(required.issubset({page["id"] for page in PAGES}))
 
     def test_cross_class_and_section_coverage(self):
         paths = [urlparse(p["url"]).path.split("/guide/classes/", 1)[1].split("/")
