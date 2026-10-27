@@ -69,10 +69,12 @@ for page in cfg.get("pages", []):
         blocks = []
         for tag, value in parsed_blocks:
             text = WS.sub(" ", value).strip()
-            if len(text) < 8 or len(text) > 1200:
+            if len(text) < 8:
                 continue
+            # Score length after stripping opaque widgets, otherwise a long
+            # import payload can discard otherwise readable adjacent prose.
             clean, source_signal = audit_source_prose(text, source_language, language_profiles)
-            if len(clean) < 8 or clean in seen:
+            if len(clean) < 8 or len(clean) > 1200 or clean in seen:
                 continue
             # English WoW labels remain useful even without prose stopwords.
             # Other source locales rely on their data-only language profile.
