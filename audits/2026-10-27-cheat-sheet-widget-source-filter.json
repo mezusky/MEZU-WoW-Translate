@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web inspected indexed live English Wowhead guides; source-only data and audit-filter checks. No Chrome Translator API replay.",
+  "sampledPageIds": [
+    "affliction-warlock-cheat-sheet",
+    "arcane-mage-cheat-sheet",
+    "balance-druid-cheat-sheet",
+    "restoration-shaman-rotation",
+    "mistweaver-monk-rotation",
+    "protection-paladin-rotation"
+  ],
+  "newCorpusPages": [
+    "affliction-warlock-cheat-sheet",
+    "arcane-mage-cheat-sheet",
+    "balance-druid-cheat-sheet"
+  ],
+  "sourceEvidenceUrls": [
+    "https://www.wowhead.com/guide/classes/warlock/affliction/cheat-sheet",
+    "https://www.wowhead.com/guide/classes/mage/arcane/cheat-sheet",
+    "https://www.wowhead.com/guide/classes/druid/balance/cheat-sheet",
+    "https://www.wowhead.com/guide/classes/shaman/restoration/rotation-cooldowns-pve-healer",
+    "https://www.wowhead.com/guide/classes/monk/mistweaver/rotation-cooldowns-pve-healer",
+    "https://www.wowhead.com/guide/classes/paladin/protection/rotation-cooldowns-pve-tank"
+  ],
+  "reusableIssueFamilies": [
+    {
+      "name": "Serialized stat-guide and stats= calculator payloads can be mistaken for prose in source-only audits",
+      "evidencePages": [
+        "affliction-warlock-cheat-sheet",
+        "arcane-mage-cheat-sheet",
+        "balance-druid-cheat-sheet"
+      ],
+      "fixLayer": "local offline source-audit engine",
+      "fix": "Strip key=value widget assignments before locale-profile prose scoring; preserve surrounding natural language and existing English WoW term fallback; no browser extension change."
+    }
+  ],
+  "sourceQualityWarnings": [
+    "Cheat sheets repeat calculator metadata and item IDs in search-indexed text. They are not translation sentences and must not inflate coverage/error metrics.",
+    "Wowhead locale-specific pages can still show English prose with localized spell names; not proof of MEZU output.",
+    "Browser-only Translator API selection, DOM widget behavior and actual novel translation error rate remain unverified."
+  ],
+  "newReusableTermFamiliesObserved": 0,
+  "newStructuralRiskFamiliesObserved": 1,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "GitHub Actions tests and Data Pack rebuild for new source changes",
+    "Real browser translation and DOM reconstruction on talent and stat widgets",
+    "Two consecutive held-out multi-class browser audits with measured novel issue rate"
+  ]
+}
