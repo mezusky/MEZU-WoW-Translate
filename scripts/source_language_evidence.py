@@ -25,6 +25,17 @@ EDIT_MODE_HEADER = re.compile(
 )
 EDIT_MODE_FRAME = re.compile(r"\b(?:UIParent|[A-Za-z][A-Za-z0-9]*Frame)\b")
 
+# Northern Sky Raid Tools reminders are structured encounter/timing records,
+# not prose. Seen in both Holy and Discipline Priest raid guides. Match
+# complete records rather than removing generic words like "time" or "Heroic".
+RAID_REMINDER_HEADER = re.compile(
+    r"(?<!\\w)EncounterID:\\d{3,8};Difficulty:[A-Za-z]+;Name:[^\\s;]{1,60}"
+)
+RAID_REMINDER_EVENT = re.compile(
+    r"(?<!\\w)time:\\d+(?:\\.\\d+)?;ph:\\d+(?:\\.\\d+)?;tag:\\d+;spellid:\\d+;"
+)
+
+
 
 def is_opaque_edit_mode_export(text):
     value = text.strip()
@@ -37,6 +48,7 @@ def clean_non_prose(text):
     """Remove generated widget assignments and opaque import payloads."""
     if is_opaque_edit_mode_export(text):
         return ""
+    text = RAID_REMINDER_EVENT.sub(" ", RAID_REMINDER_HEADER.sub(" ", text))
     return NON_PROSE_ASSIGNMENT.sub(" ", NON_PROSE_PLACEHOLDER.sub(" ",
                                      OPAQUE_IMPORT.sub(" ", text)))
 PROSE_TAGS = frozenset(("p", "li", "td", "th"))
