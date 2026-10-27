@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web-indexed English Wowhead guides; direct Wowhead HTML returns JavaScript challenge. Source-only lexical audit, not browser translation.",
+  "sampledPageIds": [
+    "fury-warrior-mythic-plus",
+    "havoc-demon-hunter-ui-macros",
+    "destruction-warlock-stats",
+    "frost-mage-cheat-sheet"
+  ],
+  "crossPageEvidence": [
+    {
+      "concept": "Abilities outside the global cooldown",
+      "pages": [
+        "enhancement-shaman-rotation",
+        "balance-druid-rotation",
+        "holy-priest-abilities"
+      ],
+      "finding": "Current Shaman rotation uses 'off the GCD' and 'off GCD'; Balance Druid opener widget uses 'Off-GCD'; Holy Priest talent descriptions use 'off-GCD'.",
+      "fix": "Five French-locale jargon variants, no generic 'cooldown' or 'GCD' replacement."
+    },
+    {
+      "concept": "Non-prose UI/talent payloads",
+      "pages": [
+        "havoc-demon-hunter-ui-macros",
+        "frost-mage-cheat-sheet"
+      ],
+      "finding": "English indexed guides include copy-button labels, talent export controls, repeated rank counters; these are browser-only preservation checks, not translated prose.",
+      "fix": "No unverified extension change."
+    },
+    {
+      "concept": "Stat comparison operators and source artifacts",
+      "pages": [
+        "destruction-warlock-stats",
+        "fury-warrior-mythic-plus"
+      ],
+      "finding": "Warlock stat priority uses Mastery>=Critical Strike; Fury Mythic+ indexed page includes VIABILITY_OVERVIEW placeholder and talent widget fragments. These should not be treated as confirmed translation errors.",
+      "fix": "No unsafe phrase override."
+    }
+  ],
+  "lexicalSimulation": {
+    "scope": "Data-layer exact jargon lookup only; not a sentence or Chrome DOM simulation.",
+    "positiveCases": {
+      "off-GCD": "hors GCD",
+      "Off-GCD": "Hors GCD",
+      "off-gcd": "hors GCD",
+      "off GCD": "hors GCD",
+      "off the GCD": "hors GCD"
+    },
+    "negativeControls": [
+      "off cooldown",
+      "on cooldown",
+      "GCD",
+      "off"
+    ]
+  },
+  "sourceCorpusCount": 409,
+  "newReusableJargonEntries": 5,
+  "newManualSentenceOverrides": 0,
+  "packagedExtensionModified": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "GitHub Actions unit tests and regenerated Data Pack",
+    "Verify off-GCD matching in running Chrome extension without replacing unrelated tokens",
+    "Preserve macro/import strings, talent widgets, stat comparison operators and DOM structure",
+    "Measure held-out translation errors over at least two consecutive cycles"
+  ],
+  "status": "Source-only cross-class lexical improvement; no verified clean translation cycle."
+}
