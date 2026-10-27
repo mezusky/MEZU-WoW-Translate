@@ -1110,6 +1110,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Local lexical matching checked on two independent tank source examples and forum-thread negative control. GitHub Actions rebuild and browser DOM/Translator API validation pending."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant web indexed English Wowhead guide sources; direct URLs challenged by JavaScript. No Chrome Translator API.",
+      "sampledPageIds": [
+        "blood-death-knight-basics",
+        "brewmaster-monk-talents",
+        "protection-paladin-basics",
+        "guardian-druid-ui-macros",
+        "shadow-priest-talent-builds",
+        "survival-hunter-cheat-sheet"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 352,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Whitespace-separated full UI layout exports in Guardian Druid UI guide are not covered by the existing source-only CDM base64 import filter; browser DOM preservation unverified."
+      ],
+      "newPageInterventionProxy": "Four new tank/DPS pages added across basics, UI/macros, talents and cheat sheets; zero new phrase overrides. Shared threat mapping was already correct, but stale test expectations blocked CI. Source-only proxy, not a measured browser error rate.",
+      "sharedEngineFix": "No engine change; corrected obsolete cross-class tests to require actual threat terms, reject five removed thread typo keys, and use independently indexed tank source examples. CI test phase recovered; full latest build pending.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Regression test fixed and corpus expanded. Full Data Pack rebuild, UI layout import protection and browser translation/DOM checks remain pending; no clean-cycle claim."
     }
   ]
 }
