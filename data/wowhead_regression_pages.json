@@ -1407,6 +1407,26 @@
     {
       "id": "survival-hunter-cheat-sheet",
       "url": "https://www.wowhead.com/guide/classes/hunter/survival/cheat-sheet"
+    },
+    {
+      "id": "restoration-druid-basics",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/basics"
+    },
+    {
+      "id": "preservation-evoker-basics",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/basics"
+    },
+    {
+      "id": "frost-mage-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/addons-macro-ui-imports"
+    },
+    {
+      "id": "beast-mastery-hunter-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/addons-macro-ui-imports"
+    },
+    {
+      "id": "outlaw-rogue-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/cheat-sheet"
     }
   ]
 }
