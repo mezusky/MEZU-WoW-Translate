@@ -164,6 +164,21 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
             with self.subTest(page=page_id):
                 self.assertTrue(pages[page_id].endswith("/addons-macro-ui-imports"))
 
+    def test_heldout_ui_imports_and_prose_across_unrelated_roles(self):
+        # Indexed English Wowhead sources, not translated browser DOM.
+        pages = {p["id"]: p["url"] for p in PAGES}
+        expected = {
+            "augmentation-evoker-ui-macros": "/addons-macro-ui-imports",
+            "holy-priest-ui-macros": "/addons-macro-ui-imports",
+            "devourer-demon-hunter-ui-macros": "/addons-macro-ui-imports",
+            "arms-warrior-basics": "/basics",
+            "subtlety-rogue-talent-builds": "/talent-builds-pve-dps",
+        }
+        for page_id, suffix in expected.items():
+            with self.subTest(page=page_id):
+                self.assertIn(page_id, pages)
+                self.assertTrue(pages[page_id].endswith(suffix))
+
     def test_unholy_and_blood_dk_stats_are_independent_samples(self):
         # Identical numerical threshold sections must remain comparable
         # across two specs; no browser translation claim.
