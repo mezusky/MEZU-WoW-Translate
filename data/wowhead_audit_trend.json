@@ -1055,7 +1055,7 @@
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
-      "crossPageFixStatus": "Generator and regression changes committed; final CI, Chrome Translator API, macro/DOM preservation and two measured clean cycles pending."
+      "crossPageFixStatus": "Generator and locale-neutral regression tests passed GitHub Actions; Data Pack e12e2bd928094869ea37 rebuilt and validated. Chrome Translator API, macro/DOM preservation and two measured clean cycles remain pending."
     }
   ]
 }
