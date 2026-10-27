@@ -14,6 +14,27 @@ NON_PROSE_ASSIGNMENT = re.compile(r"\b[a-z][a-z0-9-]{1,40}=[^\s\]\[]+")
 PROSE_TAGS = frozenset(("p", "li", "td", "th"))
 
 
+def audit_source_prose(text, source_language, profiles):
+    """Clean widget payloads and check prose in the configured source locale.
+
+    This is a source-only audit filter, not a translation-quality classifier.
+    A language-specific profile can be added as data without changing code.
+    Regional locales use their exact profile, or the base-language profile.
+    """
+    if not isinstance(text, str):
+        return "", False
+    locale = source_language.strip().replace("_", "-").casefold()
+    words = profiles.get(locale, profiles.get(locale.split("-")[0]))
+    if not isinstance(words, list) or not words:
+        raise ValueError("Missing source-language audit profile: " + locale)
+    clean = NON_PROSE_ASSIGNMENT.sub(" ", NON_PROSE_PLACEHOLDER.sub(" ", text))
+    clean = " ".join(clean.split()).strip()
+    tokens = set(TOKEN.findall(clean.casefold()))
+    return clean, bool(tokens & {word.casefold() for word in words})
+
+
+
+
 def detect_source_language(blocks, profiles, min_tokens=25, min_hits=7):
     """Infer a language only when prose strongly favors one configured profile.
 
