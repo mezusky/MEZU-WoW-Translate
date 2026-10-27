@@ -142,7 +142,15 @@
     "filler spell": "sort filler",
     "filler spells": "sorts filler",
     "soaker": "joueur chargé du soak",
-    "soakers": "joueurs chargés du soak"
+    "soakers": "joueurs chargés du soak",
+    "damage amp window": "fenêtre de dégâts amplifiés",
+    "damage amp windows": "fenêtres de dégâts amplifiés",
+    "damage amp phase": "phase de dégâts amplifiés",
+    "damage amplification window": "fenêtre de dégâts amplifiés",
+    "damage amplification windows": "fenêtres de dégâts amplifiés",
+    "drop-off damage": "dégâts dégressifs avec la distance",
+    "falloff damage": "dégâts dégressifs avec la distance",
+    "fall-off damage": "dégâts dégressifs avec la distance"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
