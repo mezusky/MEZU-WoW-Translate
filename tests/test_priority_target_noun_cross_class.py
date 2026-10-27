@@ -34,7 +34,7 @@ class PriorityTargetNounTests(unittest.TestCase):
         # Indexed English source: Fury says the Heart is the priority target;
         # Marksmanship describes a priority target being present.
         self.assertTrue({"fury-warrior-raid",
-                         "marksmanship-hunter-mythic-plus",
+                         "marksmanship-hunter-rotation",
                          "frost-mage-mythic-plus"}.issubset(PAGES))
 
 
