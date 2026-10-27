@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web indexed English Wowhead guide excerpts; direct live pages return JavaScript verification. Offline locale-scoped data checks; no Chrome Translator API.",
+  "sampledPageIds": [
+    "fury-warrior-raid",
+    "marksmanship-hunter-mythic-plus",
+    "frost-mage-mythic-plus"
+  ],
+  "reusableIssueFamilies": [
+    {
+      "name": "priority target as a noun, not priority-target damage",
+      "sourcePhrase": "priority target",
+      "previousLegacyTarget": "prio target",
+      "targetPhrase": "cible prioritaire",
+      "evidencePages": [
+        "fury-warrior-raid",
+        "marksmanship-hunter-mythic-plus"
+      ],
+      "distinctLongerPhrase": "priority target damage",
+      "longerPhraseTarget": "dégâts sur la cible prioritaire",
+      "fixLayer": "fr target-language player glossary",
+      "migratedLegacyRules": 2,
+      "newGlossaryRules": 1,
+      "guard": "Do not rewrite the bare words priority or target; preserve longer damage variants; non-French locale pairs are isolated."
+    }
+  ],
+  "crossPageValidation": "Fury Warrior raid describes a boss priority target; Marksmanship Hunter discusses a priority target being present. Frost Mage Mythic+ independently uses the longer damage expression. These are source evidence only.",
+  "sourceQualityWarnings": [
+    "Wowhead indexed English guides can contain author typos and missing season placeholders; not a reason to add exact sentence overrides."
+  ],
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "GitHub Actions test and Data Pack rebuild after the glossary migration",
+    "Chrome phrase precedence and linked spell names in real DOM",
+    "Cross-cycle quantitative translation issue rate"
+  ]
+}
