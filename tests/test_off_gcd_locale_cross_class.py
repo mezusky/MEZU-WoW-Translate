@@ -47,7 +47,7 @@ class OffGCDLocaleTests(unittest.TestCase):
     def test_heldout_classes_and_locale_isolation(self):
         for page_id in (
             "enhancement-shaman-rotation", "balance-druid-rotation",
-            "holy-priest-talents",
+            "holy-priest-abilities",
         ):
             with self.subTest(page=page_id):
                 self.assertIn(page_id, self.pages)
