@@ -50,7 +50,6 @@
   "browserTranslationErrorRate": null,
   "novelTranslationIssueRate": null,
   "remainingVerification": [
-    "GitHub Actions tests, rebuild and Data Pack validation after commits",
     "Chrome Translator API, macro code preservation and DOM/rich-text reconstruction",
     "Quantified novel issue rate on unrelated held-out pages over two consecutive cycles"
   ],
@@ -71,5 +70,16 @@
       "fr": "embellissements"
     }
   ],
-  "reusedJargonVerification": "Source phrase vs current fr player glossary only; not full translated DOM output."
+  "reusedJargonVerification": "Source phrase vs current fr player glossary only; not full translated DOM output.",
+  "ci": {
+    "status": "success",
+    "runUrl": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40462586239",
+    "newDatapackVersion": "e12e2bd928094869ea37",
+    "previousEntityCount": 24609,
+    "newEntityCount": 24697,
+    "previousExactCount": 22108,
+    "newExactCount": 22098,
+    "tests": "unittest discovery passed",
+    "dataPackValidation": "passed"
+  }
 }
