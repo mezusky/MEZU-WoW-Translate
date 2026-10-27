@@ -10,7 +10,7 @@ from pathlib import Path
 from html_block_extractor import extract_readable_blocks
 from guide_audit_boundaries import trim_guide_footer
 from wowhead_source_status import classify_html_source, classify_fetch_error
-from source_language_evidence import detect_source_language
+from source_language_evidence import detect_source_language, audit_source_prose
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -19,7 +19,6 @@ OUT = DATA / "wowhead_regression_report.json"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/154 Safari/537.36 MEZU-WoW-Translate"
 
 WS = re.compile(r"\s+")
-EN_SIGNAL = re.compile(r"\b(?:the|and|with|when|your|you|this|that|for|from|into|while|should|will|can|are|is|of|to)\b", re.I)
 WOW_SIGNAL = re.compile(r"\b(?:Paladin|Demon Hunter|Tank|Mythic\+|Raid|cooldown|GCD|Holy Power|Haste|Crit|Mastery|Versatility|BiS|Best in Slot|Raidbots|Great Vault|spender|generator|overcap|defensive|mitigation)\b", re.I)
 
 def fetch(url):
@@ -70,18 +69,25 @@ for page in cfg.get("pages", []):
         blocks = []
         for tag, value in parsed_blocks:
             text = WS.sub(" ", value).strip()
-            if len(text) < 8 or len(text) > 1200 or text in seen:
+            if len(text) < 8 or len(text) > 1200:
                 continue
-            seen.add(text)
-            if not EN_SIGNAL.search(text) and not WOW_SIGNAL.search(text):
+            clean, source_signal = audit_source_prose(text, source_language, language_profiles)
+            if len(clean) < 8 or clean in seen:
                 continue
-            covered = text in exact or text in phrase_memory
-            jargon_hits = [k for k in jargon.keys() if isinstance(k, str) and len(k) >= 3 and re.search(r"(?<!\w)" + re.escape(k) + r"(?!\w)", text, re.I)]
+            # English WoW labels remain useful even without prose stopwords.
+            # Other source locales rely on their data-only language profile.
+            wow_signal = (source_language.replace("_", "-").split("-")[0].casefold() == "en"
+                          and bool(WOW_SIGNAL.search(clean)))
+            if not source_signal and not wow_signal:
+                continue
+            seen.add(clean)
+            covered = clean in exact or clean in phrase_memory
+            jargon_hits = [k for k in jargon.keys() if isinstance(k, str) and len(k) >= 3 and re.search(r"(?<!\w)" + re.escape(k) + r"(?!\w)", clean, re.I)]
             blocks.append({
                 "tag": tag,
-                "text": text,
+                "text": clean,
                 "exact_override": covered,
-                "wow_signal": bool(WOW_SIGNAL.search(text)),
+                "wow_signal": wow_signal,
                 "jargon_hits": jargon_hits[:12]
             })
         row["blocks"] = [{k: v for k, v in b.items() if k != "text"} for b in blocks]
