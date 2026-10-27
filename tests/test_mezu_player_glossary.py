@@ -146,6 +146,19 @@ class PlayerGlossaryTests(unittest.TestCase):
             self.assertNotIn(phrase, manual.get("jargon", {}))
             self.assertNotIn(phrase, manual.get("exact", {}))
 
+    def test_simulation_jargon_is_locale_scoped_across_roles(self):
+        # Frost Mage stats, Discipline Priest stats and Enhancement Shaman
+        # consumables all use sim/simming; this is player jargon, not a
+        # Blizzard spell/entity name or a page-specific sentence override.
+        jargon = GLOSSARY["jargon"]
+        self.assertEqual(jargon["sim your character"], "sim votre personnage")
+        self.assertEqual(jargon["simming"], "sim")
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
+        for phrase in ("sim your character", "simming"):
+            with self.subTest(phrase=phrase):
+                self.assertNotIn(phrase, manual.get("jargon", {}))
+                self.assertNotIn(phrase, manual.get("exact", {}))
+
     def test_locale_glossary_has_no_duplicate_legacy_jargon(self):
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
         overlapping = set(GLOSSARY["jargon"]) & set(manual.get("jargon", {}))
