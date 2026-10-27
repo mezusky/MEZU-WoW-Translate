@@ -887,6 +887,32 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Offline canonical-ID locale retention tests committed; Chrome Translator API and actual DOM output remain unverified. Not a clean-state cycle."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant web indexed English Wowhead source snippets; no direct browser DOM or Translator API result",
+      "sampledPageIds": [
+        "restoration-shaman-cheat-sheet",
+        "holy-paladin-cheat-sheet",
+        "vengeance-demon-hunter-talent-builds",
+        "fury-warrior-raid"
+      ],
+      "sampledPageCount": 4,
+      "sourceCorpusCount": 321,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "newStructuralRiskFamiliesObserved": 0,
+      "previouslyObservedRiskFamilies": [
+        "talent import/copy widgets",
+        "raid boss mechanic tables and official linked names",
+        "English prose with localized entity links on /fr Wowhead"
+      ],
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "newPageInterventionProxy": "No new source-only glossary interventions for four sampled guides; browser translation issue rate remains unmeasured.",
+      "crossPageFixStatus": "Four representative independent pages added to regression corpus. No speculative rules; live browser and DOM verification pending."
     }
   ]
 }
