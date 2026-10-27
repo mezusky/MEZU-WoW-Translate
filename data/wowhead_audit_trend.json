@@ -895,12 +895,16 @@
         "restoration-shaman-cheat-sheet",
         "holy-paladin-cheat-sheet",
         "vengeance-demon-hunter-talent-builds",
-        "fury-warrior-raid"
+        "fury-warrior-raid",
+        "marksmanship-hunter-mythic-plus",
+        "frost-mage-mythic-plus"
       ],
-      "sampledPageCount": 4,
+      "sampledPageCount": 6,
       "sourceCorpusCount": 321,
-      "newReusableTermFamiliesObserved": 0,
-      "termFamilies": [],
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "priority target (noun) -> cible prioritaire; preserve longer priority target damage phrase"
+      ],
       "newStructuralRiskFamiliesObserved": 0,
       "previouslyObservedRiskFamilies": [
         "talent import/copy widgets",
@@ -911,8 +915,8 @@
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
-      "newPageInterventionProxy": "No new source-only glossary interventions for four sampled guides; browser translation issue rate remains unmeasured.",
-      "crossPageFixStatus": "Four representative independent pages added to regression corpus. No speculative rules; live browser and DOM verification pending."
+      "newPageInterventionProxy": "One reusable phrase family identified on newly sampled Fury Warrior raid and independently checked against Hunter and Mage guides; browser error rate not measured.",
+      "crossPageFixStatus": "Migrated one legacy exact and one legacy jargon rule to locale-scoped player glossary; cross-class tests added. Browser/DOM quality and novel issue rate remain unverified."
     }
   ]
 }
