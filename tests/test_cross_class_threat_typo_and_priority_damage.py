@@ -1,8 +1,7 @@
 """Source-only cross-role terminology checks; NOT a Chrome translation replay.
 
-Wowhead English index excerpts reviewed 2026-10-26. Some authors write
-"thread" where WoW's "threat" (menace) is intended. Correct only tightly
-scoped phrases: a bare "thread" may mean a forum discussion.
+WoW threat (menace) and forum thread are distinct concepts. Do not turn
+thread into threat, even in longer phrases.
 """
 import json
 import unittest
@@ -22,19 +21,21 @@ class CrossClassThreatTypoAndPriorityDamageTests(unittest.TestCase):
     def test_threat_typo_is_contextual_and_locale_scoped(self):
         terms = select_jargon(GLOSSARY, "en-US", "fr-FR")
         expected = {
-            "bonus thread": "menace supplémentaire",
-            "thread transfer": "transfert de menace",
-            "thread transferred": "menace transférée",
-            "thread generation": "génération de menace",
-            "thread reduction": "réduction de menace",
+            "threat generation": "génération de menace",
+            "threat management": "gestion de la menace",
         }
         for source, target in expected.items():
             with self.subTest(source=source):
                 self.assertEqual(terms[source], target)
                 for layer in ("exact", "jargon"):
                     self.assertNotIn(source, MANUAL.get(layer, {}))
-        self.assertNotIn("thread", terms)
-        self.assertNotIn("threads", terms)
+        # Old typo mappings must stay removed: forum threads are not aggro.
+        for source in ("bonus thread", "thread transfer", "thread transferred",
+                       "thread generation", "thread reduction", "thread", "threads"):
+            with self.subTest(negative=source):
+                self.assertNotIn(source, terms)
+                for layer in ("exact", "jargon"):
+                    self.assertNotIn(source, MANUAL.get(layer, {}))
         self.assertNotIn("threat", terms)
         self.assertEqual(select_jargon(GLOSSARY, "fr-FR", "fr-FR"), {})
         with self.assertRaises(ValueError):
@@ -43,14 +44,14 @@ class CrossClassThreatTypoAndPriorityDamageTests(unittest.TestCase):
     def test_cross_role_source_evidence(self):
         # Source excerpts, not observed output of the browser translator.
         samples = {
-            "blood-death-knight-abilities": "you generate 300% bonus thread",
-            "subtlety-rogue-mythic-plus": "The thread transfer is delayed",
+            "blood-death-knight-basics": "threat generation",
+            "brewmaster-monk-talents": "threat management",
         }
-        for page_id, excerpt in samples.items():
+        for page_id, phrase in samples.items():
             with self.subTest(page=page_id):
                 self.assertIn(page_id, PAGES)
                 self.assertIn("/guide/classes/", PAGES[page_id])
-                self.assertTrue("bonus thread" in excerpt or "thread transfer" in excerpt)
+                self.assertIn(phrase, terms)
 
     def test_unhyphenated_priority_damage_reuses_existing_semantics(self):
         terms = select_jargon(GLOSSARY, "en", "fr")
