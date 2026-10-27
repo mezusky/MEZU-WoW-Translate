@@ -976,6 +976,32 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Locale-aware audit filter and independent widget tests committed. Chrome Translator API, DOM reconstruction and two clean measured cycles remain unverified."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant web indexed live English Wowhead guides; direct DOM and Chrome Translator API not verified",
+      "sampledPageIds": [
+        "affliction-warlock-raid",
+        "assassination-rogue-talent-builds",
+        "subtlety-rogue-abilities",
+        "vengeance-demon-hunter-cheat-sheet",
+        "discipline-priest-cheat-sheet",
+        "marksmanship-hunter-cheat-sheet",
+        "protection-warrior-cheat-sheet"
+      ],
+      "sampledPageCount": 7,
+      "sourceCorpusCount": 332,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "funnel damage / funneling damage cross-class contextual jargon"
+      ],
+      "newStructuralRiskFamiliesObserved": 0,
+      "newPageInterventionProxy": "Four newly sampled tank/healer/DPS cheat sheets required zero new phrase rules or sentence overrides; cross-class Warlock/Rogue source exposed one shared jargon family. This is not a measured browser issue rate.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Migrated one legacy rule and added one related French jargon phrase; cross-class tests and new held-out role samples committed; Chrome/DOM and two measured clean cycles pending."
     }
   ]
 }
