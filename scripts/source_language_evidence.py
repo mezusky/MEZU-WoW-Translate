@@ -29,10 +29,10 @@ EDIT_MODE_FRAME = re.compile(r"\b(?:UIParent|[A-Za-z][A-Za-z0-9]*Frame)\b")
 # not prose. Seen in both Holy and Discipline Priest raid guides. Match
 # complete records rather than removing generic words like "time" or "Heroic".
 RAID_REMINDER_HEADER = re.compile(
-    r"(?<!\\w)EncounterID:\\d{3,8};Difficulty:[A-Za-z]+;Name:[^\\s;]{1,60}"
+    r"(?<!\w)EncounterID:\d{3,8};Difficulty:[A-Za-z]+;Name:[^\s;]{1,60}"
 )
 RAID_REMINDER_EVENT = re.compile(
-    r"(?<!\\w)time:\\d+(?:\\.\\d+)?;ph:\\d+(?:\\.\\d+)?;tag:\\d+;spellid:\\d+;"
+    r"(?<!\w)time:\d+(?:\.\d+)?;ph:\d+(?:\.\d+)?;tag:\d+;spellid:\d+;"
 )
 
 
