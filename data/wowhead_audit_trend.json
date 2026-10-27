@@ -1023,12 +1023,12 @@
         "Blizzard search locale intersection discarded source-only canonical IDs, permitting unsafe same-name exact projection in the presence of an unpaired collision."
       ],
       "newPageInterventionProxy": "Four newly sampled independent tank/healer/DPS cheat sheets needed zero new French phrase overrides; a shared canonical-ID completeness defect was fixed in the data generator. Source-only proxy, not browser error rate.",
-      "sharedEngineFix": "Search results now preserve incomplete canonical IDs for collision-aware multilingual projection; tests cover missing source/target locale and same-name collisions.",
+      "sharedEngineFix": "Search results preserve incomplete canonical IDs for collision-aware multilingual projection; partial refreshes cannot combine a newly renamed locale with an older counterpart. Tests cover both missing directions and stale-name guards.",
       "newManualSentenceOverrides": 0,
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
-      "crossPageFixStatus": "Source generator and regression tests committed; final CI, browser Translator API, DOM reconstruction and two measured clean cycles pending."
+      "crossPageFixStatus": "Source generator and collision/stale-pair regression tests committed; final CI, browser Translator API, DOM reconstruction and two measured clean cycles pending."
     }
   ]
 }
