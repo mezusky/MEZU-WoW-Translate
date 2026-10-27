@@ -1,0 +1,76 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web indexed English Wowhead guides inspected on 2026-10-27; direct Wowhead HTML returned a JavaScript anti-bot challenge. Source-only lexical/structural evidence; no Chrome Translator API or DOM capture.",
+  "sampledPageIds": [
+    "elemental-shaman-consumables",
+    "windwalker-monk-cheat-sheet",
+    "arcane-mage-basics",
+    "balance-druid-raid",
+    "discipline-priest-ui-macros"
+  ],
+  "newCorpusPageIds": [
+    "elemental-shaman-consumables",
+    "windwalker-monk-cheat-sheet",
+    "arcane-mage-basics",
+    "balance-druid-raid",
+    "discipline-priest-ui-macros"
+  ],
+  "sourceCorpusCount": 380,
+  "sourceEvidence": [
+    {
+      "page": "elemental-shaman-consumables",
+      "observation": "Indexed English guide includes individual 'Comment by' headings after guide content; Blizzard consumable/item names should resolve by canonical ID, not by string guessing."
+    },
+    {
+      "page": "windwalker-monk-cheat-sheet",
+      "observation": "Independent DPS guide also exposes 'Comment by' headings, plus serialized stat widget fragments; reader comments must not become translation-audit evidence."
+    },
+    {
+      "page": "arcane-mage-basics",
+      "observation": "Linked spell/talent names (Arcane Barrage, Arcane Salvo, Clearcasting) need canonical ID lookup; exact French output unverified."
+    },
+    {
+      "page": "balance-druid-raid",
+      "observation": "Raid boss-specific build imports and copy controls require DOM-safe handling; official spell names and numeric thresholds need locale-aware reconstruction."
+    },
+    {
+      "page": "discipline-priest-ui-macros",
+      "observation": "Cooldown Manager and full UI import controls appear alongside real descriptions; imports and macro payloads must be preserved in browser."
+    }
+  ],
+  "changes": [
+    {
+      "kind": "shared_source_audit_boundary",
+      "description": "Treat h2/h3 'Comment by <username>' headings as a discussion boundary when a generic Comments heading is absent; preserve ordinary prose mentions and unrelated headings.",
+      "sourceEvidencePages": 2
+    },
+    {
+      "kind": "regression_corpus",
+      "description": "Add five cross-role and cross-section English Wowhead guide URLs; no copied guide text."
+    }
+  ],
+  "newManualSentenceOverrides": 0,
+  "newJargonEntriesNet": 0,
+  "sourceOnlyNovelIssueFamilyCount": 1,
+  "sourceOnlyNovelIssueFamily": "Reader comments leaked into indexed guide excerpts without a Comments section header; shared source-only audit boundary corrected.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "negativeControls": [
+    "No page-specific sentence override",
+    "No new locale hardcoding",
+    "No remote executable code",
+    "No packaged extension change",
+    "No claim that localized Wowhead pages represent MEZU output"
+  ],
+  "remainingVerification": [
+    "GitHub Actions tests and Data Pack rebuild after commits",
+    "Real Chrome Translator API output and rich-text DOM preservation",
+    "Macros, CDM/UI imports and canonical spell/item IDs in browser",
+    "Quantified novel translation issue rate across independent pages and two clean cycles"
+  ],
+  "status": "Source-only audit accuracy improved; no measured clean translation cycle."
+}
