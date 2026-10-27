@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web indexed English Wowhead guide excerpts; direct live URLs return a JavaScript challenge. Source-only lexical/data checks; Chrome Translator API and DOM not reproduced.",
+  "sampledPageIds": [
+    "assassination-rogue-overview",
+    "frost-death-knight-overview",
+    "mistweaver-monk-midnight-s2-raid",
+    "retribution-paladin-consumables",
+    "havoc-demon-hunter-cheat-sheet",
+    "arms-warrior-gear"
+  ],
+  "newCorpusPageIds": [
+    "retribution-paladin-consumables",
+    "assassination-rogue-overview",
+    "havoc-demon-hunter-cheat-sheet",
+    "arms-warrior-gear"
+  ],
+  "sourceCorpusCount": 361,
+  "sourceExamples": [
+    {
+      "page": "assassination-rogue-overview",
+      "source": "single target damage",
+      "expected": "dégâts monocibles",
+      "layer": "fr player glossary"
+    },
+    {
+      "page": "assassination-rogue-overview",
+      "source": "melee cleave damage",
+      "expectedNoun": "dégâts de cleave",
+      "layer": "fr player glossary"
+    },
+    {
+      "page": "frost-death-knight-overview",
+      "source": "cleave damage profile",
+      "expectedNoun": "dégâts de cleave",
+      "layer": "fr player glossary"
+    },
+    {
+      "page": "mistweaver-monk-midnight-s2-raid",
+      "source": "single-target damage",
+      "expected": "dégâts monocibles",
+      "note": "Incoming damage context; do not equate damage with outgoing DPS."
+    }
+  ],
+  "findings": [
+    {
+      "kind": "reusable_locale_jargon",
+      "description": "Single-target damage and cleave damage noun phrases recur across unrelated DPS and healer guides. Literal word-by-word output can be awkward.",
+      "fix": "Add three bounded EN->FR player glossary keys (hyphenated and spaced single-target damage; cleave damage). Do not add a bare 'damage' key or page-specific sentence overrides."
+    },
+    {
+      "kind": "heldout_cross_page",
+      "description": "Assassination Rogue overview, Frost Death Knight overview and Mistweaver raid tips provide independent lexical contexts. Paladin consumables, Havoc cheat sheet and Arms gearing broaden new-page role/section coverage.",
+      "status": "Indexed English sources inspected; no rendered MEZU French page captured."
+    },
+    {
+      "kind": "browser_only_risk",
+      "description": "Talents, stat widgets, gear tables and linked official item/spell names must be checked in Chrome with the actual Data Pack.",
+      "status": "Not verified. No claim of extension/DOM correction."
+    }
+  ],
+  "sourceDataLayersReviewed": [
+    "data/mezu_player_glossary.json",
+    "data/manual_overrides.json",
+    "scripts/locale_glossary.py",
+    "scripts/build_datapack.py",
+    "data/manifest.json"
+  ],
+  "dataPackInspectionLimit": "Large generated datapack.json and Blizzard phrase memory cannot be fully retrieved via current GitHub connector; checked source-layer precedence and compact manifest instead. Exact full-pack/browser output unverified.",
+  "newReusableTermFamiliesObserved": 1,
+  "newGlossaryEntries": 3,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "GitHub Actions test/build/validation after source commits",
+    "Chrome Translator API phrase selection and DOM rich-text reconstruction",
+    "Quantified novel issue rate across two consecutive independent cross-page cycles"
+  ]
+}
