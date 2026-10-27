@@ -15,9 +15,26 @@ NON_PROSE_ASSIGNMENT = re.compile(r"\b[a-z][a-z0-9-]{1,40}=[^\s\]\[]+")
 # Require a long base64-like body to avoid hiding ordinary numbered text.
 OPAQUE_IMPORT = re.compile(r"(?<!\S)\d+\|[A-Za-z0-9+/=]{80,}(?!\S)")
 
+# WoW Edit Mode exports are long, whitespace-separated layout records rather
+# than base64 CDM strings. Only suppress a whole import cell with a recognized
+# header and multiple frame records; ordinary text mentioning UIParent stays.
+EDIT_MODE_HEADER = re.compile(
+    r"^2\s+\d+(?:\s+[01]){3}(?:\s+\d+){2}\s+[A-Za-z][A-Za-z0-9]*\b"
+)
+EDIT_MODE_FRAME = re.compile(r"\b(?:UIParent|[A-Za-z][A-Za-z0-9]*Frame)\b")
+
+
+def is_opaque_edit_mode_export(text):
+    value = text.strip()
+    return (len(value) >= 250 and bool(EDIT_MODE_HEADER.match(value))
+            and len(EDIT_MODE_FRAME.findall(value)) >= 3
+            and value.count(" -1 ") >= 3)
+
 
 def clean_non_prose(text):
     """Remove generated widget assignments and opaque import payloads."""
+    if is_opaque_edit_mode_export(text):
+        return ""
     return NON_PROSE_ASSIGNMENT.sub(" ", NON_PROSE_PLACEHOLDER.sub(" ",
                                      OPAQUE_IMPORT.sub(" ", text)))
 PROSE_TAGS = frozenset(("p", "li", "td", "th"))
