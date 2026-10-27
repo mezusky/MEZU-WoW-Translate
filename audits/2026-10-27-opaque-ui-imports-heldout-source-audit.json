@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web search of indexed live English Wowhead sources; direct HTML challenged by JavaScript. Source-only lexical/structural checks; no browser Translator API output.",
+  "sampledPageIds": [
+    "augmentation-evoker-ui-macros",
+    "holy-priest-ui-macros",
+    "devourer-demon-hunter-ui-macros",
+    "arms-warrior-basics",
+    "subtlety-rogue-talent-builds",
+    "brewmaster-monk-consumables"
+  ],
+  "newCorpusPageIds": [
+    "holy-priest-ui-macros",
+    "devourer-demon-hunter-ui-macros",
+    "arms-warrior-basics",
+    "subtlety-rogue-talent-builds"
+  ],
+  "sourceCorpusCount": 344,
+  "reusableIssueFamilies": [
+    {
+      "issue": "Opaque serialized Cooldown Manager import strings leak into indexed UI guide text and can pollute language-evidence scoring.",
+      "layer": "source-only audit parser",
+      "fix": "Filter long numbered base64-like UI import payloads before source-language evidence and prose scoring.",
+      "crossPageEvidence": [
+        "augmentation-evoker-ui-macros",
+        "devourer-demon-hunter-ui-macros"
+      ],
+      "heldOut": [
+        "holy-priest-ui-macros"
+      ],
+      "tests": "Synthetic payloads plus adjacent prose and short-code negative controls."
+    }
+  ],
+  "sourceOnlyTermSamples": [
+    {
+      "page": "arms-warrior-basics",
+      "source": "downtime",
+      "expected": "temps mort",
+      "layer": "existing manual terminology"
+    },
+    {
+      "page": "subtlety-rogue-talent-builds",
+      "source": "priority damage",
+      "expected": "dégâts prio",
+      "layer": "existing player glossary"
+    },
+    {
+      "page": "brewmaster-monk-consumables",
+      "source": "trinket",
+      "expected": "bijou",
+      "layer": "existing player glossary"
+    }
+  ],
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "datapackChanged": false,
+  "newStructuralRiskFamiliesObserved": 1,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "Browser Translator API, macro commands, UI import payload and rich-text DOM preservation",
+    "Independent held-out Chrome-rendered output and two consecutive quantified clean cycles",
+    "Whitespace-separated UI import exports are not covered by the new base64-like filter"
+  ],
+  "ci": {
+    "status": "pending",
+    "runUrl": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40468369606"
+  }
+}
