@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web access to indexed English Wowhead pages; current source excerpts, not Chrome Translator API output or DOM capture. No full guide text stored.",
+  "sampledPageIds": [
+    "frost-mage-stats",
+    "discipline-priest-stats",
+    "enhancement-shaman-consumables",
+    "holy-paladin-ui-macros",
+    "unholy-death-knight-ui-macros",
+    "demonology-warlock-basics",
+    "survival-hunter-ui-macros",
+    "devourer-demon-hunter-rotation",
+    "destruction-warlock-rotation"
+  ],
+  "newCorpusPageIds": [
+    "frost-mage-stats",
+    "holy-paladin-ui-macros",
+    "unholy-death-knight-ui-macros",
+    "demonology-warlock-basics",
+    "survival-hunter-ui-macros"
+  ],
+  "sourceCorpusCount": 370,
+  "sourceEvidence": [
+    {
+      "page": "frost-mage-stats",
+      "term": "sim your character",
+      "expected": "sim votre personnage",
+      "kind": "player_jargon"
+    },
+    {
+      "page": "discipline-priest-stats",
+      "term": "sim your character",
+      "expected": "sim votre personnage",
+      "kind": "player_jargon"
+    },
+    {
+      "page": "enhancement-shaman-consumables",
+      "term": "simming",
+      "expected": "sim",
+      "kind": "player_jargon"
+    },
+    {
+      "page": "devourer-demon-hunter-rotation",
+      "term": "overcap",
+      "note": "Existing legacy WoW-player term; no new override based on context-dependent verb"
+    },
+    {
+      "page": "destruction-warlock-rotation",
+      "term": "overcapping",
+      "note": "Independent heldout evidence; existing legacy WoW-player term retained"
+    }
+  ],
+  "changes": [
+    {
+      "kind": "locale_scope_dedup",
+      "description": "Moved two existing simulation-jargon keys from unscoped legacy manual overrides to source=en,target=fr player glossary. Outputs unchanged; future locale packs cannot inherit these entries.",
+      "newRules": 0,
+      "removedLegacyRules": 2
+    },
+    {
+      "kind": "regression",
+      "description": "Added cross-role simulation-jargon test and five new source pages covering stats, starter basics, CDM/Edit Mode UI imports and macros."
+    }
+  ],
+  "browserOnlyRisks": [
+    "Do not translate /cast, #showtooltip, macro conditions or Lua code.",
+    "Do not modify opaque 1| CDM and 2 ... UI import strings; verify their exact bytes in Chrome.",
+    "Confirm stat tables and official entity IDs after DOM reconstruction.",
+    "Do not interpret Wowhead's localized /fr/guide pages with English prose as proof of MEZU translation."
+  ],
+  "negativeControls": [
+    "No new exact-sentence override",
+    "No packaged extension code change",
+    "No remote executable code",
+    "Locale-specific glossary remains isolated; source=target skips"
+  ],
+  "newManualSentenceOverrides": 0,
+  "newJargonEntriesNet": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "ci": {
+    "lastConfirmedRun": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40498054517",
+    "lastConfirmedResult": "success",
+    "newSourceCommitValidation": "pending independent confirmation"
+  },
+  "status": "Not a clean measured cross-page quality cycle; Chrome output and novel issue rate remain unverified."
+}
