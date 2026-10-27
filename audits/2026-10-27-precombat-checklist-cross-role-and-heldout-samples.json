@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web-indexed live English Wowhead guides (source-only); no browser Translator API or DOM access. GitHub Actions never fetches Wowhead.",
+  "sampledPageIds": [
+    "retribution-paladin-cheat-sheet",
+    "devastation-evoker-ui-macros",
+    "arms-warrior-consumables",
+    "beast-mastery-hunter-gear",
+    "havoc-demon-hunter-stats"
+  ],
+  "crossPageEvidence": [
+    {
+      "concept": "Pre-Combat Check(s) heading",
+      "pages": [
+        "brewmaster-monk-rotation",
+        "blood-death-knight-rotation",
+        "guardian-druid-rotation",
+        "survival-hunter-rotation"
+      ],
+      "finding": "The singular Pre-Combat Check heading recurs across Brewmaster, Blood DK, Guardian Druid and Survival Hunter rotation guides; the Survival Hunter page also exposes a plural Pre-Combat Checks tab.",
+      "fix": "Four EN->FR French-locale heading variants in MEZU player glossary; no generic 'check' rule or sentence override."
+    },
+    {
+      "concept": "Held-out official item names and embedded widgets",
+      "pages": [
+        "retribution-paladin-cheat-sheet",
+        "devastation-evoker-ui-macros",
+        "arms-warrior-consumables",
+        "beast-mastery-hunter-gear",
+        "havoc-demon-hunter-stats"
+      ],
+      "finding": "Cheat sheet has talent export controls; Evoker UI page includes opaque import strings and /cast macros; Arms and BM item tables contain official item names; Havoc stats include diminishing returns thresholds. No Chrome output verified.",
+      "fix": "Corpus expansion and no speculative DOM/code modification."
+    }
+  ],
+  "lexicalSimulation": {
+    "scope": "Source glossary data lookup; not full browser translation",
+    "positiveCases": {
+      "Pre-Combat Check": "Vérification avant le combat",
+      "Pre-Combat Checks": "Vérifications avant le combat",
+      "pre-combat check": "vérification avant le combat",
+      "pre-combat checks": "vérifications avant le combat"
+    },
+    "negativeControls": [
+      "check",
+      "Pre-Combat",
+      "off cooldown"
+    ]
+  },
+  "sourceCorpusCount": 414,
+  "newReusableJargonEntries": 4,
+  "newManualSentenceOverrides": 0,
+  "packagedExtensionModified": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "Confirm GitHub Actions tests and Data Pack regeneration",
+    "Verify real browser translation and DOM preservation of UI imports, macro commands and talent widgets",
+    "Quantify new errors on independent pages across two consecutive audits"
+  ],
+  "status": "Source-only reusable phrase fix; not a clean browser quality cycle."
+}
