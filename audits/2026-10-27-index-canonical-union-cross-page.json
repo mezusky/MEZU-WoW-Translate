@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web inspection of indexed English-source Wowhead guides plus canonical Blizzard index generator/tests; direct Wowhead DOM blocked by JS challenge, no Chrome Translator API replay.",
+  "sampledPageIds": [
+    "protection-warrior-rotation",
+    "discipline-priest-rotation",
+    "brewmaster-monk-consumables",
+    "feral-druid-gear",
+    "augmentation-evoker-ui-macros",
+    "frost-mage-basics"
+  ],
+  "newCorpusPages": [
+    "brewmaster-monk-consumables",
+    "feral-druid-gear",
+    "augmentation-evoker-ui-macros",
+    "frost-mage-basics"
+  ],
+  "sourceEvidenceUrls": [
+    "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+    "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+    "https://www.wowhead.com/guide/classes/monk/brewmaster/enchants-gems-pve-tank",
+    "https://www.wowhead.com/guide/classes/druid/feral/bis-gear",
+    "https://www.wowhead.com/guide/classes/evoker/augmentation/addons-macro-ui-imports",
+    "https://www.wowhead.com/guide/classes/mage/frost/basics"
+  ],
+  "reusableIssueFamilies": [
+    {
+      "name": "Canonical Blizzard index sync drops source-only/target-only IDs",
+      "fixLayer": "packaged data generator (no extension release)",
+      "evidence": "The previous collect_pairs function used an ID intersection. An omitted source-only ID could hide a same-name collision from the official whole-name projection; the analogous search endpoint was already fixed.",
+      "fix": "Union index IDs with source/target names independently and guard partial index refreshes against mixing newly renamed names with stale counterpart locales; multilingual helper and synthetic cross-page collision tests."
+    }
+  ],
+  "heldOutFindings": [
+    "Warrior and Priest rotation guides contain spell names mixed with prose; ID-based names remain the correct layer for official localization.",
+    "Brewmaster consumables and Feral gear contain many current-season item names; canonical item IDs should take priority over speculative sentence overrides.",
+    "Augmentation UI/Macros contains literal /cast, /cancelaura and import strings that must remain executable; DOM code protection is browser-only verification, not confirmed fixed.",
+    "Frost basics and other source guides contain upstream incomplete season placeholders; do not count these as MEZU translation failures.",
+    "Localized Wowhead variants contain English prose mixed with translated names and sometimes English plural suffixes; these are not MEZU-rendered output."
+  ],
+  "newReusableTermFamiliesObserved": 0,
+  "newStructuralRiskFamiliesObserved": 1,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "sourceCorpusCount": 340,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "GitHub Actions tests, rebuild and Data Pack validation after commits",
+    "Chrome Translator API, macro code preservation and DOM/rich-text reconstruction",
+    "Quantified novel issue rate on unrelated held-out pages over two consecutive cycles"
+  ]
+}
