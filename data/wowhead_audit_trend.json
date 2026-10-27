@@ -1272,6 +1272,31 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Source-only alias behavior corrected; GitHub Actions rebuild pending. No Chrome Translator API or DOM verification, not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant web indexed English Wowhead guides; direct HTML subject to JavaScript verification",
+      "sampledPageIds": [
+        "subtlety-rogue-cheat-sheet",
+        "preservation-evoker-cheat-sheet",
+        "feral-druid-mythic-plus",
+        "balance-druid-ui-macros",
+        "protection-paladin-cheat-sheet"
+      ],
+      "sampledPageCount": 5,
+      "sourceCorpusCount": 396,
+      "newReusableTermFamiliesObserved": 0,
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Edit Mode UI exports use multiple structural header versions (0 and 2), not a single fixed version."
+      ],
+      "sharedEngineFix": "Source-only audit helper recognizes multi-version Edit Mode exports by structural record shape; synthetic cross-class regression tests added. No browser extension runtime change.",
+      "newPageInterventionProxy": "Five held-out guides, one reusable source-audit structural fix, zero manual sentence overrides; not a measured translation error rate.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Source-only correction committed; local regex spot checks passed, GitHub Actions full rebuild and browser verification pending. Not a clean quality cycle."
     }
   ]
 }
