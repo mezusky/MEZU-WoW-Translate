@@ -15,6 +15,16 @@ PROFILES = json.loads((ROOT / "data/audit_language_signals.json").read_text(
 
 
 class SourceAuditWidgetFilterTests(unittest.TestCase):
+    def test_independent_cheat_sheet_sources_remain_in_regression_corpus(self):
+        pages = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(
+            encoding="utf-8"))["pages"]
+        ids = {page["id"] for page in pages}
+        self.assertTrue({
+            "affliction-warlock-cheat-sheet",
+            "arcane-mage-cheat-sheet",
+            "balance-druid-cheat-sheet",
+        }.issubset(ids))
+
     def test_three_unrelated_cheat_sheet_stat_widgets_are_not_prose(self):
         widgets = (
             "stat-guide=5525 stats=intellect>>Haste>Crit>Mastery>Versatility]",
