@@ -1312,9 +1312,37 @@
       "id": "balance-druid-cheat-sheet",
       "url": "https://www.wowhead.com/guide/classes/druid/balance/cheat-sheet"
     },
-    {"id":"vengeance-demon-hunter-cheat-sheet","url":"https://www.wowhead.com/guide/classes/demon-hunter/vengeance/cheat-sheet"},
-    {"id":"discipline-priest-cheat-sheet","url":"https://www.wowhead.com/guide/classes/priest/discipline/cheat-sheet"},
-    {"id":"marksmanship-hunter-cheat-sheet","url":"https://www.wowhead.com/guide/classes/hunter/marksmanship/cheat-sheet"},
-    {"id":"protection-warrior-cheat-sheet","url":"https://www.wowhead.com/guide/classes/warrior/protection/cheat-sheet"}
+    {
+      "id": "vengeance-demon-hunter-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/cheat-sheet"
+    },
+    {
+      "id": "discipline-priest-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/cheat-sheet"
+    },
+    {
+      "id": "marksmanship-hunter-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/cheat-sheet"
+    },
+    {
+      "id": "protection-warrior-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/cheat-sheet"
+    },
+    {
+      "id": "destruction-warlock-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/cheat-sheet"
+    },
+    {
+      "id": "mistweaver-monk-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/cheat-sheet"
+    },
+    {
+      "id": "elemental-shaman-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/cheat-sheet"
+    },
+    {
+      "id": "blood-death-knight-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/cheat-sheet"
+    }
   ]
 }
