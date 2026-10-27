@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web inspection of indexed live English-source Wowhead guides plus repository code/data audit; no browser Translator API replay.",
+  "sampledPageIds": [
+    "destruction-warlock-cheat-sheet",
+    "mistweaver-monk-cheat-sheet",
+    "elemental-shaman-cheat-sheet",
+    "blood-death-knight-cheat-sheet",
+    "discipline-priest-rotation",
+    "mistweaver-monk-abilities"
+  ],
+  "newCorpusPages": [
+    "destruction-warlock-cheat-sheet",
+    "mistweaver-monk-cheat-sheet",
+    "elemental-shaman-cheat-sheet",
+    "blood-death-knight-cheat-sheet"
+  ],
+  "sourceEvidenceUrls": [
+    "https://www.wowhead.com/guide/classes/warlock/destruction/cheat-sheet",
+    "https://www.wowhead.com/guide/classes/monk/mistweaver/cheat-sheet",
+    "https://www.wowhead.com/guide/classes/shaman/elemental/cheat-sheet",
+    "https://www.wowhead.com/guide/classes/death-knight/blood/cheat-sheet",
+    "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+    "https://www.wowhead.com/guide/classes/monk/mistweaver/abilities-talents-pve-healer"
+  ],
+  "reusableIssueFamilies": [
+    {
+      "name": "Unpaired canonical Blizzard search IDs omitted from entity records",
+      "fixLayer": "stable source generator",
+      "fix": "Retain source-only and target-only IDs. Projection excludes incomplete IDs and blocks ambiguous same-name source collisions; tests cover both directions.",
+      "evidence": "Repository collect_search_pairs previously intersected locale ID sets; synthetic cross-ID regression reproduces the unsafe omission. No claim that a specific live guide was mistranslated."
+    }
+  ],
+  "heldOutFindings": [
+    "English indexed cheat sheets contain serialized stat-guide/stats= configurations and talent-import controls, which are not translation prose.",
+    "Some indexed guide variants contain unfinished season placeholders; these are upstream content, not MEZU output defects.",
+    "Localized Wowhead guide variants can contain English prose mixed with translated spell names and English plural suffixes; only English-source URLs were added to the regression corpus."
+  ],
+  "newReusableTermFamiliesObserved": 0,
+  "newStructuralRiskFamiliesObserved": 1,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "sourceCorpusCount": 336,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "GitHub Actions final rebuild and validation after last commit",
+    "Chrome Translator API and DOM/rich-text reconstruction",
+    "Quantified held-out novel translation issue rate over two consecutive cycles"
+  ]
+}
