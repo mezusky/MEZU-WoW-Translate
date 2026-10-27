@@ -1283,6 +1283,22 @@
     {
       "id": "fury-warrior-raid",
       "url": "https://www.wowhead.com/guide/classes/warrior/fury/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "blood-death-knight-raid",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "restoration-druid-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/cheat-sheet"
+    },
+    {
+      "id": "outlaw-rogue-stats",
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/stat-priority-pve-dps"
+    },
+    {
+      "id": "devastation-evoker-gear",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/bis-gear"
     }
   ]
 }
