@@ -1,0 +1,126 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web indexed English Wowhead guide excerpts (2026-10-27). Direct main-site HTML sometimes returns JavaScript anti-bot challenge. Source-only lexical/structure inspection, not browser Translator API output or DOM capture. No full guide text stored.",
+  "sampledPageIds": [
+    "frost-death-knight-basics",
+    "outlaw-rogue-talent-builds",
+    "arms-warrior-raid",
+    "shadow-priest-stats",
+    "vengeance-demon-hunter-gear",
+    "elemental-shaman-rotation",
+    "demonology-warlock-basics"
+  ],
+  "newCorpusPageIds": [
+    "frost-death-knight-basics",
+    "outlaw-rogue-talent-builds",
+    "arms-warrior-raid",
+    "shadow-priest-stats",
+    "vengeance-demon-hunter-gear"
+  ],
+  "sourceCorpusCount": 375,
+  "sourceEvidence": [
+    {
+      "page": "frost-death-knight-basics",
+      "term": "filler",
+      "expected": "filler",
+      "layer": "fr player glossary",
+      "note": "Frost DK resource priority prose"
+    },
+    {
+      "page": "elemental-shaman-rotation",
+      "term": "filler",
+      "expected": "filler",
+      "layer": "fr player glossary",
+      "note": "Independent caster rotation source, multiple filler references"
+    },
+    {
+      "page": "shadow-priest-stats",
+      "term": "diminishing returns",
+      "expected": "rendements décroissants",
+      "layer": "existing fr player glossary"
+    },
+    {
+      "page": "outlaw-rogue-talent-builds",
+      "term": "single target damage",
+      "expected": "dégâts monocibles",
+      "layer": "existing fr player glossary"
+    },
+    {
+      "page": "arms-warrior-raid",
+      "term": "cleave",
+      "expected": "cleave",
+      "layer": "existing legacy jargon"
+    },
+    {
+      "page": "vengeance-demon-hunter-gear",
+      "term": "trinkets",
+      "expected": "bijoux",
+      "layer": "existing fr player glossary"
+    }
+  ],
+  "changes": [
+    {
+      "kind": "locale_scope_dedup",
+      "description": "Move existing filler, filler spell, filler spells mappings from unscoped legacy jargon to en->fr player glossary without changing target strings; test no duplicate legacy entries.",
+      "newRules": 0,
+      "removedLegacyRules": 3
+    },
+    {
+      "kind": "regression_corpus",
+      "description": "Add five English guides across DPS/tank and basics, talent builds, raid, stats, and gearing; no copied full source."
+    }
+  ],
+  "upstreamSourceRisks": [
+    {
+      "page": "frost-death-knight-basics",
+      "issue": "Unpublished editorial instruction enclosed in double braces is present in indexed English guide prose.",
+      "classification": "upstream editorial artifact, not a MEZU translation error",
+      "action": "Document; avoid speculative translation override. If this recurs across unrelated pages, consider a shared source-only audit exclusion."
+    },
+    {
+      "page": "arms-warrior-raid",
+      "issue": "Some source boss tips repeat the same instruction and contain spelling mistakes.",
+      "classification": "upstream guide content, not a MEZU translation error"
+    },
+    {
+      "page": "outlaw-rogue-talent-builds",
+      "issue": "Talent import controls and link labels are mixed with narrative prose.",
+      "classification": "browser DOM verification required"
+    },
+    {
+      "page": "vengeance-demon-hunter-gear",
+      "issue": "Official item names and table cells must be matched by canonical IDs; Wowhead localized /fr/ pages mix French entities with English prose.",
+      "classification": "ID mapping/browser verification required"
+    }
+  ],
+  "negativeControls": [
+    "No exact-sentence override",
+    "No new source/target language hardcoding",
+    "No new remote executable code",
+    "No packaged extension change",
+    "No claim that a /fr/ Wowhead page is MEZU-rendered output"
+  ],
+  "newManualSentenceOverrides": 0,
+  "newJargonEntriesNet": 0,
+  "removedLegacyJargonEntries": 3,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "sourceOnlyNovelIssueFamilyCount": 1,
+  "sourceOnlyNovelIssueFamily": "upstream editorial placeholder, observed on one guide; not generalized",
+  "remainingVerification": [
+    "GitHub Actions tests and Data Pack rebuild after these commits",
+    "Browser-only macro/import and rich-text DOM preservation",
+    "Official spell/item/talent names resolved by canonical IDs in rendered browser output",
+    "Quantified novel issue rate on independent pages and two consecutive clean cycles"
+  ],
+  "ci": {
+    "previousConfirmedRun": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40498054517",
+    "previousConfirmedConclusion": "success",
+    "newCommitValidation": "pending independent confirmation"
+  },
+  "status": "Not a measured clean quality cycle; translation output is unverified."
+}
