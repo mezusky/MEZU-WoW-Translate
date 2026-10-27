@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web inspected live Wowhead URLs (JavaScript challenge) and indexed English guide text. Data-only locale tests; no browser Translator API replay.",
+  "sampledPageIds": [
+    "marksmanship-hunter-mythic-plus",
+    "outlaw-rogue-overview",
+    "elemental-shaman-mythic-plus",
+    "marksmanship-hunter-abilities",
+    "blood-death-knight-raid",
+    "restoration-druid-cheat-sheet",
+    "outlaw-rogue-stats",
+    "devastation-evoker-gear"
+  ],
+  "newCorpusPages": [
+    "blood-death-knight-raid",
+    "restoration-druid-cheat-sheet",
+    "outlaw-rogue-stats",
+    "devastation-evoker-gear"
+  ],
+  "reusableIssueFamilies": [
+    {
+      "name": "target-limited AoE versus stat hard caps",
+      "sourcePhrases": [
+        "target capped",
+        "hard-capped AoE"
+      ],
+      "targetPhrases": [
+        "limité en nombre de cibles",
+        "AoE limitée à un nombre fixe de cibles"
+      ],
+      "evidencePages": [
+        "outlaw-rogue-overview",
+        "marksmanship-hunter-mythic-plus",
+        "marksmanship-hunter-abilities"
+      ],
+      "heldOutPages": [
+        "elemental-shaman-mythic-plus",
+        "vengeance-demon-hunter-stats"
+      ],
+      "fixLayer": "fr locale-scoped player glossary",
+      "guard": "Do not translate bare hard cap, hard capped, soft cap, or target: hard caps also describe secondary-stat limits."
+    }
+  ],
+  "sourceQualityWarnings": [
+    "English Wowhead indexed guides may expose template placeholders such as UTIL1_NAME and [spell=UTIL1_ID]; not evidence of an extension translation failure.",
+    "French Wowhead pages may mix English prose and localized entity links; this is upstream content, not Chrome Translator API output."
+  ],
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "crossPageValidation": "Source-only: Marksmanship Hunter Mythic+ describes hard-capped AoE, Outlaw Rogue overview describes target-capped Blade Flurry; Elemental Shaman M+ describes capped AoE damage. Vengeance DH stat priority uses hard cap for stats and motivates context-specific keys. Newly sampled independent raid/cheat-sheet/stats/gear pages did not warrant speculative sentence overrides.",
+  "remainingVerification": [
+    "GitHub Actions rebuild and validation for the new glossary and tests",
+    "Chrome Translator API actual phrase selection and DOM reconstruction",
+    "Quantitative held-out novel translation issue rate across two consecutive cycles"
+  ]
+}
