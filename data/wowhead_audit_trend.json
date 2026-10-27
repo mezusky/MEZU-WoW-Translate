@@ -1056,6 +1056,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Generator and locale-neutral regression tests passed GitHub Actions; Data Pack e12e2bd928094869ea37 rebuilt and validated. Chrome Translator API, macro/DOM preservation and two measured clean cycles remain pending."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Indexed live English Wowhead guide sources; direct HTML challenged by JavaScript. No browser Translator API verification.",
+      "sampledPageIds": [
+        "augmentation-evoker-ui-macros",
+        "holy-priest-ui-macros",
+        "devourer-demon-hunter-ui-macros",
+        "arms-warrior-basics",
+        "subtlety-rogue-talent-builds",
+        "brewmaster-monk-consumables"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 344,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Long base64-like Cooldown Manager imports in Wowhead UI guide table cells can contaminate source language evidence and cause adjacent prose to be skipped by pre-clean length limits."
+      ],
+      "newPageInterventionProxy": "Four new independent healer/DPS UI, beginner and talent guides; zero new French sentence overrides; one reusable source-audit parser fix. Source-only proxy, not measured translation error rate.",
+      "sharedEngineFix": "Locale-neutral audit source filter strips long serialized CDM imports before language scoring and block-length checks; tests cover cross-role payloads, adjacent prose and short-code preservation.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Python regression tests and Data Pack build/validation passed GitHub Actions 40468511594; Data Pack e12e2bd928094869ea37 unchanged. Browser macro/UI preservation and two quantified clean cycles remain pending."
     }
   ]
 }
