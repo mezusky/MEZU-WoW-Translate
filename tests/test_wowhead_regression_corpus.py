@@ -133,6 +133,20 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         }
         self.assertTrue(required.issubset({p["id"] for p in PAGES}))
 
+    def test_heldout_cheat_sheets_cover_unrelated_roles_and_widgets(self):
+        # English-source indexed guide evidence, not translated Chrome output.
+        # Source widget text includes talent trees and stat-guide/stats= payloads.
+        required = {
+            "blood-death-knight-cheat-sheet",  # tank; talent import widgets
+            "mistweaver-monk-cheat-sheet",      # healer; stat widget variants
+            "elemental-shaman-cheat-sheet",    # caster DPS; stat formula
+            "destruction-warlock-cheat-sheet", # unrelated DPS; gear and stat widgets
+        }
+        self.assertTrue(required.issubset({p["id"] for p in PAGES}))
+        for page in PAGES:
+            if page["id"] in required:
+                self.assertTrue(page["url"].endswith("/cheat-sheet"))
+
     def test_ui_macro_guides_span_tank_healer_and_dps(self):
         # New Midnight UI pages contain import strings and /cast macros.
         # Those are non-prose payloads, not translation training material.
