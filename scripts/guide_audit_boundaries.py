@@ -7,6 +7,20 @@ Exact heading matches avoid truncating real guide prose mentioning feedback.
 FOOTER_HEADINGS = frozenset(("feedback", "comments", "contribute"))
 
 
+def is_discussion_heading(tag, value):
+    """Match discussion boundaries without suppressing ordinary guide prose.
+
+    Search-indexed Wowhead pages sometimes expose individual user comments
+    directly as `Comment by <username>` headings, without a `Comments` header.
+    Only heading tags qualify; quoted prose and in-guide examples remain.
+    """
+    if tag not in ("h2", "h3"):
+        return False
+    heading = " ".join(value.split()).casefold()
+    return (heading in FOOTER_HEADINGS or
+            (heading.startswith("comment by ") and len(heading) > len("comment by ")))
+
+
 def trim_guide_footer(blocks):
     """Keep guide blocks before the first standalone discussion heading.
 
@@ -14,6 +28,6 @@ def trim_guide_footer(blocks):
     remains guide content. Return a new list without mutating the extractor.
     """
     for index, (tag, value) in enumerate(blocks):
-        if tag in ("h2", "h3") and value.strip().casefold() in FOOTER_HEADINGS:
+        if is_discussion_heading(tag, value):
             return list(blocks[:index])
     return list(blocks)
