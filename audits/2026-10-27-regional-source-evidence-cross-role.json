@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-27",
+  "auditType": "indexed-live-English-source-only; no browser Translator API or DOM capture",
+  "sourceAccess": "Assistant web indexed Wowhead guide excerpts; direct Wowhead HTML returned JavaScript challenge",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "heldOutPageIds": [
+    "holy-priest-basics",
+    "guardian-druid-season-2",
+    "augmentation-evoker-season-2",
+    "mistweaver-monk-season-2",
+    "destruction-warlock-season-2",
+    "brewmaster-monk-season-2"
+  ],
+  "heldOutRoleCoverage": [
+    "tank",
+    "healer",
+    "damage",
+    "support"
+  ],
+  "independentChecks": [
+    {
+      "page": "augmentation-evoker-season-2",
+      "evidence": "Always be casting and filler spells; both already in locale-scoped player glossary",
+      "result": "existing terms cover; browser output unverified"
+    },
+    {
+      "page": "destruction-warlock-season-2",
+      "evidence": "cleave damage and Soul Shards; first in player glossary, second requires official entity mapping",
+      "result": "no manual override; official ID rendering browser-only"
+    },
+    {
+      "page": "brewmaster-monk-season-2",
+      "evidence": "Stagger, Shuffle and class ability names embedded in prose and widgets",
+      "result": "entity/DOM reconstruction browser-only"
+    },
+    {
+      "page": "mistweaver-monk-season-2",
+      "evidence": "healing output and spell-name rich text",
+      "result": "no source-only proof of mistranslation"
+    },
+    {
+      "page": "holy-priest-basics",
+      "evidence": "English beginner rotation and talent descriptions",
+      "result": "source-language signal independent of official spell names"
+    },
+    {
+      "page": "guardian-druid-season-2",
+      "evidence": "English guide prose with ability names and stat widgets",
+      "result": "source-only language evidence, not a translated page"
+    }
+  ],
+  "sharedAuditFix": "Normalize language profile keys (en/en-US/en_US) to one base-language candidate; regional aliases no longer split vote counts or compete as distinct languages. Region-only profiles supported.",
+  "riskScope": "Audit helper only; no extension runtime or remote executable change",
+  "novelTranslationIssueRate": null,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "newManualSentenceOverrides": 0,
+  "newJargonOverrides": 0,
+  "ci": "GitHub Actions queued/in progress after commits; complete validation pending",
+  "remaining": [
+    "Browser-local language detection and Translator API",
+    "Official spell/item/talent ID rendering",
+    "Rich-text and talent import DOM preservation",
+    "Measured novel error rate on newly sampled pages"
+  ],
+  "stopConditionMet": false
+}
