@@ -28,7 +28,7 @@ class ThreatGlossaryTests(unittest.TestCase):
         # Only whole words should match: no accidental substring substitution.
         source = "Read the discussion thread before the raid."
         for key in ("threat generation", "threat management"):
-            self.assertIsNone(re.search(r"(?<!\\w)" + re.escape(key) + r"(?!\\w)",
+            self.assertIsNone(re.search(r"(?<!\w)" + re.escape(key) + r"(?!\w)",
                                         source, re.IGNORECASE))
 
     def test_independent_tank_pages_remain_in_corpus(self):
