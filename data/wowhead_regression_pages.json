@@ -1499,6 +1499,26 @@
     {
       "id": "vengeance-demon-hunter-gear",
       "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/bis-gear"
+    },
+    {
+      "id": "elemental-shaman-consumables",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/enchants-gems-pve-dps"
+    },
+    {
+      "id": "windwalker-monk-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/cheat-sheet"
+    },
+    {
+      "id": "arcane-mage-basics",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/basics"
+    },
+    {
+      "id": "balance-druid-raid",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "discipline-priest-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/addons-macro-ui-imports"
     }
   ]
 }
