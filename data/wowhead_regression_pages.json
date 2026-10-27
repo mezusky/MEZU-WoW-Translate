@@ -1603,6 +1603,22 @@
     {
       "id": "enhancement-shaman-cheat-sheet",
       "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/cheat-sheet"
+    },
+    {
+      "id": "devourer-demon-hunter-raid",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "survival-hunter-consumables",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/enchants-gems-pve-dps"
+    },
+    {
+      "id": "protection-warrior-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "vengeance-demon-hunter-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/manaforge-omega-raid-tips"
     }
   ]
 }
