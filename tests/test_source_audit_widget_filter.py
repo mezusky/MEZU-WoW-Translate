@@ -64,6 +64,26 @@ class SourceAuditWidgetFilterTests(unittest.TestCase):
         self.assertFalse(has_prose)
         self.assertNotIn("UTIL3_USECASE", clean)
 
+    def test_opaque_imports_from_independent_ui_guides_are_not_prose(self):
+        # Indexed Augmentation Evoker and Holy Priest UI guides expose CDM
+        # import payloads. Use synthetic strings, not copied full profiles.
+        for class_name in ("Augmentation Evoker", "Holy Priest"):
+            with self.subTest(class_name=class_name):
+                payload = "1|" + "LY+9TkJREIQBzbwCDhWGF7ChoDLEB6C49ogRhYKfAhRCgyfoM6CJGhJ7X8LG2IuCF8OPgBq0Ibf2zIXm253Z3Zw5rc1mZ"
+                clean, has_prose = audit_source_prose(payload, "en-US", PROFILES)
+                self.assertEqual(clean, "")
+                self.assertFalse(has_prose)
+
+    def test_opaque_import_filter_preserves_adjacent_prose_and_short_codes(self):
+        payload = "1|" + "AbCdEf0123456789+/" * 6
+        value = "You can import this profile and use it during combat. " + payload
+        clean, has_prose = audit_source_prose(value, "en-US", PROFILES)
+        self.assertTrue(has_prose)
+        self.assertIn("You can import this profile", clean)
+        self.assertNotIn(payload, clean)
+        short, _ = audit_source_prose("Use build 1|abc123 for the raid.", "en", PROFILES)
+        self.assertIn("1|abc123", short)
+
     def test_missing_profile_fails_closed(self):
         with self.assertRaises(ValueError):
             audit_source_prose("Some source text", "pt-BR", PROFILES)
