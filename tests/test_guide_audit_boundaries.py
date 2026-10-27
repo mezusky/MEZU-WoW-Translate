@@ -49,6 +49,30 @@ class GuideAuditBoundariesTests(unittest.TestCase):
                   ('h2', ' FEEDBACK '), ('p', 'Do not score this.')]
         self.assertEqual(trim_guide_footer(blocks), blocks[:2])
 
+    def test_indexed_comments_without_discussion_header(self):
+        # Independent Elemental Shaman consumables and Windwalker Monk
+        # cheat-sheet search results include individual "Comment by" headings.
+        blocks = [('h2', 'Elemental Shaman Consumables'),
+                  ('p', 'Use the recommended flask for your build.'),
+                  ('h3', 'Comment by avatar1337'),
+                  ('p', 'Is a different gem better?'),
+                  ('h3', 'Comment by minka25'),
+                  ('p', 'Why is the table missing an item?')]
+        self.assertEqual(trim_guide_footer(blocks), blocks[:2])
+
+    def test_comment_mentions_inside_guide_prose_are_not_a_boundary(self):
+        blocks = [('h2', 'Community Discussion Tips'),
+                  ('p', 'A Comment by a player is not an official guide.'),
+                  ('h3', 'Comments about talents'),
+                  ('p', 'Keep reading for the rotation advice.')]
+        self.assertEqual(trim_guide_footer(blocks), blocks)
+
+    def test_indexed_comment_heading_whitespace_and_case(self):
+        blocks = [('h2', 'Guide'), ('p', 'Actual guide content.'),
+                  ('h3', ' COMMENT   BY  ExamplePlayer '),
+                  ('p', 'Reader discussion only.')]
+        self.assertEqual(trim_guide_footer(blocks), blocks[:2])
+
     def test_no_footer_returns_independent_copy(self):
         blocks = [('h2', 'Stats'), ('p', 'Haste and Mastery.')]
         result = trim_guide_footer(blocks)
