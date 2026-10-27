@@ -130,7 +130,9 @@
     "absorb shield": "bouclier d’absorption",
     "absorb shields": "boucliers d’absorption",
     "100% uptime": "100 % d’uptime",
-    "priority target": "cible prioritaire"
+    "priority target": "cible prioritaire",
+    "target capped": "limité en nombre de cibles",
+    "hard-capped AoE": "AoE limitée à un nombre fixe de cibles"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
