@@ -1002,6 +1002,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Migrated one legacy rule and added one related French jargon phrase; cross-class tests and new held-out role samples committed; Chrome/DOM and two measured clean cycles pending."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant web indexed English-source Wowhead guides; some direct URLs blocked by JavaScript challenge. No browser Translator API or CI Wowhead fetch.",
+      "sampledPageIds": [
+        "destruction-warlock-cheat-sheet",
+        "mistweaver-monk-cheat-sheet",
+        "elemental-shaman-cheat-sheet",
+        "blood-death-knight-cheat-sheet",
+        "discipline-priest-rotation",
+        "mistweaver-monk-abilities"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 336,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Blizzard search locale intersection discarded source-only canonical IDs, permitting unsafe same-name exact projection in the presence of an unpaired collision."
+      ],
+      "newPageInterventionProxy": "Four newly sampled independent tank/healer/DPS cheat sheets needed zero new French phrase overrides; a shared canonical-ID completeness defect was fixed in the data generator. Source-only proxy, not browser error rate.",
+      "sharedEngineFix": "Search results now preserve incomplete canonical IDs for collision-aware multilingual projection; tests cover missing source/target locale and same-name collisions.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Source generator and regression tests committed; final CI, browser Translator API, DOM reconstruction and two measured clean cycles pending."
     }
   ]
 }
