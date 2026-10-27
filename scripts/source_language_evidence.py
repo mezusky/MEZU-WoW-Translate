@@ -16,10 +16,12 @@ NON_PROSE_ASSIGNMENT = re.compile(r"\b[a-z][a-z0-9-]{1,40}=[^\s\]\[]+")
 OPAQUE_IMPORT = re.compile(r"(?<!\S)\d+\|[A-Za-z0-9+/=]{80,}(?!\S)")
 
 # WoW Edit Mode exports are long, whitespace-separated layout records rather
-# than base64 CDM strings. Only suppress a whole import cell with a recognized
-# header and multiple frame records; ordinary text mentioning UIParent stays.
+# than base64 CDM strings. Header versions vary (e.g. 0 and 2 across
+# unrelated class guides); match the structural header rather than a fixed
+# version. Only suppress a whole cell with multiple frame records; ordinary
+# text mentioning UIParent stays.
 EDIT_MODE_HEADER = re.compile(
-    r"^2\s+\d+(?:\s+[01]){3}(?:\s+\d+){2}\s+[A-Za-z][A-Za-z0-9]*\b"
+    r"^\d{1,2}\s+\d{1,3}(?:\s+[01]){3}(?:\s+\d+){2}\s+[A-Za-z][A-Za-z0-9]*\b"
 )
 EDIT_MODE_FRAME = re.compile(r"\b(?:UIParent|[A-Za-z][A-Za-z0-9]*Frame)\b")
 
