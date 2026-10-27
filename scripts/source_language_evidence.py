@@ -40,23 +40,44 @@ def clean_non_prose(text):
 PROSE_TAGS = frozenset(("p", "li", "td", "th"))
 
 
-def audit_source_prose(text, source_language, profiles):
-    """Clean widget payloads and check prose in the configured source locale.
+def normalized_language_signals(profiles):
+    """Group regional profiles by base language, never as rival languages.
 
-    This is a source-only audit filter, not a translation-quality classifier.
-    A language-specific profile can be added as data without changing code.
-    Regional locales use their exact profile, or the base-language profile.
+    en, en-US and en_GB are evidence for one language, not competing
+    candidates. This also accepts regional-only profiles without requiring a
+    duplicate base-language entry. It is source-audit evidence, not browser
+    locale selection or a translation fallback.
+    """
+    if not isinstance(profiles, dict) or not profiles:
+        raise ValueError("Language evidence profiles must be a nonempty object")
+    signals = {}
+    for locale, words in profiles.items():
+        if (not isinstance(locale, str) or not locale.strip()
+                or not isinstance(words, list)
+                or any(not isinstance(word, str) or not word.strip()
+                       for word in words)):
+            raise ValueError("Invalid language evidence profile")
+        base = locale.strip().replace("_", "-").casefold().split("-")[0]
+        signals.setdefault(base, set()).update(word.casefold() for word in words)
+    return signals
+
+
+def audit_source_prose(text, source_language, profiles):
+    """Clean widget payloads and check prose in the configured source language.
+
+    Regional profiles contribute evidence for their shared base language.
+    This is not a translation-quality classifier or browser language detector.
     """
     if not isinstance(text, str):
         return "", False
-    locale = source_language.strip().replace("_", "-").casefold()
-    words = profiles.get(locale, profiles.get(locale.split("-")[0]))
-    if not isinstance(words, list) or not words:
+    locale = source_language.strip().replace("_", "-").casefold().split("-")[0]
+    words = normalized_language_signals(profiles).get(locale)
+    if not words:
         raise ValueError("Missing source-language audit profile: " + locale)
     clean = clean_non_prose(text)
     clean = " ".join(clean.split()).strip()
     tokens = set(TOKEN.findall(clean.casefold()))
-    return clean, bool(tokens & {word.casefold() for word in words})
+    return clean, bool(tokens & words)
 
 
 
@@ -68,17 +89,7 @@ def detect_source_language(blocks, profiles, min_tokens=25, min_hits=7):
     and long calculator/import payloads. Mixed official spell names should not
     outweigh surrounding prose. Returns evidence, not a probability estimate.
     """
-    if not isinstance(profiles, dict) or not profiles:
-        raise ValueError("Language evidence profiles must be a nonempty object")
-    signals = {}
-    for locale, words in profiles.items():
-        if not isinstance(locale, str) or not locale.strip() or not isinstance(words, list):
-            raise ValueError("Invalid language evidence profile")
-        if any(not isinstance(word, str) or not word.strip() for word in words):
-            raise ValueError("Invalid language evidence word")
-        signals[locale.strip().replace("_", "-").casefold()] = {
-            word.casefold() for word in words
-        }
+    signals = normalized_language_signals(profiles)
     seen, tokens = set(), []
     for tag, value in blocks:
         if tag not in PROSE_TAGS or not isinstance(value, str):
