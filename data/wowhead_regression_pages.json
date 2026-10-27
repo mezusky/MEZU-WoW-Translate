@@ -1655,6 +1655,26 @@
     {
       "id": "havoc-demon-hunter-stats",
       "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/stat-priority-pve-dps"
+    },
+    {
+      "id": "protection-warrior-gear",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/bis-gear"
+    },
+    {
+      "id": "mistweaver-monk-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/addons-macro-ui-imports"
+    },
+    {
+      "id": "fire-mage-overview",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/overview-pve-dps"
+    },
+    {
+      "id": "marksmanship-hunter-stats",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/stat-priority-pve-dps"
+    },
+    {
+      "id": "shadow-priest-raid",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/midnight-season-2-raid-tips"
     }
   ]
 }
