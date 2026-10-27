@@ -53,7 +53,7 @@
   "browserRenderedPagesVerified": 0,
   "browserTranslationErrorRate": null,
   "novelTranslationIssueRate": null,
-  "crossPageValidation": "Source-only: Marksmanship Hunter Mythic+ describes hard-capped AoE, Outlaw Rogue overview describes target-capped Blade Flurry; Elemental Shaman M+ describes capped AoE damage. Vengeance DH stat priority uses hard cap for stats and motivates context-specific keys. Newly sampled independent raid/cheat-sheet/stats/gear pages did not warrant speculative sentence overrides.",
+  "crossPageValidation": "Source-only: Marksmanship Hunter Mythic+ describes hard-capped AoE; Outlaw Rogue overview describes target-capped Blade Flurry; Marksmanship Hunter abilities independently discusses hard target caps. Elemental Shaman M+ remains a held-out page for future verification, not confirmed evidence of the exact phrase. Vengeance DH stat priority uses hard cap for stats and motivates context-specific keys. Newly sampled independent raid/cheat-sheet/stats/gear pages did not warrant speculative sentence overrides.",
   "remainingVerification": [
     "GitHub Actions rebuild and validation for the new glossary and tests",
     "Chrome Translator API actual phrase selection and DOM reconstruction",
