@@ -11,6 +11,15 @@ NON_PROSE_PLACEHOLDER = re.compile(r"\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b")
 # Indexed guide widgets can leak key=value configuration (e.g. stat-guide=32588
 # or stats=Int>mastery>haste). Such formulas are not natural-language prose.
 NON_PROSE_ASSIGNMENT = re.compile(r"\b[a-z][a-z0-9-]{1,40}=[^\s\]\[]+")
+# UI/CDM import strings are serialized configuration, not translatable prose.
+# Require a long base64-like body to avoid hiding ordinary numbered text.
+OPAQUE_IMPORT = re.compile(r"(?<!\S)\d+\|[A-Za-z0-9+/=]{80,}(?!\S)")
+
+
+def clean_non_prose(text):
+    """Remove generated widget assignments and opaque import payloads."""
+    return NON_PROSE_ASSIGNMENT.sub(" ", NON_PROSE_PLACEHOLDER.sub(" ",
+                                     OPAQUE_IMPORT.sub(" ", text)))
 PROSE_TAGS = frozenset(("p", "li", "td", "th"))
 
 
@@ -27,7 +36,7 @@ def audit_source_prose(text, source_language, profiles):
     words = profiles.get(locale, profiles.get(locale.split("-")[0]))
     if not isinstance(words, list) or not words:
         raise ValueError("Missing source-language audit profile: " + locale)
-    clean = NON_PROSE_ASSIGNMENT.sub(" ", NON_PROSE_PLACEHOLDER.sub(" ", text))
+    clean = clean_non_prose(text)
     clean = " ".join(clean.split()).strip()
     tokens = set(TOKEN.findall(clean.casefold()))
     return clean, bool(tokens & {word.casefold() for word in words})
@@ -57,7 +66,7 @@ def detect_source_language(blocks, profiles, min_tokens=25, min_hits=7):
     for tag, value in blocks:
         if tag not in PROSE_TAGS or not isinstance(value, str):
             continue
-        clean = NON_PROSE_ASSIGNMENT.sub(" ", NON_PROSE_PLACEHOLDER.sub(" ", value))
+        clean = clean_non_prose(value)
         normalized = " ".join(clean.split()).casefold()
         if not normalized or normalized in seen or len(normalized) > 1200:
             continue
