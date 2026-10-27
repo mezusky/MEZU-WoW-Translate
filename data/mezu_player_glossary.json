@@ -140,7 +140,9 @@
     "uncapped AoE": "AoE sans limite de cibles",
     "filler": "filler",
     "filler spell": "sort filler",
-    "filler spells": "sorts filler"
+    "filler spells": "sorts filler",
+    "soaker": "joueur chargé du soak",
+    "soakers": "joueurs chargés du soak"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
