@@ -1479,6 +1479,26 @@
     {
       "id": "survival-hunter-ui-macros",
       "url": "https://www.wowhead.com/guide/classes/hunter/survival/addons-macro-ui-imports"
+    },
+    {
+      "id": "frost-death-knight-basics",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/basics"
+    },
+    {
+      "id": "outlaw-rogue-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/talent-builds-pve-dps"
+    },
+    {
+      "id": "arms-warrior-raid",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "shadow-priest-stats",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/stat-priority-pve-dps"
+    },
+    {
+      "id": "vengeance-demon-hunter-gear",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/bis-gear"
     }
   ]
 }
