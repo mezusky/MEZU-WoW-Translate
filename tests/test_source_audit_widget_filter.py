@@ -7,7 +7,7 @@ import json
 import unittest
 from pathlib import Path
 
-from scripts.source_language_evidence import audit_source_prose
+from scripts.source_language_evidence import audit_source_prose, detect_source_language
 
 ROOT = Path(__file__).resolve().parents[1]
 PROFILES = json.loads((ROOT / "data/audit_language_signals.json").read_text(
@@ -83,6 +83,16 @@ class SourceAuditWidgetFilterTests(unittest.TestCase):
         self.assertNotIn(payload, clean)
         short, _ = audit_source_prose("Use build 1|abc123 for the raid.", "en", PROFILES)
         self.assertIn("1|abc123", short)
+
+    def test_language_detection_ignores_import_payload_in_guide_table(self):
+        prose = ("You should use your spells and abilities during the fight, "
+                 "because they will help with your cooldowns and your damage. "
+                 "After each cast you can use the other abilities when they "
+                 "are ready, and this is how you keep your rotation going.")
+        payload = "1|" + "AbCdEf0123456789+/" * 10
+        blocks = [("p", prose), ("td", payload)]
+        result = detect_source_language(blocks, PROFILES)
+        self.assertEqual(result["detectedLanguage"], "en")
 
     def test_missing_profile_fails_closed(self):
         with self.assertRaises(ValueError):
