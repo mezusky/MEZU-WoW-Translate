@@ -1539,6 +1539,30 @@
     {
       "id": "windwalker-monk-ui-macros",
       "url": "https://www.wowhead.com/guide/classes/monk/windwalker/addons-macro-ui-imports"
+    },
+    {
+      "id": "holy-priest-basics",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/basics"
+    },
+    {
+      "id": "guardian-druid-season-2",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/midnight-season-2"
+    },
+    {
+      "id": "augmentation-evoker-season-2",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/midnight-season-2"
+    },
+    {
+      "id": "mistweaver-monk-season-2",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/midnight-season-2"
+    },
+    {
+      "id": "destruction-warlock-season-2",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/midnight-season-2"
+    },
+    {
+      "id": "brewmaster-monk-season-2",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/midnight-season-2"
     }
   ]
 }
