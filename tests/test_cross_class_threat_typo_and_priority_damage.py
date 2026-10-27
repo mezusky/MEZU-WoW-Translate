@@ -45,8 +45,8 @@ class CrossClassThreatTypoAndPriorityDamageTests(unittest.TestCase):
         terms = select_jargon(GLOSSARY, "en-US", "fr-FR")
         # Source excerpts, not observed output of the browser translator.
         samples = {
-            "blood-death-knight-basics": "threat generation",
-            "brewmaster-monk-talents": "threat management",
+            "blood-death-knight-basics": "threat management",
+            "brewmaster-monk-talents": "threat generation",
         }
         for page_id, phrase in samples.items():
             with self.subTest(page=page_id):
