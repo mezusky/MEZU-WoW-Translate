@@ -150,7 +150,12 @@
     "damage amplification windows": "fenêtres de dégâts amplifiés",
     "drop-off damage": "dégâts dégressifs avec la distance",
     "falloff damage": "dégâts dégressifs avec la distance",
-    "fall-off damage": "dégâts dégressifs avec la distance"
+    "fall-off damage": "dégâts dégressifs avec la distance",
+    "off-GCD": "hors GCD",
+    "Off-GCD": "Hors GCD",
+    "off-gcd": "hors GCD",
+    "off GCD": "hors GCD",
+    "off the GCD": "hors GCD"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
