@@ -6,6 +6,7 @@ import base64
 import hashlib
 from pathlib import Path
 from blizzard_search_pairs import collect_search_pairs
+from blizzard_index_pairs import collect_index_pairs
 from index_retention import retain_on_partial_index
 from merge_entity_locales import merge_verified_locale_refresh, project_locale_pairs
 from locale_glossary import select_jargon, select_locale_data
@@ -45,29 +46,6 @@ def get(path, locale):
     req = urllib.request.Request(url, headers={"Authorization": "Bearer " + token})
     with urllib.request.urlopen(req, timeout=30) as response:
         return json.load(response)
-
-def collect_pairs(en_doc, fr_doc):
-    en = {}
-    fr = {}
-
-    def walk(value, target):
-        if isinstance(value, list):
-            for item in value:
-                walk(item, target)
-        elif isinstance(value, dict):
-            if isinstance(value.get("id"), int) and isinstance(value.get("name"), str):
-                target[str(value["id"])] = value["name"]
-            for key, item in value.items():
-                if key not in ("_links", "key", "media"):
-                    walk(item, target)
-
-    walk(en_doc, en)
-    walk(fr_doc, fr)
-    return {
-        i: {"en": name, "fr": fr[i]}
-        for i, name in en.items()
-        if i in fr and name and fr[i]
-    }
 
 endpoints = {
     "class": "/data/wow/playable-class/index",
@@ -121,7 +99,7 @@ entities = {}
 for kind, path in endpoints.items():
     print("Sync", kind)
     try:
-        fresh = collect_pairs(get(path, "en_US"), get(path, "fr_FR"))
+        fresh = collect_index_pairs(get(path, "en_US"), get(path, "fr_FR"), "en_US", "fr_FR")
         entities[kind] = retain_on_partial_index(kind, fresh, previous_entities.get(kind, {}))
     except Exception as exc:
         print("WARN sync", kind, exc)
