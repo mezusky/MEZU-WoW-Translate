@@ -860,6 +860,33 @@
       "newPageInterventionProxy": "1 shared phrase family on 3 newly added pages, not a measured translation error rate; other 4 guides are cross-class evidence.",
       "crossPageSourceValidation": "Warrior Protection, Monk Brewmaster, Druid Guardian and Paladin Protection English indexed guides share damage-intake vocabulary; sampled Guardian stats and Augmentation raid for broader sections. Offline locale-bound tests added; no Chrome replay.",
       "crossPageFixStatus": "Locale-scoped glossary, regression pages and tests committed. Do not infer a clean-state cycle until browser output and novel issue rate are measured."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant web inspected indexed English Wowhead guide prose; direct live English pages returned JavaScript challenge. No GitHub Actions Wowhead fetch.",
+      "sampledPageIds": [
+        "frost-death-knight-gear",
+        "holy-priest-cheat-sheet",
+        "retribution-paladin-talent-builds",
+        "arcane-mage-gear"
+      ],
+      "sampledPageCount": 4,
+      "sourceCorpusCount": 317,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "newStructuralRiskFamiliesObserved": 0,
+      "previouslyObservedRiskFamilies": [
+        "canonical spell/item names embedded in gear and tier-set tables",
+        "talent export/import controls and structured talent widgets",
+        "mixed localized entity names with English guide prose"
+      ],
+      "newPageInterventionProxy": "No new glossary or manual overrides for these four pages; not a measured translation issue rate.",
+      "sharedEngineFix": "Blizzard index and search refreshes now preserve additional locale names on existing canonical IDs while fresh source/target names win; retired complete-index IDs still expire.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Offline canonical-ID locale retention tests committed; Chrome Translator API and actual DOM output remain unverified. Not a clean-state cycle."
     }
   ]
 }
