@@ -1251,6 +1251,22 @@
     {
       "id": "enhancement-shaman-stats",
       "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/stat-priority-pve-dps"
+    },
+    {
+      "id": "frost-death-knight-gear",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/bis-gear"
+    },
+    {
+      "id": "holy-priest-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/cheat-sheet"
+    },
+    {
+      "id": "retribution-paladin-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/talent-builds-pve-dps"
+    },
+    {
+      "id": "arcane-mage-gear",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/bis-gear"
     }
   ]
 }
