@@ -42,6 +42,7 @@ class CrossClassThreatTypoAndPriorityDamageTests(unittest.TestCase):
             select_jargon(GLOSSARY, "en-US", "de-DE")
 
     def test_cross_role_source_evidence(self):
+        terms = select_jargon(GLOSSARY, "en-US", "fr-FR")
         # Source excerpts, not observed output of the browser translator.
         samples = {
             "blood-death-knight-basics": "threat generation",
