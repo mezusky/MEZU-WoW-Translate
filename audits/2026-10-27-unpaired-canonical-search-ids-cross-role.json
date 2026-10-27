@@ -30,7 +30,7 @@
     {
       "name": "Unpaired canonical Blizzard search IDs omitted from entity records",
       "fixLayer": "stable source generator",
-      "fix": "Retain source-only and target-only IDs. Projection excludes incomplete IDs and blocks ambiguous same-name source collisions; tests cover both directions.",
+      "fix": "Retain source-only and target-only canonical IDs for collision-aware projection. For existing IDs, accept refreshed names only when both source and target arrive together, avoiding a new source name paired with a stale target translation. Locale-independent tests cover both missing directions and stale refreshes.",
       "evidence": "Repository collect_search_pairs previously intersected locale ID sets; synthetic cross-ID regression reproduces the unsafe omission. No claim that a specific live guide was mistranslated."
     }
   ],
@@ -48,7 +48,7 @@
   "browserTranslationErrorRate": null,
   "novelTranslationIssueRate": null,
   "remainingVerification": [
-    "GitHub Actions final rebuild and validation after last commit",
+    "GitHub Actions final rebuild and validation after the complete paired-refresh fix",
     "Chrome Translator API and DOM/rich-text reconstruction",
     "Quantified held-out novel translation issue rate over two consecutive cycles"
   ]
