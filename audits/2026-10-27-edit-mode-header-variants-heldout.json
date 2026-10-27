@@ -1,0 +1,58 @@
+{
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditType": "indexed-live-Wowhead-source-only; no browser Translator API/DOM capture",
+  "sourceAccess": "Assistant web indexed English guide excerpts; direct Wowhead HTML may return JavaScript verification; no GitHub-hosted Wowhead fetch",
+  "heldOutPageIds": [
+    "subtlety-rogue-cheat-sheet",
+    "preservation-evoker-cheat-sheet",
+    "feral-druid-mythic-plus",
+    "balance-druid-ui-macros",
+    "protection-paladin-cheat-sheet"
+  ],
+  "crossPageEvidence": [
+    {
+      "page": "balance-druid-ui-macros",
+      "observed": "Edit Mode exports with both 0- and 2-prefixed headers, CDM base64 import, and separate prose descriptions",
+      "action": "Source-audit Edit Mode header recognition generalized structurally; tested across 0/2 and synthetic unrelated frames; browser preservation unverified"
+    },
+    {
+      "page": "feral-druid-mythic-plus",
+      "observed": "Talent loadouts, utility/dispels, and priority damage; source contains typographical errors",
+      "action": "Existing locale-specific jargon covers talent loadouts/priority damage; do not translate source typos as MEZU regressions"
+    },
+    {
+      "page": "preservation-evoker-cheat-sheet",
+      "observed": "Repeated talent calculator widgets, stat priority, and old reader comments",
+      "action": "Prior non-prose and comment boundaries remain relevant; rich-text DOM/browser output unverified"
+    },
+    {
+      "page": "subtlety-rogue-cheat-sheet",
+      "observed": "Talent calculator trees and import controls",
+      "action": "Source-only widget risk, no exact-sentence override"
+    },
+    {
+      "page": "protection-paladin-cheat-sheet",
+      "observed": "Talent trees, stat priorities and gear panels",
+      "action": "Source-only widget risk, no exact-sentence override"
+    }
+  ],
+  "sharedAuditFix": "scripts/source_language_evidence.py now matches structurally valid Edit Mode exports regardless of 0/2 header version, retaining strict length, repeated-frame, and -1 record guards.",
+  "scope": "Source-language audit helper only; no extension engine or remote executable change.",
+  "newReusableTermFamiliesObserved": 0,
+  "newStructuralRiskFamiliesObserved": 1,
+  "newManualSentenceOverrides": 0,
+  "newJargonOverrides": 0,
+  "sourceCorpusCount": 396,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "ci": "GitHub Actions validation after commits not yet confirmed; local synthetic regex checks passed; full Python suite pending.",
+  "remaining": [
+    "Browser-local Translator API/DOM reconstruction and copied import integrity",
+    "Official entity IDs/locale rendering",
+    "Measured novel translation issue rate across unrelated new pages"
+  ],
+  "stopConditionMet": false
+}
