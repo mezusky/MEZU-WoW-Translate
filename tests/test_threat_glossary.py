@@ -36,7 +36,7 @@ class ThreatGlossaryTests(unittest.TestCase):
             (ROOT / "data/wowhead_regression_pages.json").read_text(
                 encoding="utf-8"))["pages"]}
         self.assertTrue({"blood-death-knight-basics",
-                         "brewmaster-monk-abilities"}.issubset(pages))
+                         "brewmaster-monk-talents"}.issubset(pages))
 
 
 if __name__ == "__main__":
