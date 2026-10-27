@@ -1519,6 +1519,26 @@
     {
       "id": "discipline-priest-ui-macros",
       "url": "https://www.wowhead.com/guide/classes/priest/discipline/addons-macro-ui-imports"
+    },
+    {
+      "id": "affliction-warlock-consumables",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/enchants-gems-pve-dps"
+    },
+    {
+      "id": "beast-mastery-hunter-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/talent-builds-pve-dps"
+    },
+    {
+      "id": "survival-hunter-stats",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/stat-priority-pve-dps"
+    },
+    {
+      "id": "fury-warrior-gear",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/bis-gear"
+    },
+    {
+      "id": "windwalker-monk-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/addons-macro-ui-imports"
     }
   ]
 }
