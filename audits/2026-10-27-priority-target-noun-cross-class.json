@@ -6,7 +6,7 @@
   "auditMethod": "Assistant web indexed English Wowhead guide excerpts; direct live pages return JavaScript verification. Offline locale-scoped data checks; no Chrome Translator API.",
   "sampledPageIds": [
     "fury-warrior-raid",
-    "marksmanship-hunter-mythic-plus",
+    "marksmanship-hunter-rotation",
     "frost-mage-mythic-plus"
   ],
   "reusableIssueFamilies": [
@@ -17,7 +17,7 @@
       "targetPhrase": "cible prioritaire",
       "evidencePages": [
         "fury-warrior-raid",
-        "marksmanship-hunter-mythic-plus"
+        "marksmanship-hunter-rotation"
       ],
       "distinctLongerPhrase": "priority target damage",
       "longerPhraseTarget": "dégâts sur la cible prioritaire",
@@ -27,7 +27,7 @@
       "guard": "Do not rewrite the bare words priority or target; preserve longer damage variants; non-French locale pairs are isolated."
     }
   ],
-  "crossPageValidation": "Fury Warrior raid describes a boss priority target; Marksmanship Hunter discusses a priority target being present. Frost Mage Mythic+ independently uses the longer damage expression. These are source evidence only.",
+  "crossPageValidation": "Fury Warrior raid describes a boss priority target; Marksmanship Hunter rotation says to prioritize a target when it appears. Frost Mage Mythic+ independently uses the longer damage expression. Source evidence only.",
   "sourceQualityWarnings": [
     "Wowhead indexed English guides can contain author typos and missing season placeholders; not a reason to add exact sentence overrides."
   ],
