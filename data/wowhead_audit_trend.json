@@ -1164,6 +1164,34 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Cross-class lexical evidence confirmed from indexed English Wowhead content; tests/build and browser rich-text rendering not yet confirmed."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant web indexed current English Wowhead sources; no browser Translator API or DOM capture.",
+      "sampledPageIds": [
+        "devastation-evoker-mythic-plus",
+        "enhancement-shaman-rotation",
+        "holy-paladin-rotation",
+        "mistweaver-monk-rotation",
+        "shadow-priest-ui-macros",
+        "fire-mage-cheat-sheet",
+        "feral-druid-cheat-sheet"
+      ],
+      "sampledPageCount": 7,
+      "sourceCorpusCount": 365,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "Uncapped AoE shared by Devastation Evoker M+ and Enhancement Shaman rotation; distinct from existing hard-capped AoE."
+      ],
+      "newStructuralRiskFamiliesObserved": 0,
+      "structuralRiskFamilies": [],
+      "newPageInterventionProxy": "Four held-out guides across Mythic+, UI/macros and cheat sheets; one bounded shared glossary key, no manual sentence overrides. Source-only proxy, not a measured translation error rate.",
+      "sharedEngineFix": "No packaged extension change. Locale-scoped data key and regression test; complex /run macros and DOM preservation remain browser-only checks.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Shared terminology verified against two unrelated specs via indexed English source; CI rebuild and browser rendering not yet confirmed. Not a clean cycle."
     }
   ]
 }
