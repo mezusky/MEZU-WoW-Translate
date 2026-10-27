@@ -1,0 +1,87 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web indexed English Wowhead source pages; direct HTML requests challenged by JavaScript. Source-only lexical/structure review, not Chrome Translator API output.",
+  "sampledPageIds": [
+    "blood-death-knight-basics",
+    "brewmaster-monk-talents",
+    "protection-paladin-basics",
+    "guardian-druid-ui-macros",
+    "shadow-priest-talent-builds",
+    "survival-hunter-cheat-sheet"
+  ],
+  "newCorpusPageIds": [
+    "protection-paladin-basics",
+    "guardian-druid-ui-macros",
+    "shadow-priest-talent-builds",
+    "survival-hunter-cheat-sheet"
+  ],
+  "sourceCorpusCount": 352,
+  "findings": [
+    {
+      "kind": "ci_regression",
+      "description": "Previously removed thread-as-threat typo mappings were still required by an outdated cross-class regression test, blocking all CI builds before Data Pack generation.",
+      "fix": "Test now checks correct threat generation/management terms and explicitly rejects all five removed thread keys; examples aligned to independently indexed Blood DK and Brewmaster guides.",
+      "scope": "tests only; no new manual overrides or extension changes"
+    },
+    {
+      "kind": "source_only_risk",
+      "description": "Guardian Druid UI guide includes whitespace-separated full UI layout exports in addition to base64-like CDM imports. Existing audit filter handles CDM but not the layout format.",
+      "status": "Documented only; preserve raw UI imports and adjacent prose; no speculative regex or browser code change."
+    },
+    {
+      "kind": "source_only_risk",
+      "description": "Shadow Priest talents use interactive build buttons and named talent nodes; Survival Hunter cheat sheet exposes stat-guide/stats widget parameters.",
+      "status": "Existing source-only widget filters and canonical-ID mapping should be used; rendered DOM/official ID verification remains browser-only."
+    },
+    {
+      "kind": "upstream_source",
+      "description": "Shadow Priest and other guide excerpts contain author-side phrasing or localization gaps; do not add exact sentence overrides based on upstream typos or localized Wowhead pages."
+    }
+  ],
+  "lexicalChecks": [
+    {
+      "page": "blood-death-knight-basics",
+      "source": "threat management",
+      "expected": "gestion de la menace",
+      "layer": "fr player glossary"
+    },
+    {
+      "page": "brewmaster-monk-talents",
+      "source": "threat generation",
+      "expected": "génération de menace",
+      "layer": "fr player glossary"
+    },
+    {
+      "page": "shadow-priest-talent-builds",
+      "source": "talent build",
+      "expected": "build de talents",
+      "layer": "fr player glossary"
+    },
+    {
+      "page": "survival-hunter-cheat-sheet",
+      "source": "trinkets",
+      "expected": "bijoux",
+      "layer": "fr player glossary"
+    }
+  ],
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "datapackSourceChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "Latest GitHub Actions complete build and validation",
+    "Browser-local Translator API and DOM, UI imports, macros, talent widgets",
+    "Two independent quantified cross-page clean cycles"
+  ],
+  "ci": {
+    "previousRun": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40477847098",
+    "previousFailure": "5 outdated test KeyErrors",
+    "latestRun": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40482674932",
+    "latestStatus": "pending at audit write"
+  }
+}
