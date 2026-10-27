@@ -132,7 +132,9 @@
     "100% uptime": "100 % d’uptime",
     "priority target": "cible prioritaire",
     "target capped": "limité en nombre de cibles",
-    "hard-capped AoE": "AoE limitée à un nombre fixe de cibles"
+    "hard-capped AoE": "AoE limitée à un nombre fixe de cibles",
+    "funnel damage": "dégâts en funnel",
+    "funneling damage": "dégâts en funnel"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
