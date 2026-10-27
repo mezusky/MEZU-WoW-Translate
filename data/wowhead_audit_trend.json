@@ -1218,6 +1218,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Source-only false-positive control generalized across Elemental Shaman and Windwalker Monk; CI and browser translation verification pending. Not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant indexed live English Wowhead excerpts; direct HTML blocked by JavaScript challenge; browser Translator API unavailable.",
+      "sampledPageIds": [
+        "affliction-warlock-consumables",
+        "beast-mastery-hunter-talent-builds",
+        "survival-hunter-stats",
+        "fury-warrior-gear",
+        "windwalker-monk-ui-macros"
+      ],
+      "sampledPageCount": 5,
+      "sourceCorpusCount": 385,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "Raid soaker role nouns in fr player jargon; no bare soak override."
+      ],
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Localized Wowhead URL/page language does not guarantee localized prose; entity names and surrounding prose may differ in language."
+      ],
+      "newPageInterventionProxy": "Five held-out pages plus cross-check against unrelated Monk and Paladin raid guides; two reusable locale-specific nouns, zero sentence overrides. Not a measured translation issue rate.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Source-only lexical evidence; CI rebuild and Chrome translator output pending. Not a clean quality cycle."
     }
   ]
 }
