@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web inspection of indexed live English Wowhead guide sources; source-only terminology and corpus tests. No browser Translator API replay.",
+  "sampledPageIds": [
+    "affliction-warlock-raid",
+    "assassination-rogue-talent-builds",
+    "subtlety-rogue-abilities",
+    "vengeance-demon-hunter-cheat-sheet",
+    "discipline-priest-cheat-sheet",
+    "marksmanship-hunter-cheat-sheet",
+    "protection-warrior-cheat-sheet"
+  ],
+  "newCorpusPages": [
+    "vengeance-demon-hunter-cheat-sheet",
+    "discipline-priest-cheat-sheet",
+    "marksmanship-hunter-cheat-sheet",
+    "protection-warrior-cheat-sheet"
+  ],
+  "sourceEvidenceUrls": [
+    "https://www.wowhead.com/guide/classes/warlock/affliction/midnight-season-2-raid-tips",
+    "https://www.wowhead.com/guide/classes/rogue/assassination/talent-builds-pve-dps",
+    "https://www.wowhead.com/guide/classes/rogue/subtlety/abilities-talents-pve-dps",
+    "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/cheat-sheet",
+    "https://www.wowhead.com/guide/classes/priest/discipline/cheat-sheet",
+    "https://www.wowhead.com/guide/classes/hunter/marksmanship/cheat-sheet",
+    "https://www.wowhead.com/guide/classes/warrior/protection/cheat-sheet"
+  ],
+  "reusableIssueFamilies": [
+    {
+      "name": "Funnel damage / funneling damage as contextual WoW player jargon",
+      "evidencePages": [
+        "affliction-warlock-raid",
+        "assassination-rogue-talent-builds",
+        "subtlety-rogue-abilities"
+      ],
+      "fixLayer": "fr player glossary",
+      "fix": "Added funnel damage and migrated funneling damage out of legacy manual overrides; retained bare funnel as contextual, not a global translation."
+    }
+  ],
+  "heldOutFindings": [
+    "Tank, healer and DPS cheat sheets contain diverse talent-tree and item/stat widgets; previous stat-guide/stats= source filtering generalizes to these sources at the indexed-text level only.",
+    "Some source cheat sheets contain incomplete season/patch placeholders; do not misclassify as MEZU translation defects."
+  ],
+  "newReusableTermFamiliesObserved": 1,
+  "newStructuralRiskFamiliesObserved": 0,
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "sourceCorpusCount": 332,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "Post-commit GitHub Actions rebuild and Data Pack validation",
+    "Real Chrome Translator API output and rich-text DOM reconstruction",
+    "Two consecutive held-out multi-role audits with measured novel issue rate"
+  ]
+}
