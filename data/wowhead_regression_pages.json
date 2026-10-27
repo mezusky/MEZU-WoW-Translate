@@ -1299,6 +1299,18 @@
     {
       "id": "devastation-evoker-gear",
       "url": "https://www.wowhead.com/guide/classes/evoker/devastation/bis-gear"
+    },
+    {
+      "id": "affliction-warlock-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/cheat-sheet"
+    },
+    {
+      "id": "arcane-mage-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/cheat-sheet"
+    },
+    {
+      "id": "balance-druid-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/cheat-sheet"
     }
   ]
 }
