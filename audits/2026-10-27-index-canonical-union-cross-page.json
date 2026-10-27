@@ -53,5 +53,23 @@
     "GitHub Actions tests, rebuild and Data Pack validation after commits",
     "Chrome Translator API, macro code preservation and DOM/rich-text reconstruction",
     "Quantified novel issue rate on unrelated held-out pages over two consecutive cycles"
-  ]
+  ],
+  "reusedJargonSamples": [
+    {
+      "page": "protection-warrior-rotation",
+      "source": "Always Be Casting",
+      "fr": "Toujours caster"
+    },
+    {
+      "page": "feral-druid-gear",
+      "source": "Bonus Rolls",
+      "fr": "Jets bonus"
+    },
+    {
+      "page": "feral-druid-gear",
+      "source": "embellishments",
+      "fr": "embellissements"
+    }
+  ],
+  "reusedJargonVerification": "Source phrase vs current fr player glossary only; not full translated DOM output."
 }
