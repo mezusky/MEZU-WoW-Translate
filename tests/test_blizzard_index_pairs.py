@@ -54,8 +54,9 @@ class BlizzardIndexPairsTests(unittest.TestCase):
                "2": {"en": "Shared", "fr": "Partagé"}}
         fresh = {"1": {"en": "New"},
                  "3": {"en": "Shared"}}
-        merged = retain_on_partial_index("class", fresh, old)
+        merged = retain_on_partial_index("class", fresh, old, min_ratio=1.1)
         self.assertEqual(merged["1"], old["1"])
+        self.assertEqual(merged["2"], old["2"])
         self.assertEqual(merged["3"], {"en": "Shared"})
         self.assertEqual(project_locale_pairs({"class": merged}, "en", "fr"),
                          {"Old": "Ancien"})
