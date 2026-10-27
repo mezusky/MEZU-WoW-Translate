@@ -1,0 +1,63 @@
+"""Source-only audit filtering: multilingual prose vs. serialized guide widgets.
+
+Examples are compact observations from indexed Wowhead cheat sheets and
+rotation pages; they do not represent Chrome Translator API output.
+"""
+import json
+import unittest
+from pathlib import Path
+
+from scripts.source_language_evidence import audit_source_prose
+
+ROOT = Path(__file__).resolve().parents[1]
+PROFILES = json.loads((ROOT / "data/audit_language_signals.json").read_text(
+    encoding="utf-8"))["profiles"]
+
+
+class SourceAuditWidgetFilterTests(unittest.TestCase):
+    def test_three_unrelated_cheat_sheet_stat_widgets_are_not_prose(self):
+        widgets = (
+            "stat-guide=5525 stats=intellect>>Haste>Crit>Mastery>Versatility]",
+            "stat-guide=5554 stats=int>>haste>>versatility=crit=mastery]",
+            "stat-guide=5542 stats=int>mastery>crit>>haste>vers]",
+        )
+        for widget in widgets:
+            with self.subTest(widget=widget[:20]):
+                clean, has_prose = audit_source_prose(widget, "en-US", PROFILES)
+                self.assertFalse(has_prose)
+                self.assertNotIn("stat-guide=", clean)
+                self.assertNotIn("stats=", clean)
+
+    def test_widget_payload_does_not_erase_real_english_prose(self):
+        value = ("Your spells and abilities should be used before the next "
+                 "fight. stat-guide=5525 stats=intellect>>Haste>Crit]")
+        clean, has_prose = audit_source_prose(value, "en-GB", PROFILES)
+        self.assertTrue(has_prose)
+        self.assertIn("Your spells and abilities", clean)
+        self.assertNotIn("stat-guide=", clean)
+
+    def test_french_and_german_source_are_not_filtered_by_english(self):
+        examples = (
+            ("fr-FR", "Vous pouvez utiliser vos sorts avant le combat.", True),
+            ("de-DE", "Ihr könnt diese Fähigkeiten auch vor dem Kampf verwenden.", True),
+            ("fr-FR", "Your spells should be used before combat.", False),
+            ("it-IT", "Quando puoi usare le abilità prima del combattimento.", True),
+        )
+        for locale, value, expected in examples:
+            with self.subTest(locale=locale, value=value[:12]):
+                self.assertEqual(audit_source_prose(value, locale, PROFILES)[1], expected)
+
+    def test_generated_placeholder_is_not_a_language_signal(self):
+        clean, has_prose = audit_source_prose(
+            "UTIL3_USECASE DUNGEON_2_TALENT_OPTION stats=int>mastery>haste]",
+            "en-US", PROFILES)
+        self.assertFalse(has_prose)
+        self.assertNotIn("UTIL3_USECASE", clean)
+
+    def test_missing_profile_fails_closed(self):
+        with self.assertRaises(ValueError):
+            audit_source_prose("Some source text", "pt-BR", PROFILES)
+
+
+if __name__ == "__main__":
+    unittest.main()
