@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web indexed live English Wowhead guides; direct HTML challenge prevents browser DOM and Translator API checks.",
+  "sampledPageIds": [
+    "devourer-demon-hunter-raid",
+    "survival-hunter-consumables",
+    "protection-warrior-manaforge-omega-raid",
+    "vengeance-demon-hunter-manaforge-omega-raid"
+  ],
+  "crossPageEvidence": [
+    {
+      "concept": "Damage amplification windows",
+      "pages": [
+        "retribution-paladin-raid",
+        "assassination-rogue-raid",
+        "devourer-demon-hunter-raid"
+      ],
+      "finding": "Independent DPS authors describe raid damage amplification using damage amp / damage amplification window or phase.",
+      "fix": "Five target-fr locale jargon phrase variants; no generic amp replacement."
+    },
+    {
+      "concept": "Distance-falloff damage",
+      "pages": [
+        "holy-priest-raid",
+        "discipline-priest-raid",
+        "protection-warrior-manaforge-omega-raid",
+        "vengeance-demon-hunter-manaforge-omega-raid"
+      ],
+      "finding": "Healer raid guides say drop-off damage; independent older tank guide says distance-based damage or falloff Arcane damage. Only unambiguous drop-off/falloff damage phrases are mapped.",
+      "fix": "Three target-fr locale jargon variants; no bare drop off/falloff replacement or distance-based damage guess."
+    },
+    {
+      "concept": "Official item names",
+      "pages": [
+        "survival-hunter-consumables"
+      ],
+      "finding": "English source uses item and enchant names in consumable tables; preserve official ID-based localization rather than manual string overrides.",
+      "fix": "No manual item override."
+    }
+  ],
+  "lexicalSimulation": {
+    "scope": "Direct locale jargon lookups, not full sentence or Chrome rendering.",
+    "positiveCases": {
+      "damage amp window": "fenêtre de dégâts amplifiés",
+      "damage amplification windows": "fenêtres de dégâts amplifiés",
+      "drop-off damage": "dégâts dégressifs avec la distance",
+      "falloff damage": "dégâts dégressifs avec la distance"
+    },
+    "negativeControls": [
+      "amp",
+      "drop off",
+      "falloff",
+      "distance-based damage"
+    ]
+  },
+  "sourceCorpusCount": 405,
+  "newReusableJargonEntries": 8,
+  "newManualSentenceOverrides": 0,
+  "packagedExtensionModified": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "Confirm GitHub Actions tests and regenerated Data Pack",
+    "Verify runtime phrase matching and grammar in Chrome",
+    "Check official ID-based names, widgets and DOM reconstruction",
+    "Measure novel errors on held-out classes over two consecutive cycles"
+  ],
+  "status": "Source-only lexical improvement; no measured clean translation cycle."
+}
