@@ -7,7 +7,7 @@ import hashlib
 from pathlib import Path
 from blizzard_search_pairs import collect_search_pairs
 from index_retention import retain_on_partial_index
-from merge_entity_locales import project_locale_pairs
+from merge_entity_locales import merge_rows, project_locale_pairs
 from locale_glossary import select_jargon, select_locale_data
 from datetime import datetime, timezone
 
@@ -132,7 +132,7 @@ for kind, path in search_endpoints.items():
     try:
         fresh = collect_search_pairs(get(path, "en_US"), get(path, "fr_FR"), "en_US", "fr_FR")
         # Preserve verified IDs across partial pages; new official names win.
-        entities[kind] = {**previous_entities.get(kind, {}), **fresh}
+        entities[kind] = merge_rows(previous_entities.get(kind, {}), fresh)
     except Exception as exc:
         print("WARN search", kind, exc)
         entities[kind] = previous_entities.get(kind, {})
