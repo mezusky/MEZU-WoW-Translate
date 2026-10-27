@@ -1029,6 +1029,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Source generator and collision/stale-pair regression tests committed; final CI, browser Translator API, DOM reconstruction and two measured clean cycles pending."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Indexed live English Wowhead guide sources; direct HTML challenged by JavaScript. No browser Translator API verification.",
+      "sampledPageIds": [
+        "protection-warrior-rotation",
+        "discipline-priest-rotation",
+        "brewmaster-monk-consumables",
+        "feral-druid-gear",
+        "augmentation-evoker-ui-macros",
+        "frost-mage-basics"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 340,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Blizzard index locale intersection omitted incomplete canonical IDs, hiding potential same-name collision across spells/items/classes and other official indexes."
+      ],
+      "newPageInterventionProxy": "Four new tank/DPS guides across consumables, gearing, macros and basics needed no new phrase overrides; one generator-wide canonical-ID coverage fix was required. Source-only proxy, not browser error rate.",
+      "sharedEngineFix": "Index generator now retains incomplete canonical IDs and prevents partial locale refreshes from stitching a new source name to an old target translation. Locale-neutral regression tests added.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Generator and regression changes committed; final CI, Chrome Translator API, macro/DOM preservation and two measured clean cycles pending."
     }
   ]
 }
