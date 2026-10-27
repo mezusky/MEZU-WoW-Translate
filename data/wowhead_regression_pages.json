@@ -1619,6 +1619,22 @@
     {
       "id": "vengeance-demon-hunter-manaforge-omega-raid",
       "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "fury-warrior-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "havoc-demon-hunter-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/addons-macro-ui-imports"
+    },
+    {
+      "id": "destruction-warlock-stats",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/stat-priority-pve-dps"
+    },
+    {
+      "id": "frost-mage-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/cheat-sheet"
     }
   ]
 }
