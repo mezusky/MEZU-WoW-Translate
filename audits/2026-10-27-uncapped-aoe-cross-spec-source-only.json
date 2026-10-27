@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web access to indexed current English Wowhead guide text. Not a Chrome Translator API or DOM rendering test; no full guide content stored.",
+  "sampledPageIds": [
+    "devastation-evoker-mythic-plus",
+    "enhancement-shaman-rotation",
+    "holy-paladin-rotation",
+    "mistweaver-monk-rotation",
+    "shadow-priest-ui-macros",
+    "fire-mage-cheat-sheet",
+    "feral-druid-cheat-sheet"
+  ],
+  "newCorpusPageIds": [
+    "shadow-priest-ui-macros",
+    "fire-mage-cheat-sheet",
+    "devastation-evoker-mythic-plus",
+    "feral-druid-cheat-sheet"
+  ],
+  "sourceCorpusCount": 365,
+  "sourceEvidence": [
+    {
+      "page": "devastation-evoker-mythic-plus",
+      "excerpt": "powerful, uncapped AoE",
+      "expectedTerm": "AoE sans limite de cibles"
+    },
+    {
+      "page": "enhancement-shaman-rotation",
+      "excerpt": "truly uncapped AoE when active",
+      "expectedTerm": "AoE sans limite de cibles"
+    }
+  ],
+  "findings": [
+    {
+      "kind": "shared_jargon",
+      "issue": "uncapped AoE contrasts with the existing hard-capped AoE mapping",
+      "fix": "Add one bounded EN->FR player glossary key; keep the hard-capped mapping and avoid translating uncapped or AoE in isolation."
+    },
+    {
+      "kind": "source_markup_risk",
+      "issue": "Shadow Priest UI page contains /run EditMacro Lua, #showtooltip and /cast syntax; cheat sheets expose stat-guide and stats parameters.",
+      "fix": "No speculative packaged DOM fix. Keep as browser-only verification targets; source-only filtering is not evidence of safe rendered preservation."
+    },
+    {
+      "kind": "upstream_source_quality",
+      "issue": "Some indexed Wowhead pages contain placeholder headings and mismatched season labels.",
+      "fix": "Do not count upstream source defects as MEZU translation errors."
+    }
+  ],
+  "negativeControls": [
+    "No generic uncapped replacement",
+    "No generic AoE replacement",
+    "No exact-sentence override",
+    "Locale pair en->fr only; en->en skips"
+  ],
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "validation": "GitHub source and test committed; GitHub Actions full rebuild pending independent confirmation.",
+  "status": "Not a clean quality cycle; no measured browser translation error rate."
+}
