@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant live web-indexed English Wowhead guides plus localized /fr and /es source comparisons. Direct HTML may be JS-challenged. Source-only lexical/language-evidence audit, not browser Translator API or DOM reconstruction.",
+  "sampledPageIds": [
+    "protection-warrior-gear",
+    "mistweaver-monk-ui-macros",
+    "fire-mage-overview",
+    "marksmanship-hunter-stats",
+    "shadow-priest-raid"
+  ],
+  "sourceCorpusCount": 419,
+  "crossPageEvidence": [
+    {
+      "issue": "Localized Wowhead URL does not imply localized article prose",
+      "pages": [
+        "protection-warrior-gear",
+        "fire-mage-overview",
+        "shadow-priest-raid"
+      ],
+      "finding": "French and Spanish localized indexed pages retain English explanatory paragraphs alongside localized official WoW entity names. Source-language inference must use prose evidence, not URL locale or spell names.",
+      "action": "Added data-only Spanish/Portuguese evidence profiles and regression tests for English prose with French item names; no browser engine change."
+    },
+    {
+      "issue": "Serialized UI and talent imports remain opaque",
+      "pages": [
+        "mistweaver-monk-ui-macros",
+        "shadow-priest-raid"
+      ],
+      "finding": "Cooldown Manager/UI exports and raid talent build imports should remain unchanged while surrounding prose is translated.",
+      "action": "Retained existing source-audit import guards; browser DOM/import preservation still unverified."
+    },
+    {
+      "issue": "Canonical WoW item and spell names",
+      "pages": [
+        "protection-warrior-gear",
+        "marksmanship-hunter-stats",
+        "fire-mage-overview"
+      ],
+      "finding": "Localized Wowhead results supply some official names, but index snippets do not establish MEZU's actual displayed mapping or full ID coverage.",
+      "action": "No speculative term override; retain canonical-ID-first priority."
+    }
+  ],
+  "lexicalSimulation": {
+    "scope": "Current source-only glossary lookup, not complete MEZU output",
+    "existingFrenchTerms": [
+      "diminishing returns → rendements décroissants",
+      "stat priority → priorité de stats",
+      "on-use trinket → bijou activable"
+    ],
+    "newManualSentenceOverrides": 0
+  },
+  "languageEvidenceTests": {
+    "newProfiles": [
+      "es",
+      "pt"
+    ],
+    "negativeControl": "English prose containing French official item names still identifies as English; short isolated localized entity names yield insufficient prose.",
+    "chromeVerified": false
+  },
+  "newReusableTermFamiliesObserved": 0,
+  "newStructuralRiskFamiliesObserved": 1,
+  "newPageInterventionProxy": "Five independent tank/healer/DPS source pages, zero new manual overrides; one reusable audit language-profile extension. This is not a measured browser translation intervention or error rate.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "Run complete CI and regenerate Data Pack for the latest commit",
+    "Validate browser-local source detection, entity names, UI imports and rich DOM on representative pages",
+    "Measure novel issues on newly sampled pages across at least two consecutive clean audit cycles"
+  ],
+  "status": "Source-only improvement; quality completion condition not met."
+}
