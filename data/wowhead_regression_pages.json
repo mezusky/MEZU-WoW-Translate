@@ -1459,6 +1459,26 @@
     {
       "id": "feral-druid-cheat-sheet",
       "url": "https://www.wowhead.com/guide/classes/druid/feral/cheat-sheet"
+    },
+    {
+      "id": "frost-mage-stats",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/stat-priority-pve-dps"
+    },
+    {
+      "id": "holy-paladin-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/addons-macro-ui-imports"
+    },
+    {
+      "id": "unholy-death-knight-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/addons-macro-ui-imports"
+    },
+    {
+      "id": "demonology-warlock-basics",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/basics"
+    },
+    {
+      "id": "survival-hunter-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/addons-macro-ui-imports"
     }
   ]
 }
