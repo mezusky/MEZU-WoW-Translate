@@ -1359,6 +1359,22 @@
     {
       "id": "frost-mage-basics",
       "url": "https://www.wowhead.com/guide/classes/mage/frost/basics"
+    },
+    {
+      "id": "holy-priest-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/addons-macro-ui-imports"
+    },
+    {
+      "id": "devourer-demon-hunter-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/addons-macro-ui-imports"
+    },
+    {
+      "id": "arms-warrior-basics",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/basics"
+    },
+    {
+      "id": "subtlety-rogue-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/talent-builds-pve-dps"
     }
   ]
 }
