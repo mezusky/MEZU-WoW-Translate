@@ -134,7 +134,8 @@
     "threat management": "gestion de la menace",
     "single-target damage": "dégâts monocibles",
     "single target damage": "dégâts monocibles",
-    "cleave damage": "dégâts de cleave"
+    "cleave damage": "dégâts de cleave",
+    "uncapped AoE": "AoE sans limite de cibles"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
