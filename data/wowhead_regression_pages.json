@@ -1343,6 +1343,22 @@
     {
       "id": "blood-death-knight-cheat-sheet",
       "url": "https://www.wowhead.com/guide/classes/death-knight/blood/cheat-sheet"
+    },
+    {
+      "id": "brewmaster-monk-consumables",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/enchants-gems-pve-tank"
+    },
+    {
+      "id": "feral-druid-gear",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/bis-gear"
+    },
+    {
+      "id": "augmentation-evoker-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/addons-macro-ui-imports"
+    },
+    {
+      "id": "frost-mage-basics",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/basics"
     }
   ]
 }
