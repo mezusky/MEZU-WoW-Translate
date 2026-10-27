@@ -1391,6 +1391,22 @@
     {
       "id": "elemental-shaman-ui-macros",
       "url": "https://www.wowhead.com/guide/classes/shaman/elemental/addons-macro-ui-imports"
+    },
+    {
+      "id": "protection-paladin-basics",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/basics"
+    },
+    {
+      "id": "guardian-druid-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/addons-macro-ui-imports"
+    },
+    {
+      "id": "shadow-priest-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/talent-builds-pve-dps"
+    },
+    {
+      "id": "survival-hunter-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/cheat-sheet"
     }
   ]
 }
