@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web indexed English Wowhead guide excerpts; no browser DOM or Chrome Translator API replay. GitHub Actions never fetches Wowhead.",
+  "sampledPageIds": [
+    "restoration-shaman-cheat-sheet",
+    "holy-paladin-cheat-sheet",
+    "vengeance-demon-hunter-talent-builds",
+    "fury-warrior-raid",
+    "frost-death-knight-gear",
+    "retribution-paladin-talent-builds"
+  ],
+  "newCorpusPageIds": [
+    "restoration-shaman-cheat-sheet",
+    "holy-paladin-cheat-sheet",
+    "vengeance-demon-hunter-talent-builds",
+    "fury-warrior-raid"
+  ],
+  "corpusCountAfter": 321,
+  "reusableIssueFamiliesObserved": [],
+  "previouslyObservedRiskFamilies": [
+    "Talent import/copy controls and generated talent tree widgets in healer cheat sheets and tank talent builds",
+    "Mixed localized spell/item link names with English prose on Wowhead localized pages",
+    "Raid boss-specific abilities and numeric mechanic descriptions with structured build tables"
+  ],
+  "sourceQualityWarnings": [
+    "English indexed Vengeance talent page sometimes omits the season name in prose; do not learn a broken source sentence as a translation override.",
+    "Fury Warrior raid indexed English prose includes author spelling errors and duplicated mechanics; do not turn source defects into MEZU rules.",
+    "Localized /fr Wowhead pages keep English guide prose while translating selected names and copy buttons; not a faithful MEZU output."
+  ],
+  "newManualSentenceOverrides": 0,
+  "newPlayerJargonRules": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "newPageInterventionsObserved": null,
+  "novelTranslationIssueRate": null,
+  "crossPageFixStatus": "Expanded independent role/section regression coverage only; existing shared terminology reused, no speculative override or engine change.",
+  "remainingVerification": [
+    "Rebuild/test status for corpus change",
+    "Live Chrome Translator API and DOM reconstruction on imported talent widgets",
+    "Quantitative new-page error and intervention rates over consecutive cycles"
+  ]
+}
