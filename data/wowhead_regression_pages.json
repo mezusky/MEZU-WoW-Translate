@@ -1635,6 +1635,26 @@
     {
       "id": "frost-mage-cheat-sheet",
       "url": "https://www.wowhead.com/guide/classes/mage/frost/cheat-sheet"
+    },
+    {
+      "id": "retribution-paladin-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/cheat-sheet"
+    },
+    {
+      "id": "devastation-evoker-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/addons-macro-ui-imports"
+    },
+    {
+      "id": "arms-warrior-consumables",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/enchants-gems-pve-dps"
+    },
+    {
+      "id": "beast-mastery-hunter-gear",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/bis-gear"
+    },
+    {
+      "id": "havoc-demon-hunter-stats",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/stat-priority-pve-dps"
     }
   ]
 }
