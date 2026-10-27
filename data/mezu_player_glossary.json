@@ -155,7 +155,11 @@
     "Off-GCD": "Hors GCD",
     "off-gcd": "hors GCD",
     "off GCD": "hors GCD",
-    "off the GCD": "hors GCD"
+    "off the GCD": "hors GCD",
+    "Pre-Combat Check": "Vérification avant le combat",
+    "Pre-Combat Checks": "Vérifications avant le combat",
+    "pre-combat check": "vérification avant le combat",
+    "pre-combat checks": "vérifications avant le combat"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
