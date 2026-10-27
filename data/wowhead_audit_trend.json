@@ -1137,6 +1137,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Regression test fixed and corpus expanded. Full Data Pack rebuild, UI layout import protection and browser translation/DOM checks remain pending; no clean-cycle claim."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Indexed live English Wowhead guides inspected; direct HTML challenged by JavaScript. No Chrome Translator API output.",
+      "sampledPageIds": [
+        "assassination-rogue-overview",
+        "frost-death-knight-overview",
+        "mistweaver-monk-midnight-s2-raid",
+        "retribution-paladin-consumables",
+        "havoc-demon-hunter-cheat-sheet",
+        "arms-warrior-gear"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 361,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "Single-target damage and cleave damage noun phrases shared by Rogue, Death Knight and Monk contexts."
+      ],
+      "newStructuralRiskFamiliesObserved": 0,
+      "structuralRiskFamilies": [],
+      "newPageInterventionProxy": "Four independently sourced new pages (Rogue overview, Paladin consumables, Demon Hunter cheat sheet, Warrior gear); one shared damage-noun family added as three glossary keys; zero manual sentence overrides. This is not a measured translation error rate.",
+      "sharedEngineFix": "No packaged engine change. French-only player glossary and locale-direction tests; full Data Pack/Chrome verification pending.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Cross-class lexical evidence confirmed from indexed English Wowhead content; tests/build and browser rich-text rendering not yet confirmed."
     }
   ]
 }
