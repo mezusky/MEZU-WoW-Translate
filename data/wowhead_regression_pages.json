@@ -1267,6 +1267,22 @@
     {
       "id": "arcane-mage-gear",
       "url": "https://www.wowhead.com/guide/classes/mage/arcane/bis-gear"
+    },
+    {
+      "id": "restoration-shaman-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/cheat-sheet"
+    },
+    {
+      "id": "holy-paladin-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/cheat-sheet"
+    },
+    {
+      "id": "vengeance-demon-hunter-talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/talent-builds-pve-tank"
+    },
+    {
+      "id": "fury-warrior-raid",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/midnight-season-2-raid-tips"
     }
   ]
 }
