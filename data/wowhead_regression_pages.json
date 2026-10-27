@@ -1375,6 +1375,22 @@
     {
       "id": "subtlety-rogue-talent-builds",
       "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/talent-builds-pve-dps"
+    },
+    {
+      "id": "blood-death-knight-basics",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/basics"
+    },
+    {
+      "id": "restoration-shaman-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/addons-macro-ui-imports"
+    },
+    {
+      "id": "fury-warrior-basics",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/basics"
+    },
+    {
+      "id": "elemental-shaman-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/addons-macro-ui-imports"
     }
   ]
 }
