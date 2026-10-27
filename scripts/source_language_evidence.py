@@ -66,6 +66,8 @@ def detect_source_language(blocks, profiles, min_tokens=25, min_hits=7):
     for tag, value in blocks:
         if tag not in PROSE_TAGS or not isinstance(value, str):
             continue
+        # Strip long serialized UI data before the prose-length guard.
+        # Otherwise a valid paragraph next to an import is silently lost.
         clean = clean_non_prose(value)
         normalized = " ".join(clean.split()).casefold()
         if not normalized or normalized in seen or len(normalized) > 1200:
