@@ -42,7 +42,7 @@
     "World of Warcraft: Forever Raid Overview—Locations, Raid Sizes, and Attunement",
     "World of Warcraft: Forever- The Future of Skyborne Visual Updates"
   ],
-  "article_count": 61,
+  "article_count": 62,
   "articles": {
     "24066687": {
       "accepted_pairs": 798,
@@ -157,7 +157,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302097"
     },
     "24302098": {
-      "accepted_pairs": 27,
+      "accepted_pairs": 26,
       "en_blocks": 18,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24302098",
       "fr_blocks": 18,
@@ -470,6 +470,13 @@
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315203",
       "fr_blocks": 8,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24315203"
+    },
+    "24304164": {
+      "accepted_pairs": 10,
+      "en_blocks": 5,
+      "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24304164",
+      "fr_blocks": 5,
+      "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24304164"
     }
   },
   "exact": {
@@ -477,6 +484,8 @@
     "(Horde) Windshaper Skyborne": "(Horde) Éolide des Sculpte-vents",
     "* Purchase of World of Warcraft: Forever Digital Upgrade or Collector’s Edition required. This benefit only applies to the specific WoW® account it was purchased for. WoW®: Forever Early Name Reservation will be available starting October 27 through November 3. Character names are limited to a first-come, first-serve basis, and desired names cannot be guaranteed.": "* Nécessite l’achat de la mise à niveau numérique ou de l’édition collector de World of Warcraft: Forever. Cet avantage s’applique uniquement au compte World of Warcraft® pour lequel l’achat a été effectué. La réservation de nom anticipée pour WoW®: Forever sera disponible du 27 octobre au 3 novembre. Les noms de personnages seront attribués selon l’ordre de réception des demandes. La disponibilité des noms souhaités n’est donc pas garantie.",
     "*Not available in World of Warcraft Classic® games and requires a World of Warcraft® subscription or Game Time.": "* Non disponible dans les royaumes de WoW® Classic et nécessite du temps de jeu ou un abonnement à World of Warcraft®.",
+    "*Not available in World of Warcraft Classic® games or World of Warcraft: Forever.": "* Non disponible dans les jeux World of Warcraft Classic® et World of Warcraft: Forever.",
+    "*Not available in World of Warcraft Classic® games or World of Warcraft: Forever. Requires World of Warcraft® Subscription or Game Time.": "* Non disponible dans les jeux World of Warcraft Classic® et World of Warcraft: Forever. Nécessite un abonnement ou du temps de jeu actif sur World of Warcraft®.",
     "*Not available in World of Warcraft Classic® games.": "* Non disponible dans les royaumes de World of Warcraft® Classic.",
     "*Not available in World of Warcraft Classic® games. Requires World of Warcraft® Subscription or Game Time. Use and placement of decor items is limited to the Housing feature, which requires access to World of Warcraft®: Midnight.": "* Non disponible dans les royaumes de World of Warcraft® Classic. Nécessite un abonnement ou du temps de jeu actif sur World of Warcraft®. L’utilisation et le placement des éléments de décoration sont limités à la fonctionnalité du logis, qui nécessite l’accès à World of Warcraft®: Midnight.",
     "*Only available in modern World of Warcraft (currently Midnight™) ** Only available in World of Warcraft: Forever ***Only available in WoW Classic progression (currently Mists of Pandaria Classic™)": "*Disponible uniquement dans la version moderne de World of Warcraft® (actuellement Midnight™) **Disponible uniquement dans World of Warcraft: Forever ***Disponible uniquement dans WoW: Classic (actuellement Mists of Pandaria Classic™)",
@@ -560,6 +569,7 @@
     "Activities (Classic)": "Activités (version Classic)",
     "Activities (Modern)": "Activités (version moderne)",
     "Activities involving Reginald Windsor event in Stormwind Keep should now complete more reliably when Highlord Bolvar Fordragon, Lady Katrana Prestor, and Reginald Windsor are all alive.": "Les activités liées à l’évènement de Reginal Windsor au donjon de Hurlevent devraient désormais se terminer correctement lorsque le généralissime Bolvar Fordragon, dame Katrana Prestor et Reginald Windsor sont tous en vie.",
+    "Add the Living Heartsbane Cauldron Mount to your Collection": "Ajoutez la monture Chaudron malecarde vivant à votre collection",
     "Add the new campaign to your Warcraft III: Reforged collection, or choose from available options—including Warcraft III Reforged: Forsaken Kingdom Combo and the limited-time* Warcraft Forever Collection—to expand your Warcraft experience.": "Ajoutez la nouvelle campagne à votre collection Warcraft III: Reforged ou choisissez parmi les options disponibles, comme le combo Warcraft III Reforged: Forsaken Kingdom et la Warcraft Forever Collection disponible pour une durée limitée*, afin d’enrichir encore votre expérience Warcraft.",
     "Added a new setting called \"Pulse Your Health\" under the Combat Audio Alerts section of the Audio Assist settings.": "Ajout d’un nouveau paramètre dans la section d’alertes audio en combat des paramètres d’aide audio, « Annoncer les points de vie avec un battement ».",
     "Added a new setting called \"Pulse Your Health\" under the Combat Audio Alerts section of the Audio Assist settings. This setting allows the player to specify a health percentage below which a looping sound will be played. The sound gets progressively more aggressive as their health gets lower.": "Ajout d’un nouveau paramètre dans la section d’alertes audio en combat des paramètres d’aide audio, « Annoncer les points de vie avec un battement ». Ce paramètre permet aux personnages-joueurs de spécifier un pourcentage de points de vie en dessous duquel une boucle audio se déclenchera. L’effet sonore diffusé devient de plus en plus intense à mesure que les points de vie diminuent.",
@@ -2071,6 +2081,7 @@
     "If one Zhevraskin rug isn’t enough (and it rarely is), additional rugs can be purchased from the in-game shop.": "Si un tapis en zhévrin ne vous suffit pas (ce qui est souvent le cas), d’autres tapis sont disponibles à l’achat dans la boutique en jeu.",
     "If the full name you want is already taken or does not meet the naming requirements, you will need to choose another combination—or take a chance with the trusty in-game random name generator.": "Si le nom complet que vous souhaitez est déjà pris ou ne respecte pas les règles de nommage, vous devrez choisir une autre combinaison, ou tenter votre chance avec le bon vieux générateur de noms aléatoires en jeu.",
     "If their channel is not interrupted, they will cover a player in webs.": "Si sa canalisation n’est pas interrompue, il couvrira un personnage-joueur avec une toile.",
+    "If their level isn’t high enough to use a flying mount, the Living Heartsbane Cauldron is also a ground mount.": "Si le niveau de votre personnage n’est pas suffisant pour utiliser une monture volante, le chaudron malecarde vivant fait également une excellente monture terrestre.",
     "If you decide to “Start Whacking”, a one-minute countdown will begin.": "Si vous décidez de cogner, vous déclencherez un compte à rebours d’une minute.",
     "If you don’t have Midnight yet, don’t worry.": "Si vous ne possédez pas encore Midnight, pas d’inquiétude.",
     "If you don’t have the app installed, get started by downloading it from Battle.net.": "Si l’application n’est pas installée, commencez par la télécharger sur Battle.net.",
@@ -2694,6 +2705,7 @@
     "Now the 16-point gold medal talent.": "Remplace le talent majeur à 16 points.",
     "Now the 21-point gold medal talent.": "Remplace le talent majeur à 21 points.",
     "Now, intruders—suspected to be Dark Iron dwarves—have broken into its sacred corridors.": "Aujourd’hui, des personnes intruses, soupçonnées de faire partie des Nains sombrefer, ont pénétré dans ses couloirs sacrés.",
+    "Now, this cursed construct answers your command.": "À présent, cette création maudite obéit à vos ordres.",
     "Now, when a damage event reduces your health below 30%, the portion of that damage event that would apply to the last 30% of your health is also reduced by 80%.": "Désormais, lorsque vos points de vie passent en dessous de 30 % suite à des dégâts reçus, la proportion de ces dégâts qui devrait être appliquée aux derniers 30 % de vos points de vie sera elle aussi réduite de 80 %.",
     "Numbers across the game are being reduced to improve clarity and readability.": "Les chiffres apparaissant dans le jeu seront réduits afin de rendre les choses plus claires et lisibles.",
     "Numbers across the game are being reduced to improve clarity and readability. As always, your power level relative to that of your enemies will remain the same, there will simply be more relatable numbers on your screen.": "Les chiffres apparaissant dans le jeu seront réduits afin de rendre les choses plus claires et lisibles. Comme toujours, votre niveau de puissance restera le même par rapport à celui de vos ennemis, mais les chiffres qui s’afficheront à l’écran seront simplement plus accessibles.",
@@ -3164,6 +3176,8 @@
     "Righteous Fury: The threat bonus from this ability has been reduced. Protection Paladins have access to more Holy damage than in Classic Era, so this multiplier does not need to be as high.": "Fureur vertueuse : le bonus de menace conféré par cette technique a été réduit. Les paladins Protection ont accès à davantage de dégâts du sacré que sur les serveurs Classic Era. Ce multiplicateur n’a donc pas besoin d’être aussi élevé.",
     "Riptide healing increased by 10% in PvP combat.": "Soins prodigués par Remous augmentés de 10 % en combat JcJ.",
     "Riptide: (New 31-point gold medal talent.) Pre-requisite Healing Way.": "Remous (nouveau talent majeur à 31 points) : prérequis pour Flots de soins.",
+    "Rising from the remnants of a dark ritual, this living cauldron bears the marks of the witchcraft that awakened it.": "Né des vestiges d’un sombre rituel, ce chaudron vivant porte encore les stigmates de la sorcellerie qui lui a donné vie.",
+    "Rising from the remnants of a dark ritual, this living cauldron bears the marks of the witchcraft that awakened it. Now, this cursed construct answers your command.": "Né des vestiges d’un sombre rituel, ce chaudron vivant porte encore les stigmates de la sorcellerie qui lui a donné vie. À présent, cette création maudite obéit à vos ordres.",
     "Ritual Chieftain Blood Sacrifice healing absorb reduced by 12%.": "Chef du rituel L’absorption des soins de Sacrifice de sang a été réduite de 12 %.",
     "Riverglades and the Roads Between": "Les rives Claires et les chemins qui les relient",
     "Rogue Assassination Ability and auto-attack damage increased by 6%.": "Voleur/Voleuse Assassinat Dégâts des techniques et attaques automatiques augmentés de 6 %.",
@@ -3593,6 +3607,8 @@
     "The Legacy System is also built to grow.": "Le système d’héritage a été conçu pour être évolutif.",
     "The Legacy System is also built to grow. Over time, the team expects to add new challenges, new perks, additional ways to spend points, expanded spending caps, new columns within existing trees, and potentially entirely new trees. Whether players want to build an army of alts, focus deeply on one character, or discover a new path through Azeroth each time, the system is meant to keep the journey feeling rewarding long after the first trip to maximum level.": "Le système d’héritage a été conçu pour être évolutif. Au fil du temps, nous souhaitons ajouter de nouveaux défis, de nouveaux avantages, de nouvelles façons de dépenser des points, des plafonds de dépenses de points plus élevés, de nouvelles rubriques au sein des arbres d’héritage existants, et peut-être même de nouveaux arbres d’héritage. Que vous souhaitiez vous constituer une véritable armée de personnages secondaires, vous concentrer sur un seul personnage ou découvrir Azeroth sous un nouvel angle avec chacun d’entre eux, le système d’héritage a été conçu pour que l’aventure reste enrichissante bien après que vous avez atteint le niveau maximal pour la première fois.",
     "The Legacy System: Rewarding Every Journey": "Le système d’héritage, ou comment récompenser chaque périple",
+    "The Living Heartsbane Cauldron mount* is shared across all present and future WoW® Modern characters and automatically scales to the fastest riding skill known by each character.": "La monture Chaudron malecarde vivant* est partagée entre tous les personnages de la version moderne de World of Warcraft® actuels et à venir, et s’adapte automatiquement à la compétence de monte la plus rapide de chaque personnage.",
+    "The Living Heartsbane Cauldron mount* is shared across all present and future WoW® Modern characters and automatically scales to the fastest riding skill known by each character. If their level isn’t high enough to use a flying mount, the Living Heartsbane Cauldron is also a ground mount.": "La monture Chaudron malecarde vivant* est partagée entre tous les personnages de la version moderne de World of Warcraft® actuels et à venir, et s’adapte automatiquement à la compétence de monte la plus rapide de chaque personnage. Si le niveau de votre personnage n’est pas suffisant pour utiliser une monture volante, le chaudron malecarde vivant fait également une excellente monture terrestre.",
     "The Loa-Blessed Wayfarer mount and Loa-Blessed Victory toy are now granted after completing the labyrinth by speaking with Kinduru if they were forgotten to be looted from the Ancestral Bounty chest before leaving.": "La monture Voyageur béni par les Loas et le jouet Victoire bénie par les Loas peuvent désormais être obtenus auprès de Kinduru après avoir terminé le labyrinthe si les personnages-joueurs ont oublié de les récupérer dans le coffre de la prime ancestrale avant de partir.",
     "The Midnight Pre-Expansion Content Update Now Live!": "La mise à jour de contenu de prélancement de Midnight est disponible !",
     "The Omnium Folio Expands": "Le feuillet de l’Omnium s’enrichit",
@@ -4533,7 +4549,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4059,
+  "pair_count": 4068,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -6791,7 +6807,7 @@
     "Requires Nature’s Majesty.": "24301515",
     "Requires Savage Fury as a prerequisite.": "24301515",
     "Requires Shield Specializaton.": "24301514",
-    "Requires World of Warcraft® Subscription or Game Time.": "24302098",
+    "Requires World of Warcraft® Subscription or Game Time.": "24304164",
     "Requires a “Brew of the Month” Club Membership Form.": "24303006",
     "Rescue all the hostages before time runs out, and your raid will earn the rare Amani War Bear battle mount.": "24310652",
     "Resistance Totems now provide their resistance bonus to the entire raid group.": "24302097",
@@ -8596,7 +8612,16 @@
     "Whether you’re learning the ropes, returning to the game, sharing years of knowledge, or looking for a new group for your next chapter, the Portal Room can point you in the right direction.": "24315203",
     "WoW Ambassadors are experienced players who represent their Discord communities in the WoW Portal Room.": "24315203",
     "WoW Ambassadors are experienced players who represent their Discord communities in the WoW Portal Room. They help players of all backgrounds and experience levels find welcoming spaces that match how they enjoy Warcraft—whether that means tackling content together, swapping stories, learning from others, or simply staying connected to the world and its community.": "24315203",
-    "Your Next Adventure in WoW: Forever Starts in the WoW Portal Room": "24315203"
+    "Your Next Adventure in WoW: Forever Starts in the WoW Portal Room": "24315203",
+    "*Not available in World of Warcraft Classic® games or World of Warcraft: Forever.": "24304164",
+    "*Not available in World of Warcraft Classic® games or World of Warcraft: Forever. Requires World of Warcraft® Subscription or Game Time.": "24304164",
+    "Add the Living Heartsbane Cauldron Mount to your Collection": "24304164",
+    "If their level isn’t high enough to use a flying mount, the Living Heartsbane Cauldron is also a ground mount.": "24304164",
+    "Now, this cursed construct answers your command.": "24304164",
+    "Rising from the remnants of a dark ritual, this living cauldron bears the marks of the witchcraft that awakened it.": "24304164",
+    "Rising from the remnants of a dark ritual, this living cauldron bears the marks of the witchcraft that awakened it. Now, this cursed construct answers your command.": "24304164",
+    "The Living Heartsbane Cauldron mount* is shared across all present and future WoW® Modern characters and automatically scales to the fastest riding skill known by each character.": "24304164",
+    "The Living Heartsbane Cauldron mount* is shared across all present and future WoW® Modern characters and automatically scales to the fastest riding skill known by each character. If their level isn’t high enough to use a flying mount, the Living Heartsbane Cauldron is also a ground mount.": "24304164"
   },
   "targetLanguage": "fr-FR"
 }
