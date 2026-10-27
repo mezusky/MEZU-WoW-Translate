@@ -1443,6 +1443,22 @@
     {
       "id": "arms-warrior-gear",
       "url": "https://www.wowhead.com/guide/classes/warrior/arms/bis-gear"
+    },
+    {
+      "id": "shadow-priest-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/addons-macro-ui-imports"
+    },
+    {
+      "id": "fire-mage-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/cheat-sheet"
+    },
+    {
+      "id": "devastation-evoker-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "feral-druid-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/cheat-sheet"
     }
   ]
 }
