@@ -159,6 +159,24 @@ class PlayerGlossaryTests(unittest.TestCase):
                 self.assertNotIn(phrase, manual.get("jargon", {}))
                 self.assertNotIn(phrase, manual.get("exact", {}))
 
+    def test_filler_terms_are_locale_scoped_across_dps_specs(self):
+        # Frost DK basics and Elemental Shaman rotation use "filler" in
+        # different resource systems; the phrase is WoW jargon, not a spell.
+        # The same terms must not leak into other target-language packs.
+        jargon = GLOSSARY["jargon"]
+        for source, target in {
+            "filler": "filler",
+            "filler spell": "sort filler",
+            "filler spells": "sorts filler",
+        }.items():
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], target)
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
+        for source in ("filler", "filler spell", "filler spells"):
+            self.assertNotIn(source, manual.get("jargon", {}))
+            self.assertNotIn(source, manual.get("exact", {}))
+        self.assertNotIn("filling", jargon)
+
     def test_locale_glossary_has_no_duplicate_legacy_jargon(self):
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
         overlapping = set(GLOSSARY["jargon"]) & set(manual.get("jargon", {}))
