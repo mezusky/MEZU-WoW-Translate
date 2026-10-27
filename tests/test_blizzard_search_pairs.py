@@ -41,7 +41,32 @@ class BlizzardSearchPairsTests(unittest.TestCase):
     def test_missing_names_are_not_guessed(self):
         en = {"results": [{"data": {"id": 2, "name": {"en_US": "Garrote"}}}]}
         fr = {"results": [{"data": {"id": 2, "name": {"de_DE": "Erdrosseln"}}}]}
-        self.assertEqual(collect_search_pairs(en, fr, "en_US", "fr_FR"), {})
+        # Keep the EN-only canonical ID but never fabricate a French name.
+        self.assertEqual(collect_search_pairs(en, fr, "en_US", "fr_FR"),
+                         {"2": {"en": "Garrote"}})
+
+    def test_unpaired_source_id_blocks_unsafe_same_name_projection(self):
+        from merge_entity_locales import project_locale_pairs
+        en = {"results": [
+            {"data": {"id": 10, "name": "Shared Name"}},
+            {"data": {"id": 11, "name": "Shared Name"}},
+            {"data": {"id": 12, "name": "Unique Name"}},
+        ]}
+        fr = {"results": [
+            {"data": {"id": 10, "name": "Ancien nom"}},
+            {"data": {"id": 12, "name": "Nom unique"}},
+        ]}
+        rows = collect_search_pairs(en, fr, "en_US", "fr_FR")
+        self.assertEqual(rows["11"], {"en": "Shared Name"})
+        self.assertEqual(project_locale_pairs({"spell": rows}, "en", "fr"),
+                         {"Unique Name": "Nom unique"})
+
+    def test_unpaired_target_id_is_retained_for_future_source_locale(self):
+        en = {"results": [{"data": {"id": 5, "name": "Shared"}}]}
+        fr = {"results": [{"data": {"id": 6, "name": "Seulement français"}}]}
+        self.assertEqual(collect_search_pairs(en, fr, "en_US", "fr_FR"),
+                         {"5": {"en": "Shared"},
+                          "6": {"fr": "Seulement français"}})
 
     def test_malformed_hits_and_conflicting_ids(self):
         doc = {"results": [None, {"data": {"id": True, "name": "Bad"}},
