@@ -917,6 +917,38 @@
       "novelTranslationIssueRate": null,
       "newPageInterventionProxy": "One reusable phrase family identified on newly sampled Fury Warrior raid and independently checked against Hunter and Mage guides; browser error rate not measured.",
       "crossPageFixStatus": "Migrated one legacy exact and one legacy jargon rule to locale-scoped player glossary; cross-class tests added. Browser/DOM quality and novel issue rate remain unverified."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Live English Wowhead URLs returned JavaScript challenge; assistant web indexed English source excerpts inspected; no GitHub runner Wowhead fetch.",
+      "sampledPageIds": [
+        "marksmanship-hunter-mythic-plus",
+        "outlaw-rogue-overview",
+        "marksmanship-hunter-abilities",
+        "vengeance-demon-hunter-stats",
+        "blood-death-knight-raid",
+        "restoration-druid-cheat-sheet",
+        "outlaw-rogue-stats",
+        "devastation-evoker-gear"
+      ],
+      "sampledPageCount": 8,
+      "sourceCorpusCount": 325,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "target capped / hard-capped AoE -> contextual French target-limit jargon; avoid bare hard cap because it can describe stat ceilings"
+      ],
+      "newStructuralRiskFamiliesObserved": 0,
+      "previouslyObservedRiskFamilies": [
+        "unresolved Wowhead template tokens in indexed sources",
+        "mixed English prose and localized spell links",
+        "talent import widgets and gear tables"
+      ],
+      "newPageInterventionProxy": "One reusable terminology family identified on existing Hunter/Rogue guides; four new independent tank/healer/DPS pages sampled without new sentence overrides. This is not a measured browser issue rate.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Locale-scoped jargon and cross-class tests committed; Shaman held-out phrase unconfirmed; Chrome Translator API, DOM and full post-commit CI not yet verified. Not a clean-state cycle."
     }
   ]
 }
