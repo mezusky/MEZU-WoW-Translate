@@ -131,7 +131,10 @@
     "funnel damage": "dégâts en funnel",
     "funneling damage": "dégâts en funnel",
     "threat generation": "génération de menace",
-    "threat management": "gestion de la menace"
+    "threat management": "gestion de la menace",
+    "single-target damage": "dégâts monocibles",
+    "single target damage": "dégâts monocibles",
+    "cleave damage": "dégâts de cleave"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
