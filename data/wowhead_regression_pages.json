@@ -1563,6 +1563,26 @@
     {
       "id": "brewmaster-monk-season-2",
       "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/midnight-season-2"
+    },
+    {
+      "id": "subtlety-rogue-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/cheat-sheet"
+    },
+    {
+      "id": "preservation-evoker-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/cheat-sheet"
+    },
+    {
+      "id": "feral-druid-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/mythic-plus-dungeon-tips"
+    },
+    {
+      "id": "balance-druid-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/addons-macro-ui-imports"
+    },
+    {
+      "id": "protection-paladin-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/cheat-sheet"
     }
   ]
 }
