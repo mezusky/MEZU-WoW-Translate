@@ -1192,6 +1192,32 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Shared terminology verified against two unrelated specs via indexed English source; CI rebuild and browser rendering not yet confirmed. Not a clean cycle."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant web indexed English Wowhead guide content; direct HTML JavaScript challenge. No Chrome Translator API.",
+      "sampledPageIds": [
+        "elemental-shaman-consumables",
+        "windwalker-monk-cheat-sheet",
+        "arcane-mage-basics",
+        "balance-druid-raid",
+        "discipline-priest-ui-macros"
+      ],
+      "sampledPageCount": 5,
+      "sourceCorpusCount": 380,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Indexed individual reader comments without a Comments heading can contaminate source-only prose audits on unrelated guides."
+      ],
+      "newPageInterventionProxy": "Five independent new pages across consumables, cheat sheet, basics, raid and UI/macros; one shared source-only boundary correction with cross-class regression tests, zero sentence overrides. Not a measured translation issue rate.",
+      "sharedEngineFix": "Only source-audit boundary code; no packaged extension or remote executable change. Recognize h2/h3 'Comment by <username>' as footer and preserve guide prose that mentions comments.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Source-only false-positive control generalized across Elemental Shaman and Windwalker Monk; CI and browser translation verification pending. Not a clean quality cycle."
     }
   ]
 }
