@@ -1,0 +1,73 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web indexed English Wowhead guide excerpts; live HTML challenged by JavaScript on some pages. Source-only structure/lexical checks, not rendered Chrome Translator API output.",
+  "sampledPageIds": [
+    "frost-mage-ui-macros",
+    "beast-mastery-hunter-ui-macros",
+    "guardian-druid-ui-macros",
+    "marksmanship-hunter-ui-macros",
+    "restoration-druid-basics",
+    "preservation-evoker-basics",
+    "outlaw-rogue-cheat-sheet"
+  ],
+  "newCorpusPageIds": [
+    "restoration-druid-basics",
+    "preservation-evoker-basics",
+    "frost-mage-ui-macros",
+    "beast-mastery-hunter-ui-macros",
+    "outlaw-rogue-cheat-sheet"
+  ],
+  "sourceCorpusCount": 357,
+  "findings": [
+    {
+      "kind": "shared_source_audit_fix",
+      "description": "WoW Edit Mode UI layout exports are long whitespace-separated numeric/frame records beginning with a version header (e.g. 2 50), not base64 CDM strings. Source language audit could treat them as prose or discard adjacent evidence through length guards.",
+      "fix": "Ignore whole cells matching a conservative export header, multiple frame references and repeated layout delimiters. Keep ordinary prose and short code-like fragments.",
+      "scope": "Python source-only audit filter and synthetic cross-class tests; no browser extension change."
+    },
+    {
+      "kind": "cross_page_verification",
+      "description": "The same layout serialization structure appears in independent Frost Mage, Beast Mastery Hunter, Guardian Druid and Marksmanship Hunter UI guides; unrelated healer basics and Rogue cheat sheet were sampled for coverage.",
+      "status": "Confirmed in indexed source snippets, not in rendered browser DOM."
+    },
+    {
+      "kind": "browser_only_risk",
+      "description": "Actual WoW macros, edit-mode exports, and talent calculator controls must remain functional and unchanged after translation.",
+      "status": "Not verified with Chrome Translator API or DOM. No claim of browser fix."
+    }
+  ],
+  "lexicalChecks": [
+    {
+      "page": "restoration-druid-basics",
+      "source": "talent builds",
+      "expected": "builds de talents",
+      "layer": "fr player glossary"
+    },
+    {
+      "page": "outlaw-rogue-cheat-sheet",
+      "source": "trinkets",
+      "expected": "bijoux",
+      "layer": "fr player glossary"
+    }
+  ],
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "datapackSourceChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "Latest GitHub Actions complete build/test/validation",
+    "Browser-only preservation of edit-mode UI exports, macro commands, talent widgets and source/target locale switching",
+    "Two consecutive quantified clean cross-page audits"
+  ],
+  "ci": {
+    "previousConfirmedRun": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40485286316",
+    "previousConfirmedConclusion": "success",
+    "newRun": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40490552265",
+    "newRunStatus": "pending at audit write"
+  }
+}
