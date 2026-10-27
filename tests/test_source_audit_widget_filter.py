@@ -89,8 +89,8 @@ class SourceAuditWidgetFilterTests(unittest.TestCase):
                  "because they will help with your cooldowns and your damage. "
                  "After each cast you can use the other abilities when they "
                  "are ready, and this is how you keep your rotation going.")
-        payload = "1|" + "AbCdEf0123456789+/" * 10
-        blocks = [("p", prose), ("td", payload)]
+        payload = "1|" + "AbCdEf0123456789+/" * 90
+        blocks = [("td", prose + " " + payload)]
         result = detect_source_language(blocks, PROFILES)
         self.assertEqual(result["detectedLanguage"], "en")
 
