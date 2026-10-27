@@ -121,11 +121,6 @@
     "Bonus Roll": "Jet bonus",
     "Bonus Rolls": "Jets bonus",
     "Bonus Loot rolls": "jets de butin bonus",
-    "bonus thread": "menace supplémentaire",
-    "thread transfer": "transfert de menace",
-    "thread transferred": "menace transférée",
-    "thread generation": "génération de menace",
-    "thread reduction": "réduction de menace",
     "priority target damage": "dégâts sur la cible prioritaire",
     "absorb shield": "bouclier d’absorption",
     "absorb shields": "boucliers d’absorption",
@@ -134,7 +129,9 @@
     "target capped": "limité en nombre de cibles",
     "hard-capped AoE": "AoE limitée à un nombre fixe de cibles",
     "funnel damage": "dégâts en funnel",
-    "funneling damage": "dégâts en funnel"
+    "funneling damage": "dégâts en funnel",
+    "threat generation": "génération de menace",
+    "threat management": "gestion de la menace"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
