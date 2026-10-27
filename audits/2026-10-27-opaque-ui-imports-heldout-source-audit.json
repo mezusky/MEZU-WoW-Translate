@@ -67,7 +67,14 @@
     "Whitespace-separated UI import exports are not covered by the new base64-like filter"
   ],
   "ci": {
-    "status": "pending",
-    "runUrl": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40468369606"
+    "status": "success",
+    "runUrl": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40468511594",
+    "pythonRegressionTests": "passed",
+    "communityGlossaryBuild": "passed",
+    "blizzardMemoryBuild": "passed",
+    "dataPackBuild": "passed",
+    "dataPackValidation": "passed",
+    "dataPackVersion": "e12e2bd928094869ea37",
+    "dataPackContentChanged": false
   }
 }
