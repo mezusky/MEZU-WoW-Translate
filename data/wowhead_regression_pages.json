@@ -1427,6 +1427,22 @@
     {
       "id": "outlaw-rogue-cheat-sheet",
       "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/cheat-sheet"
+    },
+    {
+      "id": "retribution-paladin-consumables",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/enchants-gems-pve-dps"
+    },
+    {
+      "id": "assassination-rogue-overview",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/overview-pve-dps"
+    },
+    {
+      "id": "havoc-demon-hunter-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/cheat-sheet"
+    },
+    {
+      "id": "arms-warrior-gear",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/bis-gear"
     }
   ]
 }
