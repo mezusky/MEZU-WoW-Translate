@@ -949,6 +949,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Locale-scoped jargon and cross-class tests committed; Shaman held-out phrase unconfirmed; Chrome Translator API, DOM and full post-commit CI not yet verified. Not a clean-state cycle."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant web indexed live English Wowhead guide content; no browser Translator API or GitHub-runner Wowhead fetch.",
+      "sampledPageIds": [
+        "affliction-warlock-cheat-sheet",
+        "arcane-mage-cheat-sheet",
+        "balance-druid-cheat-sheet",
+        "restoration-shaman-rotation",
+        "mistweaver-monk-rotation",
+        "protection-paladin-rotation"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 328,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "repeated stat-guide/stats= serialized calculator payloads in indexed cheat-sheet source; not prose"
+      ],
+      "newPageInterventionProxy": "Three independent new DPS cheat sheets required zero new terminology or sentence overrides. One reusable offline audit-filter correction was needed; this does not measure browser translation quality.",
+      "sharedEngineFix": "Source-only audit now removes serialized widget assignments and uses configured source-language prose profiles rather than English-only stopword selection.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Locale-aware audit filter and independent widget tests committed. Chrome Translator API, DOM reconstruction and two clean measured cycles remain unverified."
     }
   ]
 }
