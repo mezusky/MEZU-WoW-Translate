@@ -1245,6 +1245,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Source-only lexical evidence; CI rebuild and Chrome translator output pending. Not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant web indexed live English Wowhead guides; direct URLs challenged by JavaScript; no browser Translator API.",
+      "sampledPageIds": [
+        "holy-priest-basics",
+        "guardian-druid-season-2",
+        "augmentation-evoker-season-2",
+        "mistweaver-monk-season-2",
+        "destruction-warlock-season-2",
+        "brewmaster-monk-season-2"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 391,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Regional source-language audit profiles (en/en-US/en_US) competed against themselves as separate language candidates, producing ambiguous detection despite consistent English prose."
+      ],
+      "newPageInterventionProxy": "Six independent English guides across tank, healer, DPS and support; zero new manual overrides. Shared source-only detector normalized regional aliases and accepts region-only profiles. Not a measured translation error rate.",
+      "sharedEngineFix": "Source-audit helper only: merge language evidence by base language while preserving locale-aware data selection elsewhere; add synthetic cross-role and regional alias regression tests. No extension runtime change.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Source-only alias behavior corrected; GitHub Actions rebuild pending. No Chrome Translator API or DOM verification, not a clean quality cycle."
     }
   ]
 }
