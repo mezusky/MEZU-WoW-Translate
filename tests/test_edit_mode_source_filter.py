@@ -17,8 +17,8 @@ PROFILES = json.loads((Path(__file__).resolve().parents[1] /
                            encoding="utf-8"))["profiles"]
 
 
-def layout(first_frame):
-    prefix = f"2 50 0 0 0 7 7 {first_frame} 0.0 45.0 -1 ##$$%/& "
+def layout(first_frame, version=2):
+    prefix = f"{version} 50 0 0 0 7 7 {first_frame} 0.0 45.0 -1 ##$%/& "
     record = "0 1 1 7 7 UIParent 0.0 45.0 -1 ##$$%/&('%(#,$ "
     return prefix + record * 8
 
@@ -31,6 +31,23 @@ class EditModeSourceFilterTests(unittest.TestCase):
                 self.assertTrue(is_opaque_edit_mode_export(raw))
                 self.assertEqual(audit_source_prose(raw, "en", PROFILES), ("", False))
                 self.assertEqual(audit_source_prose(raw, "fr", PROFILES), ("", False))
+
+    def test_cross_class_zero_and_two_header_versions(self):
+        # Balance Druid UI uses a 0-prefixed layout; Mage/Guardian/Hunter
+        # samples use 2. Neither is natural-language prose.
+        for version, first_frame in ((0, "UIParent"), (2, "ChatFrame1")):
+            with self.subTest(version=version):
+                raw = layout(first_frame, version)
+                self.assertTrue(is_opaque_edit_mode_export(raw))
+                self.assertEqual(audit_source_prose(raw, "en", PROFILES),
+                                 ("", False))
+                self.assertEqual(audit_source_prose(raw, "fr", PROFILES),
+                                 ("", False))
+        # A malformed or short record must not be discarded as an import.
+        malformed = "0 30 0 0 0 4 4 UIParent 0.0 -300.7 -1 ##$"
+        self.assertFalse(is_opaque_edit_mode_export(malformed))
+        self.assertEqual(audit_source_prose(malformed, "en", PROFILES)[0],
+                         malformed)
 
     def test_neighboring_description_cells_remain_scored(self):
         blocks = [
