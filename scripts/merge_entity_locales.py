@@ -8,6 +8,25 @@ def merge_rows(old, new):
     return out
 
 
+def merge_verified_locale_refresh(previous, fresh, source_key, target_key):
+    """Keep incomplete new IDs without pairing asynchronous locale snapshots.
+
+    Search responses can be missing one locale. A partial refresh for an
+    existing ID must not combine a newly renamed source with an older target
+    (or vice versa) and publish a false official translation. Only refresh
+    an existing ID's translation pair when both names arrive together.
+    New unpaired IDs remain visible to the collision guard.
+    """
+    if source_key == target_key:
+        raise ValueError("Source and target keys must differ")
+    accepted = {
+        key: names for key, names in fresh.items()
+        if key not in previous or
+        (source_key in names and target_key in names)
+    }
+    return merge_rows(previous, accepted)
+
+
 def _locale_name(row, requested):
     """Prefer the exact locale, then its generic language; never another region.
 
