@@ -1083,6 +1083,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Python regression tests and Data Pack build/validation passed GitHub Actions 40468511594; Data Pack e12e2bd928094869ea37 unchanged. Browser macro/UI preservation and two quantified clean cycles remain pending."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Live English Wowhead indexed guide sources; direct HTML challenged by JavaScript. No Chrome Translator API output.",
+      "sampledPageIds": [
+        "blood-death-knight-basics",
+        "brewmaster-monk-talents",
+        "restoration-shaman-ui-macros",
+        "elemental-shaman-ui-macros",
+        "fury-warrior-basics",
+        "destruction-warlock-rotation"
+      ],
+      "sampledPageCount": 6,
+      "sourceCorpusCount": 348,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "Correct tank threat terminology (threat generation, threat management); removed five erroneous 'thread' entries that could mistranslate forum discussions."
+      ],
+      "newStructuralRiskFamiliesObserved": 0,
+      "structuralRiskFamilies": [],
+      "newPageInterventionProxy": "Four new pages (Blood DK basics, Restoration Shaman UI, Elemental Shaman UI, Fury Warrior basics); one reusable tank threat family fixed with two phrases, five bad entries removed, zero new exact-sentence overrides. Source-only proxy, not Chrome error rate.",
+      "sharedEngineFix": "No extension change; locale-specific data glossary correction and cross-spec regression test. Existing Brewmaster talents page provides independent held-out evidence.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Local lexical matching checked on two independent tank source examples and forum-thread negative control. GitHub Actions rebuild and browser DOM/Translator API validation pending."
     }
   ]
 }
