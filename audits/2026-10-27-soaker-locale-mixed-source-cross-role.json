@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "date": "2026-10-27",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Direct Wowhead HTML challenged by JavaScript; independently indexed live English guide excerpts reviewed via assistant web access. Lexical rule checks only; no browser Translator API or DOM capture.",
+  "sampledPageIds": [
+    "affliction-warlock-consumables",
+    "beast-mastery-hunter-talent-builds",
+    "survival-hunter-stats",
+    "fury-warrior-gear",
+    "windwalker-monk-ui-macros"
+  ],
+  "crossPageEvidence": [
+    {
+      "pages": [
+        "mistweaver-monk-raid",
+        "holy-paladin-raid"
+      ],
+      "finding": "Raid guides use singular/plural soaker role nouns, separate from the ambiguous verb/noun soak.",
+      "fix": "fr locale-only soaker/soakers jargon; intentionally no bare soak override."
+    },
+    {
+      "pages": [
+        "windwalker-monk-ui-macros",
+        "discipline-priest-ui-macros"
+      ],
+      "finding": "UI imports, copy controls and macro command text coexist with explanatory prose.",
+      "fix": "No browser engine modification without verified DOM; retain as browser-only regression."
+    }
+  ],
+  "sourceOnlyFindings": [
+    {
+      "page": "affliction-warlock-consumables",
+      "finding": "Source itself recommends different flasks in the summary table and following prose; do not train conflicting guide claims as a translation rule."
+    },
+    {
+      "page": "beast-mastery-hunter-talent-builds",
+      "finding": "Build export/copy controls and talent names require ID mapping and payload preservation."
+    },
+    {
+      "page": "survival-hunter-stats",
+      "finding": "Stat names and numeric diminishing-return thresholds are good locale-independent structural controls."
+    },
+    {
+      "page": "fury-warrior-gear",
+      "finding": "Item tables contain official entity names; editorial table instructions in indexed localized variants are upstream content, not MEZU errors."
+    },
+    {
+      "page": "windwalker-monk-ui-macros",
+      "finding": "Serialized UI import strings and executable /cast macros must remain byte-safe; cannot verify from indexed excerpts."
+    }
+  ],
+  "multilingualRisk": "Wowhead locale-prefixed pages can retain English prose while localizing linked WoW entity names. URL/site locale is not reliable evidence of the prose source language; future source detection should inspect translatable text nodes, while entity IDs determine names.",
+  "lexicalSimulation": {
+    "scope": "Exact jargon lookups only, not a full Translator API simulation",
+    "inputTerms": [
+      "soaker",
+      "soakers",
+      "soak mechanic",
+      "group soaks"
+    ],
+    "expectedFr": [
+      "joueur chargé du soak",
+      "joueurs chargés du soak",
+      "mécanique de soak",
+      "soaks de groupe"
+    ],
+    "negativeControl": "Bare soak has no player-glossary override because verb and noun senses differ."
+  },
+  "sourceCorpusCount": 385,
+  "newManualSentenceOverrides": 0,
+  "newJargonEntriesNet": 2,
+  "packagedExtensionModified": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "Run GitHub Actions tests and Data Pack rebuild",
+    "Verify exact rule precedence and inflection in browser",
+    "Check macro/import preservation and DOM reconstruction in Chrome",
+    "Measure novel translation issue rate on unseen pages across two cycles"
+  ],
+  "status": "Source-only improvement; not a clean measured translation cycle."
+}
