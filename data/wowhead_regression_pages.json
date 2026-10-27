@@ -1583,6 +1583,26 @@
     {
       "id": "protection-paladin-cheat-sheet",
       "url": "https://www.wowhead.com/guide/classes/paladin/protection/cheat-sheet"
+    },
+    {
+      "id": "enhancement-shaman-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/addons-macro-ui-imports"
+    },
+    {
+      "id": "blood-death-knight-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/addons-macro-ui-imports"
+    },
+    {
+      "id": "marksmanship-hunter-basics",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/basics"
+    },
+    {
+      "id": "augmentation-evoker-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/cheat-sheet"
+    },
+    {
+      "id": "enhancement-shaman-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/cheat-sheet"
     }
   ]
 }
