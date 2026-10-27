@@ -1322,6 +1322,28 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Source-only fix and corpus committed; latest GitHub Actions run pending. Browser Translator API and DOM reconstruction remain unverified. Not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant web indexed live English Wowhead class guides; direct HTML challenged by JavaScript.",
+      "sampledPageIds": [
+        "devourer-demon-hunter-raid",
+        "survival-hunter-consumables",
+        "protection-warrior-manaforge-omega-raid",
+        "vengeance-demon-hunter-manaforge-omega-raid"
+      ],
+      "sampledPageCount": 4,
+      "sourceCorpusCount": 405,
+      "newReusableTermFamiliesObserved": 2,
+      "newStructuralRiskFamiliesObserved": 0,
+      "structuralRiskFamilies": [],
+      "sharedEngineFix": "No engine change; eight locale-fr data-only jargon variants for damage amplification windows and distance-falloff damage, tested against unrelated roles and classes.",
+      "newPageInterventionProxy": "Four new guides and independent held-out class sources; two reusable terminology families, zero manual sentence overrides. Not a measured translation error rate.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Source-only lexical mapping committed; GitHub Actions rebuild and Chrome rendering verification pending. Not a clean quality cycle."
     }
   ]
 }
