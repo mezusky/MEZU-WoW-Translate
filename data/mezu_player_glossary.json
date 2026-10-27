@@ -137,7 +137,10 @@
     "cleave damage": "dégâts de cleave",
     "sim your character": "sim votre personnage",
     "simming": "sim",
-    "uncapped AoE": "AoE sans limite de cibles"
+    "uncapped AoE": "AoE sans limite de cibles",
+    "filler": "filler",
+    "filler spell": "sort filler",
+    "filler spells": "sorts filler"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
