@@ -1297,6 +1297,31 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Source-only correction committed; local regex spot checks passed, GitHub Actions full rebuild and browser verification pending. Not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-27",
+      "sourceAccess": "Assistant live Wowhead indexed English guide content; direct HTML challenged by JavaScript; no browser Translator API.",
+      "sampledPageIds": [
+        "enhancement-shaman-ui-macros",
+        "blood-death-knight-ui-macros",
+        "marksmanship-hunter-basics",
+        "augmentation-evoker-cheat-sheet",
+        "enhancement-shaman-cheat-sheet"
+      ],
+      "sampledPageCount": 5,
+      "sourceCorpusCount": 401,
+      "newReusableTermFamiliesObserved": 0,
+      "newStructuralRiskFamiliesObserved": 1,
+      "structuralRiskFamilies": [
+        "Northern Sky Raid Tools reminder exports use structured EncounterID/Difficulty/Name headers and time/ph/tag/spellid event records in Holy and Discipline Priest raid guides; source-only language evidence must ignore these records while preserving adjacent prose."
+      ],
+      "sharedEngineFix": "Source-audit cleaner only: recognize complete raid reminder header and event records independent of locale; cross-spec synthetic tests added. No extension or browser DOM behavior modified.",
+      "newPageInterventionProxy": "Five new guides across tank, DPS and support, plus held-out Holy/Discipline raid reminder cross-check; one reusable audit parser fix, zero manual sentence overrides. Not a translation error-rate measurement.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Source-only fix and corpus committed; latest GitHub Actions run pending. Browser Translator API and DOM reconstruction remain unverified. Not a clean quality cycle."
     }
   ]
 }
