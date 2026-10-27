@@ -35,10 +35,17 @@ def search_names(document, locale):
 
 def collect_search_pairs(source_document, target_document, source_locale, target_locale,
                          source_key="en", target_key="fr"):
-    """Return a locale-aware name pair for IDs present in both search responses."""
+    """Retain canonical IDs even when only one locale returns a name.
+
+    An incomplete ID cannot safely produce a whole-name translation, but it
+    must still block a collision with a translated ID sharing its source name.
+    The projection layer handles that ambiguity; never guess a missing name.
+    """
     if source_key == target_key:
         raise ValueError("Source and target keys must differ")
     source = search_names(source_document, source_locale)
     target = search_names(target_document, target_locale)
-    return {key: {source_key: name, target_key: target[key]}
-            for key, name in source.items() if key in target}
+    pairs = {key: {source_key: name} for key, name in source.items()}
+    for key, name in target.items():
+        pairs.setdefault(key, {})[target_key] = name
+    return pairs
