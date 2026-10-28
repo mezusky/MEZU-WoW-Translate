@@ -1546,6 +1546,29 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Locale-scoped glossary, tests, source corpus and compact audit committed; CI/browser rendering pending. Not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-28",
+      "sourceAccess": "Assistant web canonical URLs returned Wowhead JavaScript challenge; indexed current English source inspected; no CI Wowhead fetch.",
+      "sampledPageIds": [
+        "protection-paladin-gear",
+        "brewmaster-monk-gear",
+        "vengeance-demon-hunter-mythic-plus",
+        "mistweaver-monk-gear",
+        "destruction-warlock-gear"
+      ],
+      "sampledPageCount": 5,
+      "sourceCorpusCount": 479,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "active mitigation -> mitigation active (official Blizzard French; independent Guardian Druid, Vengeance DH, Protection Paladin, Brewmaster Monk)"
+      ],
+      "newManualSentenceOverrides": 0,
+      "newPageInterventionProxy": "Five held-out guides, one official reusable tank concept, no sentence overrides; not a measured browser translation issue rate.",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Locale-scoped glossary, tests, corpus and compact audit committed; CI and Chrome Translator API/DOM validation pending. Not a clean quality cycle."
     }
   ]
 }
