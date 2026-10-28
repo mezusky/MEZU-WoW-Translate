@@ -53,6 +53,8 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         general = {p["id"]: p["url"] for p in PAGES if class_guide_parts(p["url"]) is None}
         self.assertEqual(general.get("mythic-plus-keystones-overview"),
                          "https://www.wowhead.com/guide/mythic-keystones-and-dungeons")
+        self.assertEqual(general.get("midnight-mythic-plus-season-overview"),
+                         "https://www.wowhead.com/guide/midnight/mythic-plus-season-overview")
         self.assertTrue(all("/guide/classes/" not in url for url in general.values()))
 
     def test_new_independent_guides_cover_id_names_and_widgets(self):
