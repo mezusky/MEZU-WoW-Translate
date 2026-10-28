@@ -1,6 +1,6 @@
 """Locale-scoped AoE stop jargon across unrelated Midnight Mythic+ guides.
 
-Indexed English source: Devastation Evoker, Demonology Warlock and Holy
+Indexed English source: Marksmanship Hunter, Demonology Warlock and Holy
 Paladin Mythic+ guides use "AoE stops" for CC that prevents enemy casts.
 The verb "stop" and other uses of "stops" must not be globally rewritten.
 This tests data and source-corpus coverage, not browser Translator API output.
@@ -39,7 +39,7 @@ class AoeStopsCrossRoleTests(unittest.TestCase):
     def test_cross_role_heldout_coverage(self):
         ids = {page["id"] for page in PAGES}
         self.assertTrue({
-            "devastation-evoker-mythic-plus",
+            "marksmanship-hunter-mythic-plus",
             "demonology-warlock-mythic-plus",
             "holy-paladin-mythic-plus",
         }.issubset(ids))
