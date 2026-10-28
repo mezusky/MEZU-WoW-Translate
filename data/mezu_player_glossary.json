@@ -165,7 +165,9 @@
     "effective hit points": "points de vie effectifs",
     "Effective Hit Points": "Points de vie effectifs",
     "rot damage": "dégâts continus",
-    "Rot Damage": "Dégâts continus"
+    "Rot Damage": "Dégâts continus",
+    "dropoff damage": "dégâts dégressifs avec la distance",
+    "ticking damage": "dégâts périodiques"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
