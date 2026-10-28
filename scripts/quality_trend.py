@@ -35,6 +35,7 @@ def summarize(reports):
         strict = (measured and browser_pages > 0
                   and sample.get("crossRoleVerified") is True
                   and sample.get("unrelatedHeldoutsVerified") is True
+                  and novel / new_pages <= 0.05
                   and sample.get("strictAuditPassed") is True)
         cycles.append({
             "cycleId": cycle_id,
