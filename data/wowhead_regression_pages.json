@@ -1999,6 +1999,18 @@
     {
       "id": "restoration-druid-talent-builds-heldout",
       "url": "https://www.wowhead.com/guide/classes/druid/restoration/talent-builds-pve-healer"
+    },
+    {
+      "id": "brewmaster-monk-manaforge-omega-raid-heldout",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "preservation-evoker-manaforge-omega-raid-heldout",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "arcane-mage-manaforge-omega-raid-heldout",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/manaforge-omega-raid-tips"
     }
   ]
 }
