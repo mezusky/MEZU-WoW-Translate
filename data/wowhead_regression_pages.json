@@ -2023,6 +2023,18 @@
     {
       "id": "blood-death-knight-talent-builds-heldout",
       "url": "https://www.wowhead.com/guide/classes/death-knight/blood/talent-builds-pve-tank"
+    },
+    {
+      "id": "protection-paladin-talent-builds-heldout",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/talent-builds-pve-tank"
+    },
+    {
+      "id": "discipline-priest-leveling-heldout",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/healer-leveling-tips"
+    },
+    {
+      "id": "devourer-demon-hunter-talent-builds-heldout",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/talent-builds-pve-dps"
     }
   ]
 }
