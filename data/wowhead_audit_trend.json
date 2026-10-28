@@ -1410,21 +1410,21 @@
       ],
       "sampledPageCount": 4,
       "sourceCorpusCount": 454,
-      "newReusableTermFamiliesObserved": 1,
+      "newReusableTermFamiliesObserved": 2,
       "termFamilies": [
-        "priority lists plural; priority list and overcap/overcapping relocated from legacy manual jargon to locale-scoped player glossary without changing existing mappings"
+        "priority lists plural; priority list and overcap/overcapping relocated from legacy manual jargon to locale-scoped player glossary without changing existing mappings",
+        "Wowhead editorial One-Button Rotation Assistant / Single Button Rotation Assistant aliases -> official Blizzard Single-Button Assistant French UI name, cross-checked on Brewmaster, Holy Priest and Devourer DH starter guides"
       ],
       "newStructuralRiskFamiliesObserved": 0,
       "sourceQualityNotes": [
-        "Outlaw Rogue 'Oultaw' and Devourer DH 'Shattered Soulss' are source typos, not MEZU failures",
-        "Brewmaster editorial One-Button Rotation Assistant wording differs from official Single-Button Assistant"
+        "Outlaw Rogue 'Oultaw' and Devourer DH 'Shattered Soulss' are source typos, not MEZU failures"
       ],
-      "newPageInterventionProxy": "Four held-out pages, one plural variant and three legacy entries consolidated, zero manual sentence overrides; browser novel issue rate not measured.",
+      "newPageInterventionProxy": "Four held-out pages, one priority-list plural variant, three legacy jargon entries consolidated and two UI aliases for one official Blizzard concept; zero manual sentence overrides. Browser novel issue rate not measured.",
       "newManualSentenceOverrides": 0,
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
-      "crossPageFixStatus": "Locale-scoped glossary consolidation and regression tests committed. Data Pack rebuild and browser DOM/Translator API still unverified; not a clean quality cycle."
+      "crossPageFixStatus": "Locale-scoped glossary consolidation and Blizzard UI aliases committed with cross-role tests; GitHub Actions Data Pack rebuild and browser DOM/Translator API still unverified. Not a clean quality cycle."
     }
   ]
 }
