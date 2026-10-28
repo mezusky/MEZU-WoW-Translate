@@ -34,6 +34,8 @@ class RaidMechanicJargonTests(unittest.TestCase):
             "damage amp phase": "phase de dégâts amplifiés",
             "damage amplification window": "fenêtre de dégâts amplifiés",
             "damage amplification windows": "fenêtres de dégâts amplifiés",
+            "damage amplification phase": "phase de dégâts amplifiés",
+            "damage amplification phases": "phases de dégâts amplifiés",
         }
         for source, target in expected.items():
             with self.subTest(source=source):
