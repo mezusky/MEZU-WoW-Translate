@@ -2011,6 +2011,18 @@
     {
       "id": "arcane-mage-manaforge-omega-raid-heldout",
       "url": "https://www.wowhead.com/guide/classes/mage/arcane/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "retribution-paladin-manaforge-omega-raid-heldout",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "brewmaster-monk-talent-builds-heldout",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/talent-builds-pve-tank"
+    },
+    {
+      "id": "blood-death-knight-talent-builds-heldout",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/talent-builds-pve-tank"
     }
   ]
 }
