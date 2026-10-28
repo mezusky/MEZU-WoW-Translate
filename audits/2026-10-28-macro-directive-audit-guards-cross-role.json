@@ -1,0 +1,91 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant live indexed English Wowhead pages; direct HTML blocked by Wowhead JavaScript verification. Source-only lexical/structure audit. No Chrome Translator API or DOM simulation.",
+  "sourceCorpusCount": 424,
+  "sampledPageIds": [
+    "frost-death-knight-talents",
+    "arcane-mage-ui-macros",
+    "guardian-druid-basics",
+    "assassination-rogue-stats",
+    "feral-druid-consumables"
+  ],
+  "heldoutPageIds": [
+    "protection-paladin-ui-macros",
+    "discipline-priest-ui-macros",
+    "outlaw-rogue-ui-macros"
+  ],
+  "crossPageEvidence": [
+    {
+      "issue": "Macro command lines contaminate prose-language audits",
+      "pages": [
+        "arcane-mage-ui-macros",
+        "protection-paladin-ui-macros",
+        "discipline-priest-ui-macros",
+        "outlaw-rogue-ui-macros"
+      ],
+      "evidence": "Live indexed sources include #showtooltip, /cast, /castsequence, /use, /cancelaura, /stopcasting and targeting commands adjacent to explanatory English prose.",
+      "fix": "Strip only complete recognized WoW macro directive lines from source-language evidence; preserve adjacent prose and inline mentions of /cast. Do not change Chrome extension behavior.",
+      "verification": "Four targeted tests: tank, healer, DPS, and negative-control prose/path cases; source-level regex spot-check passed; full CI pending."
+    },
+    {
+      "issue": "Official spell/talent names in complex talent descriptions",
+      "pages": [
+        "frost-death-knight-talents",
+        "guardian-druid-basics"
+      ],
+      "evidence": "Names such as Reaper's Mark and Obliterate are mixed into English prose and require canonical-ID locale resolution.",
+      "fix": "No speculative text substitution. Canonical-ID translation and Chrome DOM verification remain pending."
+    },
+    {
+      "issue": "Stat tables and numbers should retain semantics",
+      "pages": [
+        "assassination-rogue-stats"
+      ],
+      "evidence": "Stat priorities and diminishing-return thresholds are structured content; existing French jargon covers 'diminishing returns' and 'breakpoint'.",
+      "fix": "No new manual overrides or unverified numeric replacements."
+    },
+    {
+      "issue": "Source editorial inconsistencies are not MEZU translation failures",
+      "pages": [
+        "feral-druid-consumables"
+      ],
+      "evidence": "Indexed consumables guide contains stale The War Within references and inconsistent flask/potion recommendations between sections.",
+      "fix": "Flag as upstream content issue; do not hardcode a correction in MEZU."
+    }
+  ],
+  "lexicalSimulation": {
+    "scope": "Existing French glossary lookup, not full rendered MEZU output",
+    "knownCoverage": [
+      "diminishing returns → rendements décroissants",
+      "breakpoint → seuil",
+      "filler → filler"
+    ],
+    "newManualSentenceOverrides": 0
+  },
+  "newReusableStructuralFixFamilies": 1,
+  "newReusableTermFamilies": 0,
+  "newPageInterventionProxy": {
+    "newPages": 5,
+    "sourceAuditSharedEngineFixes": 1,
+    "newManualSentenceOverrides": 0,
+    "novelBrowserTranslationIssueRate": null
+  },
+  "checks": {
+    "uniqueCorpusIds": 424,
+    "uniqueCorpusUrls": 424,
+    "sourceMacroRegexSpotCheck": "passed",
+    "newUnitTests": 4,
+    "fullPythonSuite": "not confirmed",
+    "githubActionsDataPack": "not confirmed",
+    "browserRenderedPagesVerified": 0
+  },
+  "remainingVerification": [
+    "Run GitHub Actions tests and rebuild Data Pack on latest commit",
+    "Verify browser DOM keeps macro commands byte-for-byte unchanged while translating adjacent prose",
+    "Measure actual cross-page novel translation errors over two consecutive clean audit cycles"
+  ],
+  "status": "Source-audit reliability improved; cross-page translation quality completion condition not met."
+}
