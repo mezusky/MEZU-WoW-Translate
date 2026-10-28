@@ -199,7 +199,10 @@
     "multi-dotting": "multi-DoT",
     "multi dotting": "multi-DoT",
     "Multi-Dotting": "Multi-DoT",
-    "multi-DoTting": "multi-DoT"
+    "multi-DoTting": "multi-DoT",
+    "AoE stops": "stops AoE",
+    "aoe stops": "stops AoE",
+    "AoE Stops": "Stops AoE"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
