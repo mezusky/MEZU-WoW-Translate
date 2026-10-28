@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "focus": "in-combat resurrection terminology across independent roles",
+  "sourceAccess": "Assistant web inspected current indexed English Wowhead guide text. Direct canonical pages returned JavaScript anti-bot verification. GitHub Actions did not fetch Wowhead.",
+  "sampledPageIds": [
+    "protection-paladin-talents",
+    "holy-paladin-abilities",
+    "affliction-warlock-abilities",
+    "guardian-druid-talents",
+    "holy-paladin-midnight-prepatch",
+    "mythic-plus-keystones-overview"
+  ],
+  "newHeldoutPages": 2,
+  "regressionCorpusPagesAfterRun": 487,
+  "sourceEvidence": [
+    "Protection Paladin abilities: Intercession (BRes) is described as an in-combat resurrection or battle res; 'battle res' also occurs as a verb.",
+    "Holy Paladin abilities: Intercession (Combat Ress) is described as a battle resurrection.",
+    "Affliction Warlock abilities: Soulstone is described as a battle resurrection and battle resses; the latter colloquial plural is deliberately not auto-replaced.",
+    "Guardian Druid abilities: Rebirth (Bres) is usable in combat; avoid rewriting the canonical spell name.",
+    "Blizzard French patch 4.1 and 6.0.2 notes use 'résurrection(s) en combat' for the mechanic.",
+    "Wowhead's general Mythic+ guide describes shared battle-resurrection charges; do not confuse mechanic labels with spell IDs."
+  ],
+  "reusableFixes": [
+    "Six English noun/case variants mapped to Blizzard-attested French noun phrases in locale-specific data-only glossary.",
+    "Ambiguous action verbs (battle res/rez), abbreviations (BRes), and canonical spell names deliberately excluded."
+  ],
+  "testsAdded": [
+    "tests/test_combat_resurrection_cross_role.py"
+  ],
+  "extensionCodeChanged": false,
+  "newDependencies": 0,
+  "newManualSentenceOverrides": 0,
+  "newReusableTermFamiliesObserved": 1,
+  "newPageInterventionProxy": "Two new heldout pages sampled; one reusable terminology family addressed. No measured rate of novel browser translation errors.",
+  "browserOnlyVerification": [
+    "Chrome Translator API prose fallback",
+    "rich-text/DOM reconstruction",
+    "case/inflection behavior when the glossary phrase appears within longer sentences"
+  ],
+  "ciValidation": "Pending independent GitHub Actions run; static JSON, unique corpus IDs/URLs and committed source files checked directly.",
+  "stopConditionMet": false
+}
