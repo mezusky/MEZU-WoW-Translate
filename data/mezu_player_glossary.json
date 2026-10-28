@@ -206,7 +206,11 @@
     "break line of sight": "casser la ligne de vue",
     "out of line of sight": "hors de la ligne de vue",
     "active mitigation": "mitigation active",
-    "Active Mitigation": "Mitigation active"
+    "Active Mitigation": "Mitigation active",
+    "overheal": "overheal",
+    "Overheal": "Overheal",
+    "overhealing": "surplus de soins",
+    "Overhealing": "Surplus de soins"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
