@@ -1743,6 +1743,26 @@
     {
       "id": "destruction-warlock-manaforge-omega-raid",
       "url": "https://www.wowhead.com/guide/classes/warlock/destruction/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "augmentation-evoker-basics",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/basics"
+    },
+    {
+      "id": "arms-warrior-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/addons-macro-ui-imports"
+    },
+    {
+      "id": "restoration-shaman-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "protection-paladin-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "destruction-warlock-basics",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/basics"
     }
   ]
 }
