@@ -1344,6 +1344,32 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Source-only lexical mapping committed; GitHub Actions rebuild and Chrome rendering verification pending. Not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-28",
+      "sourceAccess": "Live English Wowhead guide URLs returned JavaScript verification; assistant web indexed English prose inspected, with official Blizzard en-US/fr-FR paired articles.",
+      "sampledPageIds": [
+        "mistweaver-monk-basics",
+        "vengeance-demon-hunter-basics",
+        "survival-hunter-basics",
+        "protection-warrior-basics",
+        "balance-druid-basics"
+      ],
+      "sampledPageCount": 5,
+      "sourceCorpusCount": 446,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "Blizzard's official Assisted Highlight / Single-Button Assistant UI labels, reused in starter guides across healer, tank and DPS"
+      ],
+      "newStructuralRiskFamiliesObserved": 0,
+      "officialSourceSeed": "24205457 (official Blizzard EN/FR paired article); short UI headings eligible for whole-string phrase memory",
+      "sharedEngineFix": "No extension change. Seed deterministic Blizzard phrase-memory collector with official UI article rather than adding per-guide sentence overrides or executable remote rules.",
+      "newPageInterventionProxy": "Five held-out starter guides; one shared official terminology family, zero manual sentence overrides. Novel browser translation issue rate remains unknown.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Official source seed and cross-role regression tests committed; new GitHub Actions build and real Chrome/Translator API validation pending. Not a clean quality cycle."
     }
   ]
 }
