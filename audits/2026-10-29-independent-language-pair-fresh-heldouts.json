@@ -1,0 +1,52 @@
+{
+  "auditId": "2026-10-29-locale-pair-fresh-heldouts",
+  "method": "indexed-excerpts",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "pages": [
+    {
+      "id": "protection-paladin-talent-builds-heldout",
+      "risk": [
+        "talent import buttons",
+        "hero-tree tables",
+        "official talent IDs"
+      ]
+    },
+    {
+      "id": "discipline-priest-leveling-heldout",
+      "risk": [
+        "level 80-90 ordered talent path",
+        "spell names",
+        "rotation and cooldown lists"
+      ]
+    },
+    {
+      "id": "devourer-demon-hunter-talent-builds-heldout",
+      "risk": [
+        "hero talent switches",
+        "build import widgets",
+        "localized spell labels"
+      ]
+    }
+  ],
+  "crossPageFinding": "Wowhead /fr/ pages may retain English prose while localizing spell names; page URL locale alone is not reliable evidence of prose source language.",
+  "browserOnlyVerification": [
+    "Translator API output",
+    "actual canonical ID mapping",
+    "DOM widget/link preservation",
+    "rendered French prose quality"
+  ],
+  "qualitySample": {
+    "cycleId": "2026-10-29-source-only-heldouts",
+    "auditedAt": "2026-10-29T00:36:41+01:00",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "newPagesAudited": 3,
+    "novelIssueFamilies": null,
+    "browserVerifiedPages": 0,
+    "auditMethod": "indexed-excerpts",
+    "crossRoleVerified": false,
+    "unrelatedHeldoutsVerified": false,
+    "strictAuditPassed": false
+  }
+}
