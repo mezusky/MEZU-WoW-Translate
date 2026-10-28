@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceAccess": "Live English Wowhead guide text inspected via normal web search/indexed rendering; direct requests can return JavaScript verification. No Wowhead fetch in GitHub Actions.",
+  "sampledPageIds": [
+    "fire-mage-rotation",
+    "demonology-warlock-rotation",
+    "augmentation-evoker-rotation",
+    "windwalker-monk-rotation",
+    "retribution-paladin-gear",
+    "retribution-paladin-ui-macros",
+    "devastation-evoker-cheat-sheet"
+  ],
+  "sampledPageCount": 7,
+  "regressionCorpusPagesAfterRun": 491,
+  "newReusableTermFamiliesObserved": 1,
+  "termFamilies": [
+    "pre-cast (scoped WoW-player shorthand; capitalized and lowercase variants)"
+  ],
+  "heldoutEvidence": [
+    "Mage Fire opener pre-casts Pyroblast",
+    "Warlock Demonology opener pre-casts Demonbolt/Power Siphon",
+    "Evoker Augmentation opener pre-casts Blistering Scales/Living Flame",
+    "Monk Windwalker opener pre-casts Slicing Winds"
+  ],
+  "newStructuralRiskFamiliesObserved": 0,
+  "previouslyObservedRiskFamilies": [
+    "CDM and Edit Mode import payloads alongside Paladin macro prose",
+    "stat-guide and stats= widget assignments in Evoker cheat sheets",
+    "ID-backed gear and tier-set item names in Paladin gearing"
+  ],
+  "changes": "Two locale-specific French jargon entries, a cross-class regression test, and three independent corpus URLs. No extension code change.",
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "crossPageFixStatus": "Glossary and regression test committed; GitHub Actions/Data Pack rebuild pending; browser Translator API and DOM output unverified.",
+  "limitations": [
+    "No browser-local Translator API or DOM validation",
+    "No measured translation error rate",
+    "Do not generalize pre-casting grammar or pre-pot variants without independent evidence"
+  ],
+  "evidenceUrls": [
+    "https://www.wowhead.com/guide/classes/mage/fire/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/warlock/demonology/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/evoker/augmentation/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/monk/windwalker/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/paladin/retribution/bis-gear",
+    "https://www.wowhead.com/guide/classes/paladin/retribution/addons-macro-ui-imports",
+    "https://www.wowhead.com/guide/classes/evoker/devastation/cheat-sheet"
+  ]
+}
