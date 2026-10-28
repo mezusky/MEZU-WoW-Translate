@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "auditType": "indexed-live-English-source-versus-locale-scoped-data",
+  "targetPair": {
+    "sourceLanguage": "en",
+    "targetLanguage": "fr"
+  },
+  "sourceAccess": "Assistant web indexed Wowhead guides; direct HTML presents JavaScript challenge. No GitHub Actions Wowhead fetching.",
+  "sampledPageCount": 6,
+  "corpusAfter": 436,
+  "sampledPageIds": [
+    "holy-priest-manaforge-omega-raid",
+    "discipline-priest-manaforge-omega-raid",
+    "restoration-druid-manaforge-omega-raid",
+    "mistweaver-monk-manaforge-omega-raid",
+    "blood-death-knight-manaforge-omega-raid",
+    "destruction-warlock-manaforge-omega-raid"
+  ],
+  "reusableFindings": [
+    {
+      "source": "dropoff damage",
+      "fr": "dégâts dégressifs avec la distance",
+      "evidence": [
+        "holy-priest-manaforge-omega-raid",
+        "discipline-priest-manaforge-omega-raid"
+      ],
+      "note": "Missing unhyphenated variant of existing distance-falloff phrase; no generic dropoff rule."
+    },
+    {
+      "source": "ticking damage",
+      "fr": "dégâts périodiques",
+      "evidence": [
+        "holy-priest-manaforge-omega-raid",
+        "restoration-shaman-raid"
+      ],
+      "note": "Periodic damage in independent healer guides; no generic tick rule."
+    }
+  ],
+  "heldoutObservations": [
+    "Blood Death Knight historical raid uses damage amp phase, supporting previously added amplification jargon.",
+    "Destruction Warlock historical raid uses damage amplification phase and rot damage; related wording remains context-dependent.",
+    "Old raid guides are historical terminology stress tests, not current season recommendations."
+  ],
+  "changes": {
+    "newJargonEntries": 2,
+    "newSentenceOverrides": 0,
+    "extensionCodeChanged": false,
+    "testsUpdated": true,
+    "corpusAdded": 6
+  },
+  "validation": {
+    "sourceOnly": true,
+    "realChromeRenderedPages": 0,
+    "translatorApiReproduced": false,
+    "domVerified": false,
+    "novelTranslationIssueRate": null,
+    "qualityCycleClean": false
+  },
+  "next": "Verify generated pack and Chrome DOM/Translator API separately; continue held-out cross-class audits; do not count source-only tests as quality completion."
+}
