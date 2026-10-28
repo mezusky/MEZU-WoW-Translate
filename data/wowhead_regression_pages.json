@@ -1815,6 +1815,14 @@
     {
       "id": "devourer-demon-hunter-basics",
       "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/basics"
+    },
+    {
+      "id": "augmentation-evoker-talents",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/abilities-talents-pve-dps"
+    },
+    {
+      "id": "fire-mage-talents",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/abilities-talents-pve-dps"
     }
   ]
 }
