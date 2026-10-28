@@ -1951,6 +1951,18 @@
     {
       "id": "midnight-mythic-plus-season-overview",
       "url": "https://www.wowhead.com/guide/midnight/mythic-plus-season-overview"
+    },
+    {
+      "id": "retribution-paladin-gear",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/bis-gear"
+    },
+    {
+      "id": "retribution-paladin-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/addons-macro-ui-imports"
+    },
+    {
+      "id": "devastation-evoker-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/cheat-sheet"
     }
   ]
 }
