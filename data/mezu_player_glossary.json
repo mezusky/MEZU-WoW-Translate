@@ -159,7 +159,13 @@
     "Pre-Combat Check": "Vérification avant le combat",
     "Pre-Combat Checks": "Vérifications avant le combat",
     "pre-combat check": "vérification avant le combat",
-    "pre-combat checks": "vérifications avant le combat"
+    "pre-combat checks": "vérifications avant le combat",
+    "effective health": "points de vie effectifs",
+    "Effective Health": "Points de vie effectifs",
+    "effective hit points": "points de vie effectifs",
+    "Effective Hit Points": "Points de vie effectifs",
+    "rot damage": "dégâts continus",
+    "Rot Damage": "Dégâts continus"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
