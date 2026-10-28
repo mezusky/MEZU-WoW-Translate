@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceAccess": "Canonical Wowhead URLs opened with assistant web; direct HTML JavaScript verification blocked. English source inspected through current indexed guide text. GitHub Actions did not fetch Wowhead.",
+  "sampledPageIds": [
+    "protection-paladin-gear",
+    "brewmaster-monk-gear",
+    "vengeance-demon-hunter-mythic-plus",
+    "mistweaver-monk-gear",
+    "destruction-warlock-gear"
+  ],
+  "sampledPageCount": 5,
+  "regressionCorpusPagesAfterRun": 479,
+  "crossPageEvidenceIds": [
+    "guardian-druid-talents",
+    "vengeance-demon-hunter-abilities",
+    "protection-paladin-rotation",
+    "brewmaster-monk-leveling"
+  ],
+  "sourceEvidence": [
+    "Guardian Druid abilities calls Ironfur a core active mitigation ability; Vengeance Demon Hunter abilities describes Demon Spikes as primary active mitigation.",
+    "Protection Paladin and Brewmaster Monk independently use active mitigation in tank gameplay explanations; this is a reusable concept rather than a sentence-specific rewrite.",
+    "Blizzard's French developer article 'Café avec les devs – Satanée mitigation !' uses the exact term 'mitigation active' for this mechanic.",
+    "Three new tank guides plus Mistweaver healer and Destruction Warlock DPS gear guides extend held-out class/role/section coverage.",
+    "Indexed gear text includes missing dynamic fields and occasional widget serialization artifacts. These are source/index rendering limitations, not verified extension DOM failures."
+  ],
+  "newReusableTermFamiliesObserved": 1,
+  "newLocaleScopedJargonVariants": {
+    "active mitigation": "mitigation active",
+    "Active Mitigation": "Mitigation active"
+  },
+  "notGeneralized": [
+    "mitigation",
+    "mitigate",
+    "active",
+    "damage mitigation"
+  ],
+  "newManualSentenceOverrides": 0,
+  "newDependencies": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "newPageInterventionProxy": "Five new held-out sources, one official Blizzard-backed reusable tank concept and zero sentence overrides. This is not a measured browser translation error rate; cross-role checks were source-only.",
+  "browserOnlyVerification": "Chrome Translator API, actual translated prose, DOM/link/widget preservation, locale fallback and ordering remain unverified.",
+  "crossPageFixStatus": "Data-only glossary, source corpus and tests committed. CI reconstruction/validation not yet confirmed at audit creation; not a clean quality cycle.",
+  "evidenceUrls": [
+    "https://www.wowhead.com/guide/classes/druid/guardian/abilities-talents-pve-tank",
+    "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/abilities-talents-pve-tank",
+    "https://www.wowhead.com/guide/classes/paladin/protection/bis-gear",
+    "https://www.wowhead.com/guide/classes/monk/brewmaster/bis-gear",
+    "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/mythic-plus-dungeon-tips",
+    "https://www.wowhead.com/guide/classes/monk/mistweaver/bis-gear",
+    "https://www.wowhead.com/guide/classes/warlock/destruction/bis-gear",
+    "https://worldofwarcraft.blizzard.com/fr-fr/news/10030423/auf-einen-kaffee-mit-den-devs-verdammte-mitigation"
+  ]
+}
