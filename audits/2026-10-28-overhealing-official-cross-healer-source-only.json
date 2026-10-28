@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceAccess": "Assistant web inspected live canonical Wowhead URLs; direct HTML returned JavaScript verification. Current English guide prose inspected through indexed search. GitHub Actions did not fetch Wowhead.",
+  "sampledPageIds": [
+    "holy-priest-abilities",
+    "discipline-priest-abilities",
+    "mistweaver-monk-overview",
+    "restoration-druid-talents",
+    "holy-paladin-abilities",
+    "elemental-shaman-abilities",
+    "discipline-priest-midnight-season-2"
+  ],
+  "sampledPageCount": 7,
+  "regressionCorpusPagesAfterRun": 481,
+  "sourceEvidence": [
+    "Holy and Discipline Priest independent guides both use the nominal term overhealing for Piety; Blizzard EN/FR update notes 24246298 explicitly pair overhealing with surplus de soins.",
+    "Mistweaver, Holy Paladin and Restoration Druid guide prose also uses related verbal forms; do not replace overheals or overhealed globally.",
+    "Indexed English source shows source-side omissions, duplicate headers and occasional spell placeholders; these are not verified MEZU DOM failures.",
+    "Discipline Priest Season 2 overview calls itself Season 1 in its intro; source editorial mismatch, not a translation bug."
+  ],
+  "newReusableTermFamiliesObserved": 1,
+  "newLocaleScopedJargonVariants": {
+    "overhealing": "surplus de soins",
+    "Overhealing": "Surplus de soins",
+    "overheal": "overheal",
+    "Overheal": "Overheal"
+  },
+  "legacyJargonEntriesMigrated": 2,
+  "newManualSentenceOverrides": 0,
+  "newDependencies": 0,
+  "extensionCodeChanged": false,
+  "sourceOnlyTestAdded": "tests/test_overhealing_locale_cross_healer.py",
+  "newPageInterventionProxy": "Two new held-out sources, one Blizzard-backed reusable nominal translation family, no sentence overrides. Not a measured browser translation issue rate.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "browserOnlyVerification": "Chrome Translator API, translated prose, linked entity names, DOM/interactive widgets, source-language detection and browser locale fallback remain unverified.",
+  "crossPageFixStatus": "Source glossary and regression corpus committed; latest CI/Data Pack reconstruction not confirmed at audit creation. Not a clean quality cycle.",
+  "evidenceUrls": [
+    "https://www.wowhead.com/guide/classes/priest/holy/abilities-talents-pve-healer",
+    "https://www.wowhead.com/guide/classes/priest/discipline/abilities-talents-pve-healer",
+    "https://www.wowhead.com/guide/classes/monk/mistweaver/overview-pve-healer",
+    "https://www.wowhead.com/guide/classes/druid/restoration/abilities-talents-pve-healer",
+    "https://www.wowhead.com/guide/classes/paladin/holy/abilities-talents-pve-healer",
+    "https://www.wowhead.com/guide/classes/shaman/elemental/abilities-talents-pve-dps",
+    "https://www.wowhead.com/guide/classes/priest/discipline/midnight-season-2",
+    "https://worldofwarcraft.blizzard.com/en-gb/news/24246298",
+    "https://worldofwarcraft.blizzard.com/fr-fr/news/24246298"
+  ]
+}
