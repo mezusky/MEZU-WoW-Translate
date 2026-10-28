@@ -151,8 +151,6 @@
     "execute": "execute",
     "interrupt": "kick",
     "interrupts": "kicks",
-    "overheal": "overheal",
-    "overhealing": "overheal",
     "Soul Shard": "éclat d’âme",
     "Soul Shards": "éclats d’âme",
     "soul shard": "éclat d’âme",
