@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "auditDate": "2026-10-28",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 503,
+  "corpusAfter": 506,
+  "sourceAccess": "Attempted direct English Wowhead URLs with assistant web access; JavaScript verification prevented full HTML retrieval. Indexed English source excerpts were inspected instead; GitHub Actions do not fetch Wowhead.",
+  "newPages": [
+    {
+      "id": "retribution-paladin-manaforge-omega-raid-heldout",
+      "role": "dps",
+      "section": "raid",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "brewmaster-monk-talent-builds-heldout",
+      "role": "tank",
+      "section": "talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/talent-builds-pve-tank"
+    },
+    {
+      "id": "blood-death-knight-talent-builds-heldout",
+      "role": "tank",
+      "section": "talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/talent-builds-pve-tank"
+    }
+  ],
+  "sourceOnlyChecks": [
+    {
+      "source": "talent builds",
+      "expectedFrench": "builds de talents",
+      "layer": "existing fr player glossary"
+    },
+    {
+      "source": "priority damage",
+      "expectedFrench": "dégâts prio",
+      "layer": "existing fr player glossary"
+    },
+    {
+      "source": "single-target damage",
+      "expectedFrench": "dégâts monocibles",
+      "layer": "existing fr player glossary"
+    }
+  ],
+  "reusableChange": "Quality trend stop gate now requires five distinct browser-rendered page evidence records covering at least three classes, three specs, tank/healer/dps, two sections and two unrelated heldouts, plus the existing strict audit flags. Prevents false-positive completion from summary-only reports or one-page audits.",
+  "sourceOnlyRisks": [
+    "Talent import codes, copy buttons and dynamic calculators cannot be checked from indexed text.",
+    "Raid encounter names and spell/talent names should resolve via canonical IDs; no speculative text overrides added.",
+    "Wowhead locale pages can retain English prose around localized spell names; that is source-site behavior, not evidence of a MEZU translation failure."
+  ],
+  "qualitySample": {
+    "cycleId": "2026-10-28T23:40:00+01:00-structured-browser-evidence",
+    "auditedAt": "2026-10-28T23:40:00+01:00",
+    "newPagesAudited": 3,
+    "novelIssueFamilies": null,
+    "browserVerifiedPages": 0,
+    "auditMethod": "indexed-excerpts",
+    "crossRoleVerified": false,
+    "unrelatedHeldoutsVerified": false,
+    "strictAuditPassed": false
+  },
+  "browserOnlyVerification": [
+    "Actual Chrome Translator API output",
+    "DOM and rich-text reconstruction",
+    "Official entity IDs in rendered output"
+  ],
+  "newManualSentenceOverrides": 0,
+  "extensionCodeChanged": false,
+  "ciValidation": "pending"
+}
