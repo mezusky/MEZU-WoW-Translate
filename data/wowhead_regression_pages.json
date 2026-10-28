@@ -1895,6 +1895,18 @@
     {
       "id": "frost-death-knight-manaforge-omega-raid",
       "url": "https://www.wowhead.com/guide/classes/death-knight/frost/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "protection-paladin-gear",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/bis-gear"
+    },
+    {
+      "id": "brewmaster-monk-gear",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/bis-gear"
+    },
+    {
+      "id": "vengeance-demon-hunter-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/mythic-plus-dungeon-tips"
     }
   ]
 }
