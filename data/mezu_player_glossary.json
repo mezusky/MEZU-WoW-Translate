@@ -214,7 +214,13 @@
     "mouseover macro": "macro mouseover",
     "mouseover macros": "macros mouseover",
     "Mouseover Macro": "Macro mouseover",
-    "Mouseover Macros": "Macros mouseover"
+    "Mouseover Macros": "Macros mouseover",
+    "battle resurrection": "résurrection en combat",
+    "battle resurrections": "résurrections en combat",
+    "Battle Resurrection": "Résurrection en combat",
+    "Battle Resurrections": "Résurrections en combat",
+    "combat resurrection": "résurrection en combat",
+    "combat resurrections": "résurrections en combat"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
