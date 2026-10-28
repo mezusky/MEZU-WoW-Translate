@@ -9,6 +9,7 @@ from blizzard_search_pairs import collect_search_pairs
 from blizzard_index_pairs import collect_index_pairs
 from index_retention import retain_on_partial_index
 from merge_entity_locales import merge_verified_locale_refresh, project_locale_pairs
+from merge_exact_layers import merge_exact_layers
 from locale_glossary import select_jargon, select_locale_data
 from datetime import datetime, timezone
 
@@ -163,25 +164,16 @@ blizzard_memory = select_locale_data(blizzard_memory, PACK_SOURCE_LANGUAGE,
 player_glossary = select_locale_data(player_glossary, PACK_SOURCE_LANGUAGE,
                                     PACK_TARGET_LANGUAGE)
 
-# Project current EN->FR pack from canonical ID records, never by assuming
-# identical source names identify the same spell/item across entity types.
-# The helper accepts arbitrary source/target language keys for future packs.
-# Ambiguous or incomplete IDs fall back to prose translation, not a guessed name.
-exact = project_locale_pairs(entities, PACK_SOURCE_LANGUAGE, PACK_TARGET_LANGUAGE)
-
-# Official Blizzard translation-memory phrases are whole-string matches only.
-# This lets us reuse real Blizzard EN->FR wording without injecting fragments into prose.
-for en, fr in (blizzard_memory.get("exact", {}) or {}).items():
-    if isinstance(en, str) and isinstance(fr, str) and en.strip() and fr.strip():
-        exact.setdefault(en.strip(), fr.strip())
-
-# Community EN->frFR mappings are also exact-match only.
-for en, fr in (community.get("exact", {}) or {}).items():
-    if isinstance(en, str) and isinstance(fr, str) and en.strip() and fr.strip():
-        exact.setdefault(en.strip(), fr.strip())
-
-# Manual MEZU player-language rules always win over every automatic source.
-exact.update(manual.get("exact", {}))
+# ID-backed official names must outrank every prose layer, including manual
+# sentence overrides. Keep legacy manual precedence for non-entity prose only.
+# The projection and merge helpers are language-direction agnostic.
+canonical_exact = project_locale_pairs(entities, PACK_SOURCE_LANGUAGE, PACK_TARGET_LANGUAGE)
+exact = merge_exact_layers(
+    canonical_exact,
+    blizzard_memory.get("exact", {}),
+    community.get("exact", {}),
+    manual.get("exact", {}),
+)
 
 # Keep the official Blizzard prose memory as a distinct layer too.  The browser
 # extension uses this for sentence-level exact matching and conservative
