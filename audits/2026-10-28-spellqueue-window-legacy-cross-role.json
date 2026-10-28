@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceAccess": "Direct English Wowhead URLs returned JavaScript verification; indexed English guide text inspected via normal assistant web access, not GitHub Actions.",
+  "sampledPageIds": [
+    "arcane-mage-rotation",
+    "mistweaver-monk-ui-macros",
+    "discipline-priest-rotation",
+    "holy-paladin-rotation",
+    "frost-mage-rotation",
+    "devastation-evoker-basics",
+    "mistweaver-monk-leveling"
+  ],
+  "sampledPageCount": 7,
+  "regressionCorpusPagesAfterRun": 493,
+  "newReusableTermFamiliesObserved": 0,
+  "legacyTerminologyConsolidated": [
+    "spell queue window",
+    "Spellqueue Window",
+    "spellqueue window"
+  ],
+  "newScopedVariant": "Spell Queue Window",
+  "heldoutEvidence": [
+    "Arcane Mage rotation describes The Spellqueue Window, spellqueue window and /console SpellQueueWindow 400.",
+    "Mistweaver Monk UI/macros describes spell queue window alongside /cast !Spinning Crane Kick; command text must not be translated.",
+    "Discipline Priest and Holy Paladin rotations use spell queue as a verb, so bare spell queue is intentionally excluded.",
+    "Frost Mage rotation describes queued casts without an exact noun rule; no generalized queue verb override."
+  ],
+  "sourceQualityObservations": [
+    "Discipline Priest indexed source includes (Spell #1252215), an unresolved source shortcode rather than proof of MEZU mistranslation.",
+    "Some Wowhead English guides have blank season placeholders; do not count source defects as translation failures."
+  ],
+  "newManualSentenceOverrides": 0,
+  "dataChange": "Move three existing noun collocations from legacy manual jargon into locale-scoped EN->FR player glossary; add title-case spaced variant. No change to existing translations, no packaged extension change.",
+  "newCorpusPages": [
+    "devastation-evoker-basics",
+    "mistweaver-monk-leveling"
+  ],
+  "crossPageFixStatus": "Source and locale-specific regression tests committed; rebuild status must be checked separately. Browser-local Translator API and DOM output not verified.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "limitations": [
+    "Direct HTML/DOM blocked by Wowhead JavaScript challenge",
+    "No browser-local translation or rich-text reconstruction verified",
+    "No measured cross-page novel translation issue rate"
+  ],
+  "evidenceUrls": [
+    "https://www.wowhead.com/guide/classes/mage/arcane/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/monk/mistweaver/addons-macro-ui-imports",
+    "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+    "https://www.wowhead.com/guide/classes/paladin/holy/rotation-cooldowns-pve-healer",
+    "https://www.wowhead.com/guide/classes/mage/frost/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/evoker/devastation/basics",
+    "https://www.wowhead.com/guide/classes/monk/mistweaver/healer-leveling-tips"
+  ]
+}
