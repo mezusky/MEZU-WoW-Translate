@@ -8,12 +8,25 @@ from quality_trend import summarize
 
 
 def report(cycle, method="browser-rendered", novel=0, clean=True):
+    cases = [
+        {"url": f"https://www.wowhead.com/guide/classes/{cls}/{spec}/{section}",
+         "wowClass": cls, "spec": spec, "role": role, "section": section,
+         "heldout": i < 2, "browserRendered": True, "strictPass": True}
+        for i, (cls, spec, role, section) in enumerate([
+            ("warrior", "protection", "tank", "rotation"),
+            ("priest", "discipline", "healer", "talents"),
+            ("mage", "fire", "dps", "gear"),
+            ("druid", "guardian", "tank", "raid"),
+            ("hunter", "survival", "dps", "mythic-plus"),
+        ])
+    ]
     return {"qualitySample": {
         "cycleId": cycle,
         "auditedAt": "2026-10-28T22:00:00+01:00" if cycle == "a" else "2026-10-28T23:00:00+01:00",
-        "newPagesAudited": 4,
+        "newPagesAudited": len(cases),
         "novelIssueFamilies": novel,
-        "browserVerifiedPages": 4 if method == "browser-rendered" else 0,
+        "browserVerifiedPages": len(cases) if method == "browser-rendered" else 0,
+        "browserCases": cases,
         "auditMethod": method,
         "crossRoleVerified": True,
         "unrelatedHeldoutsVerified": True,
@@ -64,6 +77,35 @@ class QualityTrendTests(unittest.TestCase):
         bad["qualitySample"]["newPagesAudited"] = -1
         with self.assertRaises(ValueError):
             summarize([bad])
+
+    def test_summary_flags_without_page_evidence_never_pass(self):
+        result = report("a")
+        del result["qualitySample"]["browserCases"]
+        self.assertEqual(summarize([result])["consecutiveStrictCleanCycles"], 0)
+
+    def test_single_page_or_single_role_never_passes(self):
+        single = report("a")
+        single["qualitySample"]["browserCases"] = single["qualitySample"]["browserCases"][:1]
+        single["qualitySample"]["newPagesAudited"] = 1
+        single["qualitySample"]["browserVerifiedPages"] = 1
+        self.assertFalse(summarize([single])["eligibleToConsiderStopping"])
+        one_role = report("a")
+        for case in one_role["qualitySample"]["browserCases"]:
+            case["role"] = "dps"
+        self.assertEqual(summarize([one_role])["consecutiveStrictCleanCycles"], 0)
+
+    def test_duplicate_urls_or_unverified_heldouts_never_pass(self):
+        duplicate = report("a")
+        cases = duplicate["qualitySample"]["browserCases"]
+        cases[1]["url"] = cases[0]["url"]
+        self.assertEqual(summarize([duplicate])["consecutiveStrictCleanCycles"], 0)
+        unverified = report("a")
+        unverified["qualitySample"]["browserCases"][0]["strictPass"] = False
+        self.assertEqual(summarize([unverified])["consecutiveStrictCleanCycles"], 0)
+        no_heldouts = report("a")
+        for case in no_heldouts["qualitySample"]["browserCases"]:
+            case["heldout"] = False
+        self.assertEqual(summarize([no_heldouts])["consecutiveStrictCleanCycles"], 0)
 
     def test_legacy_reports_do_not_imply_success(self):
         self.assertEqual(summarize([{"browserRenderedPagesVerified": 0}])["cycles"], [])
