@@ -1987,6 +1987,18 @@
     {
       "id": "beast-mastery-hunter-overview-heldout",
       "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/overview-pve-dps"
+    },
+    {
+      "id": "guardian-druid-talent-builds-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/talent-builds-pve-tank"
+    },
+    {
+      "id": "fire-mage-talent-builds-heldout",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/talent-builds-pve-dps"
+    },
+    {
+      "id": "restoration-druid-talent-builds-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/talent-builds-pve-healer"
     }
   ]
 }
