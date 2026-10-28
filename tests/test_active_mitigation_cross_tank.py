@@ -38,7 +38,7 @@ class ActiveMitigationTests(unittest.TestCase):
     def test_independent_tank_sources(self):
         ids = {p["id"] for p in PAGES}
         self.assertTrue({
-            "guardian-druid-abilities", "vengeance-demon-hunter-abilities",
+            "guardian-druid-talents", "vengeance-demon-hunter-abilities",
             "protection-paladin-rotation", "brewmaster-monk-leveling"
         }.issubset(ids))
 
