@@ -107,6 +107,11 @@ class QualityTrendTests(unittest.TestCase):
             case["heldout"] = False
         self.assertEqual(summarize([no_heldouts])["consecutiveStrictCleanCycles"], 0)
 
+    def test_malformed_page_metadata_is_not_a_clean_cycle(self):
+        malformed = report("a")
+        malformed["qualitySample"]["browserCases"][0]["role"] = ["tank"]
+        self.assertEqual(summarize([malformed])["consecutiveStrictCleanCycles"], 0)
+
     def test_legacy_reports_do_not_imply_success(self):
         self.assertEqual(summarize([{"browserRenderedPagesVerified": 0}])["cycles"], [])
 
