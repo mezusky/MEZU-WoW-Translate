@@ -188,7 +188,12 @@
     "Empower spell": "sort renforcé",
     "Empower spells": "sorts renforcés",
     "Empower Spell": "Sort renforcé",
-    "Empower Spells": "Sorts renforcés"
+    "Empower Spells": "Sorts renforcés",
+    "snapshotting": "snapshotting",
+    "Snapshotting": "Snapshotting",
+    "snapshot strength": "puissance du snapshot",
+    "pooling": "pooling",
+    "Pooling": "Pooling"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
