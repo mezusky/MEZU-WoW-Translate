@@ -28,12 +28,30 @@ def summarize(reports):
             raise ValueError("browserVerifiedPages must be a nonnegative integer")
         if novel is not None and (type(novel) is not int or novel < 0):
             raise ValueError("novelIssueFamilies must be null or nonnegative")
-        # Indexed excerpts are useful evidence, not a complete rendered-output
-        # audit. Never report a novel-issue rate from those samples.
+        # A summary boolean cannot prove cross-page coverage. Require a
+        # per-page browser evidence manifest before counting a clean cycle.
+        cases = sample.get("browserCases")
+        valid_cases = (isinstance(cases, list) and len(cases) == new_pages
+                       and new_pages >= 5 and all(isinstance(c, dict) for c in cases))
+        if valid_cases:
+            urls = [c.get("url") for c in cases]
+            valid_cases = (
+                all(isinstance(u, str) and u.startswith("https://www.wowhead.com/") for u in urls)
+                and len(set(urls)) == new_pages
+                and all(c.get("browserRendered") is True and c.get("strictPass") is True
+                        for c in cases)
+                and len({c.get("wowClass") for c in cases if isinstance(c.get("wowClass"), str)}) >= 3
+                and len({c.get("spec") for c in cases if isinstance(c.get("spec"), str)}) >= 3
+                and {"tank", "healer", "dps"}.issubset({c.get("role") for c in cases})
+                and len({c.get("section") for c in cases if isinstance(c.get("section"), str)}) >= 2
+                and sum(c.get("heldout") is True for c in cases) >= 2
+            )
+        # Indexed excerpts can reveal terminology but cannot measure rendered
+        # French output or count toward the two-cycle stop condition.
         rendered = sample.get("auditMethod") == "browser-rendered"
         measured = (rendered and new_pages > 0 and browser_pages >= new_pages
                     and novel is not None)
-        strict = (measured and browser_pages > 0
+        strict = (measured and valid_cases
                   and sample.get("crossRoleVerified") is True
                   and sample.get("unrelatedHeldoutsVerified") is True
                   and novel / new_pages <= 0.05
