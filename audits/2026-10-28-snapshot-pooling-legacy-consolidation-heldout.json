@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceAccess": "Assistant web attempted live English Wowhead URLs; direct HTML returned JavaScript challenge. Current indexed English source inspected. GitHub Actions did not fetch Wowhead.",
+  "sampledPageIds": [
+    "assassination-rogue-cheat-sheet",
+    "feral-druid-ui-macros",
+    "affliction-warlock-gear",
+    "affliction-warlock-ui-macros"
+  ],
+  "sampledPageCount": 4,
+  "regressionCorpusPagesAfterRun": 460,
+  "crossPageEvidenceIds": [
+    "feral-druid-rotation",
+    "assassination-rogue-rotation",
+    "affliction-warlock-rotation"
+  ],
+  "sourceEvidence": [
+    "Feral Druid Midnight rotation: Snapshotting, snapshot strength, and Pooling are rotation mechanics; do not translate as photographic snapshot or generic resource pool.",
+    "Assassination Rogue Midnight rotation: Pooling is an energy-management technique, independent of Feral.",
+    "Affliction Warlock MoP Classic: snapshotting occurs in a different class and ruleset; terminology corroboration only, not retail mechanics.",
+    "New Affliction UI/macros and Feral UI sources contain opaque import strings; treat as technical payload, not translation training prose.",
+    "Assassination cheat sheet includes talent export and stat widgets; gear guide has item links and BiS tables."
+  ],
+  "newReusableTermFamiliesObserved": 0,
+  "legacyTermsConsolidated": [
+    "snapshotting",
+    "snapshot strength",
+    "pooling",
+    "Energy pooling",
+    "energy pooling"
+  ],
+  "newLocaleScopedVariants": [
+    "Snapshotting",
+    "Pooling"
+  ],
+  "newStructuralRiskFamiliesObserved": 0,
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "crossPageFixStatus": "Five existing legacy jargon mappings moved to locale-scoped EN->FR glossary without changing values; two heading variants added. Offline regression and CI required; browser Translator API and DOM reconstruction remain unverified. Not a clean quality cycle.",
+  "evidenceUrls": [
+    "https://www.wowhead.com/guide/classes/druid/feral/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/rogue/assassination/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/rogue/assassination/cheat-sheet",
+    "https://www.wowhead.com/guide/classes/druid/feral/addons-macro-ui-imports",
+    "https://www.wowhead.com/guide/classes/warlock/affliction/bis-gear",
+    "https://www.wowhead.com/guide/classes/warlock/affliction/addons-macro-ui-imports"
+  ]
+}
