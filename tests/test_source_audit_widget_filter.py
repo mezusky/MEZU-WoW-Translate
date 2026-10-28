@@ -95,8 +95,15 @@ class SourceAuditWidgetFilterTests(unittest.TestCase):
         self.assertEqual(result["detectedLanguage"], "en")
 
     def test_missing_profile_fails_closed(self):
+        # Test the missing-profile contract with an intentionally incomplete
+        # profile map. Real pt-BR support was added after this test was written.
         with self.assertRaises(ValueError):
-            audit_source_prose("Some source text", "pt-BR", PROFILES)
+            audit_source_prose("Some source text", "pt-BR", {"en": ["some"]})
+        # The configured Portuguese profile must now be accepted.
+        clean, has_prose = audit_source_prose(
+            "Você pode usar suas habilidades durante o combate.", "pt-BR", PROFILES)
+        self.assertIn("Você pode usar", clean)
+        self.assertTrue(has_prose)
 
 
 if __name__ == "__main__":
