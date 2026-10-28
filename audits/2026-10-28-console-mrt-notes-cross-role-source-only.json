@@ -1,0 +1,48 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceAccess": "Live Wowhead English guide text inspected through indexed search; direct HTML remains JavaScript-challenged; no GitHub Actions Wowhead fetch",
+  "sampledPageIds": [
+    "augmentation-evoker-basics",
+    "arms-warrior-ui-macros",
+    "restoration-shaman-manaforge-omega-raid",
+    "protection-paladin-manaforge-omega-raid",
+    "destruction-warlock-basics"
+  ],
+  "sampledPageCount": 5,
+  "regressionCorpusPagesAfterRun": 441,
+  "newReusableTermFamiliesObserved": 0,
+  "newStructuralRiskFamiliesObserved": 2,
+  "structuralRiskFamilies": [
+    "standalone /console SpellQueueWindow commands in Mage rotation prose",
+    "line-oriented Method Raid Tools {time:...} and {spell:...} import notes in Restoration Shaman raid guides"
+  ],
+  "evidencePages": {
+    "console": [
+      "arcane-mage-rotation",
+      "fire-mage-rotation"
+    ],
+    "methodRaidTools": [
+      "restoration-shaman-manaforge-omega-raid"
+    ],
+    "differentReminderFormatControls": [
+      "holy-priest-raid",
+      "discipline-priest-raid"
+    ],
+    "independentMacroFormatControls": [
+      "arms-warrior-ui-macros",
+      "subtlety-rogue-ui-macros"
+    ]
+  },
+  "changes": "Source-audit-only conservative non-prose filters and tests; browser extension and Data Pack content unchanged",
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "crossPageFixStatus": "source-only regression tests committed; latest CI validation and browser/Translator API preservation remain to verify",
+  "limitations": [
+    "No live Chrome DOM or Translator API execution",
+    "No measured rendered translation quality",
+    "MRT syntax verified in one newly sampled Shaman guide; broader format generalization not claimed"
+  ]
+}
