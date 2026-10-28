@@ -1719,6 +1719,30 @@
     {
       "id": "demonology-warlock-cheat-sheet",
       "url": "https://www.wowhead.com/guide/classes/warlock/demonology/cheat-sheet"
+    },
+    {
+      "id": "holy-priest-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "discipline-priest-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "restoration-druid-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "mistweaver-monk-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "blood-death-knight-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "destruction-warlock-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/manaforge-omega-raid-tips"
     }
   ]
 }
