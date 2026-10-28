@@ -1839,6 +1839,26 @@
     {
       "id": "affliction-warlock-ui-macros",
       "url": "https://www.wowhead.com/guide/classes/warlock/affliction/addons-macro-ui-imports"
+    },
+    {
+      "id": "blood-death-knight-midnight-season-2",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/midnight-season-2"
+    },
+    {
+      "id": "holy-paladin-midnight-season-2",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/midnight-season-2"
+    },
+    {
+      "id": "shadow-priest-midnight-season-2",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/midnight-season-2"
+    },
+    {
+      "id": "beast-mastery-hunter-midnight-pre-patch",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/midnight-pre-patch"
+    },
+    {
+      "id": "shadow-priest-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/manaforge-omega-raid-tips"
     }
   ]
 }
