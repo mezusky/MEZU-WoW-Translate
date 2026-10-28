@@ -2,8 +2,8 @@
   "schema": 1,
   "sourceLanguage": "en",
   "targetLanguage": "fr",
-  "version": "348af1896c1bca0914d9",
-  "generated_at": "2026-10-28T16:44:38.495678+00:00",
+  "version": "a303180207d560d3ff78",
+  "generated_at": "2026-10-28T17:44:32.828612+00:00",
   "entity_count": 24720,
   "entity_counts_by_kind": {
     "achievement_category": 202,
