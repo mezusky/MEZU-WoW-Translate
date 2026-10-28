@@ -8,6 +8,10 @@ effects, so do not turn the generic adjective or verb into a global rule.
 import json
 import unittest
 from pathlib import Path
+import sys
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "scripts"))
+from locale_glossary import select_jargon
 
 ROOT = Path(__file__).resolve().parents[1]
 GLOSSARY = json.loads((ROOT / "data/mezu_player_glossary.json").read_text(encoding="utf-8"))
@@ -28,6 +32,13 @@ class EvokerEmpowerTerminologyTests(unittest.TestCase):
                 self.assertEqual(GLOSSARY["jargon"][source], target)
                 self.assertNotIn(source, MANUAL.get("exact", {}))
                 self.assertNotIn(source, MANUAL.get("jargon", {}))
+
+    def test_locale_selection_does_not_leak_fr_terms(self):
+        self.assertEqual(select_jargon(GLOSSARY, "en-US", "fr-FR")["Empower spells"],
+                         "sorts renforcés")
+        self.assertEqual(select_jargon(GLOSSARY, "fr-FR", "fr-CA"), {})
+        with self.assertRaises(ValueError):
+            select_jargon(GLOSSARY, "en", "es")
 
     def test_do_not_overtranslate_generic_empower_language(self):
         # Mage and other classes can have empowered spells without using
