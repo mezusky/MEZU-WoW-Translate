@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceAccess": "Assistant web inspected indexed English Wowhead guide text; direct HTML on sampled guide URLs returned JavaScript verification. No GitHub Actions Wowhead fetch.",
+  "sampledPageIds": [
+    "frost-mage-manaforge-omega-raid",
+    "outlaw-rogue-basics",
+    "brewmaster-monk-basics",
+    "devourer-demon-hunter-basics"
+  ],
+  "sampledPageCount": 4,
+  "regressionCorpusPagesAfterRun": 454,
+  "crossPageEvidenceIds": [
+    "havoc-demon-hunter-rotation",
+    "destruction-warlock-rotation",
+    "protection-warrior-rotation",
+    "discipline-priest-rotation"
+  ],
+  "changeSummary": "Migrated overcap, overcapping and priority list from legacy manual jargon into the locale-scoped player glossary without changing their translations; added priority lists plural. Four cross-role tests assert absence from legacy manual overrides.",
+  "newReusableTermFamiliesObserved": 1,
+  "legacyJargonEntriesMigrated": 3,
+  "newManualSentenceOverrides": 0,
+  "sourceQualityNotes": [
+    "Outlaw Rogue Basics has an English source typo 'Oultaw'; not a MEZU translation error.",
+    "Devourer DH Basics repeats 'Shattered Soulss'; not a MEZU translation error.",
+    "Brewmaster Basics uses editorial 'One-Button Rotation Assistant' beside official 'Single-Button Assistant'; avoid assuming they are separate Blizzard entities without official ID evidence.",
+    "Frost Mage Manaforge Omega raid guide is historical The War Within content, not a current Midnight rotation reference."
+  ],
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "crossPageFixStatus": "Source-only consolidation and held-out corpus update committed; Chrome Translator API/DOM reconstruction and new GitHub Actions Data Pack rebuild remain unverified. Not a clean quality cycle.",
+  "evidenceUrls": [
+    "https://www.wowhead.com/guide/classes/mage/frost/manaforge-omega-raid-tips",
+    "https://www.wowhead.com/guide/classes/rogue/outlaw/basics",
+    "https://www.wowhead.com/guide/classes/monk/brewmaster/basics",
+    "https://www.wowhead.com/guide/classes/demon-hunter/devourer/basics",
+    "https://www.wowhead.com/guide/classes/demon-hunter/havoc/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/warlock/destruction/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+    "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer"
+  ]
+}
