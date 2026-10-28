@@ -1496,6 +1496,34 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "EN->FR locale-scoped jargon and tests committed; CI rebuild and Chrome Translator API/DOM checks pending. Not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-28",
+      "sourceAccess": "Assistant web requested live Wowhead pages; direct HTML JavaScript challenge. Indexed English content checked across three Season 2 summaries and two tier-set guides, plus three independent Mythic+ sources.",
+      "sampledPageIds": [
+        "devastation-evoker-midnight-season-2",
+        "protection-warrior-midnight-season-2",
+        "holy-priest-midnight-season-2",
+        "restoration-druid-tier-set",
+        "windwalker-monk-tier-set"
+      ],
+      "sampledPageCount": 5,
+      "sourceCorpusCount": 470,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "AoE stops -> stops AoE (noun; avoid broad stop/stops verb rules)"
+      ],
+      "previouslyObservedRiskFamilies": [
+        "stat/build widget metadata in Season 2 cheat sheets",
+        "official spell/item references and tier-set lists",
+        "Season 1 source staleness in tier-set pages"
+      ],
+      "newManualSentenceOverrides": 0,
+      "newPageInterventionProxy": "Five held-out pages produced one cross-role glossary family and zero sentence overrides; this does not measure actual translated page error rate.",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Locale-scoped glossary, tests, compact audit and corpus committed. CI and browser Translator API/DOM verification pending; not a clean quality cycle."
     }
   ]
 }
