@@ -210,7 +210,11 @@
     "overheal": "overheal",
     "Overheal": "Overheal",
     "overhealing": "surplus de soins",
-    "Overhealing": "Surplus de soins"
+    "Overhealing": "Surplus de soins",
+    "mouseover macro": "macro mouseover",
+    "mouseover macros": "macros mouseover",
+    "Mouseover Macro": "Macro mouseover",
+    "Mouseover Macros": "Macros mouseover"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
