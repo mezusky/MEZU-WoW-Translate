@@ -105,5 +105,22 @@ class MacroAuditTests(unittest.TestCase):
         )
 
 
+    def test_arcane_console_command_is_not_a_translation_candidate(self):
+        # Arcane and Fire Mage rotation guides document SpellQueueWindow.
+        text = (
+            "Use the default spell queue window for smooth casts.\n"
+            "/console SpellQueueWindow 400\n"
+            "Continue casting spells without downtime."
+        )
+        cleaned = clean_non_prose(text)
+        self.assertNotIn("/console SpellQueueWindow", cleaned)
+        self.assertIn("default spell queue window", cleaned)
+        self.assertIn("Continue casting spells", cleaned)
+        # Mentions in prose are not whole executable lines.
+        inline = "Type /console SpellQueueWindow 400 in the chat window."
+        self.assertEqual(clean_non_prose(inline), inline)
+        self.assertEqual(clean_non_prose("/consoleexample is not a command."), "/consoleexample is not a command.")
+
+
 if __name__ == "__main__":
     unittest.main()
