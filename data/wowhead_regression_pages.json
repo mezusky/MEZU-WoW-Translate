@@ -1763,6 +1763,26 @@
     {
       "id": "destruction-warlock-basics",
       "url": "https://www.wowhead.com/guide/classes/warlock/destruction/basics"
+    },
+    {
+      "id": "mistweaver-monk-basics",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/basics"
+    },
+    {
+      "id": "vengeance-demon-hunter-basics",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/basics"
+    },
+    {
+      "id": "survival-hunter-basics",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/basics"
+    },
+    {
+      "id": "protection-warrior-basics",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/basics"
+    },
+    {
+      "id": "balance-druid-basics",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/basics"
     }
   ]
 }
