@@ -167,7 +167,9 @@
     "rot damage": "dégâts continus",
     "Rot Damage": "Dégâts continus",
     "dropoff damage": "dégâts dégressifs avec la distance",
-    "ticking damage": "dégâts périodiques"
+    "ticking damage": "dégâts périodiques",
+    "damage amplification phase": "phase de dégâts amplifiés",
+    "damage amplification phases": "phases de dégâts amplifiés"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
