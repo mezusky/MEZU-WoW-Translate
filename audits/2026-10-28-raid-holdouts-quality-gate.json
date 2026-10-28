@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "auditDate": "2026-10-28",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourceAccess": "Live English Wowhead URLs attempted with normal web access; direct HTML returned JavaScript verification; indexed English text inspected. No Wowhead fetching in GitHub Actions.",
+  "corpusBefore": 500,
+  "corpusAfter": 503,
+  "newPages": [
+    {
+      "id": "brewmaster-monk-manaforge-omega-raid-heldout",
+      "role": "tank",
+      "section": "raid",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "preservation-evoker-manaforge-omega-raid-heldout",
+      "role": "healer",
+      "section": "raid",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "arcane-mage-manaforge-omega-raid-heldout",
+      "role": "dps",
+      "section": "raid",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/manaforge-omega-raid-tips"
+    }
+  ],
+  "sharedRisks": [
+    "Raid boss talent tables contain copy/import buttons and interactive build payloads; source-only inspection cannot validate DOM reconstruction.",
+    "Encounter ability and talent names should be resolved by canonical IDs rather than generalized phrase substitutions.",
+    "Indexed text can omit inline spell links and show incomplete placeholders; do not classify these as confirmed MEZU translation errors.",
+    "These are The War Within 11.2.7 historical raid guides; their older recommendations are source content, not a MEZU regression."
+  ],
+  "changes": "Three independent raid holdouts; local quality-trend summary and tests. No new manual sentence overrides or Chrome extension code changes.",
+  "qualitySample": {
+    "cycleId": "2026-10-28T22:37:00+01:00-raid-holdouts",
+    "auditedAt": "2026-10-28T22:37:00+01:00",
+    "newPagesAudited": 3,
+    "novelIssueFamilies": null,
+    "browserVerifiedPages": 0,
+    "auditMethod": "indexed-excerpts",
+    "crossRoleVerified": false,
+    "unrelatedHeldoutsVerified": false,
+    "strictAuditPassed": false
+  },
+  "browserOnlyVerification": [
+    "Chrome Translator API",
+    "rendered French text",
+    "DOM and rich-text preservation"
+  ],
+  "newManualSentenceOverrides": 0
+}
