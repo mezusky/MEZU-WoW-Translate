@@ -40,10 +40,12 @@ def summarize(reports):
                 and len(set(urls)) == new_pages
                 and all(c.get("browserRendered") is True and c.get("strictPass") is True
                         for c in cases)
-                and len({c.get("wowClass") for c in cases if isinstance(c.get("wowClass"), str)}) >= 3
-                and len({c.get("spec") for c in cases if isinstance(c.get("spec"), str)}) >= 3
-                and {"tank", "healer", "dps"}.issubset({c.get("role") for c in cases})
-                and len({c.get("section") for c in cases if isinstance(c.get("section"), str)}) >= 2
+                and all(isinstance(c.get(key), str) and c[key]
+                        for c in cases for key in ("wowClass", "spec", "role", "section"))
+                and len({c["wowClass"] for c in cases}) >= 3
+                and len({c["spec"] for c in cases}) >= 3
+                and {"tank", "healer", "dps"}.issubset({c["role"] for c in cases})
+                and len({c["section"] for c in cases}) >= 2
                 and sum(c.get("heldout") is True for c in cases) >= 2
             )
         # Indexed excerpts can reveal terminology but cannot measure rendered
