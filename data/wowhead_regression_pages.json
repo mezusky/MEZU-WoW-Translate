@@ -1675,6 +1675,26 @@
     {
       "id": "shadow-priest-raid",
       "url": "https://www.wowhead.com/guide/classes/priest/shadow/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "frost-death-knight-talents",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/abilities-talents-pve-dps"
+    },
+    {
+      "id": "arcane-mage-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/addons-macro-ui-imports"
+    },
+    {
+      "id": "guardian-druid-basics",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/basics"
+    },
+    {
+      "id": "assassination-rogue-stats",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/stat-priority-pve-dps"
+    },
+    {
+      "id": "feral-druid-consumables",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/enchants-gems-pve-dps"
     }
   ]
 }
