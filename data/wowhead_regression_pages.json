@@ -1799,6 +1799,22 @@
     {
       "id": "fury-warrior-ui-macros",
       "url": "https://www.wowhead.com/guide/classes/warrior/fury/addons-macro-ui-imports"
+    },
+    {
+      "id": "frost-mage-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "outlaw-rogue-basics",
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/basics"
+    },
+    {
+      "id": "brewmaster-monk-basics",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/basics"
+    },
+    {
+      "id": "devourer-demon-hunter-basics",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/basics"
     }
   ]
 }
