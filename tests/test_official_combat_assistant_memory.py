@@ -9,6 +9,7 @@ import unittest
 from pathlib import Path
 
 from scripts.build_blizzard_memory import SEED_IDS, align_blocks, good_pair
+from scripts.locale_glossary import select_jargon
 
 
 class OfficialCombatAssistantMemoryTests(unittest.TestCase):
@@ -32,6 +33,21 @@ class OfficialCombatAssistantMemoryTests(unittest.TestCase):
                 self.assertEqual(source_tag, "h3")
                 self.assertEqual(target_tag, "h3")
                 self.assertTrue(good_pair(english, french, score))
+
+    def test_official_names_apply_inline_without_sentence_overrides(self):
+        root = Path(__file__).resolve().parents[1]
+        glossary = json.loads((root / "data/mezu_player_glossary.json").read_text(encoding="utf-8"))
+        terms = select_jargon(glossary, "en-US", "fr-FR")
+        self.assertEqual(terms["Assisted Highlight"], "Surbrillance d’aide")
+        self.assertEqual(terms["Single-Button Assistant"], "Assistant à bouton unique")
+        self.assertNotIn("assistant", terms)
+        self.assertNotIn("highlight", terms)
+        self.assertEqual(select_jargon(glossary, "fr-FR", "fr-FR"), {})
+        with self.assertRaises(ValueError):
+            select_jargon(glossary, "en-US", "de-DE")
+        manual = json.loads((root / "data/manual_overrides.json").read_text(encoding="utf-8"))
+        for source in ("Assisted Highlight", "Single-Button Assistant"):
+            self.assertNotIn(source, manual.get("exact", {}))
 
     def test_held_out_wowhead_starter_guides_span_roles(self):
         root = Path(__file__).resolve().parents[1]
