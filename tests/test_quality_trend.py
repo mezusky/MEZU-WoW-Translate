@@ -33,6 +33,13 @@ class QualityTrendTests(unittest.TestCase):
         self.assertIsNone(result["cycles"][0]["novelIssueRate"])
         self.assertEqual(result["consecutiveStrictCleanCycles"], 0)
 
+    def test_partial_browser_coverage_cannot_estimate_full_rate(self):
+        partial = report("a")
+        partial["qualitySample"]["browserVerifiedPages"] = 2
+        result = summarize([partial])
+        self.assertIsNone(result["cycles"][0]["novelIssueRate"])
+        self.assertFalse(result["eligibleToConsiderStopping"])
+
     def test_two_distinct_strict_cycles_required(self):
         self.assertFalse(summarize([report("a")])["eligibleToConsiderStopping"])
         result = summarize([report("b"), report("a")])
