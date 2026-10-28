@@ -4,7 +4,9 @@ The 2025 Blizzard article 24205457 has matching EN/FR headings. Keep this
 as official phrase memory, not page-specific manual sentence overrides.
 This does not claim to reproduce the browser Translator API.
 """
+import json
 import unittest
+from pathlib import Path
 
 from scripts.build_blizzard_memory import SEED_IDS, align_blocks, good_pair
 
@@ -30,6 +32,24 @@ class OfficialCombatAssistantMemoryTests(unittest.TestCase):
                 self.assertEqual(source_tag, "h3")
                 self.assertEqual(target_tag, "h3")
                 self.assertTrue(good_pair(english, french, score))
+
+    def test_held_out_wowhead_starter_guides_span_roles(self):
+        root = Path(__file__).resolve().parents[1]
+        pages = {p["id"]: p["url"] for p in json.loads(
+            (root / "data/wowhead_regression_pages.json").read_text(encoding="utf-8")
+        )["pages"]}
+        # Short, indexed English source excerpts, not Chrome output.
+        examples = {
+            "mistweaver-monk-basics": "Assisted Highlight and Single-Button Assistant",
+            "protection-warrior-basics": "Assisted Highlight and Single-Button Assistant",
+            "vengeance-demon-hunter-basics": "Assisted Highlight and Single-Button Assistant",
+            "survival-hunter-basics": "Assisted Highlight and Single-Button Assistant",
+        }
+        for page_id, source in examples.items():
+            with self.subTest(page=page_id):
+                self.assertTrue(pages[page_id].endswith("/basics"))
+                self.assertIn("Assisted Highlight", source)
+                self.assertIn("Single-Button Assistant", source)
 
     def test_only_verified_ui_names_are_expected(self):
         # A Wowhead heading such as "Single Button Rotation Assistant" is
