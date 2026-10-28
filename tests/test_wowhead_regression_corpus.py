@@ -34,17 +34,20 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
                 # but localizes spell links, so it is NOT an English-source URL.
                 # The English PTR preview uses /ptr-2/guide/... instead.
                 self.assertRegex(parsed.path,
-                                 r"^/(?:ptr(?:-\d+)?/)?guide/(?:classes/[a-z-]+/[a-z-]+/[a-z0-9-]+|[a-z0-9-]+)$")
+                                 r"^/(?:ptr(?:-\d+)?/)?guide/(?:classes/[a-z-]+/[a-z-]+/[a-z0-9-]+|(?!classes(?:/|$))[a-z0-9-]+(?:/[a-z0-9-]+)*)$")
                 self.assertFalse(parsed.query or parsed.fragment)
 
     def test_localized_url_is_not_an_english_source(self):
-        pattern = r"^/(?:ptr(?:-\d+)?/)?guide/(?:classes/[a-z-]+/[a-z-]+/[a-z0-9-]+|[a-z0-9-]+)$"
+        pattern = r"^/(?:ptr(?:-\d+)?/)?guide/(?:classes/[a-z-]+/[a-z-]+/[a-z0-9-]+|(?!classes(?:/|$))[a-z0-9-]+(?:/[a-z0-9-]+)*)$"
         for locale in ("fr", "de", "it", "pt", "cn"):
             with self.subTest(locale=locale):
                 self.assertIsNone(re.fullmatch(pattern,
                     f"/{locale}/guide/classes/priest/discipline/rotation-cooldowns-pve-healer"))
         self.assertIsNotNone(re.fullmatch(pattern,
             "/ptr-2/guide/classes/shaman/enhancement/midnight-season-2-raid-tips"))
+        self.assertIsNotNone(re.fullmatch(pattern,
+            "/guide/midnight/mythic-plus-season-overview"))
+        self.assertIsNone(re.fullmatch(pattern, "/guide/classes/invalid"))
 
     def test_general_guides_do_not_pollute_class_coverage(self):
         general = {p["id"]: p["url"] for p in PAGES if class_guide_parts(p["url"]) is None}
