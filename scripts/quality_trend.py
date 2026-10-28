@@ -31,7 +31,8 @@ def summarize(reports):
         # Indexed excerpts are useful evidence, not a complete rendered-output
         # audit. Never report a novel-issue rate from those samples.
         rendered = sample.get("auditMethod") == "browser-rendered"
-        measured = rendered and new_pages > 0 and novel is not None
+        measured = (rendered and new_pages > 0 and browser_pages >= new_pages
+                    and novel is not None)
         strict = (measured and browser_pages > 0
                   and sample.get("crossRoleVerified") is True
                   and sample.get("unrelatedHeldoutsVerified") is True
