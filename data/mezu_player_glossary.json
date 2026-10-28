@@ -193,7 +193,9 @@
     "Snapshotting": "Snapshotting",
     "snapshot strength": "puissance du snapshot",
     "pooling": "pooling",
-    "Pooling": "Pooling"
+    "Pooling": "Pooling",
+    "Energy pooling": "pooling d’Énergie",
+    "energy pooling": "pooling d’Énergie"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
