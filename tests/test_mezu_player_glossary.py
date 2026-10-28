@@ -183,5 +183,26 @@ class PlayerGlossaryTests(unittest.TestCase):
         self.assertEqual(overlapping, set(), "Move terms to one locale-scoped source")
 
 
+    def test_resource_caps_and_priority_lists_are_shared_not_manual(self):
+        # Havoc DH and Destruction Warlock rotations use resource overcapping;
+        # Protection Warrior, Destruction Warlock and Discipline Priest share
+        # priority-list wording. Keep all four in one locale-specific layer.
+        jargon = GLOSSARY["jargon"]
+        expected = {
+            "overcap": "overcap",
+            "overcapping": "overcap",
+            "priority list": "liste de priorités",
+            "priority lists": "listes de priorités",
+        }
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(
+            encoding="utf-8"))
+        for source, target in expected.items():
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], target)
+                self.assertNotIn(source, manual.get("jargon", {}))
+                self.assertNotIn(source, manual.get("exact", {}))
+        self.assertNotIn("cap", jargon)  # Ambiguous outside resource context.
+
+
 if __name__ == "__main__":
     unittest.main()
