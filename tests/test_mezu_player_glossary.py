@@ -183,6 +183,26 @@ class PlayerGlossaryTests(unittest.TestCase):
         self.assertEqual(overlapping, set(), "Move terms to one locale-scoped source")
 
 
+    def test_rotation_assistant_editorial_aliases_share_official_ui_name(self):
+        # Brewmaster starter prose says "One-Button Rotation Assistant";
+        # Holy Priest and Devourer starter headings use "Single Button
+        # Rotation Assistant". Blizzard calls the feature Single-Button
+        # Assistant. All three refer to the same UI concept.
+        jargon = GLOSSARY["jargon"]
+        for source in (
+            "Single-Button Assistant",
+            "One-Button Rotation Assistant",
+            "Single Button Rotation Assistant",
+        ):
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], "Assistant à bouton unique")
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(
+            encoding="utf-8"))
+        for source in ("One-Button Rotation Assistant",
+                       "Single Button Rotation Assistant"):
+            self.assertNotIn(source, manual.get("jargon", {}))
+            self.assertNotIn(source, manual.get("exact", {}))
+
     def test_resource_caps_and_priority_lists_are_shared_not_manual(self):
         # Havoc DH and Destruction Warlock rotations use resource overcapping;
         # Protection Warrior, Destruction Warlock and Discipline Priest share
