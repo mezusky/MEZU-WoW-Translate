@@ -1370,6 +1370,34 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Official source seed, two locale-scoped inline UI terms and cross-role tests committed; GitHub Actions build and real Chrome/Translator API validation pending. Not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-28",
+      "sourceAccess": "Live Wowhead English URLs requested with assistant web; direct HTML returned JavaScript challenge; current indexed English guide text inspected for independent classes and sections.",
+      "sampledPageIds": [
+        "restoration-shaman-basics",
+        "discipline-priest-basics",
+        "assassination-rogue-basics",
+        "fury-warrior-ui-macros"
+      ],
+      "sampledPageCount": 4,
+      "sourceCorpusCount": 450,
+      "newReusableTermFamiliesObserved": 2,
+      "termFamilies": [
+        "pre-pull timing label in Protection Paladin tank, Beast Mastery Hunter and Destruction Warlock DPS rotations",
+        "sample timeline / ST / AoE opener labels in Paladin, Hunter, Warlock, Evoker and Devourer DH rotations"
+      ],
+      "newStructuralRiskFamiliesObserved": 0,
+      "previouslyObservedRiskFamilies": [
+        "Fury Warrior UI/CDM import payloads and Edit Mode frame strings must remain non-prose",
+        "Assassination Rogue basics source contains empty talent/season placeholders; not MEZU translation errors"
+      ],
+      "newPageInterventionProxy": "Four new guides; two reusable EN->FR label families cross-checked on five unrelated rotation pages; zero manual sentence overrides. Not a measured browser translation error rate.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Locale-fr glossary and source-only cross-role tests committed; GitHub Actions rebuild and browser DOM/Translator API output still to verify. Not a clean quality cycle."
     }
   ]
 }
