@@ -1473,6 +1473,29 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Cross-class snapshotting/pooling glossary consolidation, tests and held-out corpus committed. Python tests and Data Pack CI verification pending; Chrome Translator API and DOM reconstruction unverified. Not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-28",
+      "sourceAccess": "Assistant web inspected indexed English Wowhead content from five cross-role URLs; Chrome DOM not inspected.",
+      "sampledPageIds": [
+        "blood-death-knight-midnight-season-2",
+        "holy-paladin-midnight-season-2",
+        "shadow-priest-midnight-season-2",
+        "beast-mastery-hunter-midnight-pre-patch",
+        "shadow-priest-manaforge-omega-raid"
+      ],
+      "sampledPageCount": 5,
+      "sourceCorpusCount": 465,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "multi-dotting / multi dotting -> multi-DoT"
+      ],
+      "newManualSentenceOverrides": 0,
+      "newPageInterventionProxy": "Five held-out guides produced one cross-spec reusable term family and zero sentence overrides; browser translation error rate unmeasured.",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "EN->FR locale-scoped jargon and tests committed; CI rebuild and Chrome Translator API/DOM checks pending. Not a clean quality cycle."
     }
   ]
 }
