@@ -49,5 +49,28 @@
     "rendered French text",
     "DOM and rich-text preservation"
   ],
-  "newManualSentenceOverrides": 0
+  "newManualSentenceOverrides": 0,
+  "sourceOnlyGlossaryChecks": [
+    {
+      "source": "priority target damage",
+      "expectedFrench": "dégâts sur la cible prioritaire",
+      "evidenceRole": "tank"
+    },
+    {
+      "source": "tier set",
+      "expectedFrench": "set de classe",
+      "evidenceRole": "tank"
+    },
+    {
+      "source": "healing absorb",
+      "expectedFrench": "absorption de soins",
+      "evidenceRole": "healer"
+    },
+    {
+      "source": "single-target damage",
+      "expectedFrench": "dégâts monocibles",
+      "evidenceRole": "dps"
+    }
+  ],
+  "translationSimulationLimit": "Existing French player glossary values checked for source fragments only; no browser Translator API, full Data Pack application, or DOM reconstruction executed. Official spell/talent names require canonical ID checks in browser."
 }
