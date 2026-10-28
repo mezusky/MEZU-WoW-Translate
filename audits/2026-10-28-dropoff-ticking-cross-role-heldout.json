@@ -35,15 +35,24 @@
         "restoration-shaman-raid"
       ],
       "note": "Periodic damage in independent healer guides; no generic tick rule."
+    },
+    {
+      "source": "damage amplification phase(s)",
+      "fr": "phase(s) de dégâts amplifiés",
+      "evidence": [
+        "destruction-warlock-manaforge-omega-raid",
+        "assassination-rogue-raid"
+      ],
+      "note": "Complete singular/plural phrase patterns across independent DPS classes; do not translate generic amplification."
     }
   ],
   "heldoutObservations": [
     "Blood Death Knight historical raid uses damage amp phase, supporting previously added amplification jargon.",
-    "Destruction Warlock historical raid uses damage amplification phase and rot damage; related wording remains context-dependent.",
-    "Old raid guides are historical terminology stress tests, not current season recommendations."
+    "Old raid guides are historical terminology stress tests, not current season recommendations.",
+    "Historical Warlock and current Rogue raids independently use damage amplification phase wording."
   ],
   "changes": {
-    "newJargonEntries": 2,
+    "newJargonEntries": 4,
     "newSentenceOverrides": 0,
     "extensionCodeChanged": false,
     "testsUpdated": true,
