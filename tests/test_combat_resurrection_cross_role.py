@@ -49,13 +49,15 @@ class CombatResurrectionTermsTests(unittest.TestCase):
     def test_independent_live_guide_sections(self):
         by_id = {page["id"]: page["url"] for page in PAGES}
         expected = {
-            "protection-paladin-abilities": "/paladin/protection/abilities-talents-pve-tank",
+            "protection-paladin-talents": "/paladin/protection/abilities-talents-pve-tank",
             "holy-paladin-abilities": "/paladin/holy/abilities-talents-pve-healer",
             "affliction-warlock-abilities": "/warlock/affliction/abilities-talents-pve-dps",
+            "holy-paladin-midnight-prepatch": "/paladin/holy/midnight-pre-patch",
+            "mythic-plus-keystones-overview": None,
         }
         for key, suffix in expected.items():
             with self.subTest(guide=key):
-                self.assertEqual(by_id[key], "https://www.wowhead.com/guide/classes" + suffix)
+                self.assertEqual(by_id[key], ("https://www.wowhead.com/guide/classes" + suffix) if suffix else "https://www.wowhead.com/guide/mythic-keystones-and-dungeons")
 
 
 if __name__ == "__main__":
