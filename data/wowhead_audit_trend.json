@@ -1524,6 +1524,28 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Locale-scoped glossary, tests, compact audit and corpus committed. CI and browser Translator API/DOM verification pending; not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-28",
+      "sourceAccess": "Assistant web live canonical URL attempts blocked by Wowhead JavaScript verification; indexed English prose examined for independent classes/roles.",
+      "sampledPageIds": [
+        "survival-hunter-midnight-season-2",
+        "subtlety-rogue-midnight-season-2",
+        "enhancement-shaman-tier-set",
+        "frost-death-knight-manaforge-omega-raid"
+      ],
+      "sampledPageCount": 4,
+      "sourceCorpusCount": 474,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "break line of sight / out of line of sight (avoid blanket LoS replacement due to verb ambiguity)"
+      ],
+      "newManualSentenceOverrides": 0,
+      "newPageInterventionProxy": "Four new held-out sources and one reusable cross-role LoS family; no exact sentence overrides. No measured browser translation issue rate.",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Locale-scoped glossary, tests, source corpus and compact audit committed; CI/browser rendering pending. Not a clean quality cycle."
     }
   ]
 }
