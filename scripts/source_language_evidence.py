@@ -19,7 +19,9 @@ OPAQUE_IMPORT = re.compile(r"(?<!\S)\d+\|[A-Za-z0-9+/=]{80,}(?!\S)")
 # This is source-audit filtering, not a browser DOM protection guarantee.
 WOW_MACRO_LINE = re.compile(
     r"^[ \t]*(?:#showtooltip\b|/(?:castsequence|cast|use|cancelaura|"
-    r"stopcasting|stopspelltarget|targetlasttarget|target|focus|cqs)\b)"
+    r"stopcasting|stopspelltarget|stopmacro|stopattack|startattack|"
+    r"targetlasttarget|targetenemyplayer|targetenemy|target|cleartarget|"
+    r"clearfocus|focus|petattack|petpassive|petfollow|tm|equipslot|cqs)\b)"
     r"[^\r\n]*(?=\r?$)", re.IGNORECASE | re.MULTILINE
 )
 
