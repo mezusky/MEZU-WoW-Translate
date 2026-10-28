@@ -1,0 +1,41 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceAccess": "Assistant web requested live English Wowhead URLs; direct HTML challenged by JavaScript verification. English indexed guide prose inspected; no GitHub-hosted Wowhead fetch.",
+  "sampledPageIds": [
+    "augmentation-evoker-talents",
+    "fire-mage-talents"
+  ],
+  "sampledPageCount": 2,
+  "regressionCorpusPagesAfterRun": 456,
+  "crossPageEvidenceIds": [
+    "preservation-evoker-overview",
+    "preservation-evoker-rotation",
+    "preservation-evoker-talents",
+    "devastation-evoker-rotation",
+    "devastation-evoker-talents",
+    "augmentation-evoker-rotation",
+    "protection-warrior-talents"
+  ],
+  "officialSource": "https://worldofwarcraft.blizzard.com/fr-fr/game/classes/evoker",
+  "changeSummary": "Official Blizzard French Evoker terminology 'sorts renforcés' added as four locale-scoped noun-phrase variants of Empower spell(s), covering Evoker Augmentation/Devastation/Preservation. No bare Empower, empowered, or empowered spells rule because Fire Mage uses empowered spells in an unrelated ordinary sense. New locale-isolation and ambiguity regression tests.",
+  "newReusableTermFamiliesObserved": 1,
+  "newStructuralRiskFamiliesObserved": 0,
+  "newManualSentenceOverrides": 0,
+  "sourceQualityNotes": [
+    "Augmentation abilities page contains Empower spell in talent prose; Devastation rotation uses Empower Spells as a section heading; Preservation overview and rotation use Empower spells.",
+    "Fire Mage abilities uses generic 'empowered spells' in Sunfury talent prose; this is not the Evoker-specific Empower spell mechanic.",
+    "Do not use localized Wowhead URL language as proof of prose language; localized pages mix English paragraphs with locale-specific official spell names."
+  ],
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "crossPageFixStatus": "Official terminology and offline source-level tests committed. GitHub Actions validation and browser Translator API/DOM reconstruction are separate verification items; not a clean quality cycle.",
+  "evidenceUrls": [
+    "https://www.wowhead.com/guide/classes/evoker/augmentation/abilities-talents-pve-dps",
+    "https://www.wowhead.com/guide/classes/evoker/devastation/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/evoker/preservation/overview-pve-healer",
+    "https://www.wowhead.com/guide/classes/mage/fire/abilities-talents-pve-dps",
+    "https://worldofwarcraft.blizzard.com/fr-fr/game/classes/evoker"
+  ]
+}
