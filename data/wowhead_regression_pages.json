@@ -1695,6 +1695,30 @@
     {
       "id": "feral-druid-consumables",
       "url": "https://www.wowhead.com/guide/classes/druid/feral/enchants-gems-pve-dps"
+    },
+    {
+      "id": "subtlety-rogue-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/addons-macro-ui-imports"
+    },
+    {
+      "id": "brewmaster-monk-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/cheat-sheet"
+    },
+    {
+      "id": "fire-mage-basics",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/basics"
+    },
+    {
+      "id": "elemental-shaman-gear",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/bis-gear"
+    },
+    {
+      "id": "unholy-death-knight-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/cheat-sheet"
+    },
+    {
+      "id": "demonology-warlock-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/cheat-sheet"
     }
   ]
 }
