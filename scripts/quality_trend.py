@@ -5,8 +5,26 @@ ignored: glossary edits and indexed snippets are not browser translation audits.
 This is a local, data-only reporting tool; it never fetches Wowhead.
 """
 import json
+import re
 import sys
+from datetime import datetime
 from pathlib import Path
+
+
+def _valid_locale(value):
+    return isinstance(value, str) and re.fullmatch(
+        r"[a-z]{2,3}(?:-[a-z0-9]{2,8})*", value, re.IGNORECASE
+    ) is not None
+
+
+def _timestamp(value):
+    try:
+        parsed = datetime.fromisoformat(value.replace("Z", "+00:00"))
+        if parsed.utcoffset() is None:
+            raise ValueError("timezone required")
+        return parsed
+    except ValueError as exc:
+        raise ValueError("auditedAt must be an offset-aware ISO timestamp") from exc
 
 
 def summarize(reports):
@@ -19,6 +37,11 @@ def summarize(reports):
         audited_at = sample.get("auditedAt")
         if not isinstance(cycle_id, str) or not cycle_id or not isinstance(audited_at, str):
             raise ValueError("Quality samples require cycleId and auditedAt")
+        _timestamp(audited_at)
+        source_language = sample.get("sourceLanguage")
+        target_language = sample.get("targetLanguage")
+        valid_pair = (_valid_locale(source_language) and _valid_locale(target_language)
+                      and source_language.lower() != target_language.lower())
         new_pages = sample.get("newPagesAudited")
         novel = sample.get("novelIssueFamilies")
         browser_pages = sample.get("browserVerifiedPages", 0)
@@ -38,6 +61,8 @@ def summarize(reports):
             valid_cases = (
                 all(isinstance(u, str) and u.startswith("https://www.wowhead.com/") for u in urls)
                 and len(set(urls)) == new_pages
+                and all(c.get("sourceLanguage") == source_language
+                        and c.get("targetLanguage") == target_language for c in cases)
                 and all(c.get("browserRendered") is True and c.get("strictPass") is True
                         for c in cases)
                 and all(isinstance(c.get(key), str) and c[key]
@@ -53,7 +78,7 @@ def summarize(reports):
         rendered = sample.get("auditMethod") == "browser-rendered"
         measured = (rendered and new_pages > 0 and browser_pages >= new_pages
                     and novel is not None)
-        strict = (measured and valid_cases
+        strict = (measured and valid_cases and valid_pair
                   and sample.get("crossRoleVerified") is True
                   and sample.get("unrelatedHeldoutsVerified") is True
                   and novel / new_pages <= 0.05
@@ -65,15 +90,29 @@ def summarize(reports):
             "browserVerifiedPages": browser_pages,
             "novelIssueRate": novel / new_pages if measured else None,
             "strictCleanCycle": bool(strict),
+            "sourceLanguage": source_language,
+            "targetLanguage": target_language,
+            "_verifiedUrls": urls if strict else [],
         })
-    cycles.sort(key=lambda c: (c["auditedAt"], c["cycleId"]))
+    cycles.sort(key=lambda c: (_timestamp(c["auditedAt"]), c["cycleId"]))
     if len({c["cycleId"] for c in cycles}) != len(cycles):
         raise ValueError("Duplicate quality cycle IDs")
     clean_streak = 0
+    newer = None
     for cycle in reversed(cycles):
         if not cycle["strictCleanCycle"]:
             break
+        if newer is not None:
+            same_pair = (cycle["sourceLanguage"], cycle["targetLanguage"]) == (
+                newer["sourceLanguage"], newer["targetLanguage"])
+            distinct_time = _timestamp(cycle["auditedAt"]) < _timestamp(newer["auditedAt"])
+            fresh_pages = not (set(cycle["_verifiedUrls"]) & set(newer["_verifiedUrls"]))
+            if not (same_pair and distinct_time and fresh_pages):
+                break
         clean_streak += 1
+        newer = cycle
+    for cycle in cycles:
+        del cycle["_verifiedUrls"]
     return {
         "cycles": cycles,
         "measuredCycleCount": sum(c["novelIssueRate"] is not None for c in cycles),
