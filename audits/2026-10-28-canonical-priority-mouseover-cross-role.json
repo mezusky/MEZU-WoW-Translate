@@ -44,7 +44,7 @@
   "browserTranslationErrorRate": null,
   "novelTranslationIssueRate": null,
   "browserOnlyVerification": "Chrome Translator API fallback, linked entity ID lookup, translated prose, rich-text/DOM reconstruction, macro preservation and source-language auto-detection require actual browser verification.",
-  "crossPageFixStatus": "Small source commits and offline tests added. GitHub Actions reconstruction/validation pending at audit creation; not a clean quality cycle.",
+  "crossPageFixStatus": "Python regression tests, Blizzard memory, Data Pack build and validation all succeeded in GitHub Actions run 40707885288; Chrome rendering and novel-error rate remain unverified. Not a clean quality cycle.",
   "evidenceUrls": [
     "https://www.wowhead.com/guide/classes/druid/restoration/addons-macro-ui-imports",
     "https://www.wowhead.com/guide/classes/shaman/restoration/addons-macro-ui-imports",
@@ -58,5 +58,11 @@
     "https://www.wowhead.com/guide/classes/demon-hunter/havoc/bis-gear",
     "https://www.wowhead.com/guide/classes/demon-hunter/devourer/enchants-gems-pve-dps",
     "https://www.wowhead.com/guide/classes/death-knight/unholy/overview-pve-dps"
-  ]
+  ],
+  "githubActionsValidation": {
+    "runId": 40707885288,
+    "conclusion": "success",
+    "datapackVersion": "e9dd176486c35cc637f5",
+    "entityCount": 24720
+  }
 }
