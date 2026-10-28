@@ -171,7 +171,14 @@
     "damage amplification phase": "phase de dégâts amplifiés",
     "damage amplification phases": "phases de dégâts amplifiés",
     "Assisted Highlight": "Surbrillance d’aide",
-    "Single-Button Assistant": "Assistant à bouton unique"
+    "Single-Button Assistant": "Assistant à bouton unique",
+    "Pre-pull": "avant le pull",
+    "pre-pull": "avant le pull",
+    "Sample Timeline": "Exemple de timeline",
+    "sample timeline": "exemple de timeline",
+    "ST Sample Timeline": "Exemple de timeline monocible",
+    "AoE Sample Timeline": "Exemple de timeline AoE",
+    "AOE Sample Timeline": "Exemple de timeline AoE"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
