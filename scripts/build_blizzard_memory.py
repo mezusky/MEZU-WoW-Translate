@@ -34,6 +34,7 @@ MAX_ARTICLES = 60
 SEED_IDS = {
     "24245217",  # Midnight pre-expansion update
     "24066687",  # Hotfixes example with many class changes
+    "24205457",  # Official Assisted Highlight / Single-Button Assistant UI names
 }
 
 NOISE = {
