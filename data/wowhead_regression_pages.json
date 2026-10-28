@@ -1923,6 +1923,22 @@
     {
       "id": "discipline-priest-midnight-season-2",
       "url": "https://www.wowhead.com/guide/classes/priest/discipline/midnight-season-2"
+    },
+    {
+      "id": "retribution-paladin-overview",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/overview-pve-dps"
+    },
+    {
+      "id": "havoc-demon-hunter-gear",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/bis-gear"
+    },
+    {
+      "id": "devourer-demon-hunter-consumables",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/enchants-gems-pve-dps"
+    },
+    {
+      "id": "unholy-death-knight-overview",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/overview-pve-dps"
     }
   ]
 }
