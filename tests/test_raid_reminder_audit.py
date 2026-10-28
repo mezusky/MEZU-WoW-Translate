@@ -65,5 +65,29 @@ class RaidReminderAuditTests(unittest.TestCase):
         self.assertEqual(clean_non_prose(prose), prose)
 
 
+    def test_method_raid_tools_time_spell_notes_do_not_pollute_prose(self):
+        # Restoration Shaman Manaforge Omega; different from NSRT priest notes.
+        prose = "Plan your healing cooldowns for the next raid damage event."
+        notes = (
+            "{time:1:20}1:20 Theun {spell:114052} Asc\n"
+            "{time:2:20}2:20 Theun {spell:108280} HTT"
+        )
+        cleaned, signal = audit_source_prose(
+            prose + "\n" + notes + "\nContinue healing the group.", "en", PROFILES
+        )
+        self.assertTrue(signal)
+        self.assertIn(prose, cleaned)
+        self.assertIn("Continue healing the group.", cleaned)
+        self.assertNotIn("{time:", cleaned)
+        self.assertNotIn("{spell:", cleaned)
+
+    def test_mrt_note_requires_structured_line_not_ordinary_prose(self):
+        # Avoid hiding explanatory text or incomplete user-written examples.
+        prose = "Explain the {time:1:20} marker and {spell:114052} link to your raid."
+        self.assertEqual(clean_non_prose(prose), prose)
+        self.assertEqual(clean_non_prose("{time:1:20} This is a prose explanation."),
+                         "{time:1:20} This is a prose explanation.")
+
+
 if __name__ == "__main__":
     unittest.main()
