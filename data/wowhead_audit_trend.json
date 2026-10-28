@@ -1446,6 +1446,33 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Four locale-scoped terms, tests and corpus committed; GitHub Actions build and browser DOM/Translator API verification pending. Not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-28",
+      "sourceAccess": "Live Wowhead URLs requested through assistant web; direct HTML JavaScript challenge; indexed English source checked across Rogue cheat sheet, Feral UI and Affliction gear/macros.",
+      "sampledPageIds": [
+        "assassination-rogue-cheat-sheet",
+        "feral-druid-ui-macros",
+        "affliction-warlock-gear",
+        "affliction-warlock-ui-macros"
+      ],
+      "sampledPageCount": 4,
+      "sourceCorpusCount": 460,
+      "newReusableTermFamiliesObserved": 0,
+      "termFamilies": [],
+      "previouslyObservedRiskFamilies": [
+        "talent export/stat widget metadata in Rogue cheat sheet",
+        "opaque CDM/Edit Mode imports in Feral and Affliction UI guides",
+        "official item names and BiS gear tables in Affliction gearing"
+      ],
+      "legacyJargonConsolidated": 5,
+      "newLocaleScopedHeadingVariants": 2,
+      "newManualSentenceOverrides": 0,
+      "newPageInterventionProxy": "Four independent held-out pages introduced zero new phrase-rule families or sentence overrides. Five pre-existing legacy jargon mappings moved into the locale-scoped glossary without changing their values; two capitalization variants added. Not a browser translation error-rate measurement.",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Cross-class snapshotting/pooling glossary consolidation, tests and held-out corpus committed. Python tests and Data Pack CI verification pending; Chrome Translator API and DOM reconstruction unverified. Not a clean quality cycle."
     }
   ]
 }
