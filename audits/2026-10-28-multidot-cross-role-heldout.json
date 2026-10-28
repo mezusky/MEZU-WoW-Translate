@@ -1,0 +1,60 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceAccess": "Assistant web inspected current indexed English Wowhead guide content; live direct HTML/Chrome DOM not available. GitHub Actions did not fetch Wowhead.",
+  "sampledPageIds": [
+    "blood-death-knight-midnight-season-2",
+    "holy-paladin-midnight-season-2",
+    "shadow-priest-midnight-season-2",
+    "beast-mastery-hunter-midnight-pre-patch",
+    "shadow-priest-manaforge-omega-raid"
+  ],
+  "sampledPageCount": 5,
+  "regressionCorpusPagesAfterRun": 465,
+  "crossPageEvidenceIds": [
+    "shadow-priest-mythic-plus",
+    "shadow-priest-midnight-season-2",
+    "beast-mastery-hunter-midnight-pre-patch",
+    "shadow-priest-manaforge-omega-raid"
+  ],
+  "sourceEvidence": [
+    "Current Shadow Priest Mythic+ and Season 2 guides use 'multi dotting' as a DoT-spreading technique.",
+    "Beast Mastery Hunter Midnight pre-patch uses hyphenated 'multi-dotting'; the page contains pre-patch-era gear recommendations, which are source staleness, not translation defects.",
+    "Historical Shadow Priest Manaforge Omega raid uses 'multi dotting adds', confirming the same WoW mechanic in encounter prose.",
+    "Blood Death Knight Season 2 includes spell/item references and talent/build widgets; preserve official entity names and ID links.",
+    "Holy Paladin Season 2 contains 'spot healing', already covered by the player glossary, and complex gear/consumable widgets."
+  ],
+  "newReusableTermFamiliesObserved": 1,
+  "newLocaleScopedJargonVariants": [
+    "multi-dotting",
+    "multi dotting",
+    "Multi-Dotting",
+    "multi-DoTting"
+  ],
+  "expectedFrenchJargon": "multi-DoT (capitalized Multi-DoT in headings)",
+  "notGeneralized": [
+    "dot",
+    "DoT",
+    "dotting",
+    "redot",
+    "multi",
+    "multi-dot"
+  ],
+  "newManualSentenceOverrides": 0,
+  "newDependencies": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "newPageInterventionProxy": "Five held-out guides, one reusable jargon family and zero sentence overrides; not a measured page-level translation error rate.",
+  "browserOnlyVerification": "Chrome Translator API output, text-node/inline-entity preservation, talent widgets, and DOM reconstruction remain unverified.",
+  "crossPageFixStatus": "Locale-scoped EN->FR jargon change and independent regression test committed; rebuild/CI and browser rendering require verification. Not a clean quality cycle.",
+  "evidenceUrls": [
+    "https://www.wowhead.com/guide/classes/priest/shadow/mythic-plus-dungeon-tips",
+    "https://www.wowhead.com/guide/classes/priest/shadow/midnight-season-2",
+    "https://www.wowhead.com/guide/classes/hunter/beast-mastery/midnight-pre-patch",
+    "https://www.wowhead.com/guide/classes/priest/shadow/manaforge-omega-raid-tips",
+    "https://www.wowhead.com/guide/classes/death-knight/blood/midnight-season-2",
+    "https://www.wowhead.com/guide/classes/paladin/holy/midnight-season-2"
+  ]
+}
