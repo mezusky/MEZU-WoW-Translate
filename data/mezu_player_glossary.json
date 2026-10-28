@@ -195,7 +195,11 @@
     "pooling": "pooling",
     "Pooling": "Pooling",
     "Energy pooling": "pooling d’Énergie",
-    "energy pooling": "pooling d’Énergie"
+    "energy pooling": "pooling d’Énergie",
+    "multi-dotting": "multi-DoT",
+    "multi dotting": "multi-DoT",
+    "Multi-Dotting": "Multi-DoT",
+    "multi-DoTting": "multi-DoT"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
