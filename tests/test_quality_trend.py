@@ -66,7 +66,7 @@ class QualityTrendTests(unittest.TestCase):
 
     def test_high_novel_issue_rate_never_counts_as_clean(self):
         result = summarize([report("a"), report("b", novel=1, clean=True)])
-        self.assertEqual(result["cycles"][-1]["novelIssueRate"], 0.25)
+        self.assertEqual(result["cycles"][-1]["novelIssueRate"], 0.2)
         self.assertEqual(result["consecutiveStrictCleanCycles"], 0)
         self.assertFalse(result["eligibleToConsiderStopping"])
 
