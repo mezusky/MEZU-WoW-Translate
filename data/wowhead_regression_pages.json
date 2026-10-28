@@ -1879,6 +1879,22 @@
     {
       "id": "windwalker-monk-tier-set",
       "url": "https://www.wowhead.com/guide/classes/monk/windwalker/tier-set-bonuses"
+    },
+    {
+      "id": "survival-hunter-midnight-season-2",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/midnight-season-2"
+    },
+    {
+      "id": "subtlety-rogue-midnight-season-2",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/midnight-season-2"
+    },
+    {
+      "id": "enhancement-shaman-tier-set",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/tier-set-bonuses"
+    },
+    {
+      "id": "frost-death-knight-manaforge-omega-raid",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/manaforge-omega-raid-tips"
     }
   ]
 }
