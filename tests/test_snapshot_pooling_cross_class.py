@@ -27,6 +27,8 @@ class SnapshotPoolingCrossClassTests(unittest.TestCase):
             "snapshot strength": "puissance du snapshot",
             "pooling": "pooling",
             "Pooling": "Pooling",
+            "Energy pooling": "pooling d’Énergie",
+            "energy pooling": "pooling d’Énergie",
         }
         for source, target in expected.items():
             with self.subTest(source=source):
