@@ -226,7 +226,9 @@
     "spell queue window": "fenêtre de spell queue",
     "Spell Queue Window": "Fenêtre de spell queue",
     "spellqueue window": "fenêtre de spell queue",
-    "Spellqueue Window": "Fenêtre de spell queue"
+    "Spellqueue Window": "Fenêtre de spell queue",
+    "Main Stat (Item Level)": "Stat principale (niveau d’objet)",
+    "mainstat": "stat principale"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
