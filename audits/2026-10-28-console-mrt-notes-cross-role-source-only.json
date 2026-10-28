@@ -1,7 +1,7 @@
 {
   "schema": 1,
   "date": "2026-10-28",
-  "sourceAccess": "Live Wowhead English guide text inspected through indexed search; direct HTML remains JavaScript-challenged; no GitHub Actions Wowhead fetch",
+  "sourceAccess": "Live English Wowhead guide prose inspected via normal web access: Restoration Shaman page text accessible directly; Arms Warrior URL returned JavaScript challenge, with English source available through indexed search. GitHub Actions never fetches Wowhead.",
   "sampledPageIds": [
     "augmentation-evoker-basics",
     "arms-warrior-ui-macros",
@@ -44,5 +44,10 @@
     "No live Chrome DOM or Translator API execution",
     "No measured rendered translation quality",
     "MRT syntax verified in one newly sampled Shaman guide; broader format generalization not claimed"
+  ],
+  "evidenceUrls": [
+    "https://www.wowhead.com/guide/classes/shaman/restoration/manaforge-omega-raid-tips",
+    "https://www.wowhead.com/guide/classes/mage/arcane/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/mage/fire/rotation-cooldowns-pve-dps"
   ]
 }
