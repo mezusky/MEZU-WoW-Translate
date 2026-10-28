@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant live web indexed English Wowhead source excerpts; direct HTML is challenged by JavaScript. Source-only terminology and audit-boundary review, not Chrome Translator API or DOM verification.",
+  "sourceCorpusCount": 430,
+  "newlySampledPageIds": [
+    "subtlety-rogue-ui-macros",
+    "brewmaster-monk-cheat-sheet",
+    "fire-mage-basics",
+    "elemental-shaman-gear",
+    "unholy-death-knight-cheat-sheet",
+    "demonology-warlock-cheat-sheet"
+  ],
+  "crossPageEvidence": [
+    {
+      "issue": "Tank effective-health metric lacks a scoped FR player term",
+      "sourcePages": [
+        "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/stat-priority-pve-tank",
+        "https://www.wowhead.com/wotlk/guide/classes/warrior/protection/tank-stat-priority-attributes-pve"
+      ],
+      "resolution": "Map effective health / effective hit points to points de vie effectifs in the en->fr player glossary only; do not map generic health, effective, EHP, or effective healing.",
+      "verification": "Source-level cross-spec evidence; offline locale contract tests; no browser output claim."
+    },
+    {
+      "issue": "Rot damage in healer explanations needs WoW-idiomatic French",
+      "sourcePages": [
+        "https://www.wowhead.com/guide/classes/priest/holy/midnight-season-2-raid-tips",
+        "https://www.wowhead.com/guide/classes/monk/mistweaver/rotation-cooldowns-pve-healer",
+        "https://www.wowhead.com/guide/classes/evoker/preservation/nerub-ar-palace-raid-tips"
+      ],
+      "resolution": "Map rot damage to dégâts continus in the en->fr player glossary; leave rot and generic damage unmodified.",
+      "verification": "Independent healer guides; offline locale contract tests; no browser output claim."
+    },
+    {
+      "issue": "Macro targeting and pet directives contaminate indexed source-language evidence",
+      "sourcePages": [
+        "https://www.wowhead.com/guide/classes/rogue/subtlety/addons-macro-ui-imports",
+        "https://www.wowhead.com/guide/classes/hunter/marksmanship/addons-macro-ui-imports"
+      ],
+      "resolution": "Extend conservative full-line macro directive recognition to focus, targeting, pet, stopmacro and related observed commands; preserve inline prose mentioning slash commands.",
+      "verification": "Cross-class source examples and targeted tests; audit-only engine change, no extension behavior change."
+    }
+  ],
+  "newReusableTermFamiliesObserved": 2,
+  "newStructuralRiskFamiliesObserved": 1,
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "newPageInterventionProxy": "Six newly indexed guides spanning DPS, tank, gear, basics, UI/macros and cheat sheets; two shared terminology families plus one source-audit parser family. This proxy is not a measured translation failure rate or proof of decreasing interventions.",
+  "remainingBrowserOnlyVerification": [
+    "Chrome Translator API fallback by detected source and selected target locale",
+    "Canonical-ID names in mixed rich-text and talent widgets",
+    "DOM preservation of clickable import buttons, macro code and numeric stat comparisons"
+  ],
+  "crossPageFixStatus": "Changes committed; GitHub Actions build/tests to be confirmed. Not a clean quality cycle."
+}
