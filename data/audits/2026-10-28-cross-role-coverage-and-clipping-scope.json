@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "method": "source-only assistant web indexing; direct Wowhead HTML JavaScript challenge",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sampledPageIds": [
+    "protection-warrior-stats-heldout",
+    "vengeance-demon-hunter-consumables-heldout",
+    "augmentation-evoker-gear-heldout",
+    "beast-mastery-hunter-overview-heldout",
+    "arcane-mage-rotation",
+    "devastation-evoker-rotation",
+    "discipline-priest-rotation"
+  ],
+  "newPageCount": 4,
+  "observations": [
+    "Protection Warrior stat thresholds and defensive/offensive stat sections require locale-safe numeric formatting.",
+    "Vengeance Demon Hunter consumable tables contain linked item/enchant names; canonical item IDs take precedence over text guesses.",
+    "Augmentation Evoker gear has Catalyst and off-piece language plus linked items; source-indexed 'Cuisses of the Uncoiled Union' is mixed-language source text, not proof of a MEZU error.",
+    "Beast Mastery overview includes stat-guide/stats= widgets; do not translate opaque payloads.",
+    "Clipping/chaining are channel mechanics in Arcane Mage and Devastation Evoker; Wing Clip is a distinct Hunter spell name, so no broad clip/chain glossary rules."
+  ],
+  "change": "Add independent held-out corpus coverage and a scoped anti-overgeneralization test. No new manual sentence overrides or extension release.",
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "qualityCyclePassed": false,
+  "limitations": "Live Chrome Translator API and DOM reconstruction not reproduced; indexed text is not a rendered MEZU translation audit."
+}
