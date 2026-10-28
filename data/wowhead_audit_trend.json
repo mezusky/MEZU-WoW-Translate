@@ -1425,6 +1425,27 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Locale-scoped glossary consolidation and Blizzard UI aliases committed with cross-role tests; GitHub Actions Data Pack rebuild and browser DOM/Translator API still unverified. Not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-28",
+      "sourceAccess": "Assistant web requested live English Wowhead pages (direct HTML JavaScript challenge); indexed current English source inspected across Evoker specs and unrelated Fire Mage.",
+      "sampledPageIds": [
+        "augmentation-evoker-talents",
+        "fire-mage-talents"
+      ],
+      "sampledPageCount": 2,
+      "sourceCorpusCount": 456,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "Evoker Empower spell(s) -> Blizzard's official French 'sort(s) renforcé(s)' across Augmentation, Devastation and Preservation; do not rewrite generic empowered spells in Fire Mage"
+      ],
+      "newStructuralRiskFamiliesObserved": 0,
+      "newPageInterventionProxy": "Two new pages: one official terminology family and one unrelated semantic collision guard; zero manual sentence overrides. Source-only observation is not a browser translation issue-rate measurement.",
+      "newManualSentenceOverrides": 0,
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Four locale-scoped terms, tests and corpus committed; GitHub Actions build and browser DOM/Translator API verification pending. Not a clean quality cycle."
     }
   ]
 }
