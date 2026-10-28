@@ -64,7 +64,14 @@
     "translatorApiReproduced": false,
     "domVerified": false,
     "novelTranslationIssueRate": null,
-    "qualityCycleClean": false
+    "qualityCycleClean": false,
+    "githubActionsRun": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/40622151626",
+    "pythonTests": "passed",
+    "blizzardMemoryBuild": "passed",
+    "datapackBuild": "passed",
+    "datapackValidation": "passed",
+    "datapackVersion": "ba3f2c939e189f830d7a",
+    "browserTranslationErrorRate": null
   },
   "next": "Verify generated pack and Chrome DOM/Translator API separately; continue held-out cross-class audits; do not count source-only tests as quality completion."
 }
