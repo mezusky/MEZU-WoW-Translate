@@ -12,12 +12,12 @@
   "sampledPageCount": 5,
   "regressionCorpusPagesAfterRun": 470,
   "crossPageEvidenceIds": [
-    "devastation-evoker-mythic-plus",
+    "marksmanship-hunter-mythic-plus",
     "demonology-warlock-mythic-plus",
     "holy-paladin-mythic-plus"
   ],
   "sourceEvidence": [
-    "Devastation Evoker and Demonology Warlock Midnight Season 2 Mythic+ guides use AoE stops for crowd-control that interrupts enemy casts.",
+    "Marksmanship Hunter and Demonology Warlock Midnight Season 2 Mythic+ guides use the plural noun 'AoE stops' for crowd-control that interrupts enemy casts.",
     "Holy Paladin Midnight Season 2 Mythic+ guide independently uses AoE stops with Blinding Light; the noun is not a generic stop verb.",
     "Devastation Evoker, Protection Warrior and Holy Priest Season 2 summaries contain spell/entity references and serialized stat/build widgets.",
     "Restoration Druid and Windwalker Monk tier-set pages still describe Season 1 sets despite Season 2 being live; classify as source editorial staleness, not a MEZU translation failure."
@@ -50,8 +50,8 @@
     "https://www.wowhead.com/guide/classes/priest/holy/midnight-season-2",
     "https://www.wowhead.com/guide/classes/druid/restoration/tier-set-bonuses",
     "https://www.wowhead.com/guide/classes/monk/windwalker/tier-set-bonuses",
-    "https://www.wowhead.com/guide/classes/evoker/devastation/mythic-plus-dungeon-tips",
     "https://www.wowhead.com/guide/classes/warlock/demonology/mythic-plus-dungeon-tips",
-    "https://www.wowhead.com/guide/classes/paladin/holy/mythic-plus-dungeon-tips"
+    "https://www.wowhead.com/guide/classes/paladin/holy/mythic-plus-dungeon-tips",
+    "https://www.wowhead.com/guide/classes/hunter/marksmanship/mythic-plus-dungeon-tips"
   ]
 }
