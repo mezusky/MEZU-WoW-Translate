@@ -1363,13 +1363,13 @@
       ],
       "newStructuralRiskFamiliesObserved": 0,
       "officialSourceSeed": "24205457 (official Blizzard EN/FR paired article); short UI headings eligible for whole-string phrase memory",
-      "sharedEngineFix": "No extension change. Seed deterministic Blizzard phrase-memory collector with official UI article rather than adding per-guide sentence overrides or executable remote rules.",
+      "sharedEngineFix": "No extension change. Seed official Blizzard EN/FR phrase memory and add only the two verified UI names to locale-scoped inline terminology; no sentence overrides or remote executable rules.",
       "newPageInterventionProxy": "Five held-out starter guides; one shared official terminology family, zero manual sentence overrides. Novel browser translation issue rate remains unknown.",
       "newManualSentenceOverrides": 0,
       "browserRenderedPagesVerified": 0,
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
-      "crossPageFixStatus": "Official source seed and cross-role regression tests committed; new GitHub Actions build and real Chrome/Translator API validation pending. Not a clean quality cycle."
+      "crossPageFixStatus": "Official source seed, two locale-scoped inline UI terms and cross-role tests committed; GitHub Actions build and real Chrome/Translator API validation pending. Not a clean quality cycle."
     }
   ]
 }
