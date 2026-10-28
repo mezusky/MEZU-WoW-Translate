@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceAccess": "Assistant web opened canonical Wowhead URLs; direct HTML returned JavaScript verification challenge. English indexed guide content inspected instead. No Wowhead fetch from GitHub Actions.",
+  "sampledPageIds": [
+    "survival-hunter-midnight-season-2",
+    "subtlety-rogue-midnight-season-2",
+    "enhancement-shaman-tier-set",
+    "frost-death-knight-manaforge-omega-raid"
+  ],
+  "sampledPageCount": 4,
+  "regressionCorpusPagesAfterRun": 474,
+  "crossPageEvidenceIds": [
+    "frost-mage-mythic-plus",
+    "fire-mage-mythic-plus",
+    "discipline-priest-mythic-plus",
+    "brewmaster-monk-mythic-plus"
+  ],
+  "sourceEvidence": [
+    "Frost Mage Season 2 Mythic+ uses break/breaking line of sight for avoiding mechanics; Fire Mage uses out of Line of Sight.",
+    "Discipline Priest guide uses line of sight both as a noun and as a verb; historical Brewmaster Monk guide uses LOS as a verb. Therefore a blanket line of sight -> ligne de vue substitution risks malformed French.",
+    "Survival Hunter Season 2 overview includes generated stat widget fields, talent names and new item names; treat these as structured data, not literal prose translation.",
+    "Subtlety Rogue Season 2 overview contains builder/spender gameplay, stat widgets and linked talents; canonical IDs should take precedence.",
+    "Enhancement Shaman tier-set page still discusses Season 1 bonuses in its main body despite a Season 2 acquisition heading; editorial staleness is not a translation failure.",
+    "Frost Death Knight Manaforge Omega raid guide is historical The War Within content and provides an independent raid/talent/entity test."
+  ],
+  "newReusableTermFamiliesObserved": 1,
+  "newLocaleScopedJargonVariants": {
+    "break line of sight": "casser la ligne de vue",
+    "out of line of sight": "hors de la ligne de vue"
+  },
+  "notGeneralized": [
+    "line of sight",
+    "Line of Sight",
+    "LOS",
+    "LoS",
+    "line-of-sight",
+    "line of sight (verbal usage)"
+  ],
+  "newManualSentenceOverrides": 0,
+  "newDependencies": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "newPageInterventionProxy": "Four held-out guides added; one reusable cross-role LoS collocation family from independent existing guides, no exact sentence overrides. This is not a measured translation error rate.",
+  "browserOnlyVerification": "Chrome Translator API, DOM/link/widget preservation, text fragment ordering and actual French prose quality remain unverified.",
+  "crossPageFixStatus": "Source-only evidence and locale-scoped tests committed; CI rebuild pending at audit creation. Not a clean quality cycle.",
+  "evidenceUrls": [
+    "https://www.wowhead.com/guide/classes/mage/frost/mythic-plus-dungeon-tips",
+    "https://www.wowhead.com/guide/classes/mage/fire/mythic-plus-dungeon-tips",
+    "https://www.wowhead.com/guide/classes/priest/discipline/mythic-plus-dungeon-tips",
+    "https://www.wowhead.com/guide/classes/monk/brewmaster/mythic-plus-dungeon-tips",
+    "https://www.wowhead.com/guide/classes/hunter/survival/midnight-season-2",
+    "https://www.wowhead.com/guide/classes/rogue/subtlety/midnight-season-2",
+    "https://www.wowhead.com/guide/classes/shaman/enhancement/tier-set-bonuses",
+    "https://www.wowhead.com/guide/classes/death-knight/frost/manaforge-omega-raid-tips"
+  ]
+}
