@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceAccess": "Canonical Wowhead URLs checked with assistant web: direct HTML returned JavaScript verification; current indexed English guide prose inspected instead. No GitHub-hosted Wowhead fetch.",
+  "sampledPageIds": [
+    "restoration-druid-ui-macros",
+    "restoration-shaman-ui-macros",
+    "preservation-evoker-ui-macros",
+    "guardian-druid-ui-macros",
+    "feral-druid-ui-macros",
+    "outlaw-rogue-ui-macros",
+    "mistweaver-monk-ui-macros",
+    "discipline-priest-rotation",
+    "retribution-paladin-overview",
+    "havoc-demon-hunter-gear",
+    "devourer-demon-hunter-consumables",
+    "unholy-death-knight-overview"
+  ],
+  "sampledPageCount": 12,
+  "newHeldoutPages": 4,
+  "regressionCorpusPagesAfterRun": 485,
+  "sourceEvidence": [
+    "Mouseover Macros is a repeated heading across Restoration Shaman, Restoration Druid, Preservation Evoker, Guardian/Feral Druid and Outlaw Rogue; preserve @mouseover macro tokens and ordinary 'mouse over' verbs.",
+    "Retribution overview and Unholy overview expose stat-guide widget fragments; these are source/index artifacts, not verified translation defects.",
+    "Havoc gear exposes current Season 2 item/upgrade names including Ascendant Venomstone; canonical item IDs should outrank any prose override.",
+    "Devourer consumables names current weapon enchant and gems; prefer Blizzard item IDs rather than per-guide manual replacements.",
+    "Mistweaver UI macros include executable /cast and ! syntax that must not be translated; source-only checks do not verify DOM preservation.",
+    "Localized Wowhead pages append English plural suffixes to localized spell names; this is a source-site artifact and cannot be attributed to MEZU without browser inspection."
+  ],
+  "reusableFixes": [
+    "New generic exact-layer merge helper preserves ID-backed canonical translations over official/community/manual prose entries, including casefolded source-name variants; manual exceptional sentence precedence remains unchanged for non-entity prose.",
+    "Four EN->FR mouseover macro heading variants added to locale-specific jargon, without bare mouseover or macro command replacements."
+  ],
+  "testsAdded": [
+    "tests/test_exact_layer_priority.py",
+    "tests/test_mouseover_macro_cross_role.py"
+  ],
+  "extensionCodeChanged": false,
+  "newDependencies": 0,
+  "newManualSentenceOverrides": 0,
+  "newReusableTermFamiliesObserved": 1,
+  "newPageInterventionProxy": "Four held-out English source pages, one shared heading family and one generic layer-precedence fix; no measured browser translation error rate.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "browserOnlyVerification": "Chrome Translator API fallback, linked entity ID lookup, translated prose, rich-text/DOM reconstruction, macro preservation and source-language auto-detection require actual browser verification.",
+  "crossPageFixStatus": "Small source commits and offline tests added. GitHub Actions reconstruction/validation pending at audit creation; not a clean quality cycle.",
+  "evidenceUrls": [
+    "https://www.wowhead.com/guide/classes/druid/restoration/addons-macro-ui-imports",
+    "https://www.wowhead.com/guide/classes/shaman/restoration/addons-macro-ui-imports",
+    "https://www.wowhead.com/guide/classes/evoker/preservation/addons-macro-ui-imports",
+    "https://www.wowhead.com/guide/classes/druid/guardian/addons-macro-ui-imports",
+    "https://www.wowhead.com/guide/classes/druid/feral/addons-macro-ui-imports",
+    "https://www.wowhead.com/guide/classes/rogue/outlaw/addons-macro-ui-imports",
+    "https://www.wowhead.com/guide/classes/monk/mistweaver/addons-macro-ui-imports",
+    "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+    "https://www.wowhead.com/guide/classes/paladin/retribution/overview-pve-dps",
+    "https://www.wowhead.com/guide/classes/demon-hunter/havoc/bis-gear",
+    "https://www.wowhead.com/guide/classes/demon-hunter/devourer/enchants-gems-pve-dps",
+    "https://www.wowhead.com/guide/classes/death-knight/unholy/overview-pve-dps"
+  ]
+}
