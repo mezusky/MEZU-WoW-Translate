@@ -204,7 +204,9 @@
     "aoe stops": "stops AoE",
     "AoE Stops": "Stops AoE",
     "break line of sight": "casser la ligne de vue",
-    "out of line of sight": "hors de la ligne de vue"
+    "out of line of sight": "hors de la ligne de vue",
+    "active mitigation": "mitigation active",
+    "Active Mitigation": "Mitigation active"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
