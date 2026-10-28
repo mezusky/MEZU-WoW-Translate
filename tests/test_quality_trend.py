@@ -8,20 +8,30 @@ from quality_trend import summarize
 
 
 def report(cycle, method="browser-rendered", novel=0, clean=True):
+    pages = ([
+        ("warrior", "protection", "tank", "rotation"),
+        ("priest", "discipline", "healer", "talents"),
+        ("mage", "fire", "dps", "gear"),
+        ("druid", "guardian", "tank", "raid"),
+        ("hunter", "survival", "dps", "mythic-plus"),
+    ] if cycle == "a" else [
+        ("monk", "brewmaster", "tank", "rotation"),
+        ("paladin", "holy", "healer", "talents"),
+        ("rogue", "subtlety", "dps", "gear"),
+        ("shaman", "restoration", "healer", "raid"),
+        ("evoker", "augmentation", "dps", "mythic-plus"),
+    ])
     cases = [
         {"url": f"https://www.wowhead.com/guide/classes/{cls}/{spec}/{section}",
          "wowClass": cls, "spec": spec, "role": role, "section": section,
+         "sourceLanguage": "en", "targetLanguage": "fr",
          "heldout": i < 2, "browserRendered": True, "strictPass": True}
-        for i, (cls, spec, role, section) in enumerate([
-            ("warrior", "protection", "tank", "rotation"),
-            ("priest", "discipline", "healer", "talents"),
-            ("mage", "fire", "dps", "gear"),
-            ("druid", "guardian", "tank", "raid"),
-            ("hunter", "survival", "dps", "mythic-plus"),
-        ])
+        for i, (cls, spec, role, section) in enumerate(pages)
     ]
     return {"qualitySample": {
         "cycleId": cycle,
+        "sourceLanguage": "en",
+        "targetLanguage": "fr",
         "auditedAt": "2026-10-28T22:00:00+01:00" if cycle == "a" else "2026-10-28T23:00:00+01:00",
         "newPagesAudited": len(cases),
         "novelIssueFamilies": novel,
@@ -111,6 +121,42 @@ class QualityTrendTests(unittest.TestCase):
         malformed = report("a")
         malformed["qualitySample"]["browserCases"][0]["role"] = ["tank"]
         self.assertEqual(summarize([malformed])["consecutiveStrictCleanCycles"], 0)
+
+    def test_repeated_pages_across_cycles_cannot_prove_generalization(self):
+        first, second = report("a"), report("b")
+        second["qualitySample"]["browserCases"] = first["qualitySample"]["browserCases"]
+        result = summarize([first, second])
+        self.assertEqual(result["consecutiveStrictCleanCycles"], 1)
+        self.assertFalse(result["eligibleToConsiderStopping"])
+
+    def test_cross_language_cycles_do_not_combine(self):
+        first, second = report("a"), report("b")
+        second["qualitySample"]["sourceLanguage"] = "de"
+        for case in second["qualitySample"]["browserCases"]:
+            case["sourceLanguage"] = "de"
+        result = summarize([first, second])
+        self.assertEqual(result["consecutiveStrictCleanCycles"], 1)
+
+    def test_same_language_or_missing_locale_evidence_cannot_pass(self):
+        same = report("a")
+        same["qualitySample"]["targetLanguage"] = "en"
+        for case in same["qualitySample"]["browserCases"]:
+            case["targetLanguage"] = "en"
+        self.assertFalse(summarize([same])["cycles"][0]["strictCleanCycle"])
+        missing = report("a")
+        del missing["qualitySample"]["browserCases"][0]["sourceLanguage"]
+        self.assertFalse(summarize([missing])["cycles"][0]["strictCleanCycle"])
+        invalid = report("a")
+        invalid["qualitySample"]["sourceLanguage"] = "english"
+        self.assertFalse(summarize([invalid])["cycles"][0]["strictCleanCycle"])
+
+    def test_equal_or_naive_timestamps_cannot_form_two_cycles(self):
+        first, second = report("a"), report("b")
+        second["qualitySample"]["auditedAt"] = first["qualitySample"]["auditedAt"]
+        self.assertFalse(summarize([first, second])["eligibleToConsiderStopping"])
+        first["qualitySample"]["auditedAt"] = "2026-10-28T22:00:00"
+        with self.assertRaises(ValueError):
+            summarize([first])
 
     def test_legacy_reports_do_not_imply_success(self):
         self.assertEqual(summarize([{"browserRenderedPagesVerified": 0}])["cycles"], [])
