@@ -222,7 +222,11 @@
     "combat resurrection": "résurrection en combat",
     "combat resurrections": "résurrections en combat",
     "Pre-cast": "Pré-cast",
-    "pre-cast": "pré-cast"
+    "pre-cast": "pré-cast",
+    "spell queue window": "fenêtre de spell queue",
+    "Spell Queue Window": "Fenêtre de spell queue",
+    "spellqueue window": "fenêtre de spell queue",
+    "Spellqueue Window": "Fenêtre de spell queue"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
