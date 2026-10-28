@@ -42,6 +42,21 @@ class ActiveMitigationTests(unittest.TestCase):
             "protection-paladin-rotation", "brewmaster-monk-leveling"
         }.issubset(ids))
 
+    def test_heldout_roles_and_sections(self):
+        by_id = {p["id"]: p["url"] for p in PAGES}
+        expected = {
+            "protection-paladin-gear": "/paladin/protection/bis-gear",
+            "brewmaster-monk-gear": "/monk/brewmaster/bis-gear",
+            "vengeance-demon-hunter-mythic-plus": "/demon-hunter/vengeance/mythic-plus-dungeon-tips",
+            "mistweaver-monk-gear": "/monk/mistweaver/bis-gear",
+            "destruction-warlock-gear": "/warlock/destruction/bis-gear",
+        }
+        for key, suffix in expected.items():
+            with self.subTest(page=key):
+                self.assertEqual(by_id[key], "https://www.wowhead.com/guide/classes" + suffix)
+        self.assertEqual(len(PAGES), len(set(by_id)))
+        self.assertEqual(len(PAGES), len({p["url"] for p in PAGES}))
+
     def test_locale_isolation(self):
         terms = select_jargon(GLOSSARY, "en-US", "fr-FR")
         self.assertEqual(terms["active mitigation"], "mitigation active")
