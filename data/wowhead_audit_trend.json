@@ -1569,6 +1569,31 @@
       "browserTranslationErrorRate": null,
       "novelTranslationIssueRate": null,
       "crossPageFixStatus": "Locale-scoped glossary, tests, corpus and compact audit committed; CI and Chrome Translator API/DOM validation pending. Not a clean quality cycle."
+    },
+    {
+      "date": "2026-10-28",
+      "sourceAccess": "Canonical Wowhead pages challenged direct HTML; current indexed English guide text inspected by assistant web; no CI Wowhead fetch.",
+      "sampledPageIds": [
+        "holy-priest-abilities",
+        "discipline-priest-abilities",
+        "mistweaver-monk-overview",
+        "restoration-druid-talents",
+        "holy-paladin-abilities",
+        "elemental-shaman-abilities",
+        "discipline-priest-midnight-season-2"
+      ],
+      "sampledPageCount": 7,
+      "sourceCorpusCount": 481,
+      "newReusableTermFamiliesObserved": 1,
+      "termFamilies": [
+        "official overhealing -> surplus de soins; preserve player shorthand overheal, avoid generic verbal rewrites"
+      ],
+      "newManualSentenceOverrides": 0,
+      "newPageInterventionProxy": "Two held-out pages, one official nominal family, zero sentence overrides; browser issue rate not measured.",
+      "browserRenderedPagesVerified": 0,
+      "browserTranslationErrorRate": null,
+      "novelTranslationIssueRate": null,
+      "crossPageFixStatus": "Glossary migration and source tests committed; latest Data Pack rebuild/Chrome validation not confirmed. Not a clean quality cycle."
     }
   ]
 }
