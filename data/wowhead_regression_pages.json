@@ -1971,6 +1971,22 @@
     {
       "id": "mistweaver-monk-leveling",
       "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/healer-leveling-tips"
+    },
+    {
+      "id": "protection-warrior-stats-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/stat-priority-pve-tank"
+    },
+    {
+      "id": "vengeance-demon-hunter-consumables-heldout",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/enchants-gems-pve-tank"
+    },
+    {
+      "id": "augmentation-evoker-gear-heldout",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/bis-gear"
+    },
+    {
+      "id": "beast-mastery-hunter-overview-heldout",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/overview-pve-dps"
     }
   ]
 }
