@@ -1783,6 +1783,22 @@
     {
       "id": "balance-druid-basics",
       "url": "https://www.wowhead.com/guide/classes/druid/balance/basics"
+    },
+    {
+      "id": "restoration-shaman-basics",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/basics"
+    },
+    {
+      "id": "discipline-priest-basics",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/basics"
+    },
+    {
+      "id": "assassination-rogue-basics",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/basics"
+    },
+    {
+      "id": "fury-warrior-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/addons-macro-ui-imports"
     }
   ]
 }
