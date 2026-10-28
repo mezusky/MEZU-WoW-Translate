@@ -60,5 +60,50 @@ class MacroAuditTests(unittest.TestCase):
         self.assertEqual(clean_non_prose(text), text)
 
 
+    def test_rogue_focus_and_sap_targeting_lines(self):
+        # Subtlety Rogue UI/Macros, independent of the original Mage sample.
+        text = (
+            "You can set a focus target with the following macro:\n"
+            "/focus\n"
+            "A spammable Sap macro is useful in PvP.\n"
+            "#showtooltip Sap\n"
+            "/cleartarget\n"
+            "/targetenemyplayer\n"
+            "/cast Sap\n"
+            "Keep your focus target for interrupts."
+        )
+        cleaned = clean_non_prose(text)
+        self.assertIn("You can set a focus target", cleaned)
+        self.assertIn("A spammable Sap macro", cleaned)
+        self.assertIn("Keep your focus target", cleaned)
+        for command in ("/focus", "/cleartarget", "/targetenemyplayer", "#showtooltip"):
+            self.assertNotIn(command, cleaned)
+
+    def test_hunter_pet_and_targeting_commands(self):
+        # Marksmanship Hunter UI/Macros: a different class and role.
+        text = (
+            "Use this macro to manage your pet and focus.\n"
+            "/petpassive\n"
+            "/petfollow\n"
+            "/petattack\n"
+            "/stopmacro [noexists]\n"
+            "/tm 4\n"
+            "/targetenemy\n"
+            "/clearfocus\n"
+            "/startattack\n"
+            "The explanatory paragraph remains."
+        )
+        cleaned = clean_non_prose(text)
+        self.assertEqual(
+            " ".join(cleaned.split()),
+            "Use this macro to manage your pet and focus. The explanatory paragraph remains."
+        )
+        # Inline documentation remains prose, not an executable macro line.
+        self.assertEqual(
+            clean_non_prose("Type /focus or /cleartarget in the macro window."),
+            "Type /focus or /cleartarget in the macro window."
+        )
+
+
 if __name__ == "__main__":
     unittest.main()
