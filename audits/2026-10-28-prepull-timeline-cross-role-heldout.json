@@ -1,0 +1,45 @@
+{
+  "schema": 1,
+  "date": "2026-10-28",
+  "sourceAccess": "Live Wowhead English guide URLs checked via assistant web; direct HTML JavaScript-challenged, indexed English source inspected; no GitHub-hosted Wowhead fetch.",
+  "sampledPageIds": [
+    "restoration-shaman-basics",
+    "discipline-priest-basics",
+    "assassination-rogue-basics",
+    "fury-warrior-ui-macros"
+  ],
+  "sampledPageCount": 4,
+  "regressionCorpusPagesAfterRun": 450,
+  "crossPageEvidenceIds": [
+    "protection-paladin-rotation",
+    "beast-mastery-hunter-rotation",
+    "destruction-warlock-rotation",
+    "augmentation-evoker-rotation",
+    "devourer-demon-hunter-rotation"
+  ],
+  "termFamilies": [
+    "Pre-pull / pre-pull -> avant le pull",
+    "Sample Timeline -> Exemple de timeline; ST/AoE heading variants mapped explicitly"
+  ],
+  "newReusableTermFamiliesObserved": 2,
+  "newStructuralRiskFamiliesObserved": 0,
+  "newManualSentenceOverrides": 0,
+  "sourceQualityNotes": [
+    "Assassination Rogue Basics has empty source-side season/talent placeholders",
+    "Fury Warrior UI page includes opaque CDM and Edit Mode import payloads; keep them out of source-prose scoring"
+  ],
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "limitations": [
+    "Glossary mappings and tests are data-level; not proof of actual Chrome translation or DOM reconstruction",
+    "No newly observed issue rate can be computed from indexed source alone"
+  ],
+  "evidenceUrls": [
+    "https://www.wowhead.com/guide/classes/paladin/protection/rotation-cooldowns-pve-tank",
+    "https://www.wowhead.com/guide/classes/hunter/beast-mastery/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/warlock/destruction/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/evoker/augmentation/rotation-cooldowns-pve-dps",
+    "https://www.wowhead.com/guide/classes/demon-hunter/devourer/rotation-cooldowns-pve-dps"
+  ]
+}
