@@ -9,6 +9,16 @@ ROOT = Path(__file__).resolve().parents[1]
 PAGES = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(encoding="utf-8"))["pages"]
 
 
+def class_guide_parts(url):
+    """Return class/spec/section only for specialization guides; general guides are valid too."""
+    path = urlparse(url).path
+    marker = "/guide/classes/"
+    if marker not in path:
+        return None
+    return path.split(marker, 1)[1].split("/")
+
+
+
 class WowheadRegressionCorpusTests(unittest.TestCase):
     def test_unique_ids_and_urls(self):
         self.assertEqual(len({p["id"] for p in PAGES}), len(PAGES))
@@ -24,17 +34,23 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
                 # but localizes spell links, so it is NOT an English-source URL.
                 # The English PTR preview uses /ptr-2/guide/... instead.
                 self.assertRegex(parsed.path,
-                                 r"^/(?:ptr(?:-\d+)?/)?guide/classes/[a-z-]+/[a-z-]+/[a-z0-9-]+$")
+                                 r"^/(?:ptr(?:-\d+)?/)?guide/(?:classes/[a-z-]+/[a-z-]+/[a-z0-9-]+|[a-z0-9-]+)$")
                 self.assertFalse(parsed.query or parsed.fragment)
 
     def test_localized_url_is_not_an_english_source(self):
-        pattern = r"^/(?:ptr(?:-\d+)?/)?guide/classes/[a-z-]+/[a-z-]+/[a-z0-9-]+$"
+        pattern = r"^/(?:ptr(?:-\d+)?/)?guide/(?:classes/[a-z-]+/[a-z-]+/[a-z0-9-]+|[a-z0-9-]+)$"
         for locale in ("fr", "de", "it", "pt", "cn"):
             with self.subTest(locale=locale):
                 self.assertIsNone(re.fullmatch(pattern,
                     f"/{locale}/guide/classes/priest/discipline/rotation-cooldowns-pve-healer"))
         self.assertIsNotNone(re.fullmatch(pattern,
             "/ptr-2/guide/classes/shaman/enhancement/midnight-season-2-raid-tips"))
+
+    def test_general_guides_do_not_pollute_class_coverage(self):
+        general = {p["id"]: p["url"] for p in PAGES if class_guide_parts(p["url"]) is None}
+        self.assertEqual(general.get("mythic-plus-keystones-overview"),
+                         "https://www.wowhead.com/guide/mythic-keystones-and-dungeons")
+        self.assertTrue(all("/guide/classes/" not in url for url in general.values()))
 
     def test_new_independent_guides_cover_id_names_and_widgets(self):
         required = {
@@ -45,8 +61,7 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         self.assertTrue(required.issubset({page["id"] for page in PAGES}))
 
     def test_cross_class_and_section_coverage(self):
-        paths = [urlparse(p["url"]).path.split("/guide/classes/", 1)[1].split("/")
-                 for p in PAGES]
+        paths = [parts for p in PAGES if (parts := class_guide_parts(p["url"])) is not None]
         classes = {parts[0] for parts in paths}
         sections = [parts[2] for parts in paths if len(parts) >= 3]
         self.assertGreaterEqual(len(classes), 13)
@@ -59,8 +74,7 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
 
     def test_all_current_specs_and_new_widget_risks_are_represented(self):
         # Every Midnight specialization should remain represented at least once.
-        paths = [p["url"].split("/guide/classes/", 1)[1].split("/")
-                 for p in PAGES]
+        paths = [parts for p in PAGES if (parts := class_guide_parts(p["url"])) is not None]
         self.assertGreaterEqual(len({(parts[0], parts[1]) for parts in paths}), 40)
         required = {
             "devourer-demon-hunter-overview",
