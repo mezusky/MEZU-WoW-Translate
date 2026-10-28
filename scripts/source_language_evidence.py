@@ -21,7 +21,7 @@ WOW_MACRO_LINE = re.compile(
     r"^[ \t]*(?:#showtooltip\b|/(?:castsequence|cast|use|cancelaura|"
     r"stopcasting|stopspelltarget|stopmacro|stopattack|startattack|"
     r"targetlasttarget|targetenemyplayer|targetenemy|target|cleartarget|"
-    r"clearfocus|focus|petattack|petpassive|petfollow|tm|equipslot|cqs)\b)"
+    r"clearfocus|focus|petattack|petpassive|petfollow|tm|equipslot|cqs|console)\b)"
     r"[^\r\n]*(?=\r?$)", re.IGNORECASE | re.MULTILINE
 )
 
@@ -46,6 +46,15 @@ RAID_REMINDER_EVENT = re.compile(
 )
 
 
+# Method Raid Tools notes use a different, line-oriented import syntax.
+# Strip complete time+spell records only at line start; preserve nearby prose.
+MRT_NOTE_LINE = re.compile(
+    r"^[ \t]*\{time:\d{1,2}:\d{2}(?::\d{2})?\}"
+    r"[^\r\n]{0,200}\{spell:\d{3,8}\}[^\r\n]*(?=\r?$)",
+    re.MULTILINE,
+)
+
+
 
 def is_opaque_edit_mode_export(text):
     value = text.strip()
@@ -59,6 +68,7 @@ def clean_non_prose(text):
     if is_opaque_edit_mode_export(text):
         return ""
     text = WOW_MACRO_LINE.sub(" ", text)
+    text = MRT_NOTE_LINE.sub(" ", text)
     text = RAID_REMINDER_EVENT.sub(" ", RAID_REMINDER_HEADER.sub(" ", text))
     return NON_PROSE_ASSIGNMENT.sub(" ", NON_PROSE_PLACEHOLDER.sub(" ",
                                      OPAQUE_IMPORT.sub(" ", text)))
