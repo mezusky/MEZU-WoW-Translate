@@ -178,7 +178,11 @@
     "sample timeline": "exemple de timeline",
     "ST Sample Timeline": "Exemple de timeline monocible",
     "AoE Sample Timeline": "Exemple de timeline AoE",
-    "AOE Sample Timeline": "Exemple de timeline AoE"
+    "AOE Sample Timeline": "Exemple de timeline AoE",
+    "priority list": "liste de priorités",
+    "priority lists": "listes de priorités",
+    "overcap": "overcap",
+    "overcapping": "overcap"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
