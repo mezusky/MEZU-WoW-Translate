@@ -48,7 +48,7 @@ class OverhealingLocaleTests(unittest.TestCase):
     def test_independent_healer_sources_and_unique_corpus(self):
         by_id = {p["id"]: p["url"] for p in PAGES}
         for spec in ("holy-priest-abilities", "discipline-priest-abilities",
-                     "mistweaver-monk-overview", "restoration-druid-abilities",
+                     "mistweaver-monk-overview", "restoration-druid-talents",
                      "restoration-shaman-abilities", "holy-paladin-abilities"):
             with self.subTest(spec=spec):
                 self.assertIn(spec, by_id)
