@@ -1859,6 +1859,26 @@
     {
       "id": "shadow-priest-manaforge-omega-raid",
       "url": "https://www.wowhead.com/guide/classes/priest/shadow/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "devastation-evoker-midnight-season-2",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/midnight-season-2"
+    },
+    {
+      "id": "protection-warrior-midnight-season-2",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/midnight-season-2"
+    },
+    {
+      "id": "holy-priest-midnight-season-2",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/midnight-season-2"
+    },
+    {
+      "id": "restoration-druid-tier-set",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/tier-set-bonuses"
+    },
+    {
+      "id": "windwalker-monk-tier-set",
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/tier-set-bonuses"
     }
   ]
 }
