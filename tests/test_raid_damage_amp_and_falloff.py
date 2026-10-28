@@ -45,7 +45,7 @@ class RaidMechanicJargonTests(unittest.TestCase):
 
     def test_distance_falloff_is_not_generic_drop_off(self):
         jargon = select_jargon(self.player, "en", "fr")
-        for source in ("drop-off damage", "falloff damage", "fall-off damage"):
+        for source in ("drop-off damage", "dropoff damage", "falloff damage", "fall-off damage"):
             with self.subTest(source=source):
                 self.assertEqual(jargon[source], "dégâts dégressifs avec la distance")
         # 'Drop off' can also mean placing an AoE away from the group.
@@ -53,11 +53,29 @@ class RaidMechanicJargonTests(unittest.TestCase):
         self.assertNotIn("falloff", jargon)
         self.assertNotIn("distance-based damage", jargon)
 
+    def test_periodic_damage_phrase_is_locale_scoped_not_a_spell(self):
+        # Indexed Holy Priest and Restoration Shaman raid prose both use
+        # "ticking damage". Do not translate bare "tick", which also names
+        # periodic events in cast/channel mechanics.
+        jargon = select_jargon(self.player, "en-US", "fr-FR")
+        self.assertEqual(jargon["ticking damage"], "dégâts périodiques")
+        self.assertNotIn("ticking", jargon)
+        self.assertNotIn("tick", jargon)
+        self.assertNotIn("dropoff", jargon)
+        self.assertNotIn("ticking damage", self.manual.get("jargon", {}))
+        self.assertNotIn("dropoff damage", self.manual.get("jargon", {}))
+
     def test_heldout_roles_and_locale_direction(self):
         for page in (
             "retribution-paladin-raid", "assassination-rogue-raid",
             "devourer-demon-hunter-raid", "holy-priest-raid",
             "discipline-priest-raid", "protection-warrior-manaforge-omega-raid",
+            "holy-priest-manaforge-omega-raid",
+            "discipline-priest-manaforge-omega-raid",
+            "restoration-druid-manaforge-omega-raid",
+            "mistweaver-monk-manaforge-omega-raid",
+            "blood-death-knight-manaforge-omega-raid",
+            "destruction-warlock-manaforge-omega-raid",
         ):
             with self.subTest(page=page):
                 self.assertIn(page, self.pages)
