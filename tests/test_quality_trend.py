@@ -44,6 +44,12 @@ class QualityTrendTests(unittest.TestCase):
         self.assertEqual(result["consecutiveStrictCleanCycles"], 0)
         self.assertFalse(result["eligibleToConsiderStopping"])
 
+    def test_high_novel_issue_rate_never_counts_as_clean(self):
+        result = summarize([report("a"), report("b", novel=1, clean=True)])
+        self.assertEqual(result["cycles"][-1]["novelIssueRate"], 0.25)
+        self.assertEqual(result["consecutiveStrictCleanCycles"], 0)
+        self.assertFalse(result["eligibleToConsiderStopping"])
+
     def test_rejects_duplicate_cycles_and_invalid_counts(self):
         with self.assertRaises(ValueError):
             summarize([report("a"), report("a")])
