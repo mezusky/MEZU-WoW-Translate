@@ -1823,6 +1823,22 @@
     {
       "id": "fire-mage-talents",
       "url": "https://www.wowhead.com/guide/classes/mage/fire/abilities-talents-pve-dps"
+    },
+    {
+      "id": "assassination-rogue-cheat-sheet",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/cheat-sheet"
+    },
+    {
+      "id": "feral-druid-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/addons-macro-ui-imports"
+    },
+    {
+      "id": "affliction-warlock-gear",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/bis-gear"
+    },
+    {
+      "id": "affliction-warlock-ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/addons-macro-ui-imports"
     }
   ]
 }
