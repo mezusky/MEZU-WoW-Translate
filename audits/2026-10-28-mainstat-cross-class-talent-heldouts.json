@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "auditDate": "2026-10-28",
+  "auditMethod": "indexed English Wowhead source; direct HTML challenged; no browser translation simulation",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 497,
+  "corpusAfter": 500,
+  "newPages": [
+    {
+      "role": "tank",
+      "spec": "Guardian Druid",
+      "section": "talent builds",
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/talent-builds-pve-tank"
+    },
+    {
+      "role": "dps",
+      "spec": "Fire Mage",
+      "section": "talent builds",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/talent-builds-pve-dps"
+    },
+    {
+      "role": "healer",
+      "spec": "Restoration Druid",
+      "section": "talent builds",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/talent-builds-pve-healer"
+    }
+  ],
+  "reusableTermFixes": [
+    {
+      "source": "Main Stat (Item Level)",
+      "target": "Stat principale (niveau d’objet)",
+      "evidenceSpecs": [
+        "Windwalker Monk",
+        "Survival Hunter",
+        "Arcane Mage",
+        "Destruction Warlock"
+      ],
+      "layer": "fr player glossary"
+    },
+    {
+      "source": "mainstat",
+      "target": "stat principale",
+      "evidenceSections": [
+        "Vengeance Demon Hunter consumables",
+        "Vengeance Demon Hunter gear"
+      ],
+      "layer": "fr player glossary"
+    }
+  ],
+  "safety": "No generic stat/main/item-level replacement; canonical ID-backed entity names remain authoritative.",
+  "sourceQualityNotes": [
+    "Restoration Druid talent guide's English indexed update date is older than some localized snapshots; source freshness is not a MEZU translation failure."
+  ],
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelIssueRateMeasured": false,
+  "browserOnlyVerification": [
+    "Chrome Translator API fallback",
+    "rich-text/DOM preservation",
+    "live rendered French output"
+  ]
+}
