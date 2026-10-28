@@ -169,7 +169,9 @@
     "dropoff damage": "dégâts dégressifs avec la distance",
     "ticking damage": "dégâts périodiques",
     "damage amplification phase": "phase de dégâts amplifiés",
-    "damage amplification phases": "phases de dégâts amplifiés"
+    "damage amplification phases": "phases de dégâts amplifiés",
+    "Assisted Highlight": "Surbrillance d’aide",
+    "Single-Button Assistant": "Assistant à bouton unique"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
