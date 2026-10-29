@@ -229,5 +229,32 @@ class QualityTrendTests(unittest.TestCase):
         self.assertEqual(summarize([{"browserRenderedPagesVerified": 0}])["cycles"], [])
 
 
+    def test_explicit_url_role_cannot_be_mislabeled(self):
+        # These guide slugs carry a role; a fabricated cross-role mix must
+        # never count as independent browser evidence.
+        for slug, expected, wrong in (
+            ("rotation-cooldowns-pve-tank", "tank", "dps"),
+            ("healer-leveling-tips", "healer", "tank"),
+            ("rotation-cooldowns-pve-dps", "dps", "healer"),
+        ):
+            with self.subTest(slug=slug):
+                sample = report("a")
+                case = sample["qualitySample"]["browserCases"][0]
+                case["url"] = (
+                    "https://www.wowhead.com/guide/classes/warrior/protection/" + slug
+                )
+                case["role"] = expected
+                self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
+                case["role"] = wrong
+                self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
+    def test_role_not_in_slug_does_not_require_a_guessed_mapping(self):
+        sample = report("a")
+        sample["qualitySample"]["browserCases"][0]["url"] = (
+            "https://www.wowhead.com/guide/classes/warrior/protection/bis-gear"
+        )
+        self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
+
 if __name__ == "__main__":
     unittest.main()
