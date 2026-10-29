@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "auditMethod": "indexed English Wowhead excerpts; direct HTML blocked by JavaScript anti-bot verification; no browser translation output",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpus": {
+    "before": 572,
+    "after": 575,
+    "newHeldoutUrls": [
+      "https://www.wowhead.com/guide/classes/death-knight/blood/tank-leveling-tips",
+      "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/tank-leveling-tips",
+      "https://www.wowhead.com/guide/classes/paladin/protection/tank-leveling-tips"
+    ]
+  },
+  "finding": {
+    "category": "official-blizzard-terminology",
+    "sourcePatterns": [
+      "Apex Talent",
+      "Apex Talents",
+      "Apex talent",
+      "Apex talents"
+    ],
+    "targetLocale": "fr",
+    "officialFrench": "talent(s) de prestige",
+    "officialSource": "https://worldofwarcraft.blizzard.com/fr-fr/news/24244472",
+    "independentGuideChecks": [
+      "Blood Death Knight leveling: Apex talent nodes",
+      "Protection Paladin leveling: Apex talents",
+      "Discipline Priest overview: Apex Talent",
+      "Arcane Mage leveling: Apex talents"
+    ],
+    "fix": "Four case-sensitive phrase mappings in locale-scoped player glossary, not full sentence overrides; standalone Apex untouched",
+    "newExactSentenceOverrides": 0,
+    "extensionCodeChanged": false
+  },
+  "sourceNotes": [
+    "Blood DK guide contains English source typos; do not encode source typos as French overrides.",
+    "Localized Wowhead /fr pages still show English prose with localized spell links; URL locale is not reliable source-language evidence."
+  ],
+  "verification": {
+    "sourceOnly": true,
+    "glossarySelectionTestsAdded": true,
+    "blizzardPhraseMemoryDirectInspection": false,
+    "generatedDatapackRebuildStatus": "pending",
+    "browserRendered": false,
+    "domReconstructionVerified": false,
+    "translatorApiVerified": false,
+    "novelTranslationIssueRate": null,
+    "strictCleanCycle": false
+  }
+}
