@@ -587,6 +587,7 @@
     "A comfortable setup makes it easier to focus on the world and learn at your own speed.": "En adaptant votre environnement de jeu à vos besoins, vous pourrez vous immerger pleinement dans Azeroth et progresser à votre rythme.",
     "A core foundation of World of Warcraft: Forever is serendipitous interactions: the kind of chance encounters that can turn another player on the road from competition for an herb node, mining node, or enemy tag into someone worth stopping for.": "World of Warcraft: Forever repose sur les interactions fortuites, le genre de rencontres opportunes qui font qu’un personnage-joueur rival – pour des herbes, du minerai ou du butin – devient quelqu’un avec qui l’on a envie d’interagir.",
     "A familiar first name can still become distinct when paired with a second name that creates a unique regional combination.": "Un nom courant peut ainsi se démarquer lorsqu’il est associé à un nom secondaire qui rend la combinaison unique dans la région.",
+    "A more traditional presentation with simpler visuals, standard character models, and fewer modern interface features enabled by default for a cleaner, more original-style experience with less automatic guidance.": "Une présentation plus classique offrant des graphismes simplifiés, des modèles de personnages standard et moins de fonctionnalités d’interface modernes activées par défaut. Vous bénéficiez ainsi d’une expérience plus épurée et plus fidèle à l’esprit du jeu d’origine, avec moins d’aide automatique.",
     "A more traditional presentation with simpler visuals, standard character models, and fewere modern interface features enabled by default for a cleaner, more original-style experience with less automatic guidance.": "Une présentation plus classique offrant des graphismes simplifiés, des modèles de personnages standard et moins de fonctionnalités d’interface modernes activées par défaut. Vous bénéficiez ainsi d’une expérience plus épurée et plus fidèle à l’esprit du jeu d’origine, avec moins d’aide automatique.",
     "A name can become more than text over a character’s head; it can become someone you remember from a dungeon run, a difficult quest, a guild recruitment message, a quiet wave on the road, or even a new addition to your friends list.": "Un nom peut devenir bien plus qu’un simple bout de texte au-dessus d’un personnage : il peut évoquer une rencontre dans un donjon, une quête particulièrement ardue, un message de recrutement de guilde, un simple signe de la main, voire un nouveau contact dans votre liste de contacts.",
     "A name is one of the first choices you make when creating a character.": "Le nom est l’un des premiers choix que vous faites lors de la création d’un personnage.",
@@ -4912,7 +4913,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4373,
+  "pair_count": 4374,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -9289,7 +9290,8 @@
     "You can change the selection later or fine-tune your experience in the Options Menu under System – Preset.": "24315643",
     "You can change the selection later or fine-tune your experience in the Options Menu under System – Preset. After your initial log in to the game, you will no longer see this screen.": "24315643",
     "You'll see a second dropdown for each account if you have more than one World of Warcraft account.": "24315643",
-    "Your favorite race or class may still be waiting for you, but WoW: Forever also opens combinations that were not available in original World of Warcraft:": "24315643"
+    "Your favorite race or class may still be waiting for you, but WoW: Forever also opens combinations that were not available in original World of Warcraft:": "24315643",
+    "A more traditional presentation with simpler visuals, standard character models, and fewer modern interface features enabled by default for a cleaner, more original-style experience with less automatic guidance.": "24315643"
   },
   "targetLanguage": "fr-FR"
 }
