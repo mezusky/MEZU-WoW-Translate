@@ -2251,6 +2251,18 @@
     {
       "id": "arcane-mage-tier-set-20261029-pull-timing-heldout",
       "url": "https://www.wowhead.com/guide/classes/mage/arcane/tier-set-bonuses"
+    },
+    {
+      "id": "brewmaster-monk-prepatch-20261029-tier-shorthand-heldout",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/midnight-pre-patch"
+    },
+    {
+      "id": "discipline-priest-prepatch-20261029-tier-shorthand-heldout",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/midnight-pre-patch"
+    },
+    {
+      "id": "survival-hunter-tier-set-20261029-tier-shorthand-heldout",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/tier-set-bonuses"
     }
   ]
 }
