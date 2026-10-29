@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-29",
+  "auditMethod": "indexed-excerpts",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "pages": [
+    {
+      "id": "havoc-demon-hunter-talent-builds-heldout",
+      "role": "dps",
+      "section": "talents",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/talent-builds-pve-dps",
+      "sourceObservation": "Hero-talent choices, copy-build buttons and import codes coexist with explanatory prose. Existing French player glossary covers 'talent builds' and 'funnel damage'; actual ID localization and copy-widget behavior require browser verification."
+    },
+    {
+      "id": "marksmanship-hunter-ui-macros-heldout",
+      "role": "dps",
+      "section": "ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/addons-macro-ui-imports",
+      "sourceObservation": "Executable macro examples contain #showtooltip, /use, /stopmacro and /petattack. These must be preserved verbatim, including conditionals and spell names inside code; existing glossary handles 'mouseover macros' only in prose. Cross-check with Enhancement Shaman and Vengeance Demon Hunter macro guides."
+    },
+    {
+      "id": "restoration-druid-leveling-heldout",
+      "role": "healer",
+      "section": "leveling",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/healer-leveling-tips",
+      "sourceObservation": "Leveling talent order mixes official linked spell names with prose. 'chain pulling' also occurs in Arms Warrior leveling; avoid a bare phrase override until grammatical context is handled generally."
+    }
+  ],
+  "crossPageFindings": [
+    "The indexed English prose and localized spell links on /fr/ and other localized Wowhead views are separate language signals; do not infer source prose language from URL locale.",
+    "The macro code/opaque import content protection problem recurs across Hunter, Shaman and Demon Hunter guides, but the browser DOM and packaged engine cannot be verified from indexed excerpts alone.",
+    "Quality gate now rejects role labels contradicted by explicit pve-role and role-leveling URL slugs, without guessing roles for neutral slugs."
+  ],
+  "fixesApplied": [
+    "Three new unique regression guide URLs added.",
+    "Shared browser quality gate and focused regression tests reject URL role mislabeling."
+  ],
+  "qualitySample": {
+    "cycleId": "2026-10-29-0334-indexed-cross-role",
+    "auditedAt": "2026-10-29T03:34:29+01:00",
+    "newPagesAudited": 3,
+    "novelIssueFamilies": null,
+    "browserVerifiedPages": 0,
+    "auditMethod": "indexed-excerpts",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "crossRoleVerified": false,
+    "unrelatedHeldoutsVerified": false,
+    "strictAuditPassed": false
+  }
+}
