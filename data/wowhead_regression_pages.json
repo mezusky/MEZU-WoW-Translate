@@ -2047,6 +2047,18 @@
     {
       "id": "fury-warrior-midnight-season-2-heldout",
       "url": "https://www.wowhead.com/guide/classes/warrior/fury/midnight-season-2"
+    },
+    {
+      "id": "demonology-warlock-leveling-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/dps-leveling-tips"
+    },
+    {
+      "id": "holy-paladin-leveling-heldout",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/healer-leveling-tips"
+    },
+    {
+      "id": "vengeance-demon-hunter-ui-macros-heldout",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/addons-macro-ui-imports"
     }
   ]
 }
