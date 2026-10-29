@@ -2,7 +2,7 @@
 import json
 import unittest
 from pathlib import Path
-from scripts.locale_glossary import locale_matches, select_jargon, select_locale_data
+from scripts.locale_glossary import locale_matches, select_jargon, select_locale_data, same_base_language
 
 
 class LocaleGlossaryTests(unittest.TestCase):
@@ -29,6 +29,21 @@ class LocaleGlossaryTests(unittest.TestCase):
         self.assertFalse(locale_matches("fr-CA", "fr-FR"))
         with self.assertRaises(ValueError):
             select_jargon(canadian, "en", "fr-FR")
+
+    def test_pack_validator_same_base_language_contract(self):
+        # The same helper is used by data selection and publication validation.
+        # Regional changes must never publish a needless translation pack.
+        for source, target in (("en-US", "en-GB"), ("fr-FR", "fr-CA"),
+                               ("EN_us", "en"), ("pt-BR", "pt-PT")):
+            with self.subTest(source=source, target=target):
+                self.assertTrue(same_base_language(source, target))
+                self.assertEqual(select_locale_data(self.fr, source, target), {})
+        for source, target in (("en-US", "fr-FR"), ("de-DE", "fr-CA"),
+                               ("pt-BR", "es-MX")):
+            with self.subTest(source=source, target=target):
+                self.assertFalse(same_base_language(source, target))
+        with self.assertRaises(ValueError):
+            same_base_language("", "fr")
 
     def test_identical_source_target_skips_translation(self):
         self.assertEqual(select_jargon(self.fr, "fr", "fr"), {})
