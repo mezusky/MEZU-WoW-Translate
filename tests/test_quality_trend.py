@@ -365,5 +365,14 @@ class QualityTrendTests(unittest.TestCase):
                 self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
 
 
+    def test_obsolete_gear_urls_cannot_satisfy_browser_stop_gate(self):
+        sample = report("a")
+        case = sample["qualitySample"]["browserCases"][2]
+        case["url"] = "https://www.wowhead.com/guide/classes/mage/fire/bis-gear"
+        self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
+        case["url"] = "https://www.wowhead.com/guide/classes/mage/fire/bis-gear-pve-dps"
+        self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
+
 if __name__ == "__main__":
     unittest.main()
