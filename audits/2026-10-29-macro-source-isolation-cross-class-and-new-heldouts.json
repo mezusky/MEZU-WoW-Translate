@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-29T04:33:00+01:00",
+  "auditMethod": "indexed-English-source; no browser translation verification",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusCountAfter": 521,
+  "newSourcePages": [
+    {
+      "id": "elemental-shaman-leveling-heldout",
+      "section": "leveling",
+      "role": "dps",
+      "sourceStatus": "indexed"
+    },
+    {
+      "id": "destruction-warlock-ui-macros-heldout",
+      "section": "ui-macros",
+      "role": "dps",
+      "sourceStatus": "indexed"
+    },
+    {
+      "id": "holy-paladin-manaforge-omega-raid-heldout",
+      "section": "raid",
+      "role": "healer",
+      "sourceStatus": "indexed"
+    }
+  ],
+  "crossClassMacroEvidence": [
+    {
+      "class": "priest",
+      "spec": "shadow",
+      "command": "/run",
+      "status": "source-indexed"
+    },
+    {
+      "class": "warlock",
+      "spec": "affliction",
+      "command": "/click",
+      "status": "source-indexed"
+    },
+    {
+      "class": "evoker",
+      "spec": "augmentation",
+      "command": "/tar",
+      "status": "source-indexed"
+    }
+  ],
+  "fix": "Conservative whole-line executable macro filtering for /run, /script, /click, /tar and #show; inline prose mentions remain unchanged.",
+  "scope": "Offline source audit only; does not modify Chrome extension DOM or Translator API behavior.",
+  "regression": "Added two focused tests and repaired a pre-existing conflicting quality-gate fixture that failed CI.",
+  "newManualOverrides": 0,
+  "browserVerifiedPages": 0,
+  "novelIssueRate": null,
+  "strictCleanCycle": false,
+  "remaining": [
+    "Direct Wowhead HTML blocked by JavaScript challenge; indexed English excerpts only",
+    "Actual browser translated French, official ID substitutions, DOM/rich text and Translator API require browser verification"
+  ]
+}
