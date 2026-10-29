@@ -42,7 +42,7 @@
     },
     {
       "id": "windwalker-monk-gear",
-      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/bis-gear-pve-dps"
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/bis-gear"
     },
     {
       "id": "blood-death-knight-mythic-plus",
@@ -54,7 +54,7 @@
     },
     {
       "id": "holy-paladin-gear",
-      "url": "https://www.wowhead.com/guide/classes/paladin/holy/bis-gear-pve-healer"
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/bis-gear"
     },
     {
       "id": "preservation-evoker-consumables",
@@ -146,7 +146,7 @@
     },
     {
       "id": "demonology-warlock-gear",
-      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/bis-gear-pve-dps"
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/bis-gear"
     },
     {
       "id": "holy-paladin-mythic-plus",
@@ -2203,6 +2203,10 @@
     {
       "id": "havoc-demon-hunter-midnight-prepatch-20261029-heldout",
       "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/midnight-pre-patch"
+    },
+    {
+      "id": "enhancement-shaman-overview-20261029-heldout",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/overview-pve-dps"
     }
   ]
 }
