@@ -2071,6 +2071,18 @@
     {
       "id": "restoration-druid-leveling-heldout",
       "url": "https://www.wowhead.com/guide/classes/druid/restoration/healer-leveling-tips"
+    },
+    {
+      "id": "elemental-shaman-leveling-heldout",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/dps-leveling-tips"
+    },
+    {
+      "id": "destruction-warlock-ui-macros-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/addons-macro-ui-imports"
+    },
+    {
+      "id": "holy-paladin-manaforge-omega-raid-heldout",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/manaforge-omega-raid-tips"
     }
   ]
 }
