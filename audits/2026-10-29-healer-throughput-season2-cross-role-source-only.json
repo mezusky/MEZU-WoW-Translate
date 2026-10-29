@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-29T12:34:00+01:00",
+  "auditMethod": "source-only; live Wowhead search index and JS-limited direct pages; not browser-rendered",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/midnight-season-2",
+      "role": "tank",
+      "section": "season2-overview",
+      "observations": [
+        "Tank healing and mitigation terminology; Soul Cleave, Frailty, Fiery Brand require canonical ID checks",
+        "Talent build import widgets and stat priority configuration are not prose"
+      ]
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/midnight-season-2",
+      "role": "healer",
+      "section": "season2-overview",
+      "observations": [
+        "Burst healing throughput and spot healing recur across unrelated healer sources",
+        "Echo, Reversion, Living Flame and tier bonuses require canonical ID checks"
+      ]
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/midnight-season-2",
+      "role": "dps",
+      "section": "season2-overview",
+      "observations": [
+        "Hot Streak, Heating Up, Pyroblast and Combustion require official localized IDs",
+        "Stat widget formulas and build imports must remain non-prose"
+      ]
+    }
+  ],
+  "crossGuideTerminology": [
+    {
+      "source": "healing throughput",
+      "target": "volume de soins",
+      "evidence": [
+        "Preservation Evoker Season 2",
+        "Healer Raid Rankings Season 2"
+      ],
+      "layer": "fr player jargon"
+    },
+    {
+      "source": "healing output",
+      "target": "volume de soins",
+      "evidence": [
+        "Restoration Shaman Mythic+ Season 2",
+        "Restoration Shaman Season 2"
+      ],
+      "layer": "fr player jargon"
+    }
+  ],
+  "sourceOnlyMetrics": {
+    "newPages": 3,
+    "newSourcePatternFamilies": 1,
+    "reusableGlossaryTermsAdded": 2,
+    "manualOverridesAdded": 0,
+    "browserVerifiedPages": 0,
+    "browserNovelIssueRate": null
+  },
+  "validationLimits": [
+    "Live Wowhead URL access often requires JavaScript; indexed content may not match live rendered page revision",
+    "New jargon entries are source-grounded Data Pack inputs; published Data Pack and Chrome output require CI/browser verification",
+    "No Chrome Translator API or rich-text DOM reconstruction was run; no quality cycle counted",
+    "Official spell/item/talent names must be checked against canonical Blizzard IDs rather than guessed from prose"
+  ]
+}
