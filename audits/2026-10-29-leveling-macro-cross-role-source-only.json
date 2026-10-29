@@ -1,0 +1,51 @@
+{
+  "date": "2026-10-29",
+  "auditMethod": "indexed-excerpts",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "pages": [
+    {
+      "id": "demonology-warlock-leveling-heldout",
+      "role": "dps",
+      "section": "leveling",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/dps-leveling-tips",
+      "sourceObservation": "Talent ordering and spell names appear interleaved with prose; dynamic build UI needs browser verification."
+    },
+    {
+      "id": "holy-paladin-leveling-heldout",
+      "role": "healer",
+      "section": "leveling",
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/healer-leveling-tips",
+      "sourceObservation": "Spell priority, talent import widgets and class/hero/spec tree labels require entity ID resolution and DOM checks."
+    },
+    {
+      "id": "vengeance-demon-hunter-ui-macros-heldout",
+      "role": "tank",
+      "section": "ui-macros",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/addons-macro-ui-imports",
+      "sourceObservation": "Macro /cast directives, conditional syntax, /cqs and opaque CDM/UI import strings are executable user content and must remain unchanged by prose translation."
+    }
+  ],
+  "crossPageFindings": [
+    "Wowhead localized source views can display localized spell entities alongside English explanatory prose; page URL locale is not a reliable source-language signal.",
+    "Do not treat text extracted from interactive build calculators or copied macro strings as ordinary translatable prose.",
+    "Indexed snippets cannot verify browser Translator API output, DOM structure, widget behavior or the effectiveness of the current MEZU Data Pack."
+  ],
+  "fixesApplied": [
+    "Browser quality gate now validates claimed class and spec against the actual guide URL.",
+    "Three independent role/section heldouts added to the regression corpus."
+  ],
+  "qualitySample": {
+    "cycleId": "2026-10-29-0240-indexed-heldouts",
+    "auditedAt": "2026-10-29T02:40:27+01:00",
+    "newPagesAudited": 3,
+    "novelIssueFamilies": null,
+    "browserVerifiedPages": 0,
+    "auditMethod": "indexed-excerpts",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "crossRoleVerified": false,
+    "unrelatedHeldoutsVerified": false,
+    "strictAuditPassed": false
+  }
+}
