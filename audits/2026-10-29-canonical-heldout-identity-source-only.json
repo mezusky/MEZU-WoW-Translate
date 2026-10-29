@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-29T01:32:57+01:00",
+  "auditMethod": "indexed-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "browserRenderedPagesVerified": 0,
+  "qualitySample": null,
+  "corpus": {
+    "before": 509,
+    "after": 512,
+    "newPages": [
+      {
+        "id": "restoration-shaman-midnight-season-2-heldout",
+        "role": "healer",
+        "section": "season-overview",
+        "url": "https://www.wowhead.com/guide/classes/shaman/restoration/midnight-season-2",
+        "observed": "Tier-set descriptions, stat and talent summaries, raid/M+ build tables; official spell names need ID-based localization"
+      },
+      {
+        "id": "devourer-demon-hunter-midnight-season-2-heldout",
+        "role": "dps",
+        "section": "season-overview",
+        "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/midnight-season-2",
+        "observed": "Opaque stat-guide widget and item/spell names; keep widget configuration out of prose translation"
+      },
+      {
+        "id": "fury-warrior-midnight-season-2-heldout",
+        "role": "dps",
+        "section": "season-overview",
+        "url": "https://www.wowhead.com/guide/classes/warrior/fury/midnight-season-2",
+        "observed": "Build import controls and editorial template text; avoid replacing executable or author-only content"
+      }
+    ]
+  },
+  "crossPageObservations": [
+    {
+      "type": "mixed-locale-source",
+      "example": "/fr/guide/classes/demon-hunter/devourer/mythic-plus-dungeon-tips",
+      "observation": "English guide prose appears alongside French spell names; URL locale alone is not source-language evidence",
+      "status": "source-only"
+    },
+    {
+      "type": "repeatable-phrase",
+      "examples": [
+        "warrior/fury/midnight-season-2",
+        "warrior/arms/midnight-season-2"
+      ],
+      "observation": "Avoid Downtime and Keep Abilities on cooldown recur, but no new glossary entry until independent cross-class validation",
+      "status": "held-for-validation"
+    },
+    {
+      "type": "canonical-audit-identity",
+      "observation": "Quality gate now treats query/hash/trailing-slash and /fr/guide variants as the same guide for cross-cycle heldouts",
+      "status": "code-and-tests-committed"
+    }
+  ],
+  "validation": {
+    "chromeTranslatorApi": "not-verified",
+    "domReconstruction": "not-verified",
+    "novelIssueRate": null,
+    "githubActions": "pending"
+  }
+}
