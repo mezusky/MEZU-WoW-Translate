@@ -2059,6 +2059,18 @@
     {
       "id": "vengeance-demon-hunter-ui-macros-heldout",
       "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/addons-macro-ui-imports"
+    },
+    {
+      "id": "havoc-demon-hunter-talent-builds-heldout",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/talent-builds-pve-dps"
+    },
+    {
+      "id": "marksmanship-hunter-ui-macros-heldout",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/addons-macro-ui-imports"
+    },
+    {
+      "id": "restoration-druid-leveling-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/healer-leveling-tips"
     }
   ]
 }
