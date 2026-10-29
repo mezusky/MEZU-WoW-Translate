@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-29T08:36:05+01:00",
+  "auditMethod": "indexed-English-source; direct Wowhead HTML challenged; no Chrome translation output",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusCountAfter": 533,
+  "newSourcePages": [
+    {
+      "id": "protection-paladin-midnight-season-2-20261029-heldout",
+      "role": "tank",
+      "section": "season-2-overview",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/paladin/protection/midnight-season-2",
+      "evidence": "Defensive cooldown planning, resource overcap, talent import controls and official spell links"
+    },
+    {
+      "id": "outlaw-rogue-midnight-season-2-20261029-heldout",
+      "role": "dps",
+      "section": "season-2-overview",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/rogue/outlaw/midnight-season-2",
+      "evidence": "High-APM rotation, procs, combo points, stat tables, hero talents and import controls"
+    },
+    {
+      "id": "affliction-warlock-midnight-season-2-20261029-heldout",
+      "role": "dps",
+      "section": "season-2-overview",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/warlock/affliction/midnight-season-2",
+      "evidence": "DoT ramp, shard economy, AoE versus single-target, set bonuses and talent import controls"
+    }
+  ],
+  "crossPageFindings": [
+    {
+      "pattern": "Regional locale tags with identical base language were incorrectly accepted as translation in quality_trend.py",
+      "action": "Use generic base-language comparison in stop gate; add same-language and different-language regional tests",
+      "verification": "Offline test cases committed; GitHub Actions result must be checked"
+    },
+    {
+      "pattern": "Wowhead source-index excerpts may include UI widget labels, missing embedded spell names and source typos",
+      "action": "Do not count these as browser translation or DOM failures; retain code/import protections and verify in Chrome later"
+    },
+    {
+      "pattern": "Existing WoW-player glossary covers overcap, proc reactions, ramp and damage intake across these unrelated pages",
+      "action": "Reuse existing locale jargon rather than adding speculative exact sentence overrides"
+    }
+  ],
+  "changes": [
+    "One multilingual quality gate correction and two focused tests",
+    "Three indexed current-season source holdouts",
+    "Quality audit documentation updated"
+  ],
+  "newManualOverrides": 0,
+  "browserVerifiedPages": 0,
+  "novelIssueRate": null,
+  "strictCleanCycle": false,
+  "limitations": [
+    "Direct Wowhead HTML requested via assistant web access returned JavaScript anti-bot verification; indexed source excerpts were inspected instead",
+    "No browser-local Translator API output or DOM reconstruction inspected",
+    "No quantitative novel translation issue rate measured; not a clean quality cycle"
+  ]
+}
