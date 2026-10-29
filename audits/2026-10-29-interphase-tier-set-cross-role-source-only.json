@@ -1,0 +1,67 @@
+{
+  "auditId": "2026-10-29-interphase-tier-set-cross-role",
+  "method": "indexed-english-source-excerpts-and-accessible-localized-wowhead-prose",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourceEvidence": [
+    {
+      "guide": "https://www.wowhead.com/guide/classes/warrior/fury/midnight-season-2-raid-tips",
+      "finding": "Warrior raid guide uses 'during the intermission' when bosses take reduced damage"
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/mage/frost/midnight-season-2-raid-tips",
+      "finding": "Independent Mage raid guide repeatedly uses 'During the intermission' and 'In the intermission' for boss transition phases"
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/priest/holy/midnight-season-2-raid-tips",
+      "finding": "Healer raid guide uses 'In the intermission part'—intentionally not targeted by the short exact phrase rule"
+    }
+  ],
+  "newHeldouts": [
+    {
+      "id": "protection-warrior-tier-set-20261029-heldout",
+      "role": "tank",
+      "section": "tier-set",
+      "risk": "Official set item names by ID, 2pc/4pc bonuses and passive procs"
+    },
+    {
+      "id": "discipline-priest-tier-set-20261029-heldout",
+      "role": "healer",
+      "section": "tier-set",
+      "risk": "Atonement, tier item names and grammatical off-piece wording"
+    },
+    {
+      "id": "augmentation-evoker-tier-set-20261029-heldout",
+      "role": "dps",
+      "section": "tier-set",
+      "risk": "Ebon Might and Duplicate spell IDs, Empower effects, and target-locale names"
+    }
+  ],
+  "fixes": [
+    "Two reusable French raid interphase phrases added to locale-scoped glossary; no generic intermission override",
+    "Three distinct cross-role tier-set pages added to regression corpus, now 557 unique URLs",
+    "Glossary regression test ensures no manual-override duplication and leaves generic intermission to prose translation"
+  ],
+  "sourceContentIssues": [
+    "Tier-set guides describe Midnight Season 1 while some link labels refer to Season 2; preserve original meaning, do not hide source inconsistency with MEZU overrides",
+    "Localized Wowhead guide prose can remain English while linked spells and items are localized; do not infer source language from URL"
+  ],
+  "limits": [
+    "Canonical English Wowhead HTML may require JavaScript verification; accessible indexed and localized English-prose excerpts are source-only evidence",
+    "No measured browser-rendered MEZU French output, Translator API behavior, DOM reconstruction or novel-issue rate",
+    "Tier-set bonus item names and source typos cannot be validated from plain indexed excerpts alone"
+  ],
+  "qualitySample": {
+    "cycleId": "2026-10-29-interphase-tier-set-source-only",
+    "auditedAt": "2026-10-29T16:35:56+01:00",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "newPagesAudited": 3,
+    "novelIssueFamilies": null,
+    "browserVerifiedPages": 0,
+    "auditMethod": "indexed-excerpts",
+    "crossRoleVerified": false,
+    "unrelatedHeldoutsVerified": false,
+    "strictAuditPassed": false
+  }
+}
