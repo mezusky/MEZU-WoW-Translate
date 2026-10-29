@@ -244,7 +244,11 @@
     "Self Dispel": "Dissipation sur soi-même",
     "During the intermission,": "Pendant l’interphase,",
     "during the intermission,": "pendant l’interphase,",
-    "In the intermission,": "Pendant l’interphase,"
+    "In the intermission,": "Pendant l’interphase,",
+    "Before pull,": "Avant le pull,",
+    "As pull starts,": "Au pull,",
+    "before the pull": "avant le pull",
+    "on the pull": "au pull"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
