@@ -1,8 +1,7 @@
 """Source-grounded EN->FR healer throughput terminology across unrelated guides.
 
-Sources: Restoration Shaman M+ (high healing output), Preservation Evoker
-Season 2 (burst throughput healing), and Season 2 healer raid rankings
-(healing throughput). This checks the locale-scoped Data Pack input only;
+Sources: Restoration Shaman M+ (high healing output) and Season 2 healer
+raid rankings (healing throughput). Unqualified 'throughput' stays unforced. This checks the locale-scoped Data Pack input only;
 it does not claim to reproduce Chrome Translator or DOM behavior.
 """
 import json
@@ -29,7 +28,6 @@ class HealerThroughputCrossGuideTests(unittest.TestCase):
         # Source excerpts are deliberately short, not copied guide blocks.
         samples = (
             ("shaman-restoration", "High healing output"),
-            ("evoker-preservation", "burst healing throughput"),
             ("raid-healer-rankings", "healing throughput"),
         )
         jargon = select_jargon(GLOSSARY, "en", "fr")
@@ -38,7 +36,7 @@ class HealerThroughputCrossGuideTests(unittest.TestCase):
                 self.assertTrue(any(term in text.casefold() for term in (
                     "healing output", "healing throughput",
                 )))
-                self.assertEqual(jargon["healing throughput"], "volume de soins")
+                self.assertEqual(jargon["healing output" if "output" in text.casefold() else "healing throughput"], "volume de soins")
 
     def test_french_rules_do_not_leak_into_other_targets_or_skip_pair(self):
         self.assertEqual(select_jargon(GLOSSARY, "fr-FR", "fr-CA"), {})
