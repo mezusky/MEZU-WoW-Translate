@@ -144,6 +144,20 @@ class QualityTrendTests(unittest.TestCase):
         )
         self.assertEqual(summarize([first, second])["consecutiveStrictCleanCycles"], 1)
 
+        # A different target locale is still the same source guide.
+        second["qualitySample"]["browserCases"][0]["url"] = (
+            first["qualitySample"]["browserCases"][0]["url"]
+            .replace("/guide/", "/mx/guide/")
+        )
+        self.assertEqual(summarize([first, second])["consecutiveStrictCleanCycles"], 1)
+
+        # PTR content can differ from retail, so retain its namespace.
+        second["qualitySample"]["browserCases"][0]["url"] = (
+            first["qualitySample"]["browserCases"][0]["url"]
+            .replace("/guide/", "/ptr/guide/")
+        )
+        self.assertEqual(summarize([first, second])["consecutiveStrictCleanCycles"], 2)
+
     def test_non_wowhead_host_cannot_supply_browser_evidence(self):
         for invalid in (
             "https://www.wowhead.com.evil.test/guide/classes/warrior/protection/rotation",
