@@ -49,5 +49,18 @@
     "translatorApiVerified": false,
     "novelTranslationIssueRate": null,
     "strictCleanCycle": false
+  },
+  "additionalFinding": {
+    "category": "official-class-resource-terminology",
+    "source": "Runic Power",
+    "target": "Puissance runique",
+    "officialSource": "https://worldofwarcraft.blizzard.com/fr-fr/game/classes/death-knight",
+    "independentGuideChecks": [
+      "Blood Death Knight leveling",
+      "Frost Death Knight abilities",
+      "Unholy Death Knight abilities"
+    ],
+    "fix": "Two case-aware locale-scoped phrase mappings; do not globally translate the word Power",
+    "newExactSentenceOverrides": 0
   }
 }
