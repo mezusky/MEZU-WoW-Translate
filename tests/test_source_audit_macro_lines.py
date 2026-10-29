@@ -122,5 +122,37 @@ class MacroAuditTests(unittest.TestCase):
         self.assertEqual(clean_non_prose("/consoleexample is not a command."), "/consoleexample is not a command.")
 
 
+    def test_run_click_and_tar_are_executable_not_guide_prose(self):
+        # Indexed Shadow Priest (PI macro), Evoker (Rescue) and Warlock
+        # macro guides contain these commands; their Lua must not be learned.
+        examples = (
+            ("Shadow Priest", '/run local n=UnitName("target") or "player"'),
+            ("Affliction Warlock", "/click StaticPopup1Button1"),
+            ("Augmentation Evoker", "/tar [@focus]"),
+            ("Warlock script alias", "/script SetRaidTarget('target', 1)"),
+            ("Tooltip directive", "#show Power Infusion"),
+        )
+        for guide, command in examples:
+            with self.subTest(guide=guide):
+                source = "Explain the macro before use.\\n" + command + (
+                    "\\nThe next paragraph is ordinary English guide prose."
+                )
+                cleaned = clean_non_prose(source)
+                self.assertNotIn(command, cleaned)
+                self.assertIn("Explain the macro before use.", cleaned)
+                self.assertIn("The next paragraph is ordinary English", cleaned)
+
+    def test_inline_macro_documentation_and_prefixes_remain_visible(self):
+        # A command mention inside prose is not an executable directive.
+        text = (
+            "Type /run or /click in the macro editor.\\n"
+            "Use /tar to select a focus target.\\n"
+            "/runner is not a supported macro directive.\\n"
+            "/clickable is not a supported macro directive."
+        )
+        self.assertEqual(clean_non_prose(text), text)
+
+
+
 if __name__ == "__main__":
     unittest.main()
