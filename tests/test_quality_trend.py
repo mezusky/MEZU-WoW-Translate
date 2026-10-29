@@ -165,6 +165,26 @@ class QualityTrendTests(unittest.TestCase):
         )
         self.assertEqual(summarize([first, second])["consecutiveStrictCleanCycles"], 2)
 
+    def test_future_numbered_ptr_namespaces_are_not_locales(self):
+        # /ptr-12/ is a source-content namespace, not a regional locale.
+        # Collapsing it to retail would undercount independent audits.
+        from quality_trend import _canonical_guide_url
+        base = "https://www.wowhead.com/guide/classes/warrior/protection/rotation"
+        self.assertEqual(_canonical_guide_url(base.replace("/guide/", "/fr/guide/")), base)
+        self.assertEqual(_canonical_guide_url(base.replace("/guide/", "/en-US/guide/")), base)
+        for namespace in ("ptr", "ptr-2", "ptr-12", "ptr-123"):
+            with self.subTest(namespace=namespace):
+                variant = base.replace("/guide/", f"/{namespace}/guide/")
+                self.assertEqual(_canonical_guide_url(variant), variant)
+
+        first, second = report("a"), report("b")
+        first_case = first["qualitySample"]["browserCases"][0]
+        second_case = second["qualitySample"]["browserCases"][0]
+        for key in ("wowClass", "spec", "role", "section"):
+            second_case[key] = first_case[key]
+        second_case["url"] = first_case["url"].replace("/guide/", "/ptr-12/guide/")
+        self.assertEqual(summarize([first, second])["consecutiveStrictCleanCycles"], 2)
+
     def test_browser_case_class_and_spec_must_match_actual_guide_path(self):
         # Distinct URLs and a declared three-role mix are not enough if the
         # class/spec evidence labels do not describe the verified page.
