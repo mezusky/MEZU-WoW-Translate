@@ -2227,6 +2227,18 @@
     {
       "id": "augmentation-evoker-tier-set-20261029-heldout",
       "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/tier-set-bonuses"
+    },
+    {
+      "id": "protection-paladin-tier-set-20261029-cross-role-heldout",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/tier-set-bonuses"
+    },
+    {
+      "id": "restoration-druid-season2-20261029-cross-role-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/midnight-season-2"
+    },
+    {
+      "id": "arcane-mage-season2-20261029-cross-role-heldout",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/midnight-season-2"
     }
   ]
 }
