@@ -234,7 +234,10 @@
     "mainstat": "stat principale",
     "Simulate Your Character Now": "Simulez votre personnage dès maintenant",
     "healing throughput": "volume de soins",
-    "healing output": "volume de soins"
+    "healing output": "volume de soins",
+    "self-dispel": "dissipation sur soi-même",
+    "self-dispels": "dissipations sur soi-même",
+    "Self Dispel": "Dissipation sur soi-même"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
