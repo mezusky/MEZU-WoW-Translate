@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-29T05:33:55+01:00",
+  "auditMethod": "indexed-English-source; no browser translation verification",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusCountAfter": 524,
+  "newSourcePages": [
+    {
+      "id": "frost-death-knight-ui-macros-heldout",
+      "role": "dps",
+      "section": "ui-macros",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/death-knight/frost/addons-macro-ui-imports"
+    },
+    {
+      "id": "demonology-warlock-ui-macros-heldout",
+      "role": "dps",
+      "section": "ui-macros",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/warlock/demonology/addons-macro-ui-imports"
+    },
+    {
+      "id": "assassination-rogue-ui-macros-heldout",
+      "role": "dps",
+      "section": "ui-macros",
+      "sourceStatus": "indexed-localized-and-english-title",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/rogue/assassination/addons-macro-ui-imports"
+    }
+  ],
+  "crossPagePattern": [
+    {
+      "source": "targeting reticle",
+      "target": "réticule de ciblage",
+      "evidence": "Restoration Shaman UI/Macros and other reticle-targeting guides"
+    },
+    {
+      "source": "reticle based abilities",
+      "target": "capacités à ciblage au sol",
+      "evidence": "Discipline Priest UI/Macros; Demonology Warlock uses analogous reticle-on-ground prose"
+    }
+  ],
+  "changes": [
+    "Two locale-tagged, reusable French glossary phrases; no full-sentence override or extension change",
+    "Three new independent spec-level UI/Macros heldouts",
+    "Cross-class tests keep executable macro lines out of source-only prose"
+  ],
+  "newManualOverrides": 0,
+  "browserVerifiedPages": 0,
+  "novelIssueRate": null,
+  "strictCleanCycle": false,
+  "limitations": [
+    "Direct Wowhead HTML can require JavaScript verification; English source checked through indexed excerpts",
+    "No claim of Chrome Translator API output, DOM/rich-text correctness or official ID resolution",
+    "Source-indexed pages are not counted as browser-verified quality cycles"
+  ]
+}
