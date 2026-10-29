@@ -343,5 +343,27 @@ class QualityTrendTests(unittest.TestCase):
         self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
 
 
+    def test_prepatch_section_grounded_across_tank_healer_dps(self):
+        # Independent Guardian Druid, Holy Priest and Havoc DH pre-patch
+        # guides use the same real slug; a declared section must match it.
+        examples = (
+            ("druid", "guardian", "tank"),
+            ("priest", "holy", "healer"),
+            ("demon-hunter", "havoc", "dps"),
+        )
+        for cls, spec, role in examples:
+            with self.subTest(cls=cls, spec=spec):
+                sample = report("a")
+                case = sample["qualitySample"]["browserCases"][0]
+                case.update({
+                    "url": f"https://www.wowhead.com/guide/classes/{cls}/{spec}/midnight-pre-patch",
+                    "wowClass": cls, "spec": spec, "role": role,
+                    "section": "prepatch",
+                })
+                self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
+                case["section"] = "rotation"
+                self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
+
 if __name__ == "__main__":
     unittest.main()
