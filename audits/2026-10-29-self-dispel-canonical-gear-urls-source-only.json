@@ -1,0 +1,76 @@
+{
+  "auditId": "2026-10-29-self-dispel-canonical-gear-urls-cross-section",
+  "method": "indexed-wowhead-english-source-excerpts-and-github-source-review",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourceEvidence": [
+    {
+      "guide": "https://www.wowhead.com/guide/classes/monk/mistweaver/overview-pve-healer",
+      "finding": "Noun self-dispels and self-dispel used for Dwarf racial abilities; separate from spell names"
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/monk/windwalker/overview-pve-dps",
+      "finding": "Independent DPS spec uses noun self-dispel for Stoneform utility"
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/monk/mistweaver/mythic-plus-dungeon-tips",
+      "finding": "Verbal self-dispelled used in dungeon tips; intentionally left to prose translator"
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/monk/mistweaver/bis-gear",
+      "finding": "Live indexed gear guide uses canonical /bis-gear slug, not legacy /bis-gear-pve-healer"
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/warrior/protection/bis-gear",
+      "finding": "Independent tank gear guide also uses canonical /bis-gear slug"
+    }
+  ],
+  "newHeldouts": [
+    {
+      "id": "enhancement-shaman-overview-20261029-heldout",
+      "role": "dps",
+      "section": "overview",
+      "risk": "Maelstrom Weapon official ID mappings and source author typos"
+    },
+    {
+      "id": "demonology-warlock-overview-20261029-heldout",
+      "role": "dps",
+      "section": "overview",
+      "risk": "Soul Shards, demon names and cooldown-window prose"
+    },
+    {
+      "id": "windwalker-monk-talents-20261029-heldout",
+      "role": "dps",
+      "section": "talents",
+      "risk": "Talent export widgets and rich-text reconstruction"
+    }
+  ],
+  "alreadyPresentCrossRolePages": [
+    "https://www.wowhead.com/guide/classes/evoker/preservation/midnight-pre-patch",
+    "https://www.wowhead.com/guide/classes/warrior/protection/midnight-pre-patch"
+  ],
+  "fixes": [
+    "Repaired three legacy corpus gear URLs for Windwalker Monk, Holy Paladin, and Demonology Warlock to /bis-gear",
+    "Added three locale-scoped noun mappings for self-dispel/self-dispels/Self Dispel; no conjugated-verb override",
+    "Added local corpus URL and locale-isolation regression tests; no browser extension code changed"
+  ],
+  "limits": [
+    "Indexed source excerpts only; direct Wowhead HTML may return JavaScript anti-bot verification",
+    "No browser-rendered EN->FR translation audit; no measured novel issue rate",
+    "Browser Translator API and DOM reconstruction remain browser-only verification items",
+    "Live source typos and missing rendered Wowhead widgets are not MEZU translation failures"
+  ],
+  "qualitySample": {
+    "cycleId": "2026-10-29-self-dispel-gear-url-source-only",
+    "auditedAt": "2026-10-29T15:33:50+01:00",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "newPagesAudited": 3,
+    "novelIssueFamilies": null,
+    "browserVerifiedPages": 0,
+    "auditMethod": "indexed-excerpts",
+    "crossRoleVerified": false,
+    "unrelatedHeldoutsVerified": false,
+    "strictAuditPassed": false
+  }
+}
