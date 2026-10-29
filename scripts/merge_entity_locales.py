@@ -19,10 +19,18 @@ def merge_verified_locale_refresh(previous, fresh, source_key, target_key):
     """
     if source_key == target_key:
         raise ValueError("Source and target keys must differ")
+    # A locale key with an empty/whitespace-only value is not a fresh
+    # translation. Otherwise a renamed source can be paired with the old
+    # target name retained by merge_rows, publishing a false official pair.
+    def complete_pair(names):
+        return all(
+            isinstance(names.get(locale), str) and names[locale].strip()
+            for locale in (source_key, target_key)
+        )
+
     accepted = {
         key: names for key, names in fresh.items()
-        if key not in previous or
-        (source_key in names and target_key in names)
+        if key not in previous or complete_pair(names)
     }
     return merge_rows(previous, accepted)
 
