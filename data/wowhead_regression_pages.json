@@ -2131,6 +2131,18 @@
     {
       "id": "affliction-warlock-midnight-season-2-20261029-heldout",
       "url": "https://www.wowhead.com/guide/classes/warlock/affliction/midnight-season-2"
+    },
+    {
+      "id": "blood-death-knight-midnight-prepatch-20261029-heldout",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/midnight-pre-patch"
+    },
+    {
+      "id": "mistweaver-monk-midnight-prepatch-20261029-heldout",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/midnight-pre-patch"
+    },
+    {
+      "id": "augmentation-evoker-midnight-prepatch-20261029-heldout",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/midnight-pre-patch"
     }
   ]
 }
