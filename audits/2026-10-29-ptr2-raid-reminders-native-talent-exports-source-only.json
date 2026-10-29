@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-29T11:36:27+01:00",
+  "auditMethod": "source-only; indexed Wowhead text and direct JS-limited page view; not browser-rendered",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/ptr-2/guide/classes/paladin/protection/midnight-season-2-raid-tips",
+      "role": "tank",
+      "section": "raid",
+      "observations": [
+        "English boss tactics and named defensive abilities",
+        "import-build table"
+      ]
+    },
+    {
+      "url": "https://www.wowhead.com/ptr-2/guide/classes/priest/holy/midnight-season-2-raid-tips",
+      "role": "healer",
+      "section": "raid",
+      "observations": [
+        "Northern Sky Raid Tools reminder records",
+        "multiword encounter names",
+        "both time;ph and ph;time event orders in indexed source"
+      ]
+    },
+    {
+      "url": "https://www.wowhead.com/ptr-2/guide/classes/warlock/destruction/midnight-season-2-raid-tips",
+      "role": "dps",
+      "section": "raid",
+      "observations": [
+        "bare native WoW talent build import tokens",
+        "English boss tactic prose"
+      ]
+    }
+  ],
+  "sharedSourceAuditFixes": [
+    "Exclude complete reordered raid-reminder events and multiword headers without suppressing adjacent prose",
+    "Exclude long native talent-import payloads without suppressing ordinary text"
+  ],
+  "validationLimits": [
+    "Direct Wowhead view is JavaScript-limited and may be older than search index",
+    "Chrome Translator API, final French output, DOM preservation, and live import behavior remain browser-only",
+    "No browser quality cycle counted; no sentence overrides added"
+  ]
+}
