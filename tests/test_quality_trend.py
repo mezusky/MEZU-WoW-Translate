@@ -158,6 +158,33 @@ class QualityTrendTests(unittest.TestCase):
         )
         self.assertEqual(summarize([first, second])["consecutiveStrictCleanCycles"], 2)
 
+    def test_browser_case_class_and_spec_must_match_actual_guide_path(self):
+        # Distinct URLs and a declared three-role mix are not enough if the
+        # class/spec evidence labels do not describe the verified page.
+        for key, value in (
+            ("wowClass", "priest"),
+            ("spec", "fury"),
+        ):
+            with self.subTest(key=key):
+                sample = report("a")
+                sample["qualitySample"]["browserCases"][0][key] = value
+                self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
+        # A URL on Wowhead that is not a class/spec guide cannot impersonate
+        # a class guide merely by declaring plausible metadata.
+        sample = report("a")
+        sample["qualitySample"]["browserCases"][0]["url"] = (
+            "https://www.wowhead.com/guide/midnight/mythic-plus-season-overview"
+        )
+        self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
+        # PTR namespaces remain supported as independent source variants.
+        sample = report("a")
+        sample["qualitySample"]["browserCases"][0]["url"] = (
+            "https://www.wowhead.com/ptr-2/guide/classes/warrior/protection/rotation"
+        )
+        self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
     def test_non_wowhead_host_cannot_supply_browser_evidence(self):
         for invalid in (
             "https://www.wowhead.com.evil.test/guide/classes/warrior/protection/rotation",
