@@ -38,9 +38,9 @@
     }
   ],
   "fixes": [
-    "Two reusable French raid interphase phrases added to locale-scoped glossary; no generic intermission override",
+    "Three punctuation-bound French raid interphase phrases added to locale-scoped glossary; generic noun and unpunctuated prefixes deliberately excluded",
     "Three distinct cross-role tier-set pages added to regression corpus, now 557 unique URLs",
-    "Glossary regression test ensures no manual-override duplication and leaves generic intermission to prose translation"
+    "Glossary regression test prevents partial 'In the intermission part' substitutions and manual-override duplication"
   ],
   "sourceContentIssues": [
     "Tier-set guides describe Midnight Season 1 while some link labels refer to Season 2; preserve original meaning, do not hide source inconsistency with MEZU overrides",
