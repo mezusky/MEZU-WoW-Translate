@@ -1,0 +1,60 @@
+{
+  "auditId": "2026-10-29-tier-bonus-shorthand-cross-role-source-only",
+  "auditedAt": "2026-10-29",
+  "method": "Live English Wowhead indexed excerpts; browser Translator API and DOM not verified; GitHub Actions does not fetch Wowhead",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourceEvidence": [
+    {
+      "guide": "https://www.wowhead.com/guide/classes/evoker/preservation/tier-set-bonuses",
+      "finding": "Healer guide uses '2pc bonus' as ordinary prose; distinct from structured 2pc class-set labels."
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/death-knight/blood/tier-set-bonuses",
+      "finding": "Tank guide includes 2pc/4pc structured set labels and separate prose; do not replace bare numeric labels."
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/hunter/survival/tier-set-bonuses",
+      "finding": "Independent DPS guide uses official class-set 2pc/4pc labels, confirming need to preserve those identifiers."
+    }
+  ],
+  "fixes": [
+    "Add '2pc bonus' and '4pc bonus' as locale-scoped prose shorthand matching existing 2-set/4-set bonus rules.",
+    "Regression tests protect bare structured labels and prevent cross-locale leakage; no new manual sentence overrides."
+  ],
+  "newHeldouts": [
+    {
+      "id": "brewmaster-monk-prepatch-20261029-tier-shorthand-heldout",
+      "role": "tank",
+      "section": "prepatch"
+    },
+    {
+      "id": "discipline-priest-prepatch-20261029-tier-shorthand-heldout",
+      "role": "healer",
+      "section": "prepatch"
+    },
+    {
+      "id": "survival-hunter-tier-set-20261029-tier-shorthand-heldout",
+      "role": "dps",
+      "section": "tier-set"
+    }
+  ],
+  "sourceOnlyFindings": [
+    "Brewmaster prepatch guide's cheat sheet refers to Season 2; treat this as upstream content, not a MEZU mistranslation.",
+    "Discipline prepatch and Survival tier guides mix ordinary prose, structured widgets, and official spell/item names; ID-backed localization remains necessary.",
+    "Search-index rendering can expose markup fragments or omit embedded entities; no browser DOM reconstruction result is claimed."
+  ],
+  "qualitySample": {
+    "cycleId": "2026-10-29-tier-bonus-shorthand-cross-role-source-only",
+    "auditedAt": "2026-10-29T19:39:49+01:00",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "newPagesAudited": 3,
+    "novelIssueFamilies": null,
+    "browserVerifiedPages": 0,
+    "auditMethod": "indexed-excerpts",
+    "crossRoleVerified": false,
+    "unrelatedHeldoutsVerified": false,
+    "strictAuditPassed": false
+  }
+}
