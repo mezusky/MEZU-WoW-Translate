@@ -237,7 +237,9 @@
     "healing output": "volume de soins",
     "self-dispel": "dissipation sur soi-même",
     "self-dispels": "dissipations sur soi-même",
-    "Self Dispel": "Dissipation sur soi-même"
+    "Self Dispel": "Dissipation sur soi-même",
+    "During the intermission": "Pendant l’interphase",
+    "In the intermission": "Pendant l’interphase"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
