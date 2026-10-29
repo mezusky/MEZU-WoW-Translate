@@ -43,7 +43,11 @@ def merge_verified_locale_refresh(previous, fresh, source_key, target_key):
         # refreshed locales, but require a new verified fetch for omitted ones.
         if (isinstance(old_source, str) and old_source.strip()
                 and old_source != names[source_key]):
-            for locale in previous[entity_id].keys() - names.keys():
+            verified_locales = {
+                locale for locale, value in names.items()
+                if isinstance(value, str) and value.strip()
+            }
+            for locale in previous[entity_id].keys() - verified_locales:
                 merged[entity_id].pop(locale, None)
     return merged
 
