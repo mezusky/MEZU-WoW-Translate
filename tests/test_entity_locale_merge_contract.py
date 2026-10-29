@@ -78,6 +78,14 @@ class EntityLocaleMergeContractTests(unittest.TestCase):
         self.assertEqual(project_locale_pairs({"spell": merged}, "en", "fr"),
                          {"New Spell": "Nouveau sort"})
         self.assertEqual(project_locale_pairs({"spell": merged}, "en", "de"), {})
+        for blank in ("", "  ", None):
+            with self.subTest(blank=blank):
+                incomplete = merge_verified_locale_refresh(
+                    previous,
+                    {"7": {"en": "New Spell", "fr": "Nouveau sort", "de": blank}},
+                    "en", "fr",
+                )
+                self.assertNotIn("de", incomplete["7"])
         # A later independently verified German name restores ID-based coverage.
         updated = merge_verified_locale_refresh(
             merged, {"7": {"en": "New Spell", "de": "Neuer Zauber"}}, "en", "de"
