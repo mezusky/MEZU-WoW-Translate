@@ -95,6 +95,7 @@ def _case_matches_guide_identity(case, canonical_url):
             "mythic-plus": "mythic-plus", "basics": "basics",
             "cheat-sheet": "cheat-sheet", "tier-set-bonuses": "tier-set",
             "midnight-season-2": "season",
+            "midnight-pre-patch": "prepatch",
         }.get(slug)
     return section == expected and expected is not None
 
