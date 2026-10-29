@@ -101,6 +101,16 @@ class EntityLocaleMergeContractTests(unittest.TestCase):
         self.assertEqual(project_locale_pairs({"spell": merged}, "en", "de"),
                          {"Same Spell": "Alter Zauber"})
 
+    def test_non_english_source_rename_invalidates_stale_other_language(self):
+        previous = {"9": {"de": "Alter Name", "fr": "Ancien nom", "en": "Old Name"}}
+        merged = merge_verified_locale_refresh(
+            previous, {"9": {"de": "Neuer Name", "fr": "Nouveau nom"}}, "de", "fr"
+        )
+        self.assertEqual(merged["9"], {"de": "Neuer Name", "fr": "Nouveau nom"})
+        self.assertEqual(project_locale_pairs({"spell": merged}, "de", "en"), {})
+        self.assertEqual(project_locale_pairs({"spell": merged}, "de", "fr"),
+                         {"Neuer Name": "Nouveau nom"})
+
     def test_generic_locale_keys_and_identical_pair_rejected(self):
         previous = {"1": {"de": "Alt", "fr": "Ancien"}}
         self.assertEqual(merge_verified_locale_refresh(
