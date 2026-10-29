@@ -129,6 +129,32 @@ class QualityTrendTests(unittest.TestCase):
         self.assertEqual(result["consecutiveStrictCleanCycles"], 1)
         self.assertFalse(result["eligibleToConsiderStopping"])
 
+    def test_query_fragment_and_locale_variants_are_same_guide(self):
+        # Browser navigations and localized entity views cannot manufacture
+        # independent heldouts from the same underlying Wowhead guide.
+        within = report("a")
+        cases = within["qualitySample"]["browserCases"]
+        cases[1]["url"] = cases[0]["url"] + "?utm_source=mezu#rotation"
+        self.assertFalse(summarize([within])["cycles"][0]["strictCleanCycle"])
+
+        first, second = report("a"), report("b")
+        second["qualitySample"]["browserCases"][0]["url"] = (
+            first["qualitySample"]["browserCases"][0]["url"]
+            .replace("/guide/", "/fr/guide/") + "?ref=sidebar#top"
+        )
+        self.assertEqual(summarize([first, second])["consecutiveStrictCleanCycles"], 1)
+
+    def test_non_wowhead_host_cannot_supply_browser_evidence(self):
+        for invalid in (
+            "https://www.wowhead.com.evil.test/guide/classes/warrior/protection/rotation",
+            "https://www.wowhead.com@evil.test/guide/classes/warrior/protection/rotation",
+            "http://www.wowhead.com/guide/classes/warrior/protection/rotation",
+        ):
+            with self.subTest(invalid=invalid):
+                sample = report("a")
+                sample["qualitySample"]["browserCases"][0]["url"] = invalid
+                self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
     def test_cross_language_cycles_do_not_combine(self):
         first, second = report("a"), report("b")
         second["qualitySample"]["sourceLanguage"] = "de"
