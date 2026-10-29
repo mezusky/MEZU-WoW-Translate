@@ -1,5 +1,7 @@
 """Contract tests for locale-scoped player terminology, independent of Wowhead."""
+import json
 import unittest
+from pathlib import Path
 from scripts.locale_glossary import locale_matches, select_jargon, select_locale_data
 
 
@@ -43,6 +45,26 @@ class LocaleGlossaryTests(unittest.TestCase):
         selected = select_jargon(self.fr, "en", "fr")
         selected["socket"] = "changed"
         self.assertEqual(self.fr["jargon"]["socket"], "châsse")
+
+
+    def test_raidbots_cta_is_safe_across_specs_without_inline_sim_override(self):
+        # A broad "sim your character" replacement breaks sentences such as
+        # "you can easily sim your character"; let prose translation handle it.
+        path = Path(__file__).resolve().parents[1] / "data" / "mezu_player_glossary.json"
+        payload = json.loads(path.read_text(encoding="utf-8"))
+        terms = select_jargon(payload, "en-US", "fr-FR")
+        self.assertNotIn("sim your character", terms)
+        self.assertEqual(
+            terms["Simulate Your Character Now"],
+            "Simulez votre personnage dès maintenant",
+        )
+        # This repeated Raidbots CTA occurs on unrelated Rogue, Warlock,
+        # and Evoker stat guides. No spec-specific sentence override needed.
+        self.assertEqual(
+            select_jargon(payload, "en", "fr")["Simulate Your Character Now"],
+            terms["Simulate Your Character Now"],
+        )
+        self.assertEqual(select_jargon(payload, "fr", "fr"), {})
 
 
 class LocaleLayerDirectionTests(unittest.TestCase):
