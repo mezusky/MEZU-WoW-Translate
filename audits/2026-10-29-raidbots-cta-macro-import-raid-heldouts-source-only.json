@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-29T06:34:35+01:00",
+  "auditMethod": "indexed-English-source; no browser translation verification",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusCountAfter": 527,
+  "newSourcePages": [
+    {
+      "id": "subtlety-rogue-stats-raidbots-heldout",
+      "role": "dps",
+      "section": "stats",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/rogue/subtlety/stat-priority-pve-dps",
+      "evidence": "Repeated Raidbots CTA, stat breakpoint around 700 Haste; do not hardcode changing numbers"
+    },
+    {
+      "id": "brewmaster-monk-ui-imports-heldout",
+      "role": "tank",
+      "section": "ui-macros",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/monk/brewmaster/addons-macro-ui-imports",
+      "evidence": "Long UI import strings and executable /use, /cast, /targetexact; preserve opaque payloads and macro syntax"
+    },
+    {
+      "id": "survival-hunter-manaforge-omega-raid-heldout",
+      "role": "dps",
+      "section": "raid",
+      "sourceStatus": "indexed-legacy-2026-01-18",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/hunter/survival/manaforge-omega-raid-tips",
+      "evidence": "Historical raid guide with talent import widgets and boss-specific spell names; not a current Midnight raid recommendation"
+    }
+  ],
+  "crossPagePattern": [
+    {
+      "source": "Simulate Your Character Now",
+      "target": "Simulez votre personnage dès maintenant",
+      "evidence": "Subtlety Rogue, Affliction Warlock, Augmentation Evoker and Frost Mage stat guides repeat the same Raidbots CTA",
+      "fix": "Reusable locale-scoped UI phrase"
+    },
+    {
+      "source": "sim your character",
+      "previousTarget": "sim votre personnage",
+      "fix": "Remove broad fragment: may produce ungrammatical French inside 'you can easily sim your character'; delegate prose grammar to translator",
+      "evidence": "Affliction Warlock and Augmentation Evoker stat prose"
+    }
+  ],
+  "changes": [
+    "One reusable French CTA phrase and removal of one unsafe broad fragment, net zero glossary growth",
+    "One focused regression test for phrase and locale isolation",
+    "Three independent heldout guides across DPS/tank and stats/macros/raid"
+  ],
+  "newManualOverrides": 0,
+  "browserVerifiedPages": 0,
+  "novelIssueRate": null,
+  "strictCleanCycle": false,
+  "limitations": [
+    "Wowhead direct HTML requires JavaScript verification; indexed English excerpts only",
+    "No Chrome Translator API or DOM/rich-text reconstruction verification",
+    "Opaque UI import strings and macros were not copied into this audit",
+    "Source-only observations cannot establish a numerical novel-issue rate or a clean quality cycle"
+  ]
+}
