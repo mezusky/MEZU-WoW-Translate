@@ -230,7 +230,9 @@
     "Spellqueue Window": "Fenêtre de spell queue",
     "Main Stat (Item Level)": "Stat principale (niveau d’objet)",
     "mainstat": "stat principale",
-    "Simulate Your Character Now": "Simulez votre personnage dès maintenant"
+    "Simulate Your Character Now": "Simulez votre personnage dès maintenant",
+    "healing throughput": "volume de soins",
+    "healing output": "volume de soins"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
