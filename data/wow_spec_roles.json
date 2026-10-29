@@ -1,0 +1,72 @@
+{
+  "schema": 1,
+  "description": "Retail WoW class/spec role identities for conservative browser audit evidence; update when Blizzard introduces a specialization. Not a translation glossary.",
+  "roles": {
+    "death-knight": {
+      "blood": "tank",
+      "frost": "dps",
+      "unholy": "dps"
+    },
+    "demon-hunter": {
+      "devourer": "dps",
+      "havoc": "dps",
+      "vengeance": "tank"
+    },
+    "druid": {
+      "balance": "dps",
+      "feral": "dps",
+      "guardian": "tank",
+      "restoration": "healer"
+    },
+    "evoker": {
+      "augmentation": "dps",
+      "devastation": "dps",
+      "preservation": "healer"
+    },
+    "hunter": {
+      "beast-mastery": "dps",
+      "marksmanship": "dps",
+      "survival": "dps"
+    },
+    "mage": {
+      "arcane": "dps",
+      "fire": "dps",
+      "frost": "dps"
+    },
+    "monk": {
+      "brewmaster": "tank",
+      "mistweaver": "healer",
+      "windwalker": "dps"
+    },
+    "paladin": {
+      "holy": "healer",
+      "protection": "tank",
+      "retribution": "dps"
+    },
+    "priest": {
+      "discipline": "healer",
+      "holy": "healer",
+      "shadow": "dps"
+    },
+    "rogue": {
+      "assassination": "dps",
+      "outlaw": "dps",
+      "subtlety": "dps"
+    },
+    "shaman": {
+      "elemental": "dps",
+      "enhancement": "dps",
+      "restoration": "healer"
+    },
+    "warlock": {
+      "affliction": "dps",
+      "demonology": "dps",
+      "destruction": "dps"
+    },
+    "warrior": {
+      "arms": "dps",
+      "fury": "dps",
+      "protection": "tank"
+    }
+  }
+}
