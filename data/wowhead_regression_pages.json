@@ -2083,6 +2083,18 @@
     {
       "id": "holy-paladin-manaforge-omega-raid-heldout",
       "url": "https://www.wowhead.com/guide/classes/paladin/holy/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "frost-death-knight-ui-macros-heldout",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/addons-macro-ui-imports"
+    },
+    {
+      "id": "demonology-warlock-ui-macros-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/addons-macro-ui-imports"
+    },
+    {
+      "id": "assassination-rogue-ui-macros-heldout",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/addons-macro-ui-imports"
     }
   ]
 }
