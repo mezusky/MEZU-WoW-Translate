@@ -34,7 +34,10 @@ of novel issue families per new page must be at most 5%, and two consecutive
 clean cycles are required. Those cycles must use the **same source/target
 language pair**, have different offset-aware audit timestamps, and contain
 **disjoint sets of newly verified page URLs**. Rechecking the same five pages
-cannot establish generalization or satisfy the stop condition. Guide identity
+cannot establish generalization or satisfy the stop condition. Every browser case's `wowClass` and `spec` must match the corresponding
+`/guide/classes/<class>/<spec>/...` URL path; arbitrary metadata labels or
+general guides cannot be used to manufacture class/spec coverage.
+Guide identity
 is normalized for this gate: tracking query parameters, fragments, trailing
 slashes and localized `/fr/guide/`-style paths do **not** make an independent
 page. PTR namespaces remain separate because their content may differ.
