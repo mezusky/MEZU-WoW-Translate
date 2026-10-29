@@ -50,7 +50,7 @@ def _case_matches_guide_identity(case, canonical_url):
         return False
     path = urlsplit(canonical_url).path
     match = re.fullmatch(
-        r"/(?:(?:ptr|ptr-\\d+)/)?guide/classes/([a-z][a-z-]*)/([a-z][a-z-]*)/[^/]+",
+        r"/(?:(?:ptr|ptr-\d+)/)?guide/classes/([a-z][a-z-]*)/([a-z][a-z-]*)/[^/]+",
         path, flags=re.IGNORECASE,
     )
     return bool(match and case.get("wowClass") == match.group(1).lower()
