@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-29T09:36:43+01:00",
+  "auditMethod": "indexed-English-source; direct Wowhead HTML challenged; browser translation not verified",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusCountAfter": 536,
+  "newSourcePages": [
+    {
+      "id": "blood-death-knight-midnight-prepatch-20261029-heldout",
+      "role": "tank",
+      "section": "pre-patch",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/death-knight/blood/midnight-pre-patch",
+      "evidence": "Runic Power, defensive cooldown timing, talent and equipment tables"
+    },
+    {
+      "id": "mistweaver-monk-midnight-prepatch-20261029-heldout",
+      "role": "healer",
+      "section": "pre-patch",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/monk/mistweaver/midnight-pre-patch",
+      "evidence": "Healing amplification, spell names, cooldown changes, raid and dungeon advice"
+    },
+    {
+      "id": "augmentation-evoker-midnight-prepatch-20261029-heldout",
+      "role": "dps",
+      "section": "pre-patch",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/evoker/augmentation/midnight-pre-patch",
+      "evidence": "Group buff windows, empowered spell ranks, gear and consumables, talent import controls"
+    }
+  ],
+  "crossPageFindings": [
+    {
+      "pattern": "Wowhead locale-prefixed pages can retain English guide prose with localized spell links",
+      "action": "Retain prose-based source language detection and ID-backed entity projection independently of URL locale",
+      "verification": "Indexed English and /fr/ excerpts cross-checked for unrelated tank, healer and DPS guides; not a browser audit"
+    },
+    {
+      "pattern": "Data Pack publication validator previously rejected only identical full locale tags, unlike locale-scoped data selectors",
+      "action": "Use shared base-language skip helper and reject same-base regional pairs at publication",
+      "verification": "Focused tests committed; CI pending"
+    },
+    {
+      "pattern": "Mixed content contains opaque talent import widgets and older expansion item references",
+      "action": "Preserve import data, avoid speculative overrides for source-era terminology and require browser verification",
+      "verification": "Source-only; no claims about Chrome DOM"
+    }
+  ],
+  "changes": [
+    "Centralized regional same-language skip helper",
+    "Data Pack publication validator aligned with translation skip contract",
+    "Focused locale regression tests",
+    "Three cross-role pre-patch heldouts"
+  ],
+  "newManualOverrides": 0,
+  "browserVerifiedPages": 0,
+  "novelIssueRate": null,
+  "strictCleanCycle": false,
+  "limitations": [
+    "Direct Wowhead HTML returned JavaScript verification; source snippets indexed by web search were used",
+    "No browser-local Translator API output, rendered French, or DOM reconstruction verified",
+    "No quantitative rate of novel translation errors measured"
+  ]
+}
