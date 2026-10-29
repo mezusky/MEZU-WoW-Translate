@@ -12,6 +12,13 @@ def normalize_locale(locale):
     return locale.strip().replace("_", "-").casefold()
 
 
+def same_base_language(source_language, target_language):
+    """Regional variants share a base language and require no translation."""
+    source = normalize_locale(source_language).split("-", 1)[0]
+    target = normalize_locale(target_language).split("-", 1)[0]
+    return source == target
+
+
 def locale_matches(configured, requested):
     """A generic 'fr' glossary can serve fr-FR; fr-CA cannot serve fr-FR."""
     configured = normalize_locale(configured)
@@ -29,7 +36,7 @@ def select_jargon(glossary, source_language, target_language):
     """
     source = normalize_locale(source_language)
     target = normalize_locale(target_language)
-    if source.split("-")[0] == target.split("-")[0]:
+    if same_base_language(source, target):
         return {}
     if not isinstance(glossary, dict):
         raise ValueError("Glossary must be a JSON object")
@@ -61,7 +68,7 @@ def select_locale_data(payload, source_language, target_language, legacy_pair=No
         raise ValueError("Translation data layer must be a JSON object")
     source = normalize_locale(source_language)
     target = normalize_locale(target_language)
-    if source.split("-")[0] == target.split("-")[0]:
+    if same_base_language(source, target):
         return {}
     layer_source = payload.get("sourceLanguage")
     layer_target = payload.get("targetLanguage")
