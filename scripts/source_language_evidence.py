@@ -43,7 +43,7 @@ RAID_REMINDER_HEADER = re.compile(
     # Boss names may contain spaces (e.g. Twin Fangs / Coiled Altar).
     # Stop before a following timing record or delimiter, never consume it.
     r"(?<!\w)EncounterID:\d{3,8};Difficulty:[A-Za-z]+;Name:"
-    r"[^\r\n;]{1,60}?(?=\s+(?:time|ph):|;|\r?$)",
+    r"[^\r\n;]{1,60}?(?=\s+(?:time|ph):|;|\r?$);?",
     re.MULTILINE,
 )
 RAID_REMINDER_EVENT = re.compile(
