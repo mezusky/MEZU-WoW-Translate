@@ -185,12 +185,21 @@ class PlayerGlossaryTests(unittest.TestCase):
         # use this raid phase vocabulary; the generic noun is intentionally
         # left to the prose translator outside these exact constructions.
         jargon = GLOSSARY["jargon"]
-        self.assertEqual(jargon["During the intermission"], "Pendant l’interphase")
-        self.assertEqual(jargon["In the intermission"], "Pendant l’interphase")
-        self.assertNotIn("intermission", jargon)
+        expected = {
+            "During the intermission,": "Pendant l’interphase,",
+            "during the intermission,": "pendant l’interphase,",
+            "In the intermission,": "Pendant l’interphase,",
+        }
+        for source, target in expected.items():
+            self.assertEqual(jargon[source], target)
+        # No unpunctuated prefix: "In the intermission part" must remain
+        # available to the prose translator, not become "interphase part".
+        for phrase in ("intermission", "In the intermission",
+                       "During the intermission"):
+            self.assertNotIn(phrase, jargon)
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(
             encoding="utf-8"))
-        for phrase in ("During the intermission", "In the intermission"):
+        for phrase in expected:
             self.assertNotIn(phrase, manual.get("jargon", {}))
             self.assertNotIn(phrase, manual.get("exact", {}))
 
