@@ -94,7 +94,6 @@ def _case_matches_guide_identity(case, canonical_url):
         ("mythic-plus-dungeon-tips", "mythic-plus"),
         ("mythic-keystones-and-dungeons", "mythic-plus"),
         ("addons-macro-ui-imports", "macros"),
-        ("midnight-season-2-raid-tips", "raid"),
         ("manaforge-omega-raid-tips", "raid"),
         ("dps-leveling-tips", "leveling"),
         ("healer-leveling-tips", "leveling"),
@@ -108,9 +107,17 @@ def _case_matches_guide_identity(case, canonical_url):
             "gear": "gear", "raid": "raid",
             "mythic-plus": "mythic-plus", "basics": "basics",
             "cheat-sheet": "cheat-sheet", "tier-set-bonuses": "tier-set",
-            "midnight-season-2": "season",
-            "midnight-pre-patch": "prepatch",
         }.get(slug)
+    if expected is None:
+        # Expansion/season labels evolve, but the Wowhead section structure
+        # remains stable. Match complete slugs to avoid accepting fabricated
+        # "raid" or "season" evidence from arbitrary guide names.
+        if re.fullmatch(r"[a-z][a-z0-9-]*-season-[1-9][0-9]*-raid-tips", slug):
+            expected = "raid"
+        elif re.fullmatch(r"[a-z][a-z0-9-]*-season-[1-9][0-9]*", slug):
+            expected = "season"
+        elif re.fullmatch(r"[a-z][a-z0-9-]*-pre-patch", slug):
+            expected = "prepatch"
     return section == expected and expected is not None
 
 
