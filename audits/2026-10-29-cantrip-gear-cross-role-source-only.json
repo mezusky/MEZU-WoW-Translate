@@ -1,0 +1,68 @@
+{
+  "auditId": "2026-10-29-cantrip-gear-cross-role-source-only",
+  "auditedAt": "2026-10-29T17:40:00+01:00",
+  "method": "live-web-indexed English Wowhead guide prose; no browser Translator API",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourceEvidence": [
+    {
+      "guide": "https://www.wowhead.com/guide/classes/mage/arcane/bis-gear",
+      "finding": "Arcane Mage gearing describes a cantrip weapon effect; localize the item-effect phrase, not a spell name."
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/mage/frost/bis-gear",
+      "finding": "Frost Mage gearing describes a cantrip item; same semantic category in an unrelated spec."
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/mage/fire/bis-gear",
+      "finding": "Fire Mage gearing describes cantrip gear; another independent guide confirms the item-effect sense."
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/midnight-season-2",
+      "finding": "Hunter overview independently uses cantrip item/effect in gear recommendations."
+    }
+  ],
+  "newHeldouts": [
+    {
+      "id": "protection-paladin-tier-set-20261029-cross-role-heldout",
+      "role": "tank",
+      "section": "tier-set",
+      "risk": "Season 1 tier guide includes Season 2 acquisition notes; source inconsistency, not a translation error."
+    },
+    {
+      "id": "restoration-druid-season2-20261029-cross-role-heldout",
+      "role": "healer",
+      "section": "midnight-season-2",
+      "risk": "Mixed prose and official localized spell names; Season 1 text under Season 2 title."
+    },
+    {
+      "id": "arcane-mage-season2-20261029-cross-role-heldout",
+      "role": "dps",
+      "section": "midnight-season-2",
+      "risk": "Bigburn/Miniburn jargon, source typos and missing embedded spell names."
+    }
+  ],
+  "fixes": [
+    "Four context-bound English-to-French cantrip item-effect glossary phrases; bare cantrip deliberately not replaced.",
+    "One cross-spec offline regression test for locale isolation and no manual-override duplication.",
+    "Three cross-role live-verified heldout URLs added; corpus 560 unique pages."
+  ],
+  "limitations": [
+    "Web-indexed content can be incomplete or stale relative to live DOM; no Chrome rendering or Translator API reproduction.",
+    "No quantitative novel-issue rate or cross-page French output audit; strict clean cycle not earned.",
+    "Official item/spell name localization by ID not verified; preserve canonical ID strategy."
+  ],
+  "qualitySample": {
+    "cycleId": "2026-10-29-cantrip-gear-source-only",
+    "auditedAt": "2026-10-29T17:40:00+01:00",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "newPagesAudited": 3,
+    "novelIssueFamilies": null,
+    "browserVerifiedPages": 0,
+    "auditMethod": "indexed-excerpts",
+    "crossRoleVerified": false,
+    "unrelatedHeldoutsVerified": false,
+    "strictAuditPassed": false
+  }
+}
