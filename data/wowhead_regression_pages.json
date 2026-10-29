@@ -2215,6 +2215,18 @@
     {
       "id": "windwalker-monk-talents-20261029-heldout",
       "url": "https://www.wowhead.com/guide/classes/monk/windwalker/talent-builds-pve-dps"
+    },
+    {
+      "id": "protection-warrior-tier-set-20261029-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/tier-set-bonuses"
+    },
+    {
+      "id": "discipline-priest-tier-set-20261029-heldout",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/tier-set-bonuses"
+    },
+    {
+      "id": "augmentation-evoker-tier-set-20261029-heldout",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/tier-set-bonuses"
     }
   ]
 }
