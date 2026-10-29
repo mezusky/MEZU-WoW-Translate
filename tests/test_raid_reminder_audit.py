@@ -89,5 +89,55 @@ class RaidReminderAuditTests(unittest.TestCase):
                          "{time:1:20} This is a prose explanation.")
 
 
+    def test_multiword_boss_names_and_reordered_phase_time_records(self):
+        # Seen in Holy Priest Season 2: "Twin Fangs", "Coiled Altar",
+        # and Ula'tek's ph-before-time exports. These are data, not prose.
+        for name, record in (
+            ("Twin Fangs", "ph:1;time:28.9;tag:257;spellid:200183;"),
+            ("Coiled Altar", "time:76;ph:2;tag:257;spellid:64843;"),
+            ("Ula'tek", "ph:2.5;time:14;tag:257;spellid:200183;"),
+        ):
+            with self.subTest(boss=name):
+                notes = (
+                    f"EncounterID:3421;Difficulty:Heroic;Name:{name};\n"
+                    + record + "\n"
+                )
+                self.assertFalse(clean_non_prose(notes).strip())
+                self.assertEqual(
+                    detect_source_language([("td", notes)], PROFILES)["tokenCount"],
+                    0,
+                )
+
+    def test_reordered_raid_records_do_not_remove_neighboring_prose(self):
+        # Cross-spec: Discipline uses time->ph; Holy also uses ph->time.
+        prose = (
+            "Keep your healing cooldowns available for the next raid damage "
+            "event, and use your spells before the group takes heavy damage."
+        )
+        for record in (
+            "time:23;ph:1;tag:256;spellid:472433;",
+            "ph:1;time:28.9;tag:257;spellid:200183;",
+        ):
+            with self.subTest(record=record):
+                mixed = (
+                    prose + "\n"
+                    + "EncounterID:3429;Difficulty:Heroic;Name:Coiled Altar\n"
+                    + record + "\nContinue healing your group."
+                )
+                cleaned, signal = audit_source_prose(mixed, "en-US", PROFILES)
+                self.assertTrue(signal)
+                self.assertIn(prose, cleaned)
+                self.assertIn("Continue healing your group.", cleaned)
+                self.assertNotIn("Coiled Altar", cleaned)
+                self.assertNotIn("spellid:", cleaned)
+                self.assertNotIn("EncounterID:", cleaned)
+
+    def test_incomplete_raid_record_is_not_discarded(self):
+        # Only complete structured records qualify; ordinary explanations
+        # and incomplete user examples must remain visible to the audit.
+        prose = "Explain ph:1;time:28.9;tag:257; in your raid notes."
+        self.assertEqual(clean_non_prose(prose), prose)
+
+
 if __name__ == "__main__":
     unittest.main()
