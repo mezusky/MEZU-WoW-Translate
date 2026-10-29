@@ -203,6 +203,29 @@ class PlayerGlossaryTests(unittest.TestCase):
             self.assertNotIn(phrase, manual.get("jargon", {}))
             self.assertNotIn(phrase, manual.get("exact", {}))
 
+    def test_pull_timing_is_contextual_across_unrelated_rotations(self):
+        # BM Hunter: "Before pull," and "As pull starts,"; Fire Mage:
+        # "before the pull" and "on the pull". Protection Paladin also
+        # uses pull timing, but a bare "on pull" rule could corrupt
+        # phrases such as "on pull timer". Never translate bare "pull".
+        jargon = GLOSSARY["jargon"]
+        expected = {
+            "Before pull,": "Avant le pull,",
+            "As pull starts,": "Au pull,",
+            "before the pull": "avant le pull",
+            "on the pull": "au pull",
+        }
+        for source, target in expected.items():
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], target)
+        for broad in ("pull", "on pull", "pull timer"):
+            self.assertNotIn(broad, jargon)
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(
+            encoding="utf-8"))
+        for phrase in expected:
+            self.assertNotIn(phrase, manual.get("jargon", {}))
+            self.assertNotIn(phrase, manual.get("exact", {}))
+
     def test_locale_glossary_has_no_duplicate_legacy_jargon(self):
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
         overlapping = set(GLOSSARY["jargon"]) & set(manual.get("jargon", {}))
