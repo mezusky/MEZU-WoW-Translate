@@ -224,6 +224,33 @@ class QualityTrendTests(unittest.TestCase):
         invalid["qualitySample"]["sourceLanguage"] = "english"
         self.assertFalse(summarize([invalid])["cycles"][0]["strictCleanCycle"])
 
+    def test_regional_variants_of_same_language_are_not_translation(self):
+        # en-US -> en-GB and fr-FR -> fr-CA are localization variants,
+        # not cross-language translation; neither may close the stop gate.
+        for source, target in (("en-US", "en-GB"), ("fr-FR", "fr-CA"),
+                               ("en", "en-US"), ("DE-de", "de-AT")):
+            with self.subTest(source=source, target=target):
+                sample = report("a")
+                sample["qualitySample"]["sourceLanguage"] = source
+                sample["qualitySample"]["targetLanguage"] = target
+                for case in sample["qualitySample"]["browserCases"]:
+                    case["sourceLanguage"] = source
+                    case["targetLanguage"] = target
+                self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
+    def test_distinct_base_languages_with_regions_remain_valid(self):
+        # The guard is generic; it must not restrict future language pairs.
+        for source, target in (("en-US", "fr-FR"), ("de-DE", "fr-CA"),
+                               ("pt-BR", "es-MX")):
+            with self.subTest(source=source, target=target):
+                sample = report("a")
+                sample["qualitySample"]["sourceLanguage"] = source
+                sample["qualitySample"]["targetLanguage"] = target
+                for case in sample["qualitySample"]["browserCases"]:
+                    case["sourceLanguage"] = source
+                    case["targetLanguage"] = target
+                self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
     def test_equal_or_naive_timestamps_cannot_form_two_cycles(self):
         first, second = report("a"), report("b")
         second["qualitySample"]["auditedAt"] = first["qualitySample"]["auditedAt"]
