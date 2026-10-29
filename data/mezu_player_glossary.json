@@ -135,7 +135,6 @@
     "single-target damage": "dégâts monocibles",
     "single target damage": "dégâts monocibles",
     "cleave damage": "dégâts de cleave",
-    "sim your character": "sim votre personnage",
     "simming": "sim",
     "uncapped AoE": "AoE sans limite de cibles",
     "filler": "filler",
@@ -230,7 +229,8 @@
     "spellqueue window": "fenêtre de spell queue",
     "Spellqueue Window": "Fenêtre de spell queue",
     "Main Stat (Item Level)": "Stat principale (niveau d’objet)",
-    "mainstat": "stat principale"
+    "mainstat": "stat principale",
+    "Simulate Your Character Now": "Simulez votre personnage dès maintenant"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
