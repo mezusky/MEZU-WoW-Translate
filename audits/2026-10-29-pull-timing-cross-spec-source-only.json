@@ -1,0 +1,59 @@
+{
+  "auditId": "2026-10-29-pull-timing-cross-spec-source-only",
+  "auditedAt": "2026-10-29",
+  "method": "English Wowhead indexed guide excerpts; direct HTML challenged by JavaScript; no browser Translator API",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourceEvidence": [
+    {
+      "guide": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/rotation-cooldowns-pve-dps",
+      "finding": "Opener uses 'Before pull,' and 'As pull starts,'; timing vocabulary is not a spell name."
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/mage/fire/rotation-cooldowns-pve-dps",
+      "finding": "Independent caster rotation uses 'before the pull' and 'on the pull'; preserve WoW player term pull."
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/paladin/protection/rotation-cooldowns-pve-tank",
+      "finding": "Tank opener also uses 'on pull'; deliberately avoid broad replacement that could corrupt 'pull timer'."
+    }
+  ],
+  "fixes": [
+    "Four bounded EN->FR pull-timing glossary phrases; no bare pull rule, no manual sentence overrides.",
+    "Cross-spec regression test protects wording and forbids overlapping manual entries."
+  ],
+  "newHeldouts": [
+    {
+      "id": "vengeance-dh-prepatch-20261029-pull-timing-heldout",
+      "role": "tank",
+      "section": "prepatch"
+    },
+    {
+      "id": "mistweaver-monk-tier-set-20261029-pull-timing-heldout",
+      "role": "healer",
+      "section": "tier-set"
+    },
+    {
+      "id": "arcane-mage-tier-set-20261029-pull-timing-heldout",
+      "role": "dps",
+      "section": "tier-set"
+    }
+  ],
+  "sourceOnlyFindings": [
+    "Mistweaver and Arcane tier-set pages are still titled Season 1; do not rewrite the source season as a translation fix.",
+    "The prepatch Vengeance guide and tier-set pages contain mixed structured data, names, and prose; entity names require ID-backed locale mapping."
+  ],
+  "qualitySample": {
+    "cycleId": "2026-10-29-pull-timing-cross-spec-source-only",
+    "auditedAt": "2026-10-29T18:31:34+01:00",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "newPagesAudited": 3,
+    "novelIssueFamilies": null,
+    "browserVerifiedPages": 0,
+    "auditMethod": "indexed-excerpts",
+    "crossRoleVerified": false,
+    "unrelatedHeldoutsVerified": false,
+    "strictAuditPassed": false
+  }
+}
