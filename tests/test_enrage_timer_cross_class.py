@@ -1,6 +1,7 @@
 """Cross-class raid jargon, scoped to EN->FR data rather than exact prose.
 
-Indexed Enhancement Shaman and Subtlety Rogue raid guides use enrage timing.
+Indexed Subtlety Rogue and independent raid-achievement guides use 'enrage timer'.
+Enhancement Shaman uses 'enrage burn phase', intentionally left to prose translation.
 No live browser translation or DOM reconstruction is claimed by this test.
 """
 import json
