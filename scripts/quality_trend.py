@@ -33,7 +33,7 @@ def _canonical_guide_url(value):
         return None
     # Localized WoW entity names do not make /fr/guide and /guide
     # independent source pages. Keep /ptr/ and /ptr-2/ separate.
-    path = re.sub(r"^/(?:en|fr|de|es|it|pt|ru|cn|tw|ko)/(?=guide/)",
+    path = re.sub(r"^/(?!ptr/)[a-z]{2,3}(?:-[a-z0-9]{2,8})*/(?=guide/)",
                   "/", path, flags=re.IGNORECASE)
     return "https://www.wowhead.com" + path
 
