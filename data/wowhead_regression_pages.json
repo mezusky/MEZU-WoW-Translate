@@ -2143,6 +2143,18 @@
     {
       "id": "augmentation-evoker-midnight-prepatch-20261029-heldout",
       "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/midnight-pre-patch"
+    },
+    {
+      "id": "protection-warrior-midnight-prepatch-20261029-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/midnight-pre-patch"
+    },
+    {
+      "id": "preservation-evoker-midnight-prepatch-20261029-heldout",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/midnight-pre-patch"
+    },
+    {
+      "id": "marksmanship-hunter-midnight-season-2-20261029-heldout",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/midnight-season-2"
     }
   ]
 }
