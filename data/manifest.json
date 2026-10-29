@@ -2,8 +2,8 @@
   "schema": 1,
   "sourceLanguage": "en",
   "targetLanguage": "fr",
-  "version": "3510e1c437c2c0b25b1e",
-  "generated_at": "2026-10-29T04:37:37.088036+00:00",
+  "version": "36f7241595a47955057b",
+  "generated_at": "2026-10-29T05:38:48.254205+00:00",
   "entity_count": 24720,
   "entity_counts_by_kind": {
     "achievement_category": 202,
@@ -37,11 +37,11 @@
     "title": 696,
     "toy": 1146
   },
-  "exact_count": 22213,
+  "exact_count": 22212,
   "community_exact_count": 352,
   "community_term_count": 385,
-  "blizzard_memory_pair_count": 4151,
-  "blizzard_phrase_count": 3855,
+  "blizzard_memory_pair_count": 4150,
+  "blizzard_phrase_count": 3852,
   "blizzard_memory_article_count": 64,
   "datapack_url": "https://raw.githubusercontent.com/mezusky/MEZU-WoW-Translate/main/data/datapack.json"
 }
