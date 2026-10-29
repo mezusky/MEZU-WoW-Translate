@@ -53,8 +53,16 @@ def _case_matches_guide_identity(case, canonical_url):
         r"/(?:(?:ptr|ptr-\d+)/)?guide/classes/([a-z][a-z-]*)/([a-z][a-z-]*)/[^/]+",
         path, flags=re.IGNORECASE,
     )
-    return bool(match and case.get("wowClass") == match.group(1).lower()
-                and case.get("spec") == match.group(2).lower())
+    if not (match and case.get("wowClass") == match.group(1).lower()
+            and case.get("spec") == match.group(2).lower()):
+        return False
+    # When the guide slug explicitly identifies the role, reject contradictory
+    # metadata rather than allowing a DPS guide to masquerade as tank evidence.
+    # Other slugs (gear, macros, talents) do not encode role: do not guess.
+    slug = path.rsplit("/", 1)[-1].lower()
+    role_hint = (re.search(r"-pve-(tank|healer|dps)$", slug)
+                 or re.fullmatch(r"(tank|healer|dps)-leveling-tips", slug))
+    return role_hint is None or case.get("role") == role_hint.group(1)
 
 
 
