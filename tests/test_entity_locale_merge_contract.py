@@ -70,15 +70,28 @@ class EntityLocaleMergeContractTests(unittest.TestCase):
                 merged = merge_verified_locale_refresh(previous, fresh, "en", "fr")
                 self.assertEqual(merged, previous)
 
-    def test_complete_refresh_updates_pair_and_keeps_other_locales(self):
+    def test_source_rename_invalidates_unverified_third_locales(self):
         previous = {"7": {"en": "Old Spell", "fr": "Ancien sort", "de": "Alter Zauber"}}
         fresh = {"7": {"en": "New Spell", "fr": "Nouveau sort"}}
         merged = merge_verified_locale_refresh(previous, fresh, "en", "fr")
-        self.assertEqual(merged["7"], {
-            "en": "New Spell", "fr": "Nouveau sort", "de": "Alter Zauber"
-        })
+        self.assertEqual(merged["7"], {"en": "New Spell", "fr": "Nouveau sort"})
         self.assertEqual(project_locale_pairs({"spell": merged}, "en", "fr"),
                          {"New Spell": "Nouveau sort"})
+        self.assertEqual(project_locale_pairs({"spell": merged}, "en", "de"), {})
+        # A later independently verified German name restores ID-based coverage.
+        updated = merge_verified_locale_refresh(
+            merged, {"7": {"en": "New Spell", "de": "Neuer Zauber"}}, "en", "de"
+        )
+        self.assertEqual(project_locale_pairs({"spell": updated}, "en", "de"),
+                         {"New Spell": "Neuer Zauber"})
+
+    def test_unchanged_source_preserves_other_verified_locales(self):
+        previous = {"7": {"en": "Same Spell", "fr": "Ancien sort", "de": "Alter Zauber"}}
+        fresh = {"7": {"en": "Same Spell", "fr": "Nouveau sort"}}
+        merged = merge_verified_locale_refresh(previous, fresh, "en", "fr")
+        self.assertEqual(merged["7"]["de"], "Alter Zauber")
+        self.assertEqual(project_locale_pairs({"spell": merged}, "en", "de"),
+                         {"Same Spell": "Alter Zauber"})
 
     def test_generic_locale_keys_and_identical_pair_rejected(self):
         previous = {"1": {"de": "Alt", "fr": "Ancien"}}
