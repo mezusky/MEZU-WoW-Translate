@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 import json, sys
 from pathlib import Path
-from locale_glossary import normalize_locale, select_jargon
+from locale_glossary import normalize_locale, select_jargon, same_base_language
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -24,8 +24,8 @@ target_language = pack.get("targetLanguage")
 try:
     source_language = normalize_locale(source_language)
     target_language = normalize_locale(target_language)
-    if source_language == target_language:
-        errors.append("pack source and target languages must differ")
+    if same_base_language(source_language, target_language):
+        errors.append("pack source and target base languages must differ (same-language skip)")
 except ValueError as exc:
     errors.append(f"invalid pack locale metadata: {exc}")
 
