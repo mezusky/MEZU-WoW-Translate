@@ -134,8 +134,8 @@ class MacroAuditTests(unittest.TestCase):
         )
         for guide, command in examples:
             with self.subTest(guide=guide):
-                source = "Explain the macro before use.\\n" + command + (
-                    "\\nThe next paragraph is ordinary English guide prose."
+                source = "Explain the macro before use.\n" + command + (
+                    "\nThe next paragraph is ordinary English guide prose."
                 )
                 cleaned = clean_non_prose(source)
                 self.assertNotIn(command, cleaned)
@@ -145,9 +145,9 @@ class MacroAuditTests(unittest.TestCase):
     def test_inline_macro_documentation_and_prefixes_remain_visible(self):
         # A command mention inside prose is not an executable directive.
         text = (
-            "Type /run or /click in the macro editor.\\n"
-            "Use /tar to select a focus target.\\n"
-            "/runner is not a supported macro directive.\\n"
+            "Type /run or /click in the macro editor.\n"
+            "Use /tar to select a focus target.\n"
+            "/runner is not a supported macro directive.\n"
             "/clickable is not a supported macro directive."
         )
         self.assertEqual(clean_non_prose(text), text)
