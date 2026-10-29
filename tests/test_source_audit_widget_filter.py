@@ -106,5 +106,38 @@ class SourceAuditWidgetFilterTests(unittest.TestCase):
         self.assertTrue(has_prose)
 
 
+    def test_native_talent_build_exports_are_not_prose_across_classes(self):
+        # Warlock raid and Mage talent widgets expose native export tokens
+        # without the CDM-style "1|" prefix. Synthetic payloads only.
+        for spec, payload in (
+            ("destruction-warlock", "CsQ" + "aB3dE5" * 18),
+            ("fire-mage", "CEQ" + "fG7hI9" * 18),
+        ):
+            with self.subTest(spec=spec):
+                clean, has_prose = audit_source_prose(payload, "en-US", PROFILES)
+                self.assertEqual(clean, "")
+                self.assertFalse(has_prose)
+
+    def test_native_talent_import_preserves_neighboring_guide_prose(self):
+        payload = "CsQ" + "aB3dE5" * 18
+        prose = "Use your defensive cooldowns during the raid encounter."
+        clean, has_prose = audit_source_prose(
+            prose + " " + payload + " Then cast your spells.", "en-US", PROFILES
+        )
+        self.assertTrue(has_prose)
+        self.assertIn(prose, clean)
+        self.assertIn("Then cast your spells.", clean)
+        self.assertNotIn(payload, clean)
+
+    def test_long_ordinary_words_and_short_build_codes_remain_visible(self):
+        # Do not suppress readable prose or shorter unrelated tokens.
+        long_word = "Antidisestablishmentarianism" * 4
+        short_code = "CsQaB3dE5"
+        text = f"Explain {long_word} and use the short code {short_code}."
+        clean, _ = audit_source_prose(text, "en-US", PROFILES)
+        self.assertIn(long_word, clean)
+        self.assertIn(short_code, clean)
+
+
 if __name__ == "__main__":
     unittest.main()
