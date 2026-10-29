@@ -50,6 +50,26 @@ class EntityLocaleMergeContractTests(unittest.TestCase):
         self.assertEqual(merged["7"], previous["7"])
         self.assertEqual(merged["8"], {"fr": "Nom seulement"})
 
+    def test_blank_target_cannot_pair_new_source_with_stale_translation(self):
+        previous = {"7": {"en": "Old Spell", "fr": "Ancien sort"}}
+        for blank in ("", "   ", None, 0):
+            with self.subTest(blank=blank):
+                fresh = {"7": {"en": "Renamed Spell", "fr": blank}}
+                merged = merge_verified_locale_refresh(previous, fresh, "en", "fr")
+                self.assertEqual(merged, previous)
+                self.assertEqual(
+                    project_locale_pairs({"spell": merged}, "en", "fr"),
+                    {"Old Spell": "Ancien sort"},
+                )
+
+    def test_blank_source_cannot_pair_new_target_with_stale_source(self):
+        previous = {"7": {"en": "Old Spell", "fr": "Ancien sort"}}
+        for blank in ("", "  ", None):
+            with self.subTest(blank=blank):
+                fresh = {"7": {"en": blank, "fr": "Nouveau sort"}}
+                merged = merge_verified_locale_refresh(previous, fresh, "en", "fr")
+                self.assertEqual(merged, previous)
+
     def test_complete_refresh_updates_pair_and_keeps_other_locales(self):
         previous = {"7": {"en": "Old Spell", "fr": "Ancien sort", "de": "Alter Zauber"}}
         fresh = {"7": {"en": "New Spell", "fr": "Nouveau sort"}}
