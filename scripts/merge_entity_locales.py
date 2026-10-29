@@ -32,7 +32,20 @@ def merge_verified_locale_refresh(previous, fresh, source_key, target_key):
         key: names for key, names in fresh.items()
         if key not in previous or complete_pair(names)
     }
-    return merge_rows(previous, accepted)
+    merged = merge_rows(previous, accepted)
+    for entity_id, names in accepted.items():
+        if entity_id not in previous or not complete_pair(names):
+            continue
+        old_source = previous[entity_id].get(source_key)
+        # A verified source rename can invalidate names in other locales.
+        # Retaining an older third-language label would silently project a
+        # potentially stale ID -> name pair. Preserve the canonical ID and
+        # refreshed locales, but require a new verified fetch for omitted ones.
+        if (isinstance(old_source, str) and old_source.strip()
+                and old_source != names[source_key]):
+            for locale in previous[entity_id].keys() - names.keys():
+                merged[entity_id].pop(locale, None)
+    return merged
 
 
 def _locale_name(row, requested):
