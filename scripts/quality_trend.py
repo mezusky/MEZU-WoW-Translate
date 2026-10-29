@@ -9,6 +9,35 @@ import re
 import sys
 from datetime import datetime
 from pathlib import Path
+from urllib.parse import urlsplit
+
+
+def _canonical_guide_url(value):
+    """Identify the same Wowhead guide across locale, query and hash variants.
+
+    This is an audit identity, not a fetch URL or a translation locale. PTR
+    namespaces remain distinct because their guide content may differ.
+    """
+    if not isinstance(value, str) or not value.startswith("https://www.wowhead.com/"):
+        return None
+    try:
+        parsed = urlsplit(value)
+        if (parsed.scheme != "https" or parsed.hostname != "www.wowhead.com"
+                or parsed.username is not None or parsed.password is not None
+                or parsed.port is not None):
+            return None
+    except ValueError:
+        return None
+    path = parsed.path.rstrip("/")
+    if not path or any(ord(char) < 32 for char in path):
+        return None
+    # Localized WoW entity names do not make /fr/guide and /guide
+    # independent source pages. Keep /ptr/ and /ptr-2/ separate.
+    path = re.sub(r"^/(?:en|fr|de|es|it|pt|ru|cn|tw|ko)/(?=guide/)",
+                  "/", path, flags=re.IGNORECASE)
+    return "https://www.wowhead.com" + path
+
+
 
 
 def _valid_locale(value):
@@ -57,9 +86,9 @@ def summarize(reports):
         valid_cases = (isinstance(cases, list) and len(cases) == new_pages
                        and new_pages >= 5 and all(isinstance(c, dict) for c in cases))
         if valid_cases:
-            urls = [c.get("url") for c in cases]
+            urls = [_canonical_guide_url(c.get("url")) for c in cases]
             valid_cases = (
-                all(isinstance(u, str) and u.startswith("https://www.wowhead.com/") for u in urls)
+                all(u is not None for u in urls)
                 and len(set(urls)) == new_pages
                 and all(c.get("sourceLanguage") == source_language
                         and c.get("targetLanguage") == target_language for c in cases)
