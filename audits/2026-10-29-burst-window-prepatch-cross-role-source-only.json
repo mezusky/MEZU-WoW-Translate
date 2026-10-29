@@ -1,0 +1,75 @@
+{
+  "auditId": "2026-10-29-burst-window-prepatch-cross-role",
+  "method": "indexed-wowhead-english-source-excerpts",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourceEvidence": [
+    {
+      "guide": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/midnight-pre-patch",
+      "term": "burst windows",
+      "finding": "DPS AoE burst timing; source prose, not a spell name"
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/midnight-pre-patch",
+      "term": "burst windows",
+      "finding": "Different DPS specialization, short damage phases"
+    },
+    {
+      "guide": "https://www.wowhead.com/guide/classes/mage/arcane/rotation-cooldowns-pve-dps",
+      "term": "burst window",
+      "finding": "Independent class and single damage phase"
+    }
+  ],
+  "newHeldouts": [
+    {
+      "id": "guardian-druid-midnight-prepatch-20261029-heldout",
+      "role": "tank",
+      "risks": [
+        "stat-guide widget data",
+        "official spell names",
+        "damage mitigation prose"
+      ]
+    },
+    {
+      "id": "holy-priest-midnight-prepatch-20261029-heldout",
+      "role": "healer",
+      "risks": [
+        "talent imports",
+        "official spell names",
+        "source author season references"
+      ]
+    },
+    {
+      "id": "havoc-demon-hunter-midnight-prepatch-20261029-heldout",
+      "role": "dps",
+      "risks": [
+        "burst-window jargon",
+        "hero talents",
+        "linked abilities"
+      ]
+    }
+  ],
+  "fixes": [
+    "Locale-scoped en->fr burst window/burst windows jargon; no full-sentence override",
+    "Prepatch section slug accepted only when browser audit metadata declares the actual prepatch section"
+  ],
+  "limits": [
+    "Indexed excerpts, not a complete DOM/Chrome translation audit",
+    "Do not infer translation error rate from source-only evidence",
+    "Source guide season placeholders or author typos are not MEZU regressions",
+    "Blizzard ID mappings and browser Translator API remain browser-only verification items"
+  ],
+  "qualitySample": {
+    "cycleId": "2026-10-29-burst-window-prepatch-source-only",
+    "auditedAt": "2026-10-29T14:33:41+01:00",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "newPagesAudited": 3,
+    "novelIssueFamilies": null,
+    "browserVerifiedPages": 0,
+    "auditMethod": "indexed-excerpts",
+    "crossRoleVerified": false,
+    "unrelatedHeldoutsVerified": false,
+    "strictAuditPassed": false
+  }
+}
