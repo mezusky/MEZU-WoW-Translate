@@ -2207,6 +2207,14 @@
     {
       "id": "enhancement-shaman-overview-20261029-heldout",
       "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/overview-pve-dps"
+    },
+    {
+      "id": "demonology-warlock-overview-20261029-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/overview-pve-dps"
+    },
+    {
+      "id": "windwalker-monk-talents-20261029-heldout",
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/talent-builds-pve-dps"
     }
   ]
 }
