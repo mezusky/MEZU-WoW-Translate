@@ -42,5 +42,12 @@
     "Direct Wowhead view is JavaScript-limited and may be older than search index",
     "Chrome Translator API, final French output, DOM preservation, and live import behavior remain browser-only",
     "No browser quality cycle counted; no sentence overrides added"
-  ]
+  ],
+  "expectedFrenchTerminologyFromCurrentLayers": {
+    "taunt swap": "switch de tank",
+    "healing cooldowns": "CD de soin",
+    "damage amp phase": "phase de dégâts amplifiés",
+    "group soaks": "soaks de groupe"
+  },
+  "expectedFrenchStatus": "Glossary-layer expectation only; actual browser translation and ID-backed spell localization not reproduced"
 }
