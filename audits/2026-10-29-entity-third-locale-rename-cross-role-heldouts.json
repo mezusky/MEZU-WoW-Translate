@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-29T10:36:16+01:00",
+  "auditMethod": "indexed-English-source; direct Wowhead HTML challenged; browser translation not verified",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusCountAfter": 539,
+  "newSourcePages": [
+    {
+      "id": "protection-warrior-midnight-prepatch-20261029-heldout",
+      "role": "tank",
+      "section": "pre-patch",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/warrior/protection/midnight-pre-patch",
+      "evidence": "Rage and defensive gameplay, source-era gear tables, stat widget assignments"
+    },
+    {
+      "id": "preservation-evoker-midnight-prepatch-20261029-heldout",
+      "role": "healer",
+      "section": "pre-patch",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/evoker/preservation/midnight-pre-patch",
+      "evidence": "Echo, Empower mechanics, import widgets, old expansion consumables"
+    },
+    {
+      "id": "marksmanship-hunter-midnight-season-2-20261029-heldout",
+      "role": "dps",
+      "section": "season-2",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/hunter/marksmanship/midnight-season-2",
+      "evidence": "Precise Shots procs, Always Be Casting, movement, talents, stat formulas"
+    }
+  ],
+  "crossPageFindings": [
+    {
+      "pattern": "Canonical Blizzard ID refresh may rename a source entity while an older third-language label survives from a previous snapshot",
+      "action": "After a verified source rename, retain the ID and refreshed locales but invalidate unverified third-language names; require independent verified refresh to restore them",
+      "verification": "Unit cases cover source rename, blank third locale, unchanged source, and later German re-verification; GitHub Actions not yet confirmed"
+    },
+    {
+      "pattern": "English guide prose appears alongside already localized official spell links on Wowhead locale-prefixed pages",
+      "action": "Keep prose language evidence independent from URL locale and canonical entity-name projection; do not treat Wowhead /fr/ as fully translated prose",
+      "verification": "Cross-checked indexed English and localized excerpts from unrelated Warrior, Evoker and Hunter guides; source-only"
+    },
+    {
+      "pattern": "Pre-patch pages retain older expansion terminology and import/stat widget data",
+      "action": "Preserve historical source-era item references and opaque widget payloads; do not invent sentence overrides for author-side stale headings",
+      "verification": "Indexed sources only; Chrome DOM and Translator API behavior unverified"
+    }
+  ],
+  "changes": [
+    "Safer canonical ID locale refresh for third-language labels",
+    "Focused regression tests including empty third-locale values and independent re-verification",
+    "Three cross-role heldout Wowhead guides"
+  ],
+  "newManualOverrides": 0,
+  "browserVerifiedPages": 0,
+  "novelIssueRate": null,
+  "strictCleanCycle": false,
+  "ciStatus": "Not confirmed for latest commits",
+  "datapackStatus": "No generated blob committed; current published manifest checked separately",
+  "limitations": [
+    "Direct Wowhead HTML returned JavaScript verification; indexed snippets were used",
+    "No browser-local Translator API output, rendered French, or DOM reconstruction verified",
+    "No quantitative trend in novel translation errors measured"
+  ]
+}
