@@ -82,6 +82,22 @@ class LocaleGlossaryTests(unittest.TestCase):
         self.assertEqual(select_jargon(payload, "fr", "fr"), {})
 
 
+    def test_self_dispel_jargon_is_locale_scoped_and_grammar_safe(self):
+        # Seen in Mistweaver overview/Mythic+ and Windwalker overview:
+        # preserve the distinction between the noun and conjugated verb.
+        path = Path(__file__).resolve().parents[1] / "data" / "mezu_player_glossary.json"
+        glossary = json.loads(path.read_text(encoding="utf-8"))
+        terms = select_jargon(glossary, "en-US", "fr-FR")
+        self.assertEqual(terms["self-dispel"], "dissipation sur soi-même")
+        self.assertEqual(terms["self-dispels"], "dissipations sur soi-même")
+        self.assertEqual(terms["Self Dispel"], "Dissipation sur soi-même")
+        # Let the translation engine inflect verbs in full sentences.
+        self.assertNotIn("self-dispelled", terms)
+        self.assertEqual(select_jargon(glossary, "fr-FR", "fr-CA"), {})
+        with self.assertRaises(ValueError):
+            select_jargon(glossary, "de-DE", "fr-FR")
+
+
 class LocaleLayerDirectionTests(unittest.TestCase):
     def setUp(self):
         self.generic = {"sourceLanguage": "en", "targetLanguage": "fr",
