@@ -2263,6 +2263,18 @@
     {
       "id": "survival-hunter-tier-set-20261029-tier-shorthand-heldout",
       "url": "https://www.wowhead.com/guide/classes/hunter/survival/tier-set-bonuses"
+    },
+    {
+      "id": "beast-mastery-hunter-tier-set-20261029-html-audit-heldout",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/tier-set-bonuses"
+    },
+    {
+      "id": "fire-mage-tier-set-20261029-html-audit-heldout",
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/tier-set-bonuses"
+    },
+    {
+      "id": "affliction-warlock-tier-set-20261029-html-audit-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/tier-set-bonuses"
     }
   ]
 }
