@@ -14,6 +14,7 @@ NON_PROSE_ASSIGNMENT = re.compile(r"\b[a-z][a-z0-9-]{1,40}=[^\s\]\[]+")
 # UI/CDM import strings are serialized configuration, not translatable prose.
 # Require a long base64-like body to avoid hiding ordinary numbered text.
 OPAQUE_IMPORT = re.compile(r"(?<!\S)\d+\|[A-Za-z0-9+/=]{80,}(?!\S)")
+# Native WoW talent build exports are bare base64-like tokens (no "1|" prefix).\n# Match only long mixed-case alphanumeric payloads, never ordinary prose.\nTALENT_IMPORT_TOKEN = re.compile(r"(?<![A-Za-z0-9+/=])[A-Za-z0-9+/=]{80,}(?![A-Za-z0-9+/=])")
 # WoW macro commands are executable game instructions, not translation prose.
 # Only strip whole directive lines, preserving inline /cast mentions in prose.
 # /tar, /run, /script and /click occur in independent Wowhead macro guides.
@@ -71,6 +72,13 @@ def is_opaque_edit_mode_export(text):
             and value.count(" -1 ") >= 3)
 
 
+def _strip_talent_import(match):
+    token = match.group()
+    return (" " if any(char.isdigit() for char in token)
+            and any(char.islower() for char in token)
+            and any(char.isupper() for char in token) else token)
+
+
 def clean_non_prose(text):
     """Remove generated widget assignments and opaque import payloads."""
     if is_opaque_edit_mode_export(text):
@@ -78,8 +86,9 @@ def clean_non_prose(text):
     text = WOW_MACRO_LINE.sub(" ", text)
     text = MRT_NOTE_LINE.sub(" ", text)
     text = RAID_REMINDER_EVENT.sub(" ", RAID_REMINDER_HEADER.sub(" ", text))
-    return NON_PROSE_ASSIGNMENT.sub(" ", NON_PROSE_PLACEHOLDER.sub(" ",
-                                     OPAQUE_IMPORT.sub(" ", text)))
+    text = OPAQUE_IMPORT.sub(" ", text)
+    text = TALENT_IMPORT_TOKEN.sub(_strip_talent_import, text)
+    return NON_PROSE_ASSIGNMENT.sub(" ", NON_PROSE_PLACEHOLDER.sub(" ", text))
 PROSE_TAGS = frozenset(("p", "li", "td", "th"))
 
 
