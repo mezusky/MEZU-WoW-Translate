@@ -49,7 +49,9 @@ reconstruction. Indexed English source snippets, source-side locale mixtures,
 and server-side translation approximations cannot establish these results.
 The gate is locale-independent: record `sourceLanguage` and `targetLanguage`
 on each quality sample **and** browser case. They must be valid language tags,
-match within the cycle, and differ (same-language pages require no translation).
+match within the cycle, and have **different base languages** (for example,
+`en-US` to `en-GB` or `fr-FR` to `fr-CA` does not qualify: these
+regional variants must follow the same-language skip path).
 Never infer source prose language from a Wowhead URL locale: `/fr/` pages can
 contain English prose alongside French spell names. Language detection and
 canonical entity localization are separate concerns. The current audit target
