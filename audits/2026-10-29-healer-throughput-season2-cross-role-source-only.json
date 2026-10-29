@@ -19,7 +19,7 @@
       "role": "healer",
       "section": "season2-overview",
       "observations": [
-        "Burst healing throughput and spot healing recur across unrelated healer sources",
+        "Raw 'throughput' and spot healing appear in Preservation Evoker; generic throughput remains unresolved rather than globally replaced",
         "Echo, Reversion, Living Flame and tier bonuses require canonical ID checks"
       ]
     },
@@ -38,8 +38,7 @@
       "source": "healing throughput",
       "target": "volume de soins",
       "evidence": [
-        "Preservation Evoker Season 2",
-        "Healer Raid Rankings Season 2"
+        "Healer Raid Rankings Season 2 (healing throughput)"
       ],
       "layer": "fr player jargon"
     },
@@ -47,8 +46,8 @@
       "source": "healing output",
       "target": "volume de soins",
       "evidence": [
-        "Restoration Shaman Mythic+ Season 2",
-        "Restoration Shaman Season 2"
+        "Restoration Shaman Mythic+ Season 2 (high healing output)",
+        "Restoration Shaman Season 2 (high healing output)"
       ],
       "layer": "fr player jargon"
     }
@@ -65,6 +64,7 @@
     "Live Wowhead URL access often requires JavaScript; indexed content may not match live rendered page revision",
     "New jargon entries are source-grounded Data Pack inputs; published Data Pack and Chrome output require CI/browser verification",
     "No Chrome Translator API or rich-text DOM reconstruction was run; no quality cycle counted",
-    "Official spell/item/talent names must be checked against canonical Blizzard IDs rather than guessed from prose"
+    "Official spell/item/talent names must be checked against canonical Blizzard IDs rather than guessed from prose",
+    "Unqualified throughput and reversed 'burst throughput healing' are intentionally not covered by the new glossary entries; browser prose translation remains to be checked"
   ]
 }
