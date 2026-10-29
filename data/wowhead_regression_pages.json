@@ -2155,6 +2155,18 @@
     {
       "id": "marksmanship-hunter-midnight-season-2-20261029-heldout",
       "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/midnight-season-2"
+    },
+    {
+      "id": "protection-paladin-s2-raid-ptr2-20261029-heldout",
+      "url": "https://www.wowhead.com/ptr-2/guide/classes/paladin/protection/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "holy-priest-s2-raid-ptr2-20261029-heldout",
+      "url": "https://www.wowhead.com/ptr-2/guide/classes/priest/holy/midnight-season-2-raid-tips"
+    },
+    {
+      "id": "destruction-warlock-s2-raid-ptr2-20261029-heldout",
+      "url": "https://www.wowhead.com/ptr-2/guide/classes/warlock/destruction/midnight-season-2-raid-tips"
     }
   ]
 }
