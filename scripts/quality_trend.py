@@ -60,6 +60,10 @@ def _case_matches_guide_identity(case, canonical_url):
     # metadata rather than allowing a DPS guide to masquerade as tank evidence.
     # Other slugs (gear, macros, talents) do not encode role: do not guess.
     slug = path.rsplit("/", 1)[-1].lower()
+    # Legacy /bis-gear-pve-* paths are not live canonical guide identities.
+    # A stale or fabricated URL must never count toward browser coverage.
+    if slug.startswith("bis-gear") and slug != "bis-gear":
+        return False
     role_hint = (re.search(r"-pve-(tank|healer|dps)$", slug)
                  or re.fullmatch(r"(tank|healer|dps)-leveling-tips", slug))
     if role_hint is not None and case.get("role") != role_hint.group(1):
