@@ -2275,6 +2275,18 @@
     {
       "id": "affliction-warlock-tier-set-20261029-html-audit-heldout",
       "url": "https://www.wowhead.com/guide/classes/warlock/affliction/tier-set-bonuses"
+    },
+    {
+      "id": "devourer-dh-tier-set-20261029-role-gate-heldout",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/tier-set-bonuses"
+    },
+    {
+      "id": "restoration-druid-prepatch-20261029-role-gate-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/midnight-pre-patch"
+    },
+    {
+      "id": "protection-paladin-prepatch-20261029-role-gate-heldout",
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/midnight-pre-patch"
     }
   ]
 }
