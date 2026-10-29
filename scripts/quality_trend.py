@@ -62,7 +62,41 @@ def _case_matches_guide_identity(case, canonical_url):
     slug = path.rsplit("/", 1)[-1].lower()
     role_hint = (re.search(r"-pve-(tank|healer|dps)$", slug)
                  or re.fullmatch(r"(tank|healer|dps)-leveling-tips", slug))
-    return role_hint is None or case.get("role") == role_hint.group(1)
+    if role_hint is not None and case.get("role") != role_hint.group(1):
+        return False
+
+    # A browser audit must not claim several content sections from a set of
+    # URLs that all show the same section. Ground the declared section in the
+    # actual Wowhead guide slug; unknown slugs fail closed until classified.
+    section = case.get("section")
+    section_prefixes = (
+        ("rotation-cooldowns-", "rotation"),
+        ("talent-builds-", "talents"),
+        ("abilities-talents-", "abilities"),
+        ("stat-priority-", "stats"),
+        ("enchants-gems-", "consumables"),
+        ("bis-gear", "gear"),
+        ("overview-pve-", "overview"),
+        ("mythic-plus-dungeon-tips", "mythic-plus"),
+        ("mythic-keystones-and-dungeons", "mythic-plus"),
+        ("addons-macro-ui-imports", "macros"),
+        ("midnight-season-2-raid-tips", "raid"),
+        ("manaforge-omega-raid-tips", "raid"),
+        ("dps-leveling-tips", "leveling"),
+        ("healer-leveling-tips", "leveling"),
+        ("tank-leveling-tips", "leveling"),
+    )
+    expected = next((name for prefix, name in section_prefixes
+                     if slug.startswith(prefix)), None)
+    if expected is None:
+        expected = {
+            "rotation": "rotation", "talents": "talents",
+            "gear": "gear", "raid": "raid",
+            "mythic-plus": "mythic-plus", "basics": "basics",
+            "cheat-sheet": "cheat-sheet", "tier-set-bonuses": "tier-set",
+            "midnight-season-2": "season",
+        }.get(slug)
+    return section == expected and expected is not None
 
 
 
