@@ -256,7 +256,9 @@
     "Before pull,": "Avant le pull,",
     "As pull starts,": "Au pull,",
     "before the pull": "avant le pull",
-    "on the pull": "au pull"
+    "on the pull": "au pull",
+    "enrage timer": "timer d’enrage",
+    "enrage timers": "timers d’enrage"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
