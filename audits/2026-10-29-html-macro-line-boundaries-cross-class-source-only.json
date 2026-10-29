@@ -1,0 +1,47 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "auditMethod": "indexed-live-English-source-plus-offline-HTML-regression",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "issue": "HTML block extraction and analysis collapsed line breaks before the line-anchored macro filter, so embedded /cast and #showtooltip directives could enter language evidence or translation-coverage analysis.",
+  "fixes": [
+    "Preserve raw newline and <br> boundaries during HTML block extraction",
+    "Clean non-prose macro directives before flattening whitespace in source-only audit",
+    "Exercise tank, healer, DPS macro examples end-to-end from HTML extraction to language evidence"
+  ],
+  "sourceExamples": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/addons-macro-ui-imports",
+      "role": "tank",
+      "evidence": "Macro blocks with #showtooltip, /cast, /stopcasting and /cancelaura"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/addons-macro-ui-imports",
+      "role": "dps",
+      "evidence": "Multiline /castsequence, /use, /cqs and #showtooltip blocks"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/addons-macro-ui-imports",
+      "role": "healer",
+      "evidence": "Multiline mouseover /cast, /stopspelltarget and target selection blocks"
+    }
+  ],
+  "newHeldoutUrls": [
+    "https://www.wowhead.com/guide/classes/hunter/beast-mastery/tier-set-bonuses",
+    "https://www.wowhead.com/guide/classes/mage/fire/tier-set-bonuses",
+    "https://www.wowhead.com/guide/classes/warlock/affliction/tier-set-bonuses"
+  ],
+  "sourceContentCaveat": "Some indexed tier-set guides mix Midnight Season 1 and Season 2 wording. This is upstream source content, not an MEZU translation failure.",
+  "verification": {
+    "offlineTests": "committed; GitHub Actions pending",
+    "directWowheadHtml": "not reliably accessible through assistant; indexed source evidence used",
+    "browserRenderedPages": 0,
+    "translationErrorRate": null,
+    "novelIssueRate": null,
+    "cleanQualityCycle": false
+  },
+  "newManualSentenceOverrides": 0,
+  "chromeExtensionChanged": false,
+  "notes": "This change corrects source-only audit reliability, not the Chrome translation engine or rendered DOM. No copyrighted guide prose is mirrored."
+}
