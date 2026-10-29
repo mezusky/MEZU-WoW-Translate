@@ -14,7 +14,9 @@ NON_PROSE_ASSIGNMENT = re.compile(r"\b[a-z][a-z0-9-]{1,40}=[^\s\]\[]+")
 # UI/CDM import strings are serialized configuration, not translatable prose.
 # Require a long base64-like body to avoid hiding ordinary numbered text.
 OPAQUE_IMPORT = re.compile(r"(?<!\S)\d+\|[A-Za-z0-9+/=]{80,}(?!\S)")
-# Native WoW talent build exports are bare base64-like tokens (no "1|" prefix).\n# Match only long mixed-case alphanumeric payloads, never ordinary prose.\nTALENT_IMPORT_TOKEN = re.compile(r"(?<![A-Za-z0-9+/=])[A-Za-z0-9+/=]{80,}(?![A-Za-z0-9+/=])")
+# Native WoW talent build exports are bare base64-like tokens (no "1|" prefix).
+# Match only long mixed-case alphanumeric payloads, never ordinary prose.
+TALENT_IMPORT_TOKEN = re.compile(r"(?<![A-Za-z0-9+/=])[A-Za-z0-9+/=]{80,}(?![A-Za-z0-9+/=])")
 # WoW macro commands are executable game instructions, not translation prose.
 # Only strip whole directive lines, preserving inline /cast mentions in prose.
 # /tar, /run, /script and /click occur in independent Wowhead macro guides.
