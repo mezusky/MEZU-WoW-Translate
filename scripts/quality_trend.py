@@ -11,6 +11,11 @@ from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlsplit
 
+# Audits must not invent a tank/healer/DPS mix on role-neutral guide slugs.
+# This compact data-only mapping is independent of translation direction.
+SPEC_ROLES = json.loads((Path(__file__).resolve().parents[1] / "data" /
+                         "wow_spec_roles.json").read_text(encoding="utf-8"))["roles"]
+
 
 def _canonical_guide_url(value):
     """Identify the same Wowhead guide across locale, query and hash variants.
@@ -55,6 +60,11 @@ def _case_matches_guide_identity(case, canonical_url):
     )
     if not (match and case.get("wowClass") == match.group(1).lower()
             and case.get("spec") == match.group(2).lower()):
+        return False
+    # Even gear, raid and tier-set URLs (which lack a role suffix) must
+    # agree with the known WoW specialization. Unknown specs fail closed.
+    expected_role = SPEC_ROLES.get(match.group(1).lower(), {}).get(match.group(2).lower())
+    if expected_role is None or case.get("role") != expected_role:
         return False
     # When the guide slug explicitly identifies the role, reject contradictory
     # metadata rather than allowing a DPS guide to masquerade as tank evidence.
