@@ -1,0 +1,70 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "auditMethod": "indexed English Wowhead guide excerpts; direct HTML requests challenged; not browser-rendered",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 576,
+  "corpusAfter": 580,
+  "sampledPages": [
+    {
+      "id": "enhancement-shaman-raid-20261029-seasonal-slug-heldout",
+      "section": "raid",
+      "role": "dps",
+      "sourceStatus": "indexed",
+      "observations": [
+        "enrage timing and linked spells",
+        "source says Season 1 within Season 2 guide",
+        "serialized talent widgets and empty dynamic labels"
+      ]
+    },
+    {
+      "id": "frost-death-knight-tier-set-20261029-official-ids-heldout",
+      "section": "tier-set",
+      "role": "dps",
+      "sourceStatus": "indexed",
+      "observations": [
+        "2pc/4pc class-set spell links",
+        "Season 1 bonus content mixed with Season 2 references; source staleness, not a translation defect"
+      ]
+    },
+    {
+      "id": "outlaw-rogue-tier-set-20261029-cross-class-heldout",
+      "section": "tier-set",
+      "role": "dps",
+      "sourceStatus": "indexed-localized-mirror",
+      "observations": [
+        "class-set spell and item names must resolve through canonical IDs",
+        "Season 1 source content; not a French mistranslation"
+      ]
+    },
+    {
+      "id": "frost-mage-prepatch-20261029-source-evidence-heldout",
+      "section": "prepatch",
+      "role": "dps",
+      "sourceStatus": "indexed-localized-mirror",
+      "observations": [
+        "spell-linked prose and serialized stat widgets",
+        "localized WoW names in a mostly English guide do not prove translated prose"
+      ]
+    }
+  ],
+  "changes": [
+    "Future expansion season raid/overview/prepatch section identity uses bounded generic slug patterns, not season-2 hardcoding",
+    "French-only enrage timer(s) player terminology; leave standalone enrage unchanged",
+    "Offline tests for future slug identity, role constraints and locale isolation"
+  ],
+  "issuesClassifiedAsSourceNotTranslation": [
+    "Season 1/Season 2 mismatches",
+    "empty dynamic talent labels and widget export artifacts",
+    "original author typos"
+  ],
+  "verification": {
+    "browserRenderedPages": 0,
+    "novelTranslationIssueRate": null,
+    "domReconstruction": "not verified",
+    "translatorApi": "browser-only verification required",
+    "githubActions": "pending at time of audit",
+    "eligibleToStop": false
+  }
+}
