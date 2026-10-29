@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-29T13:36:26+01:00",
+  "auditMethod": "source-only; Wowhead live web/indexed excerpts, no Chrome rendering",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/talent-builds-pve-tank",
+      "role": "tank",
+      "section": "talents",
+      "observations": [
+        "Talent export buttons and hero talent names need protected import payloads and official ID-based names",
+        "English prose coexists with localized spell names on Wowhead locale variants"
+      ]
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/talent-builds-pve-dps",
+      "role": "dps",
+      "section": "talents",
+      "observations": [
+        "Build-import tables are structured data, not prose",
+        "Source currently contains a Season 3 label inside a Season 2 guide; upstream inconsistency, not evidence of MEZU mistranslation",
+        "Diabolist/Hellcaller and Soul Shards require official localization by canonical IDs"
+      ]
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/midnight-season-2-raid-tips",
+      "role": "tank",
+      "section": "raid",
+      "observations": [
+        "Encounter import codes and boss-specific abilities must survive DOM reconstruction",
+        "Taunt swaps and group soaks are covered by reusable player jargon, not guide-specific sentence overrides"
+      ]
+    }
+  ],
+  "sharedFixes": [
+    {
+      "layer": "quality gate",
+      "file": "scripts/quality_trend.py",
+      "description": "Cross-section browser evidence must match actual Wowhead guide slug, preventing one section being mislabeled as multiple sections to satisfy stabilization conditions",
+      "scope": "generic classes, specs, locales; source-only audit remains ineligible"
+    }
+  ],
+  "sourceOnlyMetrics": {
+    "newPages": 3,
+    "manualOverridesAdded": 0,
+    "glossaryEntriesAdded": 0,
+    "browserVerifiedPages": 0,
+    "browserNovelIssueRate": null,
+    "strictCleanCycles": 0
+  },
+  "validationLimits": [
+    "Indexed and web-accessible source excerpts do not reproduce the browser-local Translator API or actual French output",
+    "No DOM reconstruction, import-button functionality, or canonical entity ID resolution verified in Chrome",
+    "No browser quality cycle counted; GitHub Actions result after latest commits not yet confirmed",
+    "Upstream stale Season 3 text should not be silently rewritten by translation rules"
+  ]
+}
