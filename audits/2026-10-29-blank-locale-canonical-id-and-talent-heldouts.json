@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-29T07:37:06+01:00",
+  "auditMethod": "indexed-English-source; direct Wowhead HTML challenged; no browser output verification",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusCountAfter": 530,
+  "newSourcePages": [
+    {
+      "id": "arcane-mage-talent-builds-20261029-heldout",
+      "role": "dps",
+      "section": "talents",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/mage/arcane/talent-builds-pve-dps",
+      "evidence": "Multiple hero talent builds, embedded spell links and copy/import controls; localized /fr/ page retains English prose with French spell names"
+    },
+    {
+      "id": "balance-druid-talent-builds-20261029-heldout",
+      "role": "dps",
+      "section": "talents",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/druid/balance/talent-builds-pve-dps",
+      "evidence": "Multiple raid/Mythic+/delve builds; localized language variants show English prose and localized entity names"
+    },
+    {
+      "id": "arms-warrior-leveling-20261029-heldout",
+      "role": "dps",
+      "section": "leveling",
+      "sourceStatus": "indexed",
+      "sourceUrl": "https://www.wowhead.com/guide/classes/warrior/arms/dps-leveling-tips",
+      "evidence": "Leveling talent order and rotation guidance; separate non-talent section to test cross-section reuse"
+    }
+  ],
+  "crossPageFindings": [
+    {
+      "pattern": "Localized Wowhead guide can preserve English prose while translating spell/item labels",
+      "action": "Do not infer prose sourceLanguage from URL locale or entity locale alone; treat browser translation behavior as unverified"
+    },
+    {
+      "pattern": "Blizzard ID refresh can contain a present but blank locale value",
+      "action": "Reject partial existing-ID refresh unless both source and target values are nonblank strings; prevents stale cross-locale false official names",
+      "testCoverage": "Blank target/source and non-string locale values"
+    }
+  ],
+  "changes": [
+    "One canonical ID merge guard and two contract tests",
+    "Three representative source-only heldouts"
+  ],
+  "newManualOverrides": 0,
+  "browserVerifiedPages": 0,
+  "novelIssueRate": null,
+  "strictCleanCycle": false,
+  "limitations": [
+    "Direct HTML returned Wowhead JavaScript verification; indexed excerpts were inspected instead",
+    "Current repository contains data generation and offline audit scripts, not an executable Chrome Translator API environment",
+    "No browser-rendered French output or DOM reconstruction validated",
+    "No measured novel translation issue rate; no completed clean quality cycle"
+  ]
+}
