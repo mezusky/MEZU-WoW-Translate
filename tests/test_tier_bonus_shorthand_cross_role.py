@@ -38,6 +38,23 @@ class TierBonusShorthandTests(unittest.TestCase):
         for label in ("2pc", "4pc", "Class Set 2pc", "Class Set 4pc"):
             self.assertNotIn(label, terms)
 
+    def test_new_tank_healer_dps_heldouts_are_unique(self):
+        pages = json.loads((DATA / "wowhead_regression_pages.json").read_text(
+            encoding="utf-8"))["pages"]
+        by_id = {p["id"]: p["url"] for p in pages}
+        expected = {
+            "brewmaster-monk-prepatch-20261029-tier-shorthand-heldout":
+                "/monk/brewmaster/midnight-pre-patch",
+            "discipline-priest-prepatch-20261029-tier-shorthand-heldout":
+                "/priest/discipline/midnight-pre-patch",
+            "survival-hunter-tier-set-20261029-tier-shorthand-heldout":
+                "/hunter/survival/tier-set-bonuses",
+        }
+        for key, suffix in expected.items():
+            with self.subTest(page=key):
+                self.assertEqual(by_id[key], "https://www.wowhead.com/guide/classes" + suffix)
+        self.assertEqual(len(pages), len({p["url"] for p in pages}))
+
     def test_no_manual_duplication_or_cross_locale_leakage(self):
         for phrase in ("2pc bonus", "4pc bonus"):
             self.assertNotIn(phrase, self.manual.get("exact", {}))
