@@ -138,6 +138,13 @@ class QualityTrendTests(unittest.TestCase):
         self.assertFalse(summarize([within])["cycles"][0]["strictCleanCycle"])
 
         first, second = report("a"), report("b")
+        # Keep case metadata consistent with the substituted source page;
+        # otherwise the newer class/spec identity guard correctly rejects
+        # the cycle before URL-overlap behavior can be tested.
+        first_case = first["qualitySample"]["browserCases"][0]
+        second_case = second["qualitySample"]["browserCases"][0]
+        for key in ("wowClass", "spec", "role", "section"):
+            second_case[key] = first_case[key]
         second["qualitySample"]["browserCases"][0]["url"] = (
             first["qualitySample"]["browserCases"][0]["url"]
             .replace("/guide/", "/fr/guide/") + "?ref=sidebar#top"
