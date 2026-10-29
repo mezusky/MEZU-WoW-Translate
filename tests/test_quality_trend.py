@@ -280,6 +280,7 @@ class QualityTrendTests(unittest.TestCase):
                 case["wowClass"] = wow_class
                 case["spec"] = spec
                 case["role"] = expected
+                case["section"] = "leveling" if "leveling" in slug else "rotation"
                 self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
                 case["role"] = wrong
                 self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
@@ -289,6 +290,56 @@ class QualityTrendTests(unittest.TestCase):
         sample["qualitySample"]["browserCases"][0]["url"] = (
             "https://www.wowhead.com/guide/classes/warrior/protection/bis-gear"
         )
+        sample["qualitySample"]["browserCases"][0]["section"] = "gear"
+        self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
+
+    def test_browser_section_labels_must_match_wowhead_slug(self):
+        # A clean-cycle gate must not be fooled by fabricated section labels.
+        sample = report("a")
+        case = sample["qualitySample"]["browserCases"][0]
+        case["url"] = (
+            "https://www.wowhead.com/guide/classes/warrior/protection/"
+            "rotation-cooldowns-pve-tank"
+        )
+        self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
+        case["section"] = "gear"
+        self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
+        case["section"] = "rotation"
+        case["url"] = (
+            "https://www.wowhead.com/guide/classes/warrior/protection/"
+            "unknown-future-content"
+        )
+        self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
+    def test_multiple_declared_sections_cannot_hide_one_real_section(self):
+        sample = report("a")
+        for case in sample["qualitySample"]["browserCases"]:
+            case["url"] = (
+                "https://www.wowhead.com/guide/classes/"
+                f'{case["wowClass"]}/{case["spec"]}/rotation-cooldowns-pve-{case["role"]}'
+            )
+        # The five URLs are distinct and the metadata claims five sections,
+        # but the pages are all rotation guides.
+        self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
+        for case in sample["qualitySample"]["browserCases"]:
+            case["section"] = "rotation"
+        self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
+    def test_real_cross_section_guide_slugs_remain_eligible(self):
+        sample = report("a")
+        slugs = (
+            "rotation-cooldowns-pve-tank",
+            "talent-builds-pve-healer",
+            "bis-gear",
+            "midnight-season-2-raid-tips",
+            "mythic-plus-dungeon-tips",
+        )
+        for case, slug in zip(sample["qualitySample"]["browserCases"], slugs):
+            case["url"] = (
+                f'https://www.wowhead.com/guide/classes/{case["wowClass"]}/'
+                f'{case["spec"]}/{slug}'
+            )
         self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
 
 
