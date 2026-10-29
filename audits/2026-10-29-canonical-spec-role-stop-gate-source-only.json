@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "date": "2026-10-29",
+  "auditMethod": "indexed English Wowhead source excerpts plus local repository code review; no browser-rendered translation verification",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpus": {
+    "before": 569,
+    "after": 572,
+    "newHeldoutUrls": [
+      "https://www.wowhead.com/guide/classes/demon-hunter/devourer/tier-set-bonuses",
+      "https://www.wowhead.com/guide/classes/druid/restoration/midnight-pre-patch",
+      "https://www.wowhead.com/guide/classes/paladin/protection/midnight-pre-patch"
+    ]
+  },
+  "finding": {
+    "category": "quality-stop-gate-role-evidence",
+    "description": "Guide slugs such as bis-gear, tier-set-bonuses, raid and prepatch omit role. Previously their browserCase.role could be falsified while class/spec and section still matched URL, creating false tank/healer/DPS coverage.",
+    "fix": "Validate every browserCase class/spec against a compact, data-only retail specialization role table; unknown specs fail closed.",
+    "crossRoleVerification": [
+      "warrior/protection tank (gear)",
+      "priest/discipline healer (tier set)",
+      "mage/fire dps (raid)",
+      "druid/guardian tank (prepatch)",
+      "hunter/survival dps (Mythic+)",
+      "demon-hunter/devourer dps (gear)"
+    ],
+    "scope": "offline audit gate only; no browser extension or runtime translation changes"
+  },
+  "sourceObservations": [
+    "Devourer tier-set guide describes Midnight Season 1 bonuses while linking Season 2 gear and has mixed season wording; source editorial issue, not a translation override.",
+    "Restoration Druid prepatch uses WoW healing terminology including HoTs, ramp, Swiftmend, Wild Growth and Lifebloom.",
+    "Protection Paladin prepatch uses generator/spender, Holy Power and defensive cooldown terminology."
+  ],
+  "translationVerification": {
+    "currentGlossaryCheck": "MEZU player glossary has ramp and tier set bonus shorthand; manual overrides include Holy Power. Official spell-name resolution must be checked by canonical IDs, not guessed from indexed prose.",
+    "datapackDirectInspection": "Large generated datapack could not be read through connector (empty content); no claim of complete output simulation.",
+    "browserRendered": false,
+    "domReconstructionVerified": false,
+    "translatorApiVerified": false,
+    "novelTranslationIssueRate": null,
+    "strictCleanCycle": false
+  },
+  "maintenance": {
+    "newManualSentenceOverrides": 0,
+    "extensionReinstallRequired": false,
+    "remoteExecutableCodeAdded": false,
+    "roleReferenceSpecs": 40
+  },
+  "limitations": [
+    "Wowhead full HTML may present a JavaScript challenge; indexed excerpts are not complete DOM evidence.",
+    "No local Chrome Translator API execution; strict browser evidence is outstanding.",
+    "Do not count source-only samples as clean audit cycles."
+  ]
+}
