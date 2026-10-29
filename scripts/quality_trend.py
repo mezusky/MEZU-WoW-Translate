@@ -40,6 +40,24 @@ def _canonical_guide_url(value):
 
 
 
+def _case_matches_guide_identity(case, canonical_url):
+    """Do not trust declared class/spec labels without matching the source URL.
+
+    Otherwise one real browser page could be mislabeled as several classes
+    and satisfy the cross-class stop gate without independent coverage.
+    """
+    if canonical_url is None:
+        return False
+    path = urlsplit(canonical_url).path
+    match = re.fullmatch(
+        r"/(?:(?:ptr|ptr-\\d+)/)?guide/classes/([a-z][a-z-]*)/([a-z][a-z-]*)/[^/]+",
+        path, flags=re.IGNORECASE,
+    )
+    return bool(match and case.get("wowClass") == match.group(1).lower()
+                and case.get("spec") == match.group(2).lower())
+
+
+
 def _valid_locale(value):
     return isinstance(value, str) and re.fullmatch(
         r"[a-z]{2,3}(?:-[a-z0-9]{2,8})*", value, re.IGNORECASE
@@ -90,6 +108,7 @@ def summarize(reports):
             valid_cases = (
                 all(u is not None for u in urls)
                 and len(set(urls)) == new_pages
+                and all(_case_matches_guide_identity(c, u) for c, u in zip(cases, urls))
                 and all(c.get("sourceLanguage") == source_language
                         and c.get("targetLanguage") == target_language for c in cases)
                 and all(c.get("browserRendered") is True and c.get("strictPass") is True
