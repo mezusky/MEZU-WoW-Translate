@@ -2095,6 +2095,18 @@
     {
       "id": "assassination-rogue-ui-macros-heldout",
       "url": "https://www.wowhead.com/guide/classes/rogue/assassination/addons-macro-ui-imports"
+    },
+    {
+      "id": "subtlety-rogue-stats-raidbots-heldout",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/stat-priority-pve-dps"
+    },
+    {
+      "id": "brewmaster-monk-ui-imports-heldout",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/addons-macro-ui-imports"
+    },
+    {
+      "id": "survival-hunter-manaforge-omega-raid-heldout",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/manaforge-omega-raid-tips"
     }
   ]
 }
