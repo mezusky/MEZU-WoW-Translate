@@ -6,11 +6,12 @@
   "targetLanguage": "fr",
   "corpus": {
     "before": 572,
-    "after": 575,
+    "after": 576,
     "newHeldoutUrls": [
       "https://www.wowhead.com/guide/classes/death-knight/blood/tank-leveling-tips",
       "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/tank-leveling-tips",
-      "https://www.wowhead.com/guide/classes/paladin/protection/tank-leveling-tips"
+      "https://www.wowhead.com/guide/classes/paladin/protection/tank-leveling-tips",
+      "https://www.wowhead.com/guide/classes/mage/arcane/dps-leveling-tips"
     ]
   },
   "finding": {
