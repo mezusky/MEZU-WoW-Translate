@@ -232,17 +232,19 @@ class QualityTrendTests(unittest.TestCase):
     def test_explicit_url_role_cannot_be_mislabeled(self):
         # These guide slugs carry a role; a fabricated cross-role mix must
         # never count as independent browser evidence.
-        for slug, expected, wrong in (
-            ("rotation-cooldowns-pve-tank", "tank", "dps"),
-            ("healer-leveling-tips", "healer", "tank"),
-            ("rotation-cooldowns-pve-dps", "dps", "healer"),
+        for wow_class, spec, slug, expected, wrong in (
+            ("warrior", "protection", "rotation-cooldowns-pve-tank", "tank", "dps"),
+            ("priest", "discipline", "healer-leveling-tips", "healer", "tank"),
+            ("mage", "fire", "rotation-cooldowns-pve-dps", "dps", "healer"),
         ):
             with self.subTest(slug=slug):
                 sample = report("a")
                 case = sample["qualitySample"]["browserCases"][0]
                 case["url"] = (
-                    "https://www.wowhead.com/guide/classes/warrior/protection/" + slug
+                    f"https://www.wowhead.com/guide/classes/{wow_class}/{spec}/{slug}"
                 )
+                case["wowClass"] = wow_class
+                case["spec"] = spec
                 case["role"] = expected
                 self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
                 case["role"] = wrong
