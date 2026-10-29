@@ -1,0 +1,84 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "live English Wowhead search-index excerpts; direct HTML challenged; not browser-rendered",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 580,
+  "corpusAfter": 583,
+  "sampledPages": [
+    {
+      "id": "marksmanship-hunter-tier-set-20261030-cross-spec-heldout",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/tier-set-bonuses",
+      "role": "dps",
+      "section": "tier-set",
+      "sourceStatus": "indexed",
+      "observations": [
+        "Midnight Season 1 title with Season 2 acquisition section",
+        "2pc/4pc class-set descriptions and Matrix Catalyst wording"
+      ]
+    },
+    {
+      "id": "balance-druid-tier-set-20261030-cross-spec-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/tier-set-bonuses",
+      "role": "dps",
+      "section": "tier-set",
+      "sourceStatus": "indexed",
+      "observations": [
+        "Season 1 set names mixed with Season 2 acquisition instructions",
+        "Starweaver, Hail of Stars and Orbit Breaker are linked spell/talent entities; resolve by canonical IDs, not sentence overrides"
+      ]
+    },
+    {
+      "id": "shadow-priest-tier-set-20261030-cross-spec-heldout",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/tier-set-bonuses",
+      "role": "dps",
+      "section": "tier-set",
+      "sourceStatus": "indexed",
+      "observations": [
+        "Season 1 bonus text and Season 2 acquisition section",
+        "Shadow Word: Madness and Shadowy Apparitions should be resolved by official entity IDs"
+      ]
+    }
+  ],
+  "crossPageTerminologyChecks": [
+    {
+      "source": "tier set",
+      "expectedFrench": "set de classe",
+      "layer": "MEZU player glossary"
+    },
+    {
+      "source": "tier set pieces",
+      "expectedFrench": "pièces de set de classe",
+      "layer": "MEZU player glossary"
+    },
+    {
+      "source": "2pc bonus",
+      "expectedFrench": "bonus 2 pièces",
+      "layer": "MEZU player glossary"
+    },
+    {
+      "source": "4pc bonus",
+      "expectedFrench": "bonus 4 pièces",
+      "layer": "MEZU player glossary"
+    }
+  ],
+  "changes": [
+    "Preserve numbered PTR namespaces such as ptr-12 as independent source-content identities, not locale prefixes",
+    "Regression tests cover current/future PTR versions and locale normalization",
+    "Add three new tier-set source URLs without exact-sentence overrides"
+  ],
+  "sourceNotTranslation": [
+    "Midnight Season 1/Season 2 mixing in the original tier-set pages",
+    "Wowhead dynamic-widget serialization artifacts"
+  ],
+  "verification": {
+    "liveEnglishSource": "indexed excerpts",
+    "packSimulation": "terminology-layer spot checks only; full runtime pipeline not reproduced",
+    "browserRenderedPages": 0,
+    "domReconstruction": "not verified",
+    "translatorApi": "browser-only verification required",
+    "novelTranslationIssueRate": null,
+    "eligibleToStop": false
+  }
+}
