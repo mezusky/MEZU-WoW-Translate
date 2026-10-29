@@ -68,12 +68,11 @@ for page in cfg.get("pages", []):
         seen = set()
         blocks = []
         for tag, value in parsed_blocks:
-            text = WS.sub(" ", value).strip()
-            if len(text) < 8:
-                continue
-            # Score length after stripping opaque widgets, otherwise a long
-            # import payload can discard otherwise readable adjacent prose.
-            clean, source_signal = audit_source_prose(text, source_language, language_profiles)
+            # Keep original line breaks until executable macro lines are
+            # removed. Flattening first makes /cast and #showtooltip invisible
+            # to the line-anchored filter in source_language_evidence.
+            # Also score length only after stripping opaque widgets.
+            clean, source_signal = audit_source_prose(value, source_language, language_profiles)
             if len(clean) < 8 or len(clean) > 1200 or clean in seen:
                 continue
             # English WoW labels remain useful even without prose stopwords.
