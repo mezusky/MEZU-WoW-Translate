@@ -2319,6 +2319,18 @@
     {
       "id": "frost-mage-prepatch-20261029-source-evidence-heldout",
       "url": "https://www.wowhead.com/guide/classes/mage/frost/midnight-pre-patch"
+    },
+    {
+      "id": "marksmanship-hunter-tier-set-20261030-cross-spec-heldout",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/tier-set-bonuses"
+    },
+    {
+      "id": "balance-druid-tier-set-20261030-cross-spec-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/tier-set-bonuses"
+    },
+    {
+      "id": "shadow-priest-tier-set-20261030-cross-spec-heldout",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/tier-set-bonuses"
     }
   ]
 }
