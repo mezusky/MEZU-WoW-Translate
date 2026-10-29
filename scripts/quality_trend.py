@@ -95,8 +95,11 @@ def summarize(reports):
         _timestamp(audited_at)
         source_language = sample.get("sourceLanguage")
         target_language = sample.get("targetLanguage")
+        # Regional variants of the same base language require no translation.
+        # The browser skip contract must agree with canonical entity projection.
         valid_pair = (_valid_locale(source_language) and _valid_locale(target_language)
-                      and source_language.lower() != target_language.lower())
+                      and source_language.split("-", 1)[0].casefold()
+                      != target_language.split("-", 1)[0].casefold())
         new_pages = sample.get("newPagesAudited")
         novel = sample.get("novelIssueFamilies")
         browser_pages = sample.get("browserVerifiedPages", 0)
