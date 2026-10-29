@@ -49,5 +49,13 @@
     "damage amp phase": "phase de dégâts amplifiés",
     "group soaks": "soaks de groupe"
   },
-  "expectedFrenchStatus": "Glossary-layer expectation only; actual browser translation and ID-backed spell localization not reproduced"
+  "expectedFrenchStatus": "Glossary-layer expectation only; actual browser translation and ID-backed spell localization not reproduced",
+  "sourceOnlyMetrics": {
+    "newPages": 3,
+    "newSourcePatternFamilies": 2,
+    "sharedSourceAuditFixes": 2,
+    "manualOverridesAdded": 0,
+    "browserVerifiedPages": 0,
+    "browserNovelIssueRate": null
+  }
 }
