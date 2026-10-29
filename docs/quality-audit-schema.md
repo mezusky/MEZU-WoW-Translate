@@ -34,7 +34,11 @@ of novel issue families per new page must be at most 5%, and two consecutive
 clean cycles are required. Those cycles must use the **same source/target
 language pair**, have different offset-aware audit timestamps, and contain
 **disjoint sets of newly verified page URLs**. Rechecking the same five pages
-cannot establish generalization or satisfy the stop condition. Missing evidence is **unknown**, never zero.
+cannot establish generalization or satisfy the stop condition. Guide identity
+is normalized for this gate: tracking query parameters, fragments, trailing
+slashes and localized `/fr/guide/`-style paths do **not** make an independent
+page. PTR namespaces remain separate because their content may differ.
+Missing evidence is **unknown**, never zero.
 
 A browser case must reflect the actual translated rendered page, including
 entity names, Translator API fallback, preserved links/widgets, and DOM
