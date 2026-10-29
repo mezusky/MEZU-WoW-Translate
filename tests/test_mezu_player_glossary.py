@@ -151,10 +151,13 @@ class PlayerGlossaryTests(unittest.TestCase):
         # consumables all use sim/simming; this is player jargon, not a
         # Blizzard spell/entity name or a page-specific sentence override.
         jargon = GLOSSARY["jargon"]
-        self.assertEqual(jargon["sim your character"], "sim votre personnage")
+        # Avoid a broad fragment that breaks French grammar inside prose.
+        self.assertNotIn("sim your character", jargon)
+        self.assertEqual(jargon["Simulate Your Character Now"],
+                         "Simulez votre personnage dès maintenant")
         self.assertEqual(jargon["simming"], "sim")
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
-        for phrase in ("sim your character", "simming"):
+        for phrase in ("Simulate Your Character Now", "simming"):
             with self.subTest(phrase=phrase):
                 self.assertNotIn(phrase, manual.get("jargon", {}))
                 self.assertNotIn(phrase, manual.get("exact", {}))
