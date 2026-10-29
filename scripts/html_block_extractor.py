@@ -14,6 +14,18 @@ CSS_COMMENT = re.compile(r"/\*.*?\*/", re.DOTALL)
 CSS_VALUE = re.compile(r"\s*([a-z-]+)\s*(!\s*important)?\s*$", re.IGNORECASE)
 
 
+def normalize_block_text(parts):
+    """Keep source line boundaries until non-prose macro filtering is done.
+
+    A flat whitespace collapse turns `#showtooltip` and `/cast` into ordinary
+    sentence fragments, defeating the line-anchored audit filters. The caller
+    can flatten the cleaned prose later; this is not browser DOM behavior.
+    """
+    value = "".join(parts).replace("\r\n", "\n").replace("\r", "\n")
+    value = re.sub(r"[^\S\n]+", " ", value)
+    return re.sub(r" *\n+ *", "\n", value).strip()
+
+
 def inline_style_hidden(style):
     """Resolve repeated inline declarations using CSS importance and source order.
 
@@ -64,7 +76,7 @@ class Extractor(HTMLParser):
             self.scope += 1
         if tag in ("br", "p", "li", "ul", "ol", "div"):
             for _, parts in self.stack:
-                parts.append(" ")
+                parts.append("\n" if tag == "br" else " ")
         if tag in self.tags and (self.scope or not self.scoped):
             self.stack.append([tag, []])
 
@@ -82,7 +94,7 @@ class Extractor(HTMLParser):
             return
         if self.stack and self.stack[-1][0] == tag:
             kind, parts = self.stack.pop()
-            value = re.sub(r"\s+", " ", "".join(parts)).strip()
+            value = normalize_block_text(parts)
             if value:
                 self.blocks.append((kind, value))
         if tag in ("p", "li", "ul", "ol", "div"):
@@ -95,7 +107,7 @@ class Extractor(HTMLParser):
         super().close()
         while self.stack:
             kind, parts = self.stack.pop()
-            value = re.sub(r"\s+", " ", "".join(parts)).strip()
+            value = normalize_block_text(parts)
             if value:
                 self.blocks.append((kind, value))
 
