@@ -2391,6 +2391,18 @@
     {
       "id": "holy-paladin-ptr-basics-20261030-cross-role-heldout",
       "url": "https://www.wowhead.com/ptr/guide/classes/paladin/holy/basics"
+    },
+    {
+      "id": "frost-death-knight-leveling-20261030-alias-refresh-heldout",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/dps-leveling-tips"
+    },
+    {
+      "id": "enhancement-shaman-leveling-20261030-alias-refresh-heldout",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/dps-leveling-tips"
+    },
+    {
+      "id": "frost-mage-tier-set-20261030-alias-refresh-heldout",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/tier-set-bonuses"
     }
   ]
 }
