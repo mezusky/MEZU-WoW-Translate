@@ -296,7 +296,10 @@
     "generators": "générateurs",
     "builder-spender system": "système générateur/spender",
     "primary resource spender": "spender principal",
-    "resource spender": "spender de ressource"
+    "resource spender": "spender de ressource",
+    "squishy": "fragile",
+    "Squishy": "Fragile",
+    "squishy targets": "cibles fragiles"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
