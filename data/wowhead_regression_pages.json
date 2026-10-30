@@ -2531,6 +2531,18 @@
     {
       "id": "windwalker-monk-prepatch-20261030-source-staleness-heldout",
       "url": "https://www.wowhead.com/guide/classes/monk/windwalker/midnight-pre-patch"
+    },
+    {
+      "id": "enhancement-shaman-basics-20261030-gcd-locked-heldout",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/basics"
+    },
+    {
+      "id": "survival-hunter-leveling-20261030-gcd-locked-heldout",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/dps-leveling-tips"
+    },
+    {
+      "id": "affliction-warlock-leveling-20261030-resource-source-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/dps-leveling-tips"
     }
   ]
 }
