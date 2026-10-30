@@ -2403,6 +2403,22 @@
     {
       "id": "frost-mage-tier-set-20261030-alias-refresh-heldout",
       "url": "https://www.wowhead.com/guide/classes/mage/frost/tier-set-bonuses"
+    },
+    {
+      "id": "destruction-warlock-tier-set-20261030-canonical-padding-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/tier-set-bonuses"
+    },
+    {
+      "id": "subtlety-rogue-tier-set-20261030-canonical-padding-heldout",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/tier-set-bonuses"
+    },
+    {
+      "id": "retribution-paladin-tier-set-20261030-canonical-padding-heldout",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/tier-set-bonuses"
+    },
+    {
+      "id": "marksmanship-hunter-talent-builds-20261030-canonical-padding-heldout",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/talent-builds-pve-dps"
     }
   ]
 }
