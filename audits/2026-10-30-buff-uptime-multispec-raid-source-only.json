@@ -1,0 +1,78 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web search of indexed English Wowhead guides; direct HTML fetch returned JavaScript anti-bot challenge. No MEZU browser rendering or Translator API verification.",
+  "corpusBefore": 646,
+  "corpusAfter": 648,
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "sourceHeldouts": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/manaforge-omega-raid-tips",
+      "role": "dps",
+      "section": "raid",
+      "observation": "Legacy raid guide contains funnel, multi-dotting, soft-enrage and rich boss-build widgets; preserve old content as a translation regression, not current gameplay advice."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/manaforge-omega-raid-tips",
+      "role": "dps",
+      "section": "raid",
+      "observation": "Independent raid guide reuses funnel, cleave, ramp and cooldown jargon; source typos are not MEZU translation errors."
+    }
+  ],
+  "crossPageChecks": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/overview-pve-dps",
+      "observation": "English source uses the heading Keep your buffs up and describes uptime of Ebon Might."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/basics",
+      "observation": "Starter guide uses buff uptime; this is editorial player jargon, not a spell ID."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/rotation-cooldowns-pve-dps",
+      "observation": "Independent DPS rotation uses buff uptime in resource pooling instructions."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/overview-pve-tank",
+      "observation": "Tank guide uses buff uptime, so the rule is not Augmentation-specific."
+    },
+    {
+      "url": "https://www.wowhead.com/fr/guide/classes/evoker/augmentation/overview-pve-dps",
+      "observation": "Wowhead's localized source still mixes English prose with French official spell names; do not assume the prose language from URL or entity labels alone."
+    }
+  ],
+  "changes": [
+    {
+      "layer": "data/mezu_player_glossary.json",
+      "commit": "b8528100fb2165f1a9bb27755e9615270447257e",
+      "change": "Three locale-scoped, reusable buff maintenance/uptime phrases; no generic uptime replacement."
+    },
+    {
+      "layer": "tests/test_mezu_player_glossary.py",
+      "commit": "2e5f5b7a55a773d565527cfa48fc3e0b7d95a7bb",
+      "change": "Cross-spec terminology and legacy-layer nonduplication assertions."
+    },
+    {
+      "layer": "data/wowhead_regression_pages.json",
+      "commit": "dad08477173a0eeb9fbfacb942df328841f1e167",
+      "change": "Two independent legacy raid heldouts."
+    }
+  ],
+  "verification": {
+    "githubFilesReadBack": true,
+    "jsonParsed": true,
+    "uniqueGuideUrls": 648,
+    "uniqueGuideIds": 648,
+    "pythonTestsRun": false,
+    "githubActionsResult": "not confirmed",
+    "browserOnlyRemaining": [
+      "Actual French rendering",
+      "DOM and rich-text reconstruction",
+      "Browser-local Translator API behavior",
+      "Measured new-issue rate across unseen pages"
+    ]
+  }
+}
