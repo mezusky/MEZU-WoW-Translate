@@ -1,0 +1,93 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "live Wowhead URL indexed English source-only; direct HTML JavaScript challenge; Chrome output unverified",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 609,
+  "corpusAfter": 614,
+  "newTalentSources": [
+    {
+      "wowClass": "death-knight",
+      "spec": "unholy",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/talent-builds-pve-dps",
+      "section": "talents",
+      "role": "dps",
+      "sourceObservation": "import-code controls and talent names are present; do not translate opaque import strings"
+    },
+    {
+      "wowClass": "druid",
+      "spec": "feral",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/talent-builds-pve-dps",
+      "section": "talents",
+      "role": "dps",
+      "sourceObservation": "import-code controls and talent names are present; do not translate opaque import strings"
+    },
+    {
+      "wowClass": "evoker",
+      "spec": "devastation",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/talent-builds-pve-dps",
+      "section": "talents",
+      "role": "dps",
+      "sourceObservation": "import-code controls and talent names are present; do not translate opaque import strings"
+    },
+    {
+      "wowClass": "warlock",
+      "spec": "affliction",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/talent-builds-pve-dps",
+      "section": "talents",
+      "role": "dps",
+      "sourceObservation": "import-code controls and talent names are present; do not translate opaque import strings"
+    },
+    {
+      "wowClass": "warrior",
+      "spec": "arms",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/talent-builds-pve-dps",
+      "section": "talents",
+      "role": "dps",
+      "sourceObservation": "import-code controls and talent names are present; do not translate opaque import strings"
+    }
+  ],
+  "crossPageCooldownSources": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/rotation-cooldowns-pve-tank",
+      "evidence": "Keep cooldowns on cooldown",
+      "expectedFrench": "Utiliser les CD dès qu’ils sont disponibles"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/rotation-cooldowns-pve-dps",
+      "evidence": "Keep Abilities on cooldown",
+      "expectedFrench": "Utiliser les capacités dès qu’elles sont disponibles"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/rotation-cooldowns-pve-dps",
+      "evidence": "Keep Abilities on Cooldown",
+      "expectedFrench": "Utiliser les capacités dès qu’elles sont disponibles"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/rotation-cooldowns-pve-dps",
+      "evidence": "Using your cooldowns on cooldown",
+      "expectedFrench": "Utiliser vos CD dès qu’ils sont disponibles"
+    }
+  ],
+  "semanticBoundary": "The imperative 'use/keep X on cooldown' means use whenever ready; the state 'X is on cooldown' means unavailable. No generic 'on cooldown' mapping was added.",
+  "fixLayer": "locale-scoped MEZU player glossary, data-only",
+  "manualSentenceOverridesAdded": 0,
+  "extensionModified": false,
+  "sourceQualityNotes": [
+    "Feral talent recommendations contain contradictory best-build signals; preserve as source inconsistency.",
+    "Affliction talents guide gives differing Mythic+ preference signals; not a translation failure."
+  ],
+  "verification": {
+    "indexedSourceOnly": true,
+    "newIndependentPages": 5,
+    "unitTests": "CI pending",
+    "dataPackRebuild": "CI pending",
+    "browserRenderedPages": 0,
+    "translatorApi": "browser-only verification needed",
+    "domReconstruction": "browser-only verification needed",
+    "novelTranslationIssueRate": null,
+    "strictCleanCycles": 0,
+    "eligibleToStop": false
+  }
+}
