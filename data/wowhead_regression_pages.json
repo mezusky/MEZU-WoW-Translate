@@ -2491,6 +2491,22 @@
     {
       "id": "frost-death-knight-season2-20261030-standalone-collector-heldout",
       "url": "https://www.wowhead.com/guide/classes/death-knight/frost/midnight-season-2"
+    },
+    {
+      "id": "arcane-mage-prepatch-20261030-cross-spec-source",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/midnight-pre-patch"
+    },
+    {
+      "id": "enhancement-shaman-prepatch-20261030-cross-spec-source",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/midnight-pre-patch"
+    },
+    {
+      "id": "beast-mastery-hunter-leveling-20261030-cross-spec-source",
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/dps-leveling-tips"
+    },
+    {
+      "id": "subtlety-rogue-leveling-20261030-cross-spec-source",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/dps-leveling-tips"
     }
   ]
 }
