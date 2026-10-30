@@ -59,15 +59,26 @@ def _locale_name(row, requested):
     request ``en-US``/``fr-FR``. Regional names must not leak across regions.
     """
     requested = requested.strip().replace("_", "-").casefold()
-    names = {
-        key.strip().replace("_", "-").casefold(): value
-        for key, value in row.items()
-        if isinstance(key, str) and isinstance(value, str) and value.strip()
-    }
+    # Blizzard and imported data can use both en_US and en-US. These are
+    # aliases of one locale, not two independently trusted translations.
+    # Reject conflicting labels rather than letting dict insertion order
+    # silently choose an official name for a canonical entity ID.
+    names, conflicts = {}, set()
+    for key, value in row.items():
+        if not isinstance(key, str) or not isinstance(value, str) or not value.strip():
+            continue
+        locale = key.strip().replace("_", "-").casefold()
+        if locale in names and names[locale] != value:
+            conflicts.add(locale)
+        else:
+            names[locale] = value
+    if requested in conflicts:
+        return None
     if requested in names:
         return names[requested]
     if "-" in requested:
-        return names.get(requested.split("-", 1)[0])
+        generic = requested.split("-", 1)[0]
+        return None if generic in conflicts else names.get(generic)
     return None
 
 
