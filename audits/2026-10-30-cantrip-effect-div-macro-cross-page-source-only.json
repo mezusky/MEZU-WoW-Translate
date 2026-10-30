@@ -1,0 +1,85 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "indexed English Wowhead source-only; direct HTML fetch returned JavaScript verification; browser output not tested",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 589,
+  "corpusAfter": 593,
+  "sampledPages": [
+    {
+      "id": "shadow-priest-gear-20261030-cantrip-cross-section-heldout",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/bis-gear",
+      "role": "dps",
+      "section": "gear",
+      "observations": [
+        "English prose uses 'cantrip effect' for an equipment effect; official item names should remain canonical ID lookups",
+        "Indexed page contains widget formatting artifacts; do not add sentence overrides to mask them"
+      ]
+    },
+    {
+      "id": "unholy-death-knight-tier-set-20261030-official-id-heldout",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/tier-set-bonuses",
+      "role": "dps",
+      "section": "tier-set",
+      "observations": [
+        "English source uses 12.0 class-set 2pc/4pc identifiers alongside Season 2 acquisition text; version mixing is source content"
+      ]
+    },
+    {
+      "id": "feral-druid-tier-set-20261030-cross-spec-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/tier-set-bonuses",
+      "role": "dps",
+      "section": "tier-set",
+      "observations": [
+        "Clearcasting, Omen of Clarity and Rake should be resolved through official spell IDs, not manual sentence replacements"
+      ]
+    },
+    {
+      "id": "devastation-evoker-tier-set-20261030-cross-spec-heldout",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/tier-set-bonuses",
+      "role": "dps",
+      "section": "tier-set",
+      "observations": [
+        "Contains an editorial {{Change the list below...}} placeholder; preserve as source-quality finding, not translation defect"
+      ]
+    }
+  ],
+  "crossPageChecks": [
+    {
+      "urls": [
+        "https://www.wowhead.com/guide/classes/priest/shadow/bis-gear",
+        "https://www.wowhead.com/guide/classes/mage/frost/bis-gear"
+      ],
+      "pattern": "cantrip effect",
+      "change": "Add contextual singular/plural French glossary rules; do not translate bare cantrip"
+    },
+    {
+      "urls": [
+        "https://www.wowhead.com/guide/classes/priest/discipline/addons-macro-ui-imports",
+        "https://www.wowhead.com/guide/classes/paladin/protection/addons-macro-ui-imports",
+        "https://www.wowhead.com/guide/classes/priest/shadow/addons-macro-ui-imports"
+      ],
+      "pattern": "line-oriented #showtooltip and /cast or /run macro directives",
+      "change": "Preserve div-based line boundaries in source-only HTML extraction before filtering macro commands; synthetic DOM fixtures, not observed source markup"
+    }
+  ],
+  "fixLayers": [
+    "French Data Pack glossary source",
+    "shared source-only HTML audit extractor"
+  ],
+  "extensionModified": false,
+  "manualOverridesAdded": 0,
+  "verification": {
+    "indexedSourceOnly": true,
+    "directHtmlAccess": "JavaScript challenge",
+    "unitTests": "CI pending",
+    "dataPackRebuild": "CI pending",
+    "browserRenderedPages": 0,
+    "domReconstruction": "not verified",
+    "translatorApi": "browser-only verification needed",
+    "novelTranslationIssueRate": null,
+    "strictCleanCycles": 0,
+    "eligibleToStop": false
+  }
+}
