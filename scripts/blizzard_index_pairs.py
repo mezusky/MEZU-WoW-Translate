@@ -9,7 +9,7 @@ No text is translated or inferred by this module.
 try:
     from .blizzard_locale_name import verified_locale_name, has_conflicting_locale_aliases
 except ImportError:  # Invoked as scripts from the build pipeline.
-    from blizzard_locale_name import verified_locale_name
+    from blizzard_locale_name import verified_locale_name, has_conflicting_locale_aliases
 
 
 
