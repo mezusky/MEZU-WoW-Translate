@@ -2483,6 +2483,14 @@
     {
       "id": "assassination-rogue-prepatch-20261030-duplicate-entity-heldout",
       "url": "https://www.wowhead.com/guide/classes/rogue/assassination/midnight-pre-patch"
+    },
+    {
+      "id": "balance-druid-season2-20261030-standalone-collector-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/midnight-season-2"
+    },
+    {
+      "id": "frost-death-knight-season2-20261030-standalone-collector-heldout",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/midnight-season-2"
     }
   ]
 }
