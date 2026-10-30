@@ -18,7 +18,8 @@ def normalize_block_text(parts):
     """Keep source line boundaries until non-prose macro filtering is done.
 
     A flat whitespace collapse turns `#showtooltip` and `/cast` into ordinary
-    sentence fragments, defeating the line-anchored audit filters. The caller
+    sentence fragments, defeating the line-anchored audit filters. Div-based
+    macro lines need boundaries just as <br> lines do. The caller
     can flatten the cleaned prose later; this is not browser DOM behavior.
     """
     value = "".join(parts).replace("\r\n", "\n").replace("\r", "\n")
@@ -76,7 +77,7 @@ class Extractor(HTMLParser):
             self.scope += 1
         if tag in ("br", "p", "li", "ul", "ol", "div"):
             for _, parts in self.stack:
-                parts.append("\n" if tag == "br" else " ")
+                parts.append("\n" if tag in ("br", "div") else " ")
         if tag in self.tags and (self.scope or not self.scoped):
             self.stack.append([tag, []])
 
