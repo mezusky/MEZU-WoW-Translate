@@ -94,7 +94,6 @@ def _case_matches_guide_identity(case, canonical_url):
         (r"stat-priority-pve-(?:tank|healer|dps)", "stats"),
         (r"enchants-gems-pve-(?:tank|healer|dps)", "consumables"),
         (r"overview-pve-(?:tank|healer|dps)", "overview"),
-        (r"mage-tower-(?:tank|healer|dps)-challenge-(?:[a-z0-9]+-)*[a-z0-9]+", "mage-tower"),
     )
     section_exact = {
         "bis-gear": "gear",
@@ -102,6 +101,9 @@ def _case_matches_guide_identity(case, canonical_url):
         "mythic-keystones-and-dungeons": "mythic-plus",
         "addons-macro-ui-imports": "macros",
         "manaforge-omega-raid-tips": "raid",
+        # Only source-verified Mage Tower encounter slugs are browser-audit evidence.
+        "mage-tower-tank-challenge-highlord-kruul": "mage-tower",
+        "mage-tower-healer-challenge-lord-erdris-thorn": "mage-tower",
         "dps-leveling-tips": "leveling",
         "healer-leveling-tips": "leveling",
         "tank-leveling-tips": "leveling",
