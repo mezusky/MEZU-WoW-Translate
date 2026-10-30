@@ -2331,6 +2331,18 @@
     {
       "id": "shadow-priest-tier-set-20261030-cross-spec-heldout",
       "url": "https://www.wowhead.com/guide/classes/priest/shadow/tier-set-bonuses"
+    },
+    {
+      "id": "fury-warrior-tier-set-20261030-fixed-slug-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/tier-set-bonuses"
+    },
+    {
+      "id": "assassination-rogue-tier-set-20261030-fixed-slug-heldout",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/tier-set-bonuses"
+    },
+    {
+      "id": "elemental-shaman-tier-set-20261030-fixed-slug-heldout",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/tier-set-bonuses"
     }
   ]
 }
