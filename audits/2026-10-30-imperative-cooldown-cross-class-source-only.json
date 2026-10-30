@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "Live Wowhead URLs opened with assistant web (JavaScript challenge); fresh indexed English excerpts inspected, not browser-rendered MEZU output",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusCountUnchanged": 616,
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "issueFamily": "ambiguous cooldown-state versus imperative cooldown-usage wording",
+  "observations": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/tank-leveling-tips",
+      "role": "tank",
+      "section": "leveling",
+      "evidence": "Imperative 'Use cooldowns on cooldown' and ability-level 'on cooldown'; distinguish commands from ability recharge state"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/dps-leveling-tips",
+      "role": "dps",
+      "section": "leveling",
+      "evidence": "Standalone 'Use on cooldown' and conditional 'Use on cooldown, unless ...' for multiple abilities"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Repeated cooldown usage instructions; 'Using your cooldowns on cooldown' already covered by the French glossary"
+    }
+  ],
+  "fix": {
+    "layer": "locale-scoped data-only MEZU player glossary",
+    "entriesAdded": 2,
+    "sourceForms": [
+      "Use on cooldown",
+      "Use on Cooldown"
+    ],
+    "target": "À utiliser dès que disponible",
+    "excluded": "Bare 'on cooldown' must remain context-dependent; no spell-specific or sentence-wide overrides"
+  },
+  "validation": {
+    "type": "offline glossary contract tests",
+    "pending": "GitHub Actions after commits; browser Translator API and DOM reconstruction remain unverified"
+  },
+  "qualityTrend": {
+    "novelIssueFamiliesMeasured": null,
+    "newPagesBrowserAudited": 0,
+    "cleanCycle": false
+  }
+}
