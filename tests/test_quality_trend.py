@@ -217,15 +217,15 @@ class QualityTrendTests(unittest.TestCase):
         # PTR namespaces remain supported as independent source variants.
         sample = report("a")
         sample["qualitySample"]["browserCases"][0]["url"] = (
-            "https://www.wowhead.com/ptr-2/guide/classes/warrior/protection/rotation"
+            "https://www.wowhead.com/ptr-2/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"
         )
         self.assertTrue(summarize([sample])["cycles"][0]["strictCleanCycle"])
 
     def test_non_wowhead_host_cannot_supply_browser_evidence(self):
         for invalid in (
-            "https://www.wowhead.com.evil.test/guide/classes/warrior/protection/rotation",
-            "https://www.wowhead.com@evil.test/guide/classes/warrior/protection/rotation",
-            "http://www.wowhead.com/guide/classes/warrior/protection/rotation",
+            "https://www.wowhead.com.evil.test/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+            "https://www.wowhead.com@evil.test/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+            "http://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
         ):
             with self.subTest(invalid=invalid):
                 sample = report("a")
