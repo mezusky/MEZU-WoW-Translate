@@ -1,6 +1,6 @@
 """Normalize Blizzard search results by canonical entity ID, independent of locale."""
 try:
-    from .blizzard_locale_name import verified_locale_name
+    from .blizzard_locale_name import verified_locale_name, has_conflicting_locale_aliases
 except ImportError:  # Invoked as scripts from the build pipeline.
     from blizzard_locale_name import verified_locale_name
 
@@ -23,10 +23,15 @@ def search_names(document, locale):
         entity_id = data.get("id")
         if not isinstance(entity_id, int) or isinstance(entity_id, bool) or entity_id <= 0:
             continue
+        key = str(entity_id)
+        # A conflicting alias in any hit invalidates this ID, even if another
+        # hit later offers a plausible single name for the same entity.
+        if has_conflicting_locale_aliases(data.get("name"), locale):
+            ambiguous.add(key)
+            continue
         name = verified_locale_name(data.get("name"), locale)
         if not isinstance(name, str) or not name.strip():
             continue
-        key = str(entity_id)
         name = name.strip()
         if key in names and names[key] != name:
             ambiguous.add(key)
