@@ -558,15 +558,15 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24315643"
     },
     "24315820": {
-      "accepted_pairs": 94,
+      "accepted_pairs": 95,
       "en_blocks": 72,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315820",
-      "fr_blocks": 65,
+      "fr_blocks": 68,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24315820"
     },
     "24316094": {
       "accepted_pairs": 51,
-      "en_blocks": 42,
+      "en_blocks": 44,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24316094",
       "fr_blocks": 40,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24316094"
@@ -3675,6 +3675,7 @@
     "Secure a compromised account.": "Sécurisez un compte compromis.",
     "Secure a compromised account. If you suspect the account was hacked, secure your computer and email account, request restoration, change your password, and add a Battle.net Authenticator..": "Sécurisez un compte compromis. Si vous pensez que votre compte a été piraté, sécurisez votre ordinateur et votre compte de messagerie, effectuez une demande de restauration, changez votre mot de passe et ajoutez un Authenticator Battle.net.",
     "See Azeroth the Way You Remember It": "Découvrez l’Azeroth de vos souvenirs",
+    "See below for details on the exact time you can log in.": "Poursuivez votre lecture pour connaître les dates auxquelles vous pourrez vous connecter.",
     "See the SAF-T and EZ-Thro recipes.": "Par exemples, consultez les recettes des SUR-T et EV-Lan.",
     "Select World of Warcraft from the list of games.": "Sélectionnez World of Warcraft dans la liste des jeux.",
     "Select Your Experience Preset": "Sélectionnez le préréglage de votre expérience",
@@ -5112,7 +5113,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4538,
+  "pair_count": 4539,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -9654,7 +9655,8 @@
     "Welcome back to Azeroth.": "24316094",
     "Welcome back to Azeroth. Whether it's been a few years or many, familiar roads, old friends, and new adventures await you in World of Warcraft: Forever.": "24316094",
     "Whether it's been a few years or many, familiar roads, old friends, and new adventures await you in World of Warcraft: Forever.": "24316094",
-    "World of Warcraft: Forever invites players into a reimagined original Azeroth where exploration, community, and the journey itself take center stage.": "24316094"
+    "World of Warcraft: Forever invites players into a reimagined original Azeroth where exploration, community, and the journey itself take center stage.": "24316094",
+    "See below for details on the exact time you can log in.": "24315820"
   },
   "targetLanguage": "fr-FR"
 }
