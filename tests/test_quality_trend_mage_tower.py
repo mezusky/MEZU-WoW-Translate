@@ -14,6 +14,7 @@ from quality_trend import _canonical_guide_url, _case_matches_guide_identity
 class MageTowerGuideIdentityTests(unittest.TestCase):
     EXAMPLES = (
         ("warrior", "protection", "tank", "highlord-kruul"),
+        ("paladin", "protection", "tank", "highlord-kruul"),
         ("monk", "brewmaster", "tank", "highlord-kruul"),
         ("priest", "holy", "healer", "lord-erdris-thorn"),
     )
