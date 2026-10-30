@@ -229,9 +229,15 @@ class PlayerGlossaryTests(unittest.TestCase):
     def test_locale_glossary_has_no_duplicate_legacy_jargon(self):
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
         player_keys = {term.casefold() for term in GLOSSARY["jargon"]}
-        legacy_keys = {term.casefold() for term in manual.get("jargon", {})}
-        overlapping = player_keys & legacy_keys
-        self.assertEqual(overlapping, set(), "Move terms to one locale-scoped source")
+        # Both legacy layers feed the published pack. A duplicate in exact
+        # can silently bypass the intended single-source locale glossary,
+        # even when the legacy jargon layer is clean.
+        for layer in ("jargon", "exact"):
+            with self.subTest(layer=layer):
+                legacy_keys = {term.casefold() for term in manual.get(layer, {})}
+                overlapping = player_keys & legacy_keys
+                self.assertEqual(overlapping, set(),
+                                 "Move overlapping terms to one locale-scoped source")
         self.assertEqual(GLOSSARY["jargon"]["finishing move"], "coup de grâce")
         self.assertEqual(GLOSSARY["jargon"]["Combo Points"], "points de combo")
 
