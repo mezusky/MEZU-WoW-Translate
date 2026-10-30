@@ -2591,6 +2591,14 @@
     {
       "id": "affliction-warlock-manaforge-omega-20261030-multidot-raid-heldout",
       "url": "https://www.wowhead.com/guide/classes/warlock/affliction/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "subtlety-rogue-manaforge-omega-20261030-raid-heldout",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "devastation-evoker-vault-incarnates-20261030-legacy-raid-heldout",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/vault-of-the-incarnates-raid-tips"
     }
   ]
 }
