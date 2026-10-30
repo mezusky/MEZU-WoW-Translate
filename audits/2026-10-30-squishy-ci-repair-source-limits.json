@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web access: direct Wowhead HTML blocked by JavaScript challenge; search-indexed English source excerpts inspected. No MEZU browser rendering.",
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "corpusBefore": 639,
+  "corpusAfter": 639,
+  "crossPageEvidence": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "observation": "English source uses 'on CD', 'off cooldown', 'weave', and 'pooling' with different contextual meanings."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "observation": "English source uses 'on cooldown', 'overcapping', 'ramp', and 'weaving'; indexed content contains source widget artifacts."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation",
+      "observation": "Direct HTML challenged; no independent prose extraction or rendered French verification."
+    }
+  ],
+  "findings": [
+    "The French-localized Wowhead Mistweaver page mixes English prose with French official names; never classify it as MEZU-translated output.",
+    "Avoid a broad 'on CD' or 'weave' replacement: their meanings depend on grammatical and gameplay context.",
+    "Previous CI failed two glossary tests because 'squishy' was duplicated in manual jargon and locale-scoped player jargon."
+  ],
+  "fixes": [
+    {
+      "layer": "data/manual_overrides.json",
+      "change": "Remove duplicate legacy 'squishy'; keep reusable locale-scoped French mapping.",
+      "commit": "412d1cfbf14b532538a0bd05dc33cb2cc94f8235"
+    }
+  ],
+  "verification": {
+    "sourceIndexed": true,
+    "liveDirectHTML": false,
+    "browserTranslatorAPI": false,
+    "DOMReconstruction": false,
+    "novelIssueRate": null,
+    "githubActions": "Python regression step passed after fix; full rebuild pending at audit time."
+  },
+  "copyright": "Compact source observations only; no guide page copies."
+}
