@@ -5,7 +5,7 @@
   "sourceLanguage": "en",
   "targetLanguage": "fr",
   "corpusBefore": 593,
-  "corpusAfter": 596,
+  "corpusAfter": 598,
   "sampledPages": [
     {
       "id": "destruction-warlock-prepatch-20261030-canonical-alias-heldout",
@@ -35,6 +35,26 @@
       "observations": [
         "English guide contains 2pc/4pc identifiers and off-piece terminology already covered contextually",
         "Official names of set items must remain canonical ID lookups, not whole-sentence overrides"
+      ]
+    },
+    {
+      "id": "brewmaster-monk-ptr-basics-20261030-cross-role-heldout",
+      "url": "https://www.wowhead.com/ptr/guide/classes/monk/brewmaster/basics",
+      "role": "tank",
+      "section": "basics",
+      "observations": [
+        "PTR English starter guide covers Shuffle, Stagger, Brew cooldowns and single-button assistant; linked official spell names need canonical locale mapping",
+        "PTR namespace is retained as a separate source version; no browser output was inspected"
+      ]
+    },
+    {
+      "id": "holy-paladin-ptr-basics-20261030-cross-role-heldout",
+      "url": "https://www.wowhead.com/ptr/guide/classes/paladin/holy/basics",
+      "role": "healer",
+      "section": "basics",
+      "observations": [
+        "English guide uses Holy Power, Holy Shock and Always Be Casting; reuse official ID mappings and existing player glossary",
+        "Source is PTR and may not match current retail rotation; never treat content-version differences as translation errors"
       ]
     }
   ],
