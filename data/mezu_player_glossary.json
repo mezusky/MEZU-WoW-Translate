@@ -289,7 +289,14 @@
     "GCD-locked": "sans GCD libre",
     "GCD locked": "sans GCD libre",
     "GCD-locked specialization": "spécialisation sans GCD libre",
-    "GCD-locked spec": "spé sans GCD libre"
+    "GCD-locked spec": "spé sans GCD libre",
+    "spender": "spender",
+    "spenders": "spenders",
+    "generator": "générateur",
+    "generators": "générateurs",
+    "builder-spender system": "système générateur/spender",
+    "primary resource spender": "spender principal",
+    "resource spender": "spender de ressource"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
