@@ -75,7 +75,8 @@ def _case_matches_guide_identity(case, canonical_url):
     if slug.startswith("bis-gear") and slug != "bis-gear":
         return False
     role_hint = (re.search(r"-pve-(tank|healer|dps)$", slug)
-                 or re.fullmatch(r"(tank|healer|dps)-leveling-tips", slug))
+                 or re.fullmatch(r"(tank|healer|dps)-leveling-tips", slug)
+                 or re.fullmatch(r"mage-tower-(tank|healer|dps)-challenge-(?:[a-z0-9]+-)*[a-z0-9]+", slug))
     if role_hint is not None and case.get("role") != role_hint.group(1):
         return False
 
@@ -93,6 +94,7 @@ def _case_matches_guide_identity(case, canonical_url):
         (r"stat-priority-pve-(?:tank|healer|dps)", "stats"),
         (r"enchants-gems-pve-(?:tank|healer|dps)", "consumables"),
         (r"overview-pve-(?:tank|healer|dps)", "overview"),
+        (r"mage-tower-(?:tank|healer|dps)-challenge-(?:[a-z0-9]+-)*[a-z0-9]+", "mage-tower"),
     )
     section_exact = {
         "bis-gear": "gear",
