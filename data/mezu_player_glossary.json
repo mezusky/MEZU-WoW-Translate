@@ -299,7 +299,10 @@
     "resource spender": "spender de ressource",
     "squishy": "fragile",
     "Squishy": "Fragile",
-    "squishy targets": "cibles fragiles"
+    "squishy targets": "cibles fragiles",
+    "buff uptime": "uptime des buffs",
+    "Keep your buffs up": "Gardez vos buffs actifs",
+    "keep your buffs up": "gardez vos buffs actifs"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
