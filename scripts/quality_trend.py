@@ -174,35 +174,42 @@ def summarize(reports):
             raise ValueError("browserVerifiedPages must be a nonnegative integer")
         if novel is not None and (type(novel) is not int or novel < 0):
             raise ValueError("novelIssueFamilies must be null or nonnegative")
-        # A summary boolean cannot prove cross-page coverage. Require a
-        # per-page browser evidence manifest before counting a clean cycle.
+        # Separate *measured* browser evidence from a *clean* audit.
+        # A claimed browserVerifiedPages count without a matching manifest
+        # must never produce a seemingly precise novelty rate.
         cases = sample.get("browserCases")
-        valid_cases = (isinstance(cases, list) and len(cases) == new_pages
-                       and new_pages >= 5 and all(isinstance(c, dict) for c in cases))
-        if valid_cases:
+        verified_cases = (isinstance(cases, list) and len(cases) == new_pages
+                          and new_pages > 0 and all(isinstance(c, dict) for c in cases))
+        urls = []
+        if verified_cases:
             urls = [_canonical_guide_url(c.get("url")) for c in cases]
-            valid_cases = (
+            verified_cases = (
                 all(u is not None for u in urls)
                 and len(set(urls)) == new_pages
                 and all(_case_matches_guide_identity(c, u) for c, u in zip(cases, urls))
                 and all(c.get("sourceLanguage") == source_language
                         and c.get("targetLanguage") == target_language for c in cases)
-                and all(c.get("browserRendered") is True and c.get("strictPass") is True
-                        for c in cases)
+                and all(c.get("browserRendered") is True for c in cases)
                 and all(isinstance(c.get(key), str) and c[key]
                         for c in cases for key in ("wowClass", "spec", "role", "section"))
-                and len({c["wowClass"] for c in cases}) >= 3
-                and len({c["spec"] for c in cases}) >= 3
-                and {"tank", "healer", "dps"}.issubset({c["role"] for c in cases})
-                and len({c["section"] for c in cases}) >= 2
-                and sum(c.get("heldout") is True for c in cases) >= 2
             )
+        # Failed translations are still measurable, but cannot be clean.
+        # Cross-role/section coverage and heldouts are stricter stop criteria.
+        valid_cases = (
+            verified_cases and new_pages >= 5
+            and all(c.get("strictPass") is True for c in cases)
+            and len({c["wowClass"] for c in cases}) >= 3
+            and len({c["spec"] for c in cases}) >= 3
+            and {"tank", "healer", "dps"}.issubset({c["role"] for c in cases})
+            and len({c["section"] for c in cases}) >= 2
+            and sum(c.get("heldout") is True for c in cases) >= 2
+        )
         # Indexed excerpts can reveal terminology but cannot measure rendered
         # French output or count toward the two-cycle stop condition.
         rendered = sample.get("auditMethod") == "browser-rendered"
-        measured = (rendered and new_pages > 0 and browser_pages >= new_pages
-                    and novel is not None)
-        strict = (measured and valid_cases and valid_pair
+        measured = (rendered and verified_cases and valid_pair
+                    and browser_pages == new_pages and novel is not None)
+        strict = (measured and valid_cases
                   and sample.get("crossRoleVerified") is True
                   and sample.get("unrelatedHeldoutsVerified") is True
                   and novel / new_pages <= 0.05
