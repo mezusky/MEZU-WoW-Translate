@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "Live Wowhead URL discovery through indexed English source excerpts; direct HTML blocked by JavaScript verification; no browser-rendered translation audit",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 593,
+  "corpusAfter": 596,
+  "sampledPages": [
+    {
+      "id": "destruction-warlock-prepatch-20261030-canonical-alias-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/midnight-pre-patch",
+      "role": "dps",
+      "section": "prepatch",
+      "observations": [
+        "Source describes Soul Shards and Apex talents; preserve official ID-backed spell/talent names",
+        "Source contains import-code widgets and mixed prepatch/gear-era data; not evidence of MEZU translation errors"
+      ]
+    },
+    {
+      "id": "elemental-shaman-season2-20261030-canonical-alias-heldout",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/midnight-season-2",
+      "role": "dps",
+      "section": "season",
+      "observations": [
+        "English source uses Apex Talent and 2-piece/4-piece set labels already covered by locale-scoped terminology",
+        "Localized /fr guide keeps English prose with French linked spell names; page locale alone is not source-language evidence"
+      ]
+    },
+    {
+      "id": "havoc-demon-hunter-tier-set-20261030-canonical-alias-heldout",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/tier-set-bonuses",
+      "role": "dps",
+      "section": "tier-set",
+      "observations": [
+        "English guide contains 2pc/4pc identifiers and off-piece terminology already covered contextually",
+        "Official names of set items must remain canonical ID lookups, not whole-sentence overrides"
+      ]
+    }
+  ],
+  "crossPageFix": {
+    "layer": "canonical entity locale projection (shared, language-neutral)",
+    "risk": "Conflicting alias keys such as en_US and en-US, or fr_FR and fr-FR, previously resolved by dictionary insertion order, potentially publishing the wrong official name.",
+    "change": "Fail closed for conflicting normalized aliases; accept identical aliases and preserve unambiguous generic-locale fallback for other regions.",
+    "verifiedBy": "Four deterministic cross-locale unit tests plus existing canonical entity tests; CI status separately checked.",
+    "manualOverridesAdded": 0,
+    "extensionModified": false
+  },
+  "verification": {
+    "indexedSourceOnly": true,
+    "directHtmlAccess": "JavaScript challenge",
+    "browserRenderedPages": 0,
+    "domReconstruction": "not verified",
+    "translatorApi": "browser-only verification needed",
+    "novelTranslationIssueRate": null,
+    "strictCleanCycles": 0,
+    "eligibleToStop": false
+  }
+}
