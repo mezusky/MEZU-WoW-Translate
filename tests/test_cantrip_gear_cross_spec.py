@@ -1,7 +1,8 @@
 """Cross-spec French gear jargon, grounded in live Wowhead Season 2 guides.
 
 Arcane Mage: 'cantrip weapon effect'; Frost Mage: 'cantrip item';
-Fire Mage: 'cantrip gear'. These are descriptions of item effects, not
+Fire Mage: 'cantrip gear'; Shadow Priest and Frost Mage: 'cantrip effect'.
+These are descriptions of item effects, not
 Blizzard spell or item names. This does not assert browser output.
 """
 import json
@@ -22,6 +23,8 @@ class CantripGearGlossaryTests(unittest.TestCase):
             "cantrip items": "objets à effet spécial",
             "cantrip gear": "équipement à effet spécial",
             "cantrip weapon effect": "effet spécial de l’arme",
+            "cantrip effect": "effet spécial",
+            "cantrip effects": "effets spéciaux",
         }
         for source, target in expected.items():
             with self.subTest(source=source):
@@ -33,7 +36,7 @@ class CantripGearGlossaryTests(unittest.TestCase):
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(
             encoding="utf-8"))
         for term in ("cantrip item", "cantrip items", "cantrip gear",
-                     "cantrip weapon effect"):
+                     "cantrip weapon effect", "cantrip effect", "cantrip effects"):
             with self.subTest(term=term):
                 self.assertNotIn(term, manual.get("jargon", {}))
                 self.assertNotIn(term, manual.get("exact", {}))
