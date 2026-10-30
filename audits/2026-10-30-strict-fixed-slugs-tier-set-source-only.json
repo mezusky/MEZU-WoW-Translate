@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "live English Wowhead indexed source excerpts; not browser-rendered",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 583,
+  "corpusAfter": 586,
+  "sampledPages": [
+    {
+      "id": "fury-warrior-tier-set-20261030-fixed-slug-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/tier-set-bonuses",
+      "role": "dps",
+      "section": "tier-set",
+      "sourceStatus": "indexed",
+      "observations": [
+        "Original Fury guide labels the 12.0 2pc bonus as Warrior Arms; source metadata inconsistency, not a translation defect",
+        "Season 1 bonus material and acquisition wording require season-aware interpretation"
+      ]
+    },
+    {
+      "id": "assassination-rogue-tier-set-20261030-fixed-slug-heldout",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/tier-set-bonuses",
+      "role": "dps",
+      "section": "tier-set",
+      "sourceStatus": "indexed",
+      "observations": [
+        "Garrote, Mutilate, Ambush and Fan of Knives require canonical spell-ID localization",
+        "Season 1 tier effects coexist with Season 2 acquisition instructions in the original"
+      ]
+    },
+    {
+      "id": "elemental-shaman-tier-set-20261030-fixed-slug-heldout",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/tier-set-bonuses",
+      "role": "dps",
+      "section": "tier-set",
+      "sourceStatus": "indexed",
+      "observations": [
+        "Stormkeeper, Lightning Bolt and Chain Lightning should resolve through canonical spell IDs",
+        "Original indexed source contains dynamic widget gaps and a Season 1/Season 2 mix"
+      ]
+    }
+  ],
+  "crossPageChecks": [
+    {
+      "pattern": "2-set / 4-set bonus",
+      "layer": "existing French player glossary",
+      "result": "Existing shared rules apply; no new sentence override justified"
+    },
+    {
+      "pattern": "Class Set 2pc / 4pc",
+      "layer": "official entity IDs preferred",
+      "result": "Keep structured ability names and version identifiers separate from prose"
+    }
+  ],
+  "changes": [
+    "Require exact fixed-section guide slugs and full role-specific slug patterns in quality gate",
+    "Add cross-role regression tests rejecting invented URL suffixes",
+    "Add three independent DPS tier-set heldouts"
+  ],
+  "verification": {
+    "liveEnglishSource": "indexed excerpts; direct HTML/browser audit not established",
+    "localUnitTests": "not executed in this audit environment; GitHub Actions required",
+    "fullDataPackSimulation": "not verified",
+    "browserRenderedPages": 0,
+    "domReconstruction": "not verified",
+    "translatorApi": "browser-only verification required",
+    "novelTranslationIssueRate": null,
+    "eligibleToStop": false
+  }
+}
