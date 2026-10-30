@@ -305,7 +305,10 @@
     "keep your buffs up": "gardez vos buffs actifs",
     "soft enrage": "enrage progressif",
     "soft-enrage": "enrage progressif",
-    "soft enrage timer": "timer d’enrage progressif"
+    "soft enrage timer": "timer d’enrage progressif",
+    "execute phase": "phase d’exécution",
+    "Execute phase": "Phase d’exécution",
+    "Execute Phase": "Phase d’exécution"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
