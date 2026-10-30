@@ -1,0 +1,107 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "indexed Wowhead English-source excerpts; no direct page HTML or Chrome translation access",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 601,
+  "corpusAfter": 605,
+  "newPages": [
+    {
+      "class": "warlock",
+      "spec": "destruction",
+      "role": "dps",
+      "section": "tier-set",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/tier-set-bonuses",
+      "evidence": [
+        "soul shard fragments",
+        "overcap",
+        "2-set",
+        "4-set"
+      ]
+    },
+    {
+      "class": "rogue",
+      "spec": "subtlety",
+      "role": "dps",
+      "section": "tier-set",
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/tier-set-bonuses",
+      "evidence": [
+        "finishing moves",
+        "combo point",
+        "Shadow Dance"
+      ]
+    },
+    {
+      "class": "paladin",
+      "spec": "retribution",
+      "role": "dps",
+      "section": "tier-set",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/tier-set-bonuses",
+      "evidence": [
+        "cantrip effect",
+        "Expurgation",
+        "2pc",
+        "4pc"
+      ]
+    },
+    {
+      "class": "hunter",
+      "spec": "marksmanship",
+      "role": "dps",
+      "section": "talent-builds",
+      "url": "https://www.wowhead.com/guide/classes/hunter/marksmanship/talent-builds-pve-dps",
+      "evidence": [
+        "import codes",
+        "Mythic+",
+        "AoE"
+      ]
+    }
+  ],
+  "crossPageChecks": [
+    {
+      "pattern": "official Rogue finisher terminology",
+      "sourcePages": [
+        "rogue/subtlety/tier-set-bonuses",
+        "rogue/assassination/abilities-talents-pve-dps"
+      ],
+      "officialFrenchEvidence": "https://worldofwarcraft.blizzard.com/fr-fr/news/23818247",
+      "status": "data-rule-added; browser unverified"
+    },
+    {
+      "pattern": "Warlock soul shard fragment terminology",
+      "sourcePages": [
+        "warlock/destruction/tier-set-bonuses",
+        "warlock/destruction/rotation-cooldowns-pve-dps"
+      ],
+      "officialFrenchEvidence": "https://worldofwarcraft.blizzard.com/fr-fr/news/20812012",
+      "status": "data-rule-added; browser unverified"
+    },
+    {
+      "pattern": "canonical locale boundary padding",
+      "sourcePages": [
+        "warlock/destruction/tier-set-bonuses",
+        "rogue/subtlety/tier-set-bonuses",
+        "paladin/retribution/tier-set-bonuses"
+      ],
+      "status": "unit regression added; browser unverified"
+    }
+  ],
+  "sourceAnomalies": [
+    "Season 1/Season 2 references coexist on tier-set guides",
+    "Some indexed widget text contains missing import codes and orphan punctuation"
+  ],
+  "changes": [
+    "Trim boundary whitespace in canonical name ingestion and projection; preserve internal spacing",
+    "Add six official Rogue/Warlock phrase forms to fr player glossary",
+    "Add seven regression tests across two new test files"
+  ],
+  "qualitySample": null,
+  "notVerified": [
+    "Full current Data Pack runtime simulation",
+    "Browser Translator API French prose quality",
+    "Chrome DOM/rich-text reconstruction",
+    "GitHub Actions completion"
+  ],
+  "stopCondition": "not met: no browser-verified multi-page quality sample and no two consecutive clean cycles"
+}
