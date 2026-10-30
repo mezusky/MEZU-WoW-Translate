@@ -285,7 +285,11 @@
     "Don't overcap Soul Shards": "Évitez de gaspiller des éclats d’âme en atteignant la limite",
     "Avoid Downtime": "Éviter les temps morts",
     "avoid downtime": "éviter les temps morts",
-    "Avoid wasting Rage": "Éviter de gaspiller de la rage"
+    "Avoid wasting Rage": "Éviter de gaspiller de la rage",
+    "GCD-locked": "sans GCD libre",
+    "GCD locked": "sans GCD libre",
+    "GCD-locked specialization": "spécialisation sans GCD libre",
+    "GCD-locked spec": "spé sans GCD libre"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
