@@ -1,6 +1,21 @@
 """Merge canonical entity locale records without dropping old IDs."""
 
 
+def _locale_alias(value):
+    """Treat Blizzard en_US and BCP-47 en-US as the same locale identity."""
+    return value.strip().replace("_", "-").casefold()
+
+
+def _alias_values(row, requested):
+    """All nonempty names for one exact locale, without regional fallback."""
+    locale = _locale_alias(requested)
+    return {
+        value for key, value in row.items()
+        if isinstance(key, str) and _locale_alias(key) == locale
+        and isinstance(value, str) and value.strip()
+    }
+
+
 def merge_rows(old, new):
     out = {k: dict(v) for k, v in old.items()}
     for key, locales in new.items():
@@ -9,24 +24,20 @@ def merge_rows(old, new):
 
 
 def merge_verified_locale_refresh(previous, fresh, source_key, target_key):
-    """Keep incomplete new IDs without pairing asynchronous locale snapshots.
+    """Refresh only verified locale pairs, including equivalent locale aliases.
 
-    Search responses can be missing one locale. A partial refresh for an
-    existing ID must not combine a newly renamed source with an older target
-    (or vice versa) and publish a false official translation. Only refresh
-    an existing ID's translation pair when both names arrive together.
-    New unpaired IDs remain visible to the collision guard.
+    An incomplete response must not combine a renamed source with a stale
+    target. When an ID is refreshed, old en-US/en_US aliases for the refreshed
+    locales must be replaced, not retained as conflicting official names.
     """
-    if source_key == target_key:
+    if _locale_alias(source_key) == _locale_alias(target_key):
         raise ValueError("Source and target keys must differ")
-    # A locale key with an empty/whitespace-only value is not a fresh
-    # translation. Otherwise a renamed source can be paired with the old
-    # target name retained by merge_rows, publishing a false official pair.
+
     def complete_pair(names):
-        return all(
-            isinstance(names.get(locale), str) and names[locale].strip()
-            for locale in (source_key, target_key)
-        )
+        # Conflicting aliases are not verified names. Empty strings are not
+        # evidence of a fresh translation, even if the old row has a value.
+        return all(len(_alias_values(names, key)) == 1
+                   for key in (source_key, target_key))
 
     accepted = {
         key: names for key, names in fresh.items()
@@ -36,21 +47,25 @@ def merge_verified_locale_refresh(previous, fresh, source_key, target_key):
     for entity_id, names in accepted.items():
         if entity_id not in previous or not complete_pair(names):
             continue
-        old_source = previous[entity_id].get(source_key)
-        # A verified source rename can invalidate names in other locales.
-        # Retaining an older third-language label would silently project a
-        # potentially stale ID -> name pair. Preserve the canonical ID and
-        # refreshed locales, but require a new verified fetch for omitted ones.
-        if (isinstance(old_source, str) and old_source.strip()
-                and old_source != names[source_key]):
-            verified_locales = {
-                locale for locale, value in names.items()
-                if isinstance(value, str) and value.strip()
-            }
-            for locale in previous[entity_id].keys() - verified_locales:
-                merged[entity_id].pop(locale, None)
+        old_source_names = _alias_values(previous[entity_id], source_key)
+        new_source_name = next(iter(_alias_values(names, source_key)))
+        refreshed_locales = {
+            _locale_alias(key) for key, value in names.items()
+            if isinstance(key, str) and isinstance(value, str) and value.strip()
+        }
+        renamed_source = bool(old_source_names and
+                              old_source_names != {new_source_name})
+        for old_key in previous[entity_id]:
+            old_locale = _locale_alias(old_key)
+            # Remove stale alternate spellings (en-US vs en_US) for every
+            # refreshed locale, even when the source name has not changed.
+            if old_locale in refreshed_locales and old_key not in names:
+                merged[entity_id].pop(old_key, None)
+            # A verified source rename invalidates omitted third-language
+            # names until those locales are fetched and verified together.
+            elif renamed_source and old_locale not in refreshed_locales:
+                merged[entity_id].pop(old_key, None)
     return merged
-
 
 def _locale_name(row, requested):
     """Prefer the exact locale, then its generic language; never another region.
@@ -58,7 +73,7 @@ def _locale_name(row, requested):
     Canonical records currently use ``en``/``fr``, while future callers may
     request ``en-US``/``fr-FR``. Regional names must not leak across regions.
     """
-    requested = requested.strip().replace("_", "-").casefold()
+    requested = _locale_alias(requested)
     # Blizzard and imported data can use both en_US and en-US. These are
     # aliases of one locale, not two independently trusted translations.
     # Reject conflicting labels rather than letting dict insertion order
@@ -67,7 +82,7 @@ def _locale_name(row, requested):
     for key, value in row.items():
         if not isinstance(key, str) or not isinstance(value, str) or not value.strip():
             continue
-        locale = key.strip().replace("_", "-").casefold()
+        locale = _locale_alias(key)
         if locale in names and names[locale] != value:
             conflicts.add(locale)
         else:
