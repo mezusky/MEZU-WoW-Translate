@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "Wowhead live URL attempted via assistant web; JavaScript anti-bot challenge; English content inspected via freshly indexed search excerpts only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 614,
+  "corpusAfter": 616,
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "structuralFinding": {
+    "category": "audit-evidence-validity",
+    "problem": "quality_trend.py accepted synthetic /rotation, /talents, /gear, /raid, /mythic-plus paths as if they were canonical Wowhead class guides",
+    "resolution": "Removed bare section labels from strict evidence gate; updated test fixtures to canonical Wowhead slugs; added negative regression test",
+    "crossPageApplicability": "All classes/specs/roles, independent of locale; no extension release or remote executable code"
+  },
+  "sourceObservations": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/dps-leveling-tips",
+      "role": "dps",
+      "section": "leveling",
+      "observation": "Astral Power, DoT, Eclipse, cooldown usage; English source contains editorial typos and old-expansion heading; do not turn source typos into translation overrides"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/rogue/outlaw/dps-leveling-tips",
+      "role": "dps",
+      "section": "leveling",
+      "observation": "downtime, on cooldown, combo points, finisher, procs; cooldown wording needs grammatical context and must not receive an unconditional replacement; already present in corpus"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/dps-leveling-tips",
+      "role": "dps",
+      "section": "leveling",
+      "observation": "Soul Shards, spend/generate, on cooldown, procs and talent names; source-only coverage, no Chrome output inference"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/tank-leveling-tips",
+      "role": "tank",
+      "section": "leveling",
+      "observation": "on cooldown repeated with Blackout Kick, Keg Smash and Chi Burst; confirms same grammatical ambiguity across unrelated tank and DPS guides; already in corpus"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/healer-leveling-tips",
+      "role": "healer",
+      "section": "leveling",
+      "observation": "Holy Power generator/spender and Infusion of Light proc phrasing; already in corpus"
+    }
+  ],
+  "pending": [
+    "Browser-only Translator API and DOM/rich-text reconstruction are unverified",
+    "Current Data Pack output cannot be scored as browser-rendered French from indexed English excerpts",
+    "Investigate reusable context-aware on-cooldown patterns rather than blanket glossary overrides",
+    "CI rebuild and test result must be confirmed after commits"
+  ]
+}
