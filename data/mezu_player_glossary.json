@@ -275,7 +275,9 @@
     "Keep cooldowns on cooldown": "Utiliser les CD dès qu’ils sont disponibles",
     "Keep Abilities on cooldown": "Utiliser les capacités dès qu’elles sont disponibles",
     "Keep Abilities on Cooldown": "Utiliser les capacités dès qu’elles sont disponibles",
-    "Using your cooldowns on cooldown": "Utiliser vos CD dès qu’ils sont disponibles"
+    "Using your cooldowns on cooldown": "Utiliser vos CD dès qu’ils sont disponibles",
+    "Use on cooldown": "À utiliser dès que disponible",
+    "Use on Cooldown": "À utiliser dès que disponible"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
