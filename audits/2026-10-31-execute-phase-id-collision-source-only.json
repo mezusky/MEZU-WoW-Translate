@@ -1,0 +1,57 @@
+{
+  "schema": 1,
+  "date": "2026-10-31",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web-indexed Wowhead source excerpts; direct live HTML challenged by JavaScript. No MEZU browser output or Translator API execution.",
+  "corpusSize": 650,
+  "corpusAdded": 0,
+  "reasonNoNewPages": "Existing corpus already includes broad current retail rotation/overview/gear/raid coverage across all roles; avoided redundant source-only URLs.",
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "issueFamily": "Ambiguous execute: combat phase vs official Execute ability",
+  "sourceChecks": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/rotation-cooldowns-pve-dps",
+      "context": "Retail Arms guide uses Execute as an ability and Execute Priority as a combat-window heading."
+    },
+    {
+      "url": "https://www.wowhead.com/wotlk/guide/classes/warlock/affliction/dps-rotation-cooldowns-abilities-pve",
+      "context": "Historical cross-class source uses execute phase for low-health combat."
+    },
+    {
+      "url": "https://www.wowhead.com/wotlk/guide/classes/hunter/survival/dps-rotation-cooldowns-abilities-pve",
+      "context": "Historical cross-class source uses execute phase/range and a different official spell (Kill Shot)."
+    }
+  ],
+  "changes": [
+    {
+      "layer": "data/mezu_player_glossary.json",
+      "commit": "70ba778be9efc74644fa3aa443dbdd644a0ae4ba",
+      "note": "Locale-scoped execute phase phrases; no bare Execute key."
+    },
+    {
+      "layer": "tests/test_execute_phase_locale_glossary.py",
+      "commit": "91ae91c9f19c7724f194faaa9fb4a34d76ddd3f3",
+      "note": "Protect phrase/spell distinction and manual-layer collisions."
+    },
+    {
+      "layer": "data/manual_overrides.json",
+      "commit": "569470f2f20686cc7408326952d6aca027e71014",
+      "note": "Removed ambiguous execute -> execute legacy jargon override; official names remain ID-driven."
+    }
+  ],
+  "validation": {
+    "githubReadback": true,
+    "localeGlossaryEntries": 308,
+    "legacyJargonEntries": 164,
+    "duplicatePhraseOverrides": 0,
+    "pythonTestsRun": false,
+    "githubActionsResult": "not confirmed",
+    "browserOnlyRemaining": [
+      "Official Execute spell projection in rendered Chrome output",
+      "Phrase preservation across rich-text and interactive guide sections",
+      "Novel issue rate on previously unseen translated pages"
+    ]
+  }
+}
