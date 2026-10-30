@@ -2463,6 +2463,22 @@
     {
       "id": "destruction-warlock-leveling-20261030-soul-shards-heldout",
       "url": "https://www.wowhead.com/guide/classes/warlock/destruction/dps-leveling-tips"
+    },
+    {
+      "id": "frost-mage-season2-20261030-alias-entity-heldout",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/midnight-season-2"
+    },
+    {
+      "id": "assassination-rogue-season2-20261030-alias-entity-heldout",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/midnight-season-2"
+    },
+    {
+      "id": "unholy-death-knight-season2-20261030-alias-entity-heldout",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/midnight-season-2"
+    },
+    {
+      "id": "elemental-shaman-prepatch-20261030-alias-entity-heldout",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/midnight-pre-patch"
     }
   ]
 }
