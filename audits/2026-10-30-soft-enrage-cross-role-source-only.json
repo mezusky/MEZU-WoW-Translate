@@ -1,0 +1,71 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web inspection of English Wowhead guide pages and indexed source excerpts; anti-bot challenge on some direct HTML requests. No browser-local MEZU/Translator API execution.",
+  "corpusBefore": 648,
+  "corpusAfter": 650,
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "issueFamily": "Raid soft enrage versus hard enrage / generic enrage timer",
+  "sourceChecks": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/manaforge-omega-raid-tips",
+      "role": "dps",
+      "observation": "Loom'ithar Phase 2 is a soft enrage; cooldowns are held for it."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/manaforge-omega-raid-tips",
+      "role": "dps",
+      "observation": "Independent author also calls Loom'ithar Phase 2 a soft enrage."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/manaforge-omega-raid-tips",
+      "role": "tank",
+      "observation": "Speculates that escalating platform pressure could be a soft enrage."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/vault-of-the-incarnates-raid-tips",
+      "role": "dps",
+      "observation": "Legacy Kurog encounter uses soft enrage for escalating add pressure; historical language regression only."
+    }
+  ],
+  "newlyAddedHeldouts": [
+    "https://www.wowhead.com/guide/classes/rogue/subtlety/manaforge-omega-raid-tips",
+    "https://www.wowhead.com/guide/classes/evoker/devastation/vault-of-the-incarnates-raid-tips"
+  ],
+  "changes": [
+    {
+      "layer": "data/mezu_player_glossary.json",
+      "commit": "a69775f4c8330379f82b6de5f1719a92d72ca73f",
+      "note": "Three locale-scoped soft-enrage variants, no broad 'enrage' override."
+    },
+    {
+      "layer": "tests/test_soft_enrage_locale_glossary.py",
+      "commit": "aaaef83dbde742233edb07a5a2709f052776e4f6",
+      "note": "Guard semantics and manual-layer collisions."
+    },
+    {
+      "layer": "data/wowhead_regression_pages.json",
+      "commit": "ce4d918bfdfe9aed75af4adb999337fd24b1da2c",
+      "note": "Two independent raid heldouts."
+    }
+  ],
+  "validation": {
+    "githubFilesReadBack": true,
+    "jsonParsed": true,
+    "uniqueGuideUrls": 650,
+    "uniqueGuideIds": 650,
+    "localeGlossaryEntries": 305,
+    "legacyCollisions": 0,
+    "pythonTestsRun": false,
+    "githubActionsResult": "not confirmed",
+    "browserOnlyRemaining": [
+      "Actual French rendered output",
+      "Rich-text/DOM preservation",
+      "Browser-local Translator API",
+      "Novel issue rate across unseen translated pages"
+    ]
+  }
+}
