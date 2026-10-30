@@ -41,6 +41,8 @@ class MageTowerGuideIdentityTests(unittest.TestCase):
 
     def test_bare_or_extended_section_slugs_do_not_count(self):
         for slug in ("mage-tower", "mage-tower-tank-challenge",
+                     "mage-tower-tank-challenge-highlord-kruul-extra",
+                     "mage-tower-tank-challenge-unknown-boss",
                      "mage-tower-tank-challenge-highlord-kruul-extra/rotation"):
             with self.subTest(slug=slug):
                 url = f"https://www.wowhead.com/guide/classes/warrior/protection/{slug}"
