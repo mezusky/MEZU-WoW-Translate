@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web opened live Wowhead URLs; direct HTML required JavaScript challenge, so English evidence is from search-indexed guide text. Browser-rendered MEZU French and DOM were not verified.",
+  "corpusBefore": 633,
+  "corpusAfter": 636,
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "sampledPages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/dps-leveling-tips",
+      "role": "dps",
+      "section": "leveling",
+      "evidence": "GCD locked after level 13; no long periods of downtime"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/basics",
+      "role": "dps",
+      "section": "basics",
+      "evidence": "GCD-locked specialization; Maelstrom Weapon spender priority"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/talent-builds-pve-healer",
+      "role": "healer",
+      "section": "talents",
+      "evidence": "GCD locked with many abilities available often"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/dps-leveling-tips",
+      "role": "dps",
+      "section": "leveling",
+      "evidence": "spenders and shard generation; indexed source contains (Spell #316099) placeholder"
+    }
+  ],
+  "sourceCaveats": [
+    "(Spell #316099) in Affliction source is not evidence of a MEZU mistranslation.",
+    "Survival Hunter guide calls the Hunter specialization tree 'Enhancement spec tree'; treat as source-author wording, not a translation bug."
+  ],
+  "fixes": [
+    {
+      "layer": "French locale player glossary",
+      "change": "GCD-locked/GCD locked -> sans GCD libre, including spec/specialization phrase forms",
+      "manualOverridesAdded": 0
+    },
+    {
+      "layer": "French locale player glossary",
+      "change": "Moved seven generic builder/spender terms out of legacy manual jargon without changing their translations",
+      "manualOverridesRemoved": 7
+    },
+    {
+      "layer": "regression corpus and tests",
+      "change": "Added three independent Wowhead guide URLs and two targeted unit test modules"
+    }
+  ],
+  "verification": {
+    "sourceIndexed": true,
+    "liveDirectHTML": false,
+    "browserTranslatorAPI": false,
+    "DOMReconstruction": false,
+    "qualityTrendNovelIssueRate": null,
+    "githubActions": "not confirmed"
+  },
+  "copyright": "Compact observations only; no complete guide text stored."
+}
