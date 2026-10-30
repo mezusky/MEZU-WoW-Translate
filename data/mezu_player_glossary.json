@@ -302,7 +302,10 @@
     "squishy targets": "cibles fragiles",
     "buff uptime": "uptime des buffs",
     "Keep your buffs up": "Gardez vos buffs actifs",
-    "keep your buffs up": "gardez vos buffs actifs"
+    "keep your buffs up": "gardez vos buffs actifs",
+    "soft enrage": "enrage progressif",
+    "soft-enrage": "enrage progressif",
+    "soft enrage timer": "timer d’enrage progressif"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
