@@ -1,0 +1,66 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "Assistant web opened live Wowhead URLs; direct HTML required JavaScript challenge, so only fresh indexed English source excerpts were audited, not MEZU browser output",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 623,
+  "corpusAfter": 627,
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "issueFamily": "resource overcapping versus resource waste: distinct player-facing concepts across classes and specs",
+  "observations": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation",
+      "evidence": "Avoid Rage Waste and Avoid Rage Capping; preserve distinction"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation",
+      "evidence": "Avoid Rage Waste and avoid capping Rage; unrelated tank spec"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Do not overcap Soul Shards and avoid capping soul shards"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Don't overcap Soul Shards; separate DPS spec"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Don't overcap your Soul Shards; unhandled wording intentionally not generalized without engine pattern support"
+    }
+  ],
+  "newIndependentSourcePages": [
+    "https://www.wowhead.com/guide/classes/mage/arcane/midnight-pre-patch",
+    "https://www.wowhead.com/guide/classes/shaman/enhancement/midnight-pre-patch",
+    "https://www.wowhead.com/guide/classes/hunter/beast-mastery/dps-leveling-tips",
+    "https://www.wowhead.com/guide/classes/rogue/subtlety/dps-leveling-tips"
+  ],
+  "fix": {
+    "layer": "locale-scoped data-only player glossary",
+    "entriesAdded": 5,
+    "manualSentenceOverridesAdded": 0,
+    "extensionCodeChanged": false,
+    "principle": "Avoid bare overcap/capping replacements; distinguish wasteful spending from losing resources at cap"
+  },
+  "validation": {
+    "local": "source and corpus invariants checked against GitHub files; dedicated offline tests committed",
+    "pending": "GitHub Actions rebuild and browser-only Translator API/DOM verification"
+  },
+  "qualityTrend": {
+    "novelIssueFamiliesMeasured": null,
+    "newPagesBrowserAudited": 0,
+    "cleanCycle": false
+  }
+}
