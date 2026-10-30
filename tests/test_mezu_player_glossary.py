@@ -228,8 +228,12 @@ class PlayerGlossaryTests(unittest.TestCase):
 
     def test_locale_glossary_has_no_duplicate_legacy_jargon(self):
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
-        overlapping = set(GLOSSARY["jargon"]) & set(manual.get("jargon", {}))
+        player_keys = {term.casefold() for term in GLOSSARY["jargon"]}
+        legacy_keys = {term.casefold() for term in manual.get("jargon", {})}
+        overlapping = player_keys & legacy_keys
         self.assertEqual(overlapping, set(), "Move terms to one locale-scoped source")
+        self.assertEqual(GLOSSARY["jargon"]["finishing move"], "coup de grâce")
+        self.assertEqual(GLOSSARY["jargon"]["Combo Points"], "points de combo")
 
 
     def test_rotation_assistant_editorial_aliases_share_official_ui_name(self):
