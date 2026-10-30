@@ -1,0 +1,63 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "indexed Wowhead source-only; direct HTML blocked by JavaScript challenge; not browser-rendered",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 586,
+  "corpusAfter": 589,
+  "sampledPages": [
+    {
+      "id": "restoration-shaman-prepatch-20261030-locale-contract-healer-heldout",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/midnight-pre-patch",
+      "role": "healer",
+      "section": "prepatch",
+      "sourceStatus": "indexed localized excerpt",
+      "observations": [
+        "English guide prose visible through a zh-TW indexed variant; embedded spell names are localized, so this is not proof of the English-page DOM",
+        "Source discusses hard-casts, filler spells and mana; existing reusable French glossary already covers filler and hard-cast"
+      ]
+    },
+    {
+      "id": "demonology-warlock-talent-builds-20261030-locale-contract-dps-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/talent-builds-pve-dps",
+      "role": "dps",
+      "section": "talents",
+      "sourceStatus": "indexed English excerpt",
+      "observations": [
+        "Import codes, calculator rows and copy-button widgets must not be mistaken for translatable prose",
+        "Talent labels should use canonical WoW IDs rather than sentence overrides"
+      ]
+    },
+    {
+      "id": "arms-warrior-tier-set-20261030-locale-contract-dps-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/tier-set-bonuses",
+      "role": "dps",
+      "section": "tier-set",
+      "sourceStatus": "indexed localized excerpt",
+      "observations": [
+        "Tier-set bonuses and gear slots mix original source prose with localized item names in indexed regional variants",
+        "Keep season/version inconsistencies as source issues, not translation exceptions"
+      ]
+    }
+  ],
+  "issueFamily": "source-only audit can silently score EN→FR exact/jargon layers when configuration requests another language direction or same-language pass-through",
+  "rootCause": "analyze_wowhead_guides.py read locale settings from corpus config but always loaded the current published Data Pack without validating that the pair was compatible",
+  "fixLayer": "shared audit engine, not content overrides or browser extension",
+  "changes": [
+    "Add generic locale-pair contract with regional matching and same-base-language skip",
+    "Fail closed before fetching/scoring when requested source/target are incompatible with the Data Pack",
+    "Add locale regression tests including EN→FR, DE→ES, wrong direction and region-specific packs",
+    "Add three heldout guide URLs"
+  ],
+  "verification": {
+    "sourceOnly": true,
+    "unitTests": "GitHub Actions pending at commit time",
+    "fullDataPackSimulation": "not verified",
+    "browserRenderedPages": 0,
+    "domReconstruction": "not verified",
+    "translatorApi": "browser-only",
+    "novelTranslationIssueRate": null,
+    "eligibleToStop": false
+  }
+}
