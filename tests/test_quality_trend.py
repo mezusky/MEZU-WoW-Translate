@@ -21,8 +21,17 @@ def report(cycle, method="browser-rendered", novel=0, clean=True):
         ("shaman", "restoration", "healer", "raid"),
         ("evoker", "augmentation", "dps", "mythic-plus"),
     ])
+    # Use canonical Wowhead guide slugs even in synthetic audit fixtures.
+    # A test fixture must not teach the stop gate to accept invented URLs.
+    slugs = {
+        "rotation": lambda role: f"rotation-cooldowns-pve-{role}",
+        "talents": lambda role: f"talent-builds-pve-{role}",
+        "gear": lambda role: "bis-gear",
+        "raid": lambda role: "midnight-season-2-raid-tips",
+        "mythic-plus": lambda role: "mythic-plus-dungeon-tips",
+    }
     cases = [
-        {"url": f"https://www.wowhead.com/guide/classes/{cls}/{spec}/{section}",
+        {"url": f"https://www.wowhead.com/guide/classes/{cls}/{spec}/{slugs[section](role)}",
          "wowClass": cls, "spec": spec, "role": role, "section": section,
          "sourceLanguage": "en", "targetLanguage": "fr",
          "heldout": i < 2, "browserRendered": True, "strictPass": True}
@@ -169,7 +178,7 @@ class QualityTrendTests(unittest.TestCase):
         # /ptr-12/ is a source-content namespace, not a regional locale.
         # Collapsing it to retail would undercount independent audits.
         from quality_trend import _canonical_guide_url
-        base = "https://www.wowhead.com/guide/classes/warrior/protection/rotation"
+        base = "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"
         self.assertEqual(_canonical_guide_url(base.replace("/guide/", "/fr/guide/")), base)
         self.assertEqual(_canonical_guide_url(base.replace("/guide/", "/en-US/guide/")), base)
         for namespace in ("ptr", "ptr-2", "ptr-12", "ptr-123"):
@@ -345,6 +354,20 @@ class QualityTrendTests(unittest.TestCase):
         for case in sample["qualitySample"]["browserCases"]:
             case["section"] = "rotation"
         self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
+
+    def test_bare_section_slugs_are_not_browser_evidence(self):
+        # These plausible-looking paths are synthetic labels, not canonical
+        # Wowhead class guides. A fabricated audit must not close the loop.
+        for section in ("rotation", "talents", "gear", "raid", "mythic-plus"):
+            with self.subTest(section=section):
+                sample = report("a")
+                case = sample["qualitySample"]["browserCases"][0]
+                case["url"] = (
+                    "https://www.wowhead.com/guide/classes/"
+                    f"warrior/protection/{section}"
+                )
+                case["section"] = section
+                self.assertFalse(summarize([sample])["cycles"][0]["strictCleanCycle"])
 
     def test_real_cross_section_guide_slugs_remain_eligible(self):
         sample = report("a")
