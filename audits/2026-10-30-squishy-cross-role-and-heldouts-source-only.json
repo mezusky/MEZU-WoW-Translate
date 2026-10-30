@@ -1,0 +1,96 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web search indexed live Wowhead guides; direct URL open returned a JavaScript anti-bot challenge. No browser extension rendering or Translator API was available.",
+  "corpusBefore": 636,
+  "corpusAfter": 639,
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "crossPageEvidence": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/paladin/holy/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "pattern": "squishy ranged targets / squishy targets"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "pattern": "squishy DPS player"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/midnight-season-2",
+      "role": "tank",
+      "section": "season overview",
+      "pattern": "quite squishy"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/tier-lists/tank-rankings-raids",
+      "role": "tank",
+      "section": "raid ranking",
+      "pattern": "Brewmaster is quite squishy",
+      "corpusEligible": false
+    }
+  ],
+  "newHeldoutPages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/midnight-season-2",
+      "role": "dps",
+      "section": "season overview",
+      "check": "stat priority, talent build tables, spell/item names"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/midnight-season-2",
+      "role": "dps",
+      "section": "season overview",
+      "check": "existing Avoid Downtime and Keep Abilities on cooldown terminology"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/cheat-sheet",
+      "role": "dps",
+      "section": "cheat sheet",
+      "check": "talent/gear widgets and rich-text table structure"
+    }
+  ],
+  "fixes": [
+    {
+      "layer": "French locale player glossary",
+      "terms": {
+        "squishy": "fragile",
+        "Squishy": "Fragile",
+        "squishy targets": "cibles fragiles"
+      },
+      "manualOverridesAdded": 0
+    },
+    {
+      "layer": "regression corpus",
+      "newPages": 3
+    },
+    {
+      "layer": "tests",
+      "file": "tests/test_squishy_locale_glossary.py",
+      "checks": [
+        "locale isolation",
+        "cross-role coverage",
+        "duplicate identities"
+      ]
+    }
+  ],
+  "sourceCaveats": [
+    "Wowhead localized /fr/ guide pages may contain English prose with official French entity labels; this is Wowhead source output, not MEZU-rendered output.",
+    "Search-indexed snippets cannot prove final translated grammar, entity ID mapping, or DOM reconstruction.",
+    "Do not treat source spelling, source widget artifacts, or stale season wording as MEZU translation failures."
+  ],
+  "verification": {
+    "sourceIndexed": true,
+    "liveDirectHTML": false,
+    "browserTranslatorAPI": false,
+    "DOMReconstruction": false,
+    "qualityTrendNovelIssueRate": null,
+    "githubActions": "not confirmed after commits"
+  },
+  "copyright": "Compact source observations only; no guide pages copied."
+}
