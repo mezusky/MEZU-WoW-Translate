@@ -79,5 +79,32 @@
     "githubActions": "not confirmed for new commits",
     "localUnitTests": "not executed in connector runtime"
   },
-  "copyright": "Only compact observations; no full guide content."
+  "copyright": "Only compact observations; no full guide content.",
+  "expectedFrenchDataLayerSamples": [
+    {
+      "source": "squishy",
+      "expected": "fragile",
+      "layer": "MEZU player glossary (existing entry)",
+      "verified": "data entry only; not browser output"
+    },
+    {
+      "source": "spot-healing",
+      "expected": "soin ciblé",
+      "layer": "MEZU player glossary (existing entry)",
+      "verified": "data entry only; not browser output"
+    },
+    {
+      "source": "Stagger (Brewmaster passive)",
+      "expected": "Report",
+      "layer": "official localized entity name; must resolve by canonical WoW ID",
+      "verified": "French Wowhead source; current browser ID resolution not tested"
+    },
+    {
+      "source": "stagger the deaths",
+      "expected": "échelonner les morts",
+      "layer": "ordinary prose fallback, not the Stagger entity",
+      "verified": "semantic expectation only; browser translation not tested"
+    }
+  ],
+  "layerInspection": "Read build_datapack.py merge order and the current MEZU player glossary, manual overrides, community glossary and Blizzard phrase-memory source. Canonical ID entities take precedence over prose; locale-scoped jargon overrides legacy manual jargon. Full generated Data Pack and browser Translator API output were not replayed; no claim of end-to-end French correctness."
 }
