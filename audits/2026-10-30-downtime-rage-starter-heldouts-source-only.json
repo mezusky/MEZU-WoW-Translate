@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "Assistant web opened live Wowhead English URLs; direct HTML was a JavaScript verification challenge, so only indexed English source excerpts and official Blizzard text were reviewed. No browser MEZU translation was observed.",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 627,
+  "corpusAfter": 631,
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "issueFamily": "Avoid Downtime vs Avoid wasting Rage are distinct, reusable rotation headings; preserve contextual resource terminology",
+  "sourceObservations": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/rotation-cooldowns-pve-dps",
+      "evidence": "Avoid Downtime; Avoid wasting Rage"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/rotation-cooldowns-pve-dps",
+      "evidence": "Avoid Downtime; Avoid wasting Rage"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/rotation-cooldowns-pve-dps",
+      "evidence": "avoid downtime in movement/channeling advice, not resource overcapping"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/overview-pve-tank",
+      "evidence": "Avoid Rage waste is an independently worded tank resource instruction"
+    }
+  ],
+  "newIndexedSourcePages": [
+    "https://www.wowhead.com/guide/classes/paladin/retribution/basics",
+    "https://www.wowhead.com/guide/classes/warrior/arms/cheat-sheet",
+    "https://www.wowhead.com/guide/classes/hunter/beast-mastery/basics",
+    "https://www.wowhead.com/guide/classes/paladin/retribution/dps-leveling-tips"
+  ],
+  "existingTerminologyReused": {
+    "english": [
+      "Assisted Highlight",
+      "Single-Button Assistant"
+    ],
+    "officialFrench": [
+      "Surbrillance d’aide",
+      "Assistant à bouton unique"
+    ],
+    "source": "https://worldofwarcraft.blizzard.com/fr-fr/news/24205457",
+    "newEntriesAdded": 0
+  },
+  "fix": {
+    "layer": "target-locale player glossary",
+    "newEntriesAdded": 3,
+    "manualSentenceOverridesAdded": 0,
+    "extensionCodeChanged": false
+  },
+  "validation": {
+    "offline": "Glossary JSON parsed, uniqueness of new corpus URLs/IDs checked before commit, regression test committed",
+    "pending": "GitHub Actions final CI; browser-only Translator API and DOM rendering",
+    "qualityTrend": {
+      "novelIssueRate": null,
+      "cleanCycle": false
+    }
+  }
+}
