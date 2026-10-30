@@ -1,0 +1,75 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "Live canonical URLs opened via assistant web; Wowhead direct HTML requires JavaScript; English source excerpts checked through indexed search, not Chrome MEZU output",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusCount": 620,
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "issueFamily": "Blizzard canonical entity locale-alias conflicts before ID projection",
+  "observations": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/midnight-season-2",
+      "role": "dps",
+      "section": "season",
+      "signals": [
+        "Glacial Spike",
+        "Frostfire",
+        "Spellslinger"
+      ],
+      "sourceStatus": "indexed English"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/midnight-season-2",
+      "role": "dps",
+      "section": "season",
+      "signals": [
+        "Envenom",
+        "Thistle Tea",
+        "Deathmark"
+      ],
+      "sourceStatus": "indexed English"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/midnight-season-2",
+      "role": "dps",
+      "section": "season",
+      "signals": [
+        "Army of the Dead",
+        "Runic Power",
+        "Scourge Strike"
+      ],
+      "sourceStatus": "indexed English"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/midnight-pre-patch",
+      "role": "dps",
+      "section": "prepatch",
+      "signals": [
+        "Maelstrom",
+        "Lava Burst",
+        "Ascendance"
+      ],
+      "sourceStatus": "indexed English"
+    }
+  ],
+  "fix": {
+    "layer": "local Python data-pack source parser",
+    "files": [
+      "scripts/blizzard_locale_name.py",
+      "scripts/blizzard_search_pairs.py",
+      "scripts/blizzard_index_pairs.py"
+    ],
+    "rule": "Require all underscore/hyphen locale aliases to agree before trusting a canonical ID name; never guess another regional locale",
+    "newManualOverrides": 0,
+    "extensionChanges": 0
+  },
+  "validation": {
+    "tests": "Unit tests for alias conflict, identical aliases, region isolation, index/search consistency, and de->fr projection",
+    "browserTranslatorAPI": "not verified",
+    "domReconstruction": "not verified",
+    "newIssueRate": null,
+    "strictCleanCycle": false
+  }
+}
