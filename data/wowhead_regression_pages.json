@@ -2355,6 +2355,22 @@
     {
       "id": "arms-warrior-tier-set-20261030-locale-contract-dps-heldout",
       "url": "https://www.wowhead.com/guide/classes/warrior/arms/tier-set-bonuses"
+    },
+    {
+      "id": "shadow-priest-gear-20261030-cantrip-cross-section-heldout",
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/bis-gear"
+    },
+    {
+      "id": "unholy-death-knight-tier-set-20261030-official-id-heldout",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/tier-set-bonuses"
+    },
+    {
+      "id": "feral-druid-tier-set-20261030-cross-spec-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/tier-set-bonuses"
+    },
+    {
+      "id": "devastation-evoker-tier-set-20261030-cross-spec-heldout",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/tier-set-bonuses"
     }
   ]
 }
