@@ -1,0 +1,83 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web search of indexed current and legacy English Wowhead guides; direct live HTML access returned JavaScript challenge. Source-only audit; no browser MEZU translation evidence.",
+  "corpusBefore": 642,
+  "corpusAfter": 646,
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "sourceHeldouts": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/mage-tower-tank-challenge-highlord-kruul",
+      "role": "tank",
+      "section": "mage-tower",
+      "observation": "Legacy challenge mechanics include damage spikes, interrupts and cooldown timing; guide explicitly not updated for Midnight pre-patch."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/mage-tower-tank-challenge-highlord-kruul",
+      "role": "tank",
+      "section": "mage-tower",
+      "observation": "Unrelated tank source with mixed spell links, gear and talent sections; old expansion gameplay is not current translation correctness evidence."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/mage-tower-healer-challenge-lord-erdris-thorn",
+      "role": "healer",
+      "section": "mage-tower",
+      "observation": "Multi-stage healer guide contains NPC names, healing triage, cooldown and talent references; stale Dragonflight gear advice belongs to source."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/paladin/protection/mage-tower-tank-challenge-highlord-kruul",
+      "role": "tank",
+      "section": "mage-tower",
+      "observation": "The source calls Prophet Velen 'squishy': existing fr player jargon squishy -> fragile generalizes beyond original healer/tank samples; source also contains OLD CONTENT REPLACE LATER marker, not a MEZU translation defect."
+    }
+  ],
+  "crossPageChecks": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/rotation-cooldowns-pve-tank",
+      "observation": "Stagger is a canonical Brewmaster defensive passive; ID-backed Report must not be applied to ordinary stagger verbs."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/dps-leveling-tips",
+      "observation": "'stagger the deaths' is an ordinary English verb phrase, not the official Brewmaster passive."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/rotation-cooldowns-pve-healer",
+      "observation": "Existing spot-healing -> soin ciblé applies to healer guide prose; source-localized Wowhead variants mix English prose with localized spell names and malformed English plurals."
+    }
+  ],
+  "changes": [
+    {
+      "layer": "scripts/quality_trend.py",
+      "change": "Recognize cross-role mage-tower challenge section slugs and check explicit tank/healer/dps role in slug; keep stop gate browser-only.",
+      "commit": "47894b01ec29db3504376b0c573f90641daeda1f"
+    },
+    {
+      "layer": "tests/test_quality_trend_mage_tower.py",
+      "change": "Source-grounded cross-role guide identity tests; reject malformed or mislabeled cases.",
+      "commit": "83ffec5a3fe70cb887ee8d768f48442f6c3d027d"
+    },
+    {
+      "layer": "data/wowhead_regression_pages.json",
+      "change": "Add four unique legacy challenge heldouts for broader section and role coverage.",
+      "commit": "846a89627c90d6f4982217a457451c557f970bb7"
+    },
+    {
+      "layer": "tests/test_cross_guide_ambiguity.py",
+      "change": "Protect existing squishy/spot-healing jargon and prevent unsafe bare Stagger prose overrides.",
+      "commit": "270d316332f01a13d7214ec1fac6efe86ac94daa"
+    }
+  ],
+  "verification": {
+    "sourceIndexed": true,
+    "liveDirectHTML": false,
+    "browserTranslatorAPI": false,
+    "DOMReconstruction": false,
+    "novelIssueRate": null,
+    "githubActions": "not confirmed for new commits",
+    "localUnitTests": "not executed in connector runtime"
+  },
+  "copyright": "Only compact observations; no full guide content."
+}
