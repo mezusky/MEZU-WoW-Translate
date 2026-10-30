@@ -1,0 +1,62 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "Live Wowhead English pages inspected via search-indexed source excerpts; direct HTML requests returned JavaScript verification; no browser-rendered MEZU output",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 598,
+  "corpusAfter": 601,
+  "sampledPages": [
+    {
+      "id": "frost-death-knight-leveling-20261030-alias-refresh-heldout",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/dps-leveling-tips",
+      "role": "dps",
+      "section": "leveling",
+      "sourceObservations": [
+        "Runic Power occurs in leveling rotation; locale-scoped glossary expects Puissance runique",
+        "Linked spell/talent names such as Frost Strike and Howling Blast require canonical ID-backed FR projection, not free-prose replacements"
+      ]
+    },
+    {
+      "id": "enhancement-shaman-leveling-20261030-alias-refresh-heldout",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/dps-leveling-tips",
+      "role": "dps",
+      "section": "leveling",
+      "sourceObservations": [
+        "Maelstrom Weapon, Stormstrike and Chain Lightning recur across rotation and talent tree",
+        "Apex Talent occurs in 80-90 talent guidance; existing locale-scoped jargon maps to talent de prestige"
+      ]
+    },
+    {
+      "id": "frost-mage-tier-set-20261030-alias-refresh-heldout",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/tier-set-bonuses",
+      "role": "dps",
+      "section": "tier-set",
+      "sourceObservations": [
+        "2-set and 4-set bonuses and off-piece language recur across specs",
+        "Guide says Season 1 while other site content references Season 2; treat as source-version issue, not translation error"
+      ]
+    }
+  ],
+  "crossPageFix": {
+    "layer": "canonical entity locale merge; language-neutral, source-code-only",
+    "issue": "Refreshing a verified en_US/fr_FR pair could leave stale en-US/fr-FR aliases, causing projection conflicts or retaining outdated third-locale labels after a source rename.",
+    "change": "Normalize alias identity when validating fresh source/target pairs; replace old aliases atomically; invalidate omitted third locales on verified source rename; refuse partial or conflicting fresh aliases.",
+    "tests": "Five deterministic cross-class cases for Demon Hunter, Priest, Mage and malformed locale refreshes; no extension changes",
+    "manualOverridesAdded": 0,
+    "glossaryEntriesAdded": 0,
+    "extensionModified": false
+  },
+  "verification": {
+    "sourceOnly": true,
+    "directHtmlAccess": "JavaScript verification challenge",
+    "indexedEnglishSourcePages": 3,
+    "browserRenderedPages": 0,
+    "fullDataPackSimulation": false,
+    "translatorApi": "browser-only verification outstanding",
+    "domReconstruction": "not verified",
+    "novelTranslationIssueRate": null,
+    "strictCleanCycles": 0,
+    "eligibleToStop": false
+  }
+}
