@@ -6,6 +6,13 @@ No text is translated or inferred by this module.
 """
 
 
+try:
+    from .blizzard_locale_name import verified_locale_name
+except ImportError:  # Invoked as scripts from the build pipeline.
+    from blizzard_locale_name import verified_locale_name
+
+
+
 def index_names(document, locale):
     names = {}
     ambiguous = set()
@@ -16,9 +23,7 @@ def index_names(document, locale):
                 walk(item)
         elif isinstance(value, dict):
             entity_id = value.get("id")
-            name = value.get("name")
-            if isinstance(name, dict):
-                name = name.get(locale) or name.get(locale.replace("_", "-"))
+            name = verified_locale_name(value.get("name"), locale)
             if (isinstance(entity_id, int) and not isinstance(entity_id, bool)
                     and entity_id > 0 and isinstance(name, str) and name.strip()):
                 key = str(entity_id)
