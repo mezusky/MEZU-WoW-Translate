@@ -2583,6 +2583,14 @@
     {
       "id": "protection-paladin-mage-tower-20261030-squishy-heldout",
       "url": "https://www.wowhead.com/guide/classes/paladin/protection/mage-tower-tank-challenge-highlord-kruul"
+    },
+    {
+      "id": "demonology-warlock-manaforge-omega-20261030-funnel-raid-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/manaforge-omega-raid-tips"
+    },
+    {
+      "id": "affliction-warlock-manaforge-omega-20261030-multidot-raid-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/manaforge-omega-raid-tips"
     }
   ]
 }
