@@ -11,6 +11,7 @@ from html_block_extractor import extract_readable_blocks
 from guide_audit_boundaries import trim_guide_footer
 from wowhead_source_status import classify_html_source, classify_fetch_error
 from source_language_evidence import detect_source_language, audit_source_prose
+from audit_locale_contract import resolve_audit_locale_contract
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -34,18 +35,28 @@ pack = load_json(DATA / "datapack.json")
 exact = pack.get("exact", {}) or {}
 phrase_memory = pack.get("phrase_memory", {}) or {}
 jargon = pack.get("jargon", {}) or {}
-source_language = cfg.get("sourceLanguage", pack.get("sourceLanguage", "en"))
-target_language = cfg.get("targetLanguage", pack.get("targetLanguage", "fr"))
+contract = resolve_audit_locale_contract(cfg, pack)
+source_language = contract["sourceLanguage"]
+target_language = contract["targetLanguage"]
 language_profiles = load_json(DATA / "audit_language_signals.json")["profiles"]
 
 report = {"schema": 2, "auditMethod": "source-only; browser translation not verified",
           "expectedSourceLanguage": source_language, "targetLanguage": target_language,
           "languageEvidenceMethod": "conservative prose stopword evidence; unknown is not a failure",
+          "localeContractStatus": contract["status"],
+          "coverageEligible": contract["canScore"],
           "pages": []}
 
 for page in cfg.get("pages", []):
     url = page["url"]
     row = {"id": page["id"], "url": url, "ok": False, "sourceStatus": "pending", "blocks": [], "stats": {}}
+    # Do not fetch or score with an incompatible language-direction Data Pack.
+    # Same-base-language requests require no translation at all.
+    if not contract["canScore"]:
+        row["sourceStatus"] = contract["status"]
+        row["accessNote"] = "No translation audit with this locale/Data Pack pair"
+        report["pages"].append(row)
+        continue
     try:
         raw = fetch(url)
         # A 200 response may be a JS challenge, not guide prose.
