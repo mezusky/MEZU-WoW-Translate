@@ -83,24 +83,31 @@ def _case_matches_guide_identity(case, canonical_url):
     # URLs that all show the same section. Ground the declared section in the
     # actual Wowhead guide slug; unknown slugs fail closed until classified.
     section = case.get("section")
-    section_prefixes = (
-        ("rotation-cooldowns-", "rotation"),
-        ("talent-builds-", "talents"),
-        ("abilities-talents-", "abilities"),
-        ("stat-priority-", "stats"),
-        ("enchants-gems-", "consumables"),
-        ("bis-gear", "gear"),
-        ("overview-pve-", "overview"),
-        ("mythic-plus-dungeon-tips", "mythic-plus"),
-        ("mythic-keystones-and-dungeons", "mythic-plus"),
-        ("addons-macro-ui-imports", "macros"),
-        ("manaforge-omega-raid-tips", "raid"),
-        ("dps-leveling-tips", "leveling"),
-        ("healer-leveling-tips", "leveling"),
-        ("tank-leveling-tips", "leveling"),
+    # Accept only known fixed guide slugs. Prefix matching used to accept
+    # invented URLs such as mythic-plus-dungeon-tips-extra as browser evidence.
+    # Role-specific guide sections are a compact pattern, not an open prefix.
+    section_patterns = (
+        (r"rotation-cooldowns-pve-(?:tank|healer|dps)", "rotation"),
+        (r"talent-builds-pve-(?:tank|healer|dps)", "talents"),
+        (r"abilities-talents-pve-(?:tank|healer|dps)", "abilities"),
+        (r"stat-priority-pve-(?:tank|healer|dps)", "stats"),
+        (r"enchants-gems-pve-(?:tank|healer|dps)", "consumables"),
+        (r"overview-pve-(?:tank|healer|dps)", "overview"),
     )
-    expected = next((name for prefix, name in section_prefixes
-                     if slug.startswith(prefix)), None)
+    section_exact = {
+        "bis-gear": "gear",
+        "mythic-plus-dungeon-tips": "mythic-plus",
+        "mythic-keystones-and-dungeons": "mythic-plus",
+        "addons-macro-ui-imports": "macros",
+        "manaforge-omega-raid-tips": "raid",
+        "dps-leveling-tips": "leveling",
+        "healer-leveling-tips": "leveling",
+        "tank-leveling-tips": "leveling",
+    }
+    expected = section_exact.get(slug)
+    if expected is None:
+        expected = next((name for pattern, name in section_patterns
+                         if re.fullmatch(pattern, slug)), None)
     if expected is None:
         expected = {
             "rotation": "rotation", "talents": "talents",
