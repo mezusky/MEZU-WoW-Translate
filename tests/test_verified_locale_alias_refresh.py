@@ -72,6 +72,24 @@ class VerifiedLocaleAliasRefreshTests(unittest.TestCase):
         merged = merge_verified_locale_refresh(old, fresh, "en_US", "fr_FR")
         self.assertEqual(merged, old)
 
+    def test_conflicting_old_aliases_are_repaired_without_reusing_third_locale(self):
+        # A previously ambiguous Hunter source name must not survive a fresh
+        # verified pair under either spelling or project to another language.
+        old = {"spell:34026": {
+            "en-US": "Kill Command", "en_US": "Outdated Kill Command",
+            "fr-FR": "Ancien ordre", "de-DE": "Altes Kommando",
+        }}
+        fresh = {"spell:34026": {
+            "en_US": "Kill Command", "fr_FR": "Ordre de tuer",
+        }}
+        merged = merge_verified_locale_refresh(old, fresh, "en-US", "fr-FR")
+        self.assertEqual(merged["spell:34026"],
+                         {"en_US": "Kill Command", "fr_FR": "Ordre de tuer"})
+        self.assertEqual(
+            project_locale_pairs({"spell": merged}, "en-US", "fr-FR"),
+            {"Kill Command": "Ordre de tuer"},
+        )
+
     def test_source_and_target_aliases_cannot_be_the_same_locale(self):
         with self.assertRaises(ValueError):
             merge_verified_locale_refresh({}, {}, "en_US", "en-US")
