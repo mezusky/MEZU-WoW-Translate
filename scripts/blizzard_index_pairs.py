@@ -7,7 +7,7 @@ No text is translated or inferred by this module.
 
 
 try:
-    from .blizzard_locale_name import verified_locale_name
+    from .blizzard_locale_name import verified_locale_name, has_conflicting_locale_aliases
 except ImportError:  # Invoked as scripts from the build pipeline.
     from blizzard_locale_name import verified_locale_name
 
@@ -23,6 +23,10 @@ def index_names(document, locale):
                 walk(item)
         elif isinstance(value, dict):
             entity_id = value.get("id")
+            if (isinstance(entity_id, int) and not isinstance(entity_id, bool)
+                    and entity_id > 0
+                    and has_conflicting_locale_aliases(value.get("name"), locale)):
+                ambiguous.add(str(entity_id))
             name = verified_locale_name(value.get("name"), locale)
             if (isinstance(entity_id, int) and not isinstance(entity_id, bool)
                     and entity_id > 0 and isinstance(name, str) and name.strip()):
