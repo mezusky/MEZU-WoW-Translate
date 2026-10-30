@@ -260,7 +260,13 @@
     "enrage timer": "timer d’enrage",
     "enrage timers": "timers d’enrage",
     "cantrip effect": "effet spécial",
-    "cantrip effects": "effets spéciaux"
+    "cantrip effects": "effets spéciaux",
+    "finishing move": "coup de grâce",
+    "finishing moves": "coups de grâce",
+    "combo point": "point de combo",
+    "combo points": "points de combo",
+    "soul shard fragment": "fragment d’éclat d’âme",
+    "soul shard fragments": "fragments d’éclat d’âme"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
