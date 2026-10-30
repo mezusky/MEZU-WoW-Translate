@@ -282,7 +282,10 @@
     "Avoid Rage Capping": "Éviter d’atteindre le maximum de rage",
     "avoid capping Rage": "éviter d’atteindre le maximum de rage",
     "Do not overcap Soul Shards": "Évitez de gaspiller des éclats d’âme en atteignant la limite",
-    "Don't overcap Soul Shards": "Évitez de gaspiller des éclats d’âme en atteignant la limite"
+    "Don't overcap Soul Shards": "Évitez de gaspiller des éclats d’âme en atteignant la limite",
+    "Avoid Downtime": "Éviter les temps morts",
+    "avoid downtime": "éviter les temps morts",
+    "Avoid wasting Rage": "Éviter de gaspiller de la rage"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
