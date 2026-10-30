@@ -1,4 +1,10 @@
 """Normalize Blizzard search results by canonical entity ID, independent of locale."""
+try:
+    from .blizzard_locale_name import verified_locale_name
+except ImportError:  # Invoked as scripts from the build pipeline.
+    from blizzard_locale_name import verified_locale_name
+
+
 
 
 def search_names(document, locale):
@@ -17,9 +23,7 @@ def search_names(document, locale):
         entity_id = data.get("id")
         if not isinstance(entity_id, int) or isinstance(entity_id, bool) or entity_id <= 0:
             continue
-        name = data.get("name")
-        if isinstance(name, dict):
-            name = name.get(locale) or name.get(locale.replace("_", "-"))
+        name = verified_locale_name(data.get("name"), locale)
         if not isinstance(name, str) or not name.strip():
             continue
         key = str(entity_id)
