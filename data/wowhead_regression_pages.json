@@ -2343,6 +2343,18 @@
     {
       "id": "elemental-shaman-tier-set-20261030-fixed-slug-heldout",
       "url": "https://www.wowhead.com/guide/classes/shaman/elemental/tier-set-bonuses"
+    },
+    {
+      "id": "restoration-shaman-prepatch-20261030-locale-contract-healer-heldout",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/midnight-pre-patch"
+    },
+    {
+      "id": "demonology-warlock-talent-builds-20261030-locale-contract-dps-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/talent-builds-pve-dps"
+    },
+    {
+      "id": "arms-warrior-tier-set-20261030-locale-contract-dps-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/tier-set-bonuses"
     }
   ]
 }
