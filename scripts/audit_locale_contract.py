@@ -5,7 +5,10 @@ requested translation direction. It does not perform browser translation.
 """
 import re
 
-from .locale_glossary import locale_matches, normalize_locale, same_base_language
+if __package__:
+    from .locale_glossary import locale_matches, normalize_locale, same_base_language
+else:  # Direct execution of scripts/analyze_wowhead_guides.py
+    from locale_glossary import locale_matches, normalize_locale, same_base_language
 
 _LOCALE = re.compile(r"[a-z]{2,3}(?:-[a-z0-9]{2,8})*", re.IGNORECASE)
 
