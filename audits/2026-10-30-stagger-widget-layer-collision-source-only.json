@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web search of current indexed English Wowhead guides; direct HTML returned JavaScript challenge/403. Source-only inspection, no MEZU browser render.",
+  "corpusBefore": 639,
+  "corpusAfter": 642,
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "newHeldoutPages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/dps-leveling-tips",
+      "section": "leveling",
+      "role": "dps",
+      "observation": "stagger the deaths of targets is an ordinary verb phrase, not the Brewmaster Stagger passive"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/shadow/cheat-sheet",
+      "section": "cheat-sheet",
+      "role": "dps",
+      "observation": "stat-guide/stats assignments and talent import text are source widget artifacts, not translated prose"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/midnight-season-2",
+      "section": "season",
+      "role": "dps",
+      "observation": "cooldown-window and resource terms recur; source contains Beats Mastery typo, not a MEZU mistranslation"
+    }
+  ],
+  "crossPageChecks": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/overview-pve-tank",
+      "observation": "Stagger is an official Brewmaster defensive passive; keep ID-backed naming distinct from ordinary verb uses"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+      "observation": "Indexed source mixes prose, spell links and macro instructions; cannot infer DOM reconstruction quality"
+    }
+  ],
+  "fixes": [
+    {
+      "layer": "tests/test_mezu_player_glossary.py",
+      "change": "Fail CI on case-insensitive collisions between locale-scoped player jargon and either legacy manual jargon or manual exact entries",
+      "commit": "9ba04e40d612c1e59191aef0ab630f6b0fe44ace"
+    },
+    {
+      "layer": "data/wowhead_regression_pages.json",
+      "change": "Add three unrelated source-verified heldouts",
+      "commit": "06a0c01dc52b0fb4b3b92d23d27d2c518565dc35"
+    }
+  ],
+  "deliberatelyNotChanged": [
+    "No broad stagger replacement: canonical Stagger and ordinary stagger have different meanings",
+    "No source typo correction or widget artifact translated as prose",
+    "No manual sentence overrides or extension code changes"
+  ],
+  "verification": {
+    "sourceIndexed": true,
+    "liveDirectHTML": false,
+    "browserTranslatorAPI": false,
+    "DOMReconstruction": false,
+    "novelIssueRate": null,
+    "githubActions": "pending verification"
+  },
+  "copyright": "Only compact source observations; no full guide content."
+}
