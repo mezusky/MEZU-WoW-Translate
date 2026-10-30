@@ -258,7 +258,9 @@
     "before the pull": "avant le pull",
     "on the pull": "au pull",
     "enrage timer": "timer d’enrage",
-    "enrage timers": "timers d’enrage"
+    "enrage timers": "timers d’enrage",
+    "cantrip effect": "effet spécial",
+    "cantrip effects": "effets spéciaux"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
