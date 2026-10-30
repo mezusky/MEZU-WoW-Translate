@@ -283,5 +283,28 @@ class PlayerGlossaryTests(unittest.TestCase):
         self.assertNotIn("cap", jargon)  # Ambiguous outside resource context.
 
 
+    def test_buff_uptime_is_shared_across_specs_without_entity_overrides(self):
+        # Augmentation Evoker basics/rotation, Vengeance DH overview and
+        # Balance Druid rotation all discuss buff uptime. The heading
+        # "Keep your buffs up" is editorial prose, not a spell name.
+        jargon = GLOSSARY["jargon"]
+        expected = {
+            "buff uptime": "uptime des buffs",
+            "Keep your buffs up": "Gardez vos buffs actifs",
+            "keep your buffs up": "gardez vos buffs actifs",
+        }
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(
+            encoding="utf-8"))
+        for source, target in expected.items():
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], target)
+                self.assertNotIn(source, manual.get("jargon", {}))
+                self.assertNotIn(source, manual.get("exact", {}))
+        # Bare "uptime" already has a legacy player-jargon meaning.
+        # Never override it with a buff-specific phrase in all contexts.
+        self.assertNotIn("uptime", jargon)
+        self.assertEqual(manual["jargon"]["uptime"], "uptime")
+
+
 if __name__ == "__main__":
     unittest.main()
