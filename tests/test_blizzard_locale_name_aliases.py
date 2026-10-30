@@ -6,9 +6,9 @@ claims; they are independent of source/target language direction.
 """
 import unittest
 
-from scripts.blizzard_locale_name import verified_locale_name
-from scripts.blizzard_search_pairs import collect_search_pairs
-from scripts.blizzard_index_pairs import collect_index_pairs
+from scripts.blizzard_locale_name import verified_locale_name, has_conflicting_locale_aliases
+from scripts.blizzard_search_pairs import collect_search_pairs, search_names
+from scripts.blizzard_index_pairs import collect_index_pairs, index_names
 from scripts.merge_entity_locales import project_locale_pairs
 
 
@@ -55,6 +55,31 @@ class VerifiedBlizzardLocaleNames(unittest.TestCase):
         self.assertEqual(rows["1"], {"fr": "Talent FR"})
         self.assertEqual(project_locale_pairs({"talent": rows}, "en", "fr"),
                          {"Safe": "Sûr"})
+
+    def test_conflicting_alias_cannot_be_laundered_by_duplicate_search_hit(self):
+        conflict = {"data": {"id": 17, "name": {
+            "en_US": "Shield Slam", "en-US": "Shield Bash"}}}
+        valid = {"data": {"id": 17, "name": {"en_US": "Shield Slam"}}}
+        for hits in ([conflict, valid], [valid, conflict]):
+            with self.subTest(order=hits[0] is conflict):
+                self.assertNotIn("17", search_names({"results": hits}, "en_US"))
+        self.assertTrue(has_conflicting_locale_aliases(conflict["data"]["name"], "en_US"))
+        self.assertFalse(has_conflicting_locale_aliases(valid["data"]["name"], "en_US"))
+
+    def test_conflicting_alias_cannot_be_laundered_by_nested_index(self):
+        conflict = {"id": 18, "name": {
+            "fr_FR": "Heurt de bouclier", "fr-FR": "Coup de bouclier"}}
+        valid = {"id": 18, "name": {"fr_FR": "Heurt de bouclier"}}
+        for records in ([conflict, valid], [valid, conflict]):
+            with self.subTest(order=records[0] is conflict):
+                self.assertNotIn("18", index_names({"talents": records}, "fr_FR"))
+
+    def test_missing_alias_is_not_a_conflict(self):
+        rows = {"results": [
+            {"data": {"id": 19, "name": {"de_DE": "Other locale"}}},
+            {"data": {"id": 19, "name": {"en_US": "Charge"}}},
+        ]}
+        self.assertEqual(search_names(rows, "en_US"), {"19": "Charge"})
 
     def test_other_language_direction(self):
         de = {"results": [{"data": {"id": 7, "name": {
