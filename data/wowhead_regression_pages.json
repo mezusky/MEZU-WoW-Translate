@@ -2371,6 +2371,18 @@
     {
       "id": "devastation-evoker-tier-set-20261030-cross-spec-heldout",
       "url": "https://www.wowhead.com/guide/classes/evoker/devastation/tier-set-bonuses"
+    },
+    {
+      "id": "destruction-warlock-prepatch-20261030-canonical-alias-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/destruction/midnight-pre-patch"
+    },
+    {
+      "id": "elemental-shaman-season2-20261030-canonical-alias-heldout",
+      "url": "https://www.wowhead.com/guide/classes/shaman/elemental/midnight-season-2"
+    },
+    {
+      "id": "havoc-demon-hunter-tier-set-20261030-canonical-alias-heldout",
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/tier-set-bonuses"
     }
   ]
 }
