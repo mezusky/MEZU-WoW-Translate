@@ -2427,6 +2427,14 @@
     {
       "id": "survival-hunter-prepatch-20261030-source-drift-heldout",
       "url": "https://www.wowhead.com/guide/classes/hunter/survival/midnight-pre-patch"
+    },
+    {
+      "id": "fury-warrior-leveling-20261030-downtime-cross-class-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/dps-leveling-tips"
+    },
+    {
+      "id": "feral-druid-leveling-20261030-downtime-cross-class-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/dps-leveling-tips"
     }
   ]
 }
