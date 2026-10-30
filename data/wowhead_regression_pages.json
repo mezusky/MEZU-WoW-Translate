@@ -2543,6 +2543,18 @@
     {
       "id": "affliction-warlock-leveling-20261030-resource-source-heldout",
       "url": "https://www.wowhead.com/guide/classes/warlock/affliction/dps-leveling-tips"
+    },
+    {
+      "id": "feral-druid-season-2-20261030-multispec-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/midnight-season-2"
+    },
+    {
+      "id": "arms-warrior-season-2-20261030-cooldown-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/midnight-season-2"
+    },
+    {
+      "id": "frost-death-knight-cheat-sheet-20261030-richtext-heldout",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/frost/cheat-sheet"
     }
   ]
 }
