@@ -109,11 +109,13 @@ def _case_matches_guide_identity(case, canonical_url):
         expected = next((name for pattern, name in section_patterns
                          if re.fullmatch(pattern, slug)), None)
     if expected is None:
+        # Bare section labels such as /rotation, /talents and /gear are
+        # not canonical Wowhead class-guide URLs. Accepting them would let
+        # synthetic test fixtures count as real browser audit evidence.
         expected = {
-            "rotation": "rotation", "talents": "talents",
-            "gear": "gear", "raid": "raid",
-            "mythic-plus": "mythic-plus", "basics": "basics",
-            "cheat-sheet": "cheat-sheet", "tier-set-bonuses": "tier-set",
+            "basics": "basics",
+            "cheat-sheet": "cheat-sheet",
+            "tier-set-bonuses": "tier-set",
         }.get(slug)
     if expected is None:
         # Expansion/season labels evolve, but the Wowhead section structure
