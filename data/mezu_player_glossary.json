@@ -271,7 +271,11 @@
     "downtime": "temps mort",
     "during downtime": "pendant les temps morts",
     "without downtime": "sans temps mort",
-    "no downtime": "aucun temps mort"
+    "no downtime": "aucun temps mort",
+    "Keep cooldowns on cooldown": "Utiliser les CD dès qu’ils sont disponibles",
+    "Keep Abilities on cooldown": "Utiliser les capacités dès qu’elles sont disponibles",
+    "Keep Abilities on Cooldown": "Utiliser les capacités dès qu’elles sont disponibles",
+    "Using your cooldowns on cooldown": "Utiliser vos CD dès qu’ils sont disponibles"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
