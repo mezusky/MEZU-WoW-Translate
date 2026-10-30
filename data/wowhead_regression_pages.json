@@ -2383,6 +2383,14 @@
     {
       "id": "havoc-demon-hunter-tier-set-20261030-canonical-alias-heldout",
       "url": "https://www.wowhead.com/guide/classes/demon-hunter/havoc/tier-set-bonuses"
+    },
+    {
+      "id": "brewmaster-monk-ptr-basics-20261030-cross-role-heldout",
+      "url": "https://www.wowhead.com/ptr/guide/classes/monk/brewmaster/basics"
+    },
+    {
+      "id": "holy-paladin-ptr-basics-20261030-cross-role-heldout",
+      "url": "https://www.wowhead.com/ptr/guide/classes/paladin/holy/basics"
     }
   ]
 }
