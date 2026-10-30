@@ -1,0 +1,33 @@
+{
+  "date": "2026-10-30",
+  "auditMethod": "indexed English Wowhead source plus repository code inspection; browser output not verified",
+  "sourceAccess": "Direct Wowhead HTML returned JavaScript verification; assistant web index exposed source excerpts; GitHub Actions not used to fetch Wowhead",
+  "sampledPages": [
+    {
+      "id": "protection-warrior-rotation",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "role": "tank"
+    },
+    {
+      "id": "discipline-priest-leveling-heldout",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/healer-leveling-tips",
+      "role": "healer"
+    },
+    {
+      "id": "assassination-rogue-prepatch-20261030-duplicate-entity-heldout",
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/midnight-pre-patch",
+      "role": "dps"
+    }
+  ],
+  "sourceCorpusCount": 621,
+  "structuralRisk": "A conflicting locale alias in one Blizzard API record could be silently ignored when another record with the same canonical entity ID supplied a valid-looking name; applies to search and index collection.",
+  "observedLiveBlizzardConflict": false,
+  "fix": "Conflicting alias values now poison the entity ID across duplicate hits; unrelated missing locale values do not poison it.",
+  "regressionEvidence": "New synthetic order-independent tests for duplicate search hits and nested indexes; no claim of live browser translation correctness.",
+  "newManualSentenceOverrides": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "cleanQualityCycle": false,
+  "ci": "Pending at audit creation; do not count as clean until verified"
+}
