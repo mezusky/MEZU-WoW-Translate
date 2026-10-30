@@ -2435,6 +2435,26 @@
     {
       "id": "feral-druid-leveling-20261030-downtime-cross-class-heldout",
       "url": "https://www.wowhead.com/guide/classes/druid/feral/dps-leveling-tips"
+    },
+    {
+      "id": "unholy-death-knight-talent-builds-20261030-full-matrix-heldout",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/unholy/talent-builds-pve-dps"
+    },
+    {
+      "id": "feral-druid-talent-builds-20261030-full-matrix-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/talent-builds-pve-dps"
+    },
+    {
+      "id": "devastation-evoker-talent-builds-20261030-full-matrix-heldout",
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/talent-builds-pve-dps"
+    },
+    {
+      "id": "affliction-warlock-talent-builds-20261030-full-matrix-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/talent-builds-pve-dps"
+    },
+    {
+      "id": "arms-warrior-talent-builds-20261030-full-matrix-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/talent-builds-pve-dps"
     }
   ]
 }
