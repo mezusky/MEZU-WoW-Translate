@@ -51,13 +51,13 @@
   "changes": [
     {
       "layer": "scripts/quality_trend.py",
-      "change": "Recognize cross-role mage-tower challenge section slugs and check explicit tank/healer/dps role in slug; keep stop gate browser-only.",
-      "commit": "47894b01ec29db3504376b0c573f90641daeda1f"
+      "change": "Accept only the two source-verified Mage Tower encounter slugs, with role checks; reject fabricated suffixes and keep stop gate browser-only.",
+      "commit": "c6ef522c86b05107aed1f004d69905dc20d8e76c"
     },
     {
       "layer": "tests/test_quality_trend_mage_tower.py",
-      "change": "Source-grounded cross-role guide identity tests; reject malformed or mislabeled cases.",
-      "commit": "83ffec5a3fe70cb887ee8d768f48442f6c3d027d"
+      "change": "Cross-role source-guide identity tests; reject mislabeled roles, fake encounter names and suffixes.",
+      "commit": "39efdb02eeae5705b0da257d3328e06f327e36f2"
     },
     {
       "layer": "data/wowhead_regression_pages.json",
