@@ -10,7 +10,7 @@ def _alias_values(row, requested):
     """All nonempty names for one exact locale, without regional fallback."""
     locale = _locale_alias(requested)
     return {
-        value for key, value in row.items()
+        value.strip() for key, value in row.items()
         if isinstance(key, str) and _locale_alias(key) == locale
         and isinstance(value, str) and value.strip()
     }
@@ -19,7 +19,7 @@ def _alias_values(row, requested):
 def merge_rows(old, new):
     out = {k: dict(v) for k, v in old.items()}
     for key, locales in new.items():
-        out.setdefault(key, {}).update({k: v for k, v in locales.items() if isinstance(v, str) and v.strip()})
+        out.setdefault(key, {}).update({k: v.strip() for k, v in locales.items() if isinstance(v, str) and v.strip()})
     return out
 
 
@@ -83,10 +83,11 @@ def _locale_name(row, requested):
         if not isinstance(key, str) or not isinstance(value, str) or not value.strip():
             continue
         locale = _locale_alias(key)
-        if locale in names and names[locale] != value:
+        name = value.strip()
+        if locale in names and names[locale] != name:
             conflicts.add(locale)
         else:
-            names[locale] = value
+            names[locale] = name
     if requested in conflicts:
         return None
     if requested in names:
