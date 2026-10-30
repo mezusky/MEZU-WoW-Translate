@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web opened live Wowhead English URLs; direct HTML returned JavaScript verification challenge. English source evidence came from search-indexed excerpts, not browser-rendered MEZU output.",
+  "corpusBefore": 631,
+  "corpusAfter": 633,
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "sourceObservations": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/devourer/cheat-sheet",
+      "kind": "widget-rich cheat sheet",
+      "observation": "Large embedded talent build trees and equipment widgets; rich-text and DOM fidelity remain browser-only checks. No claim of broken MEZU rendering."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/midnight-pre-patch",
+      "kind": "stale source text",
+      "observation": "Indexed English source still mixes Midnight with prior The War Within/Season 3 recommendations. Treat as author/source staleness, not an extension mistranslation."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/enchants-gems-pve-healer",
+      "kind": "independent healer source comparison",
+      "observation": "English source lists enchant, flask, potion and gear names. Official localized names should be resolved via Blizzard entity IDs rather than sentence overrides."
+    }
+  ],
+  "fix": {
+    "layer": "local audit quality measurement",
+    "description": "Require canonical, independently identified browser-rendered guide manifest before reporting novel issue rates. Distinguish measurable failed pages from strict-clean stop cycles.",
+    "manualOverridesAdded": 0,
+    "extensionCodeChanged": false
+  },
+  "validation": {
+    "browserTranslatorAPI": "not verified",
+    "DOMReconstruction": "not verified",
+    "qualityTrend": {
+      "novelIssueRate": null,
+      "cleanCycle": false
+    },
+    "ci": "pending GitHub Actions"
+  },
+  "copyright": "Only compact metadata and short observations; no guide text mirrored."
+}
