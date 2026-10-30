@@ -1,0 +1,61 @@
+{
+  "schema": 1,
+  "date": "2026-10-30",
+  "auditMethod": "indexed live English Wowhead source-only; browser translation and DOM not verified",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusBefore": 607,
+  "corpusAfter": 609,
+  "sampledPages": [
+    {
+      "id": "fury-warrior-leveling-20261030-downtime-cross-class-heldout",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/dps-leveling-tips",
+      "role": "dps",
+      "section": "leveling",
+      "evidence": "without downtime; virtually no downtime"
+    },
+    {
+      "id": "feral-druid-leveling-20261030-downtime-cross-class-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/dps-leveling-tips",
+      "role": "dps",
+      "section": "leveling",
+      "evidence": "downtime in between pulls"
+    },
+    {
+      "id": "restoration-druid-rotation",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "during downtime"
+    },
+    {
+      "id": "holy-priest-leveling",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/healer-leveling-tips",
+      "role": "healer",
+      "section": "leveling",
+      "evidence": "during downtime"
+    }
+  ],
+  "pattern": "downtime refers to gaps between pulls or unused GCD time; contextual phrase rules prevent unnatural literal word order",
+  "fixLayer": "locale-scoped French player glossary; migrated generic downtime from legacy manual overrides",
+  "addedRules": {
+    "downtime": "temps mort",
+    "during downtime": "pendant les temps morts",
+    "without downtime": "sans temps mort",
+    "no downtime": "aucun temps mort"
+  },
+  "manualOverridesAdded": 0,
+  "extensionModified": false,
+  "verification": {
+    "indexedSourceOnly": true,
+    "liveEnglishPagesInspected": 4,
+    "directHtmlAccess": "indexed content; no browser DOM",
+    "unitTests": "CI pending",
+    "dataPackRebuild": "CI pending",
+    "browserRenderedPages": 0,
+    "translatorApi": "browser-only verification needed",
+    "novelTranslationIssueRate": null,
+    "strictCleanCycles": 0,
+    "eligibleToStop": false
+  }
+}
