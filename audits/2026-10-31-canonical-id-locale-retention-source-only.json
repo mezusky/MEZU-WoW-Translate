@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-31T02:34:51Z",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMode": "source-only-indexed-snippets",
+  "browserVerified": false,
+  "wowheadDirectFetch": "JavaScript bot verification; English indexed source excerpts were inspectable, not browser-rendered French MEZU output",
+  "corpusSize": 651,
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "finding": "Eclipse, Moonfire, Starfire and Astral Power are official concepts referenced repeatedly across prose and rotation priority lists"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "finding": "Stagger, Shuffle and Purifying Brew recur across headings, paragraphs and numeric examples; English morphology such as Staggering must not be treated as an official whole-name match"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "finding": "Atonement, Penance and Power Word: Radiance appear alongside macro syntax and player jargon; official names must remain canonical-ID-backed"
+    }
+  ],
+  "architecturalFinding": "A verified rename of an English or other source-locale name previously deleted every omitted third-language label for the same canonical Blizzard ID. Names in other locales are independently associated with that stable ID, not derived from the current source spelling. Deleting them would cause avoidable data loss and re-fetches as additional language pairs are supported.",
+  "changes": {
+    "engineData": "scripts/merge_entity_locales.py now preserves unrefreshed third-language names on verified source rename while still rejecting incomplete source/target refreshes and removing stale aliases for refreshed locales",
+    "tests": [
+      "tests/test_entity_locale_merge_contract.py",
+      "tests/test_verified_locale_alias_refresh.py"
+    ],
+    "manualOverridesAdded": 0,
+    "extensionCodeChanged": false,
+    "largeGeneratedFilesCommitted": false,
+    "corpusAdditions": 0
+  },
+  "validation": {
+    "testCount": 669,
+    "pythonTests": "Passed in GitHub Actions after final test updates",
+    "fullDataPackRebuild": "In progress at time of audit",
+    "workflow": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/41160645415",
+    "qualitySample": null,
+    "stabilizationCyclesConfirmed": 0
+  },
+  "limitations": [
+    "Indexed Wowhead snippets are not proof of the actual MEZU French rendering",
+    "Browser-only Translator API behavior and DOM reconstruction were not reproduced",
+    "No measured novel issue rate or clean cross-page audit cycle",
+    "Current canonical Data Pack remains EN->FR; the change is forward-compatible, not a release of additional language packs"
+  ]
+}
