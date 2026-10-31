@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "auditedDate": "2026-10-31",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMode": "source-only-indexed-excerpts",
+  "browserVerified": false,
+  "wowheadDirectFetch": "JavaScript verification challenge; assistant web-indexed English guide text inspected",
+  "corpusSize": 660,
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Avoid Downtime: reduce time spent not attacking"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Avoid Downtime: reduce time chasing targets"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "avoid downtime by chaining Disintegrate"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Downtime is your best opportunity to spend Mana Tea stacks",
+      "purpose": "counterexample: bare downtime must not be replaced by an avoidance phrase"
+    }
+  ],
+  "finding": "An explicit 'avoid downtime' action means avoiding dead time for DPS, but the bare noun 'downtime' also describes a useful healer recovery window. Use narrow locale-scoped phrase patterns only.",
+  "change": {
+    "layer": "data/mezu_player_glossary.json",
+    "entriesAdded": 2,
+    "manualOverridesAdded": 0,
+    "extensionChanged": false,
+    "tests": "tests/test_avoid_downtime_cross_role.py",
+    "newPagesAdded": 0
+  },
+  "validation": {
+    "sourceExcerpts": "cross-class DPS reuse and healer counterexample",
+    "localCodeTests": "not executed",
+    "ci": "pending",
+    "browserRendered": false,
+    "novelIssueRate": null,
+    "stabilizationCyclesConfirmed": 0
+  },
+  "limitations": [
+    "No Chrome Translator API or DOM reconstruction verified",
+    "Indexed excerpts do not establish complete live HTML or final French output",
+    "Source-only audit cannot close a clean quality cycle"
+  ]
+}
