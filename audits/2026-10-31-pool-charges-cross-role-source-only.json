@@ -1,0 +1,55 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-31T04:36:00Z",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMode": "source-only-indexed-excerpts",
+  "browserVerified": false,
+  "wowheadDirectFetch": "JavaScript verification challenge; used indexed English guide text",
+  "corpusSize": 653,
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "era": "Midnight",
+      "evidence": "pool your charges before a planned Stasis sequence"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/new-player-basics",
+      "role": "healer",
+      "section": "basics",
+      "era": "Shadowlands (historical)",
+      "evidence": "pool charges to allow flexible Riptide use"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/nerub-ar-palace-raid-tips",
+      "role": "dps",
+      "section": "raid",
+      "era": "The War Within (historical)",
+      "evidence": "pool charges of Tempest for timed add waves"
+    }
+  ],
+  "finding": "Contextual charge pooling means holding ability charges for planned use. Generic 'pool' also denotes resource pools and must not be globally rewritten. Older guides are language heldouts, not current gameplay advice.",
+  "change": {
+    "layer": "data/mezu_player_glossary.json",
+    "entriesAdded": 3,
+    "manualOverridesAdded": 0,
+    "extensionChanged": false,
+    "tests": "tests/test_pool_charges_cross_role_locale.py",
+    "newPagesAdded": 2
+  },
+  "validation": {
+    "sourceExcerpts": "three independent class/spec contexts, two roles and three sections",
+    "localCodeTests": "not executed",
+    "ci": "pending",
+    "browserRendered": false,
+    "novelIssueRate": null,
+    "stabilizationCyclesConfirmed": 0
+  },
+  "limitations": [
+    "No full live HTML access or browser Translator API verification",
+    "Indexed excerpts are source-only and do not establish rendered French quality",
+    "Remote Data Pack build/CI must be confirmed"
+  ]
+}
