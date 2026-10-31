@@ -4,7 +4,19 @@ This is an audit boundary, not a browser translation or DOM modification.
 Exact heading matches avoid truncating real guide prose mentioning feedback.
 """
 
-FOOTER_HEADINGS = frozenset(("feedback", "comments", "contribute"))
+# Wowhead localizes its discussion UI even when guide prose stays English.
+# These are site chrome markers, not translation glossary entries; they must
+# be recognized regardless of the detected source or requested target locale.
+# Keep the list conservative and grounded in observed Wowhead headings.
+FOOTER_HEADINGS = frozenset((
+    "feedback", "comments", "contribute",
+    "commentaires", "kommentare", "comentarios", "comentários", "commenti",
+    "評論", "评论", "contribuer",
+))
+COMMENT_AUTHOR_PREFIXES = (
+    "comment by ", "commentaire de ", "kommentar von ",
+    "comentario de ", "comentário de ",
+)
 
 
 def is_discussion_heading(tag, value):
@@ -18,7 +30,8 @@ def is_discussion_heading(tag, value):
         return False
     heading = " ".join(value.split()).casefold()
     return (heading in FOOTER_HEADINGS or
-            (heading.startswith("comment by ") and len(heading) > len("comment by ")))
+            any(heading.startswith(prefix) and len(heading) > len(prefix)
+                for prefix in COMMENT_AUTHOR_PREFIXES))
 
 
 def trim_guide_footer(blocks):
