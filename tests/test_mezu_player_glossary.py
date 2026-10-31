@@ -96,15 +96,32 @@ class PlayerGlossaryTests(unittest.TestCase):
         self.assertEqual(jargon["On-use Trinket"], "Bijou activable")
         self.assertEqual(jargon["trinket"], "bijou")
 
-    def test_hyphenated_caster_movement_term_is_protected(self):
-        # Arcane Mage uses "Stutter Stepping"; Elemental Shaman raid tips
-        # use "stutter-stepping". Neither is a spell or item entity.
+    def test_caster_movement_variants_share_locale_scoped_jargon(self):
+        # Independent current Wowhead sources: Arcane Mage rotation uses
+        # "Stutter Stepping", Elemental Shaman pre-patch uses "stutter stepping",
+        # and Elemental Shaman raid tips use "stutter-stepping".
+        # Keep established WoW-player terminology, not a literal translation.
         jargon = GLOSSARY["jargon"]
-        self.assertEqual(jargon["stutter-stepping"], "stutter-stepping")
-        self.assertEqual(jargon["Stutter-Stepping"], "Stutter-Stepping")
+        for spelling in ("stutter-stepping", "Stutter-Stepping",
+                         "stutter stepping", "Stutter Stepping"):
+            with self.subTest(spelling=spelling):
+                self.assertEqual(jargon[spelling], spelling)
         manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
-        self.assertEqual(manual["jargon"]["stutter stepping"], "stutter stepping")
-        self.assertNotIn("stutter-stepping", manual["jargon"])
+        for layer in ("jargon", "exact"):
+            for spelling in ("stutter stepping", "Stutter Stepping",
+                             "stutter-stepping", "Stutter-Stepping"):
+                self.assertNotIn(spelling, manual.get(layer, {}))
+        # Do not rewrite unrelated "step" or "stepping" in ordinary prose.
+        for ambiguous in ("step", "stepping", "stutter", "stutter-step"):
+            self.assertNotIn(ambiguous, jargon)
+        pages = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(encoding="utf-8"))["pages"]
+        urls = {page["url"] for page in pages}
+        for suffix in (
+            "mage/arcane/rotation-cooldowns-pve-dps",
+            "shaman/elemental/midnight-pre-patch",
+            "shaman/elemental/midnight-season-2-raid-tips",
+        ):
+            self.assertIn("https://www.wowhead.com/guide/classes/" + suffix, urls)
 
     def test_always_be_casting_is_idiomatic_across_caster_guides(self):
         # Current Balance Druid and Elemental Shaman guides use the same
