@@ -1,0 +1,51 @@
+{
+  "schema": 1,
+  "auditMethod": "source-only (indexed Wowhead text plus direct-URL challenge check); no Chrome translation rendered",
+  "date": "2026-10-31",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "issueFamily": "localized Wowhead discussion headings contaminate guide-prose extraction",
+  "severity": "audit reliability; not a demonstrated browser translation defect",
+  "evidence": [
+    {
+      "url": "https://www.wowhead.com/fr/guide/classes/mage/arcane/overview-pve-dps",
+      "role": "dps",
+      "section": "overview",
+      "observedFooter": "Commentaires / Commentaire de"
+    },
+    {
+      "url": "https://www.wowhead.com/de/guide/classes/mage/frost/overview-pve-dps",
+      "role": "dps",
+      "section": "overview",
+      "observedFooter": "Kommentare / Kommentar von"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "observedFooter": "English source prose; direct HTML blocked by JavaScript challenge"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation",
+      "observedFooter": "English source prose; direct HTML blocked by JavaScript challenge"
+    }
+  ],
+  "fix": "Recognize verified localized discussion headings and author headings independent of translation direction, then exclude comments from source-only audit blocks.",
+  "files": [
+    "scripts/guide_audit_boundaries.py",
+    "tests/test_localized_guide_footer_boundaries.py"
+  ],
+  "noNewOverrides": true,
+  "noExtensionRelease": true,
+  "browserTranslationVerified": false,
+  "newGuideErrorRate": null,
+  "qualitySample": null,
+  "remainingVerification": [
+    "GitHub Actions latest run",
+    "Chrome DOM reconstruction",
+    "Translator API",
+    "new-page novel issue rate"
+  ]
+}
