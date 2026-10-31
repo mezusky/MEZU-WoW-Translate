@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "date": "2026-10-31",
+  "auditMethod": "source-only: direct live Wowhead HTML challenge; indexed English guide prose",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "issueFamily": "quality-trend locale identity mismatch between Blizzard underscore and BCP-47 hyphen tags",
+  "severity": "audit measurement correctness; not a demonstrated browser translation defect",
+  "sourceChecks": [
+    {
+      "id": "discipline-priest-rotation",
+      "role": "healer",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+      "observed": "English healing-ramp prose and official ability names; direct HTML challenged"
+    },
+    {
+      "id": "protection-warrior-rotation",
+      "role": "tank",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "observed": "English Rage and cooldown priority prose; direct HTML challenged"
+    },
+    {
+      "id": "preservation-evoker-rotation",
+      "role": "healer",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/rotation-cooldowns-pve-healer",
+      "observed": "English Echo ramp and Mythic+ prose; direct HTML challenged"
+    },
+    {
+      "id": "brewmaster-monk-overview",
+      "role": "tank",
+      "section": "overview",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/overview-pve-tank",
+      "observed": "English Stagger and Purifying Brew explanation"
+    },
+    {
+      "id": "preservation-evoker-overview",
+      "role": "healer",
+      "section": "overview",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/overview-pve-healer",
+      "observed": "English Empower/Echo prose; localized entity labels on /fr/ variant"
+    }
+  ],
+  "fix": "Normalize locale identity for qualitySample, page-level cases and consecutive-cycle comparison; preserve distinct regional tags but skip translation for same base language.",
+  "files": [
+    "scripts/quality_trend.py",
+    "tests/test_quality_trend_locale_aliases.py"
+  ],
+  "regressionCorpusSize": 655,
+  "newGuidePages": 0,
+  "manualOverridesAdded": 0,
+  "extensionRelease": false,
+  "browserTranslationVerified": false,
+  "newGuideErrorRate": null,
+  "qualitySample": null,
+  "remainingVerification": [
+    "GitHub Actions current run",
+    "Chrome DOM reconstruction",
+    "Translator API behavior",
+    "independent heldout novel-issue rate"
+  ]
+}
