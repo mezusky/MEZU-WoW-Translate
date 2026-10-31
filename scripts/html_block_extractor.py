@@ -69,14 +69,17 @@ class Extractor(HTMLParser):
         self.skipped_tags = []
 
     def handle_starttag(self, tag, attrs):
-        # HTML implicitly closes an open <p> when another <p> begins. The
-        # standard HTMLParser does not apply browser tree-repair rules, so
-        # without this guard adjacent malformed paragraphs become one audit
-        # block. Only close a topmost selected paragraph: a surrounding li/td
-        # must retain its own text and continue to emit one parent block.
-        # Paragraphs inside an already skipped subtree do not affect prose.
-        # A newly hidden <p> still closes its visible predecessor in HTML.
-        if (tag == "p" and self.stack and self.stack[-1][0] == "p"
+        # HTML implicitly closes <p> before a new paragraph OR a structural
+        # block (heading/list/table). HTMLParser does not repair that tree:
+        # without this guard, a guide introduction can swallow its priority
+        # list, losing separate li/td evidence. Keep div out of this repair:
+        # Wowhead macro widgets use div lines inside paragraph-like markup
+        # and their line boundaries are preserved by the audit extractor.
+        # A hidden block still closes the visible paragraph in HTML, but a
+        # block inside an already skipped subtree cannot affect visible text.
+        if (tag in ("p", "h1", "h2", "h3", "h4", "h5", "h6",
+                    "ul", "ol", "table")
+                and self.stack and self.stack[-1][0] == "p"
                 and not self.skipped_tags):
             self._finish_selected()
         if self.skipped_tags or tag in SKIP_TAGS or is_hidden(attrs):
