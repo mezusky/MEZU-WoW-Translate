@@ -109,6 +109,22 @@ class LocaleEntityTests(unittest.TestCase):
                          {"简体名称": "繁體名稱"})
         self.assertEqual(project_locale_pairs(entities, "zh-Hans", "zh-CN"), {})
 
+    def test_generic_chinese_names_cannot_guess_a_script(self):
+        # The canonical ID may have a generic zh label, but its script is
+        # unspecified. Do not borrow it for zh-CN -> zh-TW projection.
+        entities = {"spell": {
+            "1": {"zh": "通用名称", "zh-TW": "繁體名稱"},
+            "2": {"zh-CN": "简体名称", "zh": "通用名稱"},
+            "3": {"zh-CN": "可靠简体", "zh-TW": "可靠繁體"},
+        }}
+        self.assertEqual(project_locale_pairs(entities, "zh-CN", "zh-TW"),
+                         {"可靠简体": "可靠繁體"})
+        # The ordinary generic-language fallback still works when no
+        # cross-script conversion is involved.
+        self.assertEqual(project_locale_pairs(
+            {"spell": {"4": {"en": "Spell", "fr": "Sort"}}},
+            "en-US", "fr-FR"), {"Spell": "Sort"})
+
     def test_explicit_script_change_and_ambiguity_guard(self):
         entities = {"spell": {
             "1": {"sr-Cyrl": "Чаролија", "sr-Latn": "Čarolija"},
