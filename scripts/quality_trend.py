@@ -11,6 +11,13 @@ from datetime import datetime
 from pathlib import Path
 from urllib.parse import urlsplit
 
+# Use the same script-aware translation identity as the Data Pack and
+# canonical Blizzard entity projection; do not invent a second locale rule.
+if __package__:
+    from .locale_glossary import same_base_language
+else:
+    from locale_glossary import same_base_language
+
 # Audits must not invent a tank/healer/DPS mix on role-neutral guide slugs.
 # This compact data-only mapping is independent of translation direction.
 SPEC_ROLES = json.loads((Path(__file__).resolve().parents[1] / "data" /
@@ -182,8 +189,7 @@ def summarize(reports):
         source_locale = _normalized_locale(source_language)
         target_locale = _normalized_locale(target_language)
         valid_pair = (source_locale is not None and target_locale is not None
-                      and source_locale.split("-", 1)[0]
-                      != target_locale.split("-", 1)[0])
+                      and not same_base_language(source_locale, target_locale))
         new_pages = sample.get("newPagesAudited")
         novel = sample.get("novelIssueFamilies")
         browser_pages = sample.get("browserVerifiedPages", 0)
