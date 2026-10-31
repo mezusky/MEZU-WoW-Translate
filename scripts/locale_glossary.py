@@ -12,11 +12,52 @@ def normalize_locale(locale):
     return locale.strip().replace("_", "-").casefold()
 
 
+# WoW exposes simplified and traditional Chinese as zh-CN and zh-TW.
+# They share an ISO language code but not a writing system. Keep this small,
+# explicit map instead of depending on a heavyweight locale package.
+_CHINESE_REGION_SCRIPTS = {
+    "cn": "hans", "sg": "hans", "my": "hans",
+    "tw": "hant", "hk": "hant", "mo": "hant",
+}
+
+
+def writing_script(locale):
+    """Return an explicit script or a known Chinese regional script, if any."""
+    parts = normalize_locale(locale).split("-")
+    for part in parts[1:]:
+        if len(part) == 4 and part.isalpha():
+            return part
+    if parts[0] == "zh":
+        for part in parts[1:]:
+            if part in _CHINESE_REGION_SCRIPTS:
+                return _CHINESE_REGION_SCRIPTS[part]
+    return None
+
+
+def requires_script_conversion(source_language, target_language):
+    """Different known scripts need conversion even within one base language."""
+    source = normalize_locale(source_language)
+    target = normalize_locale(target_language)
+    if source.split("-", 1)[0] != target.split("-", 1)[0]:
+        return False
+    source_script = writing_script(source)
+    target_script = writing_script(target)
+    return bool(source_script and target_script and source_script != target_script)
+
+
 def same_base_language(source_language, target_language):
-    """Regional variants share a base language and require no translation."""
+    """Skip regional variants unless their known writing systems differ."""
     source = normalize_locale(source_language).split("-", 1)[0]
     target = normalize_locale(target_language).split("-", 1)[0]
-    return source == target
+    return source == target and not requires_script_conversion(source_language, target_language)
+
+
+def explicit_script_pair_matches(payload, source, target):
+    """A script conversion must not inherit a generic same-language glossary."""
+    if not requires_script_conversion(source, target):
+        return True
+    return (writing_script(payload.get("sourceLanguage")) == writing_script(source)
+            and writing_script(payload.get("targetLanguage")) == writing_script(target))
 
 
 def locale_matches(configured, requested):
@@ -44,6 +85,8 @@ def select_jargon(glossary, source_language, target_language):
         raise ValueError("Player glossary source language does not match pack")
     if not locale_matches(glossary.get("targetLanguage"), target):
         raise ValueError("Player glossary target language does not match pack")
+    if not explicit_script_pair_matches(glossary, source, target):
+        raise ValueError("Script conversion requires an explicit source/target glossary")
     terms = glossary.get("jargon", {})
     if not isinstance(terms, dict):
         raise ValueError("Player glossary jargon must be an object")
@@ -80,6 +123,8 @@ def select_locale_data(payload, source_language, target_language, legacy_pair=No
         return payload
     if layer_source is None or layer_target is None:
         raise ValueError("Translation data layer has incomplete locale metadata")
+    if not explicit_script_pair_matches(payload, source, target):
+        return {}
     def matches(configured, requested, canonical):
         if locale_matches(configured, requested):
             return True
