@@ -11,6 +11,7 @@
     "Cormack, a former Scarlet Crusader in life, now raised as Forsaken, struggles to accept his undead existence.",
     "Curious about Classes in WoW Forever?",
     "Curse of the Elements and Curse of Shadows will now return 'A more powerful spell is already active.'",
+    "Demon Fall Canyon Possibly due to “Demonic Deceptions”, the Owlbeasts of Winterspring have attended a guided meditation retreat, expanding their pineal glands. Zilbagob will now always be accessible when The Destructor's Wraith and Grimroot have been defeated.",
     "Developers’ notes: Conduit of the Celestials has not been a competitive option for Mistweavers this season, so we’re increasing its consistent and burst healing.",
     "Developers’ notes: Fire Mage has continued to overperform, so we’re decreasing its overall damage to bring it in line with expectations.",
     "Developers’ notes: Frostfire has not been a competitive option for Frost Mages this season, so we’re increasing a few of its burst damage aspects to differentiate its damage profile from Spellslinger.",
@@ -73,6 +74,8 @@
     "The noble races of the Alliance are bound together by proud traditions of nobility, honor, faith, justice, and sacrifice. The many different Alliance peoples all contribute their technical, arcane, and spiritual wisdom toward the goal of a peaceful and just world. Take up their banner to represent the high ideals of the Alliance throughout Azeroth and beyond.",
     "Thorns: Launches thorns that erupt beneath the two nearest enemies.",
     "Warlock Affliction Fixed an issue where the Cooldown Manager would sometimes not display Summon Darkglare correctly.",
+    "Warlock Master Channeler's Drain Life will no longer prematurely end vs. large enemies like Lord Kazzak. Mark of Chaos will no longer fail to refresh if the target has Curse of the Elements or Curse of Shadows active on them. Curse of the Elements and Curse of Shadows will now return 'A more powerful spell is already active.'",
+    "Warrior Bosses in dungeons are now always immune to Meathook as intended.",
     "Watch now for more insight into the BlizzCon 2026 reveals and a look at what’s ahead for modern WoW and WoW Forever.",
     "Watch the WoW: Forever Short Story, “Unbowed”",
     "When you purchase a 6-Month or 12-Month Special Subscription Offer, you'll receive special bonuses, including several for use in World of Warcraft: Forever, once it launches in November!",
@@ -89,10 +92,10 @@
   "article_count": 69,
   "articles": {
     "24066687": {
-      "accepted_pairs": 798,
-      "en_blocks": 689,
+      "accepted_pairs": 486,
+      "en_blocks": 346,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24066687",
-      "fr_blocks": 692,
+      "fr_blocks": 338,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24066687"
     },
     "24245217": {
@@ -194,10 +197,10 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302093"
     },
     "24302097": {
-      "accepted_pairs": 165,
-      "en_blocks": 124,
+      "accepted_pairs": 161,
+      "en_blocks": 119,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24302097",
-      "fr_blocks": 125,
+      "fr_blocks": 120,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302097"
     },
     "24302098": {
@@ -208,10 +211,10 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302098"
     },
     "24302099": {
-      "accepted_pairs": 76,
-      "en_blocks": 69,
+      "accepted_pairs": 75,
+      "en_blocks": 68,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24302099",
-      "fr_blocks": 67,
+      "fr_blocks": 66,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302099"
     },
     "24302498": {
@@ -250,10 +253,10 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302577"
     },
     "24303006": {
-      "accepted_pairs": 72,
-      "en_blocks": 78,
+      "accepted_pairs": 61,
+      "en_blocks": 64,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303006",
-      "fr_blocks": 78,
+      "fr_blocks": 64,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24303006"
     },
     "24303009": {
@@ -348,10 +351,10 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24304161"
     },
     "24304162": {
-      "accepted_pairs": 158,
-      "en_blocks": 167,
+      "accepted_pairs": 54,
+      "en_blocks": 67,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24304162",
-      "fr_blocks": 164,
+      "fr_blocks": 66,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24304162"
     },
     "24307305": {
@@ -376,17 +379,17 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24307308"
     },
     "24307310": {
-      "accepted_pairs": 318,
-      "en_blocks": 290,
+      "accepted_pairs": 149,
+      "en_blocks": 118,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24307310",
-      "fr_blocks": 285,
+      "fr_blocks": 113,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24307310"
     },
     "24307383": {
-      "accepted_pairs": 75,
-      "en_blocks": 65,
+      "accepted_pairs": 65,
+      "en_blocks": 52,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24307383",
-      "fr_blocks": 64,
+      "fr_blocks": 51,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24307383"
     },
     "24310649": {
@@ -432,17 +435,17 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24310655"
     },
     "24310656": {
-      "accepted_pairs": 109,
-      "en_blocks": 83,
+      "accepted_pairs": 102,
+      "en_blocks": 75,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24310656",
-      "fr_blocks": 83,
+      "fr_blocks": 75,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24310656"
     },
     "24310657": {
-      "accepted_pairs": 19,
-      "en_blocks": 24,
+      "accepted_pairs": 9,
+      "en_blocks": 13,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24310657",
-      "fr_blocks": 24,
+      "fr_blocks": 13,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24310657"
     },
     "24310658": {
@@ -453,17 +456,17 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24310658"
     },
     "24310659": {
-      "accepted_pairs": 61,
-      "en_blocks": 44,
+      "accepted_pairs": 59,
+      "en_blocks": 41,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24310659",
-      "fr_blocks": 42,
+      "fr_blocks": 39,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24310659"
     },
     "24310968": {
-      "accepted_pairs": 156,
-      "en_blocks": 127,
+      "accepted_pairs": 155,
+      "en_blocks": 125,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24310968",
-      "fr_blocks": 126,
+      "fr_blocks": 124,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24310968"
     },
     "24313102": {
@@ -1387,7 +1390,6 @@
     "Deflection: Moved from row 2 up to row 1.": "Déviation : ce talent a été déplacé de la 2e à la 1re rangée.",
     "Deft Maneuvers has been updated – No longer increases Blade Flurry’s Energy cost by 30.": "Manœuvres habiles a été modifié – Le talent n’augmente plus le coût en énergie de Déluge de lames de 30.",
     "Demon Fall Canyon Possibly due to “Demonic Deceptions”, the Owlbeasts of Winterspring have attended a guided meditation retreat, expanding their pineal glands.": "Canyon de la Malechute En raison de possibles « manigances démoniaques », les chouettards de Berceau-de-l’hiver ont participé à une retraite de méditation guidée, développant ainsi leur glande pinéale.",
-    "Demon Fall Canyon Possibly due to “Demonic Deceptions”, the Owlbeasts of Winterspring have attended a guided meditation retreat, expanding their pineal glands. Zilbagob will now always be accessible when The Destructor's Wraith and Grimroot have been defeated.": "Canyon de la Malechute En raison de possibles « manigances démoniaques », les chouettards de Berceau-de-l’hiver ont participé à une retraite de méditation guidée, développant ainsi leur glande pinéale. Zilbagob sera désormais toujours accessible une fois Âme en peine du Destructeur et Tristeracine vaincus.",
     "Demon Hunter Devourer Collapsing Star damage increased by 20% in PvP combat.": "Chasseur/chasseuse de démons Dévoration Les dégâts d’Effondrement d’étoile ont été augmentés de 20 % en combat JcJ.",
     "Demon Hunter Devourer Specialization and Void Elf Demon Hunters": "Chasseurs et chasseuses de démons : spécialisation Dévoration et Elfes du vide",
     "Demon Hunter Havoc All damage reduced by 4% in PvP combat.": "Chasseur de démons/Chasseuse de démons Dévastation Tous les dégâts ont été réduits de 4 % en combat JcJ.",
@@ -4709,14 +4711,13 @@
     "Warlock Incubus pets can now be renamed by Warlock Demon trainers, just like other demon pets.": "Démoniste Les familiers incubes peuvent désormais être renommés par les maîtres des démons, tout comme les autres démons.",
     "Warlock Mark of Chaos will no longer fall off after 1 minute when Curse of Recklessness or Curse of Weakness is used.": "Démoniste Marque du Chaos ne disparaît plus après 1 minute lorsque Malédiction de témérité ou Malédiction de faiblesse sont utilisés.",
     "Warlock Mark of Chaos will no longer fall off after 1 minute when Curse of Recklessness or Curse of Weakness is used. Rune of Infernal Armor now drops for players even if they haven't previously completed discovery for Rune of Shadowflames.": "Démoniste Marque du Chaos ne disparaît plus après 1 minute lorsque Malédiction de témérité ou Malédiction de faiblesse sont utilisés. La rune Armure infernale peut désormais être obtenue par les personnages-joueurs même s’ils n’ont pas encore découvert la rune Ombreflamme.",
-    "Warlock Master Channeler's Drain Life will no longer prematurely end vs. large enemies like Lord Kazzak. Mark of Chaos will no longer fail to refresh if the target has Curse of the Elements or Curse of Shadows active on them. Curse of the Elements and Curse of Shadows will now return 'A more powerful spell is already active.'": "Éruption de Rochenoire L’effet visuel de Sang drainé, dans l’évènement JcJ de la vallée de Strangleronce, s’affiche également lorsque vous participez à l’évènement JcJ du mont Rochenoire. Ce changement s’applique aux personnages-joueurs quittant des instances au mont Rochenoire.",
+    "Warlock Master Channeler's Drain Life will no longer prematurely end vs. large enemies like Lord Kazzak.": "Démoniste Drain de vie de Maîtrise de la canalisation ne s’arrête plus prématurément contre des adversaires imposants, tels que le seigneur Kazzak.",
     "Warlock: Power at Any Price": "Démonistes : le pouvoir à n’importe quel prix",
     "Warlock: Warlocks are the bane of all life.": "Démoniste – Les démonistes sont les ennemis de toute vie.",
     "Warlock: Warlocks are the bane of all life. Empowered by demonic blood, they can inflict great torment upon their foes. To replenish the dreadful energy their spells expend, warlocks drain vitality from their victims. The warlock can also summon and control terrifying demonic entities. Still, warlocks are feared above all else for their singular wickedness and cruelty.": "Démoniste – Les démonistes sont les ennemis de toute vie. Grâce à la puissance du sang démoniaque, ils infligent à leurs ennemis des tourments considérables. Pour récupérer l’énergie terrible qu’ils dépensent en lançant leurs sorts, ils drainent la vitalité de leurs victimes. Ils peuvent également invoquer et contrôler de terrifiantes entités démoniaques. Ils sont craints et redoutés pour leur cruauté et leur brutalité singulières.",
     "Warlocks bend forbidden powers to their will, turning every resource—from lingering afflictions to bound demons—into another means of defeating their enemies.": "Les démonistes maîtrisent des pouvoirs interdits, transformant chaque ressource — qu’il s’agisse d’afflictions persistantes ou de démons asservis — en un moyen supplémentaire d’éliminer leurs adversaires.",
     "Warlocks bend forbidden powers to their will, turning every resource—from lingering afflictions to bound demons—into another means of defeating their enemies. These updates broaden how they manage those powers and create new connections among their spells, pets, and specialized tools.": "Les démonistes maîtrisent des pouvoirs interdits, transformant chaque ressource — qu’il s’agisse d’afflictions persistantes ou de démons asservis — en un moyen supplémentaire d’éliminer leurs adversaires. Ces mises à jour leur offrent davantage de liberté dans la gestion de ces pouvoirs et créent de nouveaux effets combinés entre leurs sorts, leurs familiers et leurs compétences.",
     "Warmaul of Burningeye": "Maillet de guerre d’Œil-Brûlant",
-    "Warrior Bosses in dungeons are now always immune to Meathook as intended.": "L’obtention de la rune de Décimation à partir d’un portail surchargé est désormais garantie.",
     "Warrior Deep Wounds damage will now be reduced by effects that reduce damage taken by a percentage.": "Guerrier/Guerrière Les dégâts infligés par Blessures profondes sont désormais atténués par les effets de réduction des dégâts basés sur un pourcentage.",
     "Warrior Fixed an issue preventing Slam from being logged properly in the combat log.": "Guerrier/Guerrière Correction d’un problème qui empêchait Heurtoir de s’inscrire correctement dans le journal de combat.",
     "Warrior Protection Battle-Scarred Veteran has been updated.": "Guerrier/Guerrière Protection Vétéran aguerri a été mis à jour.",
@@ -5113,7 +5114,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4539,
+  "pair_count": 4537,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -8675,7 +8676,6 @@
     "Defier Draghar Health reduced by 27%.": "24307310",
     "Deft Maneuvers has been updated – No longer increases Blade Flurry’s Energy cost by 30.": "24304162",
     "Demon Fall Canyon Possibly due to “Demonic Deceptions”, the Owlbeasts of Winterspring have attended a guided meditation retreat, expanding their pineal glands.": "24066687",
-    "Demon Fall Canyon Possibly due to “Demonic Deceptions”, the Owlbeasts of Winterspring have attended a guided meditation retreat, expanding their pineal glands. Zilbagob will now always be accessible when The Destructor's Wraith and Grimroot have been defeated.": "24066687",
     "Demon Hunter Havoc All damage reduced by 4% in PvP combat.": "24066687",
     "Demon Hunter Havoc All damage reduced by 4% in PvP combat. Demonic Wards now reduces magic damage taken by 5% in PvP combat (was 10%).": "24066687",
     "Demonology Shadow Bolt damage increased by 90% in PvP combat (was 60%).": "24066687",
@@ -8984,8 +8984,6 @@
     "Warlock Incubus pets can now be renamed by Warlock Demon trainers, just like other demon pets.": "24066687",
     "Warlock Mark of Chaos will no longer fall off after 1 minute when Curse of Recklessness or Curse of Weakness is used.": "24066687",
     "Warlock Mark of Chaos will no longer fall off after 1 minute when Curse of Recklessness or Curse of Weakness is used. Rune of Infernal Armor now drops for players even if they haven't previously completed discovery for Rune of Shadowflames.": "24066687",
-    "Warlock Master Channeler's Drain Life will no longer prematurely end vs. large enemies like Lord Kazzak. Mark of Chaos will no longer fail to refresh if the target has Curse of the Elements or Curse of Shadows active on them. Curse of the Elements and Curse of Shadows will now return 'A more powerful spell is already active.'": "24066687",
-    "Warrior Bosses in dungeons are now always immune to Meathook as intended.": "24066687",
     "Warrior Deep Wounds damage will now be reduced by effects that reduce damage taken by a percentage.": "24066687",
     "Warrior Fixed an issue preventing Slam from being logged properly in the combat log.": "24066687",
     "Warrior Protection Battle-Scarred Veteran has been updated.": "24066687",
@@ -9656,7 +9654,8 @@
     "Welcome back to Azeroth. Whether it's been a few years or many, familiar roads, old friends, and new adventures await you in World of Warcraft: Forever.": "24316094",
     "Whether it's been a few years or many, familiar roads, old friends, and new adventures await you in World of Warcraft: Forever.": "24316094",
     "World of Warcraft: Forever invites players into a reimagined original Azeroth where exploration, community, and the journey itself take center stage.": "24316094",
-    "See below for details on the exact time you can log in.": "24315820"
+    "See below for details on the exact time you can log in.": "24315820",
+    "Warlock Master Channeler's Drain Life will no longer prematurely end vs. large enemies like Lord Kazzak.": "24066687"
   },
   "targetLanguage": "fr-FR"
 }
