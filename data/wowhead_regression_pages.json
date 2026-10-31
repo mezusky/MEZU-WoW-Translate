@@ -2651,6 +2651,14 @@
     {
       "id": "arcane-mage-faq-20261031-legacy-dps-heldout",
       "url": "https://www.wowhead.com/guide/classes/mage/arcane/faq"
+    },
+    {
+      "id": "survival-hunter-faq-20261031-downtime-cross-spec-heldout",
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/faq"
+    },
+    {
+      "id": "holy-priest-faq-20261031-healing-downtime-heldout",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/faq"
     }
   ]
 }
