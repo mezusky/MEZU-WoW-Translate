@@ -1,0 +1,46 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-31T03:35:00Z",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMode": "source-only-indexed-excerpts",
+  "browserVerified": false,
+  "wowheadDirectFetch": "JavaScript verification; inspected independently indexed English guide excerpts",
+  "corpusSize": 651,
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/dps-leveling-tips",
+      "role": "dps",
+      "section": "leveling",
+      "evidence": "Try to bank charges of Fire Blast for Combustion."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "bank charges of this resource for cooldown windows"
+    }
+  ],
+  "finding": "Bank charges means reserve ability/proc charges for a planned cooldown, not use a bank. The shared phrase applies across independent classes and different sections.",
+  "change": {
+    "layer": "data/mezu_player_glossary.json",
+    "entriesAdded": 2,
+    "manualOverridesAdded": 0,
+    "extensionChanged": false,
+    "tests": "tests/test_bank_charges_cross_class_locale.py",
+    "newPagesAdded": 0
+  },
+  "validation": {
+    "sourceExcerpts": "two independent classes",
+    "localCodeTests": "not executed",
+    "ci": "pending",
+    "browserRendered": false,
+    "novelIssueRate": null,
+    "stabilizationCyclesConfirmed": 0
+  },
+  "limitations": [
+    "No actual browser Translator API or DOM rendering verification",
+    "Indexed source excerpts cannot establish translated-output quality",
+    "Remote Data Pack publication pending CI"
+  ]
+}
