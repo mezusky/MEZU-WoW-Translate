@@ -22,10 +22,12 @@ class AvoidDowntimePhraseTests(unittest.TestCase):
         jargon = select_jargon(self.glossary, "en-US", "fr-FR")
         self.assertEqual(jargon["Avoid Downtime"], "Éviter les temps morts")
         self.assertEqual(jargon["avoid downtime"], "éviter les temps morts")
-        # A healer's downtime is often an opportunity to regenerate mana;
-        # translating the bare word globally would change that meaning.
-        self.assertNotIn("downtime", jargon)
-        self.assertNotIn("Downtime", jargon)
+        # A healer's downtime is often an opportunity to regenerate mana.
+        # Keep the existing noun and temporal expressions unchanged rather
+        # than redefining all occurrences as an instruction to avoid it.
+        self.assertEqual(jargon["downtime"], "temps mort")
+        self.assertEqual(jargon["during downtime"], "pendant les temps morts")
+        self.assertEqual(jargon["without downtime"], "sans temps mort")
         for layer in ("jargon", "exact"):
             for term in ("Avoid Downtime", "avoid downtime"):
                 self.assertNotIn(term, self.manual.get(layer, {}))
