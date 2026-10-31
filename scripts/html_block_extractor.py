@@ -69,6 +69,16 @@ class Extractor(HTMLParser):
         self.skipped_tags = []
 
     def handle_starttag(self, tag, attrs):
+        # HTML implicitly closes an open <p> when another <p> begins. The
+        # standard HTMLParser does not apply browser tree-repair rules, so
+        # without this guard adjacent malformed paragraphs become one audit
+        # block. Only close a topmost selected paragraph: a surrounding li/td
+        # must retain its own text and continue to emit one parent block.
+        # Hidden/inert paragraphs must not close visible guide prose.
+        if (tag == "p" and self.stack and self.stack[-1][0] == "p"
+                and not self.skipped_tags and tag not in SKIP_TAGS
+                and not is_hidden(attrs)):
+            self._finish_selected()
         if self.skipped_tags or tag in SKIP_TAGS or is_hidden(attrs):
             if not self.skipped_tags:
                 for _, parts in self.stack:
