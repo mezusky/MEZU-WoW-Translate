@@ -54,3 +54,18 @@ def resolve_audit_locale_contract(config, pack):
                 "canScore": False, "status": "pack_locale_mismatch"}
     return {"sourceLanguage": source, "targetLanguage": target,
             "canScore": True, "status": "ready"}
+
+
+def source_accept_language(source_language):
+    """Request source-language guide prose without assuming English.
+
+    Wowhead may localize its guide shell from Accept-Language. Keep the
+    configured source locale first and its base language as a fallback.
+    Reject malformed header values rather than forwarding them to HTTP.
+    This is an audit fetch preference, not browser language detection.
+    """
+    locale = normalize_locale(source_language)
+    if not _LOCALE.fullmatch(locale):
+        raise ValueError("Invalid source-language HTTP locale")
+    base = locale.split("-", 1)[0]
+    return locale if locale == base else f"{locale},{base};q=0.9"
