@@ -94,6 +94,33 @@ class LocaleEntityTests(unittest.TestCase):
         self.assertEqual(project_locale_pairs(entities, "en", "fr"),
                          {"Signal": "Signal", "signal": "signal"})
 
+    def test_script_conversion_projects_official_names_by_canonical_id(self):
+        # Simplified/traditional Chinese share the base "zh" but require
+        # different localized official names. Never skip ID projection.
+        entities = {"spell": {
+            "100": {"zh-CN": "测试法术", "zh-TW": "測試法術"},
+            "101": {"zh-Hans": "简体名称", "zh-Hant": "繁體名稱"},
+        }}
+        self.assertEqual(project_locale_pairs(entities, "zh-CN", "zh-TW"), {
+            "测试法术": "測試法術",
+            "简体名称": "繁體名稱",
+        })
+        self.assertEqual(project_locale_pairs(entities, "zh-TW", "zh-CN"), {
+            "測試法術": "测试法术",
+            "繁體名稱": "简体名称",
+        })
+        self.assertEqual(project_locale_pairs(entities, "zh-Hans", "zh-CN"), {})
+
+    def test_explicit_script_change_and_ambiguity_guard(self):
+        entities = {"spell": {
+            "1": {"sr-Cyrl": "Чаролија", "sr-Latn": "Čarolija"},
+            "2": {"sr-Cyrl": "Исто", "sr-Latn": "Jedno"},
+            "3": {"sr-Cyrl": "Исто", "sr-Latn": "Drugo"},
+        }}
+        self.assertEqual(project_locale_pairs(entities, "sr-Cyrl", "sr-Latn"),
+                         {"Чаролија": "Čarolija"})
+        self.assertEqual(project_locale_pairs(entities, "sr-Cyrl", "sr-Cyrl"), {})
+
     def test_skip_identical_languages(self):
         entities = {"spell": {"1": {"en": "Charge", "fr": "Charge"}}}
         self.assertEqual(project_locale_pairs(entities, "fr", "fr"), {})
