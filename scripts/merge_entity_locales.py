@@ -1,5 +1,11 @@
 """Merge canonical entity locale records without dropping old IDs."""
 
+# Both package imports (tests) and direct scripts (Data Pack builder) use this.
+if __package__:
+    from .locale_glossary import same_base_language
+else:
+    from locale_glossary import same_base_language
+
 
 def _locale_alias(value):
     """Treat Blizzard en_US and BCP-47 en-US as the same locale identity."""
@@ -102,7 +108,9 @@ def project_locale_pairs(entities, source_language, target_language):
     """
     source = source_language.strip().replace("_", "-").casefold()
     target = target_language.strip().replace("_", "-").casefold()
-    if source.split("-")[0] == target.split("-")[0]:
+    # Same base language is not enough: zh-CN -> zh-TW and explicit
+    # script changes such as sr-Cyrl -> sr-Latn still need ID-based names.
+    if same_base_language(source, target):
         return {}
     candidates = {}
     incomplete = set()
