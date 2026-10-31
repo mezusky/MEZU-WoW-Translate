@@ -101,14 +101,12 @@ class LocaleEntityTests(unittest.TestCase):
             "100": {"zh-CN": "测试法术", "zh-TW": "測試法術"},
             "101": {"zh-Hans": "简体名称", "zh-Hant": "繁體名稱"},
         }}
-        self.assertEqual(project_locale_pairs(entities, "zh-CN", "zh-TW"), {
-            "测试法术": "測試法術",
-            "简体名称": "繁體名稱",
-        })
-        self.assertEqual(project_locale_pairs(entities, "zh-TW", "zh-CN"), {
-            "測試法術": "测试法术",
-            "繁體名稱": "简体名称",
-        })
+        self.assertEqual(project_locale_pairs(entities, "zh-CN", "zh-TW"),
+                         {"测试法术": "測試法術"})
+        self.assertEqual(project_locale_pairs(entities, "zh-TW", "zh-CN"),
+                         {"測試法術": "测试法术"})
+        self.assertEqual(project_locale_pairs(entities, "zh-Hans", "zh-Hant"),
+                         {"简体名称": "繁體名稱"})
         self.assertEqual(project_locale_pairs(entities, "zh-Hans", "zh-CN"), {})
 
     def test_explicit_script_change_and_ambiguity_guard(self):
