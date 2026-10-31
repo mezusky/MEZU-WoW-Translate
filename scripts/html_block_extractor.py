@@ -96,7 +96,10 @@ class Extractor(HTMLParser):
         if self.stack and self.stack[-1][0] == tag:
             kind, parts = self.stack.pop()
             value = normalize_block_text(parts)
-            if value:
+            # A selected child (e.g. <p> inside <li> or <td>) is already
+            # included in the selected ancestor's accumulated text. Emitting
+            # both would double-count guide prose in source-only audits.
+            if value and not self.stack:
                 self.blocks.append((kind, value))
         if tag in ("p", "li", "ul", "ol", "div"):
             for _, parts in self.stack:
@@ -109,7 +112,10 @@ class Extractor(HTMLParser):
         while self.stack:
             kind, parts = self.stack.pop()
             value = normalize_block_text(parts)
-            if value:
+            # A selected child (e.g. <p> inside <li> or <td>) is already
+            # included in the selected ancestor's accumulated text. Emitting
+            # both would double-count guide prose in source-only audits.
+            if value and not self.stack:
                 self.blocks.append((kind, value))
 
 
