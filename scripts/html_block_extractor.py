@@ -74,10 +74,10 @@ class Extractor(HTMLParser):
         # without this guard adjacent malformed paragraphs become one audit
         # block. Only close a topmost selected paragraph: a surrounding li/td
         # must retain its own text and continue to emit one parent block.
-        # Hidden/inert paragraphs must not close visible guide prose.
+        # Paragraphs inside an already skipped subtree do not affect prose.
+        # A newly hidden <p> still closes its visible predecessor in HTML.
         if (tag == "p" and self.stack and self.stack[-1][0] == "p"
-                and not self.skipped_tags and tag not in SKIP_TAGS
-                and not is_hidden(attrs)):
+                and not self.skipped_tags):
             self._finish_selected()
         if self.skipped_tags or tag in SKIP_TAGS or is_hidden(attrs):
             if not self.skipped_tags:
