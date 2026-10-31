@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-31T05:44:00Z",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMode": "live-source-text-and-indexed-localized-entity-excerpts",
+  "browserVerified": false,
+  "corpusSize": 655,
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/windwalker/faq",
+      "role": "dps",
+      "section": "faq",
+      "era": "Dragonflight historical",
+      "sourceAccess": "readable source text",
+      "finding": "Always Be Casting is discussed as a misconception for Windwalker; context must not be erased by jargon replacement."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/faq",
+      "role": "healer",
+      "section": "faq",
+      "era": "Dragonflight historical",
+      "sourceAccess": "readable source text",
+      "finding": "English prose interleaves official ability links; 'mana sink' is contextual prose, not a spell or global entity."
+    },
+    {
+      "url": "https://www.wowhead.com/fr/guide/classes/evoker/preservation/overview-pve-healer",
+      "role": "healer",
+      "section": "overview",
+      "era": "Midnight",
+      "sourceAccess": "indexed mixed-language excerpt",
+      "finding": "French URL localizes spell names but leaves guide prose in English."
+    },
+    {
+      "url": "https://www.wowhead.com/es/guide/classes/demon-hunter/devourer/overview-pve-dps",
+      "role": "dps",
+      "section": "overview",
+      "era": "Midnight",
+      "sourceAccess": "indexed mixed-language excerpt",
+      "finding": "Spanish URL localizes spell names but leaves guide prose in English."
+    }
+  ],
+  "change": {
+    "layer": "tests and source regression corpus",
+    "test": "tests/test_localized_wowhead_prose_evidence.py",
+    "newPagesAdded": 2,
+    "manualOverridesAdded": 0,
+    "playerGlossaryEntriesAdded": 0,
+    "extensionChanged": false
+  },
+  "validation": {
+    "sourceEvidence": "English prose confirmed independently of localized URL; two additional FAQ guides inspected",
+    "ci": "pending",
+    "browserRendered": false,
+    "novelIssueRate": null,
+    "stabilizationCyclesConfirmed": 0
+  },
+  "limitations": [
+    "Browser-local Translator API and rendered DOM reconstruction not exercised",
+    "Source-only excerpts do not establish quality of MEZU French output",
+    "Historical FAQ guides are language heldouts, not current gameplay advice",
+    "The 403/JavaScript verification response is source access status, never a translation failure"
+  ]
+}
