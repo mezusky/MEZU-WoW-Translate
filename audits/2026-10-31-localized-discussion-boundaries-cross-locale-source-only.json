@@ -30,6 +30,24 @@
       "role": "tank",
       "section": "rotation",
       "observedFooter": "English source prose; direct HTML blocked by JavaScript challenge"
+    },
+    {
+      "url": "https://www.wowhead.com/fr/guide/classes/priest/holy/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "observedFooter": "Commentaires / Commentaire de"
+    },
+    {
+      "url": "https://www.wowhead.com/de/guide/classes/monk/brewmaster/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation",
+      "observedFooter": "Kommentare / Kommentar von"
+    },
+    {
+      "url": "https://www.wowhead.com/pt/guide/classes/evoker/preservation/healer-leveling-tips",
+      "role": "healer",
+      "section": "leveling",
+      "observedFooter": "Comentários / Comentário de"
     }
   ],
   "fix": "Recognize verified localized discussion headings and author headings independent of translation direction, then exclude comments from source-only audit blocks.",
