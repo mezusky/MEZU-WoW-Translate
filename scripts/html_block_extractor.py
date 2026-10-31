@@ -93,14 +93,19 @@ class Extractor(HTMLParser):
                     if self.skipped_tags.pop() == tag:
                         break
             return
-        if self.stack and self.stack[-1][0] == tag:
-            kind, parts = self.stack.pop()
-            value = normalize_block_text(parts)
-            # A selected child (e.g. <p> inside <li> or <td>) is already
-            # included in the selected ancestor's accumulated text. Emitting
-            # both would double-count guide prose in source-only audits.
-            if value and not self.stack:
-                self.blocks.append((kind, value))
+        # HTML in guide widgets can close a selected parent while a selected
+        # child remains unclosed (e.g. <li><p>text</li>). HTMLParser does not
+        # auto-repair that nesting. Unwind through the matching ancestor so
+        # the next list item/cell cannot be swallowed into the previous one.
+        if any(kind == tag for kind, _ in self.stack):
+            while self.stack:
+                kind, parts = self.stack.pop()
+                value = normalize_block_text(parts)
+                # Child text is already accumulated in the parent.
+                if value and not self.stack:
+                    self.blocks.append((kind, value))
+                if kind == tag:
+                    break
         if tag in ("p", "li", "ul", "ol", "div"):
             for _, parts in self.stack:
                 parts.append(" ")
