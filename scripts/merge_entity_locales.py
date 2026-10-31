@@ -2,9 +2,9 @@
 
 # Both package imports (tests) and direct scripts (Data Pack builder) use this.
 if __package__:
-    from .locale_glossary import same_base_language
+    from .locale_glossary import same_base_language, requires_script_conversion
 else:
-    from locale_glossary import same_base_language
+    from locale_glossary import same_base_language, requires_script_conversion
 
 
 def _locale_alias(value):
@@ -68,7 +68,7 @@ def merge_verified_locale_refresh(previous, fresh, source_key, target_key):
                 merged[entity_id].pop(old_key, None)
     return merged
 
-def _locale_name(row, requested):
+def _locale_name(row, requested, require_explicit_script=False):
     """Prefer the exact locale, then its generic language; never another region.
 
     Canonical records currently use ``en``/``fr``, while future callers may
@@ -93,6 +93,10 @@ def _locale_name(row, requested):
         return None
     if requested in names:
         return names[requested]
+    # An unqualified zh label cannot be assumed to mean simplified or
+    # traditional Chinese when translating between scripts.
+    if require_explicit_script:
+        return None
     if "-" in requested:
         generic = requested.split("-", 1)[0]
         return None if generic in conflicts else names.get(generic)
@@ -112,12 +116,13 @@ def project_locale_pairs(entities, source_language, target_language):
     # script changes such as sr-Cyrl -> sr-Latn still need ID-based names.
     if same_base_language(source, target):
         return {}
+    script_conversion = requires_script_conversion(source, target)
     candidates = {}
     incomplete = set()
     for bucket in entities.values():
         for row in bucket.values():
-            source_name = _locale_name(row, source)
-            target_name = _locale_name(row, target)
+            source_name = _locale_name(row, source, script_conversion)
+            target_name = _locale_name(row, target, script_conversion)
             if not source_name:
                 continue
             if not target_name:
