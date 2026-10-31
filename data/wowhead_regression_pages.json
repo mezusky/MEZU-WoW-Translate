@@ -2639,6 +2639,18 @@
     {
       "id": "protection-warrior-starter-20261031-scope-legacy-heldout",
       "url": "https://www.wowhead.com/guide/classes/warrior/protection/new-player-basics"
+    },
+    {
+      "id": "brewmaster-monk-faq-20261031-legacy-tank-heldout",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/faq"
+    },
+    {
+      "id": "restoration-druid-faq-20261031-legacy-healer-heldout",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/faq"
+    },
+    {
+      "id": "arcane-mage-faq-20261031-legacy-dps-heldout",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/faq"
     }
   ]
 }
