@@ -1,0 +1,56 @@
+{
+  "schema": 1,
+  "auditedDate": "2026-10-31",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMode": "indexed-live-source-excerpts-plus-synthetic-HTML-regression",
+  "finding": "Audit-only HTMLParser left an unclosed selected child (e.g. p) on the stack when its selected parent (li or td) closed, merging subsequent siblings into one block and distorting cross-page coverage metrics.",
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Atonement and Penance priority lists"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Echo priority lists and nested explanations"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/faq",
+      "role": "tank",
+      "section": "legacy FAQ",
+      "evidence": "Shield Block uptime, Ignore Pain and resource management"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/faq",
+      "role": "dps",
+      "section": "legacy FAQ",
+      "evidence": "Q&A about DoTs, M+ and Soul Shards"
+    }
+  ],
+  "fix": {
+    "layer": "scripts/html_block_extractor.py",
+    "behavior": "Unwind selected descendants when a matching selected ancestor closes; emit only outermost semantic block",
+    "tests": "tests/test_html_nested_block_dedup.py",
+    "newPagesAdded": 2,
+    "manualOverridesAdded": 0,
+    "extensionChanged": false
+  },
+  "validation": {
+    "syntheticHtmlRegressionCasesAdded": 3,
+    "sourcePageExcerptsInspected": true,
+    "liveHtmlStructureVerified": false,
+    "browserRenderedVerified": false,
+    "novelIssueRate": null,
+    "stabilizationCyclesConfirmed": 0,
+    "ci": "not yet confirmed"
+  },
+  "limitations": [
+    "Wowhead live HTML structure cannot be verified from indexed excerpts; no claim that malformed markup occurs on sampled pages",
+    "Source-only extractor is not the Chrome DOM reconstruction engine",
+    "Translator API and French output require browser-only verification"
+  ]
+}
