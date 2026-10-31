@@ -29,6 +29,8 @@ def merge_verified_locale_refresh(previous, fresh, source_key, target_key):
     An incomplete response must not combine a renamed source with a stale
     target. When an ID is refreshed, old en-US/en_US aliases for the refreshed
     locales must be replaced, not retained as conflicting official names.
+    Names in *other* locales belong to the stable canonical ID and must survive
+    a source-language rename: they are not translations of the source label.
     """
     if _locale_alias(source_key) == _locale_alias(target_key):
         raise ValueError("Source and target keys must differ")
@@ -47,23 +49,16 @@ def merge_verified_locale_refresh(previous, fresh, source_key, target_key):
     for entity_id, names in accepted.items():
         if entity_id not in previous or not complete_pair(names):
             continue
-        old_source_names = _alias_values(previous[entity_id], source_key)
-        new_source_name = next(iter(_alias_values(names, source_key)))
         refreshed_locales = {
             _locale_alias(key) for key, value in names.items()
             if isinstance(key, str) and isinstance(value, str) and value.strip()
         }
-        renamed_source = bool(old_source_names and
-                              old_source_names != {new_source_name})
         for old_key in previous[entity_id]:
-            old_locale = _locale_alias(old_key)
-            # Remove stale alternate spellings (en-US vs en_US) for every
-            # refreshed locale, even when the source name has not changed.
-            if old_locale in refreshed_locales and old_key not in names:
-                merged[entity_id].pop(old_key, None)
-            # A verified source rename invalidates omitted third-language
-            # names until those locales are fetched and verified together.
-            elif renamed_source and old_locale not in refreshed_locales:
+            # Remove stale alternate spellings (en-US vs en_US) only for
+            # refreshed locales. Independent third-language labels stay tied
+            # to the canonical ID even if the source name has changed.
+            if (_locale_alias(old_key) in refreshed_locales
+                    and old_key not in names):
                 merged[entity_id].pop(old_key, None)
     return merged
 
