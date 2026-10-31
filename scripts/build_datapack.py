@@ -10,7 +10,7 @@ from blizzard_index_pairs import collect_index_pairs
 from index_retention import retain_on_partial_index
 from merge_entity_locales import merge_verified_locale_refresh, project_locale_pairs
 from merge_exact_layers import merge_exact_layers
-from locale_glossary import select_jargon, select_locale_data
+from locale_glossary import select_jargon, select_locale_data, parse_json_unique_keys
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -133,11 +133,11 @@ if community_path.exists():
 player_glossary_path = DATA / "mezu_player_glossary.json"
 player_glossary = {}
 if player_glossary_path.exists():
-    try:
-        player_glossary = json.loads(player_glossary_path.read_text(encoding="utf-8"))
-    except Exception as exc:
-        print("WARN MEZU player glossary", exc)
-        player_glossary = {}
+    # Fail publication on malformed or duplicate locale rules. Silently
+    # dropping the player glossary would ship a lower-quality Data Pack.
+    player_glossary = parse_json_unique_keys(
+        player_glossary_path.read_text(encoding="utf-8")
+    )
 
 blizzard_memory_path = DATA / "blizzard_translation_memory.json"
 blizzard_memory = {}
