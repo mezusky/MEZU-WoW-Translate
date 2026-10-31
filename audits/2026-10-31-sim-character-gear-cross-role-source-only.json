@@ -1,0 +1,64 @@
+{
+  "schema": 1,
+  "auditedDate": "2026-10-31",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMode": "indexed-live-English-source-only",
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/stat-priority-pve-dps",
+      "role": "dps",
+      "section": "stats",
+      "evidence": "sim yourself / sim your character in Raidbots advice"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/stat-priority-pve-dps",
+      "role": "dps",
+      "section": "stats",
+      "evidence": "sim your own character in SimulationCraft and Raidbots advice"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/stat-priority-pve-tank",
+      "role": "tank",
+      "section": "stats",
+      "evidence": "sim your character with explicit offensive-only warning"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/bis-gear",
+      "role": "healer",
+      "section": "gear",
+      "evidence": "sim your own character with Questionably Epic Live"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/stat-priority-pve-healer",
+      "role": "healer",
+      "section": "stats",
+      "evidence": "sim your gear in Questionably Epic Live"
+    }
+  ],
+  "fix": {
+    "layer": "data/mezu_player_glossary.json",
+    "termFamilies": [
+      "sim your own character",
+      "sim your character",
+      "sim your gear"
+    ],
+    "manualOverridesAdded": 0,
+    "extensionChanged": false,
+    "newPagesAdded": 0,
+    "tests": "tests/test_sim_character_gear_cross_role_locale.py"
+  },
+  "validation": {
+    "sourcePageExcerptsInspected": true,
+    "liveFullHtmlVerified": false,
+    "browserRenderedVerified": false,
+    "novelIssueRate": null,
+    "stabilizationCyclesConfirmed": 0,
+    "ci": "pending"
+  },
+  "limitations": [
+    "No direct full Wowhead HTML due to JavaScript challenge",
+    "Source excerpts cannot verify Chrome Translator API output or DOM reconstruction",
+    "Simulation advice is role-sensitive: tank survival cannot be inferred from offensive simulations"
+  ]
+}
