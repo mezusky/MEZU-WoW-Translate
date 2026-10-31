@@ -6,6 +6,27 @@ Remote glossaries remain data-only; no executable rules are downloaded.
 """
 
 
+import json
+
+
+def parse_json_unique_keys(source):
+    """Reject duplicate JSON object keys before dict decoding hides them.
+
+    This is for data-only translation layers, where a silent last-write-wins
+    override can corrupt a locale glossary or mask a review mistake.
+    Case-distinct keys remain valid for intentionally capitalized phrases.
+    """
+    def unique_pairs(pairs):
+        result = {}
+        for key, value in pairs:
+            if key in result:
+                raise ValueError(f"Duplicate JSON key in translation data: {key!r}")
+            result[key] = value
+        return result
+
+    return json.loads(source, object_pairs_hook=unique_pairs)
+
+
 def normalize_locale(locale):
     if not isinstance(locale, str) or not locale.strip():
         raise ValueError("Language must be a non-empty locale string")
