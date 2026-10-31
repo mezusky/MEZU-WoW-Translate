@@ -42,5 +42,28 @@ class NestedAuditBlockDedupTests(unittest.TestCase):
         )
 
 
+    def test_unclosed_paragraph_does_not_swallow_next_list_item(self):
+        html = ('<main><ul><li><p>Cast Penance.</li>'
+                '<li>Cast Smite.</li></ul></main>')
+        self.assertEqual(
+            extract_readable_blocks(html),
+            [('li', 'Cast Penance.'), ('li', 'Cast Smite.')],
+        )
+
+    def test_unclosed_paragraph_does_not_swallow_next_table_cell(self):
+        html = ('<main><table><tr><td><p>Maintain Shield Block.</td>'
+                '<td>Spend Rage.</td></tr></table></main>')
+        self.assertEqual(
+            extract_readable_blocks(html),
+            [('td', 'Maintain Shield Block.'), ('td', 'Spend Rage.')],
+        )
+
+    def test_normal_nested_paragraph_still_emits_one_parent(self):
+        self.assertEqual(
+            extract_blocks('<li><p>Prepare Echo.</p> Consume Echo.</li>'),
+            [('li', 'Prepare Echo. Consume Echo.')],
+        )
+
+
 if __name__ == '__main__':
     unittest.main()
