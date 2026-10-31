@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-31",
+  "scope": "EN source to FR target; locale-neutral data-integrity guard",
+  "sourceGuides": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "topic": "Always Be Casting; Rage waste"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "topic": "Arcane Charges and procs"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/hunter/survival/faq",
+      "role": "dps",
+      "topic": "downtime and GCD-locked gameplay; historical guide"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/faq",
+      "role": "healer",
+      "topic": "downtime and mana management; historical guide"
+    }
+  ],
+  "confirmedIssue": {
+    "kind": "source-data duplicate JSON keys",
+    "file": "data/mezu_player_glossary.json",
+    "duplicates": [
+      "Avoid Downtime",
+      "avoid downtime"
+    ],
+    "effect": "identical duplicate values were silently overwritten by ordinary JSON parsing; no demonstrated visible translation change"
+  },
+  "fix": "remove duplicate entries; parse locale glossary JSON with duplicate-key rejection; fail Data Pack build instead of silently omitting invalid player glossary",
+  "corpusPages": 665,
+  "regression": "tests/test_locale_glossary.py",
+  "limitations": [
+    "Indexed Wowhead text only; raw HTML and live Chrome DOM not verified",
+    "No browser Translator API or actual French rendered output verified",
+    "No measured novel translation issue rate"
+  ],
+  "browserRenderedPagesVerified": 0,
+  "novelTranslationIssueRate": null,
+  "crossPageStabilizationCycles": 0
+}
