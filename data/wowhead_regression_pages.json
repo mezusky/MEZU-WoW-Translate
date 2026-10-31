@@ -2603,6 +2603,8 @@
     {
       "id": "fire-mage-faq-20261031-proc-munching-legacy-heldout",
       "url": "https://www.wowhead.com/guide/classes/mage/fire/faq"
-    }
+    },
+    {"id":"restoration-shaman-starter-20261031-charge-pooling-legacy-heldout","url":"https://www.wowhead.com/guide/classes/shaman/restoration/new-player-basics"},
+    {"id":"enhancement-shaman-nerubar-20261031-charge-pooling-raid-legacy-heldout","url":"https://www.wowhead.com/guide/classes/shaman/enhancement/nerub-ar-palace-raid-tips"}
   ]
 }
