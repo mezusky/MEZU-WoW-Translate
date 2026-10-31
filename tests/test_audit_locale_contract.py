@@ -1,7 +1,7 @@
 """Cross-role, multilingual regression: source-only audits must not borrow a pack."""
 import unittest
 
-from scripts.audit_locale_contract import resolve_audit_locale_contract
+from scripts.audit_locale_contract import resolve_audit_locale_contract, source_accept_language
 
 
 class AuditLocaleContractTests(unittest.TestCase):
@@ -50,6 +50,19 @@ class AuditLocaleContractTests(unittest.TestCase):
                          "invalid_locale")
         with self.assertRaises(ValueError):
             resolve_audit_locale_contract([], self.PACK)
+
+    def test_source_http_language_follows_configured_locale(self):
+        # The audit source is currently English, but future directions must
+        # never silently request English prose from Wowhead.
+        self.assertEqual(source_accept_language("en"), "en")
+        self.assertEqual(source_accept_language("en_US"), "en-us,en;q=0.9")
+        self.assertEqual(source_accept_language("de-DE"), "de-de,de;q=0.9")
+        self.assertEqual(source_accept_language("fr-CA"), "fr-ca,fr;q=0.9")
+        self.assertEqual(source_accept_language("zh-Hant-TW"), "zh-hant-tw,zh;q=0.9")
+        for bad in ("", "english", "en\\r\\nX-Injected: true", "fr-???", None):
+            with self.subTest(bad=bad):
+                with self.assertRaises(ValueError):
+                    source_accept_language(bad)
 
     def test_no_hardcoded_french_target(self):
         self.check("de-DE", "es-ES", "ready",
