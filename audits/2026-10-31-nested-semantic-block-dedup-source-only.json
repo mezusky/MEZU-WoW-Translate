@@ -1,0 +1,50 @@
+{
+  "schema": 1,
+  "auditedDate": "2026-10-31",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMode": "source-only-indexed-excerpts-plus-synthetic-html-regression",
+  "finding": "Nested selected semantic HTML tags (li > p, td > p) caused the source-only extractor to emit both child and parent blocks, counting overlapping prose twice. The parser already accumulates child text in the parent.",
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Penance and Atonement priority lists and macro snippets"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Echo and Stasis multi-step lists"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Arcane Charges rotation priority and nested lists"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/overview-pve-tank",
+      "role": "tank",
+      "section": "overview",
+      "evidence": "Strengths/weaknesses and rotation rule lists"
+    }
+  ],
+  "fix": {
+    "layer": "scripts/html_block_extractor.py",
+    "behavior": "Emit the outermost selected semantic block once; preserve all descendant text, standalone sibling blocks, and malformed-input close behavior",
+    "tests": "tests/test_html_nested_block_dedup.py",
+    "newPagesAdded": 0,
+    "manualOverridesAdded": 0,
+    "extensionChanged": false
+  },
+  "limitations": [
+    "Live Wowhead HTML direct fetch blocked by JavaScript challenge; nested HTML markup structure not verified live",
+    "Source-only extractor is not the Chrome DOM reconstruction engine",
+    "Browser Translator API and French rendered output not verified",
+    "No reliable heldout novel-issue rate measured"
+  ],
+  "qualitySample": null,
+  "stabilizationCyclesConfirmed": 0
+}
