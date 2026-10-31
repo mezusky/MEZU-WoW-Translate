@@ -2,7 +2,8 @@
 import json
 import unittest
 from pathlib import Path
-from scripts.locale_glossary import locale_matches, select_jargon, select_locale_data, same_base_language
+from scripts.locale_glossary import (locale_matches, select_jargon, select_locale_data,
+                                    same_base_language, parse_json_unique_keys)
 
 
 class LocaleGlossaryTests(unittest.TestCase):
@@ -12,6 +13,22 @@ class LocaleGlossaryTests(unittest.TestCase):
             "targetLanguage": "fr",
             "jargon": {"tier set": "set de classe", "socket": "châsse"},
         }
+
+    def test_player_glossary_source_has_unique_json_keys(self):
+        # JSON normally keeps the last value, masking duplicated source rules.
+        path = Path(__file__).resolve().parents[1] / "data" / "mezu_player_glossary.json"
+        payload = parse_json_unique_keys(path.read_text(encoding="utf-8"))
+        self.assertEqual(payload["jargon"]["Avoid Downtime"], "Éviter les temps morts")
+        self.assertEqual(payload["jargon"]["avoid downtime"], "éviter les temps morts")
+
+    def test_duplicate_keys_fail_even_inside_nested_locale_data(self):
+        with self.assertRaisesRegex(ValueError, "Duplicate JSON key"):
+            parse_json_unique_keys('{"sourceLanguage":"en","jargon":{"term":"a","term":"b"}}')
+        with self.assertRaisesRegex(ValueError, "Duplicate JSON key"):
+            parse_json_unique_keys('{"sourceLanguage":"en","sourceLanguage":"fr"}')
+        # Capitalization is intentional in WoW headings and must remain valid.
+        self.assertEqual(parse_json_unique_keys('{"Term":"A","term":"b"}'),
+                         {"Term": "A", "term": "b"})
 
     def test_current_pack_and_regional_language_tags(self):
         self.assertEqual(select_jargon(self.fr, "en", "fr"), self.fr["jargon"])
