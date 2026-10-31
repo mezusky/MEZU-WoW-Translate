@@ -45,6 +45,37 @@ class LocaleGlossaryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             same_base_language("", "fr")
 
+    def test_wow_chinese_script_variants_are_not_the_same_language_output(self):
+        # Official WoW locale tags distinguish simplified and traditional
+        # Chinese even though both use the ISO base language "zh".
+        for source, target in (("zh-CN", "zh-TW"),
+                               ("zh-Hans", "zh-Hant"),
+                               ("zh-SG", "zh-HK"),
+                               ("sr-Cyrl", "sr-Latn")):
+            with self.subTest(source=source, target=target):
+                self.assertFalse(same_base_language(source, target))
+        for source, target in (("zh-Hans", "zh-CN"),
+                               ("zh-Hant", "zh-TW"),
+                               ("en-US", "en-GB")):
+            with self.subTest(source=source, target=target):
+                self.assertTrue(same_base_language(source, target))
+
+    def test_script_conversion_requires_explicit_directional_glossary(self):
+        generic = {"sourceLanguage": "zh", "targetLanguage": "zh",
+                   "jargon": {"test": "测试"}}
+        specific = {"sourceLanguage": "zh-CN", "targetLanguage": "zh-TW",
+                    "jargon": {"测试": "測試"}}
+        # A generic same-language layer must never be silently reused as a
+        # simplified -> traditional mapping (or in the reverse direction).
+        with self.assertRaises(ValueError):
+            select_jargon(generic, "zh-CN", "zh-TW")
+        self.assertEqual(select_locale_data(generic, "zh-CN", "zh-TW"), {})
+        self.assertEqual(select_jargon(specific, "zh-CN", "zh-TW"),
+                         specific["jargon"])
+        self.assertIs(select_locale_data(specific, "zh-CN", "zh-TW"), specific)
+        self.assertEqual(select_locale_data(specific, "zh-TW", "zh-CN"), {})
+        self.assertEqual(select_jargon(specific, "zh-TW", "zh-TW"), {})
+
     def test_identical_source_target_skips_translation(self):
         self.assertEqual(select_jargon(self.fr, "fr", "fr"), {})
         self.assertEqual(select_jargon(self.fr, "fr-FR", "fr_FR"), {})
