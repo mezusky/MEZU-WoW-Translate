@@ -67,8 +67,19 @@ class Extractor(HTMLParser):
         self.stack = []
         self.blocks = []
         self.skipped_tags = []
+        # HTML permits omitted </li>. Track the containing list depth so a
+        # sibling item closes the previous item without splitting nested lists.
+        self.list_depth = 0
+        self.li_depths = []
 
     def handle_starttag(self, tag, attrs):
+        if (tag == "li" and not self.skipped_tags and self.li_depths
+                and self.li_depths[-1] == self.list_depth):
+            # A new sibling <li> implicitly ends the previous one. Unwind
+            # nested selected paragraphs too; they belong to the old item.
+            while self.stack:
+                if self._finish_selected() == "li":
+                    break
         # HTML implicitly closes <p> before a new paragraph OR a structural
         # block (heading/list/table). HTMLParser does not repair that tree:
         # without this guard, a guide introduction can swallow its priority
@@ -91,14 +102,20 @@ class Extractor(HTMLParser):
             return
         if tag in ("main", "article"):
             self.scope_frames.append((tag, len(self.stack)))
+        if tag in ("ul", "ol"):
+            self.list_depth += 1
         if tag in ("br", "p", "li", "ul", "ol", "div"):
             for _, parts in self.stack:
                 parts.append("\n" if tag in ("br", "div") else " ")
         if tag in self.tags and (self.scope_frames or not self.scoped):
             self.stack.append([tag, []])
+            if tag == "li":
+                self.li_depths.append(self.list_depth)
 
     def _finish_selected(self):
         kind, parts = self.stack.pop()
+        if kind == "li":
+            self.li_depths.pop()
         value = normalize_block_text(parts)
         # Nested selected blocks already contribute to their parent.
         if value and not self.stack:
@@ -125,6 +142,15 @@ class Extractor(HTMLParser):
             while self.stack:
                 if self._finish_selected() == tag:
                     break
+        if tag in ("ul", "ol"):
+            # Closing a list implicitly closes its final unclosed item, but
+            # leaves the enclosing parent item of a nested list intact.
+            while (self.list_depth > 0 and self.li_depths
+                   and self.li_depths[-1] >= self.list_depth):
+                while self.stack:
+                    if self._finish_selected() == "li":
+                        break
+            self.list_depth = max(0, self.list_depth - 1)
         if tag in ("p", "li", "ul", "ol", "div"):
             for _, parts in self.stack:
                 parts.append(" ")
