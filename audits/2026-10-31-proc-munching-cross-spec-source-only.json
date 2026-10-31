@@ -34,7 +34,8 @@
     "localeGlossary": [
       "proc munching -> gaspillage de procs",
       "Proc Munching -> Gaspillage de procs",
-      "munch the proc -> gaspiller le proc"
+      "\"munch\" the proc -> gaspiller le proc",
+      "risk munching the proc -> risquer de gaspiller le proc"
     ],
     "tests": "tests/test_proc_munching_cross_spec_locale.py",
     "corpusAddition": "fire-mage-faq-20261031-proc-munching-legacy-heldout",
@@ -45,7 +46,8 @@
     "No verified French output from the browser Translator API or DOM reconstruction",
     "Large generated Blizzard phrase-memory/Data Pack not fully inspectable via current connector response",
     "Indexed English excerpts are not a measured translation-quality sample",
-    "New GitHub Actions build and test outcome not confirmed"
+    "New GitHub Actions build and test outcome not confirmed",
+    "Quoted/gerund phrase matching and final inflection still require real browser validation"
   ],
   "qualitySample": null,
   "stabilizationCyclesConfirmed": 0
