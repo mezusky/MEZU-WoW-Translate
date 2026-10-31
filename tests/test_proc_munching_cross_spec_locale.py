@@ -39,6 +39,7 @@ class ProcMunchingLocaleTests(unittest.TestCase):
 
     def test_independent_rotation_guides_remain_in_corpus(self):
         urls = {page["url"] for page in self.pages}
+        self.assertIn("https://www.wowhead.com/guide/classes/mage/fire/faq", urls)
         for spec in ("druid/balance", "mage/fire", "mage/frost"):
             with self.subTest(spec=spec):
                 self.assertIn(
