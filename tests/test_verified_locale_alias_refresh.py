@@ -7,7 +7,7 @@ from scripts.merge_entity_locales import (
 
 
 class VerifiedLocaleAliasRefreshTests(unittest.TestCase):
-    def test_source_rename_replaces_aliases_and_invalidates_stale_third_locale(self):
+    def test_source_rename_replaces_aliases_and_preserves_third_locale(self):
         # Vengeance DH spell: both aliases denote the same official locale.
         old = {"spell:204596": {
             "en-US": "Old Sigil Name", "fr-FR": "Ancien cachet",
@@ -18,13 +18,15 @@ class VerifiedLocaleAliasRefreshTests(unittest.TestCase):
         }}
         merged = merge_verified_locale_refresh(old, fresh, "en-US", "fr-FR")
         self.assertEqual(merged["spell:204596"],
-                         {"en_US": "Sigil of Flame", "fr_FR": "Cachet de feu"})
+                         {"en_US": "Sigil of Flame", "fr_FR": "Cachet de feu",
+                          "de-DE": "Alter Name"})
         self.assertEqual(
             project_locale_pairs({"spell": merged}, "en-US", "fr-FR"),
             {"Sigil of Flame": "Cachet de feu"},
         )
         self.assertEqual(
-            project_locale_pairs({"spell": merged}, "en-US", "de-DE"), {})
+            project_locale_pairs({"spell": merged}, "en-US", "de-DE"),
+            {"Sigil of Flame": "Alter Name"})
         # Refresh must not mutate the prior canonical snapshot.
         self.assertIn("de-DE", old["spell:204596"])
 
@@ -72,9 +74,9 @@ class VerifiedLocaleAliasRefreshTests(unittest.TestCase):
         merged = merge_verified_locale_refresh(old, fresh, "en_US", "fr_FR")
         self.assertEqual(merged, old)
 
-    def test_conflicting_old_aliases_are_repaired_without_reusing_third_locale(self):
+    def test_conflicting_old_aliases_are_repaired_without_dropping_third_locale(self):
         # A previously ambiguous Hunter source name must not survive a fresh
-        # verified pair under either spelling or project to another language.
+        # verified pair under either spelling; other locales remain ID-backed.
         old = {"spell:34026": {
             "en-US": "Kill Command", "en_US": "Outdated Kill Command",
             "fr-FR": "Ancien ordre", "de-DE": "Altes Kommando",
@@ -84,7 +86,8 @@ class VerifiedLocaleAliasRefreshTests(unittest.TestCase):
         }}
         merged = merge_verified_locale_refresh(old, fresh, "en-US", "fr-FR")
         self.assertEqual(merged["spell:34026"],
-                         {"en_US": "Kill Command", "fr_FR": "Ordre de tuer"})
+                         {"en_US": "Kill Command", "fr_FR": "Ordre de tuer",
+                          "de-DE": "Altes Kommando"})
         self.assertEqual(
             project_locale_pairs({"spell": merged}, "en-US", "fr-FR"),
             {"Kill Command": "Ordre de tuer"},
