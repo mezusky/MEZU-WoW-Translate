@@ -314,7 +314,9 @@
     "soft enrage timer": "timer d’enrage progressif",
     "execute phase": "phase d’exécution",
     "Execute phase": "Phase d’exécution",
-    "Execute Phase": "Phase d’exécution"
+    "Execute Phase": "Phase d’exécution",
+    "bank charges": "garder des charges en réserve",
+    "bank charges of": "conserver des charges de"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
