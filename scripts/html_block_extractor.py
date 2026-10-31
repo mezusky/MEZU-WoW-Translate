@@ -60,7 +60,10 @@ class Extractor(HTMLParser):
     def __init__(self, tags, scoped):
         super().__init__(convert_charrefs=True)
         self.tags, self.scoped = set(tags), scoped
-        self.scope = 0
+        # Each semantic container remembers the selected-block depth at entry.
+        # An unclosed paragraph must not absorb the following footer or sibling
+        # article when its enclosing <main>/<article> ends.
+        self.scope_frames = []
         self.stack = []
         self.blocks = []
         self.skipped_tags = []
@@ -74,12 +77,20 @@ class Extractor(HTMLParser):
                 self.skipped_tags.append(tag)
             return
         if tag in ("main", "article"):
-            self.scope += 1
+            self.scope_frames.append((tag, len(self.stack)))
         if tag in ("br", "p", "li", "ul", "ol", "div"):
             for _, parts in self.stack:
                 parts.append("\n" if tag in ("br", "div") else " ")
-        if tag in self.tags and (self.scope or not self.scoped):
+        if tag in self.tags and (self.scope_frames or not self.scoped):
             self.stack.append([tag, []])
+
+    def _finish_selected(self):
+        kind, parts = self.stack.pop()
+        value = normalize_block_text(parts)
+        # Nested selected blocks already contribute to their parent.
+        if value and not self.stack:
+            self.blocks.append((kind, value))
+        return kind
 
     def handle_data(self, data):
         if not self.skipped_tags:
@@ -99,29 +110,27 @@ class Extractor(HTMLParser):
         # the next list item/cell cannot be swallowed into the previous one.
         if any(kind == tag for kind, _ in self.stack):
             while self.stack:
-                kind, parts = self.stack.pop()
-                value = normalize_block_text(parts)
-                # Child text is already accumulated in the parent.
-                if value and not self.stack:
-                    self.blocks.append((kind, value))
-                if kind == tag:
+                if self._finish_selected() == tag:
                     break
         if tag in ("p", "li", "ul", "ol", "div"):
             for _, parts in self.stack:
                 parts.append(" ")
-        if tag in ("main", "article") and self.scope:
-            self.scope -= 1
+        if tag in ("main", "article"):
+            # HTMLParser does not repair malformed markup. Close selected
+            # descendants at their semantic container boundary, preserving
+            # outer selected parents when <article> is nested in <main>.
+            for index in range(len(self.scope_frames) - 1, -1, -1):
+                if self.scope_frames[index][0] == tag:
+                    depth = self.scope_frames[index][1]
+                    while len(self.stack) > depth:
+                        self._finish_selected()
+                    del self.scope_frames[index:]
+                    break
 
     def close(self):
         super().close()
         while self.stack:
-            kind, parts = self.stack.pop()
-            value = normalize_block_text(parts)
-            # A selected child (e.g. <p> inside <li> or <td>) is already
-            # included in the selected ancestor's accumulated text. Emitting
-            # both would double-count guide prose in source-only audits.
-            if value and not self.stack:
-                self.blocks.append((kind, value))
+            self._finish_selected()
 
 
 def extract_blocks(html, tags=("h1", "h2", "h3", "h4", "p", "li", "td", "th"), scoped=False):
