@@ -59,7 +59,7 @@ class AuditLocaleContractTests(unittest.TestCase):
         self.assertEqual(source_accept_language("de-DE"), "de-de,de;q=0.9")
         self.assertEqual(source_accept_language("fr-CA"), "fr-ca,fr;q=0.9")
         self.assertEqual(source_accept_language("zh-Hant-TW"), "zh-hant-tw,zh;q=0.9")
-        for bad in ("", "english", "en\\r\\nX-Injected: true", "fr-???", None):
+        for bad in ("", "english", "en\r\nX-Injected: true", "fr-???", None):
             with self.subTest(bad=bad):
                 with self.assertRaises(ValueError):
                     source_accept_language(bad)
