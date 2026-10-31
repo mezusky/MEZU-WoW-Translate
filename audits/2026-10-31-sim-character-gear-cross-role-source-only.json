@@ -37,16 +37,12 @@
     }
   ],
   "fix": {
-    "layer": "data/mezu_player_glossary.json",
-    "termFamilies": [
-      "sim your own character",
-      "sim your character",
-      "sim your gear"
-    ],
+    "layer": "tests/test_sim_character_gear_cross_role_locale.py",
+    "behavior": "Extend the existing safety contract to 'sim your own character' and 'sim your gear'; leave these inflected phrases to contextual prose fallback. Preserve the safe standalone CTA and 'simming' jargon.",
+    "glossaryEntriesAdded": 0,
     "manualOverridesAdded": 0,
     "extensionChanged": false,
-    "newPagesAdded": 0,
-    "tests": "tests/test_sim_character_gear_cross_role_locale.py"
+    "newPagesAdded": 0
   },
   "validation": {
     "sourcePageExcerptsInspected": true,
@@ -54,11 +50,12 @@
     "browserRenderedVerified": false,
     "novelIssueRate": null,
     "stabilizationCyclesConfirmed": 0,
-    "ci": "pending"
+    "ci": "awaiting rerun after reverting unsafe terms"
   },
   "limitations": [
     "No direct full Wowhead HTML due to JavaScript challenge",
     "Source excerpts cannot verify Chrome Translator API output or DOM reconstruction",
     "Simulation advice is role-sensitive: tank survival cannot be inferred from offensive simulations"
-  ]
+  ],
+  "finding": "Existing tests intentionally forbid inline 'sim your character' replacement because it breaks grammar inside longer sentences; newly sampled cross-role variants share that risk."
 }
