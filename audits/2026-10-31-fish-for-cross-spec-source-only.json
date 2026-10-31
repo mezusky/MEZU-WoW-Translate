@@ -1,0 +1,54 @@
+{
+  "schema": 1,
+  "date": "2026-10-31",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Assistant web-indexed live Wowhead source excerpts; direct HTML requests encountered JavaScript challenge. No browser-rendered MEZU translation was inspected.",
+  "corpusSize": 650,
+  "corpusAdded": 0,
+  "reasonNoNewPages": "All four independent class/spec guide URLs used for this issue already occur in the representative corpus; avoided duplicate growth.",
+  "browserRenderedPagesVerified": 0,
+  "strictCleanCycles": 0,
+  "issueFamily": "Idiomatic fish for (seek a proc, critical strike, reset or big hit) should not become literal fishing.",
+  "sourceChecks": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/abilities-talents-pve-dps",
+      "context": "Fire Mage filler used to fish for Critical Strikes."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/rotation-cooldowns-pve-dps",
+      "context": "Enhancement Stormbringer spends to fish for Tempest."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/abilities-talents-pve-tank",
+      "context": "Protection Warrior uses attacks to fish for Shield Slam resets."
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/rogue/subtlety/overview-pve-dps",
+      "context": "Subtlety Rogue uses Fish for the big hit as a heading; independent holdout."
+    }
+  ],
+  "changes": [
+    {
+      "layer": "data/mezu_player_glossary.json",
+      "commit": "33f7bebee7c0e5c380c51d71cda847c5b2ec4994",
+      "note": "Locale-scoped generic fish for / Fish for; no fish or fishing rule."
+    },
+    {
+      "layer": "tests/test_fish_for_cross_spec_locale.py",
+      "commit": "04ff4948002ce895038d4c28bdcc7de622a31a63",
+      "note": "Cross-spec source corpus and language-isolation contract."
+    }
+  ],
+  "validation": {
+    "githubReadback": false,
+    "localeGlossaryEntries": 310,
+    "newManualOverrides": 0,
+    "githubActionsResult": "pending",
+    "browserOnlyRemaining": [
+      "Contextual rendering of fish-for fragments across rich-text nodes",
+      "Official spell name preservation",
+      "Novel issue rate on previously unseen browser-rendered pages"
+    ]
+  }
+}
