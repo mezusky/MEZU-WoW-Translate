@@ -1,0 +1,53 @@
+{
+  "schema": 1,
+  "auditedDate": "2026-10-31",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMode": "source-only-indexed-excerpts",
+  "browserVerified": false,
+  "wowheadDirectFetch": "JavaScript challenge; indexed English guide excerpts inspected through assistant web access",
+  "corpusSize": 656,
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/healer-leveling-tips",
+      "role": "healer",
+      "section": "leveling",
+      "evidence": "even when chain pulling"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/rogue/assassination/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "held for chainpulls where you cannot stealth beforehand"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/devastation/dps-leveling-tips",
+      "role": "dps",
+      "section": "leveling",
+      "evidence": "try and front-load damage as much as possible",
+      "purpose": "new independent heldout; front-load wording observed but not generalized from a single exact collocation"
+    }
+  ],
+  "finding": "Chain pulling and chainpulls denote consecutive combat pulls across unrelated roles; a generic chain pull rule is unsafe because it can also describe accidental linked aggro.",
+  "change": {
+    "layer": "data/mezu_player_glossary.json",
+    "entriesAdded": 2,
+    "manualOverridesAdded": 0,
+    "extensionChanged": false,
+    "tests": "tests/test_chain_pulling_cross_role_locale.py",
+    "newPagesAdded": 1
+  },
+  "validation": {
+    "sourceExcerpts": "two independent roles and sections; third independent heldout sampled",
+    "localCodeTests": "not executed",
+    "ci": "pending",
+    "browserRendered": false,
+    "novelIssueRate": null,
+    "stabilizationCyclesConfirmed": 0
+  },
+  "limitations": [
+    "No Chrome Translator API or DOM reconstruction verified",
+    "Indexed excerpts are not full rendered HTML",
+    "Data Pack rebuild and published output pending CI"
+  ]
+}
