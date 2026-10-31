@@ -25,10 +25,11 @@ class ProcMunchingLocaleTests(unittest.TestCase):
         terms = select_jargon(self.glossary, "en-US", "fr-FR")
         self.assertEqual(terms["proc munching"], "gaspillage de procs")
         self.assertEqual(terms["Proc Munching"], "Gaspillage de procs")
-        self.assertEqual(terms["munch the proc"], "gaspiller le proc")
+        self.assertEqual(terms['"munch" the proc'], "gaspiller le proc")
+        self.assertEqual(terms["risk munching the proc"], "risquer de gaspiller le proc")
         for unsafe in ("munch", "munching", "munches"):
             self.assertNotIn(unsafe, terms)
-        for term in ("proc munching", "Proc Munching", "munch the proc"):
+        for term in ("proc munching", "Proc Munching", '"munch" the proc', "risk munching the proc"):
             self.assertNotIn(term, self.manual.get("jargon", {}))
             self.assertNotIn(term, self.manual.get("exact", {}))
 
