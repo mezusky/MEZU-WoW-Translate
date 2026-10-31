@@ -6,9 +6,11 @@ requested translation direction. It does not perform browser translation.
 import re
 
 if __package__:
-    from .locale_glossary import locale_matches, normalize_locale, same_base_language
+    from .locale_glossary import (locale_matches, normalize_locale,
+                                 same_base_language, explicit_script_pair_matches)
 else:  # Direct execution of scripts/analyze_wowhead_guides.py
-    from locale_glossary import locale_matches, normalize_locale, same_base_language
+    from locale_glossary import (locale_matches, normalize_locale,
+                                 same_base_language, explicit_script_pair_matches)
 
 _LOCALE = re.compile(r"[a-z]{2,3}(?:-[a-z0-9]{2,8})*", re.IGNORECASE)
 
@@ -41,6 +43,11 @@ def resolve_audit_locale_contract(config, pack):
     if same_base_language(source, target):
         return {"sourceLanguage": source, "targetLanguage": target,
                 "canScore": False, "status": "skipped_same_language"}
+    # Same-base cross-script requests (e.g. zh-CN -> zh-TW) must not
+    # borrow a generic zh -> zh pack whose writing systems are unknown.
+    if not explicit_script_pair_matches(pack, source, target):
+        return {"sourceLanguage": source, "targetLanguage": target,
+                "canScore": False, "status": "pack_locale_mismatch"}
     if not (locale_matches(pack_source, source)
             and locale_matches(pack_target, target)):
         return {"sourceLanguage": source, "targetLanguage": target,
