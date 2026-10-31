@@ -11,7 +11,7 @@ from html_block_extractor import extract_readable_blocks
 from guide_audit_boundaries import trim_guide_footer
 from wowhead_source_status import classify_html_source, classify_fetch_error
 from source_language_evidence import detect_source_language, audit_source_prose
-from audit_locale_contract import resolve_audit_locale_contract
+from audit_locale_contract import resolve_audit_locale_contract, source_accept_language
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -22,8 +22,11 @@ UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/154 Sa
 WS = re.compile(r"\s+")
 WOW_SIGNAL = re.compile(r"\b(?:Paladin|Demon Hunter|Tank|Mythic\+|Raid|cooldown|GCD|Holy Power|Haste|Crit|Mastery|Versatility|BiS|Best in Slot|Raidbots|Great Vault|spender|generator|overcap|defensive|mitigation)\b", re.I)
 
-def fetch(url):
-    req = urllib.request.Request(url, headers={"User-Agent": UA, "Accept-Language": "en-US,en;q=0.9"})
+def fetch(url, source_language):
+    req = urllib.request.Request(url, headers={
+        "User-Agent": UA,
+        "Accept-Language": source_accept_language(source_language),
+    })
     with urllib.request.urlopen(req, timeout=45) as r:
         return r.read().decode("utf-8", "replace")
 
@@ -58,7 +61,7 @@ for page in cfg.get("pages", []):
         report["pages"].append(row)
         continue
     try:
-        raw = fetch(url)
+        raw = fetch(url, source_language)
         # A 200 response may be a JS challenge, not guide prose.
         row["sourceStatus"], reason = classify_html_source(raw)
         if row["sourceStatus"] != "accessible":
