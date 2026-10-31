@@ -1,0 +1,39 @@
+{
+  "date": "2026-10-31",
+  "method": "source-only indexed Wowhead guide prose; synthetic HTML parser regression tests; no live DOM/Translator API",
+  "sampledPages": [
+    {
+      "id": "protection-warrior-rotation",
+      "role": "tank",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "observed": "numbered single-target/AoE priorities and opener steps"
+    },
+    {
+      "id": "discipline-priest-rotation",
+      "role": "healer",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+      "observed": "healing setup and priority prose; structural HTML not verified"
+    },
+    {
+      "id": "arcane-mage-rotation",
+      "role": "dps",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/rotation-cooldowns-pve-dps",
+      "observed": "easy-mode priority, headings, nested conditions"
+    }
+  ],
+  "reusableRisk": "HTMLParser does not implicitly close an unclosed paragraph before a list, table or heading; source-only audit could merge prose and lose separate priority/cell/heading blocks",
+  "fix": "Close selected top-level p before structural starts; preserve parent li/td and div macro line behavior",
+  "verification": "5 synthetic regression tests spanning tank/healer/DPS and hidden/nested content; GitHub Actions result pending at write",
+  "limitations": [
+    "Live Wowhead HTML/DOM not retrieved; no claim the malformed structure occurs on these specific pages",
+    "No French browser translation or Chrome Translator API verification",
+    "No measured novel translation issue rate or cross-page clean cycle"
+  ],
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "crossPageStabilizationCycles": 0
+}
