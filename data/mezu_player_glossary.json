@@ -316,7 +316,10 @@
     "Execute phase": "Phase d’exécution",
     "Execute Phase": "Phase d’exécution",
     "bank charges": "garder des charges en réserve",
-    "bank charges of": "conserver des charges de"
+    "bank charges of": "conserver des charges de",
+    "pool your charges": "conserver vos charges",
+    "pool charges of": "conserver des charges de",
+    "pool charges": "conserver des charges"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
