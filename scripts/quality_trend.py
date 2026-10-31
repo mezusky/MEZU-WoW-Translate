@@ -135,10 +135,23 @@ def _case_matches_guide_identity(case, canonical_url):
 
 
 
+def _normalized_locale(value):
+    """Normalize Blizzard en_US and BCP-47 en-US to one audit identity.
+
+    Reject malformed tags instead of guessing a source/target language.
+    Regional variants remain distinct for cycle identity, while translation
+    necessity is determined by the base language.
+    """
+    if not isinstance(value, str):
+        return None
+    normalized = value.replace("_", "-").casefold()
+    return normalized if re.fullmatch(
+        r"[a-z]{2,3}(?:-[a-z0-9]{2,8})*", normalized
+    ) else None
+
+
 def _valid_locale(value):
-    return isinstance(value, str) and re.fullmatch(
-        r"[a-z]{2,3}(?:-[a-z0-9]{2,8})*", value, re.IGNORECASE
-    ) is not None
+    return _normalized_locale(value) is not None
 
 
 def _timestamp(value):
@@ -166,9 +179,11 @@ def summarize(reports):
         target_language = sample.get("targetLanguage")
         # Regional variants of the same base language require no translation.
         # The browser skip contract must agree with canonical entity projection.
-        valid_pair = (_valid_locale(source_language) and _valid_locale(target_language)
-                      and source_language.split("-", 1)[0].casefold()
-                      != target_language.split("-", 1)[0].casefold())
+        source_locale = _normalized_locale(source_language)
+        target_locale = _normalized_locale(target_language)
+        valid_pair = (source_locale is not None and target_locale is not None
+                      and source_locale.split("-", 1)[0]
+                      != target_locale.split("-", 1)[0])
         new_pages = sample.get("newPagesAudited")
         novel = sample.get("novelIssueFamilies")
         browser_pages = sample.get("browserVerifiedPages", 0)
@@ -191,8 +206,9 @@ def summarize(reports):
                 all(u is not None for u in urls)
                 and len(set(urls)) == new_pages
                 and all(_case_matches_guide_identity(c, u) for c, u in zip(cases, urls))
-                and all(c.get("sourceLanguage") == source_language
-                        and c.get("targetLanguage") == target_language for c in cases)
+                and all(_normalized_locale(c.get("sourceLanguage")) == source_locale
+                        and _normalized_locale(c.get("targetLanguage")) == target_locale
+                        for c in cases)
                 and all(c.get("browserRendered") is True for c in cases)
                 and all(isinstance(c.get(key), str) and c[key]
                         for c in cases for key in ("wowClass", "spec", "role", "section"))
@@ -238,8 +254,13 @@ def summarize(reports):
         if not cycle["strictCleanCycle"]:
             break
         if newer is not None:
-            same_pair = (cycle["sourceLanguage"], cycle["targetLanguage"]) == (
-                newer["sourceLanguage"], newer["targetLanguage"])
+            same_pair = (
+                _normalized_locale(cycle["sourceLanguage"]),
+                _normalized_locale(cycle["targetLanguage"]),
+            ) == (
+                _normalized_locale(newer["sourceLanguage"]),
+                _normalized_locale(newer["targetLanguage"]),
+            )
             distinct_time = _timestamp(cycle["auditedAt"]) < _timestamp(newer["auditedAt"])
             fresh_pages = not (set(cycle["_verifiedUrls"]) & set(newer["_verifiedUrls"]))
             if not (same_pair and distinct_time and fresh_pages):
