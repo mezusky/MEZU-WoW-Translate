@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-10-31T01:38:53Z",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMode": "source-only-indexed-snippets",
+  "browserVerified": false,
+  "wowheadDirectFetch": "JavaScript bot verification; indexed English snippets used, not a rendered browser audit",
+  "corpusBefore": 650,
+  "corpusAfter": 651,
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "finding": "munching the proc refers to wasting a proc"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/mage/fire/faq",
+      "role": "dps",
+      "finding": "munch the proc refers to losing Hot Streak from simultaneous casts; historical heldout"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/druid/feral/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "finding": "existing snapshotting/Pandemic jargon already covered; no broad override"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "finding": "existing Pandemic window and overcap patterns already covered"
+    }
+  ],
+  "changes": {
+    "localeGlossary": [
+      "proc munching -> gaspillage de procs",
+      "Proc Munching -> Gaspillage de procs",
+      "munch the proc -> gaspiller le proc"
+    ],
+    "tests": "tests/test_proc_munching_cross_spec_locale.py",
+    "corpusAddition": "fire-mage-faq-20261031-proc-munching-legacy-heldout",
+    "manualOverridesAdded": 0,
+    "extensionCodeChanged": false
+  },
+  "limitations": [
+    "No verified French output from the browser Translator API or DOM reconstruction",
+    "Large generated Blizzard phrase-memory/Data Pack not fully inspectable via current connector response",
+    "Indexed English excerpts are not a measured translation-quality sample",
+    "New GitHub Actions build and test outcome not confirmed"
+  ],
+  "qualitySample": null,
+  "stabilizationCyclesConfirmed": 0
+}
