@@ -7,6 +7,13 @@ from urllib.parse import urlparse
 
 ROOT = Path(__file__).resolve().parents[1]
 PAGES = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(encoding="utf-8"))["pages"]
+# Explicit English-source site variants; /fr/, /de/, etc. are not source
+# pages even when Wowhead leaves some guide prose untranslated.
+ENGLISH_GUIDE_PATH_RE = (
+    r"^/(?:(?:ptr(?:-\\d+)?|forever)/)?guide/"
+    r"(?:classes/[a-z-]+/[a-z-]+/[a-z0-9-]+|"
+    r"(?!classes(?:/|$))[a-z0-9-]+(?:/[a-z0-9-]+)*)$"
+)
 
 
 def class_guide_parts(url):
@@ -34,11 +41,11 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
                 # but localizes spell links, so it is NOT an English-source URL.
                 # The English PTR preview uses /ptr-2/guide/... instead.
                 self.assertRegex(parsed.path,
-                                 r"^/(?:ptr(?:-\d+)?/)?guide/(?:classes/[a-z-]+/[a-z-]+/[a-z0-9-]+|(?!classes(?:/|$))[a-z0-9-]+(?:/[a-z0-9-]+)*)$")
+                                 ENGLISH_GUIDE_PATH_RE)
                 self.assertFalse(parsed.query or parsed.fragment)
 
     def test_localized_url_is_not_an_english_source(self):
-        pattern = r"^/(?:ptr(?:-\d+)?/)?guide/(?:classes/[a-z-]+/[a-z-]+/[a-z0-9-]+|(?!classes(?:/|$))[a-z0-9-]+(?:/[a-z0-9-]+)*)$"
+        pattern = ENGLISH_GUIDE_PATH_RE
         for locale in ("fr", "de", "it", "pt", "cn"):
             with self.subTest(locale=locale):
                 self.assertIsNone(re.fullmatch(pattern,
@@ -47,6 +54,11 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
             "/ptr-2/guide/classes/shaman/enhancement/midnight-season-2-raid-tips"))
         self.assertIsNotNone(re.fullmatch(pattern,
             "/guide/midnight/mythic-plus-season-overview"))
+        self.assertIsNotNone(re.fullmatch(pattern,
+            "/forever/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"))
+        self.assertIsNone(re.fullmatch(pattern,
+            "/forever/fr/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"))
+
         self.assertIsNone(re.fullmatch(pattern, "/guide/classes/invalid"))
 
     def test_general_guides_do_not_pollute_class_coverage(self):
