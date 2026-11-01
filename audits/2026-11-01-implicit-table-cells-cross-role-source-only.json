@@ -1,0 +1,25 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-11-01",
+  "auditMethod": "assistant web-indexed English Wowhead source; direct HTML returned JavaScript challenge",
+  "sampledPageIds": [
+    "protection-warrior-rotation",
+    "discipline-priest-rotation",
+    "preservation-evoker-consumables",
+    "devourer-demon-hunter-consumables",
+    "demonology-warlock-consumables",
+    "mistweaver-monk-gear"
+  ],
+  "sourceObservations": [
+    "priority lists in tank/healer rotations",
+    "slot-to-enchant tables in unrelated healer and DPS consumables guides",
+    "itemization and slot priorities in healer gearing"
+  ],
+  "sharedAuditEngineRisk": "HTMLParser does not auto-close omitted td/th; a missing cell end tag can merge adjacent cells and invalidate source-only terminology coverage",
+  "change": "Offline HTML extractor now closes cells at sibling/row/table boundaries while preserving nested-table depth; tests cover gear, stats, consumables, raid and hidden cells",
+  "evidenceLimit": "Omitted end tags tested in synthetic HTML fixtures; live Wowhead DOM and browser Translator API output not verified",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "crossPageFixStatus": "Source-audit reconstruction improved; no new jargon or manual sentence overrides; browser verification pending"
+}
