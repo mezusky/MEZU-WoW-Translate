@@ -8,7 +8,7 @@
   "fixLayer": "data/mezu_player_glossary.json",
   "mappingsAdded": {
     "ranged kick": "kick à distance",
-    "ranged interrupt": "kick à distance"
+    "ranged interrupt": "interruption à distance"
   },
   "sourcePages": [
     {
@@ -35,6 +35,7 @@
   "novelTranslationIssueRate": null,
   "strictCleanCycle": false,
   "notes": [
+    "Do not conflate true spell-school kicks (e.g. Mind Freeze) with ranged stuns/other interruption tools (e.g. Warrior utility)",
     "Phrase-level terminology only; avoid overriding ambiguous bare kick or interrupt",
     "Existing canonical spell ID mapping remains authoritative for spell names",
     "Chrome Translator API and DOM reconstruction still require browser verification"
