@@ -9,7 +9,7 @@ from blizzard_index_pairs import collect_index_pairs
 from index_retention import retain_on_partial_index
 from merge_entity_locales import merge_verified_locale_refresh, project_locale_pairs
 from merge_exact_layers import merge_exact_layers
-from locale_glossary import select_jargon, select_locale_data
+from locale_glossary import select_jargon, select_locale_data, validate_case_aliases
 from data_layer_io import load_required_layer
 from previous_entity_snapshot import load_previous_entities, stable_pack_version
 from datetime import datetime, timezone
@@ -170,6 +170,9 @@ for en, fr in (blizzard_memory.get("exact", {}) or {}).items():
 jargon = dict(manual.get("jargon", {}) or {})
 if player_glossary:
     jargon.update(select_jargon(player_glossary, PACK_SOURCE_LANGUAGE, PACK_TARGET_LANGUAGE))
+# Reject ambiguous capitalization aliases across *both* authored jargon layers
+# before publishing the remote Data Pack. No runtime or extension change.
+validate_case_aliases(jargon, "merged Data Pack jargon")
 
 stable = {
     "schema": 1,
