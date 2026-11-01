@@ -336,7 +336,10 @@
     "builder-and-spender system": "système générateur/spender",
     "builder and spender": "générateur/spender",
     "builder-spender": "générateur/spender",
-    "builder/spender": "générateur/spender"
+    "builder/spender": "générateur/spender",
+    "short cooldowns": "CD courts",
+    "very short cooldowns": "CD très courts",
+    "short cooldown spells": "sorts à CD court"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
