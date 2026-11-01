@@ -132,7 +132,11 @@ class Extractor(HTMLParser):
             self.scope_frames.append((tag, len(self.stack)))
         if tag in ("ul", "ol"):
             self.list_depth += 1
-        if tag in ("br", "p", "li", "ul", "ol", "div"):
+        # Headings embedded in priority cells/list items are block boundaries.
+        # Without separators, e.g. "Runic Power<h4>Why 75?</h4>" becomes
+        # "Runic PowerWhy 75?" in the source-only audit corpus.
+        if tag in ("br", "p", "li", "ul", "ol", "div",
+                   "h1", "h2", "h3", "h4", "h5", "h6"):
             for _, parts in self.stack:
                 parts.append("\n" if tag in ("br", "div") else " ")
         if tag in self.tags and (self.scope_frames or not self.scoped):
@@ -204,7 +208,8 @@ class Extractor(HTMLParser):
                     if self._finish_selected() == "li":
                         break
             self.list_depth = max(0, self.list_depth - 1)
-        if tag in ("p", "li", "ul", "ol", "div"):
+        if tag in ("p", "li", "ul", "ol", "div",
+                   "h1", "h2", "h3", "h4", "h5", "h6"):
             for _, parts in self.stack:
                 parts.append(" ")
         if tag in ("main", "article"):
