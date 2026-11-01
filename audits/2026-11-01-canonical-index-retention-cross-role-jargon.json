@@ -62,5 +62,16 @@
   "novelTranslationIssueRate": null,
   "consecutiveStrictCleanCycles": 0,
   "notes": "Three independently indexed WoW Forever tank/healer/DPS rotation guides added as held-out cross-version probes. Index protection is a source-code/data integrity improvement; jargon terms are data-only. Search excerpts are not the extension's translated output. No browser quality improvement is claimed.",
-  "newCorpusPages": 3
+  "newCorpusPages": 3,
+  "validation": {
+    "githubActionsRun": "https://github.com/mezusky/MEZU-WoW-Translate/actions/runs/41274265217",
+    "githubActionsConclusion": "success",
+    "pythonTests": "passed",
+    "communityGlossary": "rebuilt",
+    "blizzardMemory": "rebuilt",
+    "dataPack": "rebuilt and validated",
+    "dataPackVersion": "72ae267dc3702005253c",
+    "canonicalEntityCount": 24720,
+    "playerGlossaryTerms": 328
+  }
 }
