@@ -66,6 +66,18 @@ class JargonCoverageTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             JargonCoverage({"valid": "x", 2: "invalid"})
 
+    def test_conflicting_merged_pack_aliases_fail_closed(self):
+        # A merged manual/player Data Pack must not hide incompatible
+        # capitalization variants behind a single diagnostic hit.
+        with self.assertRaisesRegex(ValueError, "Conflicting case-insensitive"):
+            JargonCoverage({"AoE stop": "stop AoE",
+                            "aoe stop": "interruption de zone"})
+        matcher = JargonCoverage({"AoE stop": "stop AoE",
+                                  "aoe stop": "stop aoe"})
+        self.assertEqual(matcher.hits("AoE stop, then aoe stop."), ["AoE stop"])
+        with self.assertRaisesRegex(ValueError, "Jargon target"):
+            JargonCoverage({"AoE stop": None})
+
     def test_target_locale_is_selected_before_matching(self):
         data = json.loads((ROOT / "data/mezu_player_glossary.json").read_text(
             encoding="utf-8"))
