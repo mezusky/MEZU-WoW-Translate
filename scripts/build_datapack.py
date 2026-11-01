@@ -22,6 +22,14 @@ DATA.mkdir(exist_ok=True)
 PACK_SOURCE_LANGUAGE = "en"
 PACK_TARGET_LANGUAGE = "fr"
 
+# A missing, malformed, or duplicate-key source must abort publication rather
+# than silently remove official phrases or community terms from the remote pack.
+# All four layers are required by the currently published EN->FR build.
+manual = load_required_layer(DATA / "manual_overrides.json")
+community = load_required_layer(DATA / "community_glossary.json")
+player_glossary = load_required_layer(DATA / "mezu_player_glossary.json")
+blizzard_memory = load_required_layer(DATA / "blizzard_translation_memory.json")
+
 region = os.environ.get("BLIZZARD_REGION", "eu")
 client_id = os.environ["BLIZZARD_CLIENT_ID"]
 client_secret = os.environ["BLIZZARD_CLIENT_SECRET"]
@@ -118,14 +126,6 @@ for kind, path in search_endpoints.items():
     except Exception as exc:
         print("WARN search", kind, exc)
         entities[kind] = previous_entities.get(kind, {})
-
-# A missing, malformed, or duplicate-key source must abort publication rather
-# than silently remove official phrases or community terms from the remote pack.
-# All four layers are required by the currently published EN->FR build.
-manual = load_required_layer(DATA / "manual_overrides.json")
-community = load_required_layer(DATA / "community_glossary.json")
-player_glossary = load_required_layer(DATA / "mezu_player_glossary.json")
-blizzard_memory = load_required_layer(DATA / "blizzard_translation_memory.json")
 
 # Never mix translation directions: official phrase memory and player rules
 # must match this pack. Older untagged manual/community sources are EN->FR only.
