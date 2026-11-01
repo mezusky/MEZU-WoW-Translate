@@ -16,6 +16,10 @@ MIGRATED = {
     "generator": "générateur",
     "generators": "générateurs",
     "builder-spender system": "système générateur/spender",
+    "builder-and-spender system": "système générateur/spender",
+    "builder and spender": "générateur/spender",
+    "builder-spender": "générateur/spender",
+    "builder/spender": "générateur/spender",
     "primary resource spender": "spender principal",
     "resource spender": "spender de ressource",
 }
@@ -40,12 +44,23 @@ class BuilderSpenderLocaleTests(unittest.TestCase):
             (ROOT / "data/wowhead_regression_pages.json").read_text(encoding="utf-8")
         )["pages"]}
         for path in (
+            "rogue/subtlety/rotation-cooldowns-pve-dps",
+            "paladin/protection/midnight-pre-patch",
+            "demon-hunter/vengeance/rotation-cooldowns-pve-tank",
             "demon-hunter/vengeance/overview-pve-tank",
             "warlock/affliction/rotation-cooldowns-pve-dps",
             "shaman/enhancement/basics",
         ):
             with self.subTest(path=path):
                 self.assertIn("https://www.wowhead.com/guide/classes/" + path, urls)
+
+    def test_forever_combat_rogue_uses_same_reusable_concept(self):
+        urls = {p["url"] for p in json.loads(
+            (ROOT / "data/wowhead_regression_pages.json").read_text(encoding="utf-8")
+        )["pages"]}
+        self.assertIn(
+            "https://www.wowhead.com/forever/guide/classes/rogue/combat/"
+            "rotation-cooldowns-pve-dps", urls)
 
 
 if __name__ == "__main__":
