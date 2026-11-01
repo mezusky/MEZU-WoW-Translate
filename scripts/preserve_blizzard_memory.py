@@ -5,7 +5,7 @@ from pathlib import Path
 
 # Reuse the same numeric-fact validator as the collector: a previously
 # accepted but unsafe pair must not survive every future incremental sync.
-from build_blizzard_memory import numeric_semantics_match
+from build_blizzard_memory import numeric_semantics_match, language_evidence_safe
 
 old_path, new_path = map(Path, sys.argv[1:3])
 old = json.loads(old_path.read_text(encoding="utf-8"))
@@ -19,7 +19,8 @@ source_locale = new.get("sourceLanguage") or old.get("sourceLanguage") or "en-US
 target_locale = new.get("targetLanguage") or old.get("targetLanguage") or "fr-FR"
 
 def safe_pair(source, target):
-    return numeric_semantics_match(source, target, source_locale, target_locale)
+    return (numeric_semantics_match(source, target, source_locale, target_locale)
+            and language_evidence_safe(source, target, source_locale, target_locale))
 
 blocked = set(old.get("ambiguous", [])) | set(new.get("ambiguous", []))
 merged = {
