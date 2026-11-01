@@ -4,7 +4,7 @@ import tempfile
 import unittest
 from pathlib import Path
 
-from scripts.previous_entity_snapshot import load_previous_entities
+from scripts.previous_entity_snapshot import load_previous_entities, stable_pack_version
 
 
 class PreviousEntitySnapshotTests(unittest.TestCase):
@@ -20,12 +20,14 @@ class PreviousEntitySnapshotTests(unittest.TestCase):
             entities = {"spell": {"123": {"en": "Shield Slam", "fr": "Heurt de bouclier"}},
                         "item": {"456": {"en": "Trinket", "fr": "Bijou"}}}
         counts = {kind: len(rows) for kind, rows in sorted(entities.items())}
-        self.pack.write_text(json.dumps({
-            "version": "abc", "sourceLanguage": "en", "targetLanguage": "fr",
-            "entities": entities,
-        }), encoding="utf-8")
+        stable = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "entities": entities, "exact": {"Always Be Casting": "Toujours caster"}}
+        version = stable_pack_version(stable)
+        self.pack.write_text(json.dumps({**stable, "version": version,
+                                         "generated_at": "2026-11-01T00:00:00Z"}),
+                             encoding="utf-8")
         self.manifest.write_text(json.dumps({
-            "version": "abc", "sourceLanguage": "en", "targetLanguage": "fr",
+            "version": version, "sourceLanguage": "en", "targetLanguage": "fr",
             "entity_count": sum(counts.values()),
             "entity_counts_by_kind": counts,
         }), encoding="utf-8")
@@ -60,6 +62,29 @@ class PreviousEntitySnapshotTests(unittest.TestCase):
             '"entities":{"spell":{"123":{},"123":{}}}}', encoding="utf-8")
         with self.assertRaisesRegex(ValueError, "Duplicate JSON key"):
             self.load()
+
+    def test_changed_canonical_name_with_same_counts_fails_closed(self):
+        self.write_pair()
+        pack = json.loads(self.pack.read_text(encoding="utf-8"))
+        pack["entities"]["spell"]["123"]["fr"] = "Nom corrompu"
+        self.pack.write_text(json.dumps(pack), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "content checksum"):
+            self.load()
+
+    def test_changed_prose_layer_with_same_counts_fails_closed(self):
+        self.write_pair()
+        pack = json.loads(self.pack.read_text(encoding="utf-8"))
+        pack["exact"]["Always Be Casting"] = "Traduction corrompue"
+        self.pack.write_text(json.dumps(pack), encoding="utf-8")
+        with self.assertRaisesRegex(ValueError, "content checksum"):
+            self.load()
+
+    def test_generation_timestamp_is_not_part_of_version(self):
+        self.write_pair()
+        pack = json.loads(self.pack.read_text(encoding="utf-8"))
+        pack["generated_at"] = "2026-11-02T00:00:00Z"
+        self.pack.write_text(json.dumps(pack), encoding="utf-8")
+        self.assertEqual(self.load()["spell"]["123"]["fr"], "Heurt de bouclier")
 
     def test_mismatched_manifest_count_fails_closed(self):
         self.write_pair()
