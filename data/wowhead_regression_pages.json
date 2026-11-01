@@ -2671,6 +2671,22 @@
     {
       "id": "forever-frost-mage-rotation-heldout",
       "url": "https://www.wowhead.com/forever/guide/classes/mage/frost/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "forever-fire-mage-rotation-cross-version-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/mage/fire/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "forever-holy-priest-rotation-downranking-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/priest/holy/rotation-cooldowns-pve-healer"
+    },
+    {
+      "id": "forever-combat-rogue-rotation-legacy-spec-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "forever-fire-mage-stats-spell-piercing-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/mage/fire/stat-priority-pve-dps"
     }
   ]
 }
