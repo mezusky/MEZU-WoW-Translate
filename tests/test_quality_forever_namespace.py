@@ -57,6 +57,27 @@ class ForeverQualityIdentityTests(unittest.TestCase):
                 bad = dict(valid, **{key: value})
                 self.assertFalse(_case_matches_guide_identity(bad, canonical))
 
+    def test_forever_combat_rogue_has_a_product_scoped_role(self):
+        # Live Forever Combat Rogue rotation (2026-10-30) is a DPS guide;
+        # Retail uses Outlaw and must not inherit the legacy Combat alias.
+        suffix = "/guide/classes/rogue/combat/rotation-cooldowns-pve-dps"
+        case = {"wowClass": "rogue", "spec": "combat",
+                "role": "dps", "section": "rotation"}
+        self.assertTrue(_case_matches_guide_identity(
+            case, _canonical_guide_url(BASE + "/forever" + suffix)))
+        self.assertTrue(_case_matches_guide_identity(
+            case, _canonical_guide_url(BASE + "/forever/fr" + suffix)))
+        for namespace in ("", "/ptr", "/ptr-2"):
+            with self.subTest(namespace=namespace):
+                self.assertFalse(_case_matches_guide_identity(
+                    case, _canonical_guide_url(BASE + namespace + suffix)))
+        self.assertFalse(_case_matches_guide_identity(
+            dict(case, role="tank"),
+            _canonical_guide_url(BASE + "/forever" + suffix)))
+        self.assertFalse(_case_matches_guide_identity(
+            dict(case, section="talents"),
+            _canonical_guide_url(BASE + "/forever" + suffix)))
+
     def test_arbitrary_namespaces_and_invented_slugs_remain_rejected(self):
         case = {"wowClass": "warrior", "spec": "protection",
                 "role": "tank", "section": "rotation"}
