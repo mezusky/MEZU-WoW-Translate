@@ -31,6 +31,13 @@ community = load_required_layer(DATA / "community_glossary.json")
 player_glossary = load_required_layer(DATA / "mezu_player_glossary.json")
 blizzard_memory = load_required_layer(DATA / "blizzard_translation_memory.json")
 
+# Never treat a corrupt/missing prior pack as a clean bootstrap. A failed
+# Blizzard refresh must retain all previously verified canonical IDs/locales.
+previous_entities = load_previous_entities(
+    DATA / "datapack.json", DATA / "manifest.json",
+    PACK_SOURCE_LANGUAGE, PACK_TARGET_LANGUAGE,
+)
+
 region = os.environ.get("BLIZZARD_REGION", "eu")
 client_id = os.environ["BLIZZARD_CLIENT_ID"]
 client_secret = os.environ["BLIZZARD_CLIENT_SECRET"]
@@ -96,13 +103,6 @@ search_endpoints = {
     "creature": "/data/wow/search/creature?orderby=id:desc&_pageSize=1000&_page=1",
     "journal_encounter_search": "/data/wow/search/journal-encounter?orderby=id:desc&_pageSize=1000&_page=1",
 }
-
-# Never treat a corrupt/missing prior pack as a clean bootstrap. A failed
-# Blizzard refresh must retain all previously verified canonical IDs/locales.
-previous_entities = load_previous_entities(
-    DATA / "datapack.json", DATA / "manifest.json",
-    PACK_SOURCE_LANGUAGE, PACK_TARGET_LANGUAGE,
-)
 
 entities = {}
 for kind, path in endpoints.items():
