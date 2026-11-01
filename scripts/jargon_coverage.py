@@ -33,7 +33,10 @@ class JargonCoverage:
         seen, hits = set(), []
         for match in self._pattern.finditer(prose):
             identity = match.group(0).casefold()
-            if identity not in seen:
+            # Unicode regex ignorecase may match characters whose casefold
+            # differs from the source key (e.g. dotted/dotless I). Do not
+            # invent a glossary hit or crash on those unrelated spellings.
+            if identity in self._canonical and identity not in seen:
                 seen.add(identity)
                 hits.append(self._canonical[identity])
                 if len(hits) >= limit:
