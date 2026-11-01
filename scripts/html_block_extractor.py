@@ -73,6 +73,13 @@ class Extractor(HTMLParser):
         self.li_depths = []
 
     def handle_starttag(self, tag, attrs):
+        # A hidden <li> can also omit its closing tag. HTML implicitly
+        # closes it at the next sibling <li>, even with inline descendants.
+        # Do not escape a hidden item while its nested list is still open.
+        if (tag == "li" and self.skipped_tags
+                and self.skipped_tags[0] == "li"
+                and not any(t in ("ul", "ol") for t in self.skipped_tags[1:])):
+            self.skipped_tags.clear()
         if (tag == "li" and not self.skipped_tags and self.li_depths
                 and self.li_depths[-1] == self.list_depth):
             # A new sibling <li> implicitly ends the previous one. Unwind
@@ -128,6 +135,12 @@ class Extractor(HTMLParser):
                 parts.append(data)
 
     def handle_endtag(self, tag):
+        # The parent list also implicitly ends an unclosed hidden final
+        # item. Otherwise the skipped state leaks into following guide prose.
+        if (tag in ("ul", "ol") and self.skipped_tags
+                and self.skipped_tags[0] == "li"
+                and not any(t in ("ul", "ol") for t in self.skipped_tags[1:])):
+            self.skipped_tags.clear()
         if self.skipped_tags:
             if tag in self.skipped_tags:
                 while self.skipped_tags:
