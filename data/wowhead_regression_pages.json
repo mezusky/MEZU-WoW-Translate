@@ -2687,6 +2687,13 @@
     {
       "id": "forever-fire-mage-stats-spell-piercing-20261101",
       "url": "https://www.wowhead.com/forever/guide/classes/mage/fire/stat-priority-pve-dps"
-    }
-  ]
+    },
+    {
+      "id": "forever-protection-paladin-rotation-new-tank-heldout-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/paladin/protection/rotation-cooldowns-pve-tank"
+    },
+    {
+      "id": "forever-affliction-warlock-rotation-new-dot-heldout-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/warlock/affliction/rotation-cooldowns-pve-dps"
+    }  ]
 }
