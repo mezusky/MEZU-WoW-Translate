@@ -20,8 +20,10 @@ else:
 
 # Audits must not invent a tank/healer/DPS mix on role-neutral guide slugs.
 # This compact data-only mapping is independent of translation direction.
-SPEC_ROLES = json.loads((Path(__file__).resolve().parents[1] / "data" /
-                         "wow_spec_roles.json").read_text(encoding="utf-8"))["roles"]
+ROLE_DATA = json.loads((Path(__file__).resolve().parents[1] / "data" /
+                        "wow_spec_roles.json").read_text(encoding="utf-8"))
+SPEC_ROLES = ROLE_DATA["roles"]
+NAMESPACE_SPEC_ROLES = ROLE_DATA.get("namespaceRoles", {})
 
 
 def _canonical_guide_url(value):
@@ -75,7 +77,14 @@ def _case_matches_guide_identity(case, canonical_url):
         return False
     # Even gear, raid and tier-set URLs (which lack a role suffix) must
     # agree with the known WoW specialization. Unknown specs fail closed.
-    expected_role = SPEC_ROLES.get(match.group(1).lower(), {}).get(match.group(2).lower())
+    # A product namespace may define legacy spec names absent from Retail
+    # (e.g. Forever Combat Rogue). Never let these aliases validate a Retail
+    # URL: its canonical guide identity remains product-specific.
+    namespace = path.strip("/").split("/", 1)[0].lower()
+    expected_role = NAMESPACE_SPEC_ROLES.get(namespace, {}).get(
+        match.group(1).lower(), {}).get(match.group(2).lower())
+    if expected_role is None:
+        expected_role = SPEC_ROLES.get(match.group(1).lower(), {}).get(match.group(2).lower())
     if expected_role is None or case.get("role") != expected_role:
         return False
     # When the guide slug explicitly identifies the role, reject contradictory
