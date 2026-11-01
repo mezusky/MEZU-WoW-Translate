@@ -15,6 +15,8 @@ on:
       - "data/*_numeric_units.json"
       - "data/*_number_words.json"
       - "data/wowhead_regression_pages.json"
+      - "data/audit_language_signals.json"
+      - "data/wow_spec_roles.json"
       - ".github/workflows/update-wow-data.yml"
 
 # Avoid overlapping hourly/manual builds racing to push generated data.
