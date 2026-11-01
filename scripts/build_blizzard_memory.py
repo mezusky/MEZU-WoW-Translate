@@ -19,6 +19,10 @@ except ImportError:  # Direct execution: python scripts/build_blizzard_memory.py
     from html_block_extractor import extract_readable_blocks
 from pathlib import Path
 try:
+    from .source_language_evidence import detect_source_language
+except ImportError:  # Direct execution from scripts/
+    from source_language_evidence import detect_source_language
+try:
     from .locale_number_words import normalize_count_words
 except ImportError:  # Direct execution from scripts/
     from locale_number_words import normalize_count_words
@@ -504,7 +508,31 @@ def numeric_semantics_match(source, target, source_language="en-US", target_lang
                 == resource_count_facts(target, target_language))
 
 
-def good_pair(en, fr, score):
+@lru_cache(maxsize=1)
+def _language_evidence_profiles():
+    """Shared locale profiles; never infer language from Blizzard URL alone."""
+    path = ROOT / "data" / "audit_language_signals.json"
+    return json.loads(path.read_text(encoding="utf-8"))["profiles"]
+
+
+def language_evidence_safe(source, target, source_language="en-US",
+                           target_language="fr-FR"):
+    """Reject only *strongly* wrong-language prose from official memory.
+
+    Localized Blizzard pages may occasionally fall back to English prose while
+    translating spell links. Unknown/short evidence stays eligible for the
+    existing numeric and structural safety checks; this is not a browser test.
+    """
+    profiles = _language_evidence_profiles()
+    for text, expected in ((source, source_language), (target, target_language)):
+        observed = detect_source_language([("p", text)], profiles)["detectedLanguage"]
+        expected_base = expected.strip().replace("_", "-").casefold().split("-")[0]
+        if observed is not None and observed != expected_base:
+            return False
+    return True
+
+
+def good_pair(en, fr, score, source_language="en-US", target_language="fr-FR"):
     if score < 4.0:
         return False
     if en.casefold() == fr.casefold():
@@ -516,8 +544,12 @@ def good_pair(en, fr, score):
     ratio = min(len(en),len(fr))/max(len(en),len(fr))
     if ratio < 0.34:
         return False
+    # Strongly English fallback prose on a localized target page is not
+    # an official French translation, even when spell links are localized.
+    if not language_evidence_safe(en, fr, source_language, target_language):
+        return False
     # Exact translation memory must not silently change numeric facts.
-    if not numeric_semantics_match(en, fr):
+    if not numeric_semantics_match(en, fr, source_language, target_language):
         return False
     # Avoid obvious nav/metadata.
     bad = ("cookie","privacy","facebook","twitter","instagram","youtube","copyright")
