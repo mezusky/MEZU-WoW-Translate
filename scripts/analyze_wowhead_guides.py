@@ -10,7 +10,7 @@ from pathlib import Path
 from html_block_extractor import extract_readable_blocks
 from guide_audit_boundaries import trim_guide_footer
 from wowhead_source_status import classify_html_source, classify_fetch_error
-from source_language_evidence import detect_source_language, audit_source_prose
+from source_language_evidence import detect_source_language, audit_source_prose, compile_wow_term_signals
 from audit_locale_contract import resolve_audit_locale_contract, source_accept_language
 from jargon_coverage import JargonCoverage
 
@@ -21,7 +21,6 @@ OUT = DATA / "wowhead_regression_report.json"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/154 Safari/537.36 MEZU-WoW-Translate"
 
 WS = re.compile(r"\s+")
-WOW_SIGNAL = re.compile(r"\b(?:Paladin|Demon Hunter|Tank|Mythic\+|Raid|cooldown|GCD|Holy Power|Haste|Crit|Mastery|Versatility|BiS|Best in Slot|Raidbots|Great Vault|spender|generator|overcap|defensive|mitigation)\b", re.I)
 
 def fetch(url, source_language):
     req = urllib.request.Request(url, headers={
@@ -42,7 +41,9 @@ jargon = pack.get("jargon", {}) or {}
 contract = resolve_audit_locale_contract(cfg, pack)
 source_language = contract["sourceLanguage"]
 target_language = contract["targetLanguage"]
-language_profiles = load_json(DATA / "audit_language_signals.json")["profiles"]
+language_signals = load_json(DATA / "audit_language_signals.json")
+language_profiles = language_signals["profiles"]
+source_wow_pattern = compile_wow_term_signals(language_signals.get("wowTerms", {}), source_language)
 jargon_coverage = JargonCoverage(jargon)
 
 report = {"schema": 2, "auditMethod": "source-only; browser translation not verified",
@@ -91,10 +92,9 @@ for page in cfg.get("pages", []):
             clean, source_signal = audit_source_prose(value, source_language, language_profiles)
             if len(clean) < 8 or len(clean) > 1200 or clean in seen:
                 continue
-            # English WoW labels remain useful even without prose stopwords.
-            # Other source locales rely on their data-only language profile.
-            wow_signal = (source_language.replace("_", "-").split("-")[0].casefold() == "en"
-                          and bool(WOW_SIGNAL.search(clean)))
+            # Short WoW labels can be useful without prose stopwords; their
+            # locale-scoped terms live in data, never hardcoded as English.
+            wow_signal = bool(source_wow_pattern and source_wow_pattern.search(clean))
             if not source_signal and not wow_signal:
                 continue
             seen.add(clean)
