@@ -3,7 +3,6 @@ import os
 import urllib.parse
 import urllib.request
 import base64
-import hashlib
 from pathlib import Path
 from blizzard_search_pairs import collect_search_pairs
 from blizzard_index_pairs import collect_index_pairs
@@ -12,7 +11,7 @@ from merge_entity_locales import merge_verified_locale_refresh, project_locale_p
 from merge_exact_layers import merge_exact_layers
 from locale_glossary import select_jargon, select_locale_data
 from data_layer_io import load_required_layer
-from previous_entity_snapshot import load_previous_entities
+from previous_entity_snapshot import load_previous_entities, stable_pack_version
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -193,8 +192,7 @@ stable = {
         "pair_count": blizzard_memory.get("pair_count", 0)
     },
 }
-stable_json = json.dumps(stable, ensure_ascii=False, sort_keys=True, separators=(",", ":"))
-version = hashlib.sha256(stable_json.encode("utf-8")).hexdigest()[:20]
+version = stable_pack_version(stable)
 
 manifest_path = DATA / "manifest.json"
 previous = {}
