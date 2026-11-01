@@ -10,7 +10,8 @@ from blizzard_index_pairs import collect_index_pairs
 from index_retention import retain_on_partial_index
 from merge_entity_locales import merge_verified_locale_refresh, project_locale_pairs
 from merge_exact_layers import merge_exact_layers
-from locale_glossary import select_jargon, select_locale_data, parse_json_unique_keys
+from locale_glossary import select_jargon, select_locale_data
+from data_layer_io import load_required_layer
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -118,35 +119,13 @@ for kind, path in search_endpoints.items():
         print("WARN search", kind, exc)
         entities[kind] = previous_entities.get(kind, {})
 
-manual_path = DATA / "manual_overrides.json"
-manual = json.loads(manual_path.read_text(encoding="utf-8"))
-
-community_path = DATA / "community_glossary.json"
-community = {}
-if community_path.exists():
-    try:
-        community = json.loads(community_path.read_text(encoding="utf-8"))
-    except Exception as exc:
-        print("WARN community glossary", exc)
-        community = {}
-
-player_glossary_path = DATA / "mezu_player_glossary.json"
-player_glossary = {}
-if player_glossary_path.exists():
-    # Fail publication on malformed or duplicate locale rules. Silently
-    # dropping the player glossary would ship a lower-quality Data Pack.
-    player_glossary = parse_json_unique_keys(
-        player_glossary_path.read_text(encoding="utf-8")
-    )
-
-blizzard_memory_path = DATA / "blizzard_translation_memory.json"
-blizzard_memory = {}
-if blizzard_memory_path.exists():
-    try:
-        blizzard_memory = json.loads(blizzard_memory_path.read_text(encoding="utf-8"))
-    except Exception as exc:
-        print("WARN Blizzard translation memory", exc)
-        blizzard_memory = {}
+# A missing, malformed, or duplicate-key source must abort publication rather
+# than silently remove official phrases or community terms from the remote pack.
+# All four layers are required by the currently published EN->FR build.
+manual = load_required_layer(DATA / "manual_overrides.json")
+community = load_required_layer(DATA / "community_glossary.json")
+player_glossary = load_required_layer(DATA / "mezu_player_glossary.json")
+blizzard_memory = load_required_layer(DATA / "blizzard_translation_memory.json")
 
 # Never mix translation directions: official phrase memory and player rules
 # must match this pack. Older untagged manual/community sources are EN->FR only.
