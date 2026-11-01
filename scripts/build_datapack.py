@@ -12,6 +12,7 @@ from merge_entity_locales import merge_verified_locale_refresh, project_locale_p
 from merge_exact_layers import merge_exact_layers
 from locale_glossary import select_jargon, select_locale_data
 from data_layer_io import load_required_layer
+from previous_entity_snapshot import load_previous_entities
 from datetime import datetime, timezone
 
 ROOT = Path(__file__).resolve().parents[1]
@@ -96,14 +97,12 @@ search_endpoints = {
     "journal_encounter_search": "/data/wow/search/journal-encounter?orderby=id:desc&_pageSize=1000&_page=1",
 }
 
-previous_entities = {}
-previous_pack_path = DATA / "datapack.json"
-if previous_pack_path.exists():
-    try:
-        previous_entities = json.loads(previous_pack_path.read_text(encoding="utf-8")).get("entities", {}) or {}
-    except Exception as exc:
-        print("WARN previous datapack", exc)
-        previous_entities = {}
+# Never treat a corrupt/missing prior pack as a clean bootstrap. A failed
+# Blizzard refresh must retain all previously verified canonical IDs/locales.
+previous_entities = load_previous_entities(
+    DATA / "datapack.json", DATA / "manifest.json",
+    PACK_SOURCE_LANGUAGE, PACK_TARGET_LANGUAGE,
+)
 
 entities = {}
 for kind, path in endpoints.items():
