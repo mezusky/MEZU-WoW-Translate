@@ -2659,6 +2659,18 @@
     {
       "id": "holy-priest-faq-20261031-healing-downtime-heldout",
       "url": "https://www.wowhead.com/guide/classes/priest/holy/faq"
+    },
+    {
+      "id": "forever-protection-warrior-rotation-heldout",
+      "url": "https://www.wowhead.com/forever/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"
+    },
+    {
+      "id": "forever-discipline-priest-rotation-heldout",
+      "url": "https://www.wowhead.com/forever/guide/classes/priest/discipline/rotation-cooldowns-pve-healer"
+    },
+    {
+      "id": "forever-frost-mage-rotation-heldout",
+      "url": "https://www.wowhead.com/forever/guide/classes/mage/frost/rotation-cooldowns-pve-dps"
     }
   ]
 }
