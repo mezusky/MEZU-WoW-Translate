@@ -47,6 +47,11 @@ def _canonical_guide_url(value):
     # independent source pages. Keep /ptr/ and /ptr-2/ separate.
     path = re.sub(r"^/(?!ptr(?:-\d+)?/)[a-z]{2,3}(?:-[a-z0-9]{2,8})*/(?=guide/)",
                   "/", path, flags=re.IGNORECASE)
+    # Forever localizes the shell after its product namespace (e.g.
+    # /forever/de/guide). It is still the same source guide as
+    # /forever/guide, but distinct from the retail /guide version.
+    path = re.sub(r"^/(forever)/[a-z]{2,3}(?:-[a-z0-9]{2,8})*/(?=guide/)",
+                  r"/\1/", path, flags=re.IGNORECASE)
     return "https://www.wowhead.com" + path
 
 
@@ -62,7 +67,7 @@ def _case_matches_guide_identity(case, canonical_url):
         return False
     path = urlsplit(canonical_url).path
     match = re.fullmatch(
-        r"/(?:(?:ptr|ptr-\d+)/)?guide/classes/([a-z][a-z-]*)/([a-z][a-z-]*)/[^/]+",
+        r"/(?:(?:ptr|ptr-\d+|forever)/)?guide/classes/([a-z][a-z-]*)/([a-z][a-z-]*)/[^/]+",
         path, flags=re.IGNORECASE,
     )
     if not (match and case.get("wowClass") == match.group(1).lower()
