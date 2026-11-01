@@ -323,7 +323,12 @@
     "pool charges of": "conserver des charges de",
     "pool charges": "conserver des charges",
     "chainpulls": "pulls enchaînés",
-    "chain pulling": "enchaîner les pulls"
+    "chain pulling": "enchaîner les pulls",
+    "threat table": "table de menace",
+    "Stance Dancing": "Switch de posture",
+    "stance dancing": "switch de posture",
+    "stance-dancing": "switch de posture",
+    "damage-to-heal conversion": "conversion des dégâts en soins"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
