@@ -1,0 +1,60 @@
+{
+  "date": "2026-11-01",
+  "auditMethod": "assistant web-indexed English Wowhead source only; live Chrome DOM and Translator API output not inspected",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourcePages": [
+    {
+      "id": "forever-fire-mage-rotation-cross-version-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/mage/fire/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation"
+    },
+    {
+      "id": "forever-holy-priest-rotation-downranking-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/priest/holy/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation"
+    },
+    {
+      "id": "forever-combat-rogue-rotation-legacy-spec-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/rogue/combat/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation"
+    },
+    {
+      "id": "forever-fire-mage-stats-spell-piercing-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/mage/fire/stat-priority-pve-dps",
+      "role": "dps",
+      "section": "stats"
+    }
+  ],
+  "crossPageChecks": [
+    {
+      "family": "builder/spender resource rotation",
+      "independentSources": [
+        "Forever Combat Rogue rotation",
+        "Retail Subtlety Rogue rotation",
+        "Retail Vengeance Demon Hunter rotation",
+        "Retail Protection Paladin prepatch"
+      ],
+      "resolution": "Four reusable EN->FR player-glossary variants; no whole-sentence overrides"
+    },
+    {
+      "family": "legacy spec role identity",
+      "independentSources": [
+        "Forever Combat Rogue rotation",
+        "Retail Rogue specs"
+      ],
+      "resolution": "Data-only namespace role map; Combat accepted only under Forever, Retail role map unchanged"
+    }
+  ],
+  "unresolvedSourceOnlyChecks": [
+    "Forever Spell Piercing is a distinct stat from Spell Penetration; verify official French terminology by ID before adding a name mapping",
+    "Live browser translation and rich-text reconstruction not verified"
+  ],
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "strictCleanCycle": false
+}
