@@ -40,5 +40,13 @@
   "change": "Reject malformed data-only language signal locale keys before collapsing regional profiles to base languages; add tests and CI push triggers for language-signal and spec-role metadata.",
   "avoidedRule": "Do not globally translate 'on cd'/'on cooldown' as 'dès que disponible': in 'is on cooldown' it means unavailable. No unverified translation overrides added.",
   "verification": "New Python tests and GitHub Actions are required; no browser Translator API or DOM reconstruction was run.",
-  "qualityGate": "Not eligible: 0 browser-rendered cycles"
+  "qualityGate": "Not eligible: 0 browser-rendered cycles",
+  "canonicalResourceFinding": {
+    "id": 16,
+    "source": "Arcane Charge / Arcane Charges",
+    "target": "charge arcanique / charges arcaniques",
+    "evidence": "Enum.PowerType.ArcaneCharges=16 and official French Blizzard Arcane Mage spell descriptions",
+    "effect": "Added locale-specific resource count names for ID 16 to guard Blizzard phrase-memory numeric alignment; verified against Paladin Holy Power and Rogue Combo Points in tests",
+    "browserVerified": false
+  }
 }
