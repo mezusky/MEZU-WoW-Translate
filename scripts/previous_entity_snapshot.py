@@ -4,12 +4,28 @@ Blizzard API refreshes may fail or return partial results. A damaged prior
 snapshot must not be interpreted as an empty first-time build: that would
 discard canonical IDs and their accumulated locale names.
 """
+import hashlib
+import json
 from pathlib import Path
 
 try:
     from .data_layer_io import load_required_layer
 except ImportError:  # python scripts/build_datapack.py
     from data_layer_io import load_required_layer
+
+
+def stable_pack_version(payload):
+    """Hash the stable data, excluding only the two generated metadata fields.
+
+    The builder and the snapshot validator must use the same version contract.
+    A row name can be corrupted without changing any entity counts, so counts
+    alone are not sufficient evidence of a trustworthy canonical snapshot.
+    """
+    stable = {key: value for key, value in payload.items()
+              if key not in ("version", "generated_at")}
+    encoded = json.dumps(stable, ensure_ascii=False, sort_keys=True,
+                         separators=(",", ":")).encode("utf-8")
+    return hashlib.sha256(encoded).hexdigest()[:20]
 
 
 def load_previous_entities(pack_path, manifest_path, source_language, target_language):
@@ -29,6 +45,8 @@ def load_previous_entities(pack_path, manifest_path, source_language, target_lan
         pack["version"] != manifest.get("version")
     ):
         raise ValueError("Previous Data Pack version does not match manifest")
+    if pack["version"] != stable_pack_version(pack):
+        raise ValueError("Previous Data Pack content checksum does not match version")
 
     entities = pack.get("entities")
     if not isinstance(entities, dict) or not entities or any(
