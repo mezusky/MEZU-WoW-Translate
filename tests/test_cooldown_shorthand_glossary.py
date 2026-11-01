@@ -72,8 +72,8 @@ class CooldownShorthandTests(unittest.TestCase):
             self.assertNotIn(phrase, terms)
             self.assertNotIn(phrase, MANUAL.get("jargon", {}))
         # Existing unambiguous verb phrase remains available.
-        self.assertEqual(MANUAL["jargon"]["comes off cooldown"],
-                         "redevient disponible")
+        self.assertEqual(terms["comes off cooldown"], "redevient disponible")
+        self.assertNotIn("comes off cooldown", MANUAL.get("jargon", {}))
 
     def test_locale_isolation(self):
         self.assertEqual(select_jargon(GLOSSARY, "fr-FR", "fr-CA"), {})
