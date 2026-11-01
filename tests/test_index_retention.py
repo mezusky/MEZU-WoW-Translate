@@ -17,10 +17,33 @@ class IndexRetentionTests(unittest.TestCase):
         self.assertEqual(merged["9"]["fr"], "Sort neuf")
         self.assertEqual(merged["0"], previous["0"])
 
-    def test_normal_index_refresh_can_remove_retired_ids(self):
+    def test_explicitly_confirmed_index_can_remove_retired_ids(self):
         previous = {str(i): {"en": f"Spell {i}", "fr": f"Sort {i}"} for i in range(10)}
         fresh = {str(i): {"en": f"Spell {i}", "fr": f"Sort {i}"} for i in range(1, 10)}
-        self.assertEqual(retain_on_partial_index("mount", fresh, previous), fresh)
+        self.assertEqual(retain_on_partial_index("mount", fresh, previous,
+                                               allow_retirement=True), fresh)
+
+    def test_near_complete_unconfirmed_index_preserves_missing_ids(self):
+        # A 90% response exceeded the old 80% cutoff and silently retired
+        # a verified canonical ID, despite no evidence of actual retirement.
+        previous = {str(i): {"en": f"Spell {i}", "fr": f"Sort {i}"}
+                    for i in range(10)}
+        fresh = {str(i): {"en": f"Spell {i}", "fr": f"Sort {i}"}
+                 for i in range(1, 10)}
+        fresh["9"]["fr"] = "Sort neuf"
+        result = retain_on_partial_index("spell", fresh, previous)
+        self.assertEqual(len(result), 10)
+        self.assertEqual(result["0"], previous["0"])
+        self.assertEqual(result["9"]["fr"], "Sort neuf")
+
+    def test_explicit_retirement_still_rejects_suspiciously_small_index(self):
+        previous = {str(i): {"en": f"Spell {i}", "fr": f"Sort {i}"}
+                    for i in range(10)}
+        fresh = {"9": {"en": "Spell 9", "fr": "Sort neuf"}}
+        result = retain_on_partial_index("spell", fresh, previous,
+                                         allow_retirement=True)
+        self.assertEqual(len(result), 10)
+        self.assertEqual(result["9"]["fr"], "Sort neuf")
 
     def test_full_refresh_retains_other_locales_on_surviving_ids(self):
         previous = {
@@ -29,7 +52,8 @@ class IndexRetentionTests(unittest.TestCase):
         }
         fresh = {"1": {"en": "Holy Shock", "fr": "Horion sacré (nouveau)"}}
         # Explicitly mark as a complete refresh despite a small synthetic index.
-        result = retain_on_partial_index("spell", fresh, previous, min_ratio=0.4)
+        result = retain_on_partial_index("spell", fresh, previous,
+                                         min_ratio=0.4, allow_retirement=True)
         self.assertEqual(result, {"1": {
             "en": "Holy Shock", "fr": "Horion sacré (nouveau)", "de": "Heiliger Schock"
         }})
