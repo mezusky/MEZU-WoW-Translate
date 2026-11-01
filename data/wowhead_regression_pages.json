@@ -2695,5 +2695,17 @@
     {
       "id": "forever-affliction-warlock-rotation-new-dot-heldout-20261101",
       "url": "https://www.wowhead.com/forever/guide/classes/warlock/affliction/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "forever-elemental-shaman-rotation-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/shaman/elemental/rotation-cooldowns-pve-dps"
+    },
+    {
+      "id": "forever-restoration-druid-rotation-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/rotation-cooldowns-pve-healer"
+    },
+    {
+      "id": "forever-arms-warrior-rotation-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/warrior/arms/rotation-cooldowns-pve-dps"
     }  ]
 }
