@@ -1,0 +1,51 @@
+{
+  "date": "2026-11-01",
+  "auditMethod": "indexed English Wowhead guide excerpts; direct HTML challenged by JavaScript verification; browser Translator API and DOM not observed",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Chain Heal is described as a smart heal; mechanic selects effective injured targets"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/abilities-talents-pve-healer",
+      "role": "healer",
+      "section": "talents",
+      "evidence": "Life-Giver's Flame is explicitly described as not smart healing; negation must be preserved"
+    },
+    {
+      "url": "https://www.wowhead.com/cata/guide/classes/druid/restoration/healer-rotation-cooldowns-abilities-pve",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Tranquility and Wild Growth described as smart heals"
+    },
+    {
+      "url": "https://www.wowhead.com/wotlk/guide/classes/priest/holy/healer-rotation-cooldowns-abilities-pve",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Circle of Healing described as a smart heal"
+    }
+  ],
+  "newReusableTermFamiliesObserved": 1,
+  "termFamilies": [
+    "smart heal / smart heals / smart healing -> soin(s) intelligent(s)"
+  ],
+  "previouslyObservedRiskFamilies": [
+    "mixed English prose with localized linked spell names",
+    "blind plural suffixes on localized spell names; observed in Wowhead's localized indexed text, not attributed to MEZU"
+  ],
+  "fixLayer": "target-language player glossary",
+  "manualSentenceOverridesAdded": 0,
+  "corpusPagesAdded": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "Chrome Translator API output and DOM reconstruction",
+    "official linked entity names must be ID-backed and not naively pluralized",
+    "rebuild/validate Data Pack in GitHub Actions"
+  ]
+}
