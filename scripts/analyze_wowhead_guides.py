@@ -12,6 +12,7 @@ from guide_audit_boundaries import trim_guide_footer
 from wowhead_source_status import classify_html_source, classify_fetch_error
 from source_language_evidence import detect_source_language, audit_source_prose
 from audit_locale_contract import resolve_audit_locale_contract, source_accept_language
+from jargon_coverage import JargonCoverage
 
 ROOT = Path(__file__).resolve().parents[1]
 DATA = ROOT / "data"
@@ -42,6 +43,7 @@ contract = resolve_audit_locale_contract(cfg, pack)
 source_language = contract["sourceLanguage"]
 target_language = contract["targetLanguage"]
 language_profiles = load_json(DATA / "audit_language_signals.json")["profiles"]
+jargon_coverage = JargonCoverage(jargon)
 
 report = {"schema": 2, "auditMethod": "source-only; browser translation not verified",
           "expectedSourceLanguage": source_language, "targetLanguage": target_language,
@@ -97,13 +99,13 @@ for page in cfg.get("pages", []):
                 continue
             seen.add(clean)
             covered = clean in exact or clean in phrase_memory
-            jargon_hits = [k for k in jargon.keys() if isinstance(k, str) and len(k) >= 3 and re.search(r"(?<!\w)" + re.escape(k) + r"(?!\w)", clean, re.I)]
+            jargon_hits = jargon_coverage.hits(clean)
             blocks.append({
                 "tag": tag,
                 "text": clean,
                 "exact_override": covered,
                 "wow_signal": wow_signal,
-                "jargon_hits": jargon_hits[:12]
+                "jargon_hits": jargon_hits
             })
         row["blocks"] = [{k: v for k, v in b.items() if k != "text"} for b in blocks]
         row["stats"] = {
