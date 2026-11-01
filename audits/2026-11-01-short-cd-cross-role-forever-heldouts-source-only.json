@@ -1,0 +1,73 @@
+{
+  "date": "2026-11-01",
+  "auditMethod": "assistant web-indexed English Wowhead source only; live DOM/Chrome Translator API not reproduced",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourcePages": [
+    {
+      "id": "protection-warrior-rotation",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation",
+      "observedPattern": "very short cooldowns"
+    },
+    {
+      "id": "restoration-shaman-rotation",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "observedPattern": "short cooldowns; short cooldown spells"
+    },
+    {
+      "id": "arcane-mage-overview",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/overview-pve-dps",
+      "role": "dps",
+      "section": "overview",
+      "observedPattern": "short cooldowns"
+    },
+    {
+      "id": "forever-protection-paladin-rotation-new-tank-heldout-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/paladin/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation",
+      "heldout": true
+    },
+    {
+      "id": "forever-affliction-warlock-rotation-new-dot-heldout-20261101",
+      "url": "https://www.wowhead.com/forever/guide/classes/warlock/affliction/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "heldout": true
+    }
+  ],
+  "crossPageChecks": [
+    {
+      "family": "short cooldown terminology",
+      "resolution": "Migrated legacy singular/plural into EN->FR player glossary; added very-short and spell-specific collocations; no exact sentence overrides",
+      "independentSourceClasses": [
+        "warrior",
+        "shaman",
+        "mage"
+      ]
+    },
+    {
+      "family": "cross-version canonical spell names",
+      "resolution": "No unverified official FR names introduced for Forever-specific abilities; requires ID-based locale confirmation",
+      "independentSourceClasses": [
+        "paladin",
+        "warlock"
+      ]
+    }
+  ],
+  "newCorpusPages": 2,
+  "newBrowserPagesAudited": 0,
+  "novelIssueFamiliesObservedInSource": 1,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "strictCleanCycle": false,
+  "remainingBrowserOnly": [
+    "Check glossary precedence and French grammar in actual translated DOM",
+    "Verify official spell names and rich-text reconstruction in Chrome"
+  ]
+}
