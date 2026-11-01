@@ -75,6 +75,29 @@ class CooldownShorthandTests(unittest.TestCase):
         self.assertEqual(terms["comes off cooldown"], "redevient disponible")
         self.assertNotIn("comes off cooldown", MANUAL.get("jargon", {}))
 
+    def test_forever_cross_role_cooldown_senses(self):
+        # Independently authored Forever guides, indexed 2026-11-01.
+        # These are English source observations, not browser translations.
+        cases = (
+            ("forever-elemental-shaman-rotation-20261101",
+             "other cooldowns should be used on cooldown", "cast_when_ready"),
+            ("forever-restoration-druid-rotation-20261101",
+             "Swiftmend is on cooldown", "currently_unavailable"),
+            ("forever-arms-warrior-rotation-20261101",
+             "get the ability back on cooldown", "cast_when_ready"),
+        )
+        ids = {page["id"] for page in PAGES}
+        senses = set()
+        for guide, source, sense in cases:
+            with self.subTest(guide=guide):
+                self.assertIn(guide, ids)
+                self.assertIn("on cooldown", source)
+                senses.add(sense)
+        self.assertEqual(senses, {"cast_when_ready", "currently_unavailable"})
+        terms = select_jargon(GLOSSARY, "en-US", "fr-FR")
+        self.assertNotIn("on cooldown", terms)
+        self.assertNotIn("on cooldown", MANUAL.get("jargon", {}))
+
     def test_locale_isolation(self):
         self.assertEqual(select_jargon(GLOSSARY, "fr-FR", "fr-CA"), {})
         for source, target in (("fr-FR", "en-US"), ("en-US", "de-DE")):
