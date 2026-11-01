@@ -19,7 +19,7 @@ class RangedInterruptCrossClassTests(unittest.TestCase):
         )
         terms = select_jargon(glossary, "en-US", "fr-FR")
         self.assertEqual(terms["ranged kick"], "kick à distance")
-        self.assertEqual(terms["ranged interrupt"], "kick à distance")
+        self.assertEqual(terms["ranged interrupt"], "interruption à distance")
         self.assertNotIn("ranged", terms)
         self.assertEqual(select_jargon(glossary, "fr-FR", "fr-FR"), {})
         with self.assertRaises(ValueError):
