@@ -178,3 +178,23 @@ def detect_source_language(blocks, profiles, min_tokens=25, min_hits=7):
         "signalCounts": counts,
         "distinctSignalCounts": distinct_counts,
     }
+
+
+def compile_wow_term_signals(terms_by_locale, source_language):
+    """Compile locale-scoped WoW labels for short source-only audit blocks.
+
+    Labels are data, not translation instructions or official entity names.
+    A missing locale deliberately has no fallback to English. Regional labels
+    share their base-language evidence, as with prose profiles.
+    """
+    if not terms_by_locale:
+        return None
+    base = source_language.strip().replace("_", "-").casefold().split("-")[0]
+    terms = normalized_language_signals(terms_by_locale).get(base, set())
+    if not terms:
+        return None
+    ordered = sorted(terms, key=lambda term: (-len(term), term))
+    return re.compile(
+        r"(?<!\\w)(?:" + "|".join(re.escape(term) for term in ordered) + r")(?!\\w)",
+        re.IGNORECASE,
+    )
