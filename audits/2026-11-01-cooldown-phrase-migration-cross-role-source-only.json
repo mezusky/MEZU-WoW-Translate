@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "date": "2026-11-01",
+  "auditMethod": "indexed live English Wowhead search excerpts; direct page HTML returned JavaScript challenge",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "pages": [
+    {
+      "id": "brewmaster-monk-rotation",
+      "role": "tank",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/monk/brewmaster/rotation-cooldowns-pve-tank",
+      "finding": "Cooldown reduction effects from Keg Smash and Tiger Palm"
+    },
+    {
+      "id": "mistweaver-monk-rotation",
+      "role": "healer",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/rotation-cooldowns-pve-healer",
+      "finding": "Cooldown acceleration and abilities coming off cooldown"
+    },
+    {
+      "id": "augmentation-evoker-rotation",
+      "role": "dps",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/evoker/augmentation/rotation-cooldowns-pve-dps",
+      "finding": "Cooldown reduction in movement raid buff and Time Skip priority"
+    }
+  ],
+  "issueClass": "Reusable cooldown phrasing stored in broad manual jargon instead of locale-scoped player glossary",
+  "change": "Moved existing cooldown reduction and comes off cooldown mappings into en->fr player glossary; added plural cooldown reductions; removed two duplicated manual entries; added cross-role tests.",
+  "manualJargonEntriesRemoved": 2,
+  "playerJargonEntriesAdded": 3,
+  "newManualSentenceOverrides": 0,
+  "corpusPages": 674,
+  "browserRenderedPagesVerified": 0,
+  "translatorApiVerified": false,
+  "novelTranslationIssueRate": null,
+  "strictCleanCycles": 0,
+  "ciConclusion": "unverified",
+  "notes": "This is a source-only terminology migration, not proof of translated Chrome output or DOM correctness. Live pages were accessible as indexed excerpts; direct HTML challenged."
+}
