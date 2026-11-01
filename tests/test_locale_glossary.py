@@ -3,7 +3,8 @@ import json
 import unittest
 from pathlib import Path
 from scripts.locale_glossary import (locale_matches, select_jargon, select_locale_data,
-                                    same_base_language, parse_json_unique_keys)
+                                    same_base_language, parse_json_unique_keys,
+                                    validate_case_aliases)
 
 
 class LocaleGlossaryTests(unittest.TestCase):
@@ -133,6 +134,22 @@ class LocaleGlossaryTests(unittest.TestCase):
         selected = select_jargon(payload, "en-US", "fr-FR")
         self.assertIn("AoE stop", selected)
         self.assertIn("aoe stop", selected)
+
+    def test_merged_manual_and_player_jargon_is_unambiguous(self):
+        # The publisher combines manual and player jargon before writing the
+        # remote pack; cross-layer aliases must also have one target meaning.
+        data = Path(__file__).resolve().parents[1] / "data"
+        manual = parse_json_unique_keys(
+            (data / "manual_overrides.json").read_text(encoding="utf-8"))
+        player = parse_json_unique_keys(
+            (data / "mezu_player_glossary.json").read_text(encoding="utf-8"))
+        merged = dict(manual["jargon"])
+        merged.update(select_jargon(player, "en-US", "fr-FR"))
+        validate_case_aliases(merged, "merged Data Pack jargon")
+        with self.assertRaisesRegex(ValueError, "Conflicting case-insensitive"):
+            validate_case_aliases(
+                {"AoE stop": "stop AoE", "aoe stop": "interruption de zone"},
+                "merged Data Pack jargon")
 
     def test_returned_mapping_is_not_mutating_source(self):
         selected = select_jargon(self.fr, "en", "fr")
