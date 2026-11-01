@@ -5,6 +5,11 @@ remains data-only and locale-selected before this module is used.
 """
 import re
 
+if __package__:
+    from .locale_glossary import validate_case_aliases
+else:  # Direct execution of scripts/analyze_wowhead_guides.py
+    from locale_glossary import validate_case_aliases
+
 
 class JargonCoverage:
     """Compile once per audit, favoring longer phrases over nested fragments."""
@@ -13,10 +18,13 @@ class JargonCoverage:
         if not isinstance(terms, dict):
             raise ValueError("Jargon terms must be an object")
         canonical = {}
-        for source in terms:
+        for source, target in terms.items():
             if not isinstance(source, str) or not source.strip():
                 raise ValueError("Jargon source must be non-empty text")
+            if not isinstance(target, str) or not target.strip():
+                raise ValueError("Jargon target must be non-empty text")
             canonical.setdefault(source.casefold(), source)
+        validate_case_aliases(terms, "audit jargon")
         # Case variants are a single diagnostic concept; longer terms win.
         # Keep the stable source spelling from the data file for reporting.
         self._canonical = canonical
