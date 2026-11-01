@@ -1,0 +1,56 @@
+{
+  "date": "2026-11-01",
+  "auditMethod": "assistant live Wowhead URL request (JavaScript challenge) plus independently indexed English guide excerpts; no browser translation",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "fixLayer": "data/mezu_player_glossary.json",
+  "issueFamily": "AoE stop (singular and hyphenated) lacked jargon memory while plural already existed",
+  "mappingsAdded": {
+    "AoE stop": "stop AoE",
+    "aoe stop": "stop AoE",
+    "AoE-stop": "stop AoE"
+  },
+  "existingPluralRetained": {
+    "AoE stops": "stops AoE",
+    "aoe stops": "stops AoE"
+  },
+  "sourcePages": [
+    {
+      "id": "restoration-druid-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/mythic-plus-dungeon-tips",
+      "role": "healer",
+      "observed": "AoE stop, AoE-stop"
+    },
+    {
+      "id": "balance-druid-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/mythic-plus-dungeon-tips",
+      "role": "dps",
+      "observed": "AoE Stop, AoE stop"
+    },
+    {
+      "id": "retribution-paladin-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/mythic-plus-dungeon-tips",
+      "role": "dps",
+      "observed": "AoE stop"
+    },
+    {
+      "id": "blood-death-knight-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/mythic-plus-dungeon-tips",
+      "role": "tank",
+      "observed": "soft interrupt, ranged kick; intentionally not given ambiguous single-word overrides"
+    }
+  ],
+  "newCorpusPages": 0,
+  "newBrowserPagesAudited": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "strictCleanCycle": false,
+  "manualSentenceOverridesAdded": 0,
+  "notes": [
+    "Existing glossary already had AoE stops/aoe stops/AoE Stops; no duplicate key added",
+    "No standalone kick/stop overrides: potential collision with WoW spell/entity names and ordinary prose",
+    "Direct Wowhead HTML returned JavaScript challenge; source evidence comes from search-indexed excerpts",
+    "Check runtime phrase precedence, tooltip protection and French inflection in Chrome before claiming user-visible fix"
+  ]
+}
