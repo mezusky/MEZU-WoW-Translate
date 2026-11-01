@@ -4,6 +4,11 @@ Source-only synthetic paraphrases of live Arcane Mage, Discipline Priest and
 Protection Paladin guides. This does not reproduce the Chrome Translator API.
 """
 import unittest
+import json
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
 
 from scripts.build_blizzard_memory import good_pair, language_evidence_safe
 
@@ -58,6 +63,25 @@ class BlizzardMemoryLanguageEvidenceTests(unittest.TestCase):
                                               "fr-FR", "en-US"))
         self.assertFalse(language_evidence_safe(PALADIN_FR, ARCANE_EN,
                                                "fr-FR", "de-DE"))
+
+    def test_legacy_fallback_is_removed_during_memory_retention(self):
+        merger = Path(__file__).resolve().parents[1] / "scripts" / "preserve_blizzard_memory.py"
+        with tempfile.TemporaryDirectory() as folder:
+            old = Path(folder) / "old.json"
+            new = Path(folder) / "new.json"
+            old.write_text(json.dumps({
+                "sourceLanguage": "en-US", "targetLanguage": "fr-FR",
+                "exact": {DISC_EN: DISC_FALLBACK, ARCANE_EN: ARCANE_FR},
+            }), encoding="utf-8")
+            new.write_text(json.dumps({
+                "sourceLanguage": "en-US", "targetLanguage": "fr-FR", "exact": {},
+            }), encoding="utf-8")
+            result = subprocess.run([sys.executable, str(merger), str(old), str(new)],
+                                    capture_output=True, text=True)
+            self.assertEqual(result.returncode, 0, result.stderr)
+            retained = json.loads(new.read_text(encoding="utf-8"))["exact"]
+            self.assertNotIn(DISC_EN, retained)
+            self.assertEqual(retained[ARCANE_EN], ARCANE_FR)
 
     def test_short_ambiguous_official_spell_text_remains_eligible(self):
         self.assertTrue(language_evidence_safe(
