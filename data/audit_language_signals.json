@@ -259,5 +259,30 @@
       "escolher",
       "próximos"
     ]
+  },
+  "wowTerms": {
+    "en": [
+      "Paladin",
+      "Demon Hunter",
+      "Tank",
+      "Mythic+",
+      "Raid",
+      "cooldown",
+      "GCD",
+      "Holy Power",
+      "Haste",
+      "Crit",
+      "Mastery",
+      "Versatility",
+      "BiS",
+      "Best in Slot",
+      "Raidbots",
+      "Great Vault",
+      "spender",
+      "generator",
+      "overcap",
+      "defensive",
+      "mitigation"
+    ]
   }
 }
