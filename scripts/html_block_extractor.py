@@ -71,8 +71,27 @@ class Extractor(HTMLParser):
         # sibling item closes the previous item without splitting nested lists.
         self.list_depth = 0
         self.li_depths = []
+        # A missing </td> is legal HTML. Keep cell identity per table depth so
+        # nested tables do not accidentally close their parent cell.
+        self.table_depth = 0
+        self.cell_depths = []
 
     def handle_starttag(self, tag, attrs):
+        # Hidden cells may omit </td>; a sibling cell or new row ends them.
+        # A nested table inside the hidden cell is not an outer sibling.
+        if (tag in ("td", "th", "tr") and self.skipped_tags
+                and self.skipped_tags[0] in ("td", "th")
+                and "table" not in self.skipped_tags[1:]):
+            self.skipped_tags.clear()
+        # HTMLParser does not implement implicit cell closing. Finish the
+        # previous cell before a sibling cell or a new row, including its
+        # unclosed nested paragraphs, but never close an outer-table cell.
+        if (tag in ("td", "th", "tr") and not self.skipped_tags
+                and self.cell_depths
+                and self.cell_depths[-1] == self.table_depth):
+            while self.stack:
+                if self._finish_selected() in ("td", "th"):
+                    break
         # A hidden <li> can also omit its closing tag. HTML implicitly
         # closes it at the next sibling <li>, even with inline descendants.
         # Do not escape a hidden item while its nested list is still open.
@@ -107,6 +126,8 @@ class Extractor(HTMLParser):
             if tag not in VOID_TAGS:
                 self.skipped_tags.append(tag)
             return
+        if tag == "table":
+            self.table_depth += 1
         if tag in ("main", "article"):
             self.scope_frames.append((tag, len(self.stack)))
         if tag in ("ul", "ol"):
@@ -118,11 +139,15 @@ class Extractor(HTMLParser):
             self.stack.append([tag, []])
             if tag == "li":
                 self.li_depths.append(self.list_depth)
+            if tag in ("td", "th"):
+                self.cell_depths.append(self.table_depth)
 
     def _finish_selected(self):
         kind, parts = self.stack.pop()
         if kind == "li":
             self.li_depths.pop()
+        if kind in ("td", "th"):
+            self.cell_depths.pop()
         value = normalize_block_text(parts)
         # Nested selected blocks already contribute to their parent.
         if value and not self.stack:
@@ -135,6 +160,12 @@ class Extractor(HTMLParser):
                 parts.append(data)
 
     def handle_endtag(self, tag):
+        # A row/table boundary also closes a hidden final cell without an
+        # explicit </td>, including cells containing unclosed inline markup.
+        if (tag in ("tr", "table") and self.skipped_tags
+                and self.skipped_tags[0] in ("td", "th")
+                and "table" not in self.skipped_tags[1:]):
+            self.skipped_tags.clear()
         # The parent list also implicitly ends an unclosed hidden final
         # item. Otherwise the skipped state leaks into following guide prose.
         if (tag in ("ul", "ol") and self.skipped_tags
@@ -147,6 +178,15 @@ class Extractor(HTMLParser):
                     if self.skipped_tags.pop() == tag:
                         break
             return
+        # Finish an implicitly unclosed final cell at its own row/table end.
+        # Depth tracking protects an outer cell that contains a nested table.
+        if (tag in ("tr", "table") and self.cell_depths
+                and self.cell_depths[-1] == self.table_depth):
+            while self.stack:
+                if self._finish_selected() in ("td", "th"):
+                    break
+        if tag == "table":
+            self.table_depth = max(0, self.table_depth - 1)
         # HTML in guide widgets can close a selected parent while a selected
         # child remains unclosed (e.g. <li><p>text</li>). HTMLParser does not
         # auto-repair that nesting. Unwind through the matching ancestor so
