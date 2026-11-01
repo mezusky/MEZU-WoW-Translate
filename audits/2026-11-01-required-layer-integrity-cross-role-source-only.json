@@ -1,0 +1,69 @@
+{
+  "schema": 1,
+  "date": "2026-11-01",
+  "auditMethod": "indexed English Wowhead excerpts; direct page HTML presents JavaScript verification; not a browser output audit",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "pages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation",
+      "observed": [
+        "Avoid Rage Waste",
+        "Always Be Casting",
+        "Shield Slam"
+      ]
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "observed": [
+        "Keep Riptide on cooldown",
+        "Stormstream Totem procs"
+      ]
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/mythic-plus-dungeon-tips",
+      "role": "dps",
+      "section": "mythic-plus",
+      "observed": [
+        "AoE stop",
+        "Solar Beam"
+      ]
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/hunter/beast-mastery/enchants-gems-pve-dps",
+      "role": "dps",
+      "section": "consumables",
+      "observed": [
+        "Weapon enchant",
+        "Gems"
+      ]
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/midnight-season-2",
+      "role": "dps",
+      "section": "overview",
+      "observed": [
+        "Don't overcap Soul Shards",
+        "spender priority"
+      ]
+    }
+  ],
+  "dataIntegrityFinding": "build_datapack previously replaced malformed or unreadable community and Blizzard phrase sources with empty objects, potentially publishing a degraded remote pack without a hard failure",
+  "changes": [
+    "scripts/data_layer_io.py",
+    "tests/test_data_layer_io.py",
+    "scripts/build_datapack.py"
+  ],
+  "verification": "Generic local unit fixtures cover missing, malformed, duplicate-key, empty, and valid JSON; CI rebuild pending",
+  "limitations": [
+    "No full HTML or browser DOM inspection",
+    "No browser Translator API replay",
+    "No measured French output or novel-error rate",
+    "No page-specific translation override"
+  ],
+  "qualityStatus": "not eligible for stabilization cycle"
+}
