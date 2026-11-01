@@ -43,10 +43,15 @@
   ],
   "preventiveFix": "Official Blizzard article phrase-memory collection and retained-memory merge now reject strongly mismatched prose languages using shared locale profiles; short/ambiguous text remains eligible for numeric and structural checks.",
   "scope": "The mixed-language issue is observed on Wowhead localized pages, not demonstrated on Blizzard article pairs; the Blizzard-memory guard is preventive rather than a proven existing production defect.",
-  "validation": "GitHub Actions triggered for source/test commits; final rebuild status must be checked separately.",
+  "validation": "GitHub Actions run 41327043170 completed successfully; 809 Python tests passed; Blizzard memory, community glossary, Data Pack build and validation succeeded; no generated data changes.",
   "browserRenderedPagesVerified": 0,
   "novelTranslationIssueRate": null,
   "strictCleanCycles": 0,
   "newManualSentenceOverrides": 0,
-  "extensionReinstallRequired": false
+  "extensionReinstallRequired": false,
+  "ciRunId": 41327043170,
+  "ciConclusion": "success",
+  "ciUnitTestsPassed": 809,
+  "publishedDatapackVersion": "63d19b70d9bab2e67398",
+  "publishedEntityCount": 24720
 }
