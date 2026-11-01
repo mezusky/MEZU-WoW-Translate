@@ -332,7 +332,11 @@
     "Downranking": "Utilisation d’un sort de rang inférieur",
     "downrank": "utiliser un sort de rang inférieur",
     "Downrank": "Utiliser un sort de rang inférieur",
-    "damage-to-heal conversion": "conversion des dégâts en soins"
+    "damage-to-heal conversion": "conversion des dégâts en soins",
+    "builder-and-spender system": "système générateur/spender",
+    "builder and spender": "générateur/spender",
+    "builder-spender": "générateur/spender",
+    "builder/spender": "générateur/spender"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
