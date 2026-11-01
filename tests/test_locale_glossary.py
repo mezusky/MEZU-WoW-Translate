@@ -146,6 +146,25 @@ class LocaleGlossaryTests(unittest.TestCase):
             select_jargon(glossary, "de-DE", "fr-FR")
 
 
+    def test_cross_guide_tank_and_healer_terms_are_locale_scoped(self):
+        # Threat tables occur in Forever Warrior and generic tank guides;
+        # stance dancing also occurs in Classic Warrior guides. Damage-to-heal
+        # conversion appears in Mistweaver's Mythic+ healing discussion.
+        path = Path(__file__).resolve().parents[1] / "data" / "mezu_player_glossary.json"
+        glossary = parse_json_unique_keys(path.read_text(encoding="utf-8"))
+        terms = select_jargon(glossary, "en-US", "fr-FR")
+        self.assertEqual(terms["threat table"], "table de menace")
+        self.assertEqual(terms["stance-dancing"], "switch de posture")
+        self.assertEqual(terms["Stance Dancing"], "Switch de posture")
+        self.assertEqual(terms["damage-to-heal conversion"],
+                         "conversion des dégâts en soins")
+        # A generic "Cheat Death" rule would collide with a named Rogue spell.
+        self.assertNotIn("Cheat Death", terms)
+        self.assertEqual(select_jargon(glossary, "fr-FR", "fr-FR"), {})
+        with self.assertRaises(ValueError):
+            select_jargon(glossary, "en-US", "de-DE")
+
+
 class LocaleLayerDirectionTests(unittest.TestCase):
     def setUp(self):
         self.generic = {"sourceLanguage": "en", "targetLanguage": "fr",
