@@ -51,5 +51,43 @@ class ImplicitListItemTests(unittest.TestCase):
         ])
 
 
+    def test_hidden_unclosed_sibling_does_not_hide_following_priority(self):
+        examples = (
+            ("Protection Warrior", "Shield Slam", "Ignore Pain"),
+            ("Preservation Evoker", "Temporal Anomaly", "Dream Breath"),
+            ("Demonology Warlock", "Dreadstalkers", "Hand of Gul'dan"),
+        )
+        for guide, first, last in examples:
+            with self.subTest(guide=guide):
+                html = (f"<main><h2>{guide}</h2><ol>"
+                        f"<li>{first}<li hidden>Hidden tooltip"
+                        f"<li>{last}</ol></main>")
+                self.assertEqual(extract_readable_blocks(html), [
+                    ("h2", guide), ("li", first), ("li", last)
+                ])
+
+    def test_hidden_last_item_without_end_tag_does_not_hide_next_section(self):
+        html = ("<main><ul><li>First<li hidden>Secret</ul>"
+                "<p>After the list.</p></main>")
+        self.assertEqual(extract_readable_blocks(html), [
+            ("li", "First"), ("p", "After the list.")
+        ])
+
+    def test_hidden_item_with_inline_child_implicitly_closes(self):
+        html = ("<main><ol><li hidden><span>Hidden tooltip"
+                "<li>Visible priority</ol></main>")
+        self.assertEqual(extract_readable_blocks(html), [
+            ("li", "Visible priority")
+        ])
+
+    def test_nested_hidden_list_remains_hidden_until_its_own_end(self):
+        html = ("<main><ul><li hidden>Hidden parent"
+                "<ul><li>Hidden child</li></ul>"
+                "<li>Visible sibling</ul></main>")
+        self.assertEqual(extract_readable_blocks(html), [
+            ("li", "Visible sibling")
+        ])
+
+
 if __name__ == "__main__":
     unittest.main()
