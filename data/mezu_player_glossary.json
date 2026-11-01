@@ -340,7 +340,9 @@
     "short cooldown": "CD court",
     "short cooldowns": "CD courts",
     "very short cooldowns": "CD très courts",
-    "short cooldown spells": "sorts à CD court"
+    "short cooldown spells": "sorts à CD court",
+    "CDR": "réduction de CD",
+    "cdr": "réduction de CD"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
