@@ -1,0 +1,42 @@
+{
+  "schema": 1,
+  "date": "2026-11-01",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "auditMethod": "Live Wowhead URL requests returned JavaScript verification; independent English source excerpts indexed by web search, not Chrome translation output",
+  "issueFamily": "ranged interrupt terminology absent from French player glossary",
+  "fixLayer": "data/mezu_player_glossary.json",
+  "mappingsAdded": {
+    "ranged kick": "kick à distance",
+    "ranged interrupt": "kick à distance"
+  },
+  "sourcePages": [
+    {
+      "id": "blood-death-knight-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/death-knight/blood/mythic-plus-dungeon-tips",
+      "observed": "ranged kick on melee kick CD"
+    },
+    {
+      "id": "arms-warrior-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/warrior/arms/mythic-plus-dungeon-tips",
+      "observed": "longer-cooldown ranged interrupt"
+    },
+    {
+      "id": "fury-warrior-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/warrior/fury/mythic-plus-dungeon-tips",
+      "observed": "longer-cooldown ranged interrupt"
+    }
+  ],
+  "newCorpusPages": 0,
+  "corpusPages": 674,
+  "manualSentenceOverridesAdded": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "strictCleanCycle": false,
+  "notes": [
+    "Phrase-level terminology only; avoid overriding ambiguous bare kick or interrupt",
+    "Existing canonical spell ID mapping remains authoritative for spell names",
+    "Chrome Translator API and DOM reconstruction still require browser verification"
+  ]
+}
