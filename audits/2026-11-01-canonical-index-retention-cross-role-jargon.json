@@ -2,7 +2,7 @@
   "date": "2026-11-01",
   "sourceLanguage": "en",
   "targetLanguage": "fr",
-  "corpusSize": 665,
+  "corpusSize": 668,
   "inspectionMode": "live Wowhead search-indexed English excerpts; direct HTML blocked by JavaScript verification",
   "sampledPages": [
     {
@@ -61,5 +61,6 @@
   "liveDomVerified": false,
   "novelTranslationIssueRate": null,
   "consecutiveStrictCleanCycles": 0,
-  "notes": "Index protection is a source-code/data integrity improvement; jargon terms are data-only. Search excerpts are not the extension's translated output. No browser quality improvement is claimed."
+  "notes": "Three independently indexed WoW Forever tank/healer/DPS rotation guides added as held-out cross-version probes. Index protection is a source-code/data integrity improvement; jargon terms are data-only. Search excerpts are not the extension's translated output. No browser quality improvement is claimed.",
+  "newCorpusPages": 3
 }
