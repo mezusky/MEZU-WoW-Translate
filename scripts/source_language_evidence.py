@@ -6,6 +6,9 @@ language detector. Unknown/mixed evidence must never be counted as a failure.
 import re
 
 TOKEN = re.compile(r"[^\W\d_]+", re.UNICODE)
+# Reject malformed locale profile keys before they can silently become a base
+# language. Blizzard-style underscores and BCP-47 hyphens are both accepted.
+LOCALE_PROFILE_KEY = re.compile(r"[a-z]{2,3}(?:-[a-z0-9]{2,8})*\Z", re.IGNORECASE)
 # Generated UI placeholders are not prose, even inside otherwise readable cells.
 NON_PROSE_PLACEHOLDER = re.compile(r"\b[A-Z][A-Z0-9]*(?:_[A-Z0-9]+)+\b")
 # Indexed guide widgets can leak key=value configuration (e.g. stat-guide=32588
@@ -111,7 +114,10 @@ def normalized_language_signals(profiles):
                 or any(not isinstance(word, str) or not word.strip()
                        for word in words)):
             raise ValueError("Invalid language evidence profile")
-        base = locale.strip().replace("_", "-").casefold().split("-")[0]
+        normalized = locale.strip().replace("_", "-").casefold()
+        if not LOCALE_PROFILE_KEY.fullmatch(normalized):
+            raise ValueError("Invalid language evidence locale: " + repr(locale))
+        base = normalized.split("-")[0]
         signals.setdefault(base, set()).update(word.casefold() for word in words)
     return signals
 
