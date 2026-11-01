@@ -1,0 +1,43 @@
+{
+  "schema": 1,
+  "date": "2026-11-01",
+  "auditMethod": "Live indexed English Wowhead excerpts; direct page HTML requires JavaScript verification",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "pages": [
+    {
+      "id": "restoration-druid-rotation",
+      "role": "healer",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/rotation-cooldowns-pve-healer",
+      "evidence": "pre-plan cooldowns"
+    },
+    {
+      "id": "preservation-evoker-rotation",
+      "role": "healer",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/evoker/preservation/rotation-cooldowns-pve-healer",
+      "evidence": "pre-plan cooldowns; paragraph appears shared with druid"
+    },
+    {
+      "id": "restoration-shaman-rotation",
+      "role": "healer",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/shaman/restoration/rotation-cooldowns-pve-healer",
+      "evidence": "pre-plan usage"
+    }
+  ],
+  "issueClass": "Literal pre-plan phrasing in English healing cooldown advice",
+  "change": "Two locale-scoped reusable French phrase hints; no generic pre-plan rule or exact-sentence overrides",
+  "playerGlossaryEntriesAdded": 2,
+  "newManualSentenceOverrides": 0,
+  "corpusPages": 674,
+  "uniqueCorpusUrls": 674,
+  "independentWordingSources": 2,
+  "browserRenderedPagesVerified": 0,
+  "translatorApiVerified": false,
+  "novelTranslationIssueRate": null,
+  "strictCleanCycles": 0,
+  "ciConclusion": "unverified",
+  "notes": "These are source-only observations, not verified French output. Druid and Evoker reuse an English paragraph, so count that as one wording source. Full HTML, Chrome Translator API and DOM reconstruction remain unverified."
+}
