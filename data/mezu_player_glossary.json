@@ -342,7 +342,10 @@
     "very short cooldowns": "CD très courts",
     "short cooldown spells": "sorts à CD court",
     "CDR": "réduction de CD",
-    "cdr": "réduction de CD"
+    "cdr": "réduction de CD",
+    "AoE stop": "stop AoE",
+    "aoe stop": "stop AoE",
+    "AoE-stop": "stop AoE"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
