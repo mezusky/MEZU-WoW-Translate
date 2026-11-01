@@ -10,7 +10,7 @@ PAGES = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(encod
 # Explicit English-source site variants; /fr/, /de/, etc. are not source
 # pages even when Wowhead leaves some guide prose untranslated.
 ENGLISH_GUIDE_PATH_RE = (
-    r"^/(?:(?:ptr(?:-\\d+)?|forever)/)?guide/"
+    r"^/(?:(?:ptr(?:-\d+)?|forever)/)?guide/"
     r"(?:classes/[a-z-]+/[a-z-]+/[a-z0-9-]+|"
     r"(?!classes(?:/|$))[a-z0-9-]+(?:/[a-z0-9-]+)*)$"
 )
