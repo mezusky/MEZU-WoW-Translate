@@ -90,6 +90,23 @@ def locale_matches(configured, requested):
     )
 
 
+def validate_case_aliases(terms, layer_name="glossary"):
+    """Reject ambiguous source aliases shared by locale data and audit tools.
+
+    Case variants may differ in display capitalization, but not in the
+    translated meaning. A shared check prevents order-dependent Data Pack
+    overrides and misleading source-only diagnostic coverage.
+    """
+    aliases = {}
+    for source_term, target_term in terms.items():
+        key = source_term.casefold()
+        previous = aliases.setdefault(key, target_term.casefold())
+        if previous != target_term.casefold():
+            raise ValueError(
+                "Conflicting case-insensitive " + layer_name
+                + " aliases: " + repr(source_term))
+
+
 def select_jargon(glossary, source_language, target_language):
     """Return validated terms for a locale pair, rejecting wrong-language data.
 
@@ -115,18 +132,7 @@ def select_jargon(glossary, source_language, target_language):
            not isinstance(v, str) or not v.strip()
            for k, v in terms.items()):
         raise ValueError("Player glossary contains an invalid term")
-    # The browser may match capitalization variants of the same source phrase.
-    # Reject conflicting target translations before they become order-dependent
-    # in a Data Pack. Case-only differences in target capitalization are valid.
-    # This is locale-independent and preserves the authored source spellings.
-    aliases = {}
-    for source_term, target_term in terms.items():
-        key = source_term.casefold()
-        previous = aliases.setdefault(key, target_term.casefold())
-        if previous != target_term.casefold():
-            raise ValueError(
-                "Conflicting case-insensitive player glossary aliases: "
-                + repr(source_term))
+    validate_case_aliases(terms, "player glossary")
     return dict(terms)
 
 
