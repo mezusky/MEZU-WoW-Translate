@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-01",
+  "auditMethod": "Live Wowhead URLs opened via assistant web access; direct HTML returned JavaScript challenge. Source-only evidence from recently indexed English guide text; browser translation and DOM not observed.",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation",
+      "evidence": "Always Be Casting appears with title capitalization; cooldown and resource terminology"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Always be casting appears with sentence capitalization; ramp and healing terminology"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/paladin/retribution/mythic-plus-dungeon-tips",
+      "role": "dps",
+      "section": "mythic-plus",
+      "evidence": "AoE stop used repeatedly for group crowd-control utility"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Spot heals and repeated cooldown references in independent healing priority text"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/bis-gear",
+      "role": "dps",
+      "section": "gearing",
+      "evidence": "Localized linked item names coexist with English prose in the French-indexed page; do not treat localized shell as translated prose"
+    }
+  ],
+  "issueFamily": "Case-insensitive source aliases can silently map to different target meanings; source-only diagnostics previously selected one spelling without checking the conflicting translation.",
+  "fixLayer": "Shared locale glossary validation reused by Data Pack jargon coverage audit; packaged Python source only",
+  "fixScope": "Reject conflicting target values for source terms with identical Unicode casefold keys, while accepting capitalization-only target variants.",
+  "corpusPagesAdded": 0,
+  "newManualSentenceOverrides": 0,
+  "newJargonEntries": 0,
+  "checks": "Synthetic cross-locale tests committed; CI execution after these commits not confirmed.",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "GitHub Actions tests and Data Pack rebuild after latest commits",
+    "Chrome Translator API translation quality and rich-text DOM reconstruction",
+    "Measure novel issue rate on new independent pages before claiming stabilization"
+  ],
+  "stabilizationCyclesConfirmed": 0
+}
