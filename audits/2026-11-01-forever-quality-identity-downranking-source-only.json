@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-01",
+  "auditMethod": "indexed-English-source-only; direct live Wowhead pages returned JavaScript verification; no browser translation simulated",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourcePages": [
+    {
+      "id": "forever-protection-warrior-rotation",
+      "url": "https://www.wowhead.com/forever/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation"
+    },
+    {
+      "id": "forever-discipline-priest-rotation",
+      "url": "https://www.wowhead.com/forever/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation"
+    },
+    {
+      "id": "forever-frost-mage-rotation",
+      "url": "https://www.wowhead.com/forever/guide/classes/mage/frost/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation"
+    },
+    {
+      "id": "forever-holy-priest-rotation",
+      "url": "https://www.wowhead.com/forever/guide/classes/priest/holy/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation"
+    },
+    {
+      "id": "wotlk-restoration-shaman-rotation",
+      "url": "https://www.wowhead.com/wotlk/guide/classes/shaman/restoration/healer-rotation-cooldowns-abilities-pve",
+      "role": "healer",
+      "section": "rotation"
+    },
+    {
+      "id": "retail-demonology-warlock-rotation",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation"
+    }
+  ],
+  "reusableChanges": [
+    {
+      "family": "Forever source namespace in quality gates",
+      "fix": "strict guide identity now accepts /forever/guide while keeping retail independent and collapsing localized Forever variants",
+      "scope": "audit-only; no Chrome extension change"
+    },
+    {
+      "family": "downranking of healing spell ranks",
+      "fix": "locale-scoped EN->FR jargon; no exact sentence overrides",
+      "sourceCrossChecks": [
+        "Forever Discipline Priest",
+        "Forever Holy Priest",
+        "WotLK Restoration Shaman",
+        "TBC Priest"
+      ],
+      "scope": "Data Pack source"
+    }
+  ],
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "GitHub Actions after commits",
+    "Chrome Translator API output",
+    "DOM reconstruction on real rendered pages",
+    "novel issue rate on held-out pages"
+  ]
+}
