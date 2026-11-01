@@ -21,6 +21,7 @@ class AoeStopCrossClassTests(unittest.TestCase):
         for source in ("AoE stop", "aoe stop", "AoE-stop"):
             with self.subTest(source=source):
                 self.assertEqual(terms[source], "stop AoE")
+        self.assertEqual(terms["AoE Stop"], "Stop AoE")
         self.assertEqual(terms["AoE stops"], "stops AoE")
         self.assertEqual(terms["aoe stops"], "stops AoE")
         self.assertEqual(select_jargon(glossary, "fr-FR", "fr-FR"), {})
