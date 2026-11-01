@@ -38,11 +38,8 @@ class PreviousEntitySnapshotTests(unittest.TestCase):
         self.assertEqual(self.load(), {})
 
     def test_valid_snapshot_preserves_canonical_ids(self):
-        self.assertEqual(self.load() if False else self.load_after_write(), self.entities)
-
-    def load_after_write(self):
-        self.entities = self.write_pair()
-        return self.load()
+        entities = self.write_pair()
+        self.assertEqual(self.load(), entities)
 
     def test_missing_one_side_is_not_bootstrap(self):
         self.write_pair()
