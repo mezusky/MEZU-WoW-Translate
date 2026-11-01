@@ -115,6 +115,18 @@ def select_jargon(glossary, source_language, target_language):
            not isinstance(v, str) or not v.strip()
            for k, v in terms.items()):
         raise ValueError("Player glossary contains an invalid term")
+    # The browser may match capitalization variants of the same source phrase.
+    # Reject conflicting target translations before they become order-dependent
+    # in a Data Pack. Case-only differences in target capitalization are valid.
+    # This is locale-independent and preserves the authored source spellings.
+    aliases = {}
+    for source_term, target_term in terms.items():
+        key = source_term.casefold()
+        previous = aliases.setdefault(key, target_term.casefold())
+        if previous != target_term.casefold():
+            raise ValueError(
+                "Conflicting case-insensitive player glossary aliases: "
+                + repr(source_term))
     return dict(terms)
 
 
