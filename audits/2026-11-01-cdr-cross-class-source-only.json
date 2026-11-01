@@ -1,0 +1,50 @@
+{
+  "date": "2026-11-01",
+  "auditMethod": "assistant web-indexed English Wowhead source only; direct HTML blocked by JavaScript challenge",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "pattern": "CDR/cdr = cooldown reduction",
+  "fixLayer": "data/mezu_player_glossary.json",
+  "reusableMapping": {
+    "CDR": "réduction de CD",
+    "cdr": "réduction de CD"
+  },
+  "sourcePages": [
+    {
+      "id": "protection-warrior-rotation",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation",
+      "observedPattern": "lowercase cdr in advanced tips"
+    },
+    {
+      "id": "affliction-warlock-rotation",
+      "url": "https://www.wowhead.com/guide/classes/warlock/affliction/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "observedPattern": "uppercase CDR in Dark Harvest description"
+    },
+    {
+      "id": "enhancement-shaman-rotation",
+      "url": "https://www.wowhead.com/guide/classes/shaman/enhancement/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "observedPattern": "uppercase CDR in Totemic and cooldown notes"
+    },
+    {
+      "id": "balance-druid-rotation",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/rotation-cooldowns-pve-dps",
+      "role": "dps",
+      "section": "rotation",
+      "observedPattern": "uppercase CDR in cooldown planning"
+    }
+  ],
+  "validationScope": "glossary selection and corpus tests; no measured browser output",
+  "browserOnlyVerification": [
+    "Chrome Translator API output",
+    "WoW entity link/tooltip preservation",
+    "rich-text DOM reconstruction"
+  ],
+  "qualitySample": null,
+  "manualSentenceOverridesAdded": 0
+}
