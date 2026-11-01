@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-01",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "corpusSize": 665,
+  "inspectionMode": "live Wowhead search-indexed English excerpts; direct HTML blocked by JavaScript verification",
+  "sampledPages": [
+    {
+      "role": "tank",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"
+    },
+    {
+      "role": "healer",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer"
+    },
+    {
+      "role": "dps",
+      "section": "gearing",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/bis-gear"
+    },
+    {
+      "role": "healer",
+      "section": "mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/monk/mistweaver/mythic-plus-dungeon-tips"
+    },
+    {
+      "role": "healer",
+      "section": "raid",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/midnight-season-2-raid-tips"
+    },
+    {
+      "role": "dps",
+      "section": "consumables",
+      "url": "https://www.wowhead.com/guide/classes/mage/frost/enchants-gems-pve-dps"
+    },
+    {
+      "role": "tank",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/forever/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"
+    },
+    {
+      "role": "healer",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/forever/guide/classes/priest/discipline/rotation-cooldowns-pve-healer"
+    },
+    {
+      "role": "dps",
+      "section": "rotation",
+      "url": "https://www.wowhead.com/forever/guide/classes/mage/frost/rotation-cooldowns-pve-dps"
+    }
+  ],
+  "reusableFixes": [
+    "Preserve canonical Blizzard IDs when one unconfirmed index refresh omits even a small fraction of previous IDs",
+    "Explicit opt-in required for retirement after independent completeness confirmation",
+    "Locale-scoped player jargon for threat table, stance dancing and damage-to-heal conversion"
+  ],
+  "manualSentenceOverridesAdded": 0,
+  "browserTranslatorApiVerified": false,
+  "liveDomVerified": false,
+  "novelTranslationIssueRate": null,
+  "consecutiveStrictCleanCycles": 0,
+  "notes": "Index protection is a source-code/data integrity improvement; jargon terms are data-only. Search excerpts are not the extension's translated output. No browser quality improvement is claimed."
+}
