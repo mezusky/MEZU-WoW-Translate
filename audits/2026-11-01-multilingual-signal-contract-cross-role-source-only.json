@@ -1,0 +1,44 @@
+{
+  "schema": 1,
+  "auditedAt": "2026-11-01T16:36:00+01:00",
+  "auditMethod": "source-only indexed English excerpts; direct Wowhead HTML blocked by JavaScript verification",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "guides": [
+    {
+      "id": "protection-warrior-rotation",
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation",
+      "observed": "GCD, rage generation, very short cooldowns and on-cooldown advice"
+    },
+    {
+      "id": "discipline-priest-rotation",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "observed": "Atonement ramps, mini-ramps, on cd and spell queue"
+    },
+    {
+      "id": "arcane-mage-stats",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/stat-priority-pve-dps",
+      "role": "dps",
+      "section": "stats",
+      "observed": "secondary-stat priority, diminishing returns, character simulation"
+    },
+    {
+      "id": "balance-druid-mythic-plus",
+      "url": "https://www.wowhead.com/guide/classes/druid/balance/mythic-plus-dungeon-tips",
+      "role": "dps",
+      "section": "mythic-plus",
+      "observed": "AoE stop, kick and utility descriptions"
+    }
+  ],
+  "crossLocaleObservation": "Indexed /fr/guide and /es/guide versions retain English guide prose while localizing spell links; language evidence must follow prose rather than the URL or embedded entity names.",
+  "change": "Reject malformed data-only language signal locale keys before collapsing regional profiles to base languages; add tests and CI push triggers for language-signal and spec-role metadata.",
+  "avoidedRule": "Do not globally translate 'on cd'/'on cooldown' as 'dès que disponible': in 'is on cooldown' it means unavailable. No unverified translation overrides added.",
+  "verification": "New Python tests and GitHub Actions are required; no browser Translator API or DOM reconstruction was run.",
+  "qualityGate": "Not eligible: 0 browser-rendered cycles"
+}
