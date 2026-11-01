@@ -195,6 +195,6 @@ def compile_wow_term_signals(terms_by_locale, source_language):
         return None
     ordered = sorted(terms, key=lambda term: (-len(term), term))
     return re.compile(
-        r"(?<!\\w)(?:" + "|".join(re.escape(term) for term in ordered) + r")(?!\\w)",
+        r"(?<!\w)(?:" + "|".join(re.escape(term) for term in ordered) + r")(?!\w)",
         re.IGNORECASE,
     )
