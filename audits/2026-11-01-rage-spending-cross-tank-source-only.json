@@ -1,0 +1,39 @@
+{
+  "schema": 1,
+  "date": "2026-11-01",
+  "scope": "Source-only English Wowhead guides to expected French terminology; browser output not verified",
+  "sourceAccess": "Direct Wowhead URLs returned JavaScript verification; English indexed guide excerpts inspected via assistant web access, not GitHub Actions.",
+  "sampledGuideUrls": [
+    "https://www.wowhead.com/guide/classes/druid/guardian/rotation-cooldowns-pve-tank",
+    "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+    "https://www.wowhead.com/classic/guide/classes/warrior/fury/dps-rotation-cooldowns-abilities-pve"
+  ],
+  "observations": [
+    "Guardian Druid rotation uses 'Dump rage' in opener timeline.",
+    "Protection Warrior rotation discusses dumping Rage into Ignore Pain.",
+    "Classic Fury Warrior rotation uses 'dump rage' for excess resource spending."
+  ],
+  "change": {
+    "layer": "Locale-scoped player jargon data",
+    "entries": [
+      "Dump rage",
+      "dump rage",
+      "dump excess rage"
+    ],
+    "reason": "Shared resource-spending verb phrases, not official spell names or page-specific sentence overrides",
+    "extensionChanged": false,
+    "manualSentenceOverridesAdded": 0
+  },
+  "metrics": {
+    "regressionCorpusPages": 674,
+    "newPagesSampled": 0,
+    "newAuditIssueFamilies": 1,
+    "novelTranslationIssueRate": null,
+    "browserPagesVerified": 0
+  },
+  "limitations": [
+    "Source excerpts do not establish the actual Chrome Translator API output.",
+    "DOM reconstruction and the translated French page require browser verification.",
+    "The data pack rebuild and tests must be confirmed in GitHub Actions."
+  ]
+}
