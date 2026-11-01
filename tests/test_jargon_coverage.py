@@ -52,6 +52,13 @@ class JargonCoverageTests(unittest.TestCase):
         self.assertEqual(self.matcher.hits("CDRplus"), [])
         self.assertEqual(self.matcher.hits("CDR", 0), [])
 
+    def test_unicode_casefold_mismatch_is_not_a_false_hit(self):
+        # Python regex IGNORECASE matches dotted/dotless I against ASCII i,
+        # but those characters do not have the same Unicode casefold key.
+        matcher = JargonCoverage({"id": "identifier"})
+        self.assertEqual(matcher.hits("İD"), [])
+        self.assertEqual(matcher.hits("ID"), ["id"])
+
     def test_empty_and_invalid_glossaries(self):
         self.assertEqual(JargonCoverage({}).hits("CDR"), [])
         with self.assertRaises(ValueError):
