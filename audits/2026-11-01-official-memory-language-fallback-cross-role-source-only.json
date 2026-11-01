@@ -1,0 +1,52 @@
+{
+  "schema": 1,
+  "date": "2026-11-01",
+  "auditMethod": "source-only indexed Wowhead excerpts; live direct URLs challenged by JavaScript",
+  "sourceLanguage": "en-US",
+  "targetLanguage": "fr-FR",
+  "pages": [
+    {
+      "id": "arcane-mage-rotation",
+      "section": "rotation",
+      "role": "dps",
+      "url": "https://www.wowhead.com/guide/classes/mage/arcane/rotation-cooldowns-pve-dps",
+      "finding": "English prose mixes numeric Arcane Charges with linked ability names"
+    },
+    {
+      "id": "discipline-priest-rotation",
+      "section": "rotation",
+      "role": "healer",
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+      "finding": "French-locale Wowhead page retains English prose while localizing spell links; observed concatenated English plural suffixes"
+    },
+    {
+      "id": "holy-priest-raid",
+      "section": "raid",
+      "role": "healer",
+      "url": "https://www.wowhead.com/guide/classes/priest/holy/midnight-season-2-raid-tips",
+      "finding": "English raid source includes structured reminder imports and spell IDs, not translation prose"
+    },
+    {
+      "id": "restoration-druid-consumables",
+      "section": "consumables",
+      "role": "healer",
+      "url": "https://www.wowhead.com/guide/classes/druid/restoration/enchants-gems-pve-healer",
+      "finding": "Official item names embedded in English gear/consumable tables"
+    },
+    {
+      "id": "demonology-warlock-gear",
+      "section": "gear",
+      "role": "dps",
+      "url": "https://www.wowhead.com/guide/classes/warlock/demonology/bis-gear",
+      "finding": "English prose and localized item-link text may coexist on /fr/ pages"
+    }
+  ],
+  "preventiveFix": "Official Blizzard article phrase-memory collection and retained-memory merge now reject strongly mismatched prose languages using shared locale profiles; short/ambiguous text remains eligible for numeric and structural checks.",
+  "scope": "The mixed-language issue is observed on Wowhead localized pages, not demonstrated on Blizzard article pairs; the Blizzard-memory guard is preventive rather than a proven existing production defect.",
+  "validation": "GitHub Actions triggered for source/test commits; final rebuild status must be checked separately.",
+  "browserRenderedPagesVerified": 0,
+  "novelTranslationIssueRate": null,
+  "strictCleanCycles": 0,
+  "newManualSentenceOverrides": 0,
+  "extensionReinstallRequired": false
+}
