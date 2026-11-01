@@ -32,7 +32,9 @@ class AoeStopsCrossRoleTests(unittest.TestCase):
                 self.assertNotIn(source, MANUAL.get("exact", {}))
 
     def test_do_not_rewrite_ambiguous_verbs(self):
-        for source in ("stop", "stops", "stopped", "stopping", "AoE stop", "Stop"):
+        # "AoE stop" is an attested noun compound covered by the separate
+        # singular cross-class regression; bare verbs remain ambiguous.
+        for source in ("stop", "stops", "stopped", "stopping", "Stop"):
             with self.subTest(source=source):
                 self.assertNotIn(source, GLOSSARY["jargon"])
 
