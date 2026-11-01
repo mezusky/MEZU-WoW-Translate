@@ -78,6 +78,29 @@ class ForeverQualityIdentityTests(unittest.TestCase):
             dict(case, section="talents"),
             _canonical_guide_url(BASE + "/forever" + suffix)))
 
+    def test_new_forever_heldouts_cover_rotation_and_stats(self):
+        import json
+        from pathlib import Path
+
+        corpus = (Path(__file__).resolve().parents[1] / "data" /
+                  "wowhead_regression_pages.json")
+        pages = json.loads(corpus.read_text(encoding="utf-8"))["pages"]
+        urls = {page["url"] for page in pages}
+        cases = (
+            ("mage", "fire", "dps", "rotation-cooldowns-pve-dps", "rotation"),
+            ("priest", "holy", "healer", "rotation-cooldowns-pve-healer", "rotation"),
+            ("rogue", "combat", "dps", "rotation-cooldowns-pve-dps", "rotation"),
+            ("mage", "fire", "dps", "stat-priority-pve-dps", "stats"),
+        )
+        for wow_class, spec, role, slug, section in cases:
+            with self.subTest(spec=spec, section=section):
+                url = f"{BASE}/forever/guide/classes/{wow_class}/{spec}/{slug}"
+                self.assertIn(url, urls)
+                case = {"wowClass": wow_class, "spec": spec,
+                        "role": role, "section": section}
+                self.assertTrue(_case_matches_guide_identity(
+                    case, _canonical_guide_url(url)))
+
     def test_arbitrary_namespaces_and_invented_slugs_remain_rejected(self):
         case = {"wowClass": "warrior", "spec": "protection",
                 "role": "tank", "section": "rotation"}
