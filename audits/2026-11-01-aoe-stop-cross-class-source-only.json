@@ -4,11 +4,12 @@
   "sourceLanguage": "en",
   "targetLanguage": "fr",
   "fixLayer": "data/mezu_player_glossary.json",
-  "issueFamily": "AoE stop (singular and hyphenated) lacked jargon memory while plural already existed",
+  "issueFamily": "AoE stop (singular, heading capitalization and hyphenated) lacked jargon memory while plural already existed",
   "mappingsAdded": {
     "AoE stop": "stop AoE",
     "aoe stop": "stop AoE",
-    "AoE-stop": "stop AoE"
+    "AoE-stop": "stop AoE",
+    "AoE Stop": "Stop AoE"
   },
   "existingPluralRetained": {
     "AoE stops": "stops AoE",
