@@ -348,7 +348,7 @@
     "aoe stop": "stop AoE",
     "AoE-stop": "stop AoE",
     "ranged kick": "kick à distance",
-    "ranged interrupt": "kick à distance"
+    "ranged interrupt": "interruption à distance"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
