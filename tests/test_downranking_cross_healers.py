@@ -32,14 +32,15 @@ class DownrankingLocaleTests(unittest.TestCase):
             for phrase in ("downranking", "Downranking", "downrank", "Downrank"):
                 self.assertNotIn(phrase, manual.get(layer, {}))
 
-    def test_independent_forever_healer_and_wotlk_sources_are_valid_evidence(self):
-        # This is a static source URL contract; no Wowhead fetch occurs in CI.
-        urls = {
-            "https://www.wowhead.com/forever/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
-            "https://www.wowhead.com/forever/guide/classes/priest/holy/rotation-cooldowns-pve-healer",
-            "https://www.wowhead.com/wotlk/guide/classes/shaman/restoration/healer-rotation-cooldowns-abilities-pve",
-        }
-        self.assertEqual(len(urls), 3)
+    def test_term_selection_respects_requested_locale_pair(self):
+        from scripts.locale_glossary import select_jargon
+
+        glossary = json.loads((DATA / "mezu_player_glossary.json").read_text(encoding="utf-8"))
+        selected = select_jargon(glossary, "en-US", "fr-FR")
+        self.assertEqual(selected["downranking"], "utilisation d’un sort de rang inférieur")
+        self.assertEqual(select_jargon(glossary, "fr-FR", "fr-CA"), {})
+        with self.assertRaises(ValueError):
+            select_jargon(glossary, "en-US", "de-DE")
 
 
 if __name__ == "__main__":
