@@ -104,6 +104,36 @@ class LocaleGlossaryTests(unittest.TestCase):
         with self.assertRaises(ValueError):
             select_jargon({**self.fr, "jargon": []}, "en", "fr")
 
+    def test_case_aliases_must_not_disagree_on_target_meaning(self):
+        # Shared Wowhead terminology appears with multiple capitalizations.
+        # Reject silent last-match-wins behavior in future locale Data Packs.
+        good = {**self.fr, "jargon": {
+            "AoE stop": "stop AoE", "aoe stop": "stop aoe",
+            "Always Be Casting": "Toujours caster",
+            "always be casting": "toujours caster",
+        }}
+        self.assertEqual(len(select_jargon(good, "en-US", "fr-FR")), 4)
+        conflicting = {**self.fr, "jargon": {
+            "AoE stop": "stop AoE", "aoe stop": "interruption de zone",
+        }}
+        with self.assertRaisesRegex(ValueError, "Conflicting case-insensitive"):
+            select_jargon(conflicting, "en", "fr")
+        # The same guard must apply to other translation directions.
+        german_to_italian = {"sourceLanguage": "de", "targetLanguage": "it",
+                             "jargon": {"Unterbrechen": "interrompere",
+                                        "unterbrechen": "fermare"}}
+        with self.assertRaisesRegex(ValueError, "Conflicting case-insensitive"):
+            select_jargon(german_to_italian, "de-DE", "it-IT")
+        # Same-language requests are skipped without selecting any glossary.
+        self.assertEqual(select_jargon(conflicting, "fr", "fr"), {})
+
+    def test_published_glossary_case_aliases_remain_consistent(self):
+        path = Path(__file__).resolve().parents[1] / "data" / "mezu_player_glossary.json"
+        payload = parse_json_unique_keys(path.read_text(encoding="utf-8"))
+        selected = select_jargon(payload, "en-US", "fr-FR")
+        self.assertIn("AoE stop", selected)
+        self.assertIn("aoe stop", selected)
+
     def test_returned_mapping_is_not_mutating_source(self):
         selected = select_jargon(self.fr, "en", "fr")
         selected["socket"] = "changed"
