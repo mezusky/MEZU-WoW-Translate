@@ -1,0 +1,114 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "Live English Wowhead pages inspected through assistant web access, not GitHub Actions; Chrome Translator API and rendered DOM unavailable.",
+  "pages": [
+    {
+      "pageId": "tbc-prot-paladin-stats-parry-haste-20261102",
+      "role": "tank",
+      "section": "stats",
+      "source": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-stat-priority-attributes-pve",
+      "observation": "EHP - Effective Health Points heading; Crush Immunity/Avoidance Cap; official spell links and stat tables."
+    },
+    {
+      "pageId": "tbc-prot-warrior-stats-parry-haste-20261102",
+      "role": "tank",
+      "section": "stats",
+      "source": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-stat-priority-attributes-pve",
+      "observation": "Effective Health Points (EHP) in survival prose; parry-hasting verb; source grammar contains minor inconsistencies."
+    },
+    {
+      "pageId": "tbc-feral-druid-stats-effective-health-20261102",
+      "role": "tank",
+      "section": "stats",
+      "source": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-stat-priority-attributes-pve",
+      "observation": "Effective health pool (EHP) across stat weights and tank survivability; tables and formulas require DOM validation."
+    },
+    {
+      "pageId": "classic-feral-tank-overview-crushing-blows-20261102",
+      "role": "tank",
+      "section": "overview",
+      "source": "https://www.wowhead.com/classic/guide/classes/druid/feral/tank-overview-pve",
+      "observation": "Independent expansion confirms effective health pool and threat-per-second; rich text has malformed-looking source navigation tokens."
+    },
+    {
+      "pageId": "tbc-rogue-dps-stats-parry-haste-control-20261102",
+      "role": "dps",
+      "section": "stats",
+      "source": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-stat-priority-attributes-pve",
+      "observation": "Negative control: haste and expertise stats should not be changed by effective-health or parry-haste rules."
+    },
+    {
+      "pageId": "forever-holy-priest-rotation-downranking-20261101",
+      "role": "healer",
+      "section": "rotation",
+      "source": "https://www.wowhead.com/forever/guide/classes/priest/holy/rotation-cooldowns-pve-healer",
+      "observation": "Independent healer control; linked healing spells and downranking prose, no new EHP rule."
+    },
+    {
+      "pageId": "forever-frost-mage-rotation-heldout",
+      "role": "dps",
+      "section": "rotation",
+      "source": "https://www.wowhead.com/forever/guide/classes/mage/frost/rotation-cooldowns-pve-dps",
+      "observation": "Independent caster control; linked spell names, ordered rotations and talent/proc terminology."
+    }
+  ],
+  "crossPageFixes": [
+    {
+      "layer": "tests/test_wowhead_regression_corpus.py",
+      "reason": "The prior workflow failed three URL checks because TBC English paths were not recognized. Accept TBC class-wide and spec paths; reject localized and incomplete paths. Do not infer class-wide versus spec from an ambiguous two-segment URL.",
+      "kind": "validator",
+      "extensionChanged": false
+    },
+    {
+      "layer": "data/mezu_player_glossary.json",
+      "reason": "Longer EHP phrases should override the existing effective health prefix to avoid partial literal output.",
+      "newAliases": [
+        "effective health points",
+        "Effective Health Points",
+        "effective health pool",
+        "Effective Health Pool"
+      ],
+      "kind": "reusable-fr-terminology",
+      "manualSentenceOverridesAdded": 0,
+      "extensionChanged": false
+    },
+    {
+      "layer": "data/wowhead_regression_pages.json",
+      "reason": "Added independent TBC Feral Druid tank stats as a held-out source for EHP phrase generalization.",
+      "newPagesAdded": 1
+    }
+  ],
+  "sourceInterventionSample": {
+    "sampledPages": 7,
+    "newPagesAddedToCorpus": 1,
+    "corpusSizeAfter": 728,
+    "playerJargonEntriesAfter": 405,
+    "newReusablePhraseFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0,
+    "browserTranslationErrorRate": null,
+    "novelTranslationIssueRate": null,
+    "confirmedQualityCycles": 0
+  },
+  "staticValidation": {
+    "corpusUniqueIds": 728,
+    "corpusUniqueUrls": 728,
+    "englishPathChecksPassed": 728,
+    "localizedTbcPathRejected": true,
+    "ambiguousTwoSegmentPathCaveat": "No taxonomy-based section/spec inference; existing regex treats class/section as valid.",
+    "pythonCI": "not yet verified after last commit"
+  },
+  "blockedLiveSources": [
+    "https://www.wowhead.com/guide/classes/death-knight/blood/mythic-plus-dungeon-tips",
+    "https://www.wowhead.com/guide/classes/monk/windwalker/bis-gear"
+  ],
+  "remainingBrowserOnly": [
+    "Chrome Translator API source/target behavior and phrase matching order",
+    "Linked official spell/item/talent ID rendering",
+    "DOM reconstruction for tables, formulas, talent widgets and malformed-looking navigation tokens"
+  ],
+  "auditBoundary": "Source-only evidence and static tests do not establish a clean browser translation cycle; 0/2 confirmed."
+}
