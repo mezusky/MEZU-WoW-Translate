@@ -405,7 +405,11 @@
     "parry haste": "parry haste",
     "Parry haste": "Parry haste",
     "Parry Haste": "Parry Haste",
-    "parry-haste": "parry haste"
+    "parry-haste": "parry haste",
+    "threat per second": "menace générée par seconde",
+    "Threat Per Second": "Menace générée par seconde",
+    "damage taken per second": "dégâts subis par seconde",
+    "Damage Taken Per Second": "Dégâts subis par seconde"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
