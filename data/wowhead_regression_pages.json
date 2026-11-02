@@ -2815,6 +2815,26 @@
     {
       "id": "classic-shaman-healer-stats-5sr-20261102",
       "url": "https://www.wowhead.com/classic/guide/classes/shaman/healer-stat-priority-attributes-pve"
+    },
+    {
+      "id": "forever-arms-warrior-abilities-autoattack-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/warrior/arms/dps-abilities"
+    },
+    {
+      "id": "forever-fury-warrior-abilities-autoattack-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/warrior/fury/dps-abilities"
+    },
+    {
+      "id": "classic-warlock-dps-rotation-autos-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/warlock/dps-rotation-cooldowns-abilities-pve"
+    },
+    {
+      "id": "classic-mage-dps-rotation-autos-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/mage/dps-rotation-cooldowns-abilities-pve"
+    },
+    {
+      "id": "classic-rogue-dps-rotation-autoattacks-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/rogue/dps-rotation-cooldowns-abilities-pve"
     }
   ]
 }
