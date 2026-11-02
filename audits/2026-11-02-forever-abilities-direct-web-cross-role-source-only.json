@@ -1,0 +1,46 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "Assistant web.open returned readable current English source text for three Forever ability guides; Retail guide HTML requests returned JavaScript verification. This is not raw HTML, extension output, or browser DOM.",
+  "pages": [
+    {
+      "pageId": "forever-protection-warrior-abilities-cross-role-20261102",
+      "role": "tank",
+      "section": "abilities",
+      "observation": "Linked spell labels, stance-specific abilities, taunt/threat language and numeric cooldowns; official spell identity should be checked by canonical spell ID."
+    },
+    {
+      "pageId": "forever-restoration-shaman-abilities-cross-role-20261102",
+      "role": "healer",
+      "section": "abilities",
+      "observation": "Linked spell/totem names, healing-over-time phrasing and an unresolved talent placeholder in the English source; do not fabricate the missing talent name."
+    },
+    {
+      "pageId": "forever-retribution-paladin-abilities-cross-role-20261102",
+      "role": "dps",
+      "section": "abilities",
+      "observation": "Linked seal/blessing names, off-the-GCD and wipe protection jargon; two blank blessing labels in the English source must not become invented translations."
+    }
+  ],
+  "crossPageFinding": "Three independent classes and roles expose dense spell-link/table patterns. Prefer canonical spell IDs and locale-specific official names over guide-specific sentence overrides. No new generic jargon rule was justified from the inspected excerpts.",
+  "auditBoundary": "Live English text and known locale-scoped glossary terms were inspected, but full current Data Pack plus browser Translator API output could not be replayed. No French translation accuracy or DOM reconstruction success is claimed.",
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-forever-abilities-direct-web-cross-role",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "forever-protection-warrior-abilities-cross-role-20261102",
+      "forever-restoration-shaman-abilities-cross-role-20261102",
+      "forever-retribution-paladin-abilities-cross-role-20261102"
+    ],
+    "sampledPageCount": 3,
+    "newReusableTermFamiliesObserved": 0,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "engineAuditChange": "The offline HTML source extractor now retains h5/h6 headings, with synthetic cross-role regression tests. No live raw HTML or Chrome DOM claim.",
+  "extensionChanged": false,
+  "newSentenceOverrides": 0
+}
