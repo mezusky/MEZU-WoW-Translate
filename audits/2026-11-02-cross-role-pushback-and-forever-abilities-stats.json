@@ -1,0 +1,77 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "Direct assistant web.open returned English text for four new Forever guides and independent Priest/Druid heldouts. Retail Mistweaver still returned JavaScript anti-bot challenge. No installed Chrome extension, DOM mutation, or browser Translator API was exercised.",
+  "pages": [
+    {
+      "pageId": "forever-marksmanship-hunter-abilities-cross-role-20261102",
+      "role": "dps",
+      "section": "abilities",
+      "observation": "Many linked spell names and a complex pet/utility table require canonical spell IDs and preservation of rich-text links. English source contains 'A show that removes a Frenzy effect' under Tranquilizing Shot: an author typo, not a French override candidate."
+    },
+    {
+      "pageId": "forever-protection-paladin-abilities-pushback-20261102",
+      "role": "tank",
+      "section": "abilities",
+      "observation": "Holy Wrath description explicitly says 'damage pushback' delays a cast while tanking; Concentration Aura describes push-back during channeling. Preserve this distinction from physical knockback and full spell interruption."
+    },
+    {
+      "pageId": "forever-demonology-warlock-abilities-source-anomaly-20261102",
+      "role": "dps",
+      "section": "abilities",
+      "observation": "Demonology introduction incorrectly says 'Affliction Warlock' and a table intermixes talent labels, linked spells and prose. Do not change spec identity by a sentence override; flag as a source-author inconsistency."
+    },
+    {
+      "pageId": "forever-marksmanship-hunter-stats-source-consistency-20261102",
+      "role": "dps",
+      "section": "stats",
+      "observation": "English source has contradictory Agility-to-ranged-Attack-Power numbers within one section and a 'To be added' Weapon Skill placeholder. Preserve numeric data rather than silently repairing source claims."
+    }
+  ],
+  "heldoutPages": [
+    {
+      "url": "https://www.wowhead.com/forever/guide/classes/priest/discipline/healer-abilities",
+      "role": "healer",
+      "observation": "Power Word: Shield prevents cast time pushback, corroborating the damage-induced cast delay concept across roles."
+    },
+    {
+      "url": "https://www.wowhead.com/forever/guide/classes/druid/balance/dps-abilities",
+      "role": "dps",
+      "observation": "Barkskin prevents spell pushback while channeling; generic pushback is intentionally not replaced."
+    },
+    {
+      "url": "https://www.wowhead.com/forever/guide/classes/paladin/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "observation": "Off GCD appears as rotation jargon and was already covered by an earlier rule; no new duplicate added."
+    }
+  ],
+  "crossPageFix": {
+    "concept": "damage-induced spellcasting pushback",
+    "glossaryAdditions": {
+      "damage pushback": "retard d’incantation dû aux dégâts",
+      "pushback protection": "protection contre le retard d’incantation"
+    },
+    "scope": "EN->FR locale-scoped player glossary; no generic pushback/push-back/push back replacement, no official spell name override, no executable remote data",
+    "verification": "New tank guide and independent Priest/Druid guides describe the same casting-delay mechanic. Automated source contract tests assert phrase mappings, absence of unsafe generic aliases, and language-direction isolation; browser rendering remains unverified.",
+    "manualSentenceOverrides": 0,
+    "extensionChanged": false
+  },
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-cross-role-pushback-and-forever-abilities-stats",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "forever-marksmanship-hunter-abilities-cross-role-20261102",
+      "forever-protection-paladin-abilities-pushback-20261102",
+      "forever-demonology-warlock-abilities-source-anomaly-20261102",
+      "forever-marksmanship-hunter-stats-source-consistency-20261102"
+    ],
+    "sampledPageCount": 4,
+    "newReusableTermFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "auditBoundary": "Expected French fragments are glossary contracts, not observed Chrome output. Full current Data Pack/Blizzard phrase-memory/community-glossary replay, official spell-ID resolution, Translator API and DOM/rich-text reconstruction remain browser-only or unverified. No quality stabilization claimed."
+}
