@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "English Wowhead guide bodies inspected with assistant web access. No GitHub-hosted Wowhead fetch; no Chrome Translator API or French DOM replay.",
+  "pages": [
+    {
+      "pageId": "wotlk-enhancement-shaman-leveling-white-hits-20261102",
+      "role": "dps",
+      "section": "leveling-rotation",
+      "evidence": "WotLK Enhancement leveling guide uses white hits in the melee swing/Lightning Weaving context."
+    },
+    {
+      "pageId": "classic-rogue-dps-stats-white-autos-20261102",
+      "role": "dps",
+      "section": "stats",
+      "evidence": "Classic Rogue stat guide uses White Auto Attacks to distinguish ordinary weapon attacks from activated abilities."
+    },
+    {
+      "pageId": "classic-hunter-dps-stats-glancing-control-20261102",
+      "role": "dps",
+      "section": "stats",
+      "evidence": "Classic Hunter stat guide describes glancing blows and automatic attacks; independent ranged control, not direct evidence for the white-hit alias."
+    }
+  ],
+  "crossPageFix": {
+    "concept": "White hits are non-ability automatic weapon attacks; the same jargon applies to Shaman and Rogue, with Hunter as a boundary control.",
+    "dataLayer": "data/mezu_player_glossary.json",
+    "newAliases": [
+      "white hit",
+      "white hits",
+      "white auto attacks",
+      "White Auto Attacks"
+    ],
+    "manualSentenceOverridesAdded": 0,
+    "extensionChanged": false,
+    "rationale": "Translate a reusable WoW combat concept to coups blancs, not literal color; retain generic white, hits, clipping and official Auto Shot outside this rule.",
+    "verification": "English source and static locale/glossary tests only; browser output and DOM reconstruction not tested."
+  },
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-white-hits-cross-class-source-only",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "wotlk-enhancement-shaman-leveling-white-hits-20261102",
+      "classic-rogue-dps-stats-white-autos-20261102",
+      "classic-hunter-dps-stats-glancing-control-20261102"
+    ],
+    "sampledPageCount": 3,
+    "newReusableTermFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "existingCorpusCrossChecks": [
+    "wotlk-enhancement-shaman-rotation-swingtimer-20261102",
+    "classic-hunter-dps-rotation-swingtimer-20261102"
+  ],
+  "auditBoundary": "This is a source-only intervention, not a measured translation-error rate or a clean quality cycle. Do not treat guide comments, locale-mixed pages or web text extraction artifacts as browser DOM bugs.",
+  "sources": [
+    "https://www.wowhead.com/wotlk/guide/classes/shaman/enhancement/dps-leveling-tips",
+    "https://www.wowhead.com/classic/guide/classes/rogue/dps-stat-priority-attributes-pve",
+    "https://www.wowhead.com/classic/guide/classes/hunter/dps-stat-priority-attributes-pve"
+  ]
+}
