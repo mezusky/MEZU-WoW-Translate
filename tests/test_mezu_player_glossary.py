@@ -416,5 +416,42 @@ class PlayerGlossaryTests(unittest.TestCase):
                 self.assertIn(url, urls)
 
 
+    def test_spell_hit_stat_phrases_reuse_across_classic_and_tbc_casters(self):
+        # English-source Classic Shadow Priest and TBC Warlock/Mage/Druid
+        # stat guides distinguish spell hit rating from the spell hit cap.
+        # These are shared stats, not spell IDs or sentence overrides.
+        jargon = GLOSSARY["jargon"]
+        expected = {
+            "spell hit cap": "cap de toucher des sorts",
+            "Spell Hit Cap": "Cap de toucher des sorts",
+            "spell hit rating": "score de toucher des sorts",
+            "Spell Hit Rating": "Score de toucher des sorts",
+        }
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(
+            encoding="utf-8"))
+        for source, target in expected.items():
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], target)
+                self.assertNotIn(source, manual.get("exact", {}))
+                self.assertNotIn(source, manual.get("jargon", {}))
+        # Do not conflate melee hit, spell hit, stat labels and spell IDs.
+        for ambiguous in ("hit", "hit cap", "Hit Cap", "rating", "spell", "cap"):
+            self.assertNotIn(ambiguous, jargon)
+        self.assertEqual(GLOSSARY["sourceLanguage"], "en")
+        self.assertEqual(GLOSSARY["targetLanguage"], "fr")
+        corpus = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(
+            encoding="utf-8"))["pages"]
+        urls = {page["url"] for page in corpus}
+        for url in (
+            "https://www.wowhead.com/classic/guide/classes/priest/shadow/dps-stat-priority-attributes-pve",
+            "https://www.wowhead.com/tbc/guide/classes/warlock/dps-stat-priority-attributes-pve",
+            "https://www.wowhead.com/tbc/guide/classes/mage/dps-stat-priority-attributes-pve",
+            "https://www.wowhead.com/tbc/guide/classes/druid/balance/dps-stat-priority-attributes-pve",
+        ):
+            with self.subTest(url=url):
+                self.assertIn(url, urls)
+
+
+
 if __name__ == "__main__":
     unittest.main()
