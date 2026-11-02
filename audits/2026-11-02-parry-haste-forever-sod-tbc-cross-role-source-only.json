@@ -1,0 +1,102 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-live-wowhead-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "English Wowhead pages inspected using assistant web access, not GitHub-hosted runners. Source text only; no Chrome Translator API or translated DOM.",
+  "pages": [
+    {
+      "pageId": "forever-prot-paladin-stats-parry-haste-20261102",
+      "role": "tank",
+      "section": "stats",
+      "source": "https://www.wowhead.com/forever/guide/classes/paladin/protection/stat-priority-pve-tank",
+      "observation": "The guide explicitly describes both the player's shortened swing after a parry and boss parry haste when a boss parries the player's attacks. Separate spell names and numeric claims remain source/canonical data."
+    },
+    {
+      "pageId": "sod-warrior-tank-overview-parry-haste-20261102",
+      "role": "tank",
+      "section": "overview",
+      "source": "https://www.wowhead.com/classic/guide/season-of-discovery/classes/warrior/tank-overview",
+      "observation": "Parry haste the boss is used as a verb in an expertise and survivability discussion. Preserve the noun family but avoid global verb rewriting."
+    },
+    {
+      "pageId": "tbc-prot-paladin-stats-parry-haste-20261102",
+      "role": "tank",
+      "section": "stats",
+      "source": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-stat-priority-attributes-pve",
+      "observation": "Parry haste occurs as a noun with a timing explanation; source notes boss parries and incoming damage."
+    },
+    {
+      "pageId": "tbc-prot-warrior-stats-parry-haste-20261102",
+      "role": "tank",
+      "section": "stats",
+      "source": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-stat-priority-attributes-pve",
+      "observation": "Parry haste occurs in a survival worst-case example and as the related parry-hasting verb; not the same as the Haste Rating stat."
+    },
+    {
+      "pageId": "tbc-rogue-dps-stats-parry-haste-control-20261102",
+      "role": "dps",
+      "section": "stats",
+      "source": "https://www.wowhead.com/tbc/guide/classes/rogue/dps-stat-priority-attributes-pve",
+      "observation": "Negative control: generic parry, haste, expertise, and official linked talents occur without parry haste jargon. Avoid single-word glossary entries."
+    },
+    {
+      "pageId": "forever-holy-priest-rotation-downranking-20261101",
+      "role": "healer",
+      "section": "rotation",
+      "source": "https://www.wowhead.com/forever/guide/classes/priest/holy/rotation-cooldowns-pve-healer",
+      "observation": "Existing independent healing control: downranking and linked spell names; no new parry-haste rule needed."
+    },
+    {
+      "pageId": "forever-frost-mage-rotation-heldout",
+      "role": "dps",
+      "section": "rotation",
+      "source": "https://www.wowhead.com/forever/guide/classes/mage/frost/rotation-cooldowns-pve-dps",
+      "observation": "Existing independent caster control: proc, uptime, spell links and lists; no new parry-haste rule needed."
+    }
+  ],
+  "crossPageFix": {
+    "concept": "Parry haste is a WoW combat mechanic involving faster next melee swings after a parry; distinct from the generic Parry and Haste stats.",
+    "layer": "data/mezu_player_glossary.json",
+    "newAliases": [
+      "parry haste",
+      "Parry haste",
+      "Parry Haste",
+      "parry-haste"
+    ],
+    "expectedFrench": "parry haste (retained as player jargon rather than a misleading literal 'hâte de parade')",
+    "notes": "Glossary entries are locale-scoped en->fr; do not map generic parry/haste, named spells or the parry-hasting verb. Official spell/item names remain ID-based. The browser translator may need grammatical handling around verb contexts.",
+    "manualSentenceOverridesAdded": 0,
+    "extensionChanged": false
+  },
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-parry-haste-forever-sod-tbc-cross-role-source-only",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageCount": 7,
+    "newPagesAddedToCorpus": 5,
+    "corpusSizeAfter": 727,
+    "playerJargonEntriesAfter": 401,
+    "newReusableTermFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0,
+    "browserTranslationErrorRate": null,
+    "novelTranslationIssueRate": null
+  },
+  "sourceRisks": [
+    "Source pages can use parry haste for the player's or the boss's faster next swing; preserve semantics and do not hardcode the actor.",
+    "Hyphenated verb parry-hasting and phrases such as to parry-haste require natural French prose translation in browser; noun-only data checks do not certify grammar.",
+    "Official spell links, rich-text lists, talent references and numerical mechanics cannot be verified from source text alone.",
+    "Five new pages and two unrelated holdouts do not establish a clean multi-role browser translation cycle."
+  ],
+  "auditBoundary": "Source-only improvement; 0/2 fully verified browser quality cycles. No claim that actual Chrome output or DOM reconstruction is correct.",
+  "sources": [
+    "https://www.wowhead.com/forever/guide/classes/paladin/protection/stat-priority-pve-tank",
+    "https://www.wowhead.com/classic/guide/season-of-discovery/classes/warrior/tank-overview",
+    "https://www.wowhead.com/tbc/guide/classes/paladin/tank-stat-priority-attributes-pve",
+    "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-stat-priority-attributes-pve",
+    "https://www.wowhead.com/tbc/guide/classes/rogue/dps-stat-priority-attributes-pve",
+    "https://www.wowhead.com/forever/guide/classes/priest/holy/rotation-cooldowns-pve-healer",
+    "https://www.wowhead.com/forever/guide/classes/mage/frost/rotation-cooldowns-pve-dps"
+  ]
+}
