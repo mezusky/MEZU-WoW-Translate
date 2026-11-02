@@ -9,7 +9,7 @@
       "pageId": "classic-priest-healer-rotation-url-20261102",
       "role": "healer",
       "section": "rotation",
-      "observation": "Canonical Classic class-wide guide uses /classic/guide/classes/priest/healer-rotation-cooldowns-abilities-pve; down-ranking and linked rank-specific spell names require ID-aware terminology."
+      "observation": "Canonical Classic class-wide guide uses /classic/guide/classes/priest/healer-rotation-cooldowns-abilities-pve; down-ranking and linked rank-specific spell names require ID-aware terminology. The hyphenated noun down-ranking differs from the existing unhyphenated glossary form; avoid a blind fragment replacement because verbal uses need inflection."
     },
     {
       "pageId": "classic-warrior-tank-pvp-url-20261102",
@@ -45,7 +45,7 @@
   "crossPageFix": {
     "kind": "regression corpus URL grammar",
     "rootCause": "English Classic class-wide /classic/guide/classes/{class}/{section} paths were incorrectly rejected by a Retail-oriented test regex.",
-    "verification": "Existing 686 canonical English URLs plus independent Classic Priest and Warrior class-wide URLs accepted; /classic/fr/guide/... and incomplete class URLs remain rejected.",
+    "verification": "Existing 686 canonical English URLs plus independent Classic Priest and Warrior class-wide URLs accepted; /classic/fr/guide/... and incomplete class URLs remain rejected. Class-wide Classic paths are normalized without a specialization and excluded from spec coverage counts.",
     "manualSentenceOverrides": 0,
     "extensionChanged": false
   },
