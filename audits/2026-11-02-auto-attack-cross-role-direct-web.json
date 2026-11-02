@@ -34,11 +34,16 @@
       "role": "dps",
       "section": "rotation",
       "evidence": "Slice and Dice prose contains 'Auto Attacks' and another section 'Auto Attack animation'; confirms capitalized spaced plural/singular."
+    },
+    {
+      "pageId": "classic-warrior-tank-rotation-autoattack-20261102",
+      "role": "tank",
+      "section": "rotation",
+      "evidence": "Heroic Strike and Cleave replace the next auto attack and are off the GCD; corroborates spaced singular in an independent Classic tank guide."
     }
   ],
   "existingCorpusCrossChecks": [
-    "forever/protection warrior abilities: next auto attack and rage/threat mechanics",
-    "classic/warrior tank rotation: off-GCD Heroic Strike/Cleave replaces next auto attack"
+    "forever/protection warrior abilities: next auto attack and rage/threat mechanics"
   ],
   "crossPageFix": {
     "concept": "Auto-attack (basic melee swing) vs ability/spell names",
@@ -68,9 +73,10 @@
       "forever-fury-warrior-abilities-autoattack-20261102",
       "classic-warlock-dps-rotation-autos-20261102",
       "classic-mage-dps-rotation-autos-20261102",
-      "classic-rogue-dps-rotation-autoattacks-20261102"
+      "classic-rogue-dps-rotation-autoattacks-20261102",
+      "classic-warrior-tank-rotation-autoattack-20261102"
     ],
-    "sampledPageCount": 5,
+    "sampledPageCount": 6,
     "newReusableTermFamiliesObserved": 1,
     "newManualSentenceOverrides": 0,
     "browserRenderedPagesVerified": 0
