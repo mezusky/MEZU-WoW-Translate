@@ -140,7 +140,7 @@ class SourceInterventionTrendTests(unittest.TestCase):
                         load_cycles(history, audits, corpus)
                     sample[field] = original
 
-    def test_backdated_and_duplicate_audit_cycles_are_rejected(self):
+    def test_invalid_date_and_duplicate_audit_cycles_are_rejected(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
             audits = root / "audits"
@@ -151,7 +151,7 @@ class SourceInterventionTrendTests(unittest.TestCase):
                 {"date": "2026-11-01", **cycle(["prior"])}
             ]}), encoding="utf-8")
             corpus.write_text('{"pages":[{"id":"tank"},{"id":"prior"}]}', encoding="utf-8")
-            report = {"date": "2026-10-31", "auditMethod": "indexed-source-only",
+            report = {"date": "2026-11-40", "auditMethod": "indexed-source-only",
                       "sourceInterventionSample": {
                           "cycleId": "same", "sourceLanguage": "en",
                           "targetLanguage": "fr", "sampledPageIds": ["tank"],
@@ -168,6 +168,31 @@ class SourceInterventionTrendTests(unittest.TestCase):
             (audits / "two.json").write_text(json.dumps(report), encoding="utf-8")
             with self.assertRaises(ValueError):
                 load_cycles(history, audits, corpus)
+
+    def test_older_audit_survives_later_historical_updates(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            audits = root / "audits"
+            audits.mkdir()
+            history = root / "history.json"
+            corpus = root / "corpus.json"
+            history.write_text(json.dumps({"cycles": [
+                {"date": "2026-11-04", **cycle(["future"])}
+            ]}), encoding="utf-8")
+            corpus.write_text('{"pages":[{"id":"future"},{"id":"earlier"}]}', encoding="utf-8")
+            report = {"date": "2026-11-02", "auditMethod": "indexed-source-only",
+                      "sourceInterventionSample": {
+                          "cycleId": "older", "sourceLanguage": "en",
+                          "targetLanguage": "fr", "sampledPageIds": ["earlier"],
+                          "sampledPageCount": 1,
+                          "newReusableTermFamiliesObserved": 0,
+                          "newManualSentenceOverrides": 0,
+                          "browserRenderedPagesVerified": 0}}
+            (audits / "older.json").write_text(json.dumps(report), encoding="utf-8")
+            cycles = load_cycles(history, audits, corpus)
+            self.assertEqual([row["date"] for row in cycles],
+                             ["2026-11-02", "2026-11-04"])
+            self.assertEqual(summarize(cycles, window=1)["eligibleCycles"], 2)
 
     def test_repository_heldout_audit_is_counted_without_browser_claims(self):
         root = Path(__file__).resolve().parents[1]
