@@ -2911,6 +2911,18 @@
     {
       "id": "tbc-feral-druid-stats-effective-health-20261102",
       "url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-stat-priority-attributes-pve"
+    },
+    {
+      "id": "tbc-feral-druid-overview-tank-metrics-20261102",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-overview-pve"
+    },
+    {
+      "id": "tbc-paladin-tank-overview-tank-metrics-control-20261102",
+      "url": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-overview-pve"
+    },
+    {
+      "id": "classic-warrior-tank-overview-tank-metrics-control-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/warrior/tank-overview-pve"
     }
   ]
 }
