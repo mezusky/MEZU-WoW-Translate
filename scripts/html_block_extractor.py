@@ -239,14 +239,14 @@ class Extractor(HTMLParser):
             self._finish_selected()
 
 
-def extract_blocks(html, tags=("h1", "h2", "h3", "h4", "p", "li", "td", "th"), scoped=False):
+def extract_blocks(html, tags=("h1", "h2", "h3", "h4", "h5", "h6", "p", "li", "td", "th"), scoped=False):
     parser = Extractor(tags, scoped)
     parser.feed(html)
     parser.close()
     return parser.blocks
 
 
-def extract_readable_blocks(html, tags=("h1", "h2", "h3", "h4", "p", "li", "td", "th"),
+def extract_readable_blocks(html, tags=("h1", "h2", "h3", "h4", "h5", "h6", "p", "li", "td", "th"),
                             min_scoped_blocks=4):
     """Prefer article/main prose over site navigation for source-only audits.
 
