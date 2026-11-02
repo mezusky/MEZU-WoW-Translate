@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "indexed-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "directHtmlAccess": "Direct canonical Wowhead URLs returned a JavaScript anti-bot challenge; English source was inspected through the assistant's web index, not GitHub Actions.",
+  "sampledSections": [
+    "overview",
+    "rotation",
+    "talents",
+    "gear",
+    "stats",
+    "consumables",
+    "mythic-plus",
+    "raid"
+  ],
+  "sampledRoles": [
+    "tank",
+    "healer",
+    "dps"
+  ],
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-canonical-script-projection-cross-role-heldouts",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "vengeance-dh-overview",
+      "fire-mage-rotation",
+      "assassination-rogue-talents",
+      "holy-paladin-gear",
+      "beast-mastery-hunter-stats",
+      "preservation-evoker-consumables",
+      "blood-death-knight-mythic-plus",
+      "holy-paladin-raid"
+    ],
+    "sampledPageCount": 8,
+    "newReusableTermFamiliesObserved": 0,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "findings": [
+    "Across independently indexed tank/healer/DPS guides, official spell, talent, item, enchant and boss names coexist with ordinary English prose and structured tables. Canonical ID mapping remains preferable to whole-sentence exceptions.",
+    "Localized Wowhead /fr guide indexes can still contain English prose with French official item/spell labels; URL locale is not reliable evidence of prose language.",
+    "Blood DK Mythic+ and Holy Paladin raid indexed source contain unresolved template placeholders (UTIL*_NAME, UPPER_SPEC/UPPER_CLASS, and spell=UTIL*_ID); do not attribute source authoring artifacts to MEZU or blindly translate them.",
+    "Canonical locale projection could previously fall back from a bare zh or sr label to a script-specific target (zh-CN/zh-TW or sr-Cyrl/sr-Latn) without proof that the label belongs to the requested writing system."
+  ],
+  "durableChanges": [
+    "Fail-closed canonical ID locale projection when a requested locale identifies a writing script but only a generic unscripted label is present.",
+    "Regression tests verify Chinese simplified/traditional and Serbian Cyrillic/Latin separation, while preserving generic en->fr regional compatibility."
+  ],
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "browserOnlyVerification": [
+    "Chrome Translator API output",
+    "live Wowhead DOM and rich-text reconstruction",
+    "rendered French official names and prose",
+    "two consecutive strict cross-page audit cycles"
+  ]
+}
