@@ -2783,6 +2783,18 @@
     {
       "id": "forever-marksmanship-hunter-stats-source-consistency-20261102",
       "url": "https://www.wowhead.com/forever/guide/classes/hunter/marksmanship/stat-priority-pve-dps"
+    },
+    {
+      "id": "classic-sod-paladin-healer-consumables-pushback-20261102",
+      "url": "https://www.wowhead.com/classic/guide/season-of-discovery/classes/paladin/healer-consumables-raid-buffs-pve"
+    },
+    {
+      "id": "cata-shadow-priest-consumables-pushback-20261102",
+      "url": "https://www.wowhead.com/cata/guide/classes/priest/shadow/dps-consumables-raid-buffs-pve"
+    },
+    {
+      "id": "cata-holy-priest-consumables-pushback-20261102",
+      "url": "https://www.wowhead.com/cata/guide/classes/priest/holy/healer-consumables-raid-buffs-pve"
     }
   ]
 }
