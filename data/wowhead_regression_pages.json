@@ -2923,6 +2923,22 @@
     {
       "id": "classic-warrior-tank-overview-tank-metrics-control-20261102",
       "url": "https://www.wowhead.com/classic/guide/classes/warrior/tank-overview-pve"
+    },
+    {
+      "id": "classic-shadow-priest-stats-spell-hit-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/priest/shadow/dps-stat-priority-attributes-pve"
+    },
+    {
+      "id": "tbc-warlock-dps-stats-spell-hit-20261102",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/dps-stat-priority-attributes-pve"
+    },
+    {
+      "id": "tbc-mage-dps-stats-spell-hit-20261102",
+      "url": "https://www.wowhead.com/tbc/guide/classes/mage/dps-stat-priority-attributes-pve"
+    },
+    {
+      "id": "tbc-balance-druid-stats-spell-hit-control-20261102",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/balance/dps-stat-priority-attributes-pve"
     }
   ]
 }
