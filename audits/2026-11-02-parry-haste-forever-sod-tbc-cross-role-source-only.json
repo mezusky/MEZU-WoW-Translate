@@ -73,7 +73,7 @@
     "cycleId": "2026-11-02-parry-haste-forever-sod-tbc-cross-role-source-only",
     "sourceLanguage": "en",
     "targetLanguage": "fr",
-    "sampledPageCount": 7,
+    "sampledPageCount": 5,
     "newPagesAddedToCorpus": 5,
     "corpusSizeAfter": 727,
     "playerJargonEntriesAfter": 401,
@@ -87,10 +87,9 @@
       "sod-warrior-tank-overview-parry-haste-20261102",
       "tbc-prot-paladin-stats-parry-haste-20261102",
       "tbc-prot-warrior-stats-parry-haste-20261102",
-      "tbc-rogue-dps-stats-parry-haste-control-20261102",
-      "forever-holy-priest-rotation-downranking-20261101",
-      "forever-frost-mage-rotation-heldout"
-    ]
+      "tbc-rogue-dps-stats-parry-haste-control-20261102"
+    ],
+    "existingIndependentHoldoutsReviewed": 2
   },
   "sourceRisks": [
     "Source pages can use parry haste for the player's or the boss's faster next swing; preserve semantics and do not hardcode the actor.",
