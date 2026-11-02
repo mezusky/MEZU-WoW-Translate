@@ -448,6 +448,8 @@ class PlayerGlossaryTests(unittest.TestCase):
             "https://www.wowhead.com/tbc/guide/classes/warlock/dps-stat-priority-attributes-pve",
             "https://www.wowhead.com/tbc/guide/classes/mage/dps-stat-priority-attributes-pve",
             "https://www.wowhead.com/tbc/guide/classes/druid/balance/dps-stat-priority-attributes-pve",
+            "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-stat-priority-attributes-pve",
+            "https://www.wowhead.com/wotlk/guide/classes/mage/arcane/dps-stat-priority-attributes-pve",
         ):
             with self.subTest(url=url):
                 self.assertIn(url, urls)
