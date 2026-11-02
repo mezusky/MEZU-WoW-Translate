@@ -397,7 +397,11 @@
     "ranged interrupt": "interruption à distance",
     "wipe protection": "protection en cas de wipe",
     "snap aggro": "aggro instantanée",
-    "snap threat": "génération immédiate de menace"
+    "snap threat": "génération immédiate de menace",
+    "parry haste": "parry haste",
+    "Parry haste": "Parry haste",
+    "Parry Haste": "Parry Haste",
+    "parry-haste": "parry haste"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
