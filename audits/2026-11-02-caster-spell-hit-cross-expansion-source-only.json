@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "English Wowhead guides inspected through assistant web access, not GitHub-hosted runners. No browser Translator API or rendered DOM reproduction.",
+  "pages": [
+    {
+      "pageId": "classic-general-stats-crushing-blows-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classic-wow-stats-and-attributes-overview",
+      "role": "cross-role",
+      "section": "stats",
+      "observation": "Defines Spell Hit Cap separately from generic melee hit; pre-existing corpus control."
+    },
+    {
+      "pageId": "classic-shadow-priest-stats-spell-hit-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/priest/shadow/dps-stat-priority-attributes-pve",
+      "role": "dps",
+      "section": "stats",
+      "observation": "Uses Spell Hit Rating and PvE/PvP Spell Hit Cap labels; spell names in linked entities must remain ID-based."
+    },
+    {
+      "pageId": "tbc-warlock-dps-stats-spell-hit-20261102",
+      "url": "https://www.wowhead.com/tbc/guide/classes/warlock/dps-stat-priority-attributes-pve",
+      "role": "dps",
+      "section": "stats",
+      "observation": "Spell Hit Rating in heading and stat priority; generic Hit Cap in gear advice deliberately not rewritten without context."
+    },
+    {
+      "pageId": "tbc-mage-dps-stats-spell-hit-20261102",
+      "url": "https://www.wowhead.com/tbc/guide/classes/mage/dps-stat-priority-attributes-pve",
+      "role": "dps",
+      "section": "stats",
+      "observation": "Independent Mage Spell Hit Rating usage and PvE Hit Cap context."
+    },
+    {
+      "pageId": "tbc-balance-druid-stats-spell-hit-control-20261102",
+      "url": "https://www.wowhead.com/tbc/guide/classes/druid/balance/dps-stat-priority-attributes-pve",
+      "role": "dps",
+      "section": "stats",
+      "observation": "Uses mixed-case Spell Hit cap and Spell Hit Rating; led to one additional casing alias."
+    },
+    {
+      "pageId": "tbc-shadow-priest-stats-spell-hit-control-20261102",
+      "url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-stat-priority-attributes-pve",
+      "role": "dps",
+      "section": "stats",
+      "observation": "Independent Priest control for hit rating, cap and linked talents."
+    },
+    {
+      "pageId": "wotlk-arcane-mage-stats-hit-cap-control-20261102",
+      "url": "https://www.wowhead.com/wotlk/guide/classes/mage/arcane/dps-stat-priority-attributes-pve",
+      "role": "dps",
+      "section": "stats",
+      "observation": "Expansion-specific cap changes; no hardcoded numeric cap added to glossary."
+    }
+  ],
+  "crossPageFixes": [
+    {
+      "layer": "data/mezu_player_glossary.json",
+      "kind": "locale-scoped reusable stat phrases",
+      "newAliases": [
+        "spell hit cap",
+        "Spell Hit Cap",
+        "Spell Hit cap",
+        "spell hit rating",
+        "Spell Hit Rating"
+      ],
+      "manualSentenceOverridesAdded": 0,
+      "extensionChanged": false
+    },
+    {
+      "layer": "tests/test_mezu_player_glossary.py",
+      "kind": "regression",
+      "reason": "Verify source/target locale, 5 stat labels, negative controls and independent cross-expansion pages."
+    },
+    {
+      "layer": "data/wowhead_regression_pages.json",
+      "kind": "corpus",
+      "newPagesAdded": 6
+    }
+  ],
+  "sourceInterventionSample": {
+    "sampledPages": 7,
+    "newPagesAddedToCorpus": 6,
+    "corpusSizeAfter": 737,
+    "playerJargonEntriesAfter": 414,
+    "newReusablePhraseFamiliesObserved": 2,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0,
+    "browserTranslationErrorRate": null,
+    "novelTranslationIssueRate": null,
+    "confirmedQualityCycles": 0
+  },
+  "remainingBrowserOnly": [
+    "Translator API actual output and source language auto-detection",
+    "Case-sensitive and longest-match priority in live engine with mixed inline links",
+    "Linked spell and talent ID mapping; tables, formulas, and rich-text DOM reconstruction"
+  ],
+  "auditBoundary": "Source-only audit and static repository checks do not establish a clean browser translation cycle; 0/2 confirmed."
+}
