@@ -95,6 +95,17 @@ def load_cycles(history_path, audits_dir, corpus_path):
 
     history = json.loads(Path(history_path).read_text(encoding="utf-8"))
     cycles = list(history["cycles"])
+    # Historical cycles may be migrated from compact audit files. A cycle
+    # identity must remain unique across both stores to avoid double-counting.
+    historical_ids = {}
+    for row in cycles:
+        cycle_id = row.get("cycleId")
+        if cycle_id is None:
+            continue  # Legacy rows predate explicit audit identities.
+        if (not isinstance(cycle_id, str) or not cycle_id.strip()
+                or cycle_id in historical_ids):
+            raise ValueError("Invalid or duplicate historical audit cycle ID")
+        historical_ids[cycle_id] = row
     known = {
         page["id"] for page in
         json.loads(Path(corpus_path).read_text(encoding="utf-8"))["pages"]
@@ -141,7 +152,12 @@ def load_cycles(history_path, audits_dir, corpus_path):
         except ValueError as exc:
             raise ValueError(f"Invalid translation direction: {path}") from exc
         audit_ids.add(cycle_id)
-        cycles.append({**sample, "date": audit_date, "cycleId": cycle_id})
+        entry = {**sample, "date": audit_date, "cycleId": cycle_id}
+        if cycle_id in historical_ids:
+            if entry != historical_ids[cycle_id]:
+                raise ValueError(f"Conflicting archived audit cycle: {path}")
+            continue  # Identical archived copy is already in the history.
+        cycles.append(entry)
     # Stable ordering preserves the original order of multiple audits on one day.
     # Keep older audit samples usable if the historical file grows later.
     return sorted(cycles, key=lambda row: row.get("date", ""))
