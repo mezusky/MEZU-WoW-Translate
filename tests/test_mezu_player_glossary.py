@@ -456,5 +456,44 @@ class PlayerGlossaryTests(unittest.TestCase):
 
 
 
+    def test_melee_weaving_is_a_locale_scoped_hunter_term_not_generic_weaving(self):
+        # Live English Hunter Classic/TBC rotation and TBC overview use
+        # melee weaving / melee-weaving for the same ranged/melee technique.
+        # WotLK Enhancement Shaman uses Lightning Weaving for a different
+        # mechanic; never rewrite bare "weaving" across all classes.
+        jargon = GLOSSARY["jargon"]
+        expected = {
+            "melee weaving": "melee weaving",
+            "Melee Weaving": "Melee Weaving",
+            "melee-weaving": "melee weaving",
+        }
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(
+            encoding="utf-8"))
+        for source, target in expected.items():
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], target)
+                self.assertNotIn(source, manual.get("jargon", {}))
+                self.assertNotIn(source, manual.get("exact", {}))
+        for broad in ("weaving", "weave", "Lightning Weaving", "LB weaving"):
+            self.assertNotIn(broad, jargon)
+        self.assertEqual(GLOSSARY["sourceLanguage"], "en")
+        self.assertEqual(GLOSSARY["targetLanguage"], "fr")
+
+    def test_melee_weaving_has_cross_expansion_and_cross_class_controls(self):
+        pages = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(
+            encoding="utf-8"))["pages"]
+        urls = {page["url"] for page in pages}
+        for url in (
+            "https://www.wowhead.com/classic/guide/classes/hunter/dps-rotation-cooldowns-abilities-pve",
+            "https://www.wowhead.com/tbc/guide/classes/hunter/dps-rotation-cooldowns-abilities-pve",
+            "https://www.wowhead.com/tbc/guide/classes/hunter/overview-basics",
+            "https://www.wowhead.com/wotlk/guide/classes/shaman/enhancement/dps-rotation-cooldowns-abilities-pve",
+            "https://www.wowhead.com/classic/guide/classes/warlock/dps-stat-priority-attributes-pve",
+            "https://www.wowhead.com/wotlk/guide/classes/death-knight/frost/dps-stat-priority-attributes-pve",
+        ):
+            with self.subTest(url=url):
+                self.assertIn(url, urls)
+
+
 if __name__ == "__main__":
     unittest.main()
