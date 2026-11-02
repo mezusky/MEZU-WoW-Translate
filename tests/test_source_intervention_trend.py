@@ -32,6 +32,42 @@ class SourceInterventionTrendTests(unittest.TestCase):
         self.assertIsNone(result["browserTranslationErrorRate"])
         self.assertIsNone(result["novelTranslationIssueRate"])
 
+    def test_directional_trends_do_not_mix_new_target_languages(self):
+        legacy = cycle(["warrior"], families=1)  # Historical EN -> FR
+        regional = {**cycle(["priest"], families=0),
+                    "sourceLanguage": "en-US", "targetLanguage": "fr-FR"}
+        german = {**cycle(["warrior"], families=3),
+                  "sourceLanguage": "en", "targetLanguage": "de"}
+        rows = [legacy, german, regional]
+        french = summarize(rows, window=1)
+        self.assertEqual(french["eligibleCycles"], 2)
+        self.assertEqual(french["excludedCycles"]["otherTranslationDirection"], 1)
+        self.assertEqual(french["recentTermFamilyRateVsEarly"], "lower")
+        self.assertEqual(french["translationDirection"]["targetLanguage"], "fr")
+        german_only = summarize(rows, window=1, source_language="en",
+                                target_language="de")
+        self.assertEqual(german_only["eligibleCycles"], 1)
+        self.assertEqual(german_only["recent"]["newReusableTermFamilies"], 3)
+        self.assertEqual(german_only["excludedCycles"]["otherTranslationDirection"], 2)
+
+    def test_script_directions_are_independent_for_same_base_language(self):
+        simplified_to_traditional = {
+            **cycle(["mage"], families=1),
+            "sourceLanguage": "zh-CN", "targetLanguage": "zh-TW"}
+        traditional_to_simplified = {
+            **cycle(["mage"], families=2),
+            "sourceLanguage": "zh-TW", "targetLanguage": "zh-CN"}
+        rows = [simplified_to_traditional, traditional_to_simplified]
+        result = summarize(rows, window=1, source_language="zh-Hans",
+                           target_language="zh-Hant")
+        self.assertEqual(result["eligibleCycles"], 1)
+        self.assertEqual(result["recent"]["newReusableTermFamilies"], 1)
+        self.assertEqual(result["excludedCycles"]["otherTranslationDirection"], 1)
+        reverse = summarize(rows, window=1, source_language="zh-Hant",
+                            target_language="zh-Hans")
+        self.assertEqual(reverse["eligibleCycles"], 1)
+        self.assertEqual(reverse["recent"]["newReusableTermFamilies"], 2)
+
     def test_missing_metrics_still_reserve_page_identity(self):
         missing = cycle(["warrior"])
         missing.pop("newManualSentenceOverrides")
