@@ -11,7 +11,7 @@ PAGES = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(encod
 # pages even when Wowhead leaves some guide prose untranslated.
 ENGLISH_GUIDE_PATH_RE = (
     r"^/(?:"
-    r"(?:(?:ptr(?:-\d+)?|forever|classic)/)?guide/"
+    r"(?:(?:ptr(?:-\d+)?|forever|classic(?:-ptr)?|cata|wotlk|mop-classic)/)?guide/"
     r"(?:classes/[a-z-]+/[a-z-]+/[a-z0-9-]+|"
     r"(?!classes(?:/|$))[a-z0-9-]+(?:/[a-z0-9-]+)*)"
     # Classic also publishes class-wide guides without a spec segment.
@@ -64,6 +64,13 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
             "/forever/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"))
         self.assertIsNone(re.fullmatch(pattern,
             "/forever/fr/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"))
+        # English source branches are distinct from localized /fr/ paths.
+        self.assertIsNotNone(re.fullmatch(pattern,
+            "/cata/guide/classes/priest/shadow/dps-consumables-raid-buffs-pve"))
+        self.assertIsNotNone(re.fullmatch(pattern,
+            "/classic/guide/season-of-discovery/classes/paladin/healer-consumables-raid-buffs-pve"))
+        self.assertIsNone(re.fullmatch(pattern,
+            "/cata/fr/guide/classes/priest/shadow/dps-consumables-raid-buffs-pve"))
 
         # Classic has class-wide guides (class/section) as well as spec guides.
         self.assertIsNotNone(re.fullmatch(pattern,
