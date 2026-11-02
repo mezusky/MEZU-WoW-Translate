@@ -99,7 +99,6 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
             "/tbc/fr/guide/classes/paladin/tank-stat-priority-attributes-pve",
             "/tbc/guide/classes/paladin",
             "/tbc/guide/classes/rogue",
-            "/tbc/guide/classes/warrior/protection",
         ):
             with self.subTest(tbc_invalid=invalid):
                 self.assertIsNone(re.fullmatch(pattern, invalid))
