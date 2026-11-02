@@ -169,6 +169,18 @@ class SourceInterventionTrendTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 load_cycles(history, audits, corpus)
 
+    def test_repository_heldout_audit_is_counted_without_browser_claims(self):
+        root = Path(__file__).resolve().parents[1]
+        cycles = load_cycles(root / "data/wowhead_audit_trend.json",
+                             root / "audits",
+                             root / "data/wowhead_regression_pages.json")
+        ids = {row.get("cycleId") for row in cycles}
+        self.assertIn("2026-11-02-cross-role-structured-heldouts-wipe-protection", ids)
+        report = summarize(cycles)
+        self.assertGreaterEqual(report["eligibleCycles"], 25)
+        self.assertIsNone(report["browserTranslationErrorRate"])
+        self.assertIsNone(report["novelTranslationIssueRate"])
+
     def test_invalid_configuration(self):
         with self.assertRaises(ValueError):
             summarize([], window=0)
