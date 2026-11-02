@@ -2731,6 +2731,18 @@
     {
       "id": "forever-elemental-shaman-overview-source-anomaly-20261102",
       "url": "https://www.wowhead.com/forever/guide/classes/shaman/elemental/overview-pve-dps"
+    },
+    {
+      "id": "forever-discipline-priest-abilities-cast-pushback-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/priest/discipline/healer-abilities"
+    },
+    {
+      "id": "forever-holy-priest-abilities-pushback-heldout-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/priest/holy/healer-abilities"
+    },
+    {
+      "id": "classic-restoration-shaman-pvp-cast-pushback-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/shaman/healer-pvp-arena"
     }
   ]
 }
