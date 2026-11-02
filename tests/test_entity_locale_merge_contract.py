@@ -132,6 +132,37 @@ class EntityLocaleMergeContractTests(unittest.TestCase):
         self.assertEqual(project_locale_pairs({"spell": merged}, "de-DE", "fr-FR"),
                          {"Alt": "Nouveau"})
 
+    def test_generic_chinese_label_cannot_fill_script_specific_locale(self):
+        # Canonical IDs are reliable, but a bare zh name is not known to be
+        # simplified or traditional. Require a verified name for each script.
+        entities = {"spell": {
+            "1": {"en": "Flame", "zh": "火焰"},
+            "2": {"en": "Shield", "zh-CN": "盾牌", "zh-TW": "盾牌（繁）"},
+        }}
+        self.assertEqual(project_locale_pairs(entities, "en", "zh-CN"),
+                         {"Shield": "盾牌"})
+        self.assertEqual(project_locale_pairs(entities, "en", "zh-TW"),
+                         {"Shield": "盾牌（繁）"})
+        self.assertEqual(project_locale_pairs(entities, "zh-CN", "en"),
+                         {"盾牌": "Shield"})
+        self.assertEqual(project_locale_pairs(entities, "zh-TW", "en"),
+                         {"盾牌（繁）": "Shield"})
+
+    def test_explicit_script_does_not_inherit_ambiguous_generic_name(self):
+        entities = {"spell": {
+            "1": {"en": "Ice", "sr": "Лед"},
+            "2": {"en": "Arcane", "sr-Cyrl": "Аркана",
+                  "sr-Latn": "Arkana"},
+            "3": {"en": "Fire", "fr": "Feu"},
+        }}
+        self.assertEqual(project_locale_pairs(entities, "en", "sr-Cyrl"),
+                         {"Arcane": "Аркана"})
+        self.assertEqual(project_locale_pairs(entities, "en", "sr-Latn"),
+                         {"Arcane": "Arkana"})
+        # Unscripted EN/FR remains backwards compatible.
+        self.assertEqual(project_locale_pairs(entities, "en-US", "fr-FR"),
+                         {"Fire": "Feu"})
+
     def test_generic_locale_keys_and_identical_pair_rejected(self):
         previous = {"1": {"de": "Alt", "fr": "Ancien"}}
         self.assertEqual(merge_verified_locale_refresh(
