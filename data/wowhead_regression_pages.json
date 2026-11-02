@@ -2795,6 +2795,26 @@
     {
       "id": "cata-holy-priest-consumables-pushback-20261102",
       "url": "https://www.wowhead.com/cata/guide/classes/priest/holy/healer-consumables-raid-buffs-pve"
+    },
+    {
+      "id": "classic-shaman-healer-rotation-5sr-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/shaman/healer-rotation-cooldowns-abilities-pve"
+    },
+    {
+      "id": "classic-druid-healer-rotation-5sr-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/druid/healer-rotation-cooldowns-abilities-pve"
+    },
+    {
+      "id": "classic-paladin-healer-rotation-5sr-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/paladin/healer-rotation-cooldowns-abilities-pve"
+    },
+    {
+      "id": "classic-priest-healer-stats-5sr-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/priest/healer-stat-priority-attributes-pve"
+    },
+    {
+      "id": "classic-shaman-healer-stats-5sr-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/shaman/healer-stat-priority-attributes-pve"
     }
   ]
 }
