@@ -77,6 +77,15 @@ class Extractor(HTMLParser):
         self.cell_depths = []
 
     def handle_starttag(self, tag, attrs):
+        # HTMLParser does not implicitly close hidden <p> elements either.
+        # Without this repair an omitted </p> can hide all following guide
+        # prose, even after the next visible heading or paragraph. Do not
+        # escape a hidden ancestor or an inert nested template/script.
+        if (tag in ("p", "h1", "h2", "h3", "h4", "h5", "h6",
+                    "ul", "ol", "table")
+                and self.skipped_tags and self.skipped_tags[0] == "p"
+                and not any(t in SKIP_TAGS for t in self.skipped_tags[1:])):
+            self.skipped_tags.clear()
         # Hidden cells may omit </td>; a sibling cell or new row ends them.
         # A nested table inside the hidden cell is not an outer sibling.
         if (tag in ("td", "th", "tr") and self.skipped_tags
