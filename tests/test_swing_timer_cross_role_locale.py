@@ -45,6 +45,7 @@ class SwingTimerCrossRoleTests(unittest.TestCase):
             "forever/guide/classes/warrior/arms/rotation-cooldowns-pve-dps",
             "classic/guide/classes/hunter/dps-rotation-cooldowns-abilities-pve",
             "classic/guide/classes/hunter/dps-addons",
+            "wotlk/guide/classes/shaman/enhancement/dps-rotation-cooldowns-abilities-pve",
         ):
             self.assertIn("https://www.wowhead.com/" + suffix, urls)
 
