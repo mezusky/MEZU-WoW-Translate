@@ -1,0 +1,94 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "Live English Wowhead source read via assistant web, never GitHub-hosted runner; Chrome Translator API and rendered DOM not reproduced.",
+  "pages": [
+    {
+      "pageId": "classic-feral-tank-overview-crushing-blows-20261102",
+      "section": "overview",
+      "role": "tank",
+      "source": "https://www.wowhead.com/classic/guide/classes/druid/feral/tank-overview-pve",
+      "observation": "Threat Per Second (TPS), damage taken per second (DTPS), EHP in distinct paragraphs."
+    },
+    {
+      "pageId": "tbc-feral-druid-stats-effective-health-20261102",
+      "section": "stats",
+      "role": "tank",
+      "source": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-stat-priority-attributes-pve",
+      "observation": "effective health pool (EHP), damage taken per second (DTPS), Threat per second (TPS) in metrics explanation and stat tables."
+    },
+    {
+      "pageId": "tbc-feral-druid-overview-tank-metrics-20261102",
+      "section": "overview",
+      "role": "tank",
+      "source": "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-overview-pve",
+      "observation": "threat per second (TPS) and damage taken per second (DTPS) alongside linked spells; independent TBC confirmation."
+    },
+    {
+      "pageId": "tbc-prot-warrior-stats-parry-haste-20261102",
+      "section": "stats",
+      "role": "tank",
+      "source": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-stat-priority-attributes-pve",
+      "observation": "Independent warrior control with EHP, threat, avoidance and tables; does not require generic threat rewrite."
+    },
+    {
+      "pageId": "tbc-paladin-tank-overview-tank-metrics-control-20261102",
+      "section": "overview",
+      "role": "tank",
+      "source": "https://www.wowhead.com/tbc/guide/classes/paladin/tank-overview-pve",
+      "observation": "Independent paladin control; generic threat generation and linked spell names must remain unchanged."
+    },
+    {
+      "pageId": "classic-warrior-tank-overview-tank-metrics-control-20261102",
+      "section": "overview",
+      "role": "tank",
+      "source": "https://www.wowhead.com/classic/guide/classes/warrior/tank-overview-pve",
+      "observation": "Independent warrior control; generic threat, damage taken, DPS and linked spells must remain unchanged."
+    }
+  ],
+  "crossPageFixes": [
+    {
+      "layer": "data/mezu_player_glossary.json",
+      "kind": "reusable-fr-terminology",
+      "newAliases": [
+        "threat per second",
+        "Threat Per Second",
+        "damage taken per second",
+        "Damage Taken Per Second"
+      ],
+      "reason": "Translate two shared tank metrics as complete phrases while leaving TPS/DTPS abbreviations and generic threat/damage terms intact.",
+      "manualSentenceOverridesAdded": 0,
+      "extensionChanged": false
+    },
+    {
+      "layer": "tests/test_mezu_player_glossary.py",
+      "kind": "regression",
+      "reason": "Verify locale-scoped mappings, no legacy duplicates, negative controls and cross-page corpus coverage."
+    },
+    {
+      "layer": "data/wowhead_regression_pages.json",
+      "kind": "corpus",
+      "newPagesAdded": 3
+    }
+  ],
+  "sourceInterventionSample": {
+    "sampledPages": 6,
+    "newPagesAddedToCorpus": 3,
+    "corpusSizeAfter": 731,
+    "playerJargonEntriesAfter": 409,
+    "newReusablePhraseFamiliesObserved": 2,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0,
+    "browserTranslationErrorRate": null,
+    "novelTranslationIssueRate": null,
+    "confirmedQualityCycles": 0
+  },
+  "remainingBrowserOnly": [
+    "Actual Translator API output and source/target language auto-detection",
+    "Longest-match priority when 'damage taken' is a shorter legacy override",
+    "Linked entity ID translation and DOM reconstruction in Chrome (tables, formulas, navigation, rich text)"
+  ],
+  "auditBoundary": "Source-only audit and repository tests do not establish a clean browser translation cycle; 0/2 confirmed."
+}
