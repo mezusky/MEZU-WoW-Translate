@@ -2743,6 +2743,30 @@
     {
       "id": "classic-restoration-shaman-pvp-cast-pushback-20261102",
       "url": "https://www.wowhead.com/classic/guide/classes/shaman/healer-pvp-arena"
+    },
+    {
+      "id": "classic-priest-healer-rotation-url-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/priest/healer-rotation-cooldowns-abilities-pve"
+    },
+    {
+      "id": "classic-warrior-tank-pvp-url-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/warrior/tank-pvp-arena"
+    },
+    {
+      "id": "forever-arcane-mage-abilities-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/mage/arcane/dps-abilities"
+    },
+    {
+      "id": "forever-survival-hunter-abilities-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/hunter/survival/dps-abilities"
+    },
+    {
+      "id": "forever-balance-druid-abilities-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/druid/balance/dps-abilities"
+    },
+    {
+      "id": "forever-holy-paladin-abilities-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/paladin/holy/healer-abilities"
     }
   ]
 }
