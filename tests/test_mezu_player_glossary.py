@@ -323,5 +323,28 @@ class PlayerGlossaryTests(unittest.TestCase):
         self.assertEqual(manual["jargon"]["uptime"], "uptime")
 
 
+    def test_five_second_mana_rule_is_cross_class_and_locale_scoped(self):
+        # Classic Paladin rotation, Shaman stats, Priest overview/stats and
+        # Druid stats all name the same mana-regeneration mechanic.
+        jargon = GLOSSARY["jargon"]
+        for source in ("5-second rule", "five-second rule"):
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], "règle des 5 secondes")
+        for source in ("5-Second Rule", "5 Second Rule",
+                       "Five-Second Rule", "Five Second Rule"):
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], "Règle des 5 secondes")
+        # 5SR is player shorthand; avoid expanding unrelated bare "rule"
+        # or the number five. Official spell links remain ID-based.
+        for broad in ("rule", "5 seconds", "five seconds", "5SR"):
+            self.assertNotIn(broad, jargon)
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(
+            encoding="utf-8"))
+        for source in ("5-second rule", "five-second rule", "5-Second Rule",
+                       "5 Second Rule", "Five-Second Rule", "Five Second Rule"):
+            self.assertNotIn(source, manual.get("jargon", {}))
+            self.assertNotIn(source, manual.get("exact", {}))
+
+
 if __name__ == "__main__":
     unittest.main()
