@@ -1,0 +1,61 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "Assistant web.open exposed readable live English guide text on WoW Forever. Retail pages still required JavaScript verification. This is not a raw DOM or Chrome Translator API capture.",
+  "pages": [
+    {
+      "pageId": "forever-restoration-druid-abilities-pushback-20261102",
+      "role": "healer",
+      "section": "abilities",
+      "observation": "Spell pushback while channeling occurs in the Tranquility and Hurricane descriptions; no unsafe global 'pushback' override added."
+    },
+    {
+      "pageId": "forever-feral-druid-abilities-resource-20261102",
+      "role": "dps",
+      "section": "abilities",
+      "observation": "Combo-point builders/spenders and spell pushback appear; the existing builder/spender glossary is applicable, but browser output remains unverified."
+    },
+    {
+      "pageId": "forever-elemental-shaman-overview-source-anomaly-20261102",
+      "role": "dps",
+      "section": "overview",
+      "observation": "Pushback while casting is a distinct spellcasting mechanic; the Elemental Mastery text repeats Lightning Bolt in the source, which is not a translation defect and must not be silently corrected."
+    }
+  ],
+  "crossPageFix": {
+    "concept": "off-GCD",
+    "sourcePages": [
+      "forever-retribution-paladin-abilities-cross-role-20261102",
+      "forever-protection-warrior-rotation-heldout"
+    ],
+    "glossaryAdditions": {
+      "off-the-GCD": "hors GCD",
+      "Not on GCD": "hors GCD"
+    },
+    "existingEquivalent": {
+      "off the GCD": "hors GCD"
+    },
+    "scope": "EN->FR player glossary; not global cooldown replacement",
+    "manualSentenceOverrides": 0
+  },
+  "unresolvedPattern": "Spell pushback appears on unrelated Druid and Shaman pages. Its exact French phrasing requires official/community validation; avoid global 'pushback' rules because knockback and casting delay differ.",
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-off-gcd-cross-class-and-forever-heldouts",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "forever-restoration-druid-abilities-pushback-20261102",
+      "forever-feral-druid-abilities-resource-20261102",
+      "forever-elemental-shaman-overview-source-anomaly-20261102"
+    ],
+    "sampledPageCount": 3,
+    "newReusableTermFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "auditBoundary": "English source text, existing player glossary and manual-overrides layers were inspected. Full published Data Pack, official Blizzard entity projection, Translator API behavior and DOM reconstruction were not replayed; no actual French-output pass or quality score claimed.",
+  "extensionChanged": false,
+  "newSentenceOverrides": 0
+}
