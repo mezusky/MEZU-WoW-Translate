@@ -11,11 +11,11 @@ PAGES = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(encod
 # pages even when Wowhead leaves some guide prose untranslated.
 ENGLISH_GUIDE_PATH_RE = (
     r"^/(?:"
-    r"(?:(?:ptr(?:-\d+)?|forever|classic(?:-ptr)?|cata|wotlk|mop-classic)/)?guide/"
+    r"(?:(?:ptr(?:-\d+)?|forever|classic(?:-ptr)?|cata|wotlk|mop-classic|tbc)/)?guide/"
     r"(?:classes/[a-z-]+/[a-z-]+/[a-z0-9-]+|"
     r"(?!classes(?:/|$))[a-z0-9-]+(?:/[a-z0-9-]+)*)"
-    # Classic also publishes class-wide guides without a spec segment.
-    r"|classic/guide/classes/[a-z-]+/[a-z0-9-]+"
+    # Classic and TBC also publish class-wide guides without a spec segment.
+    r"|(?:classic|tbc)/guide/classes/[a-z-]+/[a-z0-9-]+"
     r")$"
 )
 
@@ -86,6 +86,24 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
             with self.subTest(invalid=invalid):
                 self.assertIsNone(re.fullmatch(pattern, invalid))
 
+        # TBC publishes both spec-specific and class-wide English guides.
+        # Keep these as valid corpus evidence without accepting localized URLs.
+        for valid in (
+            "/tbc/guide/classes/warrior/protection/tank-stat-priority-attributes-pve",
+            "/tbc/guide/classes/paladin/tank-stat-priority-attributes-pve",
+            "/tbc/guide/classes/rogue/dps-stat-priority-attributes-pve",
+        ):
+            with self.subTest(tbc_valid=valid):
+                self.assertIsNotNone(re.fullmatch(pattern, valid))
+        for invalid in (
+            "/tbc/fr/guide/classes/paladin/tank-stat-priority-attributes-pve",
+            "/tbc/guide/classes/paladin",
+            "/tbc/guide/classes/rogue",
+            "/tbc/guide/classes/warrior/protection",
+        ):
+            with self.subTest(tbc_invalid=invalid):
+                self.assertIsNone(re.fullmatch(pattern, invalid))
+
         self.assertIsNone(re.fullmatch(pattern, "/guide/classes/invalid"))
 
     def test_class_wide_classic_pages_are_not_counted_as_specializations(self):
@@ -98,6 +116,12 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         self.assertEqual(class_guide_parts(
             "https://www.wowhead.com/classic/guide/season-of-discovery/classes/paladin/healer-consumables-raid-buffs-pve"),
             ["paladin", None, "healer-consumables-raid-buffs-pve"])
+        self.assertEqual(class_guide_parts(
+            "https://www.wowhead.com/tbc/guide/classes/paladin/tank-stat-priority-attributes-pve"),
+            ["paladin", None, "tank-stat-priority-attributes-pve"])
+        self.assertEqual(class_guide_parts(
+            "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-stat-priority-attributes-pve"),
+            ["warrior", "protection", "tank-stat-priority-attributes-pve"])
 
     def test_general_guides_do_not_pollute_class_coverage(self):
         general = {p["id"]: p["url"] for p in PAGES if class_guide_parts(p["url"]) is None}
