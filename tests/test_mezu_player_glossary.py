@@ -424,6 +424,7 @@ class PlayerGlossaryTests(unittest.TestCase):
         expected = {
             "spell hit cap": "cap de toucher des sorts",
             "Spell Hit Cap": "Cap de toucher des sorts",
+            "Spell Hit cap": "Cap de toucher des sorts",
             "spell hit rating": "score de toucher des sorts",
             "Spell Hit Rating": "Score de toucher des sorts",
         }
