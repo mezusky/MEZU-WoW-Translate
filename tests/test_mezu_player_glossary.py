@@ -57,6 +57,38 @@ class PlayerGlossaryTests(unittest.TestCase):
         self.assertEqual(jargon["breakpoints"], "seuils")
 
 
+    def test_effective_health_metrics_are_whole_phrases_across_tanks(self):
+        # TBC Paladin/Warrior use "Effective Health Points"; TBC and
+        # Classic Feral Druids also use "effective health pool".
+        # Longer phrases must take precedence over "effective health" so
+        # the result cannot become "points de vie effectifs points/pool".
+        jargon = GLOSSARY["jargon"]
+        expected = {
+            "effective health": "points de vie effectifs",
+            "Effective Health": "Points de vie effectifs",
+            "effective health points": "points de vie effectifs",
+            "Effective Health Points": "Points de vie effectifs",
+            "effective health pool": "réserve de points de vie effectifs",
+            "Effective Health Pool": "Réserve de points de vie effectifs",
+        }
+        for source, target in expected.items():
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], target)
+        for ambiguous in ("health", "points", "pool", "effective"):
+            self.assertNotIn(ambiguous, jargon)
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(encoding="utf-8"))
+        for source in expected:
+            self.assertNotIn(source, manual.get("jargon", {}))
+            self.assertNotIn(source, manual.get("exact", {}))
+        pages = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(encoding="utf-8"))["pages"]
+        ids = {page["id"] for page in pages}
+        self.assertTrue({
+            "tbc-prot-paladin-stats-parry-haste-20261102",
+            "tbc-prot-warrior-stats-parry-haste-20261102",
+            "tbc-feral-druid-stats-effective-health-20261102",
+            "classic-feral-tank-overview-crushing-blows-20261102",
+        }.issubset(ids))
+
     def test_crafting_terms_shared_across_unrelated_specs(self):
         # Rogue gearing guides use sequence wording; Blizzard's profession
         # Crafting Orders system has a distinct official French name.
