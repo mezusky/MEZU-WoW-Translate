@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "Assistant web.open returned readable English guide content; browser Translator API and MEZU DOM output were not captured. No GitHub Actions Wowhead fetch.",
+  "pages": [
+    {
+      "pageId": "classic-shaman-healer-rotation-5sr-20261102",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Uses '5-second rule' and separately describes Down-rank/down-ranking and Totem Twisting; unrelated spell links remain entity references."
+    },
+    {
+      "pageId": "classic-druid-healer-rotation-5sr-20261102",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Down-Ranking headings and healing-rank prose; does not itself prove the five-second-rule alias; negative control for overbroad 'rule' mapping."
+    },
+    {
+      "pageId": "classic-paladin-healer-rotation-5sr-20261102",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "Uses '5-Second Rule' heading and '5-second rule' in prose; source uses a fixed mana-regeneration mechanic."
+    },
+    {
+      "pageId": "classic-priest-healer-stats-5sr-20261102",
+      "role": "healer",
+      "section": "stats",
+      "evidence": "Uses lowercase 'five-second rule' in MP5/Spirit comparison; numerical mana-per-tick formulas must remain unchanged."
+    },
+    {
+      "pageId": "classic-shaman-healer-stats-5sr-20261102",
+      "role": "healer",
+      "section": "stats",
+      "evidence": "Uses '5 Second Rule' and '5-second rule'; linked Healing Wave and formula table should remain intact."
+    }
+  ],
+  "crossPageFix": {
+    "concept": "Classic mana regeneration five-second rule (5SR)",
+    "glossaryAddition": {
+      "5-second rule": "règle des 5 secondes",
+      "5-Second Rule": "Règle des 5 secondes",
+      "5 Second Rule": "Règle des 5 secondes",
+      "five-second rule": "règle des 5 secondes",
+      "Five-Second Rule": "Règle des 5 secondes",
+      "Five Second Rule": "Règle des 5 secondes"
+    },
+    "rationale": "One locale-specific concept across independent Shaman, Paladin and Priest guides, rather than guide-specific sentences. No bare 'rule' or numeric '5 seconds' override; no new extension code or generated Data Pack blob.",
+    "manualSentenceOverrides": 0,
+    "extensionChanged": false,
+    "verification": "Glossary contract tests added. Exact aliases and absence of legacy manual duplicates checked in source. Browser matching precedence, runtime French output, and rich-text reconstruction remain unverified."
+  },
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-five-second-rule-classic-cross-class-source-only",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "classic-shaman-healer-rotation-5sr-20261102",
+      "classic-druid-healer-rotation-5sr-20261102",
+      "classic-paladin-healer-rotation-5sr-20261102",
+      "classic-priest-healer-stats-5sr-20261102",
+      "classic-shaman-healer-stats-5sr-20261102"
+    ],
+    "sampledPageCount": 5,
+    "newReusableTermFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "auditBoundary": "This is source-only evidence, not a complete Data Pack/Blizzard phrase memory/community glossary or Chrome Translator API replay. Down-ranking gerunds are context-dependent and intentionally not added as a blanket alias. Retail DOM and strict multi-page quality are not validated."
+}
