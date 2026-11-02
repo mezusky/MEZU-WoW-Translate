@@ -59,6 +59,19 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         self.assertIsNone(re.fullmatch(pattern,
             "/forever/fr/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"))
 
+        # Classic has class-wide guides (class/section) as well as spec guides.
+        self.assertIsNotNone(re.fullmatch(pattern,
+            "/classic/guide/classes/shaman/healer-pvp-arena"))
+        self.assertIsNotNone(re.fullmatch(pattern,
+            "/classic/guide/classes/shaman/restoration/rotation-cooldowns-pve-healer"))
+        for invalid in (
+            "/classic/fr/guide/classes/shaman/healer-pvp-arena",
+            "/classic/guide/classes/invalid",
+            "/classic/guide/classes/shaman",
+        ):
+            with self.subTest(invalid=invalid):
+                self.assertIsNone(re.fullmatch(pattern, invalid))
+
         self.assertIsNone(re.fullmatch(pattern, "/guide/classes/invalid"))
 
     def test_general_guides_do_not_pollute_class_coverage(self):
