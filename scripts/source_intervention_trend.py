@@ -11,6 +11,26 @@ import sys
 from datetime import date
 from pathlib import Path
 
+if __package__:
+    from .locale_glossary import normalize_locale, writing_script
+else:
+    from locale_glossary import normalize_locale, writing_script
+
+
+def _direction_key(source_language, target_language):
+    """Group source-only trends by language and explicit writing system.
+
+    Regional variants share a broad directional trend, not locale-specific
+    translation-quality evidence. A different script is a different direction.
+    """
+    def language_key(locale):
+        normalized = normalize_locale(locale)
+        base = normalized.split("-", 1)[0]
+        script = writing_script(normalized)
+        return f"{base}-{script}" if script else base
+
+    return language_key(source_language), language_key(target_language)
+
 
 def _nonnegative_int(value):
     return type(value) is int and value >= 0
@@ -30,13 +50,27 @@ def _aggregate(rows):
     }
 
 
-def summarize(cycles, window=10):
+def summarize(cycles, window=10, source_language="en", target_language="fr"):
     if not isinstance(cycles, list) or type(window) is not int or window < 1:
         raise ValueError("Expected a cycle list and a positive window size")
+    requested_direction = _direction_key(source_language, target_language)
     seen = set()
     eligible = []
-    excluded = {"invalidSample": 0, "missingMetrics": 0, "repeatedPages": 0}
+    excluded = {"invalidSample": 0, "missingMetrics": 0, "repeatedPages": 0,
+                "otherTranslationDirection": 0}
     for cycle in cycles:
+        if not isinstance(cycle, dict):
+            excluded["invalidSample"] += 1
+            continue
+        try:
+            direction = _direction_key(cycle.get("sourceLanguage", "en"),
+                                       cycle.get("targetLanguage", "fr"))
+        except ValueError:
+            excluded["invalidSample"] += 1
+            continue
+        if direction != requested_direction:
+            excluded["otherTranslationDirection"] += 1
+            continue
         ids = cycle.get("sampledPageIds")
         count = cycle.get("sampledPageCount")
         if (not isinstance(ids, list) or not _nonnegative_int(count)
@@ -68,6 +102,11 @@ def summarize(cycles, window=10):
         trend = "lower" if b < a else "higher" if b > a else "unchanged"
     return {
         "measurementType": "source-only editorial intervention proxy",
+        "translationDirection": {
+            "sourceLanguage": requested_direction[0],
+            "targetLanguage": requested_direction[1],
+            "scope": "base language and explicit script; regional variants aggregated",
+        },
         "browserTranslationErrorRate": None,
         "novelTranslationIssueRate": None,
         "eligibleCycles": len(eligible),
@@ -76,8 +115,10 @@ def summarize(cycles, window=10):
         "early": early,
         "recent": recent,
         "recentTermFamilyRateVsEarly": trend,
-        "caveat": ("Sample selection and author reporting vary; this proxy cannot "
-                   "verify translated output, DOM behavior, or stop criteria."),
+        "caveat": ("Sample selection and author reporting vary; legacy cycles without "
+                   "locale metadata are treated as en->fr. Regional variants are "
+                   "aggregated, not separately validated. This proxy cannot verify "
+                   "translated output, DOM behavior, or stop criteria."),
     }
 
 
