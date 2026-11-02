@@ -2939,6 +2939,14 @@
     {
       "id": "tbc-balance-druid-stats-spell-hit-control-20261102",
       "url": "https://www.wowhead.com/tbc/guide/classes/druid/balance/dps-stat-priority-attributes-pve"
+    },
+    {
+      "id": "tbc-shadow-priest-stats-spell-hit-control-20261102",
+      "url": "https://www.wowhead.com/tbc/guide/classes/priest/shadow/dps-stat-priority-attributes-pve"
+    },
+    {
+      "id": "wotlk-arcane-mage-stats-hit-cap-control-20261102",
+      "url": "https://www.wowhead.com/wotlk/guide/classes/mage/arcane/dps-stat-priority-attributes-pve"
     }
   ]
 }
