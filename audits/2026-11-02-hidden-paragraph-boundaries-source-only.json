@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "Live Wowhead URLs attempted with normal web access; direct HTML returned JavaScript challenge. Indexed English prose inspected, while HTML repair is validated only against synthetic malformed markup.",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourcePages": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/priest/discipline/rotation-cooldowns-pve-healer",
+      "role": "healer",
+      "section": "rotation",
+      "evidence": "English rotation instructions and priority list indexed; actual hidden paragraph markup not verified"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank",
+      "role": "tank",
+      "section": "rotation",
+      "evidence": "English rotation prose indexed; actual hidden paragraph markup not verified"
+    },
+    {
+      "url": "https://www.wowhead.com/guide/classes/druid/guardian/overview-pve-tank",
+      "role": "tank",
+      "section": "overview",
+      "evidence": "English overview prose indexed; actual hidden paragraph markup not verified"
+    }
+  ],
+  "finding": "Offline HTMLParser audit extractor swallowed visible content following a hidden paragraph with omitted closing tag, despite HTML implicit paragraph closure.",
+  "fixLayer": "source-only HTML audit extractor, not extension browser DOM engine",
+  "tests": "Five new regression tests with tank/healer/DPS prose, heading recovery, nested hidden containers, and inert templates; 833-test suite passes at source commit 181c8b2.",
+  "sourceCodeCommit": "181c8b2397457fc560309def1b27bb079f2e2426",
+  "manualSentenceOverridesAdded": 0,
+  "corpusPagesAdded": 0,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "Confirm final GitHub Actions Data Pack validation after source commit",
+    "Inspect actual Chrome-rendered translated DOM across unrelated roles",
+    "Measure new translation issue families on heldout guides; synthetic HTML tests alone do not establish quality stabilization"
+  ]
+}
