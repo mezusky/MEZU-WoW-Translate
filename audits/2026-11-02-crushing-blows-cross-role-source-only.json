@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "English Wowhead guides inspected via assistant web access; no GitHub-hosted Wowhead fetches. No Chrome Translator API or translated DOM replay.",
+  "pages": [
+    {
+      "pageId": "classic-warrior-tank-rotation-autoattack-20261102",
+      "role": "tank",
+      "section": "rotation",
+      "evidence": "Defensive abilities: Shield Block prevents crushing blows while active.",
+      "source": "https://www.wowhead.com/classic/guide/classes/warrior/tank-rotation-cooldowns-abilities-pve"
+    },
+    {
+      "pageId": "classic-general-stats-crushing-blows-20261102",
+      "role": "all",
+      "section": "stats",
+      "evidence": "Crushing Blows section contrasts the mechanic with avoidance, block, dodge and parry; formula and numerical claims belong to the source, not translation overrides.",
+      "source": "https://www.wowhead.com/classic/guide/classic-wow-stats-and-attributes-overview"
+    },
+    {
+      "pageId": "classic-feral-tank-overview-crushing-blows-20261102",
+      "role": "tank",
+      "section": "overview",
+      "evidence": "Feral tank overview explicitly describes susceptibility to crushing blows due to limited avoidance.",
+      "source": "https://www.wowhead.com/classic/guide/classes/druid/feral/tank-overview-pve"
+    },
+    {
+      "pageId": "sod-feral-tank-overview-dom-control-20261102",
+      "role": "tank",
+      "section": "overview",
+      "evidence": "Strengths/Weaknesses content is partially absent from assistant web text extraction, although other sections load; preserve as a DOM/browser-only holdout rather than treating missing text as a translation defect.",
+      "source": "https://www.wowhead.com/classic/guide/season-of-discovery/classes/druid/tank-overview"
+    }
+  ],
+  "crossPageFix": {
+    "concept": "Classic tank crushing blows are high-damage melee attack-table outcomes; distinct from glancing blows on outgoing auto-attacks and generic 'crushing' prose.",
+    "dataLayer": "data/mezu_player_glossary.json",
+    "newAliases": [
+      "crushing blow",
+      "crushing blows",
+      "Crushing Blow",
+      "Crushing Blows"
+    ],
+    "expectedFrench": [
+      "coup écrasant",
+      "coups écrasants"
+    ],
+    "exampleExpectedFrench": "Maîtrise du blocage rend temporairement insensible aux coups écrasants.",
+    "exampleBoundary": "Shield Block is an official linked spell name; use canonical spell ID to resolve it, not the player glossary.",
+    "manualSentenceOverridesAdded": 0,
+    "extensionChanged": false,
+    "verification": "Direct English source, locale glossary tests and corpus checks only; browser translation/DOM not certified."
+  },
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-crushing-blows-cross-role-source-only",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "classic-warrior-tank-rotation-autoattack-20261102",
+      "classic-general-stats-crushing-blows-20261102",
+      "classic-feral-tank-overview-crushing-blows-20261102",
+      "sod-feral-tank-overview-dom-control-20261102"
+    ],
+    "sampledPageCount": 4,
+    "newReusableTermFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "sourceRisks": [
+    "The Classic general stats page includes historically disputed defense/rating claims; do not rewrite source numerical mechanics as a translation correction.",
+    "SoD overview has interactive/list content omitted by the text extractor, so only browser DOM can verify that section.",
+    "Crushing Blows may also be a named talent/trait on other game versions: canonical IDs must take precedence for official entity names; this glossary only addresses prose.",
+    "English source terminology and data-only tests do not establish actual Chrome Translator API behavior."
+  ],
+  "auditBoundary": "Source-only intervention, not a clean browser quality cycle; 0/2 confirmed.",
+  "sources": [
+    "https://www.wowhead.com/classic/guide/classes/warrior/tank-rotation-cooldowns-abilities-pve",
+    "https://www.wowhead.com/classic/guide/classic-wow-stats-and-attributes-overview",
+    "https://www.wowhead.com/classic/guide/classes/druid/feral/tank-overview-pve",
+    "https://www.wowhead.com/classic/guide/season-of-discovery/classes/druid/tank-overview"
+  ]
+}
