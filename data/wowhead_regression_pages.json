@@ -2875,6 +2875,18 @@
     {
       "id": "classic-feral-druid-stats-glancing-control-20261102",
       "url": "https://www.wowhead.com/classic/guide/classes/druid/feral/dps-stat-priority-attributes-pve"
+    },
+    {
+      "id": "classic-general-stats-crushing-blows-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classic-wow-stats-and-attributes-overview"
+    },
+    {
+      "id": "classic-feral-tank-overview-crushing-blows-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/druid/feral/tank-overview-pve"
+    },
+    {
+      "id": "sod-feral-tank-overview-dom-control-20261102",
+      "url": "https://www.wowhead.com/classic/guide/season-of-discovery/classes/druid/tank-overview"
     }
   ]
 }
