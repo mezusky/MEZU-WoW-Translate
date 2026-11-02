@@ -1,0 +1,66 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "Assistant web.open exposed readable English text for three Wowhead guides. Not a raw DOM, installed extension or Chrome Translator API capture.",
+  "pages": [
+    {
+      "pageId": "forever-discipline-priest-abilities-cast-pushback-20261102",
+      "role": "healer",
+      "section": "abilities",
+      "observation": "Power Word: Shield prevents cast time pushback. The phrase describes damage-induced delay of a cast, not a spell interrupt or knockback."
+    },
+    {
+      "pageId": "forever-holy-priest-abilities-pushback-heldout-20261102",
+      "role": "healer",
+      "section": "abilities",
+      "observation": "Power Word: Shield prevents bare pushback. This heldout is deliberately excluded from the narrower cast time pushback rule."
+    },
+    {
+      "pageId": "classic-restoration-shaman-pvp-cast-pushback-20261102",
+      "role": "healer",
+      "section": "pvp",
+      "observation": "Cast time pushback appears with Searing/Magma Totem offensive pressure and Chain Heal/Healing Wave vulnerability; separate from interrupts."
+    }
+  ],
+  "crossPageFix": {
+    "concept": "damage-induced cast time pushback",
+    "sourcePages": [
+      "forever-discipline-priest-abilities-cast-pushback-20261102",
+      "classic-restoration-shaman-pvp-cast-pushback-20261102"
+    ],
+    "glossaryAdditions": {
+      "cast time pushback": "retard d’incantation causé par les dégâts"
+    },
+    "scope": "EN->FR player glossary; generic pushback, channeling, knockback and interrupt remain unmodified",
+    "manualSentenceOverrides": 0
+  },
+  "officialEvidence": [
+    {
+      "url": "https://www.wowhead.com/forever/fr/spell=29063",
+      "note": "Official localized Focused Casting tooltip says incantations are not delayed when damage is taken."
+    },
+    {
+      "url": "https://www.wowhead.com/fr/spell=255670",
+      "note": "Official localized Calme surnaturel tooltip likewise uses 'incantations ne sont pas retardées'."
+    }
+  ],
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-cast-pushback-cross-class-direct-web",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "forever-discipline-priest-abilities-cast-pushback-20261102",
+      "forever-holy-priest-abilities-pushback-heldout-20261102",
+      "classic-restoration-shaman-pvp-cast-pushback-20261102"
+    ],
+    "sampledPageCount": 3,
+    "newReusableTermFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "auditBoundary": "Source-only terminology and locale isolation checked. No full current Data Pack replay, installed Chrome translation, DOM reconstruction or browser-local Translator API verification. A clean French rendering is not claimed.",
+  "extensionChanged": false,
+  "newSentenceOverrides": 0
+}
