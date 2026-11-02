@@ -49,5 +49,22 @@
     "newManualSentenceOverrides": 0,
     "browserRenderedPagesVerified": 0
   },
-  "auditBoundary": "A new alias within an existing pushback family is not counted as a novel family. No full Data Pack/Blizzard phrase memory/community glossary replay or Chrome Translator API verification was performed; this is not a strict cross-page quality pass."
+  "auditBoundary": "A new alias within an existing pushback family is not counted as a novel family. No full Data Pack/Blizzard phrase memory/community glossary replay or Chrome Translator API verification was performed; this is not a strict cross-page quality pass.",
+  "heldoutPages": [
+    {
+      "url": "https://www.wowhead.com/forever/guide/classes/paladin/protection/tank-abilities",
+      "role": "tank",
+      "observation": "Separate damage pushback prose remains covered by the existing phrase; physical knockback and spell interruption must not be conflated."
+    },
+    {
+      "url": "https://www.wowhead.com/forever/guide/classes/priest/discipline/healer-abilities",
+      "role": "healer",
+      "observation": "Cast time pushback is distinct from the raid-buff table heading and already has its own phrase mapping."
+    },
+    {
+      "url": "https://www.wowhead.com/forever/guide/classes/hunter/marksmanship/stat-priority-pve-dps",
+      "role": "dps",
+      "observation": "Numerical Agility contradictions and a 'To be added' placeholder belong to source-author consistency, not a new glossary exception."
+    }
+  ]
 }
