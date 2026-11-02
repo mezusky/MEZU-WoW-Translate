@@ -1,0 +1,70 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "Assistant web.open returned readable English guide text; no installed extension, browser DOM, or Translator API output was captured.",
+  "pages": [
+    {
+      "pageId": "classic-priest-healer-rotation-url-20261102",
+      "role": "healer",
+      "section": "rotation",
+      "observation": "Canonical Classic class-wide guide uses /classic/guide/classes/priest/healer-rotation-cooldowns-abilities-pve; down-ranking and linked rank-specific spell names require ID-aware terminology."
+    },
+    {
+      "pageId": "classic-warrior-tank-pvp-url-20261102",
+      "role": "tank",
+      "section": "pvp",
+      "observation": "Independent Classic class-wide URL; source has an unresolved navigation fragment and a blank patch placeholder; these are source/renderer issues, not French glossary defects."
+    },
+    {
+      "pageId": "forever-arcane-mage-abilities-20261102",
+      "role": "dps",
+      "section": "abilities",
+      "observation": "Linked spells and a plain text City Teleports & Portals row need stable rich-text reconstruction and canonical spell IDs."
+    },
+    {
+      "pageId": "forever-survival-hunter-abilities-20261102",
+      "role": "dps",
+      "section": "abilities",
+      "observation": "Strider Kick is explicitly not an interrupt; avoid overgeneralizing spell effects from the name or source prose."
+    },
+    {
+      "pageId": "forever-balance-druid-abilities-20261102",
+      "role": "dps",
+      "section": "abilities",
+      "observation": "Spell pushback appears while channeling; unlike cast time pushback this can affect channel ticks, so no blanket synonym replacement was added."
+    },
+    {
+      "pageId": "forever-holy-paladin-abilities-20261102",
+      "role": "healer",
+      "section": "abilities",
+      "observation": "English source incorrectly labels healer abilities as DPS; some blessing labels are missing in the extracted source. Do not repair author/source defects through sentence overrides."
+    }
+  ],
+  "crossPageFix": {
+    "kind": "regression corpus URL grammar",
+    "rootCause": "English Classic class-wide /classic/guide/classes/{class}/{section} paths were incorrectly rejected by a Retail-oriented test regex.",
+    "verification": "Existing 686 canonical English URLs plus independent Classic Priest and Warrior class-wide URLs accepted; /classic/fr/guide/... and incomplete class URLs remain rejected.",
+    "manualSentenceOverrides": 0,
+    "extensionChanged": false
+  },
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-classic-url-ci-recovery-and-forever-cross-class",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "classic-priest-healer-rotation-url-20261102",
+      "classic-warrior-tank-pvp-url-20261102",
+      "forever-arcane-mage-abilities-20261102",
+      "forever-survival-hunter-abilities-20261102",
+      "forever-balance-druid-abilities-20261102",
+      "forever-holy-paladin-abilities-20261102"
+    ],
+    "sampledPageCount": 6,
+    "newReusableTermFamiliesObserved": 0,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "auditBoundary": "Source-only evidence and corpus URL validation; no full Data Pack replay, Chrome French output, DOM mutation audit, or browser-local Translator API validation. No quality stabilization claimed."
+}
