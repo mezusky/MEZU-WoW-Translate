@@ -1,7 +1,10 @@
 """Source-only intervention rates must not be mistaken for translation quality."""
 import unittest
+import json
+import tempfile
+from pathlib import Path
 
-from scripts.source_intervention_trend import summarize
+from scripts.source_intervention_trend import summarize, load_cycles
 
 
 def cycle(ids, families=0, overrides=0):
@@ -71,6 +74,100 @@ class SourceInterventionTrendTests(unittest.TestCase):
         self.assertGreater(result["eligibleCycles"], 0)
         self.assertIsNone(result["browserTranslationErrorRate"])
         self.assertIsNone(result["novelTranslationIssueRate"])
+
+    def test_explicit_audit_samples_extend_history_without_large_history_edits(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            audits = root / "audits"
+            audits.mkdir()
+            history = root / "history.json"
+            corpus = root / "corpus.json"
+            history.write_text(json.dumps({"cycles": [
+                {"date": "2026-11-01", **cycle(["prior"], families=1)}
+            ]}), encoding="utf-8")
+            corpus.write_text(json.dumps({"pages": [
+                {"id": key} for key in ("prior", "healer", "tank")
+            ]}), encoding="utf-8")
+            (audits / "legacy.json").write_text(json.dumps({
+                "auditMethod": "indexed-source-only", "date": "2026-11-02"
+            }), encoding="utf-8")
+            report = {"date": "2026-11-02", "auditMethod": "indexed-source-only",
+                      "sourceInterventionSample": {
+                          "cycleId": "heldout-1", "sourceLanguage": "en-US",
+                          "targetLanguage": "fr-FR",
+                          "sampledPageIds": ["healer", "tank"],
+                          "sampledPageCount": 2,
+                          "newReusableTermFamiliesObserved": 0,
+                          "newManualSentenceOverrides": 0,
+                          "browserRenderedPagesVerified": 0}}
+            (audits / "new.json").write_text(json.dumps(report), encoding="utf-8")
+            cycles = load_cycles(history, audits, corpus)
+            self.assertEqual(len(cycles), 2)
+            summary = summarize(cycles, window=1)
+            self.assertEqual(summary["eligibleCycles"], 2)
+            self.assertEqual(summary["recent"]["sampledPages"], 2)
+            self.assertEqual(summary["recent"]["termFamiliesPerPage"], 0.0)
+            self.assertIsNone(summary["browserTranslationErrorRate"])
+
+    def test_explicit_samples_reject_unknown_pages_and_locale_leakage(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            audits = root / "audits"
+            audits.mkdir()
+            history = root / "history.json"
+            corpus = root / "corpus.json"
+            history.write_text('{"cycles":[]}', encoding="utf-8")
+            corpus.write_text('{"pages":[{"id":"tank"}]}', encoding="utf-8")
+            sample = {"cycleId": "a", "sourceLanguage": "en",
+                      "targetLanguage": "fr", "sampledPageIds": ["tank"],
+                      "sampledPageCount": 1,
+                      "newReusableTermFamiliesObserved": 0,
+                      "newManualSentenceOverrides": 0,
+                      "browserRenderedPagesVerified": 0}
+            report = {"date": "2026-11-02", "auditMethod": "indexed-source-only",
+                      "sourceInterventionSample": sample}
+            path = audits / "sample.json"
+            for field, bad in (("sampledPageIds", ["invented"]),
+                               ("sampledPageCount", True),
+                               ("targetLanguage", "en-GB"),
+                               ("sourceLanguage", "malformed_locale"),
+                               ("browserRenderedPagesVerified", True)):
+                with self.subTest(field=field):
+                    original = sample[field]
+                    sample[field] = bad
+                    path.write_text(json.dumps(report), encoding="utf-8")
+                    with self.assertRaises(ValueError):
+                        load_cycles(history, audits, corpus)
+                    sample[field] = original
+
+    def test_backdated_and_duplicate_audit_cycles_are_rejected(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            audits = root / "audits"
+            audits.mkdir()
+            history = root / "history.json"
+            corpus = root / "corpus.json"
+            history.write_text(json.dumps({"cycles": [
+                {"date": "2026-11-01", **cycle(["prior"])}
+            ]}), encoding="utf-8")
+            corpus.write_text('{"pages":[{"id":"tank"},{"id":"prior"}]}', encoding="utf-8")
+            report = {"date": "2026-10-31", "auditMethod": "indexed-source-only",
+                      "sourceInterventionSample": {
+                          "cycleId": "same", "sourceLanguage": "en",
+                          "targetLanguage": "fr", "sampledPageIds": ["tank"],
+                          "sampledPageCount": 1,
+                          "newReusableTermFamiliesObserved": 0,
+                          "newManualSentenceOverrides": 0,
+                          "browserRenderedPagesVerified": 0}}
+            path = audits / "one.json"
+            path.write_text(json.dumps(report), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                load_cycles(history, audits, corpus)
+            report["date"] = "2026-11-02"
+            path.write_text(json.dumps(report), encoding="utf-8")
+            (audits / "two.json").write_text(json.dumps(report), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                load_cycles(history, audits, corpus)
 
     def test_invalid_configuration(self):
         with self.assertRaises(ValueError):
