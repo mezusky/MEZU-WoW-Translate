@@ -79,9 +79,62 @@ def summarize(cycles, window=10):
     }
 
 
-def main(path):
-    data = json.loads(Path(path).read_text(encoding="utf-8"))
-    print(json.dumps(summarize(data["cycles"]), ensure_ascii=False, indent=2))
+def load_cycles(history_path, audits_dir, corpus_path):
+    """Append only explicit, corpus-grounded source-only audit samples.
+
+    Older narrative audits do not provide comparable counts and are ignored.
+    This avoids repeatedly rewriting the large historical trend file just to
+    record one new heldout cycle. No network or browser claims are involved.
+    """
+    if __package__:
+        from .locale_glossary import normalize_locale, same_base_language
+    else:
+        from locale_glossary import normalize_locale, same_base_language
+
+    history = json.loads(Path(history_path).read_text(encoding="utf-8"))
+    cycles = list(history["cycles"])
+    known = {
+        page["id"] for page in
+        json.loads(Path(corpus_path).read_text(encoding="utf-8"))["pages"]
+    }
+    audit_ids = set()
+    for path in sorted(Path(audits_dir).glob("*.json")):
+        audit = json.loads(path.read_text(encoding="utf-8"))
+        if "sourceInterventionSample" not in audit:
+            continue
+        sample = audit["sourceInterventionSample"]
+        if not isinstance(sample, dict) or audit.get("auditMethod") != "indexed-source-only":
+            raise ValueError(f"Invalid source-only intervention sample: {path}")
+        cycle_id = sample.get("cycleId")
+        ids = sample.get("sampledPageIds")
+        source, target = sample.get("sourceLanguage"), sample.get("targetLanguage")
+        if (not isinstance(cycle_id, str) or not cycle_id.strip()
+                or cycle_id in audit_ids or not isinstance(ids, list)
+                or not ids or any(not isinstance(i, str) or i not in known for i in ids)
+                or len(set(ids)) != len(ids)
+                or sample.get("sampledPageCount") != len(ids)
+                or type(sample.get("newReusableTermFamiliesObserved")) is not int
+                or sample["newReusableTermFamiliesObserved"] < 0
+                or type(sample.get("newManualSentenceOverrides")) is not int
+                or sample["newManualSentenceOverrides"] < 0
+                or sample.get("browserRenderedPagesVerified") != 0):
+            raise ValueError(f"Invalid or ungrounded source-only sample: {path}")
+        try:
+            source, target = normalize_locale(source), normalize_locale(target)
+            if same_base_language(source, target):
+                raise ValueError("No translation needed")
+        except ValueError as exc:
+            raise ValueError(f"Invalid translation direction: {path}") from exc
+        audit_ids.add(cycle_id)
+        cycles.append({**sample, "date": audit.get("date"), "cycleId": cycle_id})
+    # Stable ordering preserves the original order of multiple audits on one day.
+    # A new file cannot retroactively change first-seen page attribution.
+    return sorted(cycles, key=lambda row: row.get("date", ""))
+
+
+def main(path, audits_dir="audits", corpus_path="data/wowhead_regression_pages.json"):
+    cycles = load_cycles(path, audits_dir, corpus_path)
+    print(json.dumps(summarize(cycles), ensure_ascii=False, indent=2))
 
 
 if __name__ == "__main__":
