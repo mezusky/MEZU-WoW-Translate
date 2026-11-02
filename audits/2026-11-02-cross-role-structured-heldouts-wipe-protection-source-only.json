@@ -1,0 +1,54 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "indexed-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "directHtmlAccess": "JavaScript verification on canonical Wowhead pages; indexed English source inspected by assistant web, not GitHub Actions",
+  "sampledSections": [
+    "gear",
+    "stats",
+    "raid",
+    "consumables",
+    "mythic-plus",
+    "abilities"
+  ],
+  "sampledRoles": [
+    "tank",
+    "healer",
+    "dps"
+  ],
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-cross-role-structured-heldouts-wipe-protection",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "restoration-shaman-gear",
+      "frost-mage-stats",
+      "brewmaster-monk-raid",
+      "arms-warrior-consumables",
+      "subtlety-rogue-mythic-plus",
+      "preservation-evoker-talents"
+    ],
+    "sampledPageCount": 6,
+    "newReusableTermFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "findings": [
+    "Brewmaster raid source uses wipe protection for encounter-reset utility; independent Classic Paladin guide uses it for preserving a resurrection option after a wipe.",
+    "Reuse one French player-jargon noun phrase, not a generic wipe verb rewrite or an exact sentence override.",
+    "Unrelated healer gear, DPS stats/consumables/Mythic+ and healer talents retain existing known risks: official linked entity IDs, structured tables, numbers, and prose boundaries. Indexed snippets cannot establish browser output correctness."
+  ],
+  "durableChanges": [
+    "Added locale-scoped wipe protection mapping with cross-class tests.",
+    "Source trend now ingests explicit compact heldout samples from audits, validates corpus IDs and language direction, and leaves historical data untouched."
+  ],
+  "novelTranslationIssueRate": null,
+  "browserTranslationErrorRate": null,
+  "browserOnlyVerification": [
+    "Chrome Translator API output",
+    "rich-text/DOM reconstruction",
+    "official entity display names",
+    "independent cross-page strict audit over two cycles"
+  ]
+}
