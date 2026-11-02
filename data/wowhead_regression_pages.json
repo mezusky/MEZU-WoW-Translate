@@ -2707,5 +2707,18 @@
     {
       "id": "forever-arms-warrior-rotation-20261101",
       "url": "https://www.wowhead.com/forever/guide/classes/warrior/arms/rotation-cooldowns-pve-dps"
-    }  ]
+    },
+    {
+      "id": "forever-protection-warrior-abilities-cross-role-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/warrior/protection/tank-abilities"
+    },
+    {
+      "id": "forever-restoration-shaman-abilities-cross-role-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/shaman/restoration/healer-abilities"
+    },
+    {
+      "id": "forever-retribution-paladin-abilities-cross-role-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/paladin/retribution/dps-abilities"
+    }
+  ]
 }
