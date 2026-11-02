@@ -27,10 +27,11 @@
   "crossPageFix": {
     "concept": "Full English raid-buff table label for damage-induced spellcasting pushback protection",
     "glossaryAddition": {
+      "Spell Pushback Protection": "Protection contre le retard d’incantation",
       "spell pushback protection": "protection contre le retard d’incantation"
     },
     "rationale": "The shorter existing 'pushback protection' mapping risks leaving the leading English word 'Spell' when matching a table label. Use a longer locale-scoped phrase, not a generic pushback override or a sentence exception.",
-    "verification": "Exact glossary contract added and tested against two classes, two roles and two game branches. Browser longest-match precedence, actual French rendering and link/DOM reconstruction remain unverified.",
+    "verification": "Two case-specific source aliases for the same existing pushback family are validated by glossary contract tests. Cross-class source evidence spans two classes, two roles and two game branches. Browser matching precedence, French rendering and link/DOM reconstruction remain unverified.",
     "manualSentenceOverrides": 0,
     "extensionChanged": false
   },
