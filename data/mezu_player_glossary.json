@@ -359,7 +359,8 @@
     "aoe stop": "stop AoE",
     "AoE-stop": "stop AoE",
     "ranged kick": "kick à distance",
-    "ranged interrupt": "interruption à distance"
+    "ranged interrupt": "interruption à distance",
+    "wipe protection": "protection en cas de wipe"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
