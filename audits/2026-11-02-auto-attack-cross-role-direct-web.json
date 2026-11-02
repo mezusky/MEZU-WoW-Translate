@@ -1,0 +1,79 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "English guide content was readable through assistant web.open. Retail guide HTML remains JavaScript-gated; no browser-local Translator API, French DOM or packaged extension replay was performed. GitHub Actions must not fetch Wowhead.",
+  "pages": [
+    {
+      "pageId": "forever-arms-warrior-abilities-autoattack-20261102",
+      "role": "dps",
+      "section": "abilities",
+      "evidence": "Heroic Strike and Cleave empower the next auto attack; confirms spaced singular wording and spell links."
+    },
+    {
+      "pageId": "forever-fury-warrior-abilities-autoattack-20261102",
+      "role": "dps",
+      "section": "abilities",
+      "evidence": "Slam resets your auto attack; control for generic attack/swing semantics and class-specific ability names."
+    },
+    {
+      "pageId": "classic-warlock-dps-rotation-autos-20261102",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "DoT, Shadow Bolt, Shadowburn, Hellfire and Soul Shard names remain entity references; control against global attack/swing replacements."
+    },
+    {
+      "pageId": "classic-mage-dps-rotation-autos-20261102",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Frostbolt, Fireball, Mana, cast-time and spell ranks; independent caster control against unrelated generic replacements."
+    },
+    {
+      "pageId": "classic-rogue-dps-rotation-autoattacks-20261102",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Slice and Dice prose contains 'Auto Attacks' and another section 'Auto Attack animation'; confirms capitalized spaced plural/singular."
+    }
+  ],
+  "existingCorpusCrossChecks": [
+    "forever/protection warrior abilities: next auto attack and rage/threat mechanics",
+    "classic/warrior tank rotation: off-GCD Heroic Strike/Cleave replaces next auto attack"
+  ],
+  "crossPageFix": {
+    "concept": "Auto-attack (basic melee swing) vs ability/spell names",
+    "dataLayer": "data/mezu_player_glossary.json",
+    "migratedFrom": "data/manual_overrides.json",
+    "newAliases": [
+      "auto attack",
+      "auto attacks",
+      "Auto Attack",
+      "Auto Attacks"
+    ],
+    "migratedAliases": [
+      "auto-attack",
+      "auto-attacks"
+    ],
+    "manualSentenceOverridesAdded": 0,
+    "extensionChanged": false,
+    "rationale": "Use one EN->FR locale-scoped player terminology layer for the same basic attack concept, instead of duplicated legacy manual overrides; avoid bare attack, swing or next substitutions.",
+    "verification": "Data-layer source contract tests and cross-guide source observations only. Exact priority, real browser segmentation, entity ID linking, translated Chrome output and DOM reconstruction remain browser-only checks."
+  },
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-auto-attack-cross-role-direct-web",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "forever-arms-warrior-abilities-autoattack-20261102",
+      "forever-fury-warrior-abilities-autoattack-20261102",
+      "classic-warlock-dps-rotation-autos-20261102",
+      "classic-mage-dps-rotation-autos-20261102",
+      "classic-rogue-dps-rotation-autoattacks-20261102"
+    ],
+    "sampledPageCount": 5,
+    "newReusableTermFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "auditBoundary": "A source-only editorial intervention proxy is not a measured translation-error rate or a completed quality cycle. Source guide mistakes are not corrected by MEZU; no copyrighted guide pages mirrored."
+}
