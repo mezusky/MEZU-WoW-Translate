@@ -26,7 +26,9 @@ def class_guide_parts(url):
     marker = "/guide/classes/"
     if marker not in path:
         return None
-    return path.split(marker, 1)[1].split("/")
+    parts = path.split(marker, 1)[1].split("/")
+    # Classic also has class-wide guides: class/section, not class/spec.
+    return [parts[0], None, parts[1]] if len(parts) == 2 else parts
 
 
 
@@ -78,6 +80,14 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
 
         self.assertIsNone(re.fullmatch(pattern, "/guide/classes/invalid"))
 
+    def test_class_wide_classic_pages_are_not_counted_as_specializations(self):
+        url = "https://www.wowhead.com/classic/guide/classes/priest/healer-rotation-cooldowns-abilities-pve"
+        self.assertEqual(class_guide_parts(url),
+                         ["priest", None, "healer-rotation-cooldowns-abilities-pve"])
+        self.assertEqual(class_guide_parts(
+            "https://www.wowhead.com/forever/guide/classes/mage/arcane/dps-abilities"),
+            ["mage", "arcane", "dps-abilities"])
+
     def test_general_guides_do_not_pollute_class_coverage(self):
         general = {p["id"]: p["url"] for p in PAGES if class_guide_parts(p["url"]) is None}
         self.assertEqual(general.get("mythic-plus-keystones-overview"),
@@ -109,7 +119,8 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
     def test_all_current_specs_and_new_widget_risks_are_represented(self):
         # Every Midnight specialization should remain represented at least once.
         paths = [parts for p in PAGES if (parts := class_guide_parts(p["url"])) is not None]
-        self.assertGreaterEqual(len({(parts[0], parts[1]) for parts in paths}), 40)
+        self.assertGreaterEqual(len({(parts[0], parts[1]) for parts in paths
+                                     if parts[1] is not None}), 40)
         required = {
             "devourer-demon-hunter-overview",
             "devourer-demon-hunter-abilities",
