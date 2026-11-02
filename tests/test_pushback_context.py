@@ -26,6 +26,7 @@ class PushbackContextTests(unittest.TestCase):
         # Full raid-buff table label must not leave a stray English "Spell".
         # Observed on SoD Paladin Healer and Cata Holy/Shadow Priests.
         self.assertEqual(terms["spell pushback protection"], "protection contre le retard d’incantation")
+        self.assertEqual(terms["Spell Pushback Protection"], "Protection contre le retard d’incantation")
 
     def test_no_ambiguous_generic_pushback_replacement(self):
         terms = select_jargon(self.glossary, "en", "fr")
