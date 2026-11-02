@@ -23,6 +23,9 @@ class PushbackContextTests(unittest.TestCase):
         self.assertEqual(terms["cast time pushback"], "retard d’incantation causé par les dégâts")
         self.assertEqual(terms["damage pushback"], "retard d’incantation dû aux dégâts")
         self.assertEqual(terms["pushback protection"], "protection contre le retard d’incantation")
+        # Full raid-buff table label must not leave a stray English "Spell".
+        # Observed on SoD Paladin Healer and Cata Holy/Shadow Priests.
+        self.assertEqual(terms["spell pushback protection"], "protection contre le retard d’incantation")
 
     def test_no_ambiguous_generic_pushback_replacement(self):
         terms = select_jargon(self.glossary, "en", "fr")
