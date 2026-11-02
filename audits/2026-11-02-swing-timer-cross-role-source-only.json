@@ -22,6 +22,12 @@
       "role": "dps",
       "section": "addons",
       "evidence": "Guide heading links to third-party addon named Weapon Swing Timer; preserve proper name rather than invent a translated addon title."
+    },
+    {
+      "pageId": "wotlk-enhancement-shaman-rotation-swingtimer-20261102",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Guide body describes Lightning Weaving between melee swings without delaying the swing timer; independent Shaman class/expansion cross-check."
     }
   ],
   "crossPageFix": {
@@ -49,9 +55,9 @@
     "sourceLanguage": "en",
     "targetLanguage": "fr",
     "sampledPageIds": [
-      "forever-arms-warrior-rotation-20261101",
       "classic-hunter-dps-rotation-swingtimer-20261102",
-      "classic-hunter-dps-addons-swingtimer-20261102"
+      "classic-hunter-dps-addons-swingtimer-20261102",
+      "wotlk-enhancement-shaman-rotation-swingtimer-20261102"
     ],
     "sampledPageCount": 3,
     "newReusableTermFamiliesObserved": 1,
@@ -61,5 +67,8 @@
   "sourceAnomalies": [
     "Forever Arms rotation guide has blank 'Cast .' list items; source authoring issue, not a translation override."
   ],
-  "auditBoundary": "A source-only terminology intervention is not a measured translation-error rate or a completed clean quality cycle. No full copyrighted guide content copied."
+  "auditBoundary": "A source-only terminology intervention is not a measured translation-error rate or a completed clean quality cycle. No full copyrighted guide content copied.",
+  "existingCorpusCrossChecks": [
+    "forever-arms-warrior-rotation-20261101 (melee swing timer in guide body; existing corpus entry, excluded from fresh-page trend sample)"
+  ]
 }
