@@ -164,7 +164,8 @@ def load_cycles(history_path, audits_dir, corpus_path):
                 raise ValueError("Invalid audit date")
         except ValueError as exc:
             raise ValueError(f"Invalid source audit date: {path}") from exc
-        if not isinstance(sample, dict) or audit.get("auditMethod") != "indexed-source-only":
+        if (not isinstance(sample, dict) or audit.get("auditMethod") not in
+                ("indexed-source-only", "assistant-web-source-only")):
             raise ValueError(f"Invalid source-only intervention sample: {path}")
         cycle_id = sample.get("cycleId")
         ids = sample.get("sampledPageIds")
