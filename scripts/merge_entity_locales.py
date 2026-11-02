@@ -2,9 +2,9 @@
 
 # Both package imports (tests) and direct scripts (Data Pack builder) use this.
 if __package__:
-    from .locale_glossary import same_base_language, requires_script_conversion
+    from .locale_glossary import same_base_language, requires_script_conversion, writing_script
 else:
-    from locale_glossary import same_base_language, requires_script_conversion
+    from locale_glossary import same_base_language, requires_script_conversion, writing_script
 
 
 def _locale_alias(value):
@@ -98,6 +98,12 @@ def _locale_name(row, requested, require_explicit_script=False):
     if require_explicit_script:
         return None
     if "-" in requested:
+        # A generic language label cannot safely stand in for a requested
+        # writing system. In particular, zh alone does not establish whether
+        # zh-CN or zh-TW is the intended official name; the same applies to
+        # explicitly scripted locales such as sr-Cyrl and sr-Latn.
+        if writing_script(requested):
+            return None
         generic = requested.split("-", 1)[0]
         return None if generic in conflicts else names.get(generic)
     return None
