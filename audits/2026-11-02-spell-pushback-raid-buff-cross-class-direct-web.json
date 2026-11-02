@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "Direct assistant web.open yielded readable English source for three new Classic/Season of Discovery/Cataclysm guides. Retail URLs remain JavaScript challenged. Browser Translator API and DOM output not inspected.",
+  "pages": [
+    {
+      "pageId": "classic-sod-paladin-healer-consumables-pushback-20261102",
+      "role": "healer",
+      "section": "consumables",
+      "sourceEvidence": "Spell Pushback Protection is a raid-buff table label preceding linked Concentration Aura. Rich-text spell link must remain a canonical entity."
+    },
+    {
+      "pageId": "cata-shadow-priest-consumables-pushback-20261102",
+      "role": "dps",
+      "section": "consumables",
+      "sourceEvidence": "Identical Spell Pushback Protection table label, with linked Concentration Aura and Totem of Tranquil Mind."
+    },
+    {
+      "pageId": "cata-holy-priest-consumables-pushback-20261102",
+      "role": "healer",
+      "section": "consumables",
+      "sourceEvidence": "Identical table label in a different spec and role; linked spells must not be replaced by plain text."
+    }
+  ],
+  "crossPageFix": {
+    "concept": "Full English raid-buff table label for damage-induced spellcasting pushback protection",
+    "glossaryAddition": {
+      "spell pushback protection": "protection contre le retard d’incantation"
+    },
+    "rationale": "The shorter existing 'pushback protection' mapping risks leaving the leading English word 'Spell' when matching a table label. Use a longer locale-scoped phrase, not a generic pushback override or a sentence exception.",
+    "verification": "Exact glossary contract added and tested against two classes, two roles and two game branches. Browser longest-match precedence, actual French rendering and link/DOM reconstruction remain unverified.",
+    "manualSentenceOverrides": 0,
+    "extensionChanged": false
+  },
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-spell-pushback-raid-buff-cross-class-direct-web",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "classic-sod-paladin-healer-consumables-pushback-20261102",
+      "cata-shadow-priest-consumables-pushback-20261102",
+      "cata-holy-priest-consumables-pushback-20261102"
+    ],
+    "sampledPageCount": 3,
+    "newReusableTermFamiliesObserved": 0,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "auditBoundary": "A new alias within an existing pushback family is not counted as a novel family. No full Data Pack/Blizzard phrase memory/community glossary replay or Chrome Translator API verification was performed; this is not a strict cross-page quality pass."
+}
