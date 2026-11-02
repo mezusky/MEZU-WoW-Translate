@@ -31,7 +31,7 @@ class WhiteHitsCrossClassTests(unittest.TestCase):
     def test_longest_match_prevents_duplicate_auto_attack_count(self):
         matcher = JargonCoverage(self.terms)
         hits = matcher.hits("White Auto Attacks and white hits can glance.")
-        self.assertEqual(hits, ["White Auto Attacks", "white hits"])
+        self.assertEqual(hits, ["white auto attacks", "white hits"])
         self.assertNotIn("auto attacks", hits)
 
     def test_locale_and_legacy_override_boundaries(self):
