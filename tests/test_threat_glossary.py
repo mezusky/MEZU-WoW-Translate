@@ -31,6 +31,35 @@ class ThreatGlossaryTests(unittest.TestCase):
             self.assertIsNone(re.search(r"(?<!\w)" + re.escape(key) + r"(?!\w)",
                                         source, re.IGNORECASE))
 
+    def test_snap_threat_migration_is_cross_guide_and_locale_scoped(self):
+        # Source-only evidence from independent Retail Vengeance DH and
+        # Classic Blood DK/Protection Paladin guides, not browser output.
+        from scripts.locale_glossary import select_jargon
+        glossary = json.loads((ROOT / "data/mezu_player_glossary.json").read_text(
+            encoding="utf-8"))
+        terms = select_jargon(glossary, "en-US", "fr-FR")
+        self.assertEqual(terms["snap aggro"], "aggro instantanée")
+        self.assertEqual(terms["snap threat"], "génération immédiate de menace")
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(
+            encoding="utf-8"))
+        for layer in ("exact", "jargon"):
+            self.assertNotIn("snap aggro", manual.get(layer, {}))
+            self.assertNotIn("snap threat", manual.get(layer, {}))
+        self.assertNotIn("snap", terms)
+        self.assertNotIn("threat", terms)
+        for source, phrase in (
+            ("Powerful opening burst, allowing for snap aggro.", "snap aggro"),
+            ("perfect for establishing snap threat when swapping targets", "snap threat"),
+            ("great snap threat and sustained threat", "snap threat"),
+        ):
+            with self.subTest(source=source):
+                self.assertIsNotNone(re.search(
+                    r"(?<!\\w)" + re.escape(phrase) + r"(?!\\w)",
+                    source, re.IGNORECASE))
+        self.assertEqual(select_jargon(glossary, "fr-FR", "fr-FR"), {})
+        with self.assertRaises(ValueError):
+            select_jargon(glossary, "en", "de")
+
     def test_independent_tank_pages_remain_in_corpus(self):
         pages = {p["id"] for p in json.loads(
             (ROOT / "data/wowhead_regression_pages.json").read_text(
