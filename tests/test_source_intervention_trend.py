@@ -169,6 +169,53 @@ class SourceInterventionTrendTests(unittest.TestCase):
             with self.assertRaises(ValueError):
                 load_cycles(history, audits, corpus)
 
+    def test_archived_audit_cycle_is_not_counted_twice(self):
+        # Moving an audit into historical storage must preserve first-seen
+        # measurements rather than creating a duplicate heldout cycle.
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            audits = root / "audits"
+            audits.mkdir()
+            history = root / "history.json"
+            corpus = root / "corpus.json"
+            sample = {"cycleId": "archived", "sourceLanguage": "en-US",
+                      "targetLanguage": "fr-FR", "sampledPageIds": ["healer"],
+                      "sampledPageCount": 1,
+                      "newReusableTermFamiliesObserved": 1,
+                      "newManualSentenceOverrides": 0,
+                      "browserRenderedPagesVerified": 0}
+            archived = {**sample, "date": "2026-11-02"}
+            history.write_text(json.dumps({"cycles": [archived]}),
+                               encoding="utf-8")
+            corpus.write_text('{"pages":[{"id":"healer"}]}',
+                              encoding="utf-8")
+            report = {"date": "2026-11-02",
+                      "auditMethod": "indexed-source-only",
+                      "sourceInterventionSample": sample}
+            path = audits / "archived.json"
+            path.write_text(json.dumps(report), encoding="utf-8")
+            self.assertEqual(load_cycles(history, audits, corpus), [archived])
+            report["sourceInterventionSample"] = {
+                **sample, "newReusableTermFamiliesObserved": 2}
+            path.write_text(json.dumps(report), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                load_cycles(history, audits, corpus)
+
+    def test_duplicate_historical_cycle_ids_fail_closed(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            audits = root / "audits"
+            audits.mkdir()
+            history = root / "history.json"
+            corpus = root / "corpus.json"
+            corpus.write_text('{"pages":[]}', encoding="utf-8")
+            history.write_text(json.dumps({"cycles": [
+                {"cycleId": "duplicate", **cycle(["a"])},
+                {"cycleId": "duplicate", **cycle(["b"])}
+            ]}), encoding="utf-8")
+            with self.assertRaises(ValueError):
+                load_cycles(history, audits, corpus)
+
     def test_older_audit_survives_later_historical_updates(self):
         with tempfile.TemporaryDirectory() as folder:
             root = Path(folder)
