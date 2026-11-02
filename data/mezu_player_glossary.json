@@ -409,7 +409,11 @@
     "threat per second": "menace générée par seconde",
     "Threat Per Second": "Menace générée par seconde",
     "damage taken per second": "dégâts subis par seconde",
-    "Damage Taken Per Second": "Dégâts subis par seconde"
+    "Damage Taken Per Second": "Dégâts subis par seconde",
+    "spell hit cap": "cap de toucher des sorts",
+    "Spell Hit Cap": "Cap de toucher des sorts",
+    "spell hit rating": "score de toucher des sorts",
+    "Spell Hit Rating": "Score de toucher des sorts"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
