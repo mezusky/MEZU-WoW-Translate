@@ -25,6 +25,18 @@ class ImperativeCooldownJargonTests(unittest.TestCase):
                 self.assertNotIn(phrase, MANUAL.get("exact", {}))
                 self.assertNotIn(phrase, MANUAL.get("jargon", {}))
 
+    def test_abbreviated_on_cd_is_context_dependent_across_roles(self):
+        # Discipline Priest: "Cast Mind Blast on cd" is an instruction,
+        # but "Evang is on cd" describes an unavailable ability.
+        # Guardian/Protection tank timelines also use standalone "On CD".
+        # A bare shorthand rule would reverse the meaning in one context.
+        terms = GLOSSARY["jargon"]
+        for unsafe in ("on cd", "On CD", "on CD"):
+            with self.subTest(unsafe=unsafe):
+                self.assertNotIn(unsafe, terms)
+                self.assertNotIn(unsafe, MANUAL.get("jargon", {}))
+                self.assertNotIn(unsafe, MANUAL.get("exact", {}))
+
     def test_ability_state_must_not_be_rewritten_as_an_instruction(self):
         # "While Shield Slam is on cooldown" means the ability is recharging.
         # Never introduce a bare "on cooldown" rule in the locale glossary.
