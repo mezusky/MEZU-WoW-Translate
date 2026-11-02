@@ -1,0 +1,62 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "indexed-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "directHtmlAccess": "Canonical Wowhead URLs returned JavaScript anti-bot challenge; only indexed English guide excerpts were inspected using assistant web access, never GitHub Actions.",
+  "corpusPagesReviewed": [
+    {
+      "pageId": "vengeance-dh-overview",
+      "section": "overview",
+      "role": "tank"
+    },
+    {
+      "pageId": "protection-warrior-rotation",
+      "section": "rotation",
+      "role": "tank"
+    },
+    {
+      "pageId": "windwalker-monk-gear",
+      "section": "gear",
+      "role": "dps"
+    },
+    {
+      "pageId": "preservation-evoker-consumables",
+      "section": "consumables",
+      "role": "healer"
+    }
+  ],
+  "independentTerminologyEvidence": [
+    {
+      "url": "https://www.wowhead.com/guide/classes/demon-hunter/vengeance/overview-pve-tank",
+      "phrase": "snap aggro",
+      "mode": "Retail"
+    },
+    {
+      "url": "https://www.wowhead.com/wotlk/guide/classes/death-knight/blood/tank-rotation-cooldowns-abilities-pve",
+      "phrase": "snap threat",
+      "mode": "Wrath Classic"
+    },
+    {
+      "url": "https://www.wowhead.com/wotlk/guide/classes/paladin/protection/tank-rotation-cooldowns-abilities-pve",
+      "phrase": "snap threat",
+      "mode": "Wrath Classic"
+    }
+  ],
+  "durableChanges": [
+    "Moved snap aggro from both legacy manual layers to locale-scoped player glossary, preserving its French wording.",
+    "Added snap threat as a distinct phrase meaning immediate threat generation; avoided global mappings for snap or threat.",
+    "Added cross-guide tests for phrase boundaries, wrong-locale isolation and absence of duplicate manual mappings."
+  ],
+  "newReusableTermFamiliesObserved": 1,
+  "newManualSentenceOverrides": 0,
+  "trendNote": "Reviewed corpus pages include previously sampled pages; this is not an eligible first-seen heldout trend cycle.",
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "browserOnlyVerification": [
+    "Chrome Translator API output",
+    "actual Wowhead DOM/rich-text reconstruction",
+    "official entity names and prose rendered in French",
+    "two consecutive strict cross-page cycles"
+  ]
+}
