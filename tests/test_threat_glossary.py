@@ -54,7 +54,7 @@ class ThreatGlossaryTests(unittest.TestCase):
         ):
             with self.subTest(source=source):
                 self.assertIsNotNone(re.search(
-                    r"(?<!\\w)" + re.escape(phrase) + r"(?!\\w)",
+                    r"(?<!\w)" + re.escape(phrase) + r"(?!\w)",
                     source, re.IGNORECASE))
         self.assertEqual(select_jargon(glossary, "fr-FR", "fr-FR"), {})
         with self.assertRaises(ValueError):
