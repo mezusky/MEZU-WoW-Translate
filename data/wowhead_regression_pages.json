@@ -2863,6 +2863,18 @@
     {
       "id": "classic-rogue-dps-stats-white-autos-20261102",
       "url": "https://www.wowhead.com/classic/guide/classes/rogue/dps-stat-priority-attributes-pve"
+    },
+    {
+      "id": "classic-warrior-fury-stats-glancing-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/warrior/fury/dps-stat-priority-attributes-pve"
+    },
+    {
+      "id": "classic-warrior-tank-stats-glancing-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/warrior/tank-stat-priority-attributes-pve"
+    },
+    {
+      "id": "classic-feral-druid-stats-glancing-control-20261102",
+      "url": "https://www.wowhead.com/classic/guide/classes/druid/feral/dps-stat-priority-attributes-pve"
     }
   ]
 }
