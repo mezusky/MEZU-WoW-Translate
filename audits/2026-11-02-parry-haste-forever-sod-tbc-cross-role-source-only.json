@@ -1,6 +1,6 @@
 {
   "date": "2026-11-02",
-  "auditMethod": "assistant-live-wowhead-source-only",
+  "auditMethod": "assistant-web-source-only",
   "sourceLanguage": "en",
   "targetLanguage": "fr",
   "access": "English Wowhead pages inspected using assistant web access, not GitHub-hosted runners. Source text only; no Chrome Translator API or translated DOM.",
@@ -81,7 +81,16 @@
     "newManualSentenceOverrides": 0,
     "browserRenderedPagesVerified": 0,
     "browserTranslationErrorRate": null,
-    "novelTranslationIssueRate": null
+    "novelTranslationIssueRate": null,
+    "sampledPageIds": [
+      "forever-prot-paladin-stats-parry-haste-20261102",
+      "sod-warrior-tank-overview-parry-haste-20261102",
+      "tbc-prot-paladin-stats-parry-haste-20261102",
+      "tbc-prot-warrior-stats-parry-haste-20261102",
+      "tbc-rogue-dps-stats-parry-haste-control-20261102",
+      "forever-holy-priest-rotation-downranking-20261101",
+      "forever-frost-mage-rotation-heldout"
+    ]
   },
   "sourceRisks": [
     "Source pages can use parry haste for the player's or the boss's faster next swing; preserve semantics and do not hardcode the actor.",
