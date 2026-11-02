@@ -6,7 +6,9 @@ A family can affect several pages, so these are interventions per page, NOT
 the fraction of pages with errors or a reason to stop the hourly audit.
 """
 import json
+import re
 import sys
+from datetime import date
 from pathlib import Path
 
 
@@ -93,6 +95,7 @@ def load_cycles(history_path, audits_dir, corpus_path):
 
     history = json.loads(Path(history_path).read_text(encoding="utf-8"))
     cycles = list(history["cycles"])
+    last_historical_date = max((row.get("date", "") for row in cycles), default="")
     known = {
         page["id"] for page in
         json.loads(Path(corpus_path).read_text(encoding="utf-8"))["pages"]
@@ -103,6 +106,14 @@ def load_cycles(history_path, audits_dir, corpus_path):
         if "sourceInterventionSample" not in audit:
             continue
         sample = audit["sourceInterventionSample"]
+        audit_date = audit.get("date")
+        try:
+            if (not isinstance(audit_date, str) or len(audit_date) != 10
+                    or date.fromisoformat(audit_date).isoformat() != audit_date
+                    or audit_date < last_historical_date):
+                raise ValueError("Backdated or invalid audit date")
+        except ValueError as exc:
+            raise ValueError(f"Invalid source audit date: {path}") from exc
         if not isinstance(sample, dict) or audit.get("auditMethod") != "indexed-source-only":
             raise ValueError(f"Invalid source-only intervention sample: {path}")
         cycle_id = sample.get("cycleId")
@@ -112,23 +123,29 @@ def load_cycles(history_path, audits_dir, corpus_path):
                 or cycle_id in audit_ids or not isinstance(ids, list)
                 or not ids or any(not isinstance(i, str) or i not in known for i in ids)
                 or len(set(ids)) != len(ids)
-                or sample.get("sampledPageCount") != len(ids)
+                or type(sample.get("sampledPageCount")) is not int
+                or sample["sampledPageCount"] != len(ids)
                 or type(sample.get("newReusableTermFamiliesObserved")) is not int
                 or sample["newReusableTermFamiliesObserved"] < 0
                 or type(sample.get("newManualSentenceOverrides")) is not int
                 or sample["newManualSentenceOverrides"] < 0
-                or sample.get("browserRenderedPagesVerified") != 0):
+                or type(sample.get("browserRenderedPagesVerified")) is not int
+                or sample["browserRenderedPagesVerified"] != 0):
             raise ValueError(f"Invalid or ungrounded source-only sample: {path}")
         try:
             source, target = normalize_locale(source), normalize_locale(target)
+            locale_pattern = r"[a-z]{2,3}(?:-[a-z0-9]{2,8})*"
+            if not (re.fullmatch(locale_pattern, source)
+                    and re.fullmatch(locale_pattern, target)):
+                raise ValueError("Invalid locale")
             if same_base_language(source, target):
                 raise ValueError("No translation needed")
         except ValueError as exc:
             raise ValueError(f"Invalid translation direction: {path}") from exc
         audit_ids.add(cycle_id)
-        cycles.append({**sample, "date": audit.get("date"), "cycleId": cycle_id})
+        cycles.append({**sample, "date": audit_date, "cycleId": cycle_id})
     # Stable ordering preserves the original order of multiple audits on one day.
-    # A new file cannot retroactively change first-seen page attribution.
+    # Reject backdated additions so new samples cannot reassign earlier first-seen pages.
     return sorted(cycles, key=lambda row: row.get("date", ""))
 
 
