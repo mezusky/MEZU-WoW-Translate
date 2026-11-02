@@ -23,10 +23,11 @@ ENGLISH_GUIDE_PATH_RE = (
 def class_guide_parts(url):
     """Return class/spec/section only for specialization guides; general guides are valid too."""
     path = urlparse(url).path
-    marker = "/guide/classes/"
-    if marker not in path:
+    # Some branches nest class guides under an expansion/season segment.
+    # Classify by the class segment, not a single fixed /guide/classes/ path.
+    if "/guide/" not in path or "/classes/" not in path:
         return None
-    parts = path.split(marker, 1)[1].split("/")
+    parts = path.split("/classes/", 1)[1].split("/")
     # Classic also has class-wide guides: class/section, not class/spec.
     return [parts[0], None, parts[1]] if len(parts) == 2 else parts
 
@@ -94,6 +95,9 @@ class WowheadRegressionCorpusTests(unittest.TestCase):
         self.assertEqual(class_guide_parts(
             "https://www.wowhead.com/forever/guide/classes/mage/arcane/dps-abilities"),
             ["mage", "arcane", "dps-abilities"])
+        self.assertEqual(class_guide_parts(
+            "https://www.wowhead.com/classic/guide/season-of-discovery/classes/paladin/healer-consumables-raid-buffs-pve"),
+            ["paladin", None, "healer-consumables-raid-buffs-pve"])
 
     def test_general_guides_do_not_pollute_class_coverage(self):
         general = {p["id"]: p["url"] for p in PAGES if class_guide_parts(p["url"]) is None}
