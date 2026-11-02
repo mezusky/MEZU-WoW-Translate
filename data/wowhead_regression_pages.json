@@ -2947,6 +2947,26 @@
     {
       "id": "wotlk-arcane-mage-stats-hit-cap-control-20261102",
       "url": "https://www.wowhead.com/wotlk/guide/classes/mage/arcane/dps-stat-priority-attributes-pve"
+    },
+    {
+      "id": "tbc-hunter-rotation-melee-weaving-20261103",
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/dps-rotation-cooldowns-abilities-pve"
+    },
+    {
+      "id": "tbc-hunter-overview-melee-weaving-20261103",
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/overview-basics"
+    },
+    {
+      "id": "classic-warlock-stats-phrase-control-20261103",
+      "url": "https://www.wowhead.com/classic/guide/classes/warlock/dps-stat-priority-attributes-pve"
+    },
+    {
+      "id": "tbc-hunter-stats-phrase-control-20261103",
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/dps-stat-priority-attributes-pve"
+    },
+    {
+      "id": "wotlk-frost-dk-stats-phrase-control-20261103",
+      "url": "https://www.wowhead.com/wotlk/guide/classes/death-knight/frost/dps-stat-priority-attributes-pve"
     }
   ]
 }
