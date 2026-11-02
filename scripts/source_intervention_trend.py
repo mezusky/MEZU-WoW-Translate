@@ -95,7 +95,6 @@ def load_cycles(history_path, audits_dir, corpus_path):
 
     history = json.loads(Path(history_path).read_text(encoding="utf-8"))
     cycles = list(history["cycles"])
-    last_historical_date = max((row.get("date", "") for row in cycles), default="")
     known = {
         page["id"] for page in
         json.loads(Path(corpus_path).read_text(encoding="utf-8"))["pages"]
@@ -109,9 +108,8 @@ def load_cycles(history_path, audits_dir, corpus_path):
         audit_date = audit.get("date")
         try:
             if (not isinstance(audit_date, str) or len(audit_date) != 10
-                    or date.fromisoformat(audit_date).isoformat() != audit_date
-                    or audit_date < last_historical_date):
-                raise ValueError("Backdated or invalid audit date")
+                    or date.fromisoformat(audit_date).isoformat() != audit_date):
+                raise ValueError("Invalid audit date")
         except ValueError as exc:
             raise ValueError(f"Invalid source audit date: {path}") from exc
         if not isinstance(sample, dict) or audit.get("auditMethod") != "indexed-source-only":
@@ -145,7 +143,7 @@ def load_cycles(history_path, audits_dir, corpus_path):
         audit_ids.add(cycle_id)
         cycles.append({**sample, "date": audit_date, "cycleId": cycle_id})
     # Stable ordering preserves the original order of multiple audits on one day.
-    # Reject backdated additions so new samples cannot reassign earlier first-seen pages.
+    # Keep older audit samples usable if the historical file grows later.
     return sorted(cycles, key=lambda row: row.get("date", ""))
 
 
