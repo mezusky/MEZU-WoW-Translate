@@ -360,7 +360,9 @@
     "AoE-stop": "stop AoE",
     "ranged kick": "kick à distance",
     "ranged interrupt": "interruption à distance",
-    "wipe protection": "protection en cas de wipe"
+    "wipe protection": "protection en cas de wipe",
+    "snap aggro": "aggro instantanée",
+    "snap threat": "génération immédiate de menace"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
