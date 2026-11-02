@@ -36,7 +36,13 @@
     "manualSentenceOverridesAdded": 0,
     "extensionChanged": false,
     "rationale": "Preserve established WoW jargon rather than literal clock/swing translation; do not replace bare swing, Auto Shot (official spell) or addon proper names. Keep the rule in the EN->FR locale-scoped Data Pack.",
-    "verification": "English source and static locale/glossary contracts only; runtime protection priority, Translator API, actual French rendering and DOM reconstruction remain browser-only."
+    "verification": "English source and static locale/glossary contracts only; runtime protection priority, Translator API, actual French rendering and DOM reconstruction remain browser-only.",
+    "officialEntityBoundary": {
+      "sourceName": "Auto Shot",
+      "wowheadSpellId": 75,
+      "evidenceUrl": "https://www.wowhead.com/classic/spell=75/auto-shot",
+      "policy": "Treat linked spell names through canonical ID/locale mapping; generic swing timer jargon must never replace spell names."
+    }
   },
   "sourceInterventionSample": {
     "cycleId": "2026-11-02-swing-timer-cross-role-source-only",
