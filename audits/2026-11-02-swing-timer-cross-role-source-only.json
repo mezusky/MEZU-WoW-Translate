@@ -1,0 +1,59 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "English text directly inspected using assistant web access; Retail pages remain JavaScript-gated. No Chrome Translator API or French DOM replay. GitHub Actions must not fetch Wowhead.",
+  "pages": [
+    {
+      "pageId": "forever-arms-warrior-rotation-20261101",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Guide body describes long swing timer and Rage pooling for melee Arms; independent class/game variant source."
+    },
+    {
+      "pageId": "classic-hunter-dps-rotation-swingtimer-20261102",
+      "role": "dps",
+      "section": "rotation",
+      "evidence": "Guide body uses swing-timer add-ons and 3-second swing timer for ranged Auto Shot; distinct from Warrior melee swings."
+    },
+    {
+      "pageId": "classic-hunter-dps-addons-swingtimer-20261102",
+      "role": "dps",
+      "section": "addons",
+      "evidence": "Guide heading links to third-party addon named Weapon Swing Timer; preserve proper name rather than invent a translated addon title."
+    }
+  ],
+  "crossPageFix": {
+    "concept": "Swing timer is shared WoW player jargon for timing automatic attacks in melee and ranged contexts.",
+    "dataLayer": "data/mezu_player_glossary.json",
+    "newAliases": [
+      "swing timer",
+      "swing timers",
+      "swing-timer",
+      "Swing Timer"
+    ],
+    "manualSentenceOverridesAdded": 0,
+    "extensionChanged": false,
+    "rationale": "Preserve established WoW jargon rather than literal clock/swing translation; do not replace bare swing, Auto Shot (official spell) or addon proper names. Keep the rule in the EN->FR locale-scoped Data Pack.",
+    "verification": "English source and static locale/glossary contracts only; runtime protection priority, Translator API, actual French rendering and DOM reconstruction remain browser-only."
+  },
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-swing-timer-cross-role-source-only",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "forever-arms-warrior-rotation-20261101",
+      "classic-hunter-dps-rotation-swingtimer-20261102",
+      "classic-hunter-dps-addons-swingtimer-20261102"
+    ],
+    "sampledPageCount": 3,
+    "newReusableTermFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "sourceAnomalies": [
+    "Forever Arms rotation guide has blank 'Cast .' list items; source authoring issue, not a translation override."
+  ],
+  "auditBoundary": "A source-only terminology intervention is not a measured translation-error rate or a completed clean quality cycle. No full copyrighted guide content copied."
+}
