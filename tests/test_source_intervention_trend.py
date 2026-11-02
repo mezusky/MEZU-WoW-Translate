@@ -62,6 +62,16 @@ class SourceInterventionTrendTests(unittest.TestCase):
                             cycle(["priest"], families=0)], window=2)
         self.assertIsNone(result["recentTermFamilyRateVsEarly"])
 
+    def test_historical_source_trend_remains_a_proxy(self):
+        import json
+        from pathlib import Path
+        trend_path = Path(__file__).resolve().parents[1] / "data" / "wowhead_audit_trend.json"
+        historical = json.loads(trend_path.read_text(encoding="utf-8"))
+        result = summarize(historical["cycles"])
+        self.assertGreater(result["eligibleCycles"], 0)
+        self.assertIsNone(result["browserTranslationErrorRate"])
+        self.assertIsNone(result["novelTranslationIssueRate"])
+
     def test_invalid_configuration(self):
         with self.assertRaises(ValueError):
             summarize([], window=0)
