@@ -2767,6 +2767,18 @@
     {
       "id": "forever-holy-paladin-abilities-20261102",
       "url": "https://www.wowhead.com/forever/guide/classes/paladin/holy/healer-abilities"
+    },
+    {
+      "id": "forever-marksmanship-hunter-abilities-cross-role-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/hunter/marksmanship/dps-abilities"
+    },
+    {
+      "id": "forever-protection-paladin-abilities-pushback-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/paladin/protection/tank-abilities"
+    },
+    {
+      "id": "forever-demonology-warlock-abilities-source-anomaly-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/warlock/demonology/dps-abilities"
     }
   ]
 }
