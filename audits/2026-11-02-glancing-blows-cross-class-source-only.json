@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "Direct English Wowhead guide text inspected via assistant web access; GitHub Actions must not fetch Wowhead (HTTP 403 on hosted runners). No Chrome Translator API or translated DOM replay.",
+  "pages": [
+    {
+      "pageId": "classic-warrior-fury-stats-glancing-20261102",
+      "role": "dps",
+      "section": "stats",
+      "evidence": "Weapon Skill discussion explains glancing-blow damage reduction and the boss-level attack table."
+    },
+    {
+      "pageId": "classic-warrior-tank-stats-glancing-20261102",
+      "role": "tank",
+      "section": "stats",
+      "evidence": "Weapon Skill / defense comparison and table explicitly reference Glancing Blows and glancing penalty."
+    },
+    {
+      "pageId": "classic-feral-druid-stats-glancing-control-20261102",
+      "role": "dps",
+      "section": "stats",
+      "evidence": "Independent feral stats guide discusses hit cap, crit cap, and auto-attacks; terminology boundary control, not direct glancing-blow evidence."
+    }
+  ],
+  "existingCorpusCrossChecks": [
+    "classic-rogue-dps-stats-white-autos-20261102",
+    "classic-hunter-dps-stats-glancing-control-20261102"
+  ],
+  "crossPageFix": {
+    "concept": "Glancing blows are reduced-damage automatic attacks against higher-level targets; distinct from white hits and generic glance.",
+    "dataLayer": "data/mezu_player_glossary.json",
+    "newAliases": [
+      "glancing blow",
+      "glancing blows",
+      "Glancing Blow",
+      "Glancing Blows"
+    ],
+    "expectedFrench": [
+      "coup éraflé",
+      "coups éraflés"
+    ],
+    "manualSentenceOverridesAdded": 0,
+    "extensionChanged": false,
+    "boundaries": "Do not replace generic glance/blow or force official spell/item names through the player glossary. Weapon Skill should be resolved via official terminology/canonical mapping rather than speculative stat-specific aliases.",
+    "verification": "English-source evidence plus static glossary/locale and cross-corpus tests only; actual French prose, DOM, and Translator API remain browser-only checks."
+  },
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-02-glancing-blows-cross-class-source-only",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "classic-warrior-fury-stats-glancing-20261102",
+      "classic-warrior-tank-stats-glancing-20261102",
+      "classic-feral-druid-stats-glancing-control-20261102"
+    ],
+    "sampledPageCount": 3,
+    "newReusableTermFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "sourceRisks": [
+    "Some source guides present differing glancing penalty examples or contain outdated Classic mechanics; these are source/version issues, not reasons to rewrite numeric facts in translation.",
+    "Feral control discusses auto-attacks and hit/crit but does not establish the glancing alias by itself.",
+    "Web text extraction may omit interactive tables/embedded tooltips; DOM reconstruction cannot be certified."
+  ],
+  "auditBoundary": "Source-only terminology intervention, not a measured browser translation-error rate or clean quality cycle.",
+  "sources": [
+    "https://www.wowhead.com/classic/guide/classes/warrior/fury/dps-stat-priority-attributes-pve",
+    "https://www.wowhead.com/classic/guide/classes/warrior/tank-stat-priority-attributes-pve",
+    "https://www.wowhead.com/classic/guide/classes/druid/feral/dps-stat-priority-attributes-pve",
+    "https://www.wowhead.com/classic/guide/classes/rogue/dps-stat-priority-attributes-pve"
+  ]
+}
