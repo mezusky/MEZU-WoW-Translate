@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "assistant-web indexed English guide prose; direct canonical Wowhead URLs challenged by JavaScript; no browser translation or DOM evidence",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "sourcePages": [
+    {
+      "id": "protection-warrior-rotation",
+      "section": "rotation",
+      "role": "tank"
+    },
+    {
+      "id": "discipline-priest-rotation",
+      "section": "rotation",
+      "role": "healer"
+    },
+    {
+      "id": "arcane-mage-stats",
+      "section": "stats",
+      "role": "dps"
+    },
+    {
+      "id": "holy-paladin-gear",
+      "section": "gear",
+      "role": "healer"
+    },
+    {
+      "id": "preservation-evoker-consumables",
+      "section": "consumables",
+      "role": "healer"
+    },
+    {
+      "id": "assassination-rogue-talents",
+      "section": "abilities",
+      "role": "dps"
+    },
+    {
+      "id": "holy-priest-raid",
+      "section": "raid",
+      "role": "healer"
+    }
+  ],
+  "finding": "Indexed prose mixes English instructions with localized linked spell names; abbreviated 'on cd' remains context-sensitive, and source widgets may expose unresolved spell placeholders or duplicated template text. Do not infer a browser translation failure from indexed artifacts.",
+  "durableChange": "Added source-only intervention trend summarizer with first-seen page identity and explicit exclusion of incomplete/repeated samples; browser stop gate unchanged.",
+  "sourceTrendProxy": {
+    "eligibleCycles": 24,
+    "eligibleUniquePageSamples": 113,
+    "earlyTenCycles": {
+      "pages": 50,
+      "termFamilies": 6,
+      "perPage": 0.12
+    },
+    "recentTenCycles": {
+      "pages": 42,
+      "termFamilies": 12,
+      "perPage": 0.2857
+    },
+    "browserQualityMeasured": false,
+    "interpretation": "This historical editorial intervention proxy is higher in the recent window, not evidence that real translated output deteriorated; sample mix/reporting vary."
+  },
+  "manualSentenceOverridesAdded": 0,
+  "extensionCodeChanged": false,
+  "browserRenderedPagesVerified": 0,
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "remainingVerification": [
+    "Run source trend and unit tests in GitHub Actions",
+    "Validate real Chrome Translator API output and rich-text DOM",
+    "Measure novel translation issues on new independent guides across two cycles"
+  ]
+}
