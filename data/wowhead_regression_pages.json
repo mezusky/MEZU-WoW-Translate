@@ -2719,6 +2719,18 @@
     {
       "id": "forever-retribution-paladin-abilities-cross-role-20261102",
       "url": "https://www.wowhead.com/forever/guide/classes/paladin/retribution/dps-abilities"
+    },
+    {
+      "id": "forever-restoration-druid-abilities-pushback-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/druid/restoration/healer-abilities"
+    },
+    {
+      "id": "forever-feral-druid-abilities-resource-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/druid/feral/dps-abilities"
+    },
+    {
+      "id": "forever-elemental-shaman-overview-source-anomaly-20261102",
+      "url": "https://www.wowhead.com/forever/guide/classes/shaman/elemental/overview-pve-dps"
     }
   ]
 }
