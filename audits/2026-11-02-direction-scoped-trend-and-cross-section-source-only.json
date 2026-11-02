@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-02",
+  "auditMethod": "indexed-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "directHtmlAccess": "Direct Wowhead HTML is subject to JavaScript challenge; assistant web indexed English guide content only. No GitHub Actions Wowhead fetch.",
+  "corpusPagesReviewed": [
+    {
+      "pageId": "restoration-druid-overview",
+      "section": "overview",
+      "role": "healer",
+      "risk": "HoT and heal-over-time require contextual handling"
+    },
+    {
+      "pageId": "protection-warrior-rotation",
+      "section": "rotation",
+      "role": "tank",
+      "risk": "on cooldown denotes cast when ready; hero-talent selectors may appear unselected in indexed text"
+    },
+    {
+      "pageId": "arms-warrior-talents",
+      "section": "talents",
+      "role": "dps",
+      "risk": "spell/talent names and shorthand must preserve official IDs"
+    },
+    {
+      "pageId": "demonology-warlock-gear",
+      "section": "gearing",
+      "role": "dps",
+      "risk": "source mentions Destruction Warlock within Demonology upgrade priorities; classify as upstream author inconsistency, not a translation override"
+    },
+    {
+      "pageId": "frost-mage-stats",
+      "section": "stats",
+      "role": "dps",
+      "risk": "rating thresholds and stat ordering must remain numeric and ordered"
+    },
+    {
+      "pageId": "preservation-evoker-consumables",
+      "section": "consumables",
+      "role": "healer",
+      "risk": "official item names in equipment tables must be mapped by item ID"
+    },
+    {
+      "pageId": "outlaw-rogue-mythic-plus",
+      "section": "mythic-plus",
+      "role": "dps",
+      "risk": "on cooldown means unavailable in a defensive usage sentence; not equivalent to rotation instruction"
+    },
+    {
+      "pageId": "discipline-priest-raid",
+      "section": "raid",
+      "role": "healer",
+      "risk": "EncounterID/time/ph/tag/spellid import blocks are structured addon data, not prose"
+    }
+  ],
+  "crossPageFinding": "The same English expression 'on cooldown' has opposite operational readings in Protection Warrior rotation (use when available) and Outlaw Rogue Mythic+ defensive guidance (currently unavailable); do not add a global replacement.",
+  "sourceQualityBoundary": "Missing season placeholders, empty table cells and a mismatched Warlock specialization label appear in indexed English source. They are not evidence of MEZU output defects.",
+  "durableChanges": [
+    "Scope source-only intervention trend to translation direction (language plus explicit script), preserving legacy en->fr baseline.",
+    "Keep en-US/fr-FR within broad en->fr source trend but exclude en->de and opposite script directions.",
+    "Add independent tests for multilingual direction and Chinese writing-script separation."
+  ],
+  "newManualSentenceOverrides": 0,
+  "newReusableTermFamiliesObserved": 0,
+  "trendNote": "All eight reviewed corpus pages were previously known; no first-seen heldout intervention sample is claimed.",
+  "browserTranslationErrorRate": null,
+  "novelTranslationIssueRate": null,
+  "browserOnlyVerification": [
+    "Actual Chrome Translator API output",
+    "Wowhead DOM reconstruction and talent selector state",
+    "official item/spell ID projection into French",
+    "two consecutive strict multi-page quality cycles"
+  ]
+}
