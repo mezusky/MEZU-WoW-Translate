@@ -1,0 +1,101 @@
+{
+  "date": "2026-11-03",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "English-source Wowhead pages read with assistant web access; no GitHub runner requests to Wowhead. No browser Translator API or rendered DOM verification.",
+  "pages": [
+    {
+      "url": "https://www.wowhead.com/classic/guide/classes/hunter/dps-rotation-cooldowns-abilities-pve",
+      "role": "dps",
+      "section": "rotation",
+      "observation": "Existing corpus control: Open Spot and Melee Weaving heading; linked Raptor Strike and Auto Shot should use canonical spell IDs."
+    },
+    {
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/dps-rotation-cooldowns-abilities-pve",
+      "role": "dps",
+      "section": "rotation",
+      "observation": "New page: Melee Weaving heading, melee weaving in prose, and melee-weaving in ability description."
+    },
+    {
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/overview-basics",
+      "role": "dps",
+      "section": "overview",
+      "observation": "Independent TBC overview uses both melee-weaving and melee weaving; links to Raptor Strike must remain entity-driven."
+    },
+    {
+      "url": "https://www.wowhead.com/wotlk/guide/classes/shaman/enhancement/dps-rotation-cooldowns-abilities-pve",
+      "role": "dps",
+      "section": "rotation",
+      "observation": "Existing corpus negative control: Lightning Weaving is a different class-specific mechanic. Do not translate bare weaving."
+    },
+    {
+      "url": "https://www.wowhead.com/classic/guide/classes/warlock/dps-stat-priority-attributes-pve",
+      "role": "dps",
+      "section": "stats",
+      "observation": "Independent caster stats control: quoted 5-second rule, Spell Pen abbreviation and linked Improved Shadow Bolt."
+    },
+    {
+      "url": "https://www.wowhead.com/tbc/guide/classes/hunter/dps-stat-priority-attributes-pve",
+      "role": "dps",
+      "section": "stats",
+      "observation": "Independent Hunter stat controls: Hit Rating, Armor Penetration and linked talents; avoid generic hit-only overrides."
+    },
+    {
+      "url": "https://www.wowhead.com/wotlk/guide/classes/death-knight/frost/dps-stat-priority-attributes-pve",
+      "role": "dps",
+      "section": "stats",
+      "observation": "Independent melee stat control: Hit Rating, Expertise Rating and spell-linked abilities; cap values expansion-specific."
+    }
+  ],
+  "fixes": [
+    {
+      "layer": "data/mezu_player_glossary.json",
+      "kind": "locale-scoped reusable player jargon",
+      "aliases": [
+        "melee weaving",
+        "Melee Weaving",
+        "melee-weaving"
+      ],
+      "manualSentenceOverridesAdded": 0,
+      "extensionChanged": false
+    },
+    {
+      "layer": "tests/test_mezu_player_glossary.py",
+      "kind": "regression",
+      "observation": "Test three variants, locale isolation, absence of manual overrides, independent cross-expansion controls and negative generic weaving control."
+    },
+    {
+      "layer": "data/wowhead_regression_pages.json",
+      "kind": "corpus",
+      "newPagesAdded": 5
+    }
+  ],
+  "sourceInterventionSample": {
+    "sampledPages": 7,
+    "newPagesAddedToCorpus": 5,
+    "corpusSizeAfter": 742,
+    "playerJargonEntriesAfter": 417,
+    "newReusablePhraseFamiliesObserved": 1,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0,
+    "browserTranslationErrorRate": null,
+    "novelTranslationIssueRate": null,
+    "confirmedQualityCycles": 0
+  },
+  "staticChecks": {
+    "corpusUniqueIds": true,
+    "corpusUniqueUrls": true,
+    "manualOverrideConflicts": 0,
+    "localePair": "en->fr",
+    "pythonTestsExecuted": false,
+    "githubActionsConfirmed": false,
+    "dataPackPublishedConfirmed": false
+  },
+  "remainingBrowserOnly": [
+    "Actual Translator API output and source language detection",
+    "Longest-match and case handling around inline spell links",
+    "DOM/rich text reconstruction and tooltip preservation"
+  ],
+  "auditBoundary": "Source-only evidence and static checks cannot establish a clean translated browser audit cycle; 0/2 confirmed."
+}
