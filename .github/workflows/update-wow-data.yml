@@ -42,6 +42,9 @@ jobs:
           python -m compileall -q scripts tests
           python -m unittest discover -s tests -p "test_*.py"
 
+      - name: Summarize source-only first-seen interventions
+        run: python scripts/source_intervention_trend.py
+
       - name: Build community WoW glossary
         run: python scripts/build_external_glossary.py
 
