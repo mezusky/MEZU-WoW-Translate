@@ -378,5 +378,43 @@ class PlayerGlossaryTests(unittest.TestCase):
             self.assertNotIn(source, manual.get("exact", {}))
 
 
+    def test_tank_throughput_metrics_reuse_phrases_across_classic_and_tbc(self):
+        # Live source evidence: Classic Feral tank overview and TBC Feral
+        # overview/stats all define TPS and DTPS. TBC Warrior and Paladin
+        # tank guides are independent controls, not sentence overrides.
+        jargon = GLOSSARY["jargon"]
+        expected = {
+            "threat per second": "menace générée par seconde",
+            "Threat Per Second": "Menace générée par seconde",
+            "damage taken per second": "dégâts subis par seconde",
+            "Damage Taken Per Second": "Dégâts subis par seconde",
+        }
+        manual = json.loads((ROOT / "data/manual_overrides.json").read_text(
+            encoding="utf-8"))
+        for source, target in expected.items():
+            with self.subTest(source=source):
+                self.assertEqual(jargon[source], target)
+                self.assertNotIn(source, manual.get("exact", {}))
+                self.assertNotIn(source, manual.get("jargon", {}))
+        # Do not turn bare words or abbreviations into tank-only phrases.
+        for ambiguous in ("threat", "per second", "damage taken per", "TPS", "DTPS"):
+            self.assertNotIn(ambiguous, jargon)
+        self.assertGreater(len("damage taken per second"), len("damage taken"))
+        self.assertEqual(manual["jargon"]["damage taken"], "dégâts subis")
+
+        corpus = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(
+            encoding="utf-8"))["pages"]
+        urls = {page["url"] for page in corpus}
+        for url in (
+            "https://www.wowhead.com/classic/guide/classes/druid/feral/tank-overview-pve",
+            "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-stat-priority-attributes-pve",
+            "https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-overview-pve",
+            "https://www.wowhead.com/tbc/guide/classes/paladin/tank-overview-pve",
+            "https://www.wowhead.com/classic/guide/classes/warrior/tank-overview-pve",
+        ):
+            with self.subTest(url=url):
+                self.assertIn(url, urls)
+
+
 if __name__ == "__main__":
     unittest.main()
