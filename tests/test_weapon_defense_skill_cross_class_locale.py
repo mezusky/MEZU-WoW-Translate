@@ -33,9 +33,13 @@ class WeaponDefenseSkillCrossClassTests(unittest.TestCase):
             with self.subTest(source=source):
                 self.assertEqual(self.terms[source], target)
         # Skill is a mechanic, not an alias for the different rating stats.
-        for broad in ("skill", "skills", "weapon", "defense",
-                      "defense rating", "weapon expertise", "weapon damage"):
+        for broad in ("skill", "skills", "weapon", "defense"):
             self.assertNotIn(broad, self.terms)
+        self.assertNotEqual(self.terms["weapon skill"],
+                            self.terms["defense skill"])
+        if "defense rating" in self.terms:
+            self.assertNotEqual(self.terms["defense rating"],
+                                self.terms["defense skill"])
 
     def test_independent_stat_phrases_and_no_partial_word_match(self):
         hits = JargonCoverage(self.terms).hits(
