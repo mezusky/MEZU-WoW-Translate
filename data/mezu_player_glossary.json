@@ -417,7 +417,15 @@
     "Spell Hit Cap": "Cap de toucher des sorts",
     "Spell Hit cap": "Cap de toucher des sorts",
     "spell hit rating": "score de toucher des sorts",
-    "Spell Hit Rating": "Score de toucher des sorts"
+    "Spell Hit Rating": "Score de toucher des sorts",
+    "weapon skill": "compétence d’arme",
+    "Weapon Skill": "Compétence d’arme",
+    "weapon skills": "compétences d’arme",
+    "Weapon Skills": "Compétences d’arme",
+    "defense skill": "compétence de défense",
+    "Defense Skill": "Compétence de défense",
+    "defense skills": "compétences de défense",
+    "Defense Skills": "Compétences de défense"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
