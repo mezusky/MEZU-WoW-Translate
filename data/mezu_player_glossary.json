@@ -425,7 +425,9 @@
     "defense skill": "compétence de défense",
     "Defense Skill": "Compétence de défense",
     "defense skills": "compétences de défense",
-    "Defense Skills": "Compétences de défense"
+    "Defense Skills": "Compétences de défense",
+    "threat per rage": "menace générée par point de rage",
+    "Threat per Rage": "Menace générée par point de rage"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
