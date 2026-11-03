@@ -90,7 +90,20 @@
     "browserRenderedPagesVerified": 0,
     "browserTranslationErrorRate": null,
     "novelTranslationIssueRate": null,
-    "confirmedQualityCycles": 0
+    "confirmedQualityCycles": 0,
+    "cycleId": "2026-11-02-caster-spell-hit-cross-expansion-source-only",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "classic-shadow-priest-stats-spell-hit-20261102",
+      "tbc-warlock-dps-stats-spell-hit-20261102",
+      "tbc-mage-dps-stats-spell-hit-20261102",
+      "tbc-balance-druid-stats-spell-hit-control-20261102",
+      "tbc-shadow-priest-stats-spell-hit-control-20261102",
+      "wotlk-arcane-mage-stats-hit-cap-control-20261102"
+    ],
+    "sampledPageCount": 6,
+    "newReusableTermFamiliesObserved": 2
   },
   "remainingBrowserOnly": [
     "Translator API actual output and source language auto-detection",
