@@ -427,7 +427,11 @@
     "defense skills": "compétences de défense",
     "Defense Skills": "Compétences de défense",
     "threat per rage": "menace générée par point de rage",
-    "Threat per Rage": "Menace générée par point de rage"
+    "Threat per Rage": "Menace générée par point de rage",
+    "crit immunity": "immunité aux coups critiques",
+    "Crit Immunity": "Immunité aux coups critiques",
+    "uncrittable": "immunisé contre les coups critiques",
+    "Uncrittable": "Immunisé contre les coups critiques"
   },
   "sourceLanguage": "en",
   "targetLanguage": "fr"
