@@ -1,0 +1,122 @@
+{
+  "date": "2026-11-03",
+  "auditMethod": "assistant-web-source-only",
+  "sourceLanguage": "en",
+  "targetLanguage": "fr",
+  "access": "Live English-source Wowhead guides inspected via assistant web access. GitHub Actions are not used to fetch Wowhead. Browser Translator API and DOM replay were not available.",
+  "pages": [
+    {
+      "url": "https://www.wowhead.com/classic/guide/classes/warrior/tank-stat-priority-attributes-pve",
+      "role": "tank",
+      "section": "stats",
+      "observation": "Existing control: Weapon Skill and target Defense Skill affect miss, glancing and threat; spell/item links require ID-based official names."
+    },
+    {
+      "url": "https://www.wowhead.com/classic/guide/classes/rogue/dps-stat-priority-attributes-pve",
+      "role": "dps",
+      "section": "stats",
+      "observation": "Existing control: Weapon Skill and Defense Skill repeated in the combat-table explanation; linked Sinister Strike and Eviscerate remain entity-driven."
+    },
+    {
+      "url": "https://www.wowhead.com/classic/guide/classes/hunter/dps-stat-priority-attributes-pve",
+      "role": "dps",
+      "section": "stats",
+      "observation": "Existing independent Hunter control: same skill labels but ranged attacks do not produce glancing blows; do not generalize combat mechanics."
+    },
+    {
+      "url": "https://www.wowhead.com/classic/guide/classes/shaman/enhancement/dps-stat-priority-attributes-pve",
+      "role": "dps",
+      "section": "stats",
+      "observation": "New: Weapon Skill heading, lower-case weapon skill in prose and Defense Skill in hit-cap explanation."
+    },
+    {
+      "url": "https://www.wowhead.com/classic/guide/classes/shaman/leveling-tips",
+      "role": "hybrid",
+      "section": "leveling",
+      "observation": "New independent leveling page: Weapon Skills and Weapon Trainers headings; avoid broad rewrite of weapon or skill."
+    },
+    {
+      "url": "https://www.wowhead.com/classic/guide/classic-wow-weapon-skills",
+      "role": "cross-role",
+      "section": "mechanics",
+      "observation": "New standalone mechanic guide: singular/plural weapon skill and Defense skill in NPC/PvP sections; inline links and blank dynamic costs require browser DOM verification."
+    },
+    {
+      "url": "https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-stat-priority-attributes-pve",
+      "role": "tank",
+      "section": "stats",
+      "observation": "Existing expansion control: Defense rating, resilience rating and Expertise Rating are distinct from Classic weapon/defense skill labels; no blanket defense replacement."
+    }
+  ],
+  "fixes": [
+    {
+      "layer": "data/mezu_player_glossary.json",
+      "kind": "locale-scoped reusable mechanics terminology",
+      "aliases": [
+        "weapon skill",
+        "Weapon Skill",
+        "weapon skills",
+        "Weapon Skills",
+        "defense skill",
+        "Defense Skill",
+        "defense skills",
+        "Defense Skills"
+      ],
+      "manualSentenceOverridesAdded": 0,
+      "extensionChanged": false
+    },
+    {
+      "layer": "tests/test_weapon_defense_skill_cross_class_locale.py",
+      "kind": "source-only regression",
+      "observation": "Checks eight mappings, locale isolation, no manual duplicates, cross-class and cross-section corpus coverage."
+    },
+    {
+      "layer": "tests/test_glancing_blows_cross_class_locale.py and tests/test_crushing_blows_cross_role_locale.py",
+      "kind": "test maintenance",
+      "observation": "Remove stale negative assertions that would reject newly legitimate terminology; avoid prohibiting future independent stat terms."
+    },
+    {
+      "layer": "audits/2026-11-02-*.json and audits/2026-11-03-hunter-melee-weaving-cross-expansion-source-only.json",
+      "kind": "CI data-contract repair",
+      "observation": "Four earlier narrative audit samples lacked required corpus-grounded first-seen IDs, locale direction and cycle ID; repaired metadata without weakening validator."
+    }
+  ],
+  "sourceInterventionSample": {
+    "cycleId": "2026-11-03-classic-weapon-defense-skill-cross-role-source-only",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "classic-enhancement-shaman-stats-weapon-defense-skill-20261103",
+      "classic-shaman-leveling-weapon-skills-20261103",
+      "classic-weapon-trainers-skill-mechanics-20261103"
+    ],
+    "sampledPageCount": 3,
+    "newReusableTermFamiliesObserved": 2,
+    "newManualSentenceOverrides": 0,
+    "browserRenderedPagesVerified": 0
+  },
+  "sourceInterventionNotes": {
+    "reviewedPages": 7,
+    "newPagesAddedToCorpus": 3,
+    "corpusSizeAfter": 745,
+    "playerJargonEntriesAfter": 425,
+    "novelTranslationIssueRate": null,
+    "browserTranslationErrorRate": null,
+    "confirmedQualityCycles": 0
+  },
+  "validation": {
+    "githubWrites": "Committed small source/test/audit updates",
+    "githubActionsConfirmed": false,
+    "dataPackPublishedConfirmed": false,
+    "pythonTestsExecutedLocally": false,
+    "ciBlocker": "Prior CI failed because older sourceInterventionSample records did not match strict first-seen sample schema. Four reports repaired; await fresh workflow.",
+    "wowheadRunner403Ignored": true
+  },
+  "remainingBrowserOnly": [
+    "Translator API actual French output, language detection and same-language skip",
+    "ID-backed linked spell/item/talent names in live Chrome",
+    "DOM/rich-text reconstruction, dynamically populated prices and table preservation",
+    "Glossary match ordering around linked text and mixed capitalization"
+  ],
+  "auditBoundary": "Source-only evidence and static repository inspection do not constitute a clean translated browser audit cycle. Stabilization remains 0/2."
+}
