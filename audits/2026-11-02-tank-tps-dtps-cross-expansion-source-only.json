@@ -83,7 +83,17 @@
     "browserRenderedPagesVerified": 0,
     "browserTranslationErrorRate": null,
     "novelTranslationIssueRate": null,
-    "confirmedQualityCycles": 0
+    "confirmedQualityCycles": 0,
+    "cycleId": "2026-11-02-tank-tps-dtps-cross-expansion-source-only",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "tbc-feral-druid-overview-tank-metrics-20261102",
+      "tbc-paladin-tank-overview-tank-metrics-control-20261102",
+      "classic-warrior-tank-overview-tank-metrics-control-20261102"
+    ],
+    "sampledPageCount": 3,
+    "newReusableTermFamiliesObserved": 2
   },
   "remainingBrowserOnly": [
     "Actual Translator API output and source/target language auto-detection",
