@@ -18,7 +18,7 @@ class ThreatPerRageLocaleTests(unittest.TestCase):
         pages = json.loads((ROOT / "data/wowhead_regression_pages.json").read_text(encoding="utf-8"))["pages"]
         urls = {page["url"] for page in pages}
         self.assertIn("https://www.wowhead.com/tbc/guide/classes/druid/feral/tank-overview-pve", urls)
-        self.assertIn("https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-overview-pve", urls)
+        self.assertIn("https://www.wowhead.com/tbc/guide/classes/warrior/protection/tank-stat-priority-attributes-pve", urls)
 
 if __name__ == "__main__":
     unittest.main()
