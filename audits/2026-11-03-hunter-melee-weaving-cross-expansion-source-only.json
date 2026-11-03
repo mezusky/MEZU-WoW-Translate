@@ -81,7 +81,19 @@
     "browserRenderedPagesVerified": 0,
     "browserTranslationErrorRate": null,
     "novelTranslationIssueRate": null,
-    "confirmedQualityCycles": 0
+    "confirmedQualityCycles": 0,
+    "cycleId": "2026-11-03-hunter-melee-weaving-cross-expansion-source-only",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "tbc-hunter-rotation-melee-weaving-20261103",
+      "tbc-hunter-overview-melee-weaving-20261103",
+      "classic-warlock-stats-phrase-control-20261103",
+      "tbc-hunter-stats-phrase-control-20261103",
+      "wotlk-frost-dk-stats-phrase-control-20261103"
+    ],
+    "sampledPageCount": 5,
+    "newReusableTermFamiliesObserved": 1
   },
   "staticChecks": {
     "corpusUniqueIds": true,
