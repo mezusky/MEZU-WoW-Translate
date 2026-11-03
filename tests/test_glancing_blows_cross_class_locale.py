@@ -26,7 +26,7 @@ class GlancingBlowsCrossClassTests(unittest.TestCase):
             with self.subTest(source=source):
                 self.assertEqual(self.terms[source], target)
         for ambiguous in ("glance", "glancing", "blow", "blows",
-                          "weapon skill", "Weapon Expertise"):
+                          "weapon damage", "Weapon Expertise"):
             self.assertNotIn(ambiguous, self.terms)
 
     def test_longest_phrase_and_distinct_white_hits(self):
