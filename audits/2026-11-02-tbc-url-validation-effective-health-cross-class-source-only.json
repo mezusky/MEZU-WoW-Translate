@@ -91,7 +91,15 @@
     "browserRenderedPagesVerified": 0,
     "browserTranslationErrorRate": null,
     "novelTranslationIssueRate": null,
-    "confirmedQualityCycles": 0
+    "confirmedQualityCycles": 0,
+    "cycleId": "2026-11-02-tbc-url-validation-effective-health-cross-class-source-only",
+    "sourceLanguage": "en",
+    "targetLanguage": "fr",
+    "sampledPageIds": [
+      "tbc-feral-druid-stats-effective-health-20261102"
+    ],
+    "sampledPageCount": 1,
+    "newReusableTermFamiliesObserved": 1
   },
   "staticValidation": {
     "corpusUniqueIds": 728,
