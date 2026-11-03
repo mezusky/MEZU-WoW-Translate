@@ -26,7 +26,7 @@ class CrushingBlowsCrossRoleTests(unittest.TestCase):
             with self.subTest(source=source):
                 self.assertEqual(self.terms[source], target)
         for ambiguous in ("crushing", "blow", "blows", "crushed",
-                          "Shield Block", "Glancing", "Weapon Skill"):
+                          "Shield Block", "Glancing", "Weapon Expertise"):
             self.assertNotIn(ambiguous, self.terms)
 
     def test_crushing_and_glancing_are_distinct_attack_table_concepts(self):
