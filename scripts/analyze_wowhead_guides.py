@@ -133,6 +133,6 @@ for page in report["pages"]:
         frequency[b["fingerprint"]] > 1 for b in page["blocks"]
     ) if page["blocks"] else 0
 report["fingerprintMethod"] = "sha256-80bit of normalized source block; not translated output"
-OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
+OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 for p in report["pages"]:
     print(p["id"], p["sourceStatus"], p.get("stats", {}), p.get("accessNote", ""))
