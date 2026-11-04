@@ -379,10 +379,10 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24307308"
     },
     "24307310": {
-      "accepted_pairs": 149,
+      "accepted_pairs": 155,
       "en_blocks": 118,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24307310",
-      "fr_blocks": 113,
+      "fr_blocks": 118,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24307310"
     },
     "24307383": {
@@ -968,6 +968,7 @@
     "Azeroth is calling once more. World of Warcraft: Forever invites you to begin again in a reimagined original Azeroth, where familiar roads lead to new discoveries, the journey matters as much as the destination, and the world is ready to grow for years to come.": "Azeroth vous appelle à nouveau. World of Warcraft: Forever vous invite à recommencer votre voyage sur une Azeroth réinventée, où des routes pourtant familières vous conduiront à de nouvelles découvertes. Le voyage importe autant que la destination, et le monde est prêt à se développer pendant les années à venir.",
     "Azeroth is even better with company.": "L’aventure en Azeroth est encore plus agréable à plusieurs.",
     "Azeroth is even better with company. Invite nearby players to a party, join a guild, or use chat to ask for help. Grouping can make difficult quests more manageable and opens the door to dungeons—instanced adventures filled with enemies, bosses, and valuable rewards.": "L’aventure en Azeroth est encore plus agréable à plusieurs. Invitez les personnages-joueurs à proximité à rejoindre votre groupe, intégrez une guilde ou demandez de l’aide dans la discussion. Jouer en groupe facilite les quêtes les plus difficiles et vous ouvre les portes des donjons, des aventures instanciées peuplées d’adversaires et de boss, où de précieuses récompenses vous attendent.",
+    "Azshara's Darkscale Cloak and Azshara's Deepscale Cloak were adjusted to resolve a dividing line that was visible under specific lighting.": "La cape sombrécaille d’Azshara et la cape écaille-profonde d’Azshara ont été modifiées pour corriger une ligne de démarcation visible sous certains éclairages.",
     "Azure Vault Fixed an issue causing the time requirement reaching two and three chests on Mythic Keystone difficulty was lower than intended.": "Caveau d’Azur Correction d’un problème à cause duquel le temps nécessaire pour atteindre deux et trois coffres en mode pierre mythique était plus court que prévu.",
     "BCCA: The Gods of Zul'Aman Now Live": "ABCC : Les dieux de Zul’Aman est disponible",
     "Backstab damage is now increased by 45% in PvP combat (was 30%).": "Dégâts d’Attaque sournoise augmentés de 45 % en combat JcJ (au lieu de 30 %).",
@@ -1976,6 +1977,7 @@
     "Fixed an issue where the low noise variant of Frozen Orb was not being used inside raids and dungeons.": "Correction d’un problème à cause duquel la variante moins bruyante d’Orbe gelé n’était pas utilisée dans les raids et les donjons.",
     "Fixed an issue where the scaling of Inferno would become reduced when Rain of Fire affected more than 5 targets.": "Correction d’un problème à cause duquel l’échelle d’Inferno était réduite lorsque Pluie de feu affectait plus de 5 cibles.",
     "Fixed an issue where the spell casting haste from Time Warp and Primal Rage was able to stack with Power Infusion's spell casting haste, which was not intended.": "Correction d’un problème à cause duquel la hâte des sorts conférée par Distorsion temporelle et Rage primordiale pouvait être cumulée de manière incorrecte avec la hâte des sorts d’Infusion de puissance.",
+    "Fixed an issue with \"The Wandering\" scenario that caused some Tether icons to flicker erratically.": "Correction d’un problème dans le scénario « L’esprit errant » qui provoquait le clignotement intempestif de certaines icônes d’ancrage.",
     "Fixed an issue with Admiral Ripsnarl's visual effect.": "Correction d’un problème concernant l’effet visuel de l’amiral Grondéventre.",
     "Fixed an issue with Crystalline Refraction where interrupting Ray of Frost by casting Ray of Frost could cause it to not generate Fingers of Frost.": "Correction d’un problème lié à Réfraction cristalline, à cause duquel l’interruption de Rayon de givre suite à l’incantation d’un deuxième sort Rayon de givre pouvait empêcher la génération de Doigts de givre.",
     "Fixed an issue with Deadly Momentum that caused its increased critical chance to be consumed by auto attacks that did not benefit from that increased chance.": "Correction d’un problème à cause duquel l’augmentation des chances de coup critique d’Élan mortel était consommée par des attaques automatiques ne bénéficiant pas de cette augmentation.",
@@ -1989,6 +1991,7 @@
     "Fixed an issue with Shadowy Apparitions that prevented them from being summoned under certain circumstances.": "Correction d’un problème qui empêchait l’invocation des apparitions ténébreuses dans certaines circonstances.",
     "Fixed an issue with Shaman Greater Fire Elemental dealing too much damage with its Fire Nova spell.": "Correction d’un problème à cause duquel l’élémentaire de feu supérieur infligeait trop de dégâts lorsqu’il utilisait son sort Nova de feu.",
     "Fixed an issue with many guild profession achievements not tracking as expected.": "Correction d’un problème concernant de nombreux hauts faits de guilde qui n’étaient pas comptabilisés comme prévu.",
+    "Fixed an issue with the \"Voices of Stone\" bonus objective in the \"Bear's Burden\" scenario that caused it to become stuck on the UI.": "Correction d’un problème qui empêchait l’objectif bonus « Les voix de la pierre » du scénario « Fardeau de l’ours » de disparaître de l’interface.",
     "Fixed an issue with the spawning of Voress'thalik which prevented the completion of \"Devastation Below\".": "Correction d’un problème concernant l’apparition de Voress’thalik qui empêchait de terminer « Descente mortelle ».",
     "Fixed an issue with the “Returning the Bounty” scenario in Jan'alai's Refuge that would occasionally prevent the Pit Boss from spawning in the labyrinth.": "Correction d’un problème lors du scénario « Restituer la prime » au refuge de Jan’alai, à cause duquel le chef de fosse n’apparaissait parfois pas dans le labyrinthe.",
     "Fixed issue where NPCs in Amani'Zar Village weren't visible during the quest “De Legend of de Hash’ey”.": "Correction d’un problème à cause duquel des PNJ d’Amani’Zar n’étaient pas visibles pendant la quête « La légende des hash’ey ».",
@@ -2364,6 +2367,7 @@
     "Hotfixes: October 21, 2026": "Correctifs : 21 octobre 2026",
     "Hotfixes: October 26, 2026": "Correctifs : 26 octobre 2026",
     "Hotfixes: October 27, 2026": "Correctifs : 27 octobre 2026",
+    "Hotfixes: October 30, 2026": "Correctifs : 30 octobre 2026",
     "Housing and Endeavors": "Logis et initiatives ;",
     "Housing opens up a world of creativity and camaraderie: personalize your sanctuary and invite allies for gatherings, roleplay, and unforgettable memories.": "Le système de logis ouvre un monde de créativité et de camaraderie : personnalisez votre sanctuaire et invitez des unités alliées pour des réunions entre amis, du jeu de rôle et des souvenirs inoubliables.",
     "How Camping and Profession Camp Features Work": "Fonctionnement des campements et de leurs effets",
@@ -3189,6 +3193,7 @@
     "October 23, 2026": "23 octobre 2026",
     "October 26, 2026": "26 octobre 2026",
     "October 27, 2026": "27 octobre 2026",
+    "October 30, 2026": "30 octobre 2026",
     "October’s Trading Post is cloaked in calamity, with fiendish finds ready to add chaos to your collection.": "Le comptoir d’octobre se drape de calamité, avec des trouvailles diaboliques prêtes à semer le chaos dans votre collection.",
     "October’s Trading Post is cloaked in calamity, with fiendish finds ready to add chaos to your collection. Complete activities to earn Trader’s Tender, fill your Traveler’s Log, and slink into the shadows with the Ensemble: Thornshadow Assassin's Attire.": "Le comptoir d’octobre se drape de calamité, avec des trouvailles diaboliques prêtes à semer le chaos dans votre collection. Réalisez diverses activités pour gagner des deniers, remplir votre journal de voyage et vous glisser dans l’ombre avec l’ensemble : costume d’assassin ombrépine.",
     "Off the coast of Dustwallow Marsh lies the Darkspear Islands, where a new battle is taking shape.": "Au large du marécage d’Âprefange se trouvent les îles des Sombrelances, où une nouvelle bataille se prépare.",
@@ -4643,6 +4648,7 @@
     "Toughness: No longer increases Armor. Now increases Stamina by a percentage.": "Résistance : n’améliore plus l’armure, mais augmente l’Endurance.",
     "Toxic Aura periodic damage reduced by 20%.": "Les dégâts périodiques d’Aura toxique ont été réduits de 20 %.",
     "Tracked quests display your current objectives and progress as you explore. Press Hotkey-M to open the world map and view quest markers and highlighted objective areas; the minimap also points toward nearby objectives. If the tracker becomes crowded, open the quest log and untrack quests you are not currently pursuing. A question mark above a character means a completed quest is ready to turn in.": "Les quêtes suivies affichent vos objectifs actuels et l’état de votre progression au fil de votre aventure. Appuyez sur la touche M pour ouvrir la carte du monde et découvrir l’emplacement des marqueurs de quêtes et des zones regroupant vos objectifs. La mini-carte affiche également les objectifs proches de votre position actuelle. Si le suivi des quêtes devient surchargé, ouvrez le journal des quêtes et désactivez le suivi de celles que vous n’êtes pas en train d’accomplir. Lorsqu’un personnage dispose d’un point d’interrogation au-dessus de la tête, cela signifie que vous pouvez terminer la quête.",
+    "Tracking the source for the Nagrand plant decor sold by Botanist Gril'ka in Nagrand now properly leads to her location.": "Le suivi de la provenance des éléments de décoration végétale de Nagrand vendues par la botaniste Gril’ka, à Nagrand, mène désormais correctement à son emplacement.",
     "Trade your Neighborhood Candy for Tricky Treats!": "Échangez des bonbons de quartier contre des bonbons farceurs !",
     "Trade your Neighborhood Candy for Tricky Treats! Exchange rates vary between neighborhoods, and vendors offer a fresh rate each day. Be sure to chat with them to find the best deal.": "Échangez des bonbons de quartier contre des bonbons farceurs ! Les taux de change varient selon le quartier, et les vendeurs et vendeuses proposent un taux différent chaque jour. Allez leur rendre visite pour trouver la meilleure affaire.",
     "Tradeskills: Total of 18 Points For each non-gathering primary profession, reach 150, 225, and 300 skill": "Métiers – 18 points Atteignez les niveaux 150, 225 et 300 dans un métier principal non lié à la récolte.",
@@ -5286,7 +5292,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4695,
+  "pair_count": 4701,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -9985,7 +9991,13 @@
     "You can switch between three action bar sets by holding LB + RB and pressing Left or Right on the directional pad (D-pad).": "24316974",
     "You choose a Ruleset rather than selecting from a traditional list of realms. Normal, PvP, Roleplay-PvP, and Roleplay offer different starting choices, with Hardcore planned to follow a little after launch.": "24315821",
     "Your World of Warcraft Subscription or Game Time gives you access to both, so an evening with friends here can sit alongside a favorite activity there.": "24315821",
-    "You’ll still need a keyboard for tasks such as chat.": "24315821"
+    "You’ll still need a keyboard for tasks such as chat.": "24315821",
+    "Azshara's Darkscale Cloak and Azshara's Deepscale Cloak were adjusted to resolve a dividing line that was visible under specific lighting.": "24307310",
+    "Fixed an issue with \"The Wandering\" scenario that caused some Tether icons to flicker erratically.": "24307310",
+    "Fixed an issue with the \"Voices of Stone\" bonus objective in the \"Bear's Burden\" scenario that caused it to become stuck on the UI.": "24307310",
+    "Hotfixes: October 30, 2026": "24307310",
+    "October 30, 2026": "24307310",
+    "Tracking the source for the Nagrand plant decor sold by Botanist Gril'ka in Nagrand now properly leads to her location.": "24307310"
   },
   "targetLanguage": "fr-FR"
 }
