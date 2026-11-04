@@ -5,7 +5,7 @@ This does not attempt to replace the browser translator. It gives MEZU a stable,
 repeatable view of the real guide source so automated review can spot untranslated
 or uncovered WoW phrases before relying on screenshots from the user.
 """
-import json, re, urllib.request
+import hashlib, json, re, urllib.request
 from pathlib import Path
 from html_block_extractor import extract_readable_blocks
 from guide_audit_boundaries import trim_guide_footer
@@ -103,6 +103,7 @@ for page in cfg.get("pages", []):
             blocks.append({
                 "tag": tag,
                 "text": clean,
+                "fingerprint": hashlib.sha256(clean.encode("utf-8")).hexdigest()[:20],
                 "exact_override": covered,
                 "wow_signal": wow_signal,
                 "jargon_hits": jargon_hits
@@ -120,6 +121,18 @@ for page in cfg.get("pages", []):
         row["sourceStatus"], row["accessNote"] = classify_fetch_error(exc)
     report["pages"].append(row)
 
-OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+# Cross-page fingerprints allow repeat-pattern tracking without publishing guide prose.
+# They are source evidence only, not proof of translated-output quality.
+frequency = {}
+for page in report["pages"]:
+    for block in page["blocks"]:
+        key = block["fingerprint"]
+        frequency[key] = frequency.get(key, 0) + 1
+for page in report["pages"]:
+    page["stats"]["reused_source_blocks"] = sum(
+        frequency[b["fingerprint"]] > 1 for b in page["blocks"]
+    ) if page["blocks"] else 0
+report["fingerprintMethod"] = "sha256-80bit of normalized source block; not translated output"
+OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\\n", encoding="utf-8")
 for p in report["pages"]:
     print(p["id"], p["sourceStatus"], p.get("stats", {}), p.get("accessNote", ""))
