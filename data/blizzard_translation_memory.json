@@ -561,10 +561,10 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24315643"
     },
     "24315820": {
-      "accepted_pairs": 95,
-      "en_blocks": 72,
+      "accepted_pairs": 97,
+      "en_blocks": 76,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315820",
-      "fr_blocks": 68,
+      "fr_blocks": 71,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24315820"
     },
     "24316094": {
@@ -2570,6 +2570,7 @@
     "In World of Warcraft: Forever, we have brought in a new form of Seal Twisting via the Retribution 31-point gold medal talent Twist of Light.": "Dans World of Warcraft: Forever, nous proposons une nouvelle approche de l’alternance des sceaux grâce au talent majeur à 31 points Effet de lumière.",
     "In World of Warcraft: Forever, we’re changing how that journey begins by moving away from the traditional realm-selection screen and introducing rulesets instead.": "Dans World of Warcraft: Forever, nous changeons la façon dont cette aventure commence en abandonnant l’écran traditionnel de sélection des royaumes au profit des ensembles de règles.",
     "In World of Warcraft: Forever, we’ve refined targeting, casting, looting, and menu navigation for gamepads while keeping the familiar feel players have come to know.": "Dans World of Warcraft: Forever, les commandes liées au ciblage, à l’utilisation des techniques et des sorts, au ramassage du butin ainsi qu’à la navigation dans les menus ont été repensées pour les manettes, de sorte que vous puissiez jouer comme vous en avez l’habitude.",
+    "In World of Warcraft: Forever, we’ve refined targeting, casting, looting, and menu navigation for gamepads while keeping the familiar feel players have come to know. Learn more in our overview article.": "Dans World of Warcraft: Forever, les commandes liées au ciblage, à l’utilisation des techniques et des sorts, au ramassage du butin ainsi qu’à la navigation dans les menus ont été repensées pour les manettes, de sorte que vous puissiez jouer comme vous en avez l’habitude. Pour en savoir plus, consultez notre article de présentation.",
     "In World of Warcraft: Forever, you choose a Ruleset before you create your character based on the type of experience you want to have in the game.": "Dans World of Warcraft: Forever, vous choisissez votre ensemble de règles avant même de créer un personnage, qui dictera le type d’expérience que vous vivrez en jeu.",
     "In World of Warcraft: Forever, you choose a Ruleset before you create your character based on the type of experience you want to have in the game. Your choice determines how Player versus Player (PvP) combat works and what community conventions apply. Normal, PvP, Roleplay, and Roleplay-PvP are available at launch, with Hardcore planned for a later release:": "Dans World of Warcraft: Forever, vous choisissez votre ensemble de règles avant même de créer un personnage, qui dictera le type d’expérience que vous vivrez en jeu. Vos choix déterminent le fonctionnement du mode JcJ et les conventions communautaires qui régissent votre expérience. Les ensembles de règles Normal, JcJ, Jeu de rôle et Jeu de rôle JcJ sont disponibles dès la sortie du jeu, tandis que le mode Extrême sortira plus tard.",
     "In World of Warcraft: Forever, your journey starts with a Ruleset rather than a traditional realm-selection screen.": "Dans World of Warcraft: Forever, votre aventure commence par le choix d’un ensemble de règles, qui remplace l’écran traditionnel de sélection des royaumes.",
@@ -2814,6 +2815,7 @@
     "Learn more in our Housing Early Access article.": "Pour en savoir plus, consultez notre article sur l’accès anticipé au système de logis.",
     "Learn more in our New Player Starter Guide.": "Pour en savoir plus, consultez notre guide de démarrage pour les novices.",
     "Learn more in our article.": "Pour en savoir plus, consultez notre article.",
+    "Learn more in our overview article.": "Pour en savoir plus, consultez notre article de présentation.",
     "Learn more in our previously published PvP progression overview.": "Pour en savoir plus, consultez notre article sur le fonctionnement de la progression JcJ.",
     "Learn more in our previously published article or pre-purchase now!": "Pour en savoir plus, consultez notre article dédié ou préachetez maintenant !",
     "Learn more in our previously published article.": "Pour en savoir plus, consultez notre article dédié.",
@@ -5292,7 +5294,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4701,
+  "pair_count": 4703,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -9997,7 +9999,9 @@
     "Fixed an issue with the \"Voices of Stone\" bonus objective in the \"Bear's Burden\" scenario that caused it to become stuck on the UI.": "24307310",
     "Hotfixes: October 30, 2026": "24307310",
     "October 30, 2026": "24307310",
-    "Tracking the source for the Nagrand plant decor sold by Botanist Gril'ka in Nagrand now properly leads to her location.": "24307310"
+    "Tracking the source for the Nagrand plant decor sold by Botanist Gril'ka in Nagrand now properly leads to her location.": "24307310",
+    "In World of Warcraft: Forever, we’ve refined targeting, casting, looting, and menu navigation for gamepads while keeping the familiar feel players have come to know. Learn more in our overview article.": "24315820",
+    "Learn more in our overview article.": "24315820"
   },
   "targetLanguage": "fr-FR"
 }
