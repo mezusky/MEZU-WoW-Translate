@@ -85,7 +85,12 @@ def audit_sample(sample):
             if label is not None:
                 valid = bool(re.search(r"(?<!\w)" + re.escape(normalized_name(name)) + r"$", normalized_name(label)))
             else:
-                valid = contains_official_name(translated, name)
+                # An unbound name elsewhere cannot establish the label of this ID.
+                # Report an unverifiable capture instead of a misleading pass.
+                if contains_official_name(translated, name):
+                    findings.append("unverified_entity_label:" + entity_id)
+                    continue
+                valid = False
             if not valid:
                 findings.append("missing_target_entity:" + entity_id)
     return findings
