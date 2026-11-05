@@ -83,7 +83,7 @@ def audit_sample(sample):
             # may belong to another spell (e.g. Frappe vs Frappe mortelle).
             label = linked_entity_label(translated, entity_type or "spell", entity_id) if entity_type else None
             if label is not None:
-                valid = bool(re.search(r"(?<!\\w)" + re.escape(normalized_name(name)) + r"$", normalized_name(label)))
+                valid = bool(re.search(r"(?<!\w)" + re.escape(normalized_name(name)) + r"$", normalized_name(label)))
             else:
                 valid = contains_official_name(translated, name)
             if not valid:
