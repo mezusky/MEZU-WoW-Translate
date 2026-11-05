@@ -102,6 +102,20 @@ class TranslationSampleAuditTests(unittest.TestCase):
                                 "targetName": "Objet officiel"}]}
         self.assertIn("missing_target_entity:123", audit_sample(sample))
 
+    def test_untyped_item_label_infers_unique_kind(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Equip item=123.",
+                  "translated": "Équipez Objet officiel (item=123).",
+                  "entities": [{"id": 123, "targetName": "Objet officiel"}]}
+        self.assertEqual(audit_sample(sample), [])
+
+    def test_untyped_collision_does_not_guess_kind(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Compare spell=123 and item=123.",
+                  "translated": "Comparez Sort officiel (spell=123) et Objet officiel (item=123).",
+                  "entities": [{"id": 123, "targetName": "Objet officiel"}]}
+        self.assertIn("unverified_entity_label:123", audit_sample(sample))
+
     def test_same_language_no_translation(self):
         sample = {"sourceLanguage": "fr-FR", "targetLanguage": "fr-FR",
                   "source": "Bonjour", "translated": "Bonjour"}
