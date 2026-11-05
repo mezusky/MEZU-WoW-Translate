@@ -11,7 +11,7 @@ import json
 import re
 from pathlib import Path
 
-ENTITY = re.compile(r"\b(?:spell|item|npc|quest|achievement)=(\d+)\b")
+ENTITY = re.compile(r"\b(spell|item|npc|quest|achievement)=(\d+)\b")
 PLACEHOLDER = re.compile(r"\{\{[A-Z][A-Z0-9_]*\}\}")
 
 def audit_sample(sample):
@@ -39,7 +39,10 @@ def audit_sample(sample):
         entity_id = str(entity.get("id", ""))
         # Only require the official target name when this entity occurs in
         # the source. Otherwise an unrelated glossary entry becomes a false failure.
-        if (name and entity_id in source_ids and name not in translated):
+        entity_type = entity.get("type")
+        referenced = any(id_ == entity_id and (not entity_type or kind == entity_type)
+                         for kind, id_ in source_ids)
+        if name and referenced and name not in translated:
             findings.append("missing_target_entity:" + entity_id)
     return findings
 
