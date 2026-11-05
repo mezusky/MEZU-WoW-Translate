@@ -123,16 +123,25 @@ for page in cfg.get("pages", []):
 
 # Cross-page fingerprints allow repeat-pattern tracking without publishing guide prose.
 # They are source evidence only, not proof of translated-output quality.
-frequency = {}
+# Count distinct pages, not occurrences, so repeat widgets within one guide
+# cannot masquerade as cross-guide reuse. Keep novelty explicitly source-only.
+pages_by_fingerprint = {}
 for page in report["pages"]:
     for block in page["blocks"]:
-        key = block["fingerprint"]
-        frequency[key] = frequency.get(key, 0) + 1
+        pages_by_fingerprint.setdefault(block["fingerprint"], set()).add(page["id"])
+seen_prior_pages = set()
 for page in report["pages"]:
+    fingerprints = {block["fingerprint"] for block in page["blocks"]}
     page["stats"]["reused_source_blocks"] = sum(
-        frequency[b["fingerprint"]] > 1 for b in page["blocks"]
-    ) if page["blocks"] else 0
+        len(pages_by_fingerprint[key]) > 1 for key in fingerprints
+    )
+    page["stats"]["first_seen_source_blocks"] = len(fingerprints - seen_prior_pages)
+    seen_prior_pages.update(fingerprints)
 report["fingerprintMethod"] = "sha256-80bit of normalized source block; not translated output"
+report["sourceNoveltyMethod"] = (
+    "first_seen_source_blocks counts source fingerprints not seen in earlier "
+    "accessible pages in corpus order; it does not measure translation defects"
+)
 OUT.write_text(json.dumps(report, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
 for p in report["pages"]:
     print(p["id"], p["sourceStatus"], p.get("stats", {}), p.get("accessNote", ""))
