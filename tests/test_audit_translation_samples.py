@@ -25,6 +25,22 @@ class TranslationSampleAuditTests(unittest.TestCase):
                   "entities": [{"id": 123, "targetName": "Nom officiel"}]}
         self.assertEqual(audit_sample(sample), [])
 
+    def test_official_name_typographic_variants_pass(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Use spell=123 during combat.",
+                  "translated": "Utilisez L’IMAGE   DIVINE (spell=123) en combat.",
+                  "entities": [{"type": "spell", "id": 123,
+                                "targetName": "L'image divine"}]}
+        self.assertEqual(audit_sample(sample), [])
+
+    def test_official_name_real_difference_still_fails(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Use spell=123 during combat.",
+                  "translated": "Utilisez Image sombre (spell=123) en combat.",
+                  "entities": [{"type": "spell", "id": 123,
+                                "targetName": "Image divine"}]}
+        self.assertIn("missing_target_entity:123", audit_sample(sample))
+
     def test_entity_kind_collision_detected(self):
         sample = {"sourceLanguage": "en", "targetLanguage": "fr",
                   "source": "Use spell=123 during combat.",
