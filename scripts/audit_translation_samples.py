@@ -29,6 +29,27 @@ def contains_official_name(text, name):
     return bool(expected and re.search(r"(?<!\w)" + re.escape(expected) + r"(?!\w)", actual))
 
 
+def linked_entity_label(text, kind, entity_id):
+    """Read a captured 'Localized Name (spell=123)' label, if present.
+
+    Return None when the capture lacks this structure; a global name search
+    cannot prove that the correct label belongs to the referenced entity.
+    """
+    marker = re.compile(r"\\(\\s*" + re.escape(kind) + r"=" +
+                        re.escape(entity_id) + r"\\s*\\)")
+    match = marker.search(text)
+    if not match:
+        return None
+    prefix = text[:match.start()].rstrip()
+    # A label may be parenthesized separately, or follow a short verb.
+    parenthesized = re.search(r"\\(([^()]*)\\)\\s*$", prefix)
+    if parenthesized:
+        return parenthesized.group(1).strip()
+    # Use only the final capitalized phrase, not the whole surrounding sentence.
+    words = re.search(r"([A-ZÀ-ÖØ-Þ][\\w’'’-]*(?:\\s+[\\w’'’-]+)*)\\s*$", prefix)
+    return words.group(1).strip() if words else ""
+
+
 def audit_sample(sample):
     source = sample["source"]
     translated = sample["translated"]
@@ -57,8 +78,16 @@ def audit_sample(sample):
         entity_type = entity.get("type")
         referenced = any(id_ == entity_id and (not entity_type or kind == entity_type)
                          for kind, id_ in source_ids)
-        if name and referenced and not contains_official_name(translated, name):
-            findings.append("missing_target_entity:" + entity_id)
+        if name and referenced:
+            # Prefer an ID-attached label. A name anywhere else in the prose
+            # may belong to another spell (e.g. Frappe vs Frappe mortelle).
+            label = linked_entity_label(translated, entity_type or "spell", entity_id) if entity_type else None
+            if label is not None:
+                valid = normalized_name(label) == normalized_name(name)
+            else:
+                valid = contains_official_name(translated, name)
+            if not valid:
+                findings.append("missing_target_entity:" + entity_id)
     return findings
 
 def main():
