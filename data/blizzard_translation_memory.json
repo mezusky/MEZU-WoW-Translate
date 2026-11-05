@@ -564,9 +564,9 @@
     },
     "24315820": {
       "accepted_pairs": 103,
-      "en_blocks": 77,
+      "en_blocks": 69,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24315820",
-      "fr_blocks": 73,
+      "fr_blocks": 70,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24315820"
     },
     "24316094": {
@@ -5176,6 +5176,7 @@
     "World of Warcraft: Forever Found Photos Panel Recap": "Récapitulatif de la conférence « Photos retrouvées de World of Warcraft: Forever »",
     "World of Warcraft: Forever GPU Requirements": "Configuration GPU requise pour World of Warcraft: Forever",
     "World of Warcraft: Forever Headlines a Packed WoW Weekly": "World of Warcraft: Forever à la une d’un résumé hebdomadaire de WoW riche en nouveautés",
+    "World of Warcraft: Forever Now Live!": "World of Warcraft: Forever est disponible !",
     "World of Warcraft: Forever Original Soundtrack": "World of Warcraft: Forever (bande originale)",
     "World of Warcraft: Forever What’s Next Panel Recap": "Récapitulatif de la conférence L’avenir de World of Warcraft: Forever",
     "World of Warcraft: Forever begins a new journey through a reimagined original world, with new zones, quests, dungeons, systems, and character options designed to expand the adventure while preserving its foundational character. If you’re returning to Azeroth, we’ve got what you need to get you started on your path.": "World of Warcraft: Forever signe le début d’un nouveau voyage à travers le monde original réinventé, avec de nombreuses nouveautés : des régions, quêtes, donjons, systèmes et choix de personnages conçus pour enrichir l’aventure tout en conservant les traits fondamentaux du monde du jeu. Si vous faites votre retour sur Azeroth, vous trouverez ici tout ce dont vous avez besoin pour bien commencer votre aventure.",
@@ -5304,7 +5305,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4711,
+  "pair_count": 4712,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -10019,7 +10020,8 @@
     "Zoom in and Zoom Out with the Camera: Hold the left bumper (LB)+ the right bumper (RB) while moving the right stick forward and backward to zoom the camera in and out.": "24316974",
     "Keep the conversation going in modern World of Warcraft and World of Warcraft: Forever with Discord account linking and guild chat mirroring.": "24315820",
     "Keep the conversation going in modern World of Warcraft and World of Warcraft: Forever with Discord account linking and guild chat mirroring. Whether you’re coordinating your next raid run, recruiting more players for PvP, or catching up with your guildmates, you can send messages between Discord and your guild chat. Learn more.": "24315820",
-    "Whether you’re coordinating your next raid run, recruiting more players for PvP, or catching up with your guildmates, you can send messages between Discord and your guild chat.": "24315820"
+    "Whether you’re coordinating your next raid run, recruiting more players for PvP, or catching up with your guildmates, you can send messages between Discord and your guild chat.": "24315820",
+    "World of Warcraft: Forever Now Live!": "24315820"
   },
   "targetLanguage": "fr-FR"
 }
