@@ -25,6 +25,28 @@ class TranslationSampleAuditTests(unittest.TestCase):
                   "entities": [{"id": 123, "targetName": "Nom officiel"}]}
         self.assertEqual(audit_sample(sample), [])
 
+    def test_entity_kind_collision_detected(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Use spell=123 during combat.",
+                  "translated": "Utilisez item=123 pendant le combat."}
+        self.assertIn("entity_id_mismatch", audit_sample(sample))
+
+    def test_target_name_only_required_for_matching_kind(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Equip item=123 before combat.",
+                  "translated": "Équipez item=123 avant le combat.",
+                  "entities": [{"type": "spell", "id": 123,
+                                "targetName": "Sort officiel"}]}
+        self.assertEqual(audit_sample(sample), [])
+
+    def test_target_name_required_for_matching_kind_and_id(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Equip item=123 before combat.",
+                  "translated": "Équipez item=123 avant le combat.",
+                  "entities": [{"type": "item", "id": 123,
+                                "targetName": "Objet officiel"}]}
+        self.assertIn("missing_target_entity:123", audit_sample(sample))
+
     def test_same_language_no_translation(self):
         sample = {"sourceLanguage": "fr-FR", "targetLanguage": "fr-FR",
                   "source": "Bonjour", "translated": "Bonjour"}
