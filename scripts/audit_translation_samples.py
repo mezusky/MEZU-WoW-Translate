@@ -79,9 +79,14 @@ def audit_sample(sample):
         referenced = any(id_ == entity_id and (not entity_type or kind == entity_type)
                          for kind, id_ in source_ids)
         if name and referenced:
+            # Legacy samples may omit the entity kind. Infer it only when
+            # the source identifies a single kind for this numeric ID.
+            # Never guess when an item and a spell share the same ID.
+            matching_kinds = {kind for kind, id_ in source_ids if id_ == entity_id}
+            resolved_type = entity_type or (next(iter(matching_kinds)) if len(matching_kinds) == 1 else None)
             # Prefer an ID-attached label. A name anywhere else in the prose
             # may belong to another spell (e.g. Frappe vs Frappe mortelle).
-            label = linked_entity_label(translated, entity_type or "spell", entity_id) if entity_type else None
+            label = linked_entity_label(translated, resolved_type, entity_id) if resolved_type else None
             if label is not None:
                 valid = bool(re.search(r"(?<!\w)" + re.escape(normalized_name(name)) + r"$", normalized_name(label)))
             else:
