@@ -35,18 +35,18 @@ def linked_entity_label(text, kind, entity_id):
     Return None when the capture lacks this structure; a global name search
     cannot prove that the correct label belongs to the referenced entity.
     """
-    marker = re.compile(r"\\(\\s*" + re.escape(kind) + r"=" +
-                        re.escape(entity_id) + r"\\s*\\)")
+    marker = re.compile(r"\(\s*" + re.escape(kind) + r"=" +
+                        re.escape(entity_id) + r"\s*\)")
     match = marker.search(text)
     if not match:
         return None
     prefix = text[:match.start()].rstrip()
     # A label may be parenthesized separately, or follow a short verb.
-    parenthesized = re.search(r"\\(([^()]*)\\)\\s*$", prefix)
+    parenthesized = re.search(r"\(([^()]*)\)\s*$", prefix)
     if parenthesized:
         return parenthesized.group(1).strip()
     # Use only the final capitalized phrase, not the whole surrounding sentence.
-    words = re.search(r"([A-ZÀ-ÖØ-Þ][\\w’'’-]*(?:\\s+[\\w’'’-]+)*)\\s*$", prefix)
+    words = re.search(r"([A-ZÀ-ÖØ-Þ][\w’'’-]*(?:\s+[\w’'’-]+)*)\s*$", prefix)
     return words.group(1).strip() if words else ""
 
 
