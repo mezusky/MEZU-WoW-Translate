@@ -17,8 +17,8 @@ PLACEHOLDER = re.compile(r"\{\{[A-Z][A-Z0-9_]*\}\}")
 def audit_sample(sample):
     source = sample["source"]
     translated = sample["translated"]
-    source_locale = sample["sourceLanguage"].split("-")[0].lower()
-    target_locale = sample["targetLanguage"].split("-")[0].lower()
+    source_locale = sample["sourceLanguage"].replace("_", "-").lower()
+    target_locale = sample["targetLanguage"].replace("_", "-").lower()
     findings = []
     if source_locale == target_locale:
         if translated != source:
@@ -36,8 +36,11 @@ def audit_sample(sample):
         findings.append("entity_id_mismatch")
     for entity in sample.get("entities", []):
         name = entity.get("targetName")
-        if name and name not in translated:
-            findings.append("missing_target_entity:" + str(entity["id"]))
+        entity_id = str(entity.get("id", ""))
+        # Only require the official target name when this entity occurs in
+        # the source. Otherwise an unrelated glossary entry becomes a false failure.
+        if (name and entity_id in source_ids and name not in translated):
+            findings.append("missing_target_entity:" + entity_id)
     return findings
 
 def main():
