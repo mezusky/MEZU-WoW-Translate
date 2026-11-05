@@ -57,6 +57,13 @@ class TranslationSampleAuditTests(unittest.TestCase):
                                 "targetName": "Frappe"}]}
         self.assertEqual(audit_sample(sample), [])
 
+    def test_other_entity_name_elsewhere_does_not_mask_wrong_label(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Use spell=123 after spell=456.",
+                  "translated": "Utilisez Frappe mortelle (spell=123) après Frappe (spell=456).",
+                  "entities": [{"type": "spell", "id": 123, "targetName": "Frappe"}]}
+        self.assertIn("missing_target_entity:123", audit_sample(sample))
+
     def test_entity_kind_collision_detected(self):
         sample = {"sourceLanguage": "en", "targetLanguage": "fr",
                   "source": "Use spell=123 during combat.",
