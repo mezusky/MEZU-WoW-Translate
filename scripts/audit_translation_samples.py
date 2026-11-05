@@ -26,7 +26,7 @@ def contains_official_name(text, name):
     """Match a full localized name, not a substring of a different WoW name."""
     expected = normalized_name(name)
     actual = normalized_name(text)
-    return bool(expected and re.search(r"(?<!\\w)" + re.escape(expected) + r"(?!\\w)", actual))
+    return bool(expected and re.search(r"(?<!\w)" + re.escape(expected) + r"(?!\w)", actual))
 
 
 def audit_sample(sample):
