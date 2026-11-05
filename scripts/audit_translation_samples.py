@@ -29,25 +29,24 @@ def contains_official_name(text, name):
     return bool(expected and re.search(r"(?<!\w)" + re.escape(expected) + r"(?!\w)", actual))
 
 
-def linked_entity_label(text, kind, entity_id):
-    """Read a captured 'Localized Name (spell=123)' label, if present.
+def linked_entity_labels(text, kind, entity_id):
+    """Read every captured 'Localized Name (spell=123)' label, if present.
 
     Return None when the capture lacks this structure; a global name search
     cannot prove that the correct label belongs to the referenced entity.
     """
     marker = re.compile(r"\(\s*" + re.escape(kind) + r"=" +
                         re.escape(entity_id) + r"\s*\)")
-    match = marker.search(text)
-    if not match:
-        return None
-    prefix = text[:match.start()].rstrip()
-    # A label may be parenthesized separately, or follow a short verb.
-    parenthesized = re.search(r"\(([^()]*)\)\s*$", prefix)
-    if parenthesized:
-        return parenthesized.group(1).strip()
-    # Use only the final capitalized phrase, not the whole surrounding sentence.
-    words = re.search(r"([A-ZÀ-ÖØ-Þ][\w’'’-]*(?:\s+[\w’'’-]+)*)\s*$", prefix)
-    return words.group(1).strip() if words else ""
+    labels = []
+    for match in marker.finditer(text):
+        prefix = text[:match.start()].rstrip()
+        parenthesized = re.search(r"\(([^()]*)\)\s*$", prefix)
+        if parenthesized:
+            labels.append(parenthesized.group(1).strip())
+            continue
+        words = re.search(r"([A-ZÀ-ÖØ-Þ][\w’'’-]*(?:\s+[\w’'’-]+)*)\s*$", prefix)
+        labels.append(words.group(1).strip() if words else "")
+    return labels
 
 
 def audit_sample(sample):
@@ -86,9 +85,9 @@ def audit_sample(sample):
             resolved_type = entity_type or (next(iter(matching_kinds)) if len(matching_kinds) == 1 else None)
             # Prefer an ID-attached label. A name anywhere else in the prose
             # may belong to another spell (e.g. Frappe vs Frappe mortelle).
-            label = linked_entity_label(translated, resolved_type, entity_id) if resolved_type else None
-            if label is not None:
-                valid = bool(re.search(r"(?<!\w)" + re.escape(normalized_name(name)) + r"$", normalized_name(label)))
+            labels = linked_entity_labels(translated, resolved_type, entity_id) if resolved_type else []
+            if labels:
+                valid = all(bool(re.search(r"(?<!\w)" + re.escape(normalized_name(name)) + r"$", normalized_name(label))) for label in labels)
             else:
                 # An unbound name elsewhere cannot establish the label of this ID.
                 # Report an unverifiable capture instead of a misleading pass.
