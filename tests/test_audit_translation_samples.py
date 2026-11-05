@@ -72,6 +72,14 @@ class TranslationSampleAuditTests(unittest.TestCase):
                   "entities": [{"type": "spell", "id": 123, "targetName": "Frappe"}]}
         self.assertIn("missing_target_entity:123", audit_sample(sample))
 
+    def test_unbound_official_name_is_not_proof_of_entity_label(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Use spell=123 after spell=456.",
+                  "translated": "Utilisez spell=123 après Frappe (spell=456).",
+                  "entities": [{"type": "spell", "id": 123,
+                                "targetName": "Frappe"}]}
+        self.assertIn("unverified_entity_label:123", audit_sample(sample))
+
     def test_entity_kind_collision_detected(self):
         sample = {"sourceLanguage": "en", "targetLanguage": "fr",
                   "source": "Use spell=123 during combat.",
