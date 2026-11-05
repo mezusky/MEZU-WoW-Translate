@@ -22,6 +22,13 @@ def normalized_name(value):
     return " ".join(value.split())
 
 
+def contains_official_name(text, name):
+    """Match a full localized name, not a substring of a different WoW name."""
+    expected = normalized_name(name)
+    actual = normalized_name(text)
+    return bool(expected and re.search(r"(?<!\\w)" + re.escape(expected) + r"(?!\\w)", actual))
+
+
 def audit_sample(sample):
     source = sample["source"]
     translated = sample["translated"]
@@ -50,7 +57,7 @@ def audit_sample(sample):
         entity_type = entity.get("type")
         referenced = any(id_ == entity_id and (not entity_type or kind == entity_type)
                          for kind, id_ in source_ids)
-        if name and referenced and normalized_name(name) not in normalized_name(translated):
+        if name and referenced and not contains_official_name(translated, name):
             findings.append("missing_target_entity:" + entity_id)
     return findings
 
