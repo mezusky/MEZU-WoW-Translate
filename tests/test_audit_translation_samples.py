@@ -116,6 +116,20 @@ class TranslationSampleAuditTests(unittest.TestCase):
                   "entities": [{"id": 123, "targetName": "Objet officiel"}]}
         self.assertIn("unverified_entity_label:123", audit_sample(sample))
 
+    def test_repeated_spell_id_checks_all_labels(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Use spell=123, then spell=123.",
+                  "translated": "Utilisez Frappe (spell=123), puis Frappe mortelle (spell=123).",
+                  "entities": [{"type": "spell", "id": 123, "targetName": "Frappe"}]}
+        self.assertIn("missing_target_entity:123", audit_sample(sample))
+
+    def test_repeated_item_id_correct_labels_pass(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Equip item=456, then compare item=456.",
+                  "translated": "Équipez (Objet officiel) (item=456), puis comparez (Objet officiel) (item=456).",
+                  "entities": [{"type": "item", "id": 456, "targetName": "Objet officiel"}]}
+        self.assertEqual(audit_sample(sample), [])
+
     def test_same_language_no_translation(self):
         sample = {"sourceLanguage": "fr-FR", "targetLanguage": "fr-FR",
                   "source": "Bonjour", "translated": "Bonjour"}
