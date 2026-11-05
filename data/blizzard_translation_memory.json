@@ -49,6 +49,9 @@
     "Players who pre-purchase the Skyborne Heroic Pack, Skyborne Epic Pack, or limited-time Warcraft Forever Collection will have access to WoW®: Forever Early Name Reservation from October 27 through November 3. Character names will be available on a first-come, first-served basis, and desired names cannot be guaranteed.",
     "Please note that class abilities and talents may continue to evolve throughout the beta test and are subject to additional changes.",
     "Pre-Purchase World of Warcraft: Forever Upgrades and Begin Your Next Journey in Azeroth",
+    "Q. Do Twitch Drop rewards expire? A. Earned Twitch Drop rewards will expire seven (7) days after they’ve been claimed if a Battle.net account has not been linked.",
+    "Q. How do I link my battle.net and Twitch accounts? A. Sign into your Battle.net account at https://account.battle.net/connections and click the Connect link for Twitch, then follow the instructions to sign in and link your Twitch account to Battle.net.",
+    "Q. What regions are eligible for these Twitch Drops? A. Participating regions include North America, Latin America, Europe, The Middle East, Africa, Japan, Taiwan, Southeast Asia, Australia, and New Zealand.",
     "Quest points of interest and objective blobs off",
     "Race and class shape the hero you become in World of Warcraft: Forever, from the fantasy you embody to the role you take on in the world.",
     "Race and class shape the hero you become in World of Warcraft: Forever, from the fantasy you embody to the role you take on in the world. You can return to a familiar favorite, explore a newly available combination, or begin your journey as a Skyborne character, with each choice offering a different way to step into Azeroth’s next chapter.",
@@ -91,7 +94,7 @@
     "You can return to a familiar favorite, explore a newly available combination, or begin your journey as a Skyborne character, with each choice offering a different way to step into Azeroth’s next chapter.",
     "Your first steps in Azeroth begin with a few meaningful choices: how you want to play, who your character will become, and where curiosity will lead you."
   ],
-  "article_count": 71,
+  "article_count": 72,
   "articles": {
     "24066687": {
       "accepted_pairs": 486,
@@ -521,7 +524,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24315203"
     },
     "24304164": {
-      "accepted_pairs": 8,
+      "accepted_pairs": 7,
       "en_blocks": 5,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24304164",
       "fr_blocks": 5,
@@ -589,6 +592,13 @@
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24316974",
       "fr_blocks": 50,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24316974"
+    },
+    "24317678": {
+      "accepted_pairs": 13,
+      "en_blocks": 21,
+      "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24317678",
+      "fr_blocks": 21,
+      "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24317678"
     }
   },
   "exact": {
@@ -597,6 +607,8 @@
     "(Alliance) High Order Skyborne": "(Alliance) Éolide de l’Ordre suprême",
     "(Horde) Windshaper Skyborne": "(Horde) Éolide des Sculpte-vents",
     "* Purchase of World of Warcraft: Forever Digital Upgrade or Collector’s Edition required. This benefit only applies to the specific WoW® account it was purchased for. WoW®: Forever Early Name Reservation will be available starting October 27 through November 3. Character names are limited to a first-come, first-serve basis, and desired names cannot be guaranteed.": "* Nécessite l’achat de la mise à niveau numérique ou de l’édition collector de World of Warcraft: Forever. Cet avantage s’applique uniquement au compte World of Warcraft® pour lequel l’achat a été effectué. La réservation de nom anticipée pour WoW®: Forever sera disponible du 27 octobre au 3 novembre. Les noms de personnages seront attribués selon l’ordre de réception des demandes. La disponibilité des noms souhaités n’est donc pas garantie.",
+    "**Not available in World of Warcraft Classic® games or modern World of Warcraft.": "** Non disponible dans les jeux World of Warcraft Classic® et dans la version moderne de World of Warcraft.",
+    "**Not available in World of Warcraft Classic® games or modern World of Warcraft. Requires World of Warcraft® Subscription or Game Time.": "** Non disponible dans les jeux World of Warcraft Classic® et dans la version moderne de World of Warcraft. Nécessite un abonnement ou du temps de jeu actif sur World of Warcraft®.",
     "*Grimtide Decor Pack offer available through December 1, 2026.": "*Le pack de décorations sinistrondes est disponible jusqu’au 1er décembre 2026.",
     "*Grimtide Decor Pack offer available through December 1, 2026. Not available in World of Warcraft Classic® games or World of Warcraft: Forever. Requires World of Warcraft® Subscription or Game Time. Use and placement of decor items are limited to the Housing feature, which requires access to World of Warcraft®: Midnight.": "*Le pack de décorations sinistrondes est disponible jusqu’au 1er décembre 2026. Non disponible dans les jeux World of Warcraft Classic® et World of Warcraft: Forever. Nécessite un abonnement ou du temps de jeu actif sur World of Warcraft®. L’utilisation et le placement des éléments de décoration sont limités à la fonctionnalité du logis, qui nécessite l’accès à World of Warcraft®: Midnight.",
     "*Not available in World of Warcraft Classic® games and requires a World of Warcraft® subscription or Game Time.": "* Non disponible dans les royaumes de WoW® Classic et nécessite du temps de jeu ou un abonnement à World of Warcraft®.",
@@ -3342,6 +3354,7 @@
     "Players can also visit the Trading Post in the capital cities of Dornogal (The Foregrounds) on the Isle of Dorn and in the renewed Silvermoon City, where representatives of both Tawney and Wilder and the Zen’shiri Trading Post are open for business.": "Vous pouvez également visiter le comptoir de la capitale de Dornogal (la Placeforge) de l’île de Dorn et de la ville rénovée de Lune-d’Argent, où les équipes des établissements de Tawny et Wilder et de Zen’Shari sont prêtes à vous accueillir.",
     "Players can build reputation with the Darkspear Raiders or Theramore Expeditionary Force to unlock faction rewards.": "Vous pouvez augmenter votre réputation auprès des chevaucheurs sombrelances ou de la troupe d’intervention de Theramore pour déverrouiller des récompenses de factions.",
     "Players can build reputation with the Darkspear Raiders or Theramore Expeditionary Force to unlock faction rewards. Read the previously published Darkspear Islands battleground overview for more information.": "Vous pouvez augmenter votre réputation auprès des chevaucheurs sombrelances ou de la troupe d’intervention de Theramore pour déverrouiller des récompenses de factions. Consultez notre article sur le champ de bataille des îles des Sombrelances pour obtenir plus d’informations.",
+    "Players can collect and use an ephemeral new launch-celebration toy to enhance their campfire and spread the benefits of comradery as they begin their journey through Azeroth in World of Warcraft: Forever.": "À l’occasion de la sortie de Forever, mettez la main sur un nouveau jouet éphémère pour améliorer votre feu de camp et partager ses effets avec vos camarades. De quoi bien commencer votre aventure sur Azeroth dans World of Warcraft: Forever !",
     "Players can earn the Markeet of the Infinite Skyriding Mount by completing the “Master of the Turbulent Timeways VI” achievement, awarded to champions who maintain “Mastery of the Timeways” for any four weeks during the event.": "Vous obtiendrez la monture de vol dynamique Marché de l’Infini en accomplissant le haut fait « Maîtrise des Voies temporelles turbulentes VI », décerné aux champions et championnes qui conservent la maîtrise des voies temporelles pendant quatre semaines au cours de l’évènement.",
     "Players can explore the new User Interface (UI) updates, experiment with new combat design changes across all classes, walk the path of the Demon Hunter Devourer, and more.": "Les personnages-joueurs pourront explorer les nouvelles mises à jour de l’interface utilisateur (IU), tester de nouveaux changements de mécanismes de combat pour toutes les classes, suivre la voie des chasseurs et chasseuses de démons Dévoration, et bien plus encore.",
     "Players can group, run dungeons, and raid with others who have chosen the same ruleset.": "Vous pourrez néanmoins vous associer à d’autres personnes ayant choisi le même ensemble de règles que vous pour partir en donjon ou en raid ou faire des activités de groupe.",
@@ -3518,10 +3531,7 @@
     "Pyromaniac now counts Ignite as a damage over time effect.": "Enflammer est désormais un effet de dégâts sur la durée de Pyromane.",
     "Q. As a streamer, how do I get Twitch Drops on my channel? A. All you need to do is ensure your Twitch and Battle.net accounts are linked and that you’ve opted into Drops (see Drops Streamer Home).": "Q : en tant que streameur/streameuse, comment puis-je bénéficier des drops Twitch sur ma chaîne ? R : il vous suffit d’associer votre compte Twitch à votre compte Battle.net et de vérifier que vous remplissez les conditions requises pour bénéficier des drops (consultez la page d’accueil des drops de streameur/streameuse).",
     "Q. Do I need to watch the same channel the entire time to earn my drops? A. You can earn progress towards a drop on any eligible channel in the World of Warcraft category on Twitch. You can, for example, watch half an hour on one channel and then switch to another channel without losing your progress. You cannot earn progress faster by watching more than one channel at a time.": "Q : dois-je regarder la même chaîne sans interruption pour gagner mes drops ? R : vous pouvez progresser vers l’obtention d’un drop sur n’importe quelle chaîne remplissant les conditions requises dans la catégorie World of Warcraft sur Twitch. Par exemple, vous pouvez regarder une chaîne pendant une demi-heure, puis passer à une autre sans perdre votre progression. Regarder plus d’une chaîne à la fois ne vous permettra pas d’obtenir le drop plus rapidement.",
-    "Q. Do Twitch Drop rewards expire? A. Earned Twitch Drop rewards will expire seven (7) days after they’ve been claimed if a Battle.net account has not been linked.": "Q : est-ce que les récompenses de drops Twitch peuvent expirer ? R : les récompenses obtenues expirent sept (7) jours après leur obtention si aucun compte Battle.net n’a été associé.",
-    "Q. How do I link my battle.net and Twitch accounts? A. Sign into your Battle.net account at https://account.battle.net/connections and click the Connect link for Twitch, then follow the instructions to sign in and link your Twitch account to Battle.net.": "Q : comment associer mes comptes Battle.net et Twitch ? R : onnectez-vous à votre compte Battle.net, rendez-vous sur la page https://account.battle.net/connections et cliquez sur le lien de connexion à Twitch. Puis suivez les instructions pour associer votre compte Twitch à votre compte Battle.net.",
     "Q. What devices can I use to earn and claim drops? A. You can earn and claim drops using your PC/Mac web browser or on the Twitch app for Android or iOS. Twitch apps on game consoles, smart TVs, and other TV apps do not support drops.": "Q : sur quelles plateformes puis-je gagner et recevoir des drops ? R : vous pouvez gagner et recevoir des drops en utilisant votre navigateur sur PC/Mac ou l’application Twitch sur Android ou iOS. Les applications Twitch sur console, TV connectée et autres applications TV ne sont pas compatibles avec les drops.",
-    "Q. What regions are eligible for these Twitch Drops? A. Participating regions include North America, Latin America, Europe, The Middle East, Africa, Japan, Taiwan, Southeast Asia, Australia, and New Zealand.": "Q : quelles sont les régions qui remplissent les conditions requises pour ces drops Twitch ? R : les régions participantes sont l’Amérique du Nord, l’Amérique latine, l’Europe, le Moyen-Orient, l’Afrique, le Japon, Taïwan, l’Asie du Sud-Est, l’Australie et la Nouvelle-Zélande.",
     "Q. Will I receive my drop rewards in-game automatically? A. To receive your rewards, you must claim the drop on the channel you’re watching or in the Drops Inventory menu on Twitch.": "Q : vais-je recevoir mes récompenses en jeu automatiquement ? R : pour recevoir vos récompenses, vous devez récupérer le drop sur la chaîne que vous regardez ou dans votre page d’inventaire de drops sur Twitch.",
     "Quaking totem’s health reduced by 10%.": "Points de vie du totem sismique réduits de 10 %.",
     "Quest guidance, one-bag view, and transmog are turned off by default.": "Les indications des quêtes, la vue sac unique et la transmogrification sont désactivées par défaut.",
@@ -3825,6 +3835,7 @@
     "Serrated Blades: Now ignores a specific percentage of your target’s armor, instead of a flat value—rising per level.": "Lames dentelées : vous permet désormais d’ignorer un certain pourcentage de l’armure de la cible, au lieu d’un montant fixe. Cette valeur augmente avec les niveaux.",
     "Server Ensure a fine-dining experience for the customers (NPCs) by delivering the meals lovingly crafted by the Cooks.": "Service Offrez à votre clientèle (PNJ) une expérience gastronomique inoubliable en leur servant les bons petits plats préparés en cuisine.",
     "Set Up Camp with the Camping System": "Installez un camp avec le système de campement",
+    "Set Your Campfire Ablaze with the Pouch of Violet Dust!": "Illuminez votre campement avec la bourse de poussière pourpre !",
     "Set after the events of Warcraft III Reforged: Forsaken Kingdom and before Molten Core, WoW: Forever takes you across the original continents on an adventure to level 60.": "Se plaçant entre les évènements de Warcraft III: Reforged – Forsaken Kingdom et ceux de cœur du Magma, WoW: Forever vous invite à explorer les continents d’origine tout en progressant jusqu’au niveau 60.",
     "Set after the events of Warcraft III Reforged: Forsaken Kingdom and before Molten Core, WoW: Forever takes you across the original continents on an adventure to level 60. Your journey continues through new stories, experiences, and updates inspired by years of player passion and feedback.": "Se plaçant entre les évènements de Warcraft III: Reforged – Forsaken Kingdom et ceux de cœur du Magma, WoW: Forever vous invite à explorer les continents d’origine tout en progressant jusqu’au niveau 60. Votre aventure se poursuit à travers des histoires inédites, de nouvelles expériences et des mises à jour inspirées par des années de passion et de retours de la part de la communauté.",
     "Setup: Chance to trigger increased so that 3 points grants 100% chance.": "Préparatifs : les chances d’activation ont été augmentées de manière à ce que 3 points de talent suffisent pour octroyer 100 % de chances.",
@@ -4906,6 +4917,7 @@
     "Watch 4 hours of eligible World of Warcraft content on any channel on Twitch.tv while these Twitch Drops are active to claim the Cuddly Gold-Colored Grrgle Housing decor item.": "Regardez 4 heures de contenu World of Warcraft éligible sur n’importe quelle chaîne Twitch.tv pendant que ces drops Twitch sont actifs pour obtenir l’élément de décoration Grrgl doré tout doux.",
     "Watch 4 hours of eligible World of Warcraft content while these Twitch Drops are active on any channel to earn the Cuddly Gold-Colored Grrgle Housing decor item.": "Regardez 4 h de contenu de World of Warcraft éligible pendant que ces drops Twitch sont actifs sur n’importe quelle chaîne pour obtenir l’élément de décoration Grrgl doré tout doux.",
     "Watch Now! WoW: Forever Podcast Ep.2": "Regardez l’épisode 2 du podcast de WoW: Forever dès maintenant !",
+    "Watch four hours of eligible World of Warcraft content while Drops are active on any channel.": "Regardez 4 h de contenu de World of Warcraft éligible pendant que ces drops Twitch sont actifs sur n’importe quelle chaîne.",
     "Watch the WoW: Forever Podcast: All About Tech": "Découvrez le podcast WoW: Forever : tout sur la technologie",
     "Watch the World of Warcraft Live Q&A Now": "Regardez la session de questions-réponses World of Warcraft en direct dès maintenant",
     "Watch the World of Warcraft: Forever Podcast, Ep. 1": "Regardez le 1er épisode du podcast de World of Warcraft: Forever",
@@ -5305,7 +5317,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4712,
+  "pair_count": 4714,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -5655,7 +5667,7 @@
     "BlizzCon 2026 has come to a close, and we’ve gathered the latest World of Warcraft announcements, reveals, and updates from the weekend in one place.": "24304074",
     "BlizzCon 2026 has come to a close, and we’ve gathered the latest World of Warcraft announcements, reveals, and updates from the weekend in one place. Catch up on all of this, and more, shared during the show:": "24304074",
     "BlizzCon 2026 has come to a close, and we’ve gathered the latest World of Warcraft announcements, reveals, and updates from the weekend in one place. Catch up on everything shared during the show right here.": "24301145",
-    "Blizzard has the right to change, pause, or cancel this Twitch Drop and its terms if it cannot run as planned for any reason, including but not limited to technical issues or unexpected factors beyond Blizzard’s control.": "24302098",
+    "Blizzard has the right to change, pause, or cancel this Twitch Drop and its terms if it cannot run as planned for any reason, including but not limited to technical issues or unexpected factors beyond Blizzard’s control.": "24317678",
     "Blood Craze: Now also triggered by attacks that deal more than 20% of your maximum health in a single hit and by striking a target with Bloodthirst.": "24301514",
     "Blood Frenzy: The effects of the old Primal Fury and Blood Frenzy talent have been combined into this single 2-point talent.": "24301515",
     "Blood Fury: Increases Attack Power and Spell Power by 10% for 15 seconds.": "24304075",
@@ -6460,7 +6472,7 @@
     "Frenzied Regeneration heals for 5% health every sec (was 8%) for Balance Druid in PvP combat.": "24066687",
     "Frenzied Regeneration: Now heals the Druid for 100% of max health over the duration (given sufficient Rage).": "24301515",
     "Frequent Flier reduces the cost of flights and speeds them up.": "24307383",
-    "Frequently Asked Questions": "24302098",
+    "Frequently Asked Questions": "24317678",
     "Fresh items are available on the holiday vendor, but you can take the best of the fest with you wherever you go by bringing down Coren Direbrew—once daily for a chance at unique goods like the Brewfest Barrel Bomber mount.": "24303006",
     "Freshly Tapped for Midnight": "24303006",
     "Friend of the Grummles": "24245217",
@@ -6634,7 +6646,7 @@
     "How Camping and Profession Camp Features Work": "24301516",
     "How PvP Progression in World of Warcraft: Forever Works": "24310655",
     "How did we learn about them?": "24310659",
-    "How do I Earn Twitch Drops?": "24302098",
+    "How do I Earn Twitch Drops?": "24317678",
     "How has he navigated impossible choices?": "24310659",
     "How have his actions shaped him and those around him?": "24310659",
     "However, it will be challenging to afford the mana to sustain maximum use indefinitely.": "24302099",
@@ -7444,12 +7456,9 @@
     "PvP: For players who want every trip into contested territory to carry more danger, excitement, and world conflict.": "24303313",
     "Pyroclasm: Wording improved to make effect more clear.": "24310968",
     "Pyromaniac now counts Ignite as a damage over time effect.": "24066687",
-    "Q. As a streamer, how do I get Twitch Drops on my channel? A. All you need to do is ensure your Twitch and Battle.net accounts are linked and that you’ve opted into Drops (see Drops Streamer Home).": "24302098",
+    "Q. As a streamer, how do I get Twitch Drops on my channel? A. All you need to do is ensure your Twitch and Battle.net accounts are linked and that you’ve opted into Drops (see Drops Streamer Home).": "24317678",
     "Q. Do I need to watch the same channel the entire time to earn my drops? A. You can earn progress towards a drop on any eligible channel in the World of Warcraft category on Twitch. You can, for example, watch half an hour on one channel and then switch to another channel without losing your progress. You cannot earn progress faster by watching more than one channel at a time.": "24302098",
-    "Q. Do Twitch Drop rewards expire? A. Earned Twitch Drop rewards will expire seven (7) days after they’ve been claimed if a Battle.net account has not been linked.": "24302098",
-    "Q. How do I link my battle.net and Twitch accounts? A. Sign into your Battle.net account at https://account.battle.net/connections and click the Connect link for Twitch, then follow the instructions to sign in and link your Twitch account to Battle.net.": "24302098",
     "Q. What devices can I use to earn and claim drops? A. You can earn and claim drops using your PC/Mac web browser or on the Twitch app for Android or iOS. Twitch apps on game consoles, smart TVs, and other TV apps do not support drops.": "24302098",
-    "Q. What regions are eligible for these Twitch Drops? A. Participating regions include North America, Latin America, Europe, The Middle East, Africa, Japan, Taiwan, Southeast Asia, Australia, and New Zealand.": "24302098",
     "Q. Will I receive my drop rewards in-game automatically? A. To receive your rewards, you must claim the drop on the channel you’re watching or in the Drops Inventory menu on Twitch.": "24302098",
     "Quaking totem’s health reduced by 10%.": "24066687",
     "Quest rewards have also been updated or expanded to support more classes and roles.": "24303313",
@@ -7559,7 +7568,7 @@
     "Requires Nature’s Majesty.": "24301515",
     "Requires Savage Fury as a prerequisite.": "24301515",
     "Requires Shield Specializaton.": "24301514",
-    "Requires World of Warcraft® Subscription or Game Time.": "24304164",
+    "Requires World of Warcraft® Subscription or Game Time.": "24317678",
     "Requires a “Brew of the Month” Club Membership Form.": "24303006",
     "Rescue all the hostages before time runs out, and your raid will earn the rare Amani War Bear battle mount.": "24310652",
     "Resistance Totems now provide their resistance bonus to the entire raid group.": "24302097",
@@ -10021,7 +10030,12 @@
     "Keep the conversation going in modern World of Warcraft and World of Warcraft: Forever with Discord account linking and guild chat mirroring.": "24315820",
     "Keep the conversation going in modern World of Warcraft and World of Warcraft: Forever with Discord account linking and guild chat mirroring. Whether you’re coordinating your next raid run, recruiting more players for PvP, or catching up with your guildmates, you can send messages between Discord and your guild chat. Learn more.": "24315820",
     "Whether you’re coordinating your next raid run, recruiting more players for PvP, or catching up with your guildmates, you can send messages between Discord and your guild chat.": "24315820",
-    "World of Warcraft: Forever Now Live!": "24315820"
+    "World of Warcraft: Forever Now Live!": "24315820",
+    "**Not available in World of Warcraft Classic® games or modern World of Warcraft.": "24317678",
+    "**Not available in World of Warcraft Classic® games or modern World of Warcraft. Requires World of Warcraft® Subscription or Game Time.": "24317678",
+    "Players can collect and use an ephemeral new launch-celebration toy to enhance their campfire and spread the benefits of comradery as they begin their journey through Azeroth in World of Warcraft: Forever.": "24317678",
+    "Set Your Campfire Ablaze with the Pouch of Violet Dust!": "24317678",
+    "Watch four hours of eligible World of Warcraft content while Drops are active on any channel.": "24317678"
   },
   "targetLanguage": "fr-FR"
 }
