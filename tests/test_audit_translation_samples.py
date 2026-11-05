@@ -41,6 +41,22 @@ class TranslationSampleAuditTests(unittest.TestCase):
                                 "targetName": "Image divine"}]}
         self.assertIn("missing_target_entity:123", audit_sample(sample))
 
+    def test_official_name_prefix_of_other_spell_does_not_pass(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Use spell=123 during combat.",
+                  "translated": "Utilisez Frappe mortelle (spell=123) en combat.",
+                  "entities": [{"type": "spell", "id": 123,
+                                "targetName": "Frappe"}]}
+        self.assertIn("missing_target_entity:123", audit_sample(sample))
+
+    def test_official_name_with_punctuation_boundary_passes(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Use spell=123 during combat.",
+                  "translated": "Utilisez (Frappe) (spell=123) en combat.",
+                  "entities": [{"type": "spell", "id": 123,
+                                "targetName": "Frappe"}]}
+        self.assertEqual(audit_sample(sample), [])
+
     def test_entity_kind_collision_detected(self):
         sample = {"sourceLanguage": "en", "targetLanguage": "fr",
                   "source": "Use spell=123 during combat.",
