@@ -49,6 +49,14 @@ class TranslationSampleAuditTests(unittest.TestCase):
                                 "targetName": "Frappe"}]}
         self.assertIn("missing_target_entity:123", audit_sample(sample))
 
+    def test_official_name_suffix_inside_longer_word_fails(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Use spell=123 during combat.",
+                  "translated": "Utilisez SuperFrappe (spell=123) en combat.",
+                  "entities": [{"type": "spell", "id": 123,
+                                "targetName": "Frappe"}]}
+        self.assertIn("missing_target_entity:123", audit_sample(sample))
+
     def test_official_name_with_punctuation_boundary_passes(self):
         sample = {"sourceLanguage": "en", "targetLanguage": "fr",
                   "source": "Use spell=123 during combat.",
