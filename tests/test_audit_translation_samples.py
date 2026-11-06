@@ -206,5 +206,11 @@ class TranslationSampleAuditTests(unittest.TestCase):
         self.assertIn("unchanged_prose_review", audit_sample(sample))
 
 
+    def test_different_explicit_scripts_are_not_skipped(self):
+        sample = {"sourceLanguage": "zh-Hans", "targetLanguage": "zh-Hant",
+                  "source": "使用你的技能并提高伤害", "translated": "使用你的技能并提高伤害"}
+        self.assertIn("unchanged_prose_review", audit_sample(sample))
+
+
 if __name__ == "__main__":
     unittest.main()
