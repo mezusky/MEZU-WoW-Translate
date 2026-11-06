@@ -17,10 +17,18 @@ PLACEHOLDER = re.compile(r"\{\{[A-Z][A-Z0-9_]*\}\}")
 # Preserve explicit percentages in rotations, tier bonuses and stat thresholds.
 # Allow a French space before % and comma as the decimal separator.
 PERCENT = re.compile(r"(?<![\w.,])\d+(?:[.,]\d+)?\s*%")
+# In a range such as 10-20%, the percent sign applies to both endpoints.
+PERCENT_RANGE = re.compile(
+    r"(?<![\w.,])(?P<lower>\d+(?:[.,]\d+)?)\s*(?:-|–|—|to|à)\s*\d+(?:[.,]\d+)?\s*%",
+    re.IGNORECASE,
+)
 
 def percentages(text):
-    return sorted(match.group().replace(" ", "").replace("\u00a0", "").replace("\u202f", "").replace(",", ".")
-                  for match in PERCENT.finditer(text))
+    values = [match.group().replace(" ", "").replace("\u00a0", "").replace("\u202f", "").replace(",", ".")
+              for match in PERCENT.finditer(text)]
+    values.extend(match.group("lower").replace(",", ".") + "%"
+                  for match in PERCENT_RANGE.finditer(text))
+    return sorted(values)
 
 def normalized_name(value):
     """Normalize typographic variants without weakening entity ID checks."""
