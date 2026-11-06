@@ -112,7 +112,7 @@ def audit_sample(sample):
         return findings
     if not translated.strip():
         findings.append("empty_translation")
-    if source.strip() == translated.strip() and len(source.split()) >= 5:
+    if source.strip() == translated.strip() and len(source.split()) >= 3:
         findings.append("unchanged_prose_review")
     if sorted(PLACEHOLDER.findall(source)) != sorted(PLACEHOLDER.findall(translated)):
         findings.append("placeholder_mismatch")
