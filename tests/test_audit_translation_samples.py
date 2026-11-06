@@ -215,7 +215,7 @@ class TranslationSampleAuditTests(unittest.TestCase):
         sample = {"sourceLanguage": "en", "targetLanguage": "fr",
                   "preserveNumbers": True,
                   "source": "Haste above 1320 rating; Versatility above 1620 rating.",
-                  "translated": "Hâte au-delà de 1 320 points ; Polyvalence au-delà de 1\\u202f620 points."}
+                  "translated": "Hâte au-delà de 1 320 points ; Polyvalence au-delà de 1\u202f620 points."}
         self.assertEqual(audit_sample(sample), [])
 
     def test_opt_in_stat_ratings_detect_changed_threshold(self):
@@ -224,6 +224,20 @@ class TranslationSampleAuditTests(unittest.TestCase):
                   "source": "Haste above 1320 rating; Versatility above 1620 rating.",
                   "translated": "Hâte au-delà de 1 320 points ; Polyvalence au-delà de 1 600 points."}
         self.assertIn("number_mismatch", audit_sample(sample))
+
+    def test_opt_in_detects_dropped_stat_threshold(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "preserveNumbers": True,
+                  "source": "Haste above 1320 and Mastery above 1380 rating.",
+                  "translated": "Hâte au-delà de 1 320 points."}
+        self.assertIn("number_mismatch", audit_sample(sample))
+
+    def test_opt_in_accepts_narrow_nbsp_and_normal_space(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "preserveNumbers": True,
+                  "source": "Haste 1320, Mastery 1380, Versatility 1620.",
+                  "translated": "Hâte 1\\u202f320, Maîtrise 1 380, Polyvalence 1\\u00a0620."}
+        self.assertEqual(audit_sample(sample), [])
 
     def test_numeric_audit_remains_opt_in_for_free_prose(self):
         sample = {"sourceLanguage": "en", "targetLanguage": "fr",
