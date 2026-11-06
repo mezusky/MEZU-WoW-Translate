@@ -25,7 +25,7 @@ PERCENT_RANGE = re.compile(
 
 # A range can also be written as "between 10 and 20%" / "entre 10 et 20 %".
 BETWEEN_PERCENT_RANGE = re.compile(
-    r"\\b(?:between|entre)\\s+(?P<lower>\\d+(?:[.,]\\d+)?)\\s+(?:and|et)\\s+\\d+(?:[.,]\\d+)?\\s*%",
+    r"\b(?:between|entre)\s+(?P<lower>\d+(?:[.,]\d+)?)\s+(?:and|et)\s+\d+(?:[.,]\d+)?\s*%",
     re.IGNORECASE,
 )
 
