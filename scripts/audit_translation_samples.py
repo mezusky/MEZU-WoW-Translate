@@ -78,7 +78,9 @@ def audit_sample(sample):
     source_locale = sample["sourceLanguage"].replace("_", "-").lower()
     target_locale = sample["targetLanguage"].replace("_", "-").lower()
     findings = []
-    if source_locale == target_locale:
+    # Locale variants of the same language do not require prose translation.
+    # Keep full locale tags for future target-specific terminology checks.
+    if source_locale.split("-", 1)[0] == target_locale.split("-", 1)[0]:
         if translated != source:
             findings.append("same_language_changed")
         return findings
