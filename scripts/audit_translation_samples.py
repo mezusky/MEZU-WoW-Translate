@@ -23,11 +23,19 @@ PERCENT_RANGE = re.compile(
     re.IGNORECASE,
 )
 
+# A range can also be written as "between 10 and 20%" / "entre 10 et 20 %".
+BETWEEN_PERCENT_RANGE = re.compile(
+    r"\\b(?:between|entre)\\s+(?P<lower>\\d+(?:[.,]\\d+)?)\\s+(?:and|et)\\s+\\d+(?:[.,]\\d+)?\\s*%",
+    re.IGNORECASE,
+)
+
 def percentages(text):
     values = [match.group().replace(" ", "").replace("\u00a0", "").replace("\u202f", "").replace(",", ".")
               for match in PERCENT.finditer(text)]
     values.extend(match.group("lower").replace(",", ".") + "%"
                   for match in PERCENT_RANGE.finditer(text))
+    values.extend(match.group("lower").replace(",", ".") + "%"
+                  for match in BETWEEN_PERCENT_RANGE.finditer(text))
     return sorted(values)
 
 def normalized_name(value):
