@@ -190,5 +190,21 @@ class TranslationSampleAuditTests(unittest.TestCase):
         self.assertEqual(audit_sample(sample), [])
 
 
+    def test_same_language_different_region_requires_no_translation(self):
+        sample = {"sourceLanguage": "en-US", "targetLanguage": "en-GB",
+                  "source": "Use your cooldowns.", "translated": "Use your cooldowns."}
+        self.assertEqual(audit_sample(sample), [])
+
+    def test_same_language_different_region_flags_unwanted_change(self):
+        sample = {"sourceLanguage": "fr-CA", "targetLanguage": "fr-FR",
+                  "source": "Utilisez vos sorts.", "translated": "Utilisez vos compétences."}
+        self.assertIn("same_language_changed", audit_sample(sample))
+
+    def test_different_languages_still_audited(self):
+        sample = {"sourceLanguage": "en-US", "targetLanguage": "fr-CA",
+                  "source": "Use your cooldowns.", "translated": "Use your cooldowns."}
+        self.assertIn("unchanged_prose_review", audit_sample(sample))
+
+
 if __name__ == "__main__":
     unittest.main()
