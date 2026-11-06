@@ -211,6 +211,26 @@ class TranslationSampleAuditTests(unittest.TestCase):
                   "source": "使用 你的 技能 并 提高 伤害", "translated": "使用 你的 技能 并 提高 伤害"}
         self.assertIn("unchanged_prose_review", audit_sample(sample))
 
+    def test_opt_in_stat_ratings_accept_french_grouping(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "preserveNumbers": True,
+                  "source": "Haste above 1320 rating; Versatility above 1620 rating.",
+                  "translated": "Hâte au-delà de 1 320 points ; Polyvalence au-delà de 1\\u202f620 points."}
+        self.assertEqual(audit_sample(sample), [])
+
+    def test_opt_in_stat_ratings_detect_changed_threshold(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "preserveNumbers": True,
+                  "source": "Haste above 1320 rating; Versatility above 1620 rating.",
+                  "translated": "Hâte au-delà de 1 320 points ; Polyvalence au-delà de 1 600 points."}
+        self.assertIn("number_mismatch", audit_sample(sample))
+
+    def test_numeric_audit_remains_opt_in_for_free_prose(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "One of the 2 options is preferred.",
+                  "translated": "Une option est préférable."}
+        self.assertNotIn("number_mismatch", audit_sample(sample))
+
 
 if __name__ == "__main__":
     unittest.main()
