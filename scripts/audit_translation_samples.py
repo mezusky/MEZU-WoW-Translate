@@ -41,17 +41,17 @@ def percentages(text):
 
 # Optional exact-number audit for short stat/gear snippets. Keep this opt-in:
 # prose can legitimately change numbers through localization or paraphrasing.
-NUMBER = re.compile(r"(?<![\\w.,])\\d+(?:[.,\\u00a0\\u202f ]\\d{3})*(?:[.,]\\d+)?(?!\\w)")
+NUMBER = re.compile(r"(?<![\w.,])\d+(?:[.,\u00a0\u202f ]\d{3})*(?:[.,]\d+)?(?!\w)")
 
 def numeric_values(text):
     """Compare numeric values independent of French grouping/decimal punctuation."""
     values = []
     for match in NUMBER.finditer(text):
-        token = match.group().replace(" ", "").replace("\\u00a0", "").replace("\\u202f", "")
+        token = match.group().replace(" ", "").replace("\u00a0", "").replace("\u202f", "")
         if "," in token and "." in token:
             decimal = "," if token.rfind(",") > token.rfind(".") else "."
             token = token.replace("." if decimal == "," else ",", "").replace(decimal, ".")
-        elif re.fullmatch(r"\\d{1,3}(?:[.,]\\d{3})+", token):
+        elif re.fullmatch(r"\d{1,3}(?:[.,]\d{3})+", token):
             token = token.replace(",", "").replace(".", "")
         else:
             token = token.replace(",", ".")
