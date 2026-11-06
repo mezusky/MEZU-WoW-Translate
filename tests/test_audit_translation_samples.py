@@ -130,6 +130,18 @@ class TranslationSampleAuditTests(unittest.TestCase):
                   "entities": [{"type": "item", "id": 456, "targetName": "Objet officiel"}]}
         self.assertEqual(audit_sample(sample), [])
 
+    def test_percentages_preserved_with_french_spacing_and_decimal_comma(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Execute below 20% health; bonus increases by 3.5%.",
+                  "translated": "Exécution sous 20 % de vie ; bonus augmenté de 3,5\u00a0%. "}
+        self.assertEqual(audit_sample(sample), [])
+
+    def test_changed_percentage_is_detected(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Use Execute below 20% health.",
+                  "translated": "Utilisez Exécution sous 35 % de vie."}
+        self.assertIn("percentage_mismatch", audit_sample(sample))
+
     def test_same_language_no_translation(self):
         sample = {"sourceLanguage": "fr-FR", "targetLanguage": "fr-FR",
                   "source": "Bonjour", "translated": "Bonjour"}
