@@ -154,6 +154,18 @@ class TranslationSampleAuditTests(unittest.TestCase):
                   "translated": "Rater 10 à 20 % des sorts réduit les dégâts."}
         self.assertEqual(audit_sample(sample), [])
 
+    def test_between_percentage_range_preserves_both_bounds(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Between 10 and 20% of casts can be missed.",
+                  "translated": "Entre 15 et 20 % des sorts peuvent être ratés."}
+        self.assertIn("percentage_mismatch", audit_sample(sample))
+
+    def test_between_percentage_range_accepts_french_equivalent(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Between 10 and 20% of casts can be missed.",
+                  "translated": "Entre 10 et 20 % des sorts peuvent être ratés."}
+        self.assertEqual(audit_sample(sample), [])
+
     def test_same_language_no_translation(self):
         sample = {"sourceLanguage": "fr-FR", "targetLanguage": "fr-FR",
                   "source": "Bonjour", "translated": "Bonjour"}
