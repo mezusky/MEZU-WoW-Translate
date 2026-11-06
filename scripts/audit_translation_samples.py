@@ -14,6 +14,13 @@ from pathlib import Path
 
 ENTITY = re.compile(r"\b(spell|item|npc|quest|achievement)=(\d+)\b")
 PLACEHOLDER = re.compile(r"\{\{[A-Z][A-Z0-9_]*\}\}")
+# Preserve explicit percentages in rotations, tier bonuses and stat thresholds.
+# Allow a French space before % and comma as the decimal separator.
+PERCENT = re.compile(r"(?<![\w.,])\d+(?:[.,]\d+)?\s*%")
+
+def percentages(text):
+    return sorted(match.group().replace(" ", "").replace("\u00a0", "").replace("\u202f", "").replace(",", ".")
+                  for match in PERCENT.finditer(text))
 
 def normalized_name(value):
     """Normalize typographic variants without weakening entity ID checks."""
@@ -65,6 +72,8 @@ def audit_sample(sample):
         findings.append("unchanged_prose_review")
     if sorted(PLACEHOLDER.findall(source)) != sorted(PLACEHOLDER.findall(translated)):
         findings.append("placeholder_mismatch")
+    if percentages(source) != percentages(translated):
+        findings.append("percentage_mismatch")
     source_ids = sorted(ENTITY.findall(source))
     translated_ids = sorted(ENTITY.findall(translated))
     if source_ids != translated_ids:
