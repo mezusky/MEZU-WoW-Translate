@@ -38,6 +38,26 @@ def percentages(text):
                   for match in BETWEEN_PERCENT_RANGE.finditer(text))
     return sorted(values)
 
+
+# Optional exact-number audit for short stat/gear snippets. Keep this opt-in:
+# prose can legitimately change numbers through localization or paraphrasing.
+NUMBER = re.compile(r"(?<![\\w.,])\\d+(?:[.,\\u00a0\\u202f ]\\d{3})*(?:[.,]\\d+)?(?!\\w)")
+
+def numeric_values(text):
+    """Compare numeric values independent of French grouping/decimal punctuation."""
+    values = []
+    for match in NUMBER.finditer(text):
+        token = match.group().replace(" ", "").replace("\\u00a0", "").replace("\\u202f", "")
+        if "," in token and "." in token:
+            decimal = "," if token.rfind(",") > token.rfind(".") else "."
+            token = token.replace("." if decimal == "," else ",", "").replace(decimal, ".")
+        elif re.fullmatch(r"\\d{1,3}(?:[.,]\\d{3})+", token):
+            token = token.replace(",", "").replace(".", "")
+        else:
+            token = token.replace(",", ".")
+        values.append(str(float(token)) if "." in token else str(int(token)))
+    return sorted(values)
+
 def normalized_name(value):
     """Normalize typographic variants without weakening entity ID checks."""
     value = unicodedata.normalize("NFKC", value).casefold()
@@ -96,6 +116,8 @@ def audit_sample(sample):
         findings.append("unchanged_prose_review")
     if sorted(PLACEHOLDER.findall(source)) != sorted(PLACEHOLDER.findall(translated)):
         findings.append("placeholder_mismatch")
+    if sample.get("preserveNumbers") and numeric_values(source) != numeric_values(translated):
+        findings.append("number_mismatch")
     if percentages(source) != percentages(translated):
         findings.append("percentage_mismatch")
     source_ids = sorted(ENTITY.findall(source))
