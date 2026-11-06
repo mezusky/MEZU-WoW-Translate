@@ -80,7 +80,13 @@ def audit_sample(sample):
     findings = []
     # Locale variants of the same language do not require prose translation.
     # Keep full locale tags for future target-specific terminology checks.
-    if source_locale.split("-", 1)[0] == target_locale.split("-", 1)[0]:
+    source_parts = source_locale.split("-")
+    target_parts = target_locale.split("-")
+    source_script = next((part for part in source_parts[1:] if len(part) == 4 and part.isalpha()), None)
+    target_script = next((part for part in target_parts[1:] if len(part) == 4 and part.isalpha()), None)
+    same_language = source_parts[0] == target_parts[0]
+    compatible_script = not (source_script and target_script and source_script != target_script)
+    if same_language and compatible_script:
         if translated != source:
             findings.append("same_language_changed")
         return findings
