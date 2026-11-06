@@ -208,7 +208,7 @@ class TranslationSampleAuditTests(unittest.TestCase):
 
     def test_different_explicit_scripts_are_not_skipped(self):
         sample = {"sourceLanguage": "zh-Hans", "targetLanguage": "zh-Hant",
-                  "source": "使用你的技能并提高伤害", "translated": "使用你的技能并提高伤害"}
+                  "source": "使用 你的 技能 并 提高 伤害", "translated": "使用 你的 技能 并 提高 伤害"}
         self.assertIn("unchanged_prose_review", audit_sample(sample))
 
 
