@@ -236,7 +236,7 @@ class TranslationSampleAuditTests(unittest.TestCase):
         sample = {"sourceLanguage": "en", "targetLanguage": "fr",
                   "preserveNumbers": True,
                   "source": "Haste 1320, Mastery 1380, Versatility 1620.",
-                  "translated": "Hâte 1\\u202f320, Maîtrise 1 380, Polyvalence 1\\u00a0620."}
+                  "translated": "Hâte 1\u202f320, Maîtrise 1 380, Polyvalence 1\u00a0620."}
         self.assertEqual(audit_sample(sample), [])
 
     def test_numeric_audit_remains_opt_in_for_free_prose(self):
