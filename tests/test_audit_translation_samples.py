@@ -142,6 +142,18 @@ class TranslationSampleAuditTests(unittest.TestCase):
                   "translated": "Utilisez Exécution sous 35 % de vie."}
         self.assertIn("percentage_mismatch", audit_sample(sample))
 
+    def test_percentage_range_lower_bound_is_preserved(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Missing 10-20% of casts reduces damage.",
+                  "translated": "Rater 15 à 20 % des sorts réduit les dégâts."}
+        self.assertIn("percentage_mismatch", audit_sample(sample))
+
+    def test_percentage_range_french_separator_is_accepted(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Missing 10-20% of casts reduces damage.",
+                  "translated": "Rater 10 à 20 % des sorts réduit les dégâts."}
+        self.assertEqual(audit_sample(sample), [])
+
     def test_same_language_no_translation(self):
         sample = {"sourceLanguage": "fr-FR", "targetLanguage": "fr-FR",
                   "source": "Bonjour", "translated": "Bonjour"}
