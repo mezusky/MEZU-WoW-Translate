@@ -4,6 +4,26 @@ from scripts.audit_translation_samples import audit_sample
 
 
 class TranslationSampleAuditTests(unittest.TestCase):
+    def test_raid_addon_import_is_preserved(self):
+        record = "EncounterID:3379;Difficulty:Heroic;Name:Nymrissa"
+        timing = "time:42;ph:1;tag:257;spellid:64843;"
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Import these cooldowns:\\n" + record + "\\n" + timing,
+                  "translated": "Importez ces cooldowns :\\n" + record + "\\n" + timing}
+        self.assertEqual(audit_sample(sample), [])
+
+    def test_raid_addon_import_mutated_spell_is_detected(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "time:42;ph:1;tag:257;spellid:64843;",
+                  "translated": "time:42;ph:1;tag:257;spellid:64844;"}
+        self.assertIn("technical_import_mismatch", audit_sample(sample))
+
+    def test_raid_addon_import_dropped_line_is_detected(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "time:42;ph:1;tag:257;spellid:64843;",
+                  "translated": "Les temps de recharge sont disponibles."}
+        self.assertIn("technical_import_mismatch", audit_sample(sample))
+
     def test_same_language_regional_variant_is_skipped(self):
         sample = {"sourceLanguage": "fr-FR", "targetLanguage": "fr-CA",
                   "source": "La hâte augmente.", "translated": "La hâte augmente."}
