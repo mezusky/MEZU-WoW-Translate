@@ -8,8 +8,8 @@ class TranslationSampleAuditTests(unittest.TestCase):
         record = "EncounterID:3379;Difficulty:Heroic;Name:Nymrissa"
         timing = "time:42;ph:1;tag:257;spellid:64843;"
         sample = {"sourceLanguage": "en", "targetLanguage": "fr",
-                  "source": "Import these cooldowns:\\n" + record + "\\n" + timing,
-                  "translated": "Importez ces cooldowns :\\n" + record + "\\n" + timing}
+                  "source": "Import these cooldowns:\n" + record + "\n" + timing,
+                  "translated": "Importez ces cooldowns :\n" + record + "\n" + timing}
         self.assertEqual(audit_sample(sample), [])
 
     def test_raid_addon_import_mutated_spell_is_detected(self):
