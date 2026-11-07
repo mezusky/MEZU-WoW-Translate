@@ -108,6 +108,18 @@ def import_records(text):
             if IMPORT_LINE.fullmatch(line)]
 
 
+
+# WoW talent exports are opaque, copy/paste data. Only consider long,
+# uninterrupted base64-alphabet tokens; short words and normal prose are
+# deliberately excluded to avoid false positives. Preserve duplicates/order.
+TALENT_EXPORT = re.compile(r"(?<![A-Za-z0-9+/=])[A-Za-z0-9+/=]{80,}(?![A-Za-z0-9+/=])")
+
+def talent_exports(text):
+    return [token for token in TALENT_EXPORT.findall(text)
+            if any(c.isupper() for c in token) and
+            (any(c.islower() for c in token) or any(c.isdigit() for c in token))]
+
+
 def audit_sample(sample):
     source = sample["source"]
     translated = sample["translated"]
@@ -133,6 +145,8 @@ def audit_sample(sample):
         findings.append("number_mismatch")
     if import_records(source) != import_records(translated):
         findings.append("technical_import_mismatch")
+    if talent_exports(source) != talent_exports(translated):
+        findings.append("talent_export_mismatch")
     if percentages(source) != percentages(translated):
         findings.append("percentage_mismatch")
     source_ids = sorted(ENTITY.findall(source))
