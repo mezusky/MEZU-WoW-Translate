@@ -103,8 +103,9 @@ def linked_entity_labels(text, kind, entity_id):
 IMPORT_LINE = re.compile(r"^\s*[A-Za-z][A-Za-z0-9_]*:[^;\n]+;(?:[A-Za-z][A-Za-z0-9_]*:[^;\n]*;?){1,}\s*$")
 
 def import_records(text):
-    return sorted(line.strip() for line in text.splitlines()
-                  if IMPORT_LINE.fullmatch(line))
+    # Preserve sequence: addon import lines can encode ordered cooldown plans.
+    return [line.strip() for line in text.splitlines()
+            if IMPORT_LINE.fullmatch(line)]
 
 
 def audit_sample(sample):
