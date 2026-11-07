@@ -97,6 +97,17 @@ def linked_entity_labels(text, kind, entity_id):
     return labels
 
 
+# Addon import strings are machine-readable data, not translatable prose.
+# Require at least two semicolon-delimited key:value fields to avoid
+# mistaking ordinary headings or prose for an import record.
+IMPORT_LINE = re.compile(r"^\\s*[A-Za-z][A-Za-z0-9_]*:[^;\\n]+;(?:[A-Za-z][A-Za-z0-9_]*:[^;\\n]*;?){1,}\\s*$")
+
+
+def import_records(text):
+    return sorted(line.strip() for line in text.splitlines()
+                  if IMPORT_LINE.fullmatch(line))
+
+
 def audit_sample(sample):
     source = sample["source"]
     translated = sample["translated"]
@@ -120,7 +131,7 @@ def audit_sample(sample):
         findings.append("placeholder_mismatch")
     if sample.get("preserveNumbers") and numeric_values(source) != numeric_values(translated):
         findings.append("number_mismatch")
-    if percentages(source) != percentages(translated):
+    if import_records(source) != import_records(translated):\n        findings.append("technical_import_mismatch")\n    if percentages(source) != percentages(translated):
         findings.append("percentage_mismatch")
     source_ids = sorted(ENTITY.findall(source))
     translated_ids = sorted(ENTITY.findall(translated))
