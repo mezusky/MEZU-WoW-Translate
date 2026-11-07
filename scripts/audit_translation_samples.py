@@ -12,6 +12,11 @@ import re
 import unicodedata
 from pathlib import Path
 
+try:
+    from .locale_glossary import same_base_language
+except ImportError:  # Direct CLI execution from scripts/
+    from locale_glossary import same_base_language
+
 ENTITY = re.compile(r"\b(spell|item|npc|quest|achievement)=(\d+)\b")
 PLACEHOLDER = re.compile(r"\{\{[A-Z][A-Z0-9_]*\}\}")
 # Preserve explicit percentages in rotations, tier bonuses and stat thresholds.
@@ -100,13 +105,10 @@ def audit_sample(sample):
     findings = []
     # Locale variants of the same language do not require prose translation.
     # Keep full locale tags for future target-specific terminology checks.
-    source_parts = source_locale.split("-")
-    target_parts = target_locale.split("-")
-    source_script = next((part for part in source_parts[1:] if len(part) == 4 and part.isalpha()), None)
-    target_script = next((part for part in target_parts[1:] if len(part) == 4 and part.isalpha()), None)
-    same_language = source_parts[0] == target_parts[0]
-    compatible_script = not (source_script and target_script and source_script != target_script)
-    if same_language and compatible_script:
+    # Reuse the shared locale contract: zh-CN and zh-TW have distinct
+    # writing systems even though both use the same base language.
+    same_language = same_base_language(source_locale, target_locale)
+    if same_language:
         if translated != source:
             findings.append("same_language_changed")
         return findings
