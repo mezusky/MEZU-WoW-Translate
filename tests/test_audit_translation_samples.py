@@ -4,6 +4,26 @@ from scripts.audit_translation_samples import audit_sample
 
 
 class TranslationSampleAuditTests(unittest.TestCase):
+    def test_talent_export_preserved_in_french_guide(self):
+        code = "CYG" + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNMmZgxsMzMzMLMgxMLzsYmZsxyMLjxMjNMAYstNzgxsNCMBAAAYhZmZGsZMjxAAwMDWGA"
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Import Build Directly In-Game | " + code + " | Preview",
+                  "translated": "Importer directement en jeu | " + code + " | Aperçu"}
+        self.assertEqual(audit_sample(sample), [])
+
+    def test_talent_export_mutation_detected(self):
+        code = "CYG" + "AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAWoMbNMmZgxsMzMzMLMgxMLzsYmZsxyMLjxMjNMAYstNzgxsNCMBAAAYhZmZGsZMjxAAwMDWGA"
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Import: " + code,
+                  "translated": "Importer : " + code[:-1] + "B"}
+        self.assertIn("talent_export_mismatch", audit_sample(sample))
+
+    def test_normal_prose_does_not_trigger_talent_export(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Import your talent build into the game.",
+                  "translated": "Importez votre arbre de talents dans le jeu."}
+        self.assertNotIn("talent_export_mismatch", audit_sample(sample))
+
     def test_raid_addon_import_is_preserved(self):
         record = "EncounterID:3379;Difficulty:Heroic;Name:Nymrissa"
         timing = "time:42;ph:1;tag:257;spellid:64843;"
