@@ -4,6 +4,21 @@ from scripts.audit_translation_samples import audit_sample
 
 
 class TranslationSampleAuditTests(unittest.TestCase):
+    def test_same_language_regional_variant_is_skipped(self):
+        sample = {"sourceLanguage": "fr-FR", "targetLanguage": "fr-CA",
+                  "source": "La hâte augmente.", "translated": "La hâte augmente."}
+        self.assertEqual(audit_sample(sample), [])
+
+    def test_chinese_cross_script_is_not_skipped(self):
+        sample = {"sourceLanguage": "zh-CN", "targetLanguage": "zh-TW",
+                  "source": "这是简体中文测试文本", "translated": ""}
+        self.assertIn("empty_translation", audit_sample(sample))
+
+    def test_explicit_chinese_script_conversion_is_not_skipped(self):
+        sample = {"sourceLanguage": "zh-Hans", "targetLanguage": "zh-Hant",
+                  "source": "这是简体中文测试文本", "translated": ""}
+        self.assertIn("empty_translation", audit_sample(sample))
+
     def test_unrelated_glossary_entity_does_not_fail(self):
         sample = {"sourceLanguage": "en", "targetLanguage": "fr",
                   "source": "Haste reduces the global cooldown.",
