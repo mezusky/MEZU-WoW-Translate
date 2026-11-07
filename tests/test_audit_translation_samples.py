@@ -24,6 +24,14 @@ class TranslationSampleAuditTests(unittest.TestCase):
                   "translated": "Les temps de recharge sont disponibles."}
         self.assertIn("technical_import_mismatch", audit_sample(sample))
 
+    def test_raid_addon_import_reordered_lines_are_detected(self):
+        first = "time:42;ph:1;tag:257;spellid:64843;"
+        second = "time:85;ph:1;tag:257;spellid:200183;"
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": first + "\n" + second,
+                  "translated": second + "\n" + first}
+        self.assertIn("technical_import_mismatch", audit_sample(sample))
+
     def test_same_language_regional_variant_is_skipped(self):
         sample = {"sourceLanguage": "fr-FR", "targetLanguage": "fr-CA",
                   "source": "La hâte augmente.", "translated": "La hâte augmente."}
