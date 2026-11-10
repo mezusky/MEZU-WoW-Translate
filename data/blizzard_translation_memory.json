@@ -261,10 +261,10 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302546"
     },
     "24302576": {
-      "accepted_pairs": 28,
-      "en_blocks": 46,
+      "accepted_pairs": 27,
+      "en_blocks": 45,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24302576",
-      "fr_blocks": 48,
+      "fr_blocks": 47,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302576"
     },
     "24302577": {
@@ -401,10 +401,10 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24307308"
     },
     "24307310": {
-      "accepted_pairs": 157,
+      "accepted_pairs": 159,
       "en_blocks": 124,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24307310",
-      "fr_blocks": 123,
+      "fr_blocks": 124,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24307310"
     },
     "24307383": {
@@ -2401,6 +2401,7 @@
     "Hot Motocross Bunmover 4600 Mount (Front)": "Monture Motocross P’tit-pain Chô 4600 (avant)",
     "Hotfixes: July 22, 2024": "Correctifs : 22 juillet 2024",
     "Hotfixes: November 5, 2026": "Correctifs : 5 novembre 2026",
+    "Hotfixes: November 6, 2026": "Correctifs : 6 novembre 2026",
     "Hotfixes: October 21, 2026": "Correctifs : 21 octobre 2026",
     "Hotfixes: October 26, 2026": "Correctifs : 26 octobre 2026",
     "Hotfixes: October 27, 2026": "Correctifs : 27 octobre 2026",
@@ -3182,6 +3183,7 @@
     "Nourish will now benefit from, and consume Omen of Clarity's Clearcasting effect.": "Nourrir consomme et bénéficie désormais de l’effet Idées claires d’Augure de clarté.",
     "Nourish will now benefit from, and consume Omen of Clarity's Clearcasting effect. Developers’ notes: Unlike in Cataclysm, Nourish in SoD has more upsides to it than just the mana cost - like the casting speed. So it makes sense for it to benefit from Clearcasting and to consume it as well.": "Nourrir consomme et bénéficie désormais de l’effet Idées claires d’Augure de clarté. Commentaires de l’équipe de développement : contrairement à son fonctionnement dans Cataclysm, Nourrir dispose de plus d’avantages dans la saison de la découverte que le coût en mana, comme la vitesse d’incantation. C’est donc logique qu’il consomme et bénéficie également de l’effet Idées claires.",
     "November 5, 2026": "5 novembre 2026",
+    "November 6, 2026": "6 novembre 2026",
     "November’s Trading Post is serving up a sugar rush with the Sweet Tooth theme, ready to add a little sweetness to your collection.": "Le comptoir de novembre vous propose un flot de douceurs sur le thème des envies sucrées, alors préparez-vous à ajouter quelques friandises à votre collection.",
     "Now also applies to Mutilate.": "Il s’applique désormais également à Estropier.",
     "Now also applies to Shred, but the damage increase is lower.": "S’applique également à Lambeau, mais l’augmentation de dégâts est plus faible.",
@@ -5343,7 +5345,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4716,
+  "pair_count": 4718,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -10063,7 +10065,9 @@
     "Witness the creation of World of Warcraft: Forever's first legendary: Taldramir, the Whispering Wood, forged by Wētā, wielded by adventurers like you.": "24316097",
     "WoW: Forever– Watch Forging Forever": "24316097",
     "Your next adventure starts with a conversation.": "24316097",
-    "Your next adventure starts with a conversation. Link your accounts, rally your guild, and stay connected wherever your journey takes you.": "24316097"
+    "Your next adventure starts with a conversation. Link your accounts, rally your guild, and stay connected wherever your journey takes you.": "24316097",
+    "Hotfixes: November 6, 2026": "24307310",
+    "November 6, 2026": "24307310"
   },
   "targetLanguage": "fr-FR"
 }
