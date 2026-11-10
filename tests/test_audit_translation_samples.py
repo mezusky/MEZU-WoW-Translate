@@ -309,5 +309,25 @@ class TranslationSampleAuditTests(unittest.TestCase):
         self.assertNotIn("number_mismatch", audit_sample(sample))
 
 
+    def test_stat_priority_operators_preserved_across_locales(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "preserveStatPriority": True,
+                  "source": "Haste >> Mastery >= Critical Strike = Versatility",
+                  "translated": "Hâte >> Maîtrise >= Coup critique = Polyvalence"}
+        self.assertEqual(audit_sample(sample), [])
+
+    def test_stat_priority_relation_change_is_detected(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "preserveStatPriority": True,
+                  "source": "Haste >> Mastery >= Critical Strike",
+                  "translated": "Hâte > Maîtrise = Coup critique"}
+        self.assertIn("stat_priority_relation_mismatch", audit_sample(sample))
+
+    def test_stat_priority_check_is_opt_in(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "Haste > Mastery in this build.",
+                  "translated": "Hâte et Maîtrise dans cette configuration."}
+        self.assertNotIn("stat_priority_relation_mismatch", audit_sample(sample))
+
 if __name__ == "__main__":
     unittest.main()
