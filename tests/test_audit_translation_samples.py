@@ -329,5 +329,21 @@ class TranslationSampleAuditTests(unittest.TestCase):
                   "translated": "Hâte et Maîtrise dans cette configuration."}
         self.assertNotIn("stat_priority_relation_mismatch", audit_sample(sample))
 
+    def test_opt_in_entity_order_detects_swapped_rotation(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "preserveEntityOrder": True,
+                  "source": "1. spell=123\n2. spell=456",
+                  "translated": "1. spell=456\n2. spell=123"}
+        self.assertIn("entity_order_mismatch", audit_sample(sample))
+
+    def test_entity_order_is_locale_independent_and_opt_in(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "source": "1. spell=123\n2. spell=456",
+                  "translated": "1. spell=456\n2. spell=123"}
+        self.assertNotIn("entity_order_mismatch", audit_sample(sample))
+        sample["preserveEntityOrder"] = True
+        sample["translated"] = "1. Frappe (spell=123)\n2. Soin (spell=456)"
+        self.assertNotIn("entity_order_mismatch", audit_sample(sample))
+
 if __name__ == "__main__":
     unittest.main()
