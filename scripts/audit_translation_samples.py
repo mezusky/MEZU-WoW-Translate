@@ -164,6 +164,11 @@ def audit_sample(sample):
     translated_ids = sorted(ENTITY.findall(translated))
     if source_ids != translated_ids:
         findings.append("entity_id_mismatch")
+    # Opt-in for a single captured priority list, not an entire guide: the
+    # same IDs may legitimately appear in different order across sections.
+    # Compare canonical entity references, never localized display names.
+    if sample.get("preserveEntityOrder") and ENTITY.findall(source) != ENTITY.findall(translated):
+        findings.append("entity_order_mismatch")
     for entity in sample.get("entities", []):
         name = entity.get("targetName")
         entity_id = str(entity.get("id", ""))
