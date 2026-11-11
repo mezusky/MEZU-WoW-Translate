@@ -7,13 +7,13 @@ class TranslationSampleAuditTests(unittest.TestCase):
     def test_percentage_unicode_whitespace_equivalence(self):
         sample = {"sourceLanguage": "en", "targetLanguage": "fr",
                   "source": "Damage increases by 12.5% and healing by 10%.",
-                  "translated": "Les dégâts augmentent de 12,5\\t% et les soins de 10\\u202f%."}
+                  "translated": "Les dégâts augmentent de 12,5\t% et les soins de 10\u202f%."}
         self.assertNotIn("percentage_mismatch", audit_sample(sample))
 
     def test_percentage_value_change_still_detected(self):
         sample = {"sourceLanguage": "en", "targetLanguage": "fr",
                   "source": "Damage increases by 12.5%.",
-                  "translated": "Les dégâts augmentent de 13\\u00a0%."}
+                  "translated": "Les dégâts augmentent de 13\u00a0%."}
         self.assertIn("percentage_mismatch", audit_sample(sample))
 
     def test_talent_export_preserved_in_french_guide(self):
