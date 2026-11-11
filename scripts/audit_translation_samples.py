@@ -123,7 +123,7 @@ def talent_exports(text):
 # Optional audit of explicit stat-priority relationships. Names may be localized,
 # but the ordering operators must retain their sequence and strength.
 # Only use for captured priority snippets, never arbitrary prose or HTML.
-PRIORITY_OPERATOR = re.compile(r"(?<![<>=])(?:>{1,4}|>=|=)(?![<>=])")
+PRIORITY_OPERATOR = re.compile(r"(?<![<>=])(?:>{1,4}|<{1,4}|>=|<=|=)(?![<>=])")
 
 def priority_operators(text):
     return PRIORITY_OPERATOR.findall(text)
