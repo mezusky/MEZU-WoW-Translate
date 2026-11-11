@@ -35,7 +35,7 @@ BETWEEN_PERCENT_RANGE = re.compile(
 )
 
 def percentages(text):
-    values = [re.sub(r"\\s+", "", match.group()).replace(",", ".")
+    values = [re.sub(r"\s+", "", match.group()).replace(",", ".")
               for match in PERCENT.finditer(text)]
     values.extend(match.group("lower").replace(",", ".") + "%"
                   for match in PERCENT_RANGE.finditer(text))
