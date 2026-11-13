@@ -19,6 +19,9 @@ except ImportError:  # Direct CLI execution from scripts/
 
 ENTITY = re.compile(r"\b(spell|item|npc|quest|achievement)=(\d+)\b")
 PLACEHOLDER = re.compile(r"\{\{[A-Z][A-Z0-9_]*\}\}")
+# Wowhead guide templates sometimes expose unresolved utility slots in source.
+# Preserve these machine-readable markers, not arbitrary uppercase WoW acronyms.
+WOWHEAD_SLOT = re.compile(r"\bUTIL\d+_(?:NAME|USECASE)\b")
 # Preserve explicit percentages in rotations, tier bonuses and stat thresholds.
 # Allow a French space before % and comma as the decimal separator.
 PERCENT = re.compile(r"(?<![\w.,])\d+(?:[.,]\d+)?\s*%")
@@ -150,6 +153,8 @@ def audit_sample(sample):
         findings.append("unchanged_prose_review")
     if sorted(PLACEHOLDER.findall(source)) != sorted(PLACEHOLDER.findall(translated)):
         findings.append("placeholder_mismatch")
+    if sorted(WOWHEAD_SLOT.findall(source)) != sorted(WOWHEAD_SLOT.findall(translated)):
+        findings.append("wowhead_slot_mismatch")
     if sample.get("preserveStatPriority") and priority_operators(source) != priority_operators(translated):
         findings.append("stat_priority_relation_mismatch")
     if sample.get("preserveNumbers") and numeric_values(source) != numeric_values(translated):
