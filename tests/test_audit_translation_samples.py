@@ -357,5 +357,26 @@ class TranslationSampleAuditTests(unittest.TestCase):
         sample["translated"] = "1. Frappe (spell=123)\n2. Soin (spell=456)"
         self.assertNotIn("entity_order_mismatch", audit_sample(sample))
 
+    def test_tier_bonus_labels_accept_localized_french(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "preserveTierBonusLabels": True,
+                  "source": "Class Set 2pc: +8% damage. Class Set 4pc: +10% chance.",
+                  "translated": "Bonus 2 pièces : +8 % dégâts. Bonus 4 pièces : +10 % de chances."}
+        self.assertEqual(audit_sample(sample), [])
+
+    def test_tier_bonus_labels_detect_swapped_identity(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "preserveTierBonusLabels": True,
+                  "source": "2pc: gain 3 Runic Power. 4pc: extra charge.",
+                  "translated": "Bonus 4 pièces : 3 puissance runique. Bonus 4 pièces : charge supplémentaire."}
+        self.assertIn("tier_bonus_label_mismatch", audit_sample(sample))
+
+    def test_tier_bonus_labels_do_not_flag_unrelated_prose(self):
+        sample = {"sourceLanguage": "en", "targetLanguage": "fr",
+                  "preserveTierBonusLabels": True,
+                  "source": "Equip 4 pieces of armor.",
+                  "translated": "Équipez quatre éléments d'armure."}
+        self.assertEqual(audit_sample(sample), [])
+
 if __name__ == "__main__":
     unittest.main()
