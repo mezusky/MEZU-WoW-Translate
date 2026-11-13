@@ -111,7 +111,7 @@
     "You can return to a familiar favorite, explore a newly available combination, or begin your journey as a Skyborne character, with each choice offering a different way to step into Azeroth’s next chapter.",
     "Your first steps in Azeroth begin with a few meaningful choices: how you want to play, who your character will become, and where curiosity will lead you."
   ],
-  "article_count": 76,
+  "article_count": 77,
   "articles": {
     "24066687": {
       "accepted_pairs": 486,
@@ -275,7 +275,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24302577"
     },
     "24303006": {
-      "accepted_pairs": 72,
+      "accepted_pairs": 61,
       "en_blocks": 64,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24303006",
       "fr_blocks": 64,
@@ -520,7 +520,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24313106"
     },
     "24313105": {
-      "accepted_pairs": 3,
+      "accepted_pairs": 2,
       "en_blocks": 6,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24313105",
       "fr_blocks": 6,
@@ -590,7 +590,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24315820"
     },
     "24316094": {
-      "accepted_pairs": 47,
+      "accepted_pairs": 46,
       "en_blocks": 44,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24316094",
       "fr_blocks": 40,
@@ -644,6 +644,13 @@
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24316981",
       "fr_blocks": 3,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24316981"
+    },
+    "24316096": {
+      "accepted_pairs": 8,
+      "en_blocks": 6,
+      "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24316096",
+      "fr_blocks": 6,
+      "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24316096"
     }
   },
   "exact": {
@@ -947,6 +954,8 @@
     "As Shadow, Priests can harness the power of darkness to deal powerful damage-over-time (DoT) but lack the full utility in that role that could be found on a class such as the Warlock.": "La spécialisation Ombre permet aux prêtres et prêtresses de faire appel au pouvoir des ténèbres pour infliger de puissants dégâts sur la durée, mais il leur manque la pleine utilité dans ce rôle que l’on peut trouver chez d’autres classes, comme le démoniste.",
     "As Shadow, Priests can harness the power of darkness to deal powerful damage-over-time (DoT) but lack the full utility in that role that could be found on a class such as the Warlock. Overall, Priests bring a valuable set of tools that make them an asset for any party or raid.": "La spécialisation Ombre permet aux prêtres et prêtresses de faire appel au pouvoir des ténèbres pour infliger de puissants dégâts sur la durée, mais il leur manque la pleine utilité dans ce rôle que l’on peut trouver chez d’autres classes, comme le démoniste. Dans l’ensemble, les prêtres et prêtresses apportent de précieux outils qui en font un atout au sein de n’importe quel groupe ou raid.",
     "As a general reference:": "À titre indicatif :",
+    "As a storm rages in the skies above, the young people of the Riverglades gather around a campfire to hear the stories behind their history’s legends from the great Demar Brant.": "Alors qu’une tempête fait rage, la jeunesse des rives Claires se rassemble autour d’un feu de camp pour écouter le grand Demar Brant leur raconter l’histoire des figures légendaires de leur peuple.",
+    "As a storm rages in the skies above, the young people of the Riverglades gather around a campfire to hear the stories behind their history’s legends from the great Demar Brant. Through tales of war, sacrifice, and hard choices, they learn that the true strength of a people lies not in victory alone, but in the courage to protect one another.": "Alors qu’une tempête fait rage, la jeunesse des rives Claires se rassemble autour d’un feu de camp pour écouter le grand Demar Brant leur raconter l’histoire des figures légendaires de leur peuple. À travers des récits de guerre, de sacrifices et de choix difficiles, ils découvrent que la véritable force d’un peuple ne réside pas seulement dans ses victoires, mais aussi dans le courage de ses membres à veiller les uns sur les autres.",
     "As always, your power level relative to that of your enemies will remain the same, there will simply be more relatable numbers on your screen.": "Comme toujours, votre niveau de puissance restera le même par rapport à celui de vos ennemis, mais les chiffres qui s’afficheront à l’écran seront simplement plus accessibles.",
     "As beta testing continues, we’ll keep reviewing how these updates play in dungeons, PvP, and the open world. Your feedback will remain an important part of that process, and we look forward to seeing the builds, strategies, and playstyles Priests and Warriors bring to World of Warcraft: Forever.": "Nous continuerons à examiner l’impact de ces mises à jour dans les donjons, en JcJ et dans le monde ouvert à mesure que la phase de bêta se poursuivra. Vos retours demeureront une partie importante du processus. Nous avons hâte de découvrir les configurations, les stratégies et les styles de jeu que les prêtres/prêtresses et les guerriers/guerrières apporteront à World of Warcraft: Forever.",
     "As part of the overall review, we’ll also be looking at caster density in Cragmaw’s arena.": "Dans le cadre de cette refonte globale, nous nous pencherons également sur la forte concentration de créatures lanceuses de sorts dans l’arène de Gueule-de-pierre.",
@@ -2847,6 +2856,7 @@
     "Jepetto Joybuzz and his clockwork assistant have received a new shipment of Prismatic Baubles in stock from the Mad Merchant. They can be purchased during the month of June for the standard price of 250,000 gold.": "Jepetto Mizanjoie et son assistant mécanique ont reçu une livraison de babioles prismatiques de la part du marchand fou. Vous pouvez les acheter pendant le mois de juin aux prix standard de 250 000 pièces d’or.",
     "Join Arator Windrunner as he ventures into the depths of the Void with the aid of his mentor, Umbric, in search of clues to his missing parents' fate.": "Rejoignez Arator Coursevent alors qu’il s’aventure dans les profondeurs du Vide avec l’aide de son mentor Umbric, à la recherche d’indices qui lui permettraient de découvrir ce qu’il est advenu de ses parents disparus.",
     "Join Arator Windrunner as he ventures into the depths of the Void with the aid of his mentor, Umbric, in search of clues to his missing parents' fate. As reality twists and dark whispers prey on his mind and fears, he must learn to confront the Void without losing himself to it.": "Rejoignez Arator Coursevent alors qu’il s’aventure dans les profondeurs du Vide avec l’aide de son mentor Umbric, à la recherche d’indices qui lui permettraient de découvrir ce qu’il est advenu de ses parents disparus. Alors que la réalité se déforme et que les sombres murmures commencent à jouer avec son esprit et ses peurs, il doit apprendre à affronter le Vide sans s’y perdre.",
+    "Join Demar Brant for a special fireside telling of our newest short story, “Cost of Honor”.": "Retrouvez Demar Brant pour une lecture au coin du feu de notre toute dernière nouvelle, « Le prix de l’honneur ».",
     "Join WoW: Forever Podcast host Countdown To Classic and special guest Hammerdance as they sit down with Senior Game Designers Josh “Aggrend” Greenfield, Jay Hartman, and Rowan Ryder as they dive into dungeon leveling, questing, and more.": "Pour ce nouvel épisode, Countdown To Classic, qui anime le podcast WoW: Forever, reçoit Hammerdance, ainsi que Josh « Aggrend » Greenfield, Jay Hartman et Rowan Ryder, de l’équipe de conception du jeu. Au menu : montée de niveau en donjon, quêtes, et bien plus encore.",
     "Join WoW: Forever Podcast host Countdown To Classic and special guest Meeix as they sit down with Senior Game Designer Josh “Aggrend” Greenfield, Associate Production Director Clay Stone, Lead Software Engineer Ana Resendez, and Lead Encounter Designer Michael Nuthals for a special episode.": "Retrouvez Countdown To Classic, animateur du podcast WoW: Forever et son invitée spéciale Meeix dans leur discussion avec Josh « Aggrend » Greenfield, concepteur de jeu senior, Clay Stone, directeur de production associé, Ana Resendez, responsable ingénierie logicielle et Michael Nuthals, concepteur principal des rencontres.",
     "Join WoW: Forever Podcast host Countdown To Classic and special guest Shobek as they talk tech with Senior Game Designer Josh “Aggrend” Greenfield, Lead Software Engineer Ana Resendez, and Principal Software Engineer Frank Williams.": "Retrouvez Countdown To Classic, à l’animation du podcast WoW: Forever, et son invité spécial Shobek pour une discussion consacrée à la technologie avec Josh « Aggrend » Greenfield, concepteur de jeu senior, Ana Resendez, responsable ingénierie logicielle, et Frank Williams, ingénieur logiciel principal.",
@@ -4767,6 +4777,7 @@
     "Three of Talebound’s chilling tales will be available during the demo, each with three challenging difficulty levels: Normal, Veteran, and Heroic.": "Trois récits terrifiants des Entrelacs de l’histoire vous attendent dans cette démo, avec trois niveaux de difficulté : normal, vétéran et héroïque.",
     "Three of Talebound’s chilling tales will be available during the demo, each with three challenging difficulty levels: Normal, Veteran, and Heroic. Battle fearsome enemies and bosses, solve perplexing puzzles, and discover treasure and relics as you delve deeper into the Storyteller’s twisted creations": "Trois récits terrifiants des Entrelacs de l’histoire vous attendent dans cette démo, avec trois niveaux de difficulté : normal, vétéran et héroïque. Au fil de votre progression dans les créations torturées du conteur, terrassez de redoutables adversaires, résolvez des énigmes diaboliques et mettez la main sur des trésors et des reliques.",
     "Thrill of Adventure causes you to regain a small amount of health and mana after every non-trivial kill.": "Frisson de l’aventure vous permet de régénérer une faible quantité de points de vie et de mana chaque fois que vous portez le coup fatal à un personnage adverse non négligeable.",
+    "Through tales of war, sacrifice, and hard choices, they learn that the true strength of a people lies not in victory alone, but in the courage to protect one another.": "À travers des récits de guerre, de sacrifices et de choix difficiles, ils découvrent que la véritable force d’un peuple ne réside pas seulement dans ses victoires, mais aussi dans le courage de ses membres à veiller les uns sur les autres.",
     "Through their unique insight into the mind, they are able to shape an individual’s beliefs, whether to inspire or terrify, soothe or dominate, heal or harm.": "Grâce à leur capacité unique à lire les âmes, ils sont en mesure de façonner les croyances individuelles, qu’il s’agisse d’inspirer ou de terrifier, d’apaiser ou de dominer, de guérir ou de blesser.",
     "Throughout Hallow’s End, characters level 10-90 can queue up for this ghoulish encounter in the Dungeon Finder, and one of these random petrifying pieces is guaranteed to drop each day—no duplicates:": "Pendant la Sanssaint, les personnages-joueurs de niveau 10 à 90 pourront prendre part à cet affrontement macabre grâce à l’outil Donjons et obtenir quotidiennement à coup sûr l’une de ces effroyables pièces, sans doublons :",
     "Throughout the rest of the dungeon, we’re looking to refresh the non-boss enemies and update their placement, with particular attention to giving you new routes through the final section.": "Dans le reste du donjon, nous souhaitons renouveler les adversaires hors boss et revoir leur placement, en veillant tout particulièrement à vous offrir de nouveaux itinéraires dans la dernière partie.",
@@ -5109,6 +5120,7 @@
     "Watch four hours of eligible World of Warcraft content while Drops are active on any channel.": "Regardez 4 h de contenu de World of Warcraft éligible pendant que ces drops Twitch sont actifs sur n’importe quelle chaîne.",
     "Watch the WoW: Forever Podcast – The Lore Episode": "Découvrez le podcast WoW: Forever – L’histoire de l’univers",
     "Watch the WoW: Forever Podcast: All About Tech": "Découvrez le podcast WoW: Forever : tout sur la technologie",
+    "Watch the WoW: Forever Short Story, “Cost of Honor”": "Découvrez la nouvelle « Le prix de l’honneur » de WoW: Forever",
     "Watch the World of Warcraft Live Q&A Now": "Regardez la session de questions-réponses World of Warcraft en direct dès maintenant",
     "Watch the World of Warcraft: Forever Podcast, Ep. 1": "Regardez le 1er épisode du podcast de World of Warcraft: Forever",
     "Watch the World of Warcraft: Midnight Motion Comic, “Singularity”": "Regardez la nouvelle bande dessinée animée de World of Warcraft: Midnight, « Singularité ».",
@@ -5411,6 +5423,7 @@
     "Wrapped in tentacles and weathered by the sea, this eerie home carries the mysteries of the ocean ashore.": "Les mystères marins s’échouent autour de cette maison cernée de tentacules et érodée par la marée.",
     "Wrath damage increased by 50% in PvP combat.": "Dégâts de Colère augmentés de 50 % en combat JcJ.",
     "Wrath: Significantly redesigned to be a much cheaper Mana cost, but damage also lower significantly to match.": "Colère : repensé pour diminuer le coût en mana, mais les dégâts ont aussi été considérablement réduits.",
+    "Written By: Jonathan Maberry Illustrated By: Surfside 3D Narrated By: Peter Jessop as Demar Brant": "Écriture par : Jonathan Maberry Illustrations par : Surfside 3D Narration par : Peter Jessop dans le rôle de Demar Brant",
     "Written By: Sean Copeland Illustrated By: Surfside 3D Narrated By: Jesse Burch as Cormack": "Écrite par : Sean Copeland Illustrée par : Surfside 3D Lue par : Jesse Burch dans le rôle de Cormack",
     "Wyvern Strike will no longer return an ‘immune’ message against targets that are immune to its Bleed effect.": "Frappe de wyverne n’affichera plus de message « insensible » contre des cibles insensibles à son effet de saignement.",
     "Wyvern Strike will no longer return an ‘immune’ message against targets that are immune to its Bleed effect. It will now deal its direct damage, but not apply the Bleed.": "Frappe de wyverne n’affichera plus de message « insensible » contre des cibles insensibles à son effet de saignement. Il inflige désormais ses dégâts directs, mais n’applique pas l’effet de saignement.",
@@ -5520,7 +5533,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 4872,
+  "pair_count": 4878,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -5909,8 +5922,8 @@
     "Brewfest Banquet Scenario": "24303006",
     "Brewfest Bomber Mount": "24303006",
     "Brewfest Fencepost": "24303006",
-    "Brewfest Returns with Battle-Brewed Rewards": "24303006",
-    "Brewfest has arrived, and you can enjoy all that and more!": "24303006",
+    "Brewfest Returns with Battle-Brewed Rewards": "24303315",
+    "Brewfest has arrived, and you can enjoy all that and more!": "24303315",
     "Brewmaster: Completing the achievements The Brewfest Diet, Brew of the Month, Direbrewfest, Does Your Wolpertinger Linger?, and Have Keg, Will Travel will reward the meta-achievement Brewmaster.": "24303006",
     "Brewmaster: Completing the achievements The Brewfest Diet, Brew of the Month, Direbrewfest, Does Your Wolpertinger Linger?, and Have Keg, Will Travel will reward the meta-achievement Brewmaster. Awards the title Brewmaster.": "24303006",
     "Brimming with Life now increases maximum health by 10% (was 8%).": "24066687",
@@ -6299,8 +6312,8 @@
     "Earthbound: This new 21-point gold medal talent causes Earthbind Totem to instantly immobilize nearby targets for 5 seconds when cast.": "24302097",
     "Earthbound’s Imprint impact damage reduced by 21%.": "24307310",
     "Earthbound’s Imprint periodic damage reduced by 13%.": "24307310",
-    "Eat delicious food, drink bountiful beverages, and ride rams around barrels of apples!": "24303006",
-    "Eat delicious food, drink bountiful beverages, and ride rams around barrels of apples! Brewfest has arrived, and you can enjoy all that and more!": "24303006",
+    "Eat delicious food, drink bountiful beverages, and ride rams around barrels of apples!": "24303315",
+    "Eat delicious food, drink bountiful beverages, and ride rams around barrels of apples! Brewfest has arrived, and you can enjoy all that and more!": "24303315",
     "Eclipse: (New talent in row 5.) Casting Wrath reduces the cast time of your next 2 Starfire casts, stacking up to 4 charges.": "24301515",
     "Elaborate Heartsbane Doom Catcher": "24310656",
     "Elder Great Turtles and Ancient Spineclaws have migrated back to the Timeless Shore, which should benefit players who are just Killing Time.": "24066687",
@@ -7000,7 +7013,7 @@
     "In a world where familiar names can become familiar faces, your full name is part of the journey you will carry into Azeroth... forever.": "24304161",
     "In addition to allowing you to spend Legacy Points in the Legacy Perk talent trees, Legacy Points accumulate on your entire account, unlocking toys and cosmetic items.": "24307383",
     "In addition to allowing you to spend Legacy Points in the Legacy Perk talent trees, Legacy Points accumulate on your entire account, unlocking toys and cosmetic items. At launch, there are four possible rewards to earn, with new ones planned for each content update.": "24307383",
-    "In addition to the usual fun in Ironforge and Orgrimmar, you can complete new Brewfest quests throughout Quel’Thalas, and the Brewfest Banquet Outdoor Scenario will keep you hopping.": "24303006",
+    "In addition to the usual fun in Ironforge and Orgrimmar, you can complete new Brewfest quests throughout Quel’Thalas, and the Brewfest Banquet Outdoor Scenario will keep you hopping.": "24303315",
     "In addition, G’eras in Shattrath now offers more powerful wares in exchange for Badges of Justice, including Nether Vortex.": "24310652",
     "In addition, hunters can use their finely honed senses to become master trackers.": "24304075",
     "In addition, if the target is already afflicted by Lacerate, this ability deals 10% weapon damage per existing stack.": "24301515",
@@ -7691,8 +7704,8 @@
     "Raid Size: 40 players": "24303009",
     "Raid bosses: Nalorakk, Akil'zon, Jan'alai, Halazzi, Hex Lord Malacrass, and Zul'jin Level: 70 Location: Ghostlands, Eastern Kingdoms Good to Know: No attunement is required to enter the instance.": "24310652",
     "Raid bosses: Nalorakk, Akil'zon, Jan'alai, Halazzi, Hex Lord Malacrass, and Zul'jin Level: 70 Location: Ghostlands, Eastern Kingdoms Good to Know: No attunement is required to enter the instance. Zul’Aman has a 3-day reset lockout.": "24310652",
-    "Raise Your Stein!": "24303006",
-    "Raise Your Stein! Brewfest Returns with Battle-Brewed Rewards": "24303006",
+    "Raise Your Stein!": "24303315",
+    "Raise Your Stein! Brewfest Returns with Battle-Brewed Rewards": "24303315",
     "Rake: Now gains increased damage from Attack Power.": "24301515",
     "Rally your allies, queue up for battle, and fight to secure the Darkspear Islands for your faction in WoW: Forever.": "24310655",
     "Rally your allies, queue up for battle, and fight to secure the Darkspear Islands for your faction in WoW: Forever.j": "24307308",
@@ -8024,8 +8037,8 @@
     "Strange Brew: Acquire the Brewfest beers listed below. Don’t drink them all at once!": "24303006",
     "Strider Kick: New 21-point gold medal talent.": "24301515",
     "Strider Kick: New 21-point gold medal talent. An instant weapon damage attack that also increases your movement speed by 30% for 3 sec.": "24301515",
-    "Strike up a conversation with the Holiday Enthusiast in Silvermoon City to begin the brewfestivities.": "24303006",
-    "Strike up a conversation with the Holiday Enthusiast in Silvermoon City to begin the brewfestivities. In addition to the usual fun in Ironforge and Orgrimmar, you can complete new Brewfest quests throughout Quel’Thalas, and the Brewfest Banquet Outdoor Scenario will keep you hopping.": "24303006",
+    "Strike up a conversation with the Holiday Enthusiast in Silvermoon City to begin the brewfestivities.": "24303315",
+    "Strike up a conversation with the Holiday Enthusiast in Silvermoon City to begin the brewfestivities. In addition to the usual fun in Ironforge and Orgrimmar, you can complete new Brewfest quests throughout Quel’Thalas, and the Brewfest Banquet Outdoor Scenario will keep you hopping.": "24303315",
     "Stumble your way through the grounds while trying specialty food and brew from all over Azeroth and Draenor.": "24303006",
     "Submit Your Questions for the World of Warcraft Live Q&A September 17": "24303312",
     "Subscription includes:": "24310658",
@@ -8760,7 +8773,7 @@
     "What are Legacy Perks?": "24307383",
     "What makes the system especially flexible is that Legacy Points are shared across all alts, while each character spends those points separately in their own trees.": "24303313",
     "What path into your next adventure will you choose?": "24302070",
-    "What's Brewfest without some stout rewards?": "24303006",
+    "What's Brewfest without some stout rewards?": "24303315",
     "What's Brewfest without some stout rewards? Head over to our article to see what's freshly tapped for Midnight.": "24303315",
     "What's Down There? now requires 1 Massive Lunker (was 2).": "24066687",
     "What’s Ahead": "24310659",
@@ -8788,7 +8801,7 @@
     "When your Core Rune (Rune of Unleashed Fire) deals damage or healing, it has a chance to blast the area, dealing Fire damage split among enemies or restoring health split among allies within 10 yards.": "24310659",
     "When your Core Rune (Rune of Void-Touched Orbs) deals damage or healing, it has a chance to call down 3 orbs that deal Void damage to enemies or restore health to allies within 5 yards.": "24310659",
     "When: October 19–November 2 Where: Trick-or-Treat throughout the Inns of Azeroth, Northrend, Pandaria, Outland, Draenor, the Broken Isles (Dalaran), the Dragon Isles, Khaz Algar, and Quel’Thalas for tasty treats and currency to trade for Hallow’s End goodies.": "24310656",
-    "When: September 20–October 6 Where: Silvermoon City, Valdrakken, Dornogal, Valdrakken, Ironforge, and Orgrimmar Currency: Brewfest Prize Tokens—used to purchase most items at the Brewfest vendor.": "24303006",
+    "When: September 20–October 6 Where: Silvermoon City, Valdrakken, Dornogal, Valdrakken, Ironforge, and Orgrimmar Currency: Brewfest Prize Tokens—used to purchase most items at the Brewfest vendor.": "24303315",
     "Where do they come from?": "24310659",
     "Whereas Alliance paladins claim their epic charger in the name of Redemption, the paladins of the Forsaken ride in the name of Retribution.": "24304071",
     "Wherever hunters go, they fight back the ravages of sickness, exploitation, and industrialization.": "24304075",
@@ -8987,7 +9000,7 @@
     "Choose Your Ruleset in World of Warcraft: Forever": "24313106",
     "Click to Learn More": "24316097",
     "Dive Into WoW: Forever, the Gods of Zul’Aman, Hallow’s End, and More in WoW Weekly": "24313106",
-    "Downloadable PDF": "24316094",
+    "Downloadable PDF": "24316096",
     "Early Name Reservations are available from October 27 through November 3, giving players an opportunity to secure the names that will become part of their adventures in Azeroth.": "24313106",
     "Every journey through Azeroth begins with a choice about the kind of world you want to step into. We’re changing how that journey begins by moving away from the traditional realm-selection screen and introducing rulesets, letting you choose the kind of experience you want to have first.": "24313106",
     "From now through November 8, 2026, invoke the spirit of legendary hunter and champion of the Horde, Rexxar, with a beastly pack of items that challenge you to embrace the untamed wilds in modern World of Warcraft® (currently Midnight™).": "24313106",
@@ -10396,7 +10409,13 @@
     "Zephras - Lotheluum Starbreeze now offers training to Druids as expected.": "24315281",
     "Zephras - Malduko Cloudcrush now respawns slightly more slowly.": "24315281",
     "“Croaky's Head” is now available to all players in a party.": "24315281",
-    "“Elmpaw's Head” is now available to all players in a party.": "24315281"
+    "“Elmpaw's Head” is now available to all players in a party.": "24315281",
+    "As a storm rages in the skies above, the young people of the Riverglades gather around a campfire to hear the stories behind their history’s legends from the great Demar Brant.": "24316096",
+    "As a storm rages in the skies above, the young people of the Riverglades gather around a campfire to hear the stories behind their history’s legends from the great Demar Brant. Through tales of war, sacrifice, and hard choices, they learn that the true strength of a people lies not in victory alone, but in the courage to protect one another.": "24316096",
+    "Join Demar Brant for a special fireside telling of our newest short story, “Cost of Honor”.": "24316096",
+    "Through tales of war, sacrifice, and hard choices, they learn that the true strength of a people lies not in victory alone, but in the courage to protect one another.": "24316096",
+    "Watch the WoW: Forever Short Story, “Cost of Honor”": "24316096",
+    "Written By: Jonathan Maberry Illustrated By: Surfside 3D Narrated By: Peter Jessop as Demar Brant": "24316096"
   },
   "targetLanguage": "fr-FR"
 }
