@@ -21,7 +21,7 @@ ENTITY = re.compile(r"\b(spell|item|npc|quest|achievement)=(\d+)\b")
 PLACEHOLDER = re.compile(r"\{\{[A-Z][A-Z0-9_]*\}\}")
 # Wowhead guide templates sometimes expose unresolved utility slots in source.
 # Preserve these machine-readable markers, not arbitrary uppercase WoW acronyms.
-WOWHEAD_SLOT = re.compile(r"\bUTIL\d+_(?:NAME|USECASE)\b")
+WOWHEAD_SLOT = re.compile(r"\b(?:UTIL\d+_(?:NAME|USECASE)|BRTOOL\d+)\b")
 # Preserve explicit percentages in rotations, tier bonuses and stat thresholds.
 # Allow a French space before % and comma as the decimal separator.
 PERCENT = re.compile(r"(?<![\w.,])\d+(?:[.,]\d+)?\s*%")
