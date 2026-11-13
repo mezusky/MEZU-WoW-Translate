@@ -123,7 +123,7 @@ def talent_exports(text):
             (any(c.islower() for c in token) or any(c.isdigit() for c in token))]
 
 
-# Optional audit of explicit stat-priority relationships. Names may be localized,
+# Optional check for short tier-bonus labels, not whole guide prose.\n# The labels can be localized; preserve their 2-piece / 4-piece identity.\nTIER_BONUS_LABEL = re.compile(\n    r"(?<!\\w)([24])\\s*(?:pc|[- ]?set|[- ]?piece(?:s)?|\\s+pi[eè]ces?)(?!\\w)",\n    re.IGNORECASE,\n)\n\ndef tier_bonus_labels(text):\n    return sorted(match.group(1) for match in TIER_BONUS_LABEL.finditer(text))\n\n\n# Optional audit of explicit stat-priority relationships. Names may be localized,
 # but the ordering operators must retain their sequence and strength.
 # Only use for captured priority snippets, never arbitrary prose or HTML.
 PRIORITY_OPERATOR = re.compile(r"(?<![<>=])(?:>{1,4}|<{1,4}|>=|<=|=)(?![<>=])")
@@ -155,7 +155,7 @@ def audit_sample(sample):
         findings.append("placeholder_mismatch")
     if sorted(WOWHEAD_SLOT.findall(source)) != sorted(WOWHEAD_SLOT.findall(translated)):
         findings.append("wowhead_slot_mismatch")
-    if sample.get("preserveStatPriority") and priority_operators(source) != priority_operators(translated):
+    if sample.get("preserveTierBonusLabels") and tier_bonus_labels(source) != tier_bonus_labels(translated):\n        findings.append("tier_bonus_label_mismatch")\n    if sample.get("preserveStatPriority") and priority_operators(source) != priority_operators(translated):
         findings.append("stat_priority_relation_mismatch")
     if sample.get("preserveNumbers") and numeric_values(source) != numeric_values(translated):
         findings.append("number_mismatch")
