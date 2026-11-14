@@ -146,7 +146,7 @@ def priority_operators(text):
 # Optional structure check for one captured, numbered priority list. This checks
 # rank sequence and tie-group size without depending on localized stat names.
 # Do not use on whole guides containing multiple independent build lists.
-NUMBERED_PRIORITY = re.compile(r"^\\s*(\\d{1,2})[.)]\\s+(.+?)\\s*$", re.MULTILINE)
+NUMBERED_PRIORITY = re.compile(r"^\s*(\d{1,2})[.)]\s+(.+?)\s*$", re.MULTILINE)
 
 def numbered_priority_structure(text):
     rows = []
