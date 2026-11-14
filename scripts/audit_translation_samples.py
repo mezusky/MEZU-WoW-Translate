@@ -143,6 +143,20 @@ def priority_operators(text):
     return PRIORITY_OPERATOR.findall(text)
 
 
+# Optional structure check for one captured, numbered priority list. This checks
+# rank sequence and tie-group size without depending on localized stat names.
+# Do not use on whole guides containing multiple independent build lists.
+NUMBERED_PRIORITY = re.compile(r"^\\s*(\\d{1,2})[.)]\\s+(.+?)\\s*$", re.MULTILINE)
+
+def numbered_priority_structure(text):
+    rows = []
+    for rank, label in NUMBERED_PRIORITY.findall(text):
+        # Slash-separated alternatives in WoW stat lists denote equal priority.
+        # Preserve the number of tied alternatives without translating labels.
+        rows.append((int(rank), len([part for part in label.split("/") if part.strip()])))
+    return rows
+
+
 def audit_sample(sample):
     source = sample["source"]
     translated = sample["translated"]
@@ -170,6 +184,8 @@ def audit_sample(sample):
         findings.append("tier_bonus_label_mismatch")
     if sample.get("preserveStatPriority") and priority_operators(source) != priority_operators(translated):
         findings.append("stat_priority_relation_mismatch")
+    if sample.get("preserveNumberedPriority") and numbered_priority_structure(source) != numbered_priority_structure(translated):
+        findings.append("numbered_priority_structure_mismatch")
     if sample.get("preserveNumbers") and numeric_values(source) != numeric_values(translated):
         findings.append("number_mismatch")
     if import_records(source) != import_records(translated):
