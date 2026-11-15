@@ -20,14 +20,14 @@ CFG = DATA / "wowhead_regression_pages.json"
 OUT = DATA / "wowhead_regression_report.json"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/154 Safari/537.36 MEZU-WoW-Translate"
 
-WS = re.compile(r"\\s+")
+WS = re.compile(r"\s+")
 
 # Extraction/source artifacts are not evidence of a bad translated output.
 # Count them separately, without trying to repair incomplete Wowhead prose.
 SOURCE_ARTIFACT_PATTERNS = {
-    "dangling_in_heading": re.compile(r"\\bHow to Acquire\\b[^\\n]{0,120}\\bin\\s*$", re.I),
-    "empty_expansion_placeholder": re.compile(r"\\bIn\\s*,"),
-    "widget_markup_fragment": re.compile(r"(?:^|\\s)(?:heading=false\\]|\\[/?(?:tab|talent|item)\\b)", re.I),
+    "dangling_in_heading": re.compile(r"\bHow to Acquire\b[^\n]{0,120}\bin\s*$", re.I),
+    "empty_expansion_placeholder": re.compile(r"\bIn\s*,"),
+    "widget_markup_fragment": re.compile(r"(?:^|\s)(?:heading=false\]|\[/?(?:tab|talent|item)\b)", re.I),
 }
 
 def source_artifact_signals(text):
