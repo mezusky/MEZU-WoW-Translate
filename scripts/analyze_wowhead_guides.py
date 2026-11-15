@@ -20,7 +20,19 @@ CFG = DATA / "wowhead_regression_pages.json"
 OUT = DATA / "wowhead_regression_report.json"
 UA = "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 Chrome/154 Safari/537.36 MEZU-WoW-Translate"
 
-WS = re.compile(r"\s+")
+WS = re.compile(r"\\s+")
+
+# Extraction/source artifacts are not evidence of a bad translated output.
+# Count them separately, without trying to repair incomplete Wowhead prose.
+SOURCE_ARTIFACT_PATTERNS = {
+    "dangling_in_heading": re.compile(r"\\bHow to Acquire\\b[^\\n]{0,120}\\bin\\s*$", re.I),
+    "empty_expansion_placeholder": re.compile(r"\\bIn\\s*,"),
+    "widget_markup_fragment": re.compile(r"(?:^|\\s)(?:heading=false\\]|\\[/?(?:tab|talent|item)\\b)", re.I),
+}
+
+def source_artifact_signals(text):
+    return [name for name, pattern in SOURCE_ARTIFACT_PATTERNS.items()
+            if pattern.search(text)]
 
 def fetch(url, source_language):
     req = urllib.request.Request(url, headers={
@@ -51,6 +63,7 @@ report = {"schema": 2, "auditMethod": "source-only; browser translation not veri
           "languageEvidenceMethod": "conservative prose stopword evidence; unknown is not a failure",
           "localeContractStatus": contract["status"],
           "coverageEligible": contract["canScore"],
+          "sourceArtifactMethod": "conservative extracted-source signals; not translation errors",
           "pages": []}
 
 for page in cfg.get("pages", []):
@@ -100,17 +113,20 @@ for page in cfg.get("pages", []):
             seen.add(clean)
             covered = clean in exact or clean in phrase_memory
             jargon_hits = jargon_coverage.hits(clean)
+            source_artifacts = source_artifact_signals(clean)
             blocks.append({
                 "tag": tag,
                 "text": clean,
                 "fingerprint": hashlib.sha256(clean.encode("utf-8")).hexdigest()[:20],
                 "exact_override": covered,
                 "wow_signal": wow_signal,
-                "jargon_hits": jargon_hits
+                "jargon_hits": jargon_hits,
+                "source_artifacts": source_artifacts
             })
         row["blocks"] = [{k: v for k, v in b.items() if k != "text"} for b in blocks]
         row["stats"] = {
             "block_count": len(blocks),
+            "source_artifact_blocks": sum(bool(b["source_artifacts"]) for b in blocks),
             "exact_covered": sum(1 for b in blocks if b["exact_override"]),
             "wow_blocks": sum(1 for b in blocks if b["wow_signal"]),
             "wow_exact_covered": sum(1 for b in blocks if b["wow_signal"] and b["exact_override"])
