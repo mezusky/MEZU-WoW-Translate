@@ -104,7 +104,14 @@ for page in cfg.get("pages", []):
             continue
         seen = set()
         blocks = []
+        # Source artifacts must be counted before prose eligibility filtering:
+        # incomplete headings often have no stopwords or WoW term signals.
+        # Keep only aggregate counts, never copyrighted source text.
+        source_artifact_counts = {}
         for tag, value in parsed_blocks:
+            artifact_names = source_artifact_signals(value.strip(), tag)
+            for name in set(artifact_names):
+                source_artifact_counts[name] = source_artifact_counts.get(name, 0) + 1
             # Keep original line breaks until executable macro lines are
             # removed. Flattening first makes /cast and #showtooltip invisible
             # to the line-anchored filter in source_language_evidence.
@@ -133,7 +140,8 @@ for page in cfg.get("pages", []):
         row["blocks"] = [{k: v for k, v in b.items() if k != "text"} for b in blocks]
         row["stats"] = {
             "block_count": len(blocks),
-            "source_artifact_blocks": sum(bool(b["source_artifacts"]) for b in blocks),
+            "source_artifact_blocks": sum(source_artifact_counts.values()),
+            "source_artifact_counts": source_artifact_counts,
             "exact_covered": sum(1 for b in blocks if b["exact_override"]),
             "wow_blocks": sum(1 for b in blocks if b["wow_signal"]),
             "wow_exact_covered": sum(1 for b in blocks if b["wow_signal"] and b["exact_override"])
