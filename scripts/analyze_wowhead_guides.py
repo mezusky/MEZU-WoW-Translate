@@ -108,8 +108,11 @@ for page in cfg.get("pages", []):
         # incomplete headings often have no stopwords or WoW term signals.
         # Keep only aggregate counts, never copyrighted source text.
         source_artifact_counts = {}
+        source_artifact_block_count = 0
         for tag, value in parsed_blocks:
             artifact_names = source_artifact_signals(value.strip(), tag)
+            if artifact_names:
+                source_artifact_block_count += 1
             for name in set(artifact_names):
                 source_artifact_counts[name] = source_artifact_counts.get(name, 0) + 1
             # Keep original line breaks until executable macro lines are
@@ -140,7 +143,7 @@ for page in cfg.get("pages", []):
         row["blocks"] = [{k: v for k, v in b.items() if k != "text"} for b in blocks]
         row["stats"] = {
             "block_count": len(blocks),
-            "source_artifact_blocks": sum(source_artifact_counts.values()),
+            "source_artifact_blocks": source_artifact_block_count,
             "source_artifact_counts": source_artifact_counts,
             "exact_covered": sum(1 for b in blocks if b["exact_override"]),
             "wow_blocks": sum(1 for b in blocks if b["wow_signal"]),
