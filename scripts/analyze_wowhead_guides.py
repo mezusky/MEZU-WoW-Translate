@@ -36,6 +36,8 @@ def source_artifact_signals(text, tag=None):
     # Wowhead dynamic expansion tokens can leave otherwise valid headings
     # ending in "in" (e.g. "Best Frost Mage Consumables in"). Restrict this
     # generic signal to heading elements to avoid flagging ordinary prose.
+    if tag and re.fullmatch(r"h[1-6]", tag, re.I) and re.search(r"\bsize=(?:small|medium|large)\s+type=\w+\s+inline=(?:true|false)\b", text, re.I):
+        signals.append("heading_widget_attributes")
     if tag and re.fullmatch(r"h[1-6]", tag, re.I) and re.search(r"\bin\s*$", text, re.I):
         if "dangling_in_heading" not in signals:
             signals.append("dangling_in_heading")
