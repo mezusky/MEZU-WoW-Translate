@@ -30,9 +30,16 @@ SOURCE_ARTIFACT_PATTERNS = {
     "widget_markup_fragment": re.compile(r"(?:^|\s)(?:heading=false\]|\[/?(?:tab|talent|item)\b)", re.I),
 }
 
-def source_artifact_signals(text):
-    return [name for name, pattern in SOURCE_ARTIFACT_PATTERNS.items()
-            if pattern.search(text)]
+def source_artifact_signals(text, tag=None):
+    signals = [name for name, pattern in SOURCE_ARTIFACT_PATTERNS.items()
+               if pattern.search(text)]
+    # Wowhead dynamic expansion tokens can leave otherwise valid headings
+    # ending in "in" (e.g. "Best Frost Mage Consumables in"). Restrict this
+    # generic signal to heading elements to avoid flagging ordinary prose.
+    if tag and re.fullmatch(r"h[1-6]", tag, re.I) and re.search(r"\bin\s*$", text, re.I):
+        if "dangling_in_heading" not in signals:
+            signals.append("dangling_in_heading")
+    return signals
 
 def fetch(url, source_language):
     req = urllib.request.Request(url, headers={
@@ -113,7 +120,7 @@ for page in cfg.get("pages", []):
             seen.add(clean)
             covered = clean in exact or clean in phrase_memory
             jargon_hits = jargon_coverage.hits(clean)
-            source_artifacts = source_artifact_signals(clean)
+            source_artifacts = source_artifact_signals(clean, tag)
             blocks.append({
                 "tag": tag,
                 "text": clean,
