@@ -174,9 +174,18 @@ for page in report["pages"]:
     page["stats"]["reused_source_blocks"] = sum(
         len(pages_by_fingerprint[key]) > 1 for key in fingerprints
     )
+    # Order-independent signal: truly page-unique source blocks. Unlike
+    # first_seen_source_blocks, this stays stable if corpus order changes.
+    page["stats"]["unique_source_blocks"] = sum(
+        len(pages_by_fingerprint[key]) == 1 for key in fingerprints
+    )
     page["stats"]["first_seen_source_blocks"] = len(fingerprints - seen_prior_pages)
     seen_prior_pages.update(fingerprints)
 report["fingerprintMethod"] = "sha256-80bit of normalized source block; not translated output"
+report["sourceUniquenessMethod"] = (
+    "unique_source_blocks counts source fingerprints found on exactly one "
+    "accessible page in this corpus; order-independent and not translation quality"
+)
 report["sourceNoveltyMethod"] = (
     "first_seen_source_blocks counts source fingerprints not seen in earlier "
     "accessible pages in corpus order; it does not measure translation defects"
