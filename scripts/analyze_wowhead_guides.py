@@ -31,6 +31,9 @@ SOURCE_ARTIFACT_PATTERNS = {
     # "for !" or "during ."; count source defects, not translation failures.
     "missing_expansion_after_preposition": re.compile(r"\b(?:for|during)\s+[.!](?=\s|$)", re.I),
     "widget_markup_fragment": re.compile(r"(?:^|\s)(?:heading=false\]|\[/?(?:tab|talent|item)\b)", re.I),
+    # Unrendered Wowhead utility-template slots are source placeholders, not
+    # English text that a translation glossary should attempt to fix.
+    "unresolved_utility_slot": re.compile(r"\bUTIL[1-9]\d*_(?:NAME|USECASE)\b"),
 }
 
 def source_artifact_signals(text, tag=None):
