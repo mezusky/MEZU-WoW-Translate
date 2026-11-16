@@ -27,6 +27,7 @@ WS = re.compile(r"\s+")
 SOURCE_ARTIFACT_PATTERNS = {
     "dangling_in_heading": re.compile(r"\bHow to Acquire\b[^\n]{0,120}\bin\s*$", re.I),
     "empty_expansion_placeholder": re.compile(r"\bIn\s*,"),
+    "missing_expansion_between_articles": re.compile(r"\bin\s+the\s+for\b", re.I),
     # Empty dynamic expansion names also surface in guide introductions as
     # "for !" or "during ."; count source defects, not translation failures.
     "missing_expansion_after_preposition": re.compile(r"\b(?:for|during)\s+[.!](?=\s|$)", re.I),
