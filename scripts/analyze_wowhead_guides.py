@@ -34,6 +34,8 @@ SOURCE_ARTIFACT_PATTERNS = {
     # Unrendered Wowhead utility-template slots are source placeholders, not
     # English text that a translation glossary should attempt to fix.
     "unresolved_utility_slot": re.compile(r"\bUTIL[1-9]\d*_(?:NAME|USECASE)\b"),
+    # Bonus-roll widget slots are likewise unresolved source templates, not prose.
+    "unresolved_bonus_roll_slot": re.compile(r"\bBRTOOL[1-9]\d*\b"),
 }
 
 def source_artifact_signals(text, tag=None):
