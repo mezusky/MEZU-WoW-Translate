@@ -30,7 +30,7 @@ SOURCE_ARTIFACT_PATTERNS = {
     "missing_expansion_between_articles": re.compile(r"\bin\s+the\s+for\b", re.I),
     # Empty dynamic expansion names also surface in guide introductions as
     # "for !" or "during ."; count source defects, not translation failures.
-    "missing_expansion_after_preposition": re.compile(r"\b(?:for|during)\s+[.!](?=\s|$)", re.I),
+    "missing_expansion_after_preposition": re.compile(r"\b(?:for|during|in)\s+[.!](?=\s|$)", re.I),
     "widget_markup_fragment": re.compile(r"(?:^|\s)(?:heading=false\]|\[/?(?:tab|talent|item)\b)", re.I),
     # Unrendered Wowhead utility-template slots are source placeholders, not
     # English text that a translation glossary should attempt to fix.
