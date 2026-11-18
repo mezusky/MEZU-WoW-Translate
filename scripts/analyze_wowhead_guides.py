@@ -37,6 +37,9 @@ SOURCE_ARTIFACT_PATTERNS = {
     "unresolved_utility_slot": re.compile(r"\bUTIL[1-9]\d*_(?:NAME|USECASE)\b"),
     # Bonus-roll widget slots are likewise unresolved source templates, not prose.
     "unresolved_bonus_roll_slot": re.compile(r"\bBRTOOL[1-9]\d*\b"),
+    # Broken rich-link rendering can leave a stray closing bracket before
+    # linked raid/hero-tree labels across unrelated classes and roles.
+    "orphan_link_closing_bracket": re.compile(r"(?:^|\s)\]\s+(?=[A-Z][A-Za-z])"),
 }
 
 def source_artifact_signals(text, tag=None):
