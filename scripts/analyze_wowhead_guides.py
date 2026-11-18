@@ -40,6 +40,10 @@ SOURCE_ARTIFACT_PATTERNS = {
     # Broken rich-link rendering can leave a stray closing bracket before
     # linked raid/hero-tree labels across unrelated classes and roles.
     "orphan_link_closing_bracket": re.compile(r"(?:^|\s)\]\s+(?=[A-Z][A-Za-z])"),
+    # Some unrendered rich links leave a bracket by itself or attached to
+    # the end of prose. These are source artifacts, never translation errors.
+    "standalone_closing_bracket": re.compile(r"^\s*\]\s*$"),
+    "trailing_closing_bracket": re.compile(r"(?<!\[)\](?=\s*$)"),
 }
 
 def source_artifact_signals(text, tag=None):
