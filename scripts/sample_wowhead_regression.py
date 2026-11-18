@@ -8,6 +8,7 @@ import argparse
 import hashlib
 import json
 from pathlib import Path
+from urllib.parse import urlsplit
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_CORPUS = ROOT / "data" / "wowhead_regression_pages.json"
@@ -19,9 +20,8 @@ SECTIONS = {
 
 
 def dimensions(page):
-    url = page["url"].split("?", 1)[0]
-    parts = url.split("/")
-    edition = parts[3] if len(parts) > 3 and parts[3] in ("classic", "tbc", "wotlk", "cata") else "retail"
+    parts = [part for part in urlsplit(page["url"]).path.split("/") if part]
+    edition = parts[0] if parts and parts[0] in ("classic", "tbc", "wotlk", "cata") else "retail"
     if "classes" in parts:
         index = parts.index("classes")
         klass = parts[index + 1] if len(parts) > index + 1 else "unknown"
