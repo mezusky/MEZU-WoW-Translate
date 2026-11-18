@@ -32,6 +32,10 @@ SOURCE_ARTIFACT_PATTERNS = {
     # "for !" or "during ."; count source defects, not translation failures.
     "missing_expansion_after_preposition": re.compile(r"\b(?:for|during|in)\s+[.!](?=\s|$)", re.I),
     "widget_markup_fragment": re.compile(r"(?:^|\s)(?:heading=false\]|\[/?(?:tab|talent|item)\b)", re.I),
+    # Hero-talent radio controls sometimes leak their serialized state into
+    # extracted text (e.g. "checked]Trickster" / "]Fatebound"). Track as
+    # source widget artifacts; do not remove choices or alter translations.
+    "hero_switch_state_fragment": re.compile(r"^(?:checked)?\]\s*[A-Z][A-Za-z\x27 -]{2,60}$"),
     # Unrendered Wowhead utility-template slots are source placeholders, not
     # English text that a translation glossary should attempt to fix.
     "unresolved_utility_slot": re.compile(r"\bUTIL[1-9]\d*_(?:NAME|USECASE)\b"),
