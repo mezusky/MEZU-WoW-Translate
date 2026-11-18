@@ -40,7 +40,7 @@ def dimensions(page):
 def sample(pages, count=12, cycle="0"):
     """Greedy marginal coverage, with stable cycle-based tie-breaking."""
     # Deduplicate by canonical page URL so repeated corpus entries do not waste audit slots.
-    remaining = list({page["url"]: page for page in reversed(pages)}.values())[::-1]
+    remaining = list({page["url"]: page for page in pages}.values())
     chosen = []
     seen = set()
     while remaining and len(chosen) < count:
