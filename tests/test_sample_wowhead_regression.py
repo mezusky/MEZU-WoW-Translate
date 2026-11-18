@@ -10,6 +10,13 @@ class SamplerTests(unittest.TestCase):
         paladin = {"id": "paladin", "url": "https://www.wowhead.com/guide/classes/paladin/protection/rotation-cooldowns-pve-tank"}
         self.assertNotEqual(dimensions(warrior)["classSpec"], dimensions(paladin)["classSpec"])
 
+    def test_edition_uses_path_not_host_or_guide_segment(self):
+        retail = {"url": "https://www.wowhead.com/guide/classes/mage/frost/overview-pve-dps"}
+        classic = {"url": "https://www.wowhead.com/classic/guide/classes/mage/frost/overview-pve-dps?x=1"}
+        self.assertEqual(dimensions(retail)["edition"], "retail")
+        self.assertEqual(dimensions(classic)["edition"], "classic")
+        self.assertEqual(dimensions(classic)["classSpec"], "mage/frost")
+
     def test_deterministic_and_unique(self):
         pages = [
             {"id": str(i), "url": "https://www.wowhead.com/guide/classes/" + klass + "/" + spec + "/" + section}
