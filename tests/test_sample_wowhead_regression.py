@@ -1,0 +1,29 @@
+"""Regression tests for class-specific coverage in the deterministic sampler."""
+import unittest
+
+from scripts.sample_wowhead_regression import dimensions, sample
+
+
+class SamplerTests(unittest.TestCase):
+    def test_class_spec_is_not_shared_across_classes(self):
+        warrior = {"id": "warrior", "url": "https://www.wowhead.com/guide/classes/warrior/protection/rotation-cooldowns-pve-tank"}
+        paladin = {"id": "paladin", "url": "https://www.wowhead.com/guide/classes/paladin/protection/rotation-cooldowns-pve-tank"}
+        self.assertNotEqual(dimensions(warrior)["classSpec"], dimensions(paladin)["classSpec"])
+
+    def test_deterministic_and_unique(self):
+        pages = [
+            {"id": str(i), "url": "https://www.wowhead.com/guide/classes/" + klass + "/" + spec + "/" + section}
+            for i, (klass, spec, section) in enumerate([
+                ("warrior", "protection", "rotation-cooldowns-pve-tank"),
+                ("paladin", "protection", "rotation-cooldowns-pve-tank"),
+                ("priest", "holy", "overview-pve-healer"),
+                ("mage", "frost", "stat-priority-pve-dps"),
+            ])
+        ]
+        result = sample(pages, count=4, cycle="2026-11-18")
+        self.assertEqual(result, sample(pages, count=4, cycle="2026-11-18"))
+        self.assertEqual(len({page["id"] for page in result}), 4)
+
+
+if __name__ == "__main__":
+    unittest.main()
