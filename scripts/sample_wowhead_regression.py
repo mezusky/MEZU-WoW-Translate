@@ -30,6 +30,9 @@ def dimensions(page):
         klass, spec = "general", "general"
     slug = parts[-1]
     section = next((label for prefix, label in SECTIONS.items() if slug.startswith(prefix)), "other")
+    # Season-prefixed guides encode their section at the end of the slug.
+    if section == "other" and slug.startswith("midnight-season-"):
+        section = "raid" if slug.endswith("-raid-tips") else "overview" if slug.rsplit("-", 1)[-1].isdigit() else "other"
     role = "tank" if "tank" in slug else "healer" if "healer" in slug else "dps" if "dps" in slug else "unknown"
     return {"edition": edition, "class": klass, "spec": spec, "classSpec": klass + "/" + spec, "section": section, "role": role}
 
