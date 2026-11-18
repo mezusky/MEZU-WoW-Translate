@@ -31,7 +31,7 @@ def dimensions(page):
     slug = parts[-1]
     section = next((label for prefix, label in SECTIONS.items() if slug.startswith(prefix)), "other")
     role = "tank" if "tank" in slug else "healer" if "healer" in slug else "dps" if "dps" in slug else "unknown"
-    return {"edition": edition, "class": klass, "spec": spec, "section": section, "role": role}
+    return {"edition": edition, "class": klass, "spec": spec, "classSpec": klass + "/" + spec, "section": section, "role": role}
 
 
 def sample(pages, count=12, cycle="0"):
@@ -43,7 +43,7 @@ def sample(pages, count=12, cycle="0"):
         def score(page):
             dims = dimensions(page)
             novelty = sum(weight for key, weight in
-                          (("section", 6), ("role", 4), ("class", 3), ("edition", 2), ("spec", 1))
+                          (("section", 6), ("role", 4), ("class", 3), ("edition", 2), ("classSpec", 1))
                           if (key, dims[key]) not in seen)
             tie = hashlib.sha256((cycle + "|" + page["url"]).encode()).hexdigest()
             return novelty, tie
