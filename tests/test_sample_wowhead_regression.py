@@ -23,6 +23,14 @@ class SamplerTests(unittest.TestCase):
         self.assertEqual(dimensions(raid)["section"], "raid")
         self.assertEqual(dimensions(overview)["section"], "overview")
 
+    def test_duplicate_urls_do_not_consume_audit_slots(self):
+        url = "https://www.wowhead.com/guide/classes/mage/frost/overview-pve-dps"
+        other = "https://www.wowhead.com/guide/classes/priest/holy/rotation-cooldowns-pve-healer"
+        pages = [{"id": "a", "url": url}, {"id": "duplicate", "url": url}, {"id": "b", "url": other}]
+        selected = sample(pages, count=3, cycle="duplicate-test")
+        self.assertEqual(len(selected), 2)
+        self.assertEqual({p["url"] for p in selected}, {url, other})
+
     def test_deterministic_and_unique(self):
         pages = [
             {"id": str(i), "url": "https://www.wowhead.com/guide/classes/" + klass + "/" + spec + "/" + section}
