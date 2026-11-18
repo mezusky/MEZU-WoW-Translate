@@ -17,6 +17,12 @@ class SamplerTests(unittest.TestCase):
         self.assertEqual(dimensions(classic)["edition"], "classic")
         self.assertEqual(dimensions(classic)["classSpec"], "mage/frost")
 
+    def test_midnight_season_guides_have_distinct_sections(self):
+        raid = {"url": "https://www.wowhead.com/guide/classes/priest/holy/midnight-season-2-raid-tips"}
+        overview = {"url": "https://www.wowhead.com/guide/classes/shaman/enhancement/midnight-season-2"}
+        self.assertEqual(dimensions(raid)["section"], "raid")
+        self.assertEqual(dimensions(overview)["section"], "overview")
+
     def test_deterministic_and_unique(self):
         pages = [
             {"id": str(i), "url": "https://www.wowhead.com/guide/classes/" + klass + "/" + spec + "/" + section}
