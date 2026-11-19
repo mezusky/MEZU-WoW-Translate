@@ -105,6 +105,14 @@ def linked_entity_labels(text, kind, entity_id):
 # mistaking ordinary headings or prose for an import record.
 IMPORT_LINE = re.compile(r"^\s*[A-Za-z][A-Za-z0-9_]*:[^;\n]+;(?:[A-Za-z][A-Za-z0-9_]*:[^;\n]*;?){1,}\s*$")
 
+# Console and Lua commands are executable game instructions, not prose.
+# Do not include /cast: localized spell names can legitimately differ.
+PROTECTED_COMMAND = re.compile(r"^\\s*/(?:console|run|script)\\b[^\\n]*$", re.IGNORECASE | re.MULTILINE)
+
+def protected_commands(text):
+    return [line.strip() for line in PROTECTED_COMMAND.findall(text)]
+
+
 def import_records(text):
     # Preserve sequence: addon import lines can encode ordered cooldown plans.
     return [line.strip() for line in text.splitlines()
@@ -188,7 +196,7 @@ def audit_sample(sample):
         findings.append("numbered_priority_structure_mismatch")
     if sample.get("preserveNumbers") and numeric_values(source) != numeric_values(translated):
         findings.append("number_mismatch")
-    if import_records(source) != import_records(translated):
+    if protected_commands(source) != protected_commands(translated):\n        findings.append("protected_command_mismatch")\n    if import_records(source) != import_records(translated):
         findings.append("technical_import_mismatch")
     if talent_exports(source) != talent_exports(translated):
         findings.append("talent_export_mismatch")
