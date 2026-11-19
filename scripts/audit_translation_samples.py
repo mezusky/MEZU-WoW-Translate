@@ -107,7 +107,7 @@ IMPORT_LINE = re.compile(r"^\s*[A-Za-z][A-Za-z0-9_]*:[^;\n]+;(?:[A-Za-z][A-Za-z0
 
 # Console and Lua commands are executable game instructions, not prose.
 # Do not include /cast: localized spell names can legitimately differ.
-PROTECTED_COMMAND = re.compile(r"^\\s*/(?:console|run|script)\\b[^\\n]*$", re.IGNORECASE | re.MULTILINE)
+PROTECTED_COMMAND = re.compile(r"^\s*/(?:console|run|script)\b[^\n]*$", re.IGNORECASE | re.MULTILINE)
 
 def protected_commands(text):
     return [line.strip() for line in PROTECTED_COMMAND.findall(text)]
