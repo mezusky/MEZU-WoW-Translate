@@ -196,7 +196,9 @@ def audit_sample(sample):
         findings.append("numbered_priority_structure_mismatch")
     if sample.get("preserveNumbers") and numeric_values(source) != numeric_values(translated):
         findings.append("number_mismatch")
-    if protected_commands(source) != protected_commands(translated):\n        findings.append("protected_command_mismatch")\n    if import_records(source) != import_records(translated):
+    if protected_commands(source) != protected_commands(translated):
+        findings.append("protected_command_mismatch")
+    if import_records(source) != import_records(translated):
         findings.append("technical_import_mismatch")
     if talent_exports(source) != talent_exports(translated):
         findings.append("talent_export_mismatch")
