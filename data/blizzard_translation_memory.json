@@ -171,7 +171,7 @@
     "Zephrali Greatstaff and Fallen Dragon's Scepter now appear correctly oriented when sheathed on the player's back.",
     "Zephras Isle - Nyalah Brightfire in Valanaar should now provide a more extensive array of cooking supplies for aspiring culinary artists."
   ],
-  "article_count": 83,
+  "article_count": 84,
   "articles": {
     "24066687": {
       "accepted_pairs": 486,
@@ -706,7 +706,7 @@
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24316981"
     },
     "24316096": {
-      "accepted_pairs": 8,
+      "accepted_pairs": 6,
       "en_blocks": 6,
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24316096",
       "fr_blocks": 6,
@@ -753,6 +753,13 @@
       "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24317681",
       "fr_blocks": 27,
       "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24317681"
+    },
+    "24317680": {
+      "accepted_pairs": 10,
+      "en_blocks": 6,
+      "en_url": "https://worldofwarcraft.blizzard.com/en-us/news/24317680",
+      "fr_blocks": 6,
+      "fr_url": "https://worldofwarcraft.blizzard.com/fr-fr/news/24317680"
     }
   },
   "exact": {
@@ -1019,6 +1026,7 @@
     "Ancient troll ruins once lost beneath the waves have risen from the ocean, opening their newly exposed streets to exploration.": "D’anciennes ruines trolles autrefois englouties sous les flots ont émergé de l’océan, dévoilant des rues pouvant désormais être explorées.",
     "Ancient troll ruins once lost beneath the waves have risen from the ocean, opening their newly exposed streets to exploration. Trolls and naga now roam the city, while a nearby pirate ship appears to have met a very unfortunate end. Dive below the water to find the entrance, then watch the open-air dungeon change around you as mist and rain build into a full storm before the final confrontation.": "D’anciennes ruines trolles autrefois englouties sous les flots ont émergé de l’océan, dévoilant des rues pouvant désormais être explorées. Trolls et Nagas arpentent à présent la cité, tandis qu’un navire pirate tout proche semble avoir connu un sort funeste. Plongez pour trouver l’entrée, puis observez le donjon à ciel ouvert se transformer autour de vous tandis que la brume et la pluie s’intensifient jusqu’à déclencher une violente tempête avant l’affrontement final.",
     "And if you decide you want to change things up later, you can visit a barber shop within the cities.": "Bien sûr, si vous vous lassez de l’apparence de votre personnage, vous pouvez toujours vous rendre dans un salon de coiffure de l’une des villes.",
+    "And in a land ruled by wind, blind devotion can become a storm.": "Et sur une terre régie par les vents, la dévotion aveugle peut déchaîner la tempête.",
     "And many more.": "… et plus encore !",
     "And most importantly, what are their true goals?": "Et plus important encore : quel est leur dessein ?",
     "And now also grants increased hit chance and applies to all your damaging spells.": "Augmente également les chances de toucher et s’applique à tous vos sorts de dégâts.",
@@ -1100,6 +1108,7 @@
     "As players venture beyond their starting zones, they’ll discover ship routes that preserve the feeling of crossing a large world while making it easier for friends to meet, quest together, and explore at their own pace.": "En vous aventurant au-delà de votre zone de départ, vous découvrirez des liaisons maritimes qui préservent cette impression de parcourir un monde immense, tout en permettant à vous et vos ami(e)s de vous retrouver plus facilement, d’accomplir des quêtes ensemble et d’explorer Azeroth à votre rythme.",
     "As players venture beyond their starting zones, they’ll discover ship routes that preserve the feeling of crossing a large world while making it easier for friends to meet, quest together, and explore at their own pace. Stormwind Harbor to Auberdine opens an early path between the Eastern Kingdoms and Kalimdor, while Menethil, Southshore, and Auberdine add another route with more flexibility for leveling.": "En vous aventurant au-delà de votre zone de départ, vous découvrirez des liaisons maritimes qui préservent cette impression de parcourir un monde immense, tout en permettant à vous et vos ami(e)s de vous retrouver plus facilement, d’accomplir des quêtes ensemble et d’explorer Azeroth à votre rythme. La liaison entre le port de Hurlevent et Auberdine offre rapidement un passage entre les royaumes de l’Est et Kalimdor, tandis que Menethil, Austrivage et Auberdine proposent un autre itinéraire offrant davantage de liberté pour progresser en niveaux.",
     "As reality twists and dark whispers prey on his mind and fears, he must learn to confront the Void without losing himself to it.": "Alors que la réalité se déforme et que les sombres murmures commencent à jouer avec son esprit et ses peurs, il doit apprendre à affronter le Vide sans s’y perdre.",
+    "As she plays along to get closer to the truth, she finds herself overwhelmed by hidden agendas and fanatic devotion.": "Alors qu’elle joue le jeu pour se rapprocher de la vérité, elle se retrouve submergée par des motivations cachées et un fanatisme aveugle.",
     "As soon as you and your raid breach the gates, the Amani will begin preparing to execute them.": "Dès l’instant où vous et vos troupes franchirez les portes, les Amani se prépareront à les exécuter.",
     "As the World of Warcraft: Forever beta nears its end and the team prepares for the worldwide launch on November 4th, we'll continue listening to your feedback and refining the Paladin alongside the rest of the classes coming your way.": "Alors que la bêta touche à sa fin et que l’équipe se prépare au lancement mondial de World of Warcraft: Forever le 4 novembre, nous continuerons à prendre en compte vos commentaires et à apporter des ajustements aux paladins ainsi qu’aux autres classes du jeu.",
     "As the World of Warcraft: Forever beta nears its end and the team prepares for the worldwide launch on November 4th, we'll continue listening to your feedback and refining the Paladin alongside the rest of the classes coming your way. We look forward to seeing how you wield the Light, explore these new abilities and talents, and help shape what comes next.": "Alors que la bêta touche à sa fin et que l’équipe se prépare au lancement mondial de World of Warcraft: Forever le 4 novembre, nous continuerons à prendre en compte vos commentaires et à apporter des ajustements aux paladins ainsi qu’aux autres classes du jeu. Nous avons hâte de voir comment vous manierez la Lumière, explorerez ces nouvelles techniques et ces nouveaux talents, et nous aiderez à préparer l’avenir.",
@@ -1559,6 +1568,8 @@
     "Consecration: This ability is now learned by all Paladins at level 20, instead of being a Holy talent.": "Consécration : cette technique est désormais acquise par tous les paladins au niveau 20, au lieu d’être un talent de la spécialisation Sacré.",
     "Consecration: This ability is now learned by all Paladins at level 20, instead of being a Holy talent. It has also been redesigned to prevent it from being too strong of a tanking tool. It now deals moderate damage to the first 4 enemies to enter it, and very low damage to all other enemies. This allows the Paladin to reliably generate threat on only 4 targets at a time, keeping them at parity with Warriors’ Thunderclap ability. This limitation is critical to maintaining the combat feel of Classic Era, and not sliding into the more AoE-focused gameplay found in early WoW expansions.": "Consécration : cette technique est désormais acquise par tous les paladins au niveau 20, au lieu d’être un talent de la spécialisation Sacré. Elle a également été remaniée afin d’éviter qu’elle ne devienne une compétence de tanking trop puissante. Elle inflige désormais des dégâts modérés aux 4 premiers adversaires qui pénètrent dans sa zone d’effet, et des dégâts très faibles aux autres adversaires. Cela permet à la classe de générer efficacement de la menace sur seulement 4 cibles à la fois, ce qui la met sur un pied d’égalité avec la technique Coup de tonnerre des guerriers. Cette restriction est essentielle pour préserver l’esprit de Classic Era en matière de combat et éviter de basculer vers un gameplay davantage axé sur les zones d’effet, comme c’était le cas dans les premières extensions de World of Warcraft.",
     "Consortium Consternation": "Consternation du Consortium ;",
+    "Constable Aonda of the Skyborne travels into a remote settlement that appears to be under strict control.": "La connétable Aonda des Éolides se rend dans un village isolé qui semble soumis à un contrôle strict.",
+    "Constable Aonda of the Skyborne travels into a remote settlement that appears to be under strict control. Prisoners march under close guard, strangers smile with an eerie conviction, and an uncomfortable silence provides cover for a growing threat. As she plays along to get closer to the truth, she finds herself overwhelmed by hidden agendas and fanatic devotion. And in a land ruled by wind, blind devotion can become a storm.": "La connétable Aonda des Éolides se rend dans un village isolé qui semble soumis à un contrôle strict. Des personnes prisonnières défilent sous bonne garde, des êtres étrangers affichent un sourire empreint d’une conviction perturbante et un silence pesant dissimule une menace grandissante. Alors qu’elle joue le jeu pour se rapprocher de la vérité, elle se retrouve submergée par des motivations cachées et un fanatisme aveugle. Et sur une terre régie par les vents, la dévotion aveugle peut déchaîner la tempête.",
     "Constructs a Mana Well that allows you and others sitting nearby to regenerate 10-29 Mana every 5 seconds (level dependent), mutually exclusive with Blessing of Wisdom.": "Vous construisez un puits de mana qui vous permet, ainsi qu’aux personnages assis à proximité, de régénérer de 10 à 29 points de mana toutes les 5 secondes (selon le niveau). Effet mutuellement incompatible avec Bénédiction de sagesse.",
     "Constructs a Sharpening Wheel that grants you and others sitting nearby 6-34 increased Strength (level dependent), mutually exclusive with Strength of Earth Totem.": "Vous fabriquez une meule à aiguiser qui vous permet, ainsi qu’aux personnages assis à proximité, de gagner de 6 à 34 points supplémentaires au score de Force (selon le niveau). Effet mutuellement incompatible avec Totem de Force de la Terre.",
     "Consume Flame healing increased by 20%.": "Les soins prodigués par Consumation de flamme sont augmentés de 20 %.",
@@ -1802,6 +1813,7 @@
     "Does Your Wolpertinger Linger?: Obtain a Wolpertinger pet from the Brewfest quest line.": "Puisque je vous dis que je l’ai vu : obtenez un wolpertinger grâce à la suite de quêtes de la fête des Brasseurs.",
     "Does not apply to PvP combat.": "Ne s’applique pas au combat JcJ.",
     "Don't miss the chance to relive the adventure. Whether you're enjoying it from home or escaping into it in person, it’s time to answer the call.": "Le fonctionnalité comptoir de septembre ferme bientôt ! ​​Faites vos derniers achats avant que les vendeurs ne passent à leur stock d'octobre.",
+    "Don’t Miss the World of Warcraft: Forever Comic, “Al'Aketh Rising”": "Ne manquez pas la BD de World of Warcraft: Forever, « L’ascension des Al’Aketh »",
     "Don’t drink them all at once!": "Ne les buvez pas toutes d’un coup !",
     "Doom Blossom damage increased by 10%.": "Dégâts de Fleur du destin augmentés de 10 %.",
     "Doomguard Xarkul kill credit should now be granted to healers who assist Yashiro on “Yashiro’s Windwalk”.": "Le crédit de mort du garde funeste Xarkul devrait désormais être accordé aux personnages soigneurs qui aident Yashiro pendant la quête « La marche du vent de Yashiro ».",
@@ -3148,6 +3160,7 @@
     "Jepetto Joybuzz and his clockwork assistant have received a new shipment of Prismatic Baubles in stock from the Mad Merchant. They can be purchased during the month of June for the standard price of 250,000 gold.": "Jepetto Mizanjoie et son assistant mécanique ont reçu une livraison de babioles prismatiques de la part du marchand fou. Vous pouvez les acheter pendant le mois de juin aux prix standard de 250 000 pièces d’or.",
     "Join Arator Windrunner as he ventures into the depths of the Void with the aid of his mentor, Umbric, in search of clues to his missing parents' fate.": "Rejoignez Arator Coursevent alors qu’il s’aventure dans les profondeurs du Vide avec l’aide de son mentor Umbric, à la recherche d’indices qui lui permettraient de découvrir ce qu’il est advenu de ses parents disparus.",
     "Join Arator Windrunner as he ventures into the depths of the Void with the aid of his mentor, Umbric, in search of clues to his missing parents' fate. As reality twists and dark whispers prey on his mind and fears, he must learn to confront the Void without losing himself to it.": "Rejoignez Arator Coursevent alors qu’il s’aventure dans les profondeurs du Vide avec l’aide de son mentor Umbric, à la recherche d’indices qui lui permettraient de découvrir ce qu’il est advenu de ses parents disparus. Alors que la réalité se déforme et que les sombres murmures commencent à jouer avec son esprit et ses peurs, il doit apprendre à affronter le Vide sans s’y perdre.",
+    "Join Constable Aonda for a special reading of World of Warcraft: Forever's newest motion comic, “Al'Aketh Rising”.": "Retrouvez la connétable Aonda pour une lecture spéciale de la toute nouvelle BD animée de World of Warcraft: Forever, « L’ascension des Al’Aketh ».",
     "Join Demar Brant for a special fireside telling of our newest short story, “Cost of Honor”.": "Retrouvez Demar Brant pour une lecture au coin du feu de notre toute dernière nouvelle, « Le prix de l’honneur ».",
     "Join WoW: Forever Podcast host Countdown To Classic and special guest Hammerdance as they sit down with Senior Game Designers Josh “Aggrend” Greenfield, Jay Hartman, and Rowan Ryder as they dive into dungeon leveling, questing, and more.": "Pour ce nouvel épisode, Countdown To Classic, qui anime le podcast WoW: Forever, reçoit Hammerdance, ainsi que Josh « Aggrend » Greenfield, Jay Hartman et Rowan Ryder, de l’équipe de conception du jeu. Au menu : montée de niveau en donjon, quêtes, et bien plus encore.",
     "Join WoW: Forever Podcast host Countdown To Classic and special guest Meeix as they sit down with Senior Game Designer Josh “Aggrend” Greenfield, Associate Production Director Clay Stone, Lead Software Engineer Ana Resendez, and Lead Encounter Designer Michael Nuthals for a special episode.": "Retrouvez Countdown To Classic, animateur du podcast WoW: Forever et son invitée spéciale Meeix dans leur discussion avec Josh « Aggrend » Greenfield, concepteur de jeu senior, Clay Stone, directeur de production associé, Ana Resendez, responsable ingénierie logicielle et Michael Nuthals, concepteur principal des rencontres.",
@@ -3973,6 +3986,7 @@
     "Primate Hunter pets now understand that they can't move while using their Bad Manner ability and will successfully cast the spell without interrupting themselves.": "Les singes des chasseurs et chasseresses ont compris qu’ils ne peuvent pas se déplacer lorsqu’ils utilisent Discourtois et lancent désormais le sort sans s’interrompre eux-mêmes.",
     "Primordial Wave’s additional Lightning Bolts now deal 175% of normal damage (was 150%).": "Les éclairs supplémentaires de Vague primordiale infligent désormais 175 % des dégâts normaux (au lieu de 150 %).",
     "Primordial Wave’s additional Lightning Bolts now deal 175% of normal damage (was 150%). Not applied to PvP combat.": "Les éclairs supplémentaires de Vague primordiale infligent désormais 175 % des dégâts normaux (au lieu de 150 %). Ne s’applique pas en combat JcJ.",
+    "Prisoners march under close guard, strangers smile with an eerie conviction, and an uncomfortable silence provides cover for a growing threat.": "Des personnes prisonnières défilent sous bonne garde, des êtres étrangers affichent un sourire empreint d’une conviction perturbante et un silence pesant dissimule une menace grandissante.",
     "Prize: 1 Brewfest Chowdown Champion Token.": "Récompense : 1 jeton de champion du gueulethon.",
     "Probably nothing to worry about; the villagers seem fine and love howling at night.": "Ne regardez pas vers le bas !",
     "Procure items new and old, including the Patched Harvest Golem Transmog set pieces that previously dropped from the Headless Horseman encounter.": "Obtenez de nouveaux et anciens objets, y compris les pièces de l’ensemble de transmogrification Golem des moissons rapiécé qui étaient disponibles précédemment lors du combat contre le Cavalier sans tête.",
@@ -4101,6 +4115,7 @@
     "Reach Your HUD with Shortcuts": "Utiliser des raccourcis pour interagir avec l’ATH",
     "Reach ranks 3, 7, 10, 13, and 14 (5 points.)": "Atteignez les rangs 3, 7, 10, 13 et 14 (5 points).",
     "Reaching Beyond the Possible": "Au-delà des limites du possible ;",
+    "Read By: Sam Slade as Constable Aonda Written By: Robert Brooks Art & Cover: Stefano Porcu Colors: Mauro Gulma Letters: AndWorld Design": "Narration : Sam Slade dans le rôle de la connétable Aonda Écriture : Robert Brooks Art et couverture : Stefano Porcu Couleurs : Mauro Gulma Lettrage : AndWorld Design",
     "Read By: Yuri Lowenthal as Arator Windrunner Written By: Robert Brooks Art & Cover: Joseph Lacroix Colors: Marco Lacoti Letters: AndWorld Design": "Lue par : Yuri Lowenthal, dans le rôle d’Arator Coursevent Écrite par : Robert Brooks Dessin et couverture : Joseph Lacroix Couleur : Marco Lacoti Lettrage : AndWorld Design",
     "Read Ley Line: Activate a ley line to gain 100% increased Health and Mana regeneration.": "Lecture des lignes telluriques : vous activez une ligne tellurique pour augmenter de 100 % votre régénération de points de vie et de mana.",
     "Read by: Yuri Lowenthal as Arator Windrunner Written by: Robert Brooks Art & Cover: Joseph Lacroix Colors: Marco Lacoti Letters: AndWorld Design": "Lue par : Yuri Lowenthal, dans le rôle d’Arator Coursevent Écrite par : Robert Brooks Dessin et couverture : Joseph Lacroix Couleur : Marco Lacoti Lettrage : AndWorld Design",
@@ -6006,7 +6021,7 @@
     "“The Lost Tablets of Mosh'aru” should now be completable if you've previously completed “The God Hakkar”.": "Vous devriez désormais être en mesure de terminer la quête « Les tablettes perdues de Mosh’aru » si vous avez déjà terminé « Le dieu Hakkar ».",
     "“Vashj'ir: Call of Duty” will remain available to players who skipped directly to “Sea Legs”.": "« Vashj’ir : L’appel du devoir » sera toujours disponible pour les personnages-joueurs qui sont passés directement à « Le pied marin »."
   },
-  "pair_count": 5249,
+  "pair_count": 5257,
   "schema": 1,
   "source": "Official Blizzard World of Warcraft news",
   "sourceLanguage": "en-US",
@@ -9461,7 +9476,7 @@
     "Burning Crusade Classic Anniversary: The Gods of Zul'Aman Now Live": "24313106",
     "Choose Your Ruleset in World of Warcraft: Forever": "24313106",
     "Dive Into WoW: Forever, the Gods of Zul’Aman, Hallow’s End, and More in WoW Weekly": "24313106",
-    "Downloadable PDF": "24316096",
+    "Downloadable PDF": "24317680",
     "Early Name Reservations are available from October 27 through November 3, giving players an opportunity to secure the names that will become part of their adventures in Azeroth.": "24313106",
     "Every journey through Azeroth begins with a choice about the kind of world you want to step into. We’re changing how that journey begins by moving away from the traditional realm-selection screen and introducing rulesets, letting you choose the kind of experience you want to have first.": "24313106",
     "From now through November 8, 2026, invoke the spirit of legendary hunter and champion of the Horde, Rexxar, with a beastly pack of items that challenge you to embrace the untamed wilds in modern World of Warcraft® (currently Midnight™).": "24313106",
@@ -11259,7 +11274,15 @@
     "Then, complete the Chamber of Rites with Valeera Sanguinar and speak with Kinduru to unlock the full Labyrinth for your entire Warband.": "24317681",
     "We look forward to celebrating all things World of Warcraft with you!": "24317681",
     "WoW: Forever Class Design, Echoes of the Worldcore, and More in WoW Weekly": "24317681",
-    "WoW: Forever Podcast – Catching up on Classes": "24317681"
+    "WoW: Forever Podcast – Catching up on Classes": "24317681",
+    "And in a land ruled by wind, blind devotion can become a storm.": "24317680",
+    "As she plays along to get closer to the truth, she finds herself overwhelmed by hidden agendas and fanatic devotion.": "24317680",
+    "Constable Aonda of the Skyborne travels into a remote settlement that appears to be under strict control.": "24317680",
+    "Constable Aonda of the Skyborne travels into a remote settlement that appears to be under strict control. Prisoners march under close guard, strangers smile with an eerie conviction, and an uncomfortable silence provides cover for a growing threat. As she plays along to get closer to the truth, she finds herself overwhelmed by hidden agendas and fanatic devotion. And in a land ruled by wind, blind devotion can become a storm.": "24317680",
+    "Don’t Miss the World of Warcraft: Forever Comic, “Al'Aketh Rising”": "24317680",
+    "Join Constable Aonda for a special reading of World of Warcraft: Forever's newest motion comic, “Al'Aketh Rising”.": "24317680",
+    "Prisoners march under close guard, strangers smile with an eerie conviction, and an uncomfortable silence provides cover for a growing threat.": "24317680",
+    "Read By: Sam Slade as Constable Aonda Written By: Robert Brooks Art & Cover: Stefano Porcu Colors: Mauro Gulma Letters: AndWorld Design": "24317680"
   },
   "targetLanguage": "fr-FR"
 }
